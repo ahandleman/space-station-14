@@ -1,0 +1,184 @@
+<BoxContainer
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:plantAnalyzer="clr-namespace:Content.Client.Botany.PlantAnalyzer"
+    x:Class="Content.Client.Botany.PlantAnalyzer.PlantAnalyzerControl"
+    VerticalExpand="True"
+    Orientation="Vertical">
+
+    <Label
+        Name="NoPlantDataText"
+        Text="{Loc 'plant-analyzer-interface-no-data'}" />
+
+    <BoxContainer
+        Name="PlantDataContainer"
+        Orientation="Vertical"
+        Visible="False">
+
+        <BoxContainer Orientation="Horizontal" Margin="0 0 0 5">
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                <RichTextLabel Name="PlantNameLabel" SetWidth="260" />
+                <Label Name="ScanModeLabel" StyleClasses="LabelSubText" />
+            </BoxContainer>
+        </BoxContainer>
+
+        <PanelContainer StyleClasses="LowDivider" />
+
+        <Label
+            Text="{Loc 'plant-analyzer-section-overview'}"
+            StyleClasses="LabelHeading"
+            Margin="0 5 0 2" />
+
+        <BoxContainer Orientation="Vertical" Margin="0 0 0 6">
+            <Label
+                Name="AgeStatusLabel"
+                StyleClasses="LabelSubText"
+                Margin="0 0 0 2" />
+
+            <plantAnalyzer:PlantAnalyzerBar
+                Name="AgeBar"
+                MinHeight="24"
+                MaxHeight="24"
+                HorizontalExpand="True"
+                Margin="0 0 0 6" />
+
+            <Label
+                Name="HealthStatusLabel"
+                StyleClasses="LabelSubText"
+                Margin="0 0 0 2" />
+
+            <plantAnalyzer:PlantAnalyzerBar
+                Name="HealthBar"
+                MinHeight="24"
+                MaxHeight="24"
+                HorizontalExpand="True" />
+
+            <BoxContainer
+                Name="HealthIssuesContainer"
+                Orientation="Vertical"
+                Margin="0 4 0 0" />
+
+        </BoxContainer>
+
+        <PanelContainer StyleClasses="LowDivider" Margin="0 5 0 0" />
+
+        <Label
+            Text="{Loc 'plant-analyzer-section-status'}"
+            StyleClasses="LabelHeading"
+            Margin="0 5 0 2" />
+
+        <GridContainer Columns="2">
+            <Label Text="{Loc 'plant-analyzer-label-health'}" />
+            <Label Name="HealthLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-age'}" />
+            <Label Name="AgeLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-dead'}" />
+            <Label Name="DeadLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-harvest-ready'}" />
+            <Label Name="HarvestLabel" />
+        </GridContainer>
+
+        <PanelContainer StyleClasses="LowDivider" Margin="0 5 0 0" />
+
+        <Label
+            Text="{Loc 'plant-analyzer-section-growth'}"
+            StyleClasses="LabelHeading"
+            Margin="0 5 0 2" />
+
+        <GridContainer Columns="2">
+            <Label Text="{Loc 'plant-analyzer-label-water'}" />
+            <Label Name="WaterLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-nutrition'}" />
+            <Label Name="NutritionLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-weeds'}" />
+            <Label Name="WeedsLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-pests'}" />
+            <Label Name="PestsLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-toxins'}" />
+            <Label Name="ToxinsLabel" />
+        </GridContainer>
+
+        <PanelContainer StyleClasses="LowDivider" Margin="0 5 0 0" />
+
+        <Label
+            Text="{Loc 'plant-analyzer-section-genetics'}"
+            StyleClasses="LabelHeading"
+            Margin="0 5 0 2" />
+
+        <GridContainer Columns="2">
+            <Label Text="{Loc 'plant-analyzer-label-yield'}" />
+            <Label Name="YieldLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-potency'}" />
+            <Label Name="PotencyLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-endurance'}" />
+            <Label Name="EnduranceLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-lifespan'}" />
+            <Label Name="LifespanLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-maturation'}" />
+            <Label Name="MaturationLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-production'}" />
+            <Label Name="ProductionLabel" />
+        </GridContainer>
+
+        <PanelContainer StyleClasses="LowDivider" Margin="0 5 0 0" />
+
+        <Label
+            Text="{Loc 'plant-analyzer-section-environment'}"
+            StyleClasses="LabelHeading"
+            Margin="0 5 0 2" />
+
+        <GridContainer Columns="2">
+            <Label Text="{Loc 'plant-analyzer-label-ideal-heat'}" />
+            <Label Name="IdealHeatLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-heat-tolerance'}" />
+            <Label Name="HeatToleranceLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-ideal-light'}" />
+            <Label Name="IdealLightLabel" />
+
+            <Label Text="{Loc 'plant-analyzer-label-light-tolerance'}" />
+            <Label Name="LightToleranceLabel" />
+        </GridContainer>
+
+        <BoxContainer
+            Name="WarningsContainer"
+            Orientation="Vertical"
+            Margin="0 5 0 0" />
+
+        <PanelContainer StyleClasses="LowDivider" Margin="0 5 0 0" />
+
+        <Label
+            Text="{Loc 'plant-analyzer-section-chemicals'}"
+            StyleClasses="LabelHeading"
+            Margin="0 5 0 2" />
+
+        <GridContainer
+            Name="ChemicalsGrid"
+            Columns="5" />
+
+        <PanelContainer StyleClasses="LowDivider" Margin="0 5 0 0" />
+
+        <Label
+            Text="{Loc 'plant-analyzer-section-traits'}"
+            StyleClasses="LabelHeading"
+            Margin="0 5 0 2" />
+
+        <BoxContainer
+            Name="TraitsContainer"
+            Orientation="Vertical" />
+
+    </BoxContainer>
+</BoxContainer>

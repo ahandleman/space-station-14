@@ -1,0 +1,21 @@
+- type: entity
+  id: PlantAnalyzer
+  parent: BaseItem
+  name: plant analyzer
+  description: A handheld scanner used to analyze plant health, growth, and genetic traits.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/healthanalyzer.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: Objects/Specific/Medical/healthanalyzer.rsi
+  - type: PlantAnalyzer
+  - type: ItemToggle
+    onUse: false
+  - type: ActivatableUI
+    key: enum.PlantAnalyzerUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.PlantAnalyzerUiKey.Key:
+        type: PlantAnalyzerBoundUserInterface
