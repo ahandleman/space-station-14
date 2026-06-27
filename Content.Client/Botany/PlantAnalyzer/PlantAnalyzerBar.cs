@@ -1,14 +1,17 @@
 using System.Numerics;
 using Robust.Client.Graphics;
+using Robust.Client.Input;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Utility;
+using Robust.Shared.Log;
+using System.Reflection.Metadata;
 
 namespace Content.Client.Botany.PlantAnalyzer;
 
 
-public sealed class PlantAnalyzerBarNotch
+public sealed class PlantAnalyzerHorizontalBarNotch
 {
     //How often to generate the marker
     public float Width;
@@ -24,7 +27,7 @@ public sealed class PlantAnalyzerBarNotch
     public Color NotchColor = new(1f, 1f, 1f, 0.25f);
     public string TooltipText;
 
-    public PlantAnalyzerBarNotch(
+    public PlantAnalyzerHorizontalBarNotch(
         float width = 1f,
         float height = 1f,
         float offset = 0,
@@ -44,11 +47,10 @@ public sealed class PlantAnalyzerBarNotch
 }
 
 
-public sealed class PlantAnalyzerBar : Control
+public sealed class PlantAnalyzerHorizontalBar : Control
 {
 
     private readonly Label _label;
-
     public float Value;
     public float Capacity = 100f;
     public Color BarColor = new(0.2f, 0.8f, 0.25f);
@@ -57,9 +59,9 @@ public sealed class PlantAnalyzerBar : Control
 
     public string? TooltipText = null;
 
-    public List<PlantAnalyzerBarNotch> Notches = new();
+    public List<PlantAnalyzerHorizontalBarNotch> Notches = new();
 
-    public PlantAnalyzerBar()
+    public PlantAnalyzerHorizontalBar()
     {
 
         MouseFilter = MouseFilterMode.Pass;
@@ -104,7 +106,7 @@ public sealed class PlantAnalyzerBar : Control
         Color? notchColor = null,
         string tooltipText = "")
     {
-        Notches.Add(new PlantAnalyzerBarNotch(
+        Notches.Add(new PlantAnalyzerHorizontalBarNotch(
             width,
             height,
             offset,
@@ -133,13 +135,13 @@ public sealed class PlantAnalyzerBar : Control
         handle.DrawLine(new Vector2(0, 0), new Vector2(0, PixelHeight), BorderColor);
         handle.DrawLine(new Vector2(PixelWidth, 0), new Vector2(PixelWidth, PixelHeight), BorderColor);
 
-        foreach (PlantAnalyzerBarNotch notchData in Notches)
+        foreach (PlantAnalyzerHorizontalBarNotch notchData in Notches)
         {
             DrawNotches(handle, notchData);
         }
     }
 
-    private void DrawNotches(DrawingHandleScreen handle, PlantAnalyzerBarNotch notchData)
+    private void DrawNotches(DrawingHandleScreen handle, PlantAnalyzerHorizontalBarNotch notchData)
     {
         float unitWidth = PixelWidth / Capacity;
         float notchWidth = notchData.Width * unitWidth;
@@ -165,11 +167,92 @@ public sealed class PlantAnalyzerBar : Control
         return finalSize;
     }
 
+    private const float NotchTooltipRadius = 4f;
+
+    private string? GetNotchTooltipAtMouse()
+    {
+        if (Capacity <= 0 || PixelWidth <= 0 || PixelHeight <= 0)
+            return null;
+
+        var globalMousePos = UserInterfaceManager.MousePositionScaled.Position;
+        var mousePos = globalMousePos - GlobalPosition;
+
+        // If the mouse is outside the bar entirely, don't show notch tooltips.
+        if (mousePos.X < 0 || mousePos.X > PixelWidth || mousePos.Y < 0 || mousePos.Y > PixelHeight)
+            return null;
+
+        var unitWidth = PixelWidth / Capacity;
+
+        // Iterate backwards so later-drawn notches win if several overlap.
+        for (var i = Notches.Count - 1; i >= 0; i--)
+        {
+            var notchData = Notches[i];
+
+            if (string.IsNullOrWhiteSpace(notchData.TooltipText))
+                continue;
+
+            if (TryHitNotch(mousePos, unitWidth, notchData))
+                return notchData.TooltipText;
+        }
+
+        return null;
+    }
+
+    private bool TryHitNotch(Vector2 mousePos, float unitWidth, PlantAnalyzerHorizontalBarNotch notchData)
+    {
+        var notchStep = notchData.Width * unitWidth;
+
+        // Avoid infinite loops / invalid notch definitions.
+        if (notchStep <= 0)
+            return false;
+
+        var notchHeight = MathHelper.Clamp(notchData.Height, 0f, 1f) * PixelHeight;
+        var startX = notchData.Offset * unitWidth;
+
+        var count = 0;
+
+        for (var x = startX; x < PixelWidth; x += notchStep, count++)
+        {
+            if (notchData.Count > 0 && count >= notchData.Count)
+                break;
+
+            if (!IsMouseNearNotchX(mousePos.X, x))
+                continue;
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool IsMouseNearNotchX(float mouseX, float notchX)
+    {
+        return MathF.Abs(mouseX - notchX) <= NotchTooltipRadius;
+    }
+
     private Control? SupplyTooltip(Control sender)
     {
         var text = TooltipText;
 
+        foreach (PlantAnalyzerHorizontalBarNotch notchData in Notches)
+        {
+            if (string.IsNullOrWhiteSpace(notchData.TooltipText)) continue;
+            float unitWidth = PixelWidth / Capacity;
+            float markerWidth = unitWidth * notchData.Width;
+            var globalMousePos = UserInterfaceManager.MousePositionScaled.Position;
+            var mousePos = globalMousePos - GlobalPosition;
+            float detectionRange = 5f;
+            //First get rid of the offset so that we're going from the same starting position.
+            var mouseMarkerRelativeOffset = mousePos.X - (notchData.Offset * unitWidth);
+            //Take the relative position modulo
+            float modValue = ((detectionRange + mouseMarkerRelativeOffset) % markerWidth);
+            if (modValue > 0 && modValue <= 2 * detectionRange && (notchData.Count == 0 || mouseMarkerRelativeOffset / markerWidth <= notchData.Count))
+            {
+                text = notchData.TooltipText;
+            }
 
+
+        }
         // if (HasMarker && !string.IsNullOrWhiteSpace(MarkerTooltipText))
         // {
         //     var globalMousePos = UserInterfaceManager.MousePositionScaled.Position;

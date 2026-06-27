@@ -14,14 +14,65 @@
         Name="PlantDataContainer"
         Orientation="Vertical"
         Visible="False">
+        <BoxContainer
+            Orientation="Horizontal"
+            Margin="0 0 0 8"
+            HorizontalExpand="True">
 
-        <BoxContainer Orientation="Horizontal" Margin="0 0 0 5">
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-                <RichTextLabel Name="PlantNameLabel" SetWidth="260" />
-                <Label Name="ScanModeLabel" StyleClasses="LabelSubText" />
+            <PanelContainer
+                MinWidth="48"
+                MinHeight="48"
+                MaxWidth="48"
+                MaxHeight="48"
+                Margin="0 0 8 0">
+
+                <TextureRect
+                    Name="PlantSprite"
+                    Stretch="KeepAspectCentered"
+                    HorizontalExpand="True"
+                    VerticalExpand="True" />
+            </PanelContainer>
+
+            <BoxContainer
+                Orientation="Vertical"
+                MinWidth="120"
+                Margin="0 0 8 0">
+
+                <RichTextLabel
+                    Name="PlantNameLabel"
+                    SetWidth="120" />
+
+                <Label
+                    Name="ScanModeLabel"
+                    StyleClasses="LabelSubText" />
+
+                <Label
+                    Name="GrowthStageLabel"
+                    StyleClasses="LabelSubText" />
+            </BoxContainer>
+
+            <BoxContainer
+                Orientation="Vertical"
+                HorizontalExpand="True"
+                VerticalAlignment="Center">
+
+                <Label
+                    Name="HealthStatusLabel"
+                    StyleClasses="LabelSubText"
+                    Margin="0 0 0 2" />
+
+                <plantAnalyzer:PlantAnalyzerHorizontalBar
+                    Name="HealthBar"
+                    MinHeight="24"
+                    MaxHeight="24"
+                    HorizontalExpand="True" />
+                <BoxContainer
+                    Name="HealthIssuesContainer"
+                    Orientation="Vertical"
+                    Margin="0 4 0 0" />
+
             </BoxContainer>
         </BoxContainer>
-
         <PanelContainer StyleClasses="LowDivider" />
 
         <Label
@@ -35,28 +86,12 @@
                 StyleClasses="LabelSubText"
                 Margin="0 0 0 2" />
 
-            <plantAnalyzer:PlantAnalyzerBar
+            <plantAnalyzer:PlantAnalyzerHorizontalBar
                 Name="AgeBar"
                 MinHeight="24"
                 MaxHeight="24"
                 HorizontalExpand="True"
                 Margin="0 0 0 6" />
-
-            <Label
-                Name="HealthStatusLabel"
-                StyleClasses="LabelSubText"
-                Margin="0 0 0 2" />
-
-            <plantAnalyzer:PlantAnalyzerBar
-                Name="HealthBar"
-                MinHeight="24"
-                MaxHeight="24"
-                HorizontalExpand="True" />
-
-            <BoxContainer
-                Name="HealthIssuesContainer"
-                Orientation="Vertical"
-                Margin="0 4 0 0" />
 
         </BoxContainer>
 

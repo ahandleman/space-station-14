@@ -4,7 +4,7 @@
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:plantAnalyzer="clr-namespace:Content.Client.Botany.PlantAnalyzer"
     x:Class="Content.Client.Botany.PlantAnalyzer.PlantAnalyzerWindow"
-    MinWidth="360">
+    MinWidth="450">
 
     <ScrollContainer
         Margin="5 5 5 5"

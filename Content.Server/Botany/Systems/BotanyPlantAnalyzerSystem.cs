@@ -257,7 +257,9 @@ public sealed class PlantAnalyzerSystem : EntitySystem
         state.Maturation = seed.Maturation;
         state.Production = seed.Production;
         state.Potency = seed.Potency;
-
+        state.PlantSpriteRsi = seed.PlantRsi.ToString();
+        state.PlantSpriteState = GetPlantSpriteState(holder);
+        state.GrowthStage = GetCurrentGrowthStage(holder);
         //Shitcode but unless I want to shove the enum into shared and refactor all that, this will work
         state.MultiHarvest = seed.HarvestRepeat != HarvestType.NoRepeat;
         state.AutoHarvest = seed.HarvestRepeat == HarvestType.SelfHarvest;
@@ -287,5 +289,31 @@ public sealed class PlantAnalyzerSystem : EntitySystem
             state.Mutations.Add(mutation.Name);
 
         return state;
+    }
+    private static int GetCurrentGrowthStage(PlantHolderComponent holder)
+    {
+        if (holder.Seed == null)
+            return 0;
+
+        return Math.Max(1, (int) (Math.Min(holder.Age, holder.Seed.Maturation) * holder.Seed.GrowthStages / holder.Seed.Maturation));
+    }
+
+    private static string GetPlantSpriteState(PlantHolderComponent holder)
+    {
+        var seed = holder.Seed;
+
+        if (seed == null)
+            return string.Empty;
+
+        if (holder.Dead)
+            return "dead";
+
+        if (holder.Harvest)
+            return "harvest";
+
+        if (holder.Age < seed.Maturation)
+            return $"stage-{GetCurrentGrowthStage(holder)}";
+
+        return $"stage-{seed.GrowthStages}";
     }
 }

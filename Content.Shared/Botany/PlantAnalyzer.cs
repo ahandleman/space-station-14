@@ -44,13 +44,14 @@ public sealed class PlantAnalyzerUiState : BoundUserInterfaceState
     public bool HasPlant;
 
     public string PlantName = string.Empty;
-
+    public string PlantSpriteRsi = string.Empty;
+    public string PlantSpriteState = string.Empty;
+    public int GrowthStage;
     public float WaterLevel;
     public float NutritionLevel;
     public float PestLevel;
     public float WeedLevel;
     public float Toxins;
-
     public int Age;
     public bool Dead;
     public bool Harvest;
