@@ -80,7 +80,8 @@ public sealed class PlantAnalyzerBar : Control
         float capacity,
         Color color,
         string label,
-        string? tooltip = null)
+        string? tooltip = null,
+        bool clearNotches = true)
     {
         Value = value;
         Capacity = MathF.Max(1f, capacity);
@@ -88,6 +89,7 @@ public sealed class PlantAnalyzerBar : Control
         TooltipText = tooltip;
 
         _label.Text = label;
+        Notches.Clear();
 
         InvalidateMeasure();
         InvalidateArrange();
@@ -142,7 +144,7 @@ public sealed class PlantAnalyzerBar : Control
         float unitWidth = PixelWidth / Capacity;
         float notchWidth = notchData.Width * unitWidth;
         int count = 0;
-        for (float offset = notchData.Offset; offset < PixelWidth; offset += notchWidth, count++)
+        for (float offset = unitWidth * notchData.Offset; offset < PixelWidth; offset += notchWidth, count++)
         {
             if (notchData.Count > 0 && count >= notchData.Count) break;
             if (notchData.BottomAlign)

@@ -136,7 +136,19 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         AgeBar.AddNotch(width: 1f, height: 0.2f, bottomAlign: true);
         AgeBar.AddNotch(width: 5f, height: 0.4f, bottomAlign: true);
         //Don't show next harvest if it's dead
-        if (!state.Dead) AgeBar.AddNotch(width: state.Production, height: 1f, offset: nextHarvestAge, bottomAlign: true, count: 1, notchColor: new Color(1f, 1f, 1f, 0.25f), markerTooltip);
+        if (!state.Dead)
+        {
+            AgeBar.AddNotch(
+                width: MathF.Floor(state.Production) + 1f,
+                height: 1f,
+                offset: nextHarvestAge,
+                bottomAlign: false,
+                //If it's multiharvest, show all potential harvests.  Otherwise only show one.
+                count: state.MultiHarvest ? 0 : 1,
+                //Violet if self-harvesting, sky blue if regular harvest
+                notchColor: state.AutoHarvest ? new Color(0.6f, 0.2f, 0.9f, 0.25f) : new Color(0.4f, 0.8f, 1f, 0.25f),
+                tooltipText: markerTooltip);
+        }
     }
 
     private void PopulateHealthBar(PlantAnalyzerUiState state)

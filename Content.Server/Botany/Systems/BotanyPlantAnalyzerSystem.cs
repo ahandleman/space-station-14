@@ -257,6 +257,11 @@ public sealed class PlantAnalyzerSystem : EntitySystem
         state.Maturation = seed.Maturation;
         state.Production = seed.Production;
         state.Potency = seed.Potency;
+
+        //Shitcode but unless I want to shove the enum into shared and refactor all that, this will work
+        state.MultiHarvest = seed.HarvestRepeat != HarvestType.NoRepeat;
+        state.AutoHarvest = seed.HarvestRepeat == HarvestType.SelfHarvest;
+
         state.LastProduce = holder.LastProduce;
 
         state.NutrientConsumption = seed.NutrientConsumption;

@@ -3,7 +3,6 @@
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Serialization;
-
 namespace Content.Shared.Botany.PlantAnalyzer;
 
 [Serializable, NetSerializable]
@@ -56,6 +55,9 @@ public sealed class PlantAnalyzerUiState : BoundUserInterfaceState
     public bool Dead;
     public bool Harvest;
     public float Health;
+
+    public bool MultiHarvest;
+    public bool AutoHarvest;
 
     public int LastProduce;
     public int YieldMod;
