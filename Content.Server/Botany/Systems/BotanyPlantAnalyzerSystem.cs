@@ -271,6 +271,8 @@ public sealed class PlantAnalyzerSystem : EntitySystem
 
         state.IdealHeat = seed.IdealHeat;
         state.HeatTolerance = seed.HeatTolerance;
+        state.Temperature = holder.Temperature;
+        state.Pressure = holder.Pressure;
         state.IdealLight = seed.IdealLight;
         state.LightTolerance = seed.LightTolerance;
         state.LowPressureTolerance = seed.LowPressureTolerance;

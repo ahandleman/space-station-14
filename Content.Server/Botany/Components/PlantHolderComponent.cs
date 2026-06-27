@@ -117,11 +117,22 @@ public sealed partial class PlantHolderComponent : Component
     public bool ImproperHeat;
 
     /// <summary>
+    /// Current Temperature of the Atmosphere.
+    /// </summary>
+    [DataField]
+    public float Temperature;
+
+    /// <summary>
     /// True if the plant is losing health due to too high/low pressure.
     /// </summary>
     [DataField]
     public bool ImproperPressure;
 
+    /// <summary>
+    /// Current Pressure of the Atmosphere.
+    /// </summary>
+    [DataField]
+    public float Pressure;
     /// <summary>
     /// Not currently used.
     /// </summary>

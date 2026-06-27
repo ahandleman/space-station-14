@@ -528,6 +528,8 @@ public sealed partial class PlantHolderSystem : EntitySystem
         }
 
         var environment = _atmosphere.GetContainingMixture(uid, true, true) ?? GasMixture.SpaceGas;
+        component.Temperature = environment.Temperature;
+        component.Pressure = environment.Pressure;
 
         component.MissingGas = 0;
         if (component.Seed.ConsumeGasses.Count > 0)
@@ -551,9 +553,7 @@ public sealed partial class PlantHolderSystem : EntitySystem
             }
         }
 
-        // SeedPrototype pressure resistance.
-        var pressure = environment.Pressure;
-        if (pressure < component.Seed.LowPressureTolerance || pressure > component.Seed.HighPressureTolerance)
+        if (component.Pressure < component.Seed.LowPressureTolerance || component.Pressure > component.Seed.HighPressureTolerance)
         {
             component.Health -= healthMod;
             component.ImproperPressure = true;
@@ -566,7 +566,7 @@ public sealed partial class PlantHolderSystem : EntitySystem
         }
 
         // SeedPrototype ideal temperature.
-        if (MathF.Abs(environment.Temperature - component.Seed.IdealHeat) > component.Seed.HeatTolerance)
+        if (MathF.Abs(component.Temperature - component.Seed.IdealHeat) > component.Seed.HeatTolerance)
         {
             component.Health -= healthMod;
             component.ImproperHeat = true;

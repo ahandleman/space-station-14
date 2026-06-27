@@ -114,3 +114,37 @@ plant-analyzer-health-issue-missing-gas = The plant is missing a required atmosp
 plant-analyzer-health-issue-weeds = Weeds are damaging the plant.
 plant-analyzer-health-issue-pests = Pests are damaging the plant.
 plant-analyzer-health-issue-toxins = The plant is being damaged by toxins.
+
+plant-analyzer-label-temperature = Temperature
+
+plant-analyzer-water-tooltip = Water: {$water}/{$max}. Warning below {$warning}.
+plant-analyzer-water-warning-marker = Low water warning: {$warning}
+
+plant-analyzer-nutrition-tooltip = Nutriment: {$nutrition}/{$max}. Warning below {$warning}.
+plant-analyzer-nutrition-warning-marker = Low nutriment warning: {$warning}
+
+plant-analyzer-temperature-bar-text = {$temperature} K
+plant-analyzer-temperature-tooltip = Current temperature: {$temperature} K. Ideal: {$ideal} K ± {$tolerance} K.
+
+plant-analyzer-label-pressure = Pressure
+
+plant-analyzer-pressure-bar-text = {$pressure} kPa
+plant-analyzer-pressure-tooltip = Current pressure: {$pressure} kPa. Safe range: {$min}-{$max} kPa.
+
+
+plant-analyzer-section-threats = Threats
+
+plant-analyzer-threat-none = None
+plant-analyzer-threat-present = Present
+plant-analyzer-threat-damaging = Damaging
+
+plant-analyzer-threat-bar-text = {$value} / {$max}
+plant-analyzer-threat-tooltip-none = No {$kind} detected.
+plant-analyzer-threat-tooltip-present = {$kind} detected, but below the damage threshold.
+plant-analyzer-threat-tooltip-damaging = {$kind} are damaging the plant.
+
+plant-analyzer-threat-kind-weeds = weeds
+plant-analyzer-threat-kind-pests = pests
+plant-analyzer-threat-kind-toxins = toxins
+
+plant-analyzer-threat-tolerance-marker = Damage threshold: {$value}

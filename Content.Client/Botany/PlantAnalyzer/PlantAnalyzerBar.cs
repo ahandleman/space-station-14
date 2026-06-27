@@ -7,11 +7,12 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Utility;
 using Robust.Shared.Log;
 using System.Reflection.Metadata;
+using Content.Shared.Climbing.Events;
 
 namespace Content.Client.Botany.PlantAnalyzer;
 
 
-public sealed class PlantAnalyzerHorizontalBarNotch
+public sealed class PlantAnalyzerBarNotch
 {
     //How often to generate the marker
     public float Width;
@@ -27,7 +28,7 @@ public sealed class PlantAnalyzerHorizontalBarNotch
     public Color NotchColor = new(1f, 1f, 1f, 0.25f);
     public string TooltipText;
 
-    public PlantAnalyzerHorizontalBarNotch(
+    public PlantAnalyzerBarNotch(
         float width = 1f,
         float height = 1f,
         float offset = 0,
@@ -47,21 +48,48 @@ public sealed class PlantAnalyzerHorizontalBarNotch
 }
 
 
-public sealed class PlantAnalyzerHorizontalBar : Control
+public sealed class PlantAnalyzerBarBar
+{
+    //How often to generate the marker
+    public float Start;
+    //How tall the marker should be
+    public float End;
+    //Whether to place the marker on the top or bottom.
+    public Color BarColor = new(1f, 1f, 1f, 0.25f);
+    public string TooltipText;
+
+    public PlantAnalyzerBarBar(
+        float start = 0f,
+        float end = 1f,
+        Color? barColor = null,
+        string tooltipText = "")
+    {
+        Start = start;
+        End = end;
+        BarColor = barColor ?? new Color(1f, 1f, 1f, 0.25f);
+        TooltipText = tooltipText;
+    }
+}
+
+
+public sealed class PlantAnalyzerBar : Control
 {
 
     private readonly Label _label;
     public float Value;
     public float Capacity = 100f;
-    public Color BarColor = new(0.2f, 0.8f, 0.25f);
+    public bool Horizontal = true;
     public Color BackgroundColor = new(0.1f, 0.1f, 0.1f);
-    public Color BorderColor = new(1f, 1f, 1f, 0.20f);
+    public Color BorderColor = new(0.7f, 0.7f, 0.7f, 1f);
 
     public string? TooltipText = null;
 
-    public List<PlantAnalyzerHorizontalBarNotch> Notches = new();
+    public List<PlantAnalyzerBarNotch> Notches = new();
+    public List<PlantAnalyzerBarBar> Bars = new();
 
-    public PlantAnalyzerHorizontalBar()
+    private ISawmill _sawmill = Logger.GetSawmill("botany.PlantAnalyzerBar");
+
+    public PlantAnalyzerBar()
     {
 
         MouseFilter = MouseFilterMode.Pass;
@@ -78,20 +106,21 @@ public sealed class PlantAnalyzerHorizontalBar : Control
     }
 
     public void SetData(
-        float value,
         float capacity,
-        Color color,
         string label,
         string? tooltip = null,
-        bool clearNotches = true)
+        bool horizontal = true,
+        bool clearNotches = true,
+        bool clearBars = true)
     {
-        Value = value;
         Capacity = MathF.Max(1f, capacity);
-        BarColor = color;
         TooltipText = tooltip;
 
         _label.Text = label;
-        Notches.Clear();
+        _label.Align = horizontal ? Label.AlignMode.Left : Label.AlignMode.Center;
+        if (clearNotches) Notches.Clear();
+        if (clearBars) Bars.Clear();
+        Horizontal = horizontal;
 
         InvalidateMeasure();
         InvalidateArrange();
@@ -106,7 +135,7 @@ public sealed class PlantAnalyzerHorizontalBar : Control
         Color? notchColor = null,
         string tooltipText = "")
     {
-        Notches.Add(new PlantAnalyzerHorizontalBarNotch(
+        Notches.Add(new PlantAnalyzerBarNotch(
             width,
             height,
             offset,
@@ -116,17 +145,34 @@ public sealed class PlantAnalyzerHorizontalBar : Control
             tooltipText));
     }
 
+    public void AddBar(
+        float start = 0f,
+        float end = 1f,
+        Color? barColor = null,
+        string tooltipText = "")
+    {
+        Bars.Add(new PlantAnalyzerBarBar(
+            MathF.Max(start, 0f),
+            MathF.Min(end, Capacity),
+            barColor,
+            tooltipText));
+    }
+
+    const float DrawDistanceTolerance = 0.1f;
     protected override void Draw(DrawingHandleScreen handle)
     {
         var box = PixelSizeBox;
         handle.DrawRect(box, BackgroundColor);
 
-        var fraction = MathHelper.Clamp01(Value / Capacity);
-        var fillWidth = PixelWidth * fraction;
-
-        if (fillWidth > 0)
+        foreach (PlantAnalyzerBarBar barData in Bars)
         {
-            handle.DrawRect(new UIBox2(0, 0, fillWidth, PixelHeight), BarColor);
+            if (barData.End - barData.Start <= DrawDistanceTolerance) continue;
+            DrawBar(handle, barData);
+        }
+
+        foreach (PlantAnalyzerBarNotch notchData in Notches)
+        {
+            DrawNotches(handle, notchData);
         }
 
         // Border.
@@ -135,27 +181,66 @@ public sealed class PlantAnalyzerHorizontalBar : Control
         handle.DrawLine(new Vector2(0, 0), new Vector2(0, PixelHeight), BorderColor);
         handle.DrawLine(new Vector2(PixelWidth, 0), new Vector2(PixelWidth, PixelHeight), BorderColor);
 
-        foreach (PlantAnalyzerHorizontalBarNotch notchData in Notches)
-        {
-            DrawNotches(handle, notchData);
-        }
     }
 
-    private void DrawNotches(DrawingHandleScreen handle, PlantAnalyzerHorizontalBarNotch notchData)
+
+    private void DrawBar(DrawingHandleScreen handle, PlantAnalyzerBarBar barData)
     {
-        float unitWidth = PixelWidth / Capacity;
-        float notchWidth = notchData.Width * unitWidth;
-        int count = 0;
-        for (float offset = unitWidth * notchData.Offset; offset < PixelWidth; offset += notchWidth, count++)
+        if (Horizontal)
         {
-            if (notchData.Count > 0 && count >= notchData.Count) break;
-            if (notchData.BottomAlign)
+            float unitWidth = PixelWidth / Capacity;
+            handle.DrawRect(new UIBox2(barData.Start * unitWidth, 0, barData.End * unitWidth, PixelHeight), barData.BarColor);
+        }
+        else
+        {
+            float unitHeight = PixelHeight / Capacity;
+            handle.DrawRect(new UIBox2(0, PixelHeight - barData.End * unitHeight, PixelWidth, PixelHeight - barData.Start * unitHeight), barData.BarColor);
+        }
+    }
+    private void DrawNotches(DrawingHandleScreen handle, PlantAnalyzerBarNotch notchData)
+    {
+        if (Horizontal) {
+            float unitWidth = PixelWidth / Capacity;
+            float notchWidth = notchData.Width * unitWidth;
+            int count = 0;
+            for (float offset = unitWidth * notchData.Offset; offset < PixelWidth; offset += notchWidth, count++)
             {
-                handle.DrawLine(new Vector2(offset, PixelHeight), new Vector2(offset, PixelHeight - (PixelHeight * notchData.Height)), notchData.NotchColor);
+                if (notchData.Count > 0 && count >= notchData.Count) break;
+                if (notchData.BottomAlign)
+                {
+                    handle.DrawLine(new Vector2(offset, PixelHeight), new Vector2(offset, PixelHeight - (PixelHeight * notchData.Height)), notchData.NotchColor);
+                }
+                else
+                {
+                    handle.DrawLine(new Vector2(offset, 0), new Vector2(offset, (PixelHeight * notchData.Height)), notchData.NotchColor);
+                }
             }
-            else
+        }
+        else
+        {
+            float unitHeight = PixelHeight / Capacity;
+            float notchHeight = notchData.Width * unitHeight;
+            int count = 0;
+
+            for (float offset = unitHeight * notchData.Offset; offset < PixelHeight; offset += notchHeight, count++)
             {
-                handle.DrawLine(new Vector2(offset, 0), new Vector2(offset, (PixelHeight * notchData.Height)), notchData.NotchColor);
+                if (notchData.Count > 0 && count >= notchData.Count)
+                    break;
+
+                if (notchData.BottomAlign)
+                {
+                    handle.DrawLine(
+                        new Vector2(PixelWidth, PixelHeight - offset),
+                        new Vector2(PixelWidth - PixelWidth * notchData.Height, PixelHeight - offset),
+                        notchData.NotchColor);
+                }
+                else
+                {
+                    handle.DrawLine(
+                        new Vector2(0, PixelHeight - offset),
+                        new Vector2(PixelWidth * notchData.Height, PixelHeight - offset),
+                        notchData.NotchColor);
+                }
             }
         }
 
@@ -198,7 +283,7 @@ public sealed class PlantAnalyzerHorizontalBar : Control
         return null;
     }
 
-    private bool TryHitNotch(Vector2 mousePos, float unitWidth, PlantAnalyzerHorizontalBarNotch notchData)
+    private bool TryHitNotch(Vector2 mousePos, float unitWidth, PlantAnalyzerBarNotch notchData)
     {
         var notchStep = notchData.Width * unitWidth;
 
@@ -234,7 +319,7 @@ public sealed class PlantAnalyzerHorizontalBar : Control
     {
         var text = TooltipText;
 
-        foreach (PlantAnalyzerHorizontalBarNotch notchData in Notches)
+        foreach (PlantAnalyzerBarNotch notchData in Notches)
         {
             if (string.IsNullOrWhiteSpace(notchData.TooltipText)) continue;
             float unitWidth = PixelWidth / Capacity;

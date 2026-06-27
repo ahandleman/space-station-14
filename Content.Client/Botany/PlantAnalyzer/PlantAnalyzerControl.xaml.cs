@@ -6,6 +6,8 @@ using Robust.Shared.Utility;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.Net.Quic;
+using SixLabors.ImageSharp.Formats.Tga;
 
 namespace Content.Client.Botany.PlantAnalyzer;
 
@@ -16,6 +18,11 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
     private static readonly Color BarGreen = new(0.20f, 0.80f, 0.25f);
     private static readonly Color BarYellow = new(1.00f, 0.78f, 0.18f);
     private static readonly Color BarRed = new(0.90f, 0.12f, 0.12f);
+    private static readonly Color BarBlue = new(0.00f, 0.62f, 0.86f);
+    private static readonly Color BarBrown = new(0.62f, 0.38f, 0.22f);
+    private static readonly Color BarMarkerBlue = new(0.40f, 0.80f, 1.00f, 0.85f);
+    private static readonly Color BarWarningMarker = new(1.00f, 0.05f, 0.10f, 0.95f);
+    private static readonly Color BarAcceptableMarker = new(0.20f, 0.80f, 0.25f, 0.95f);
     public PlantAnalyzerControl()
     {
         RobustXamlLoader.Load(this);
@@ -44,11 +51,6 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
 
         PlantNameLabel.SetMessage(plantName);
 
-        HealthLabel.Text = $"{state.Health:F1}";
-        AgeLabel.Text = $"{state.Age}";
-        DeadLabel.Text = YesNo(state.Dead);
-        HarvestLabel.Text = YesNo(state.Harvest);
-
         WaterLabel.Text = $"{state.WaterLevel:F1}";
         NutritionLabel.Text = $"{state.NutritionLevel:F1}";
         WeedsLabel.Text = $"{state.WeedLevel:F1}";
@@ -64,6 +66,8 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
 
         IdealHeatLabel.Text = $"{state.IdealHeat:F1}";
         HeatToleranceLabel.Text = $"{state.HeatTolerance:F1}";
+        PressureToleranceHighLabel.Text = $"{state.HighPressureTolerance:F1}";
+        PressureToleranceLowLabel.Text = $"{state.LowPressureTolerance:F1}";
         IdealLightLabel.Text = $"{state.IdealLight:F1}";
         LightToleranceLabel.Text = $"{state.LightTolerance:F1}";
 
@@ -71,7 +75,9 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         PopulateTraits(state);
         PopulateChemicals(state);
         PopulateOverviewBars(state);
+        PopulateConditionBars(state);
         PopulatePlantSprite(state);
+        PopulateThreatBars(state);
     }
 
     private void PopulatePlantSprite(PlantAnalyzerUiState state)
@@ -155,14 +161,15 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
                 ("age", $"{nextHarvestAge:0.#}"));
 
         AgeBar.SetData(
-            age,
             capacity,
-            color,
             Loc.GetString(
                 "plant-analyzer-age-bar-text",
                 ("age", $"{age:0.#}"),
                 ("limit", $"{lifespan:0.#}")),
-            tooltip);
+            tooltip,
+            true,
+            true);
+        AgeBar.AddBar(start: 0f, end: age, barColor: color);
         AgeBar.AddNotch(width: 1f, height: 0.2f, bottomAlign: true);
         AgeBar.AddNotch(width: 5f, height: 0.4f, bottomAlign: true);
         //Don't show next harvest if it's dead
@@ -237,13 +244,14 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
 
 
         HealthBar.SetData(
-            health,
             maxHealth,
-            color,
             healthText,
-            tooltip);
+            tooltip,
+            true,
+            true);
         if (!state.Dead)
         {
+            HealthBar.AddBar(start: 0f, end: health, barColor: color);
             HealthBar.AddNotch(width: 5f, height: 0.2f, bottomAlign: true);
             HealthBar.AddNotch(width: 10f, height: 0.4f, bottomAlign: true);
         }
@@ -251,6 +259,8 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         PopulateHealthIssues(state, health, unhealthyThreshold);
     }
 
+    private const float WaterWarningLevel = 10f;
+    private const float NutritionWarningLevel = 5f;
     private void PopulateHealthIssues(
     PlantAnalyzerUiState state,
     float health,
@@ -279,26 +289,17 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
             foundIssue = true;
         }
 
-        if (state.NutritionLevel <= 5)
+        if (state.NutritionLevel <= NutritionWarningLevel)
         {
             AddHealthIssue("plant-analyzer-health-issue-nutrients");
             foundIssue = true;
         }
 
-
-        if (state.WaterLevel <= 10)
+        if (state.WaterLevel <= WaterWarningLevel)
         {
             AddHealthIssue("plant-analyzer-health-issue-water");
             foundIssue = true;
         }
-
-
-        if (state.ImproperHeat)
-        {
-            AddHealthIssue("plant-analyzer-health-issue-improper-heat");
-            foundIssue = true;
-        }
-
 
         if (state.ImproperHeat)
         {
@@ -371,6 +372,379 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
             AddWarning(Loc.GetString("plant-analyzer-warning-missing-gas"));
     }
 
+    private const float TrayResourceCapacity = 100f;
+    private void PopulateConditionBars(PlantAnalyzerUiState state)
+    {
+        PopulateWaterBar(state);
+        PopulateNutritionBar(state);
+        PopulateTemperatureBar(state);
+        PopulatePressureBar(state);
+    }
+
+    private void PopulateWaterBar(PlantAnalyzerUiState state)
+    {
+        var water = MathHelper.Clamp(state.WaterLevel, 0f, TrayResourceCapacity);
+
+        WaterLevelBar.SetData(
+            TrayResourceCapacity,
+            $"{water:0.#}",
+            Loc.GetString(
+                "plant-analyzer-water-tooltip",
+                ("water", $"{water:0.#}"),
+                ("max", $"{TrayResourceCapacity:0.#}"),
+                ("warning", $"{WaterWarningLevel:0.#}")),
+            horizontal: false);
+
+        WaterLevelBar.AddBar(
+            start: 0f,
+            end: water,
+            barColor: BarBlue);
+
+        WaterLevelBar.AddNotch(
+            width: 5f,
+            height: 0.1f,
+            offset: 0f,
+            count: 0);
+
+        WaterLevelBar.AddNotch(
+            width: 10f,
+            height: 0.15f,
+            offset: 0f,
+            count: 0);
+
+        WaterLevelBar.AddNotch(
+            width: 5f,
+            height: 0.1f,
+            offset: 0f,
+            count: 0,
+            bottomAlign: true);
+
+        WaterLevelBar.AddNotch(
+            width: 10f,
+            height: 0.15f,
+            offset: 0f,
+            count: 0,
+            bottomAlign: true);
+
+
+        WaterLevelBar.AddNotch(
+            width: TrayResourceCapacity,
+            height: 1f,
+            offset: WaterWarningLevel,
+            count: 1,
+            notchColor: water > WaterWarningLevel ? BarAcceptableMarker : BarWarningMarker,
+            tooltipText: Loc.GetString(
+                "plant-analyzer-water-warning-marker",
+                ("warning", $"{WaterWarningLevel:0.#}")));
+    }
+
+    private void PopulateNutritionBar(PlantAnalyzerUiState state)
+    {
+        var nutrition = MathHelper.Clamp(state.NutritionLevel, 0f, TrayResourceCapacity);
+
+        NutritionLevelBar.SetData(
+            TrayResourceCapacity,
+            $"{nutrition:0.#}",
+            Loc.GetString(
+                "plant-analyzer-nutrition-tooltip",
+                ("nutrition", $"{nutrition:0.#}"),
+                ("max", $"{TrayResourceCapacity:0.#}"),
+                ("warning", $"{NutritionWarningLevel:0.#}")),
+            horizontal: false);
+
+        NutritionLevelBar.AddBar(
+            start: 0f,
+            end: nutrition,
+            barColor: BarBrown);
+
+        NutritionLevelBar.AddNotch(
+            width: 5f,
+            height: 0.1f,
+            offset: 0f,
+            count: 0);
+
+        NutritionLevelBar.AddNotch(
+            width: 10f,
+            height: 0.15f,
+            offset: 0f,
+            count: 0);
+
+        NutritionLevelBar.AddNotch(
+            width: 5f,
+            height: 0.1f,
+            offset: 0f,
+            count: 0,
+            bottomAlign: true);
+
+        NutritionLevelBar.AddNotch(
+            width: 10f,
+            height: 0.15f,
+            offset: 0f,
+            count: 0,
+            bottomAlign: true);
+
+        NutritionLevelBar.AddNotch(
+            width: TrayResourceCapacity,
+            height: 1f,
+            offset: NutritionWarningLevel,
+            count: 1,
+            notchColor: nutrition > NutritionWarningLevel ? BarAcceptableMarker : BarWarningMarker,
+            tooltipText: Loc.GetString(
+                "plant-analyzer-nutrition-warning-marker",
+                ("warning", $"{NutritionWarningLevel:0.#}")));
+    }
+
+    private void PopulateTemperatureBar(PlantAnalyzerUiState state)
+    {
+        // This assumes you add state.Temperature to PlantAnalyzerUiState.
+        // If you named it something else, swap this field.
+        var current = state.Temperature;
+
+        var ideal = state.IdealHeat;
+        var tolerance = state.HeatTolerance;
+
+        var safeMin = ideal - tolerance;
+        var safeMax = ideal + tolerance;
+
+        //padding so that we're never right on the edge of the bar
+        var padding = MathF.Max(10f, tolerance * 0.5f);
+
+        var displayMin = MathF.Min(safeMin - padding, current - padding);
+        var displayMax = MathF.Max(safeMax + padding, current + padding);
+        var capacity = MathF.Max(1f, displayMax - displayMin);
+
+        float ToBarValue(float value)
+        {
+            return MathHelper.Clamp(value, displayMin, displayMax) - displayMin;
+        }
+
+        TemperatureBar.SetData(
+            capacity,
+            Loc.GetString(
+                "plant-analyzer-temperature-bar-text",
+                ("temperature", $"{current:0.#}")),
+            Loc.GetString(
+                "plant-analyzer-temperature-tooltip",
+                ("temperature", $"{current:0.#}"),
+                ("ideal", $"{ideal:0.#}"),
+                ("tolerance", $"{tolerance:0.#}")),
+            horizontal: true);
+
+        TemperatureBar.AddBar(
+            start: 0f,
+            end: ToBarValue(safeMin),
+            barColor: BarRed);
+
+        TemperatureBar.AddBar(
+            start: ToBarValue(safeMin),
+            end: ToBarValue(safeMax),
+            barColor: BarGreen);
+
+        TemperatureBar.AddBar(
+            start: ToBarValue(safeMax),
+            end: capacity,
+            barColor: BarRed);
+
+        TemperatureBar.AddNotch(
+            width: 5f,
+            height: 0.2f,
+            bottomAlign: true);
+
+        TemperatureBar.AddNotch(
+            width: 10f,
+            height: 0.4f,
+            bottomAlign: true);
+
+        TemperatureBar.AddNotch(
+            width: capacity,
+            height: 1f,
+            offset: ToBarValue(current),
+            count: 1,
+            notchColor: BarMarkerBlue);
+    }
+
+    private void PopulatePressureBar(PlantAnalyzerUiState state)
+    {
+        var current = state.Pressure;
+
+        var safeMin = MathF.Max(0f, state.LowPressureTolerance);
+        var safeMax = MathF.Max(safeMin + 1f, state.HighPressureTolerance);
+
+        // Pad the display range so the red/green/red areas are readable.
+        var safeWidth = safeMax - safeMin;
+        var padding = MathF.Max(10f, safeWidth * 0.25f);
+
+        var displayMin = MathF.Max(0f, MathF.Min(safeMin - padding, current - padding));
+        var displayMax = MathF.Max(safeMax + padding, current + padding);
+        var capacity = MathF.Max(1f, displayMax - displayMin);
+
+        float ToBarValue(float value)
+        {
+            return MathHelper.Clamp(value, displayMin, displayMax) - displayMin;
+        }
+
+        PressureBar.SetData(
+            capacity,
+            Loc.GetString(
+                "plant-analyzer-pressure-bar-text",
+                ("pressure", $"{current:0.#}")),
+            Loc.GetString(
+                "plant-analyzer-pressure-tooltip",
+                ("pressure", $"{current:0.#}"),
+                ("min", $"{safeMin:0.#}"),
+                ("max", $"{safeMax:0.#}")),
+            horizontal: true);
+
+        // Low-pressure danger.
+        PressureBar.AddBar(
+            start: 0f,
+            end: ToBarValue(safeMin),
+            barColor: BarRed);
+
+        // Safe pressure range.
+        PressureBar.AddBar(
+            start: ToBarValue(safeMin),
+            end: ToBarValue(safeMax),
+            barColor: BarGreen);
+
+        // High-pressure danger.
+        PressureBar.AddBar(
+            start: ToBarValue(safeMax),
+            end: capacity,
+            barColor: BarRed);
+
+        PressureBar.AddNotch(
+            width: 5f,
+            height: 0.2f,
+            bottomAlign: true);
+
+        PressureBar.AddNotch(
+            width: 10f,
+            height: 0.4f,
+            bottomAlign: true);
+
+        // Current pressure marker.
+        PressureBar.AddNotch(
+            width: capacity,
+            height: 1f,
+            offset: ToBarValue(current),
+            count: 1,
+            notchColor: BarMarkerBlue);
+    }
+
+    private static readonly Color WeedColor = Color.FromHex("#B6F20D");
+    private static readonly Color PestColor = Color.FromHex("#FF7F27");
+    private static readonly Color ToxinColor = Color.FromHex("#A349A4");
+
+    private void PopulateThreatBars(PlantAnalyzerUiState state)
+    {
+        PopulateThreatBar(
+            WeedsBar,
+            state.WeedLevel,
+            10f,
+            state.WeedTolerance,
+            // Weed damage uses >= tolerance.
+            state.WeedLevel >= state.WeedTolerance,
+            WeedColor,
+            Loc.GetString("plant-analyzer-threat-kind-weeds"));
+
+        PopulateThreatBar(
+            PestsBar,
+            state.PestLevel,
+            10f,
+            state.PestTolerance,
+            // Pest damage uses > tolerance.
+            state.PestLevel > state.PestTolerance,
+            PestColor,
+            Loc.GetString("plant-analyzer-threat-kind-pests"));
+
+        PopulateThreatBar(
+            ToxinsBar,
+            state.Toxins,
+            100f,
+            state.ToxinsTolerance,
+            // Toxin damage uses > tolerance.
+            state.Toxins > state.ToxinsTolerance,
+            ToxinColor,
+            Loc.GetString("plant-analyzer-threat-kind-toxins"));
+    }
+
+    private void PopulateThreatBar(
+        PlantAnalyzerBar bar,
+        float value,
+        float maxValue,
+        float damageThreshold,
+        bool isDamaging,
+        Color color,
+        string kind)
+    {
+        value = MathHelper.Clamp(value, 0f, maxValue);
+        damageThreshold = MathHelper.Clamp(damageThreshold, 0f, maxValue);
+
+        string tooltip;
+
+        if (isDamaging)
+        {
+            tooltip = Loc.GetString("plant-analyzer-threat-tooltip-damaging", ("kind", kind));
+        }
+        else if (value > 0)
+        {
+            tooltip = Loc.GetString("plant-analyzer-threat-tooltip-present", ("kind", kind));
+        }
+        else
+        {
+            tooltip = Loc.GetString("plant-analyzer-threat-tooltip-none", ("kind", kind));
+        }
+
+        bar.SetData(
+            capacity: maxValue,
+            label: $"{value:0.#}",
+            tooltip: tooltip,
+            horizontal: false
+            );
+
+        bar.AddBar(
+            start: 0f,
+            end: value,
+            barColor: color);
+
+
+        bar.AddNotch(
+            width: maxValue / 5,
+            height: 0.15f,
+            offset: 0f,
+            count: 0);
+
+        bar.AddNotch(
+            width: maxValue / 20,
+            height: 0.1f,
+            offset: 0f,
+            count: 0);
+
+        bar.AddNotch(
+            width: maxValue / 5,
+            height: 0.15f,
+            offset: 0f,
+            count: 0,
+            bottomAlign: true);
+
+        bar.AddNotch(
+            width: maxValue / 20,
+            height: 0.1f,
+            offset: 0f,
+            count: 0,
+            bottomAlign: true);
+
+        bar.Notches.Add(new PlantAnalyzerBarNotch(
+            width: maxValue,
+            height: 1f,
+            offset: damageThreshold,
+            count: 1,
+            notchColor: isDamaging ? BarWarningMarker : BarAcceptableMarker,
+            tooltipText: Loc.GetString(
+                "plant-analyzer-threat-tolerance-marker",
+                ("value", $"{damageThreshold:0.#}"))));
+    }
     private void PopulateTraits(PlantAnalyzerUiState state)
     {
         TraitsContainer.RemoveAllChildren();

@@ -82,6 +82,8 @@ public sealed class PlantAnalyzerUiState : BoundUserInterfaceState
 
     public float IdealHeat;
     public float HeatTolerance;
+    public float Temperature;
+    public float Pressure;
     public float IdealLight;
     public float LightTolerance;
     public float LowPressureTolerance;

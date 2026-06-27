@@ -61,7 +61,7 @@
                     StyleClasses="LabelSubText"
                     Margin="0 0 0 2" />
 
-                <plantAnalyzer:PlantAnalyzerHorizontalBar
+                <plantAnalyzer:PlantAnalyzerBar
                     Name="HealthBar"
                     MinHeight="24"
                     MaxHeight="24"
@@ -86,7 +86,7 @@
                 StyleClasses="LabelSubText"
                 Margin="0 0 0 2" />
 
-            <plantAnalyzer:PlantAnalyzerHorizontalBar
+            <plantAnalyzer:PlantAnalyzerBar
                 Name="AgeBar"
                 MinHeight="24"
                 MaxHeight="24"
@@ -102,22 +102,186 @@
             StyleClasses="LabelHeading"
             Margin="0 5 0 2" />
 
-        <GridContainer Columns="2">
-            <Label Text="{Loc 'plant-analyzer-label-health'}" />
-            <Label Name="HealthLabel" />
+        <GridContainer Columns="3" Margin="0 0 0 6">
 
-            <Label Text="{Loc 'plant-analyzer-label-age'}" />
-            <Label Name="AgeLabel" />
+            <BoxContainer Orientation="Vertical" Margin="0 0 6 0">
+                <Label
+                    Text="{Loc 'plant-analyzer-label-water'}"
+                    HorizontalAlignment="Center"
+                    StyleClasses="LabelSubText" />
 
-            <Label Text="{Loc 'plant-analyzer-label-dead'}" />
-            <Label Name="DeadLabel" />
+                <plantAnalyzer:PlantAnalyzerBar
+                    Name="WaterLevelBar"
+                    MinWidth="56"
+                    MaxWidth="56"
+                    MinHeight="96"
+                    MaxHeight="96"
+                    HorizontalAlignment="Center" />
+            </BoxContainer>
 
-            <Label Text="{Loc 'plant-analyzer-label-harvest-ready'}" />
-            <Label Name="HarvestLabel" />
+            <BoxContainer
+                Orientation="Vertical"
+                HorizontalExpand="True"
+                Margin="0 0 6 0">
+
+                <Label
+                    Text="{Loc 'plant-analyzer-label-temperature'}"
+                    HorizontalAlignment="Center"
+                    StyleClasses="LabelSubText" />
+
+                <plantAnalyzer:PlantAnalyzerBar
+                    Name="TemperatureBar"
+                    MinHeight="24"
+                    MaxHeight="24"
+                    HorizontalExpand="True"
+                    Margin="0 10 0 0" />
+
+                <Label
+                    Text="{Loc 'plant-analyzer-label-pressure'}"
+                    HorizontalAlignment="Center"
+                    StyleClasses="LabelSubText"
+                    Margin="0 6 0 0" />
+
+                <plantAnalyzer:PlantAnalyzerBar
+                    Name="PressureBar"
+                    MinHeight="24"
+                    MaxHeight="24"
+                    HorizontalExpand="True"
+                    Margin="0 2 0 0" />
+            </BoxContainer>
+
+            <BoxContainer Orientation="Vertical">
+                <Label
+                    Text="{Loc 'plant-analyzer-label-nutrition'}"
+                    HorizontalAlignment="Center"
+                    StyleClasses="LabelSubText" />
+
+                <plantAnalyzer:PlantAnalyzerBar
+                    Name="NutritionLevelBar"
+                    MinWidth="56"
+                    MaxWidth="56"
+                    MinHeight="96"
+                    MaxHeight="96"
+                    HorizontalAlignment="Center" />
+            </BoxContainer>
+
         </GridContainer>
-
         <PanelContainer StyleClasses="LowDivider" Margin="0 5 0 0" />
 
+        <Label
+            Text="{Loc 'plant-analyzer-section-threats'}"
+            StyleClasses="LabelHeading"
+            Margin="0 5 0 2" />
+
+        <BoxContainer
+            Orientation="Horizontal"
+            HorizontalExpand="True"
+            Margin="0 8 0 8">
+
+            <!-- Weeds / Pests / Toxins -->
+            <BoxContainer
+                Orientation="Horizontal"
+                Margin="0 0 12 0">
+
+                <BoxContainer
+                    Orientation="Vertical"
+                    MinWidth="56"
+                    Margin="0 0 6 0">
+
+                    <Label
+                        Text="{Loc 'plant-analyzer-label-weeds'}"
+                        StyleClasses="LabelSubText"
+                        HorizontalAlignment="Center" />
+
+                    <plantAnalyzer:PlantAnalyzerBar
+                        Name="WeedsBar"
+                        MinWidth="52"
+                        MinHeight="108"
+                        MaxWidth="52"
+                        MaxHeight="108" />
+                </BoxContainer>
+
+                <BoxContainer
+                    Orientation="Vertical"
+                    MinWidth="56"
+                    Margin="0 0 6 0">
+
+                    <Label
+                        Text="{Loc 'plant-analyzer-label-pests'}"
+                        StyleClasses="LabelSubText"
+                        HorizontalAlignment="Center" />
+
+                    <plantAnalyzer:PlantAnalyzerBar
+                        Name="PestsBar"
+                        MinWidth="52"
+                        MinHeight="108"
+                        MaxWidth="52"
+                        MaxHeight="108" />
+                </BoxContainer>
+
+                <BoxContainer
+                    Orientation="Vertical"
+                    MinWidth="56">
+
+                    <Label
+                        Text="{Loc 'plant-analyzer-label-toxins'}"
+                        StyleClasses="LabelSubText"
+                        HorizontalAlignment="Center" />
+
+                    <plantAnalyzer:PlantAnalyzerBar
+                        Name="ToxinsBar"
+                        MinWidth="52"
+                        MinHeight="108"
+                        MaxWidth="52"
+                        MaxHeight="108" />
+                </BoxContainer>
+            </BoxContainer>
+
+            <!-- Gases emitted placeholder -->
+            <PanelContainer
+                MinWidth="40"
+                MinHeight="108"
+                Margin="0 14 12 0">
+
+                <BoxContainer
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+                    <Label
+                        Text="{Loc 'plant-analyzer-section-gases-emitted'}"
+                        HorizontalAlignment="Center" />
+
+                    <Label
+                        Text="{Loc 'plant-analyzer-placeholder-empty'}"
+                        StyleClasses="LabelSubText"
+                        HorizontalAlignment="Center" />
+                </BoxContainer>
+            </PanelContainer>
+
+            <!-- Gases consumed placeholder -->
+            <PanelContainer
+                MinWidth="40"
+                MinHeight="108"
+                HorizontalExpand="True"
+                Margin="0 14 0 0">
+
+                <BoxContainer
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+                    <Label
+                        Text="{Loc 'plant-analyzer-section-gases-consumed'}"
+                        HorizontalAlignment="Center" />
+
+                    <Label
+                        Text="{Loc 'plant-analyzer-placeholder-empty'}"
+                        StyleClasses="LabelSubText"
+                        HorizontalAlignment="Center" />
+                </BoxContainer>
+            </PanelContainer>
+        </BoxContainer>
         <Label
             Text="{Loc 'plant-analyzer-section-growth'}"
             StyleClasses="LabelHeading"
@@ -180,6 +344,12 @@
 
             <Label Text="{Loc 'plant-analyzer-label-heat-tolerance'}" />
             <Label Name="HeatToleranceLabel" />
+
+            <Label Text="Pressure Tolerance Low" />
+            <Label Name="PressureToleranceLowLabel" />
+
+            <Label Text="Pressure Tolerance High" />
+            <Label Name="PressureToleranceHighLabel" />
 
             <Label Text="{Loc 'plant-analyzer-label-ideal-light'}" />
             <Label Name="IdealLightLabel" />
