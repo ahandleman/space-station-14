@@ -7,28 +7,61 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Botany.PlantAnalyzer;
 
+
+public sealed class PlantAnalyzerBarNotch
+{
+    //How often to generate the marker
+    public float Width;
+    //How tall the marker should be
+    public float Height;
+    //Whether to place the marker on the top or bottom.
+    public bool BottomAlign;
+    //How much the initial offset should be
+    public float Offset;
+    //How many of the marker to generate.  0 to fill the bar.
+    public int Count;
+    //Set default notch to white
+    public Color NotchColor = new(1f, 1f, 1f, 0.25f);
+    public string TooltipText;
+
+    public PlantAnalyzerBarNotch(
+        float width = 1f,
+        float height = 1f,
+        float offset = 0,
+        bool bottomAlign = false,
+        int count = 0,
+        Color? notchColor = null,
+        string tooltipText = "")
+    {
+        Width = width;
+        Height = height;
+        Offset = offset;
+        BottomAlign = bottomAlign;
+        Count = count;
+        NotchColor = notchColor ?? new Color(1f, 1f, 1f, 0.25f);
+        TooltipText = tooltipText;
+    }
+}
+
+
 public sealed class PlantAnalyzerBar : Control
 {
+
     private readonly Label _label;
 
     public float Value;
     public float Capacity = 100f;
-
-    public int LargeNotchWidth = 5;
-    public int SmallNotchWidth = 1;
-    public bool HasMarker;
-    public float MarkerValue;
-    public Color MarkerColor = Color.White;
-    public string? MarkerTooltipText;
     public Color BarColor = new(0.2f, 0.8f, 0.25f);
     public Color BackgroundColor = new(0.1f, 0.1f, 0.1f);
     public Color BorderColor = new(1f, 1f, 1f, 0.20f);
-    public Color NotchColor = new(1f, 1f, 1f, 0.25f);
 
-    public string? TooltipText;
+    public string? TooltipText = null;
+
+    public List<PlantAnalyzerBarNotch> Notches = new();
 
     public PlantAnalyzerBar()
     {
+
         MouseFilter = MouseFilterMode.Pass;
         TooltipSupplier = SupplyTooltip;
 
@@ -47,23 +80,36 @@ public sealed class PlantAnalyzerBar : Control
         float capacity,
         Color color,
         string label,
-        string? tooltip = null,
-        float? markerValue = null,
-        string? markerTooltip = null)
+        string? tooltip = null)
     {
         Value = value;
         Capacity = MathF.Max(1f, capacity);
         BarColor = color;
         TooltipText = tooltip;
 
-        HasMarker = markerValue != null;
-        MarkerValue = markerValue ?? 0f;
-        MarkerTooltipText = markerTooltip;
-
         _label.Text = label;
 
         InvalidateMeasure();
         InvalidateArrange();
+    }
+
+    public void AddNotch(
+        float width = 1f,
+        float height = 1f,
+        float offset = 0,
+        bool bottomAlign = false,
+        int count = 0,
+        Color? notchColor = null,
+        string tooltipText = "")
+    {
+        Notches.Add(new PlantAnalyzerBarNotch(
+            width,
+            height,
+            offset,
+            bottomAlign,
+            count,
+            notchColor,
+            tooltipText));
     }
 
     protected override void Draw(DrawingHandleScreen handle)
@@ -79,40 +125,34 @@ public sealed class PlantAnalyzerBar : Control
             handle.DrawRect(new UIBox2(0, 0, fillWidth, PixelHeight), BarColor);
         }
 
-        if (HasMarker && MarkerValue >= 0f && MarkerValue <= Capacity)
-        {
-            var markerX = PixelWidth * MathHelper.Clamp01(MarkerValue / Capacity);
-
-            // Small shadow so the white marker is readable on yellow/green/red.
-            handle.DrawLine(
-                new Vector2(markerX + 1, 0),
-                new Vector2(markerX + 1, PixelHeight),
-                Color.Black);
-
-            handle.DrawLine(
-                new Vector2(markerX, 0),
-                new Vector2(markerX, PixelHeight),
-                MarkerColor);
-        }
-
         // Border.
         handle.DrawLine(new Vector2(0, 0), new Vector2(PixelWidth, 0), BorderColor);
         handle.DrawLine(new Vector2(0, PixelHeight), new Vector2(PixelWidth, PixelHeight), BorderColor);
         handle.DrawLine(new Vector2(0, 0), new Vector2(0, PixelHeight), BorderColor);
         handle.DrawLine(new Vector2(PixelWidth, 0), new Vector2(PixelWidth, PixelHeight), BorderColor);
 
-        DrawNotches(handle, SmallNotchWidth, PixelHeight / 5);
-        DrawNotches(handle, LargeNotchWidth, PixelHeight / 3);
-
+        foreach (PlantAnalyzerBarNotch notchData in Notches)
+        {
+            DrawNotches(handle, notchData);
+        }
     }
 
-    private void DrawNotches(DrawingHandleScreen handle, int width, int height)
+    private void DrawNotches(DrawingHandleScreen handle, PlantAnalyzerBarNotch notchData)
     {
         float unitWidth = PixelWidth / Capacity;
-        float notchWidth = width * unitWidth;
-        for (float offset = notchWidth; offset < PixelWidth; offset += notchWidth)
+        float notchWidth = notchData.Width * unitWidth;
+        int count = 0;
+        for (float offset = notchData.Offset; offset < PixelWidth; offset += notchWidth, count++)
         {
-            handle.DrawLine(new Vector2(offset, PixelHeight), new Vector2(offset, PixelHeight - height), NotchColor);
+            if (notchData.Count > 0 && count >= notchData.Count) break;
+            if (notchData.BottomAlign)
+            {
+                handle.DrawLine(new Vector2(offset, PixelHeight), new Vector2(offset, PixelHeight - (PixelHeight * notchData.Height)), notchData.NotchColor);
+            }
+            else
+            {
+                handle.DrawLine(new Vector2(offset, 0), new Vector2(offset, (PixelHeight * notchData.Height)), notchData.NotchColor);
+            }
         }
 
     }
@@ -127,16 +167,17 @@ public sealed class PlantAnalyzerBar : Control
     {
         var text = TooltipText;
 
-        if (HasMarker && !string.IsNullOrWhiteSpace(MarkerTooltipText))
-        {
-            var globalMousePos = UserInterfaceManager.MousePositionScaled.Position;
-            var mousePos = globalMousePos - GlobalPosition;
 
-            var markerX = PixelWidth * MathHelper.Clamp01(MarkerValue / Capacity);
+        // if (HasMarker && !string.IsNullOrWhiteSpace(MarkerTooltipText))
+        // {
+        //     var globalMousePos = UserInterfaceManager.MousePositionScaled.Position;
+        //     var mousePos = globalMousePos - GlobalPosition;
 
-            if (MathF.Abs(mousePos.X - markerX) <= 4f)
-                text = MarkerTooltipText;
-        }
+        //     var markerX = PixelWidth * MathHelper.Clamp01(MarkerValue / Capacity);
+
+        //     if (MathF.Abs(mousePos.X - markerX) <= 4f)
+        //         text = MarkerTooltipText;
+        // }
 
         if (string.IsNullOrWhiteSpace(text))
             return null;

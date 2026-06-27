@@ -82,7 +82,7 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         Color color;
         string status;
         string tooltip;
-        float capacity = lifespan;
+        float capacity = MathF.Max(lifespan, age + 10f);
 
         if (age > lifespan)
         {
@@ -109,17 +109,20 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
                 ("maturation", $"{maturation:0.#}"));
         }
 
+        if (state.Dead)
+        {
+            color = BarRed;
+            capacity = lifespan;
+        }
 
         AgeStatusLabel.Text = status;
 
-        var nextHarvestAge = GetNextHarvestAge(state);
-        var markerTooltip = nextHarvestAge != null
-            ? Loc.GetString(
+        float nextHarvestAge = GetNextHarvestAge(state) ?? capacity;
+        var markerTooltip = Loc.GetString(
                 state.Harvest
                     ? "plant-analyzer-age-tooltip-harvest-ready"
                     : "plant-analyzer-age-tooltip-next-harvest",
-                ("age", $"{nextHarvestAge.Value:0.#}"))
-            : null;
+                ("age", $"{nextHarvestAge:0.#}"));
 
         AgeBar.SetData(
             age,
@@ -128,10 +131,12 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
             Loc.GetString(
                 "plant-analyzer-age-bar-text",
                 ("age", $"{age:0.#}"),
-                ("limit", $"{capacity:0.#}")),
-            tooltip,
-            nextHarvestAge,
-            markerTooltip);
+                ("limit", $"{lifespan:0.#}")),
+            tooltip);
+        AgeBar.AddNotch(width: 1f, height: 0.2f, bottomAlign: true);
+        AgeBar.AddNotch(width: 5f, height: 0.4f, bottomAlign: true);
+        //Don't show next harvest if it's dead
+        if (!state.Dead) AgeBar.AddNotch(width: state.Production, height: 1f, offset: nextHarvestAge, bottomAlign: true, count: 1, notchColor: new Color(1f, 1f, 1f, 0.25f), markerTooltip);
     }
 
     private void PopulateHealthBar(PlantAnalyzerUiState state)
@@ -140,7 +145,7 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         var health = MathHelper.Clamp(state.Health, 0f, maxHealth);
         var unhealthyThreshold = maxHealth / 2f;
 
-        var isUnhealthy = state.Dead || health <= unhealthyThreshold;
+        var isUnhealthy = health <= unhealthyThreshold;
 
         var isStressed =
             !state.Viable ||
@@ -156,13 +161,24 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         Color color;
         string status;
         string tooltip;
+        string healthText = Loc.GetString("plant-analyzer-health-bar-text",
+                                            ("health", $"{health:0.#}"),
+                                            ("maxHealth", $"{maxHealth:0.#}"));
 
-        if (isStressed)
+        if (state.Dead)
+        {
+            color = BarRed;
+            status = Loc.GetString("plant-analyzer-health-dead");
+            tooltip = Loc.GetString("plant-analyzer-health-tooltip-dead");
+            healthText = Loc.GetString("plant-analyzer-health-dead");
+        }
+        else if (isStressed)
         {
             color = isUnhealthy ? BarRed : BarYellow;
             status = Loc.GetString("plant-analyzer-health-stressed");
             tooltip = Loc.GetString("plant-analyzer-health-tooltip-stressed");
-        } else if (isUnhealthy)
+        }
+        else if (isUnhealthy)
         {
             color = BarRed;
             status = Loc.GetString("plant-analyzer-health-stressed");
@@ -177,15 +193,19 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
 
         HealthStatusLabel.Text = status;
 
+
         HealthBar.SetData(
             health,
             maxHealth,
             color,
-            Loc.GetString(
-                "plant-analyzer-health-bar-text",
-                ("health", $"{health:0.#}"),
-                ("maxHealth", $"{maxHealth:0.#}")),
+            healthText,
             tooltip);
+        if (!state.Dead)
+        {
+            HealthBar.AddNotch(width: 1f, height: 0.2f, bottomAlign: true);
+            HealthBar.AddNotch(width: 5f, height: 0.4f, bottomAlign: true);
+        }
+
         PopulateHealthIssues(state, health, unhealthyThreshold);
     }
 

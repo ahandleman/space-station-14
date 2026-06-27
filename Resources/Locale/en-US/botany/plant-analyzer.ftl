@@ -90,10 +90,12 @@ plant-analyzer-age-tooltip-old = This plant has aged past its lifespan of {$life
 plant-analyzer-health-healthy = Healthy
 plant-analyzer-health-stressed = Stressed
 plant-analyzer-health-unhealthy = Unhealthy
+plant-analyzer-health-dead = Dead
 plant-analyzer-health-bar-text = Health: {$health} / {$maxHealth}
 plant-analyzer-health-tooltip-healthy = The plant is healthy.
 plant-analyzer-health-tooltip-stressed = The plant is stressed by genetics, weeds, or environment.
-plant-analyzer-health-tooltip-unhealthy = The plant is below its unhealthy threshold of {$threshold}.
+plant-analyzer-health-tooltip-unhealthy = The plant is unhealthy.
+plant-analyzer-health-tooltip-dead = The plant is dead.
 
 plant-analyzer-age-next-harvest-marker = Next harvest
 plant-analyzer-age-tooltip-next-harvest = Next harvest at age {$age}.
