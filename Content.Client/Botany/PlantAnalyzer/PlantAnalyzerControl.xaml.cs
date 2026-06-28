@@ -49,29 +49,6 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
 
         PlantNameLabel.SetMessage(plantName);
 
-        WaterLabel.Text = $"{state.WaterLevel:F1}";
-        NutritionLabel.Text = $"{state.NutritionLevel:F1}";
-        WeedsLabel.Text = $"{state.WeedLevel:F1}";
-        PestsLabel.Text = $"{state.PestLevel:F1}";
-        ToxinsLabel.Text = $"{state.Toxins:F1}";
-
-        YieldLabel.Text = $"{state.Yield}";
-        PotencyLabel.Text = $"{state.Potency:F1}";
-        EnduranceLabel.Text = $"{state.Endurance:F1}";
-        LifespanLabel.Text = $"{state.Lifespan:F1}";
-        MaturationLabel.Text = $"{state.Maturation:F1}";
-        ProductionLabel.Text = $"{state.Production:F1}";
-
-        IdealHeatLabel.Text = $"{state.IdealHeat:F1}";
-        HeatToleranceLabel.Text = $"{state.HeatTolerance:F1}";
-        PressureToleranceHighLabel.Text = $"{state.HighPressureTolerance:F1}";
-        PressureToleranceLowLabel.Text = $"{state.LowPressureTolerance:F1}";
-        IdealLightLabel.Text = $"{state.IdealLight:F1}";
-        LightToleranceLabel.Text = $"{state.LightTolerance:F1}";
-
-        PopulateWarnings(state);
-        PopulateTraits(state);
-        PopulateChemicals(state);
         PopulateOverviewBars(state);
         PopulateConditionBars(state);
         PopulatePlantSprite(state);
@@ -355,22 +332,6 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
             Text = $"{prefix}{Loc.GetString(locId)}",
             StyleClasses = { "LabelSubText" },
         });
-    }
-    private void PopulateWarnings(PlantAnalyzerUiState state)
-    {
-        WarningsContainer.RemoveAllChildren();
-
-        if (state.ImproperHeat)
-            AddWarning(Loc.GetString("plant-analyzer-warning-improper-heat"));
-
-        if (state.ImproperPressure)
-            AddWarning(Loc.GetString("plant-analyzer-warning-improper-pressure"));
-
-        if (state.ImproperLight)
-            AddWarning(Loc.GetString("plant-analyzer-warning-improper-light"));
-
-        if (state.MissingGas != 0)
-            AddWarning(Loc.GetString("plant-analyzer-warning-missing-gas"));
     }
 
     private const float TrayResourceCapacity = 100f;
@@ -778,58 +739,7 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
                 "plant-analyzer-threat-tolerance-marker",
                 ("value", $"{damageThreshold:0.#}"))));
     }
-    private void PopulateTraits(PlantAnalyzerUiState state)
-    {
-        TraitsContainer.RemoveAllChildren();
 
-        AddTrait(state.Viable
-            ? Loc.GetString("plant-analyzer-trait-viable")
-            : Loc.GetString("plant-analyzer-trait-nonviable"));
-
-        if (state.Seedless)
-            AddTrait(Loc.GetString("plant-analyzer-trait-seedless"));
-
-        if (state.Ligneous)
-            AddTrait(Loc.GetString("plant-analyzer-trait-ligneous"));
-
-        if (state.TurnIntoKudzu)
-            AddTrait(Loc.GetString("plant-analyzer-trait-kudzu"));
-
-        if (state.CanScream)
-            AddTrait(Loc.GetString("plant-analyzer-trait-screaming"));
-
-        foreach (var mutation in state.Mutations)
-            AddTrait(mutation);
-
-        if (TraitsContainer.ChildCount == 0)
-            AddTrait(Loc.GetString("plant-analyzer-trait-none"));
-    }
-
-    private void PopulateChemicals(PlantAnalyzerUiState state)
-    {
-        ChemicalsGrid.RemoveAllChildren();
-
-        ChemicalsGrid.AddChild(new Label { Text = Loc.GetString("plant-analyzer-label-chemical") });
-        ChemicalsGrid.AddChild(new Label { Text = Loc.GetString("plant-analyzer-label-chemical-current") });
-        ChemicalsGrid.AddChild(new Label { Text = Loc.GetString("plant-analyzer-label-chemical-min") });
-        ChemicalsGrid.AddChild(new Label { Text = Loc.GetString("plant-analyzer-label-chemical-max") });
-        ChemicalsGrid.AddChild(new Label { Text = Loc.GetString("plant-analyzer-label-chemical-potency-divisor") });
-
-        if (state.Chemicals.Count == 0)
-        {
-            ChemicalsGrid.AddChild(new Label { Text = Loc.GetString("plant-analyzer-chemical-none") });
-            return;
-        }
-
-        foreach (var chem in state.Chemicals)
-        {
-            ChemicalsGrid.AddChild(new Label { Text = chem.Reagent });
-            ChemicalsGrid.AddChild(new Label { Text = $"{chem.CurrentAmount:F2}" });
-            ChemicalsGrid.AddChild(new Label { Text = $"{chem.Min:F2}" });
-            ChemicalsGrid.AddChild(new Label { Text = $"{chem.Max:F2}" });
-            ChemicalsGrid.AddChild(new Label { Text = $"{chem.PotencyDivisor:F2}" });
-        }
-    }
 
     private void PopulatePlantChemicals(PlantAnalyzerUiState state)
     {
@@ -932,22 +842,6 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         {
             Text = text,
             StyleClasses = { "LabelSubText" },
-        });
-    }
-
-    private void AddWarning(string text)
-    {
-        WarningsContainer.AddChild(new Label
-        {
-            Text = $"⚠ {text}",
-        });
-    }
-
-    private void AddTrait(string text)
-    {
-        TraitsContainer.AddChild(new Label
-        {
-            Text = $"• {text}",
         });
     }
 
