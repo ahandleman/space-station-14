@@ -18,9 +18,7 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
     private static readonly Color BarGreen = new(0.20f, 0.80f, 0.25f);
     private static readonly Color BarYellow = new(1.00f, 0.78f, 0.18f);
     private static readonly Color BarRed = new(0.90f, 0.12f, 0.12f);
-    private static readonly Color BarBlue = new(0.00f, 0.62f, 0.86f);
-    private static readonly Color BarBrown = new(0.62f, 0.38f, 0.22f);
-    private static readonly Color BarMarkerBlue = new(0.40f, 0.80f, 1.00f, 0.85f);
+    private static readonly Color BarMarkerCurrent = new(0.40f, 0.80f, 1.00f, 0.85f);
     private static readonly Color BarWarningMarker = new(1.00f, 0.05f, 0.10f, 0.95f);
     private static readonly Color BarAcceptableMarker = new(0.20f, 0.80f, 0.25f, 0.95f);
     public PlantAnalyzerControl()
@@ -78,6 +76,9 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         PopulateConditionBars(state);
         PopulatePlantSprite(state);
         PopulateThreatBars(state);
+        PopulatePlantChemicals(state);
+        PopulateTrayChemicals(state);
+        PopulateMiscMutations(state);
     }
 
     private void PopulatePlantSprite(PlantAnalyzerUiState state)
@@ -380,6 +381,7 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         PopulateTemperatureBar(state);
         PopulatePressureBar(state);
     }
+    private static readonly Color BarColorWater = Color.FromHex("#009EDB");
 
     private void PopulateWaterBar(PlantAnalyzerUiState state)
     {
@@ -398,7 +400,7 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         WaterLevelBar.AddBar(
             start: 0f,
             end: water,
-            barColor: BarBlue);
+            barColor: BarColorWater);
 
         WaterLevelBar.AddNotch(
             width: 5f,
@@ -438,6 +440,8 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
                 ("warning", $"{WaterWarningLevel:0.#}")));
     }
 
+    private static readonly Color BarColorNutrition = Color.FromHex("#9E6138");
+
     private void PopulateNutritionBar(PlantAnalyzerUiState state)
     {
         var nutrition = MathHelper.Clamp(state.NutritionLevel, 0f, TrayResourceCapacity);
@@ -455,7 +459,7 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         NutritionLevelBar.AddBar(
             start: 0f,
             end: nutrition,
-            barColor: BarBrown);
+            barColor: BarColorNutrition);
 
         NutritionLevelBar.AddNotch(
             width: 5f,
@@ -496,8 +500,21 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
 
     private void PopulateTemperatureBar(PlantAnalyzerUiState state)
     {
-        // This assumes you add state.Temperature to PlantAnalyzerUiState.
-        // If you named it something else, swap this field.
+        //If we're under the temp of a spaced room, we're impossibly cold and need to just ignore the values because it hasn't read the temperature yet.
+        //This happens with plants of age 1.
+        if (state.Age <= 1)
+        {
+            TemperatureBar.SetData(
+                1f,
+                Loc.GetString(
+                    "plant-analyzer-error"),
+                Loc.GetString(
+                    "plant-analyzer-error-plant-too-young"
+                )
+            );
+            return;
+        }
+
         var current = state.Temperature;
 
         var ideal = state.IdealHeat;
@@ -519,11 +536,11 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
         }
 
         TemperatureBar.SetData(
-            capacity,
-            Loc.GetString(
+            capacity: capacity,
+            label: Loc.GetString(
                 "plant-analyzer-temperature-bar-text",
                 ("temperature", $"{current:0.#}")),
-            Loc.GetString(
+            tooltip: Loc.GetString(
                 "plant-analyzer-temperature-tooltip",
                 ("temperature", $"{current:0.#}"),
                 ("ideal", $"{ideal:0.#}"),
@@ -560,17 +577,32 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
             height: 1f,
             offset: ToBarValue(current),
             count: 1,
-            notchColor: BarMarkerBlue);
+            notchColor: BarMarkerCurrent
+    );
     }
 
     private void PopulatePressureBar(PlantAnalyzerUiState state)
     {
+
+        if (state.Age <= 1)
+        {
+            PressureBar.SetData(
+                1f,
+                Loc.GetString(
+                    "plant-analyzer-error"),
+                Loc.GetString(
+                    "plant-analyzer-error-plant-too-young"
+                )
+            );
+            return;
+        }
+
         var current = state.Pressure;
 
         var safeMin = MathF.Max(0f, state.LowPressureTolerance);
         var safeMax = MathF.Max(safeMin + 1f, state.HighPressureTolerance);
 
-        // Pad the display range so the red/green/red areas are readable.
+        //padding so that we're never right on the edge of the bar
         var safeWidth = safeMax - safeMin;
         var padding = MathF.Max(10f, safeWidth * 0.25f);
 
@@ -629,7 +661,8 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
             height: 1f,
             offset: ToBarValue(current),
             count: 1,
-            notchColor: BarMarkerBlue);
+            notchColor: BarMarkerCurrent
+    );
     }
 
     private static readonly Color WeedColor = Color.FromHex("#B6F20D");
@@ -796,6 +829,110 @@ public sealed partial class PlantAnalyzerControl : BoxContainer
             ChemicalsGrid.AddChild(new Label { Text = $"{chem.Max:F2}" });
             ChemicalsGrid.AddChild(new Label { Text = $"{chem.PotencyDivisor:F2}" });
         }
+    }
+
+    private void PopulatePlantChemicals(PlantAnalyzerUiState state)
+    {
+        PlantChemicalsContainer.RemoveAllChildren();
+
+        if (state.Chemicals.Count == 0)
+        {
+            AddSubText(PlantChemicalsContainer, Loc.GetString("plant-analyzer-chem-none"));
+            return;
+        }
+
+        foreach (var chem in state.Chemicals)
+        {
+            AddSubText(
+                PlantChemicalsContainer,
+                Loc.GetString(
+                    "plant-analyzer-chem",
+                    ("reagent", chem.Reagent),
+                    ("amount", $"{chem.CurrentAmount:0.##}")));
+        }
+    }
+
+    private void PopulateTrayChemicals(PlantAnalyzerUiState state)
+    {
+        TrayChemicalsContainer.RemoveAllChildren();
+
+        if (state.TrayChemicals.Count == 0)
+        {
+            AddSubText(TrayChemicalsContainer, Loc.GetString("plant-analyzer-chem-none"));
+            return;
+        }
+
+        foreach (var chem in state.TrayChemicals)
+        {
+            AddSubText(
+                TrayChemicalsContainer,
+                Loc.GetString(
+                    "plant-analyzer-chem",
+                    ("reagent", chem.Reagent),
+                    ("amount", $"{chem.Quantity:0.##}")));
+        }
+    }
+
+    private void PopulateMiscMutations(PlantAnalyzerUiState state)
+    {
+        MiscMutationsContainer.RemoveAllChildren();
+
+        var found = false;
+
+        if (!state.Viable)
+        {
+            AddMutation(Loc.GetString("plant-analyzer-trait-nonviable"));
+            found = true;
+        }
+
+        if (state.Seedless)
+        {
+            AddMutation(Loc.GetString("plant-analyzer-trait-seedless"));
+            found = true;
+        }
+
+        if (state.Ligneous)
+        {
+            AddMutation(Loc.GetString("plant-analyzer-trait-ligneous"));
+            found = true;
+        }
+
+        if (state.TurnIntoKudzu)
+        {
+            AddMutation(Loc.GetString("plant-analyzer-trait-kudzu"));
+            found = true;
+        }
+
+        if (state.CanScream)
+        {
+            AddMutation(Loc.GetString("plant-analyzer-trait-screaming"));
+            found = true;
+        }
+
+        foreach (var mutation in state.Mutations)
+        {
+            AddMutation(mutation);
+            found = true;
+        }
+
+        if (!found)
+            AddSubText(MiscMutationsContainer, Loc.GetString("plant-analyzer-mutation-none"));
+    }
+
+    private void AddMutation(string mutation)
+    {
+        AddSubText(
+            MiscMutationsContainer,
+            Loc.GetString("plant-analyzer-mutation-entry", ("mutation", mutation)));
+    }
+
+    private static void AddSubText(BoxContainer container, string text)
+    {
+        container.AddChild(new Label
+        {
+            Text = text,
+            StyleClasses = { "LabelSubText" },
+        });
     }
 
     private void AddWarning(string text)

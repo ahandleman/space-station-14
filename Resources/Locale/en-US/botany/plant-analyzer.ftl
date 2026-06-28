@@ -125,6 +125,8 @@ plant-analyzer-nutrition-warning-marker = Low nutriment warning: {$warning}
 
 plant-analyzer-temperature-bar-text = {$temperature} K
 plant-analyzer-temperature-tooltip = Current temperature: {$temperature} K. Ideal: {$ideal} K ± {$tolerance} K.
+plant-analyzer-error = Error
+plant-analyzer-error-plant-too-young = Error: Plant too young to detect environmental response.
 
 plant-analyzer-label-pressure = Pressure
 
@@ -148,3 +150,17 @@ plant-analyzer-threat-kind-pests = pests
 plant-analyzer-threat-kind-toxins = toxins
 
 plant-analyzer-threat-tolerance-marker = Damage threshold: {$value}
+
+plant-analyzer-section-gases-emitted = Gases emitted
+plant-analyzer-section-gases-consumed = Gases consumed
+plant-analyzer-placeholder-empty = —
+
+plant-analyzer-section-chems-in-plant = Chems in Plant
+plant-analyzer-section-chems-in-tray = Chems in Tray
+plant-analyzer-section-misc-mutations = Misc Mutations
+
+plant-analyzer-chem-none = No chemicals detected.
+plant-analyzer-mutation-none = No mutations detected.
+
+plant-analyzer-chem = {$reagent}: {$amount}u
+plant-analyzer-mutation-entry = • {$mutation}

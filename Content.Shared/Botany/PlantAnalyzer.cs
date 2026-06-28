@@ -27,6 +27,13 @@ public sealed class PlantAnalyzerChemicalEntry
 }
 
 [Serializable, NetSerializable]
+public sealed class PlantAnalyzerTrayReagentEntry
+{
+    public string Reagent = string.Empty;
+    public float Quantity;
+}
+
+[Serializable, NetSerializable]
 public sealed class PlantAnalyzerScannedPlantMessage : BoundUserInterfaceMessage
 {
     public readonly PlantAnalyzerUiState State;
@@ -102,4 +109,5 @@ public sealed class PlantAnalyzerUiState : BoundUserInterfaceState
 
     public List<PlantAnalyzerChemicalEntry> Chemicals = new();
 
+    public List<PlantAnalyzerTrayReagentEntry> TrayChemicals = new();
 }

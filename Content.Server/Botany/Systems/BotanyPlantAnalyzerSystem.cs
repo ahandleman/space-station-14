@@ -12,6 +12,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Shared.Botany.PlantAnalyzer;
 using Content.Shared.FixedPoint;
+using Content.Shared.Chemistry.EntitySystems;
 
 namespace Content.Server.Botany.Systems;
 
@@ -24,7 +25,7 @@ public sealed class PlantAnalyzerSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly PowerCellSystem _cell = default!;
-
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     public override void Initialize()
     {
         SubscribeLocalEvent<PlantAnalyzerComponent, AfterInteractEvent>(OnAfterInteract);
@@ -224,6 +225,22 @@ public sealed class PlantAnalyzerSystem : EntitySystem
             MissingGas = holder.MissingGas,
         };
 
+
+        if (_solutionContainer.ResolveSolution(
+                target.Value,
+                holder.SoilSolutionName,
+                ref holder.SoilSolution,
+                out var soilSolution))
+        {
+            foreach (var entry in soilSolution.Contents)
+            {
+                state.TrayChemicals.Add(new PlantAnalyzerTrayReagentEntry
+                {
+                    Reagent = entry.Reagent.Prototype,
+                    Quantity = (float) entry.Quantity,
+                });
+            }
+        }
         var seed = holder.Seed;
         if (seed == null)
             return state;
