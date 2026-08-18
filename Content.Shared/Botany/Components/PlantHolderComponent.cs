@@ -37,15 +37,6 @@ public sealed partial class PlantHolderComponent : Component
     public int MaxYieldMod = 2;
 
     /// <summary>
-    /// Current mutation level.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float MutationLevel;
-
-    [DataField, AutoNetworkedField]
-    public float MaxMutationLevel = 25f;
-
-    /// <summary>
     /// Multiplier for mutation chance and severity.
     /// </summary>
     [DataField, AutoNetworkedField]

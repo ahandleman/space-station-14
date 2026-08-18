@@ -17,7 +17,7 @@ public sealed partial class PlantMutateChemicalsEntityEffectSystem : EntityEffec
 
     protected override void Effect(Entity<PlantComponent> entity, ref EntityEffectEvent<PlantMutateChemicals> args)
     {
-        var randomChems = args.Effect.RandomPickBotanyReagents
+        var randomChems = args.Effect.ChemicalTables
             .Select(id => ProtoMan.Index(id))
             .ToList();
         _plantChemicals.MutateRandomChemical(entity.Owner, randomChems);
@@ -28,21 +28,17 @@ public sealed partial class PlantMutateChemicalsEntityEffectSystem : EntityEffec
 public sealed partial class PlantMutateChemicals : EntityEffectBase<PlantMutateChemicals>
 {
     /// <summary>
-    /// The Reagent list this mutation draws from.
+    /// The chemical tables this mutation rolls on.
     /// </summary>
-    [DataField]
-    public List<ProtoId<WeightedRandomFillSolutionPrototype>> RandomPickBotanyReagents = new()
-    {
-        "RandomPickBotanyReagent",
-        "RandomPickFarmReagent",
-    };
+    [DataField(required: true)]
+    public List<ProtoId<WeightedRandomFillSolutionPrototype>> ChemicalTables = [];
 
     /// <inheritdoc/>
     public override string EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         var list = new List<string>();
 
-        foreach (var tableId in RandomPickBotanyReagents)
+        foreach (var tableId in ChemicalTables)
         {
             // If your table doesn't exist, no guidebook entry for it!
             if (!prototype.Resolve(tableId, out var table))
