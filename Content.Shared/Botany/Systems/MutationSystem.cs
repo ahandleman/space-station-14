@@ -18,9 +18,6 @@ namespace Content.Shared.Botany.Systems;
 /// </summary>
 public sealed partial class PlantMutationSystem : EntitySystem
 {
-    private static readonly ProtoId<RandomPlantMutationListPrototype> RandomPlantMutations = "RandomPlantMutations";
-    private RandomPlantMutationListPrototype _randomMutations = default!;
-
     [Dependency] private INetManager _net = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private BotanySystem _botany = default!;
@@ -32,21 +29,19 @@ public sealed partial class PlantMutationSystem : EntitySystem
     [Dependency] private EntityQuery<PlantChemicalsComponent> _chemicalsQuery = default!;
     [Dependency] private EntityQuery<PlantComponent> _plantQuery = default!;
 
-    public override void Initialize()
-    {
-        _randomMutations = ProtoMan.Index(RandomPlantMutations);
-    }
-
     /// <summary>
     /// For each random mutation, see if it occurs on this plant this check.
     /// </summary>
     [PublicAPI]
-    public void CheckRandomMutations(Entity<PlantComponent?> ent, float severity)
+    public void CheckRandomMutations(
+        Entity<PlantComponent?> ent,
+        float severity,
+        ProtoId<RandomPlantMutationListPrototype> mutationTable)
     {
         if (!Resolve(ent, ref ent.Comp, false))
             return;
 
-        foreach (var mutation in _randomMutations.Mutations)
+        foreach (var mutation in ProtoMan.Index(mutationTable).Mutations)
         {
             if (Random(Math.Min(mutation.BaseOdds * severity, 1.0f)))
             {

@@ -134,14 +134,6 @@ public sealed partial class PlantSystem : EntitySystem
         var plantGrow = new PlantGrowEvent(GetNetEntity(trayEnt.Owner));
         RaiseLocalEvent(ent.Owner, ref plantGrow);
 
-        // Process mutations.
-        if (ent.Comp.MutationLevel > 0)
-        {
-            _mutation.CheckRandomMutations(ent.Owner, Math.Min(ent.Comp.MutationLevel, ent.Comp.MaxMutationLevel));
-            ent.Comp.MutationLevel = 0;
-            DirtyField(ent, ent.Comp, nameof(ent.Comp.MutationLevel));
-        }
-
         if (ent.Comp.Health <= 0)
             _plantHolder.KillPlant(ent.Owner);
     }

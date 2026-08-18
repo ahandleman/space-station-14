@@ -321,8 +321,9 @@
   meltingPoint: 1133.0
   boilingPoint: 4131.0
   plantMetabolism:
-  - !type:PlantAdjustMutationLevel
+  - !type:PlantMutate
     amount: 0.6
+    mutationTable: RandomPlantMutations
   - !type:PlantAdjustToxins
     amount: 4
   - !type:PlantAdjustHealth

@@ -51,21 +51,6 @@ public sealed partial class PlantHolderSystem : EntitySystem
     }
 
     /// <summary>
-    /// Adjusts the mutation level of the plant.
-    /// </summary>
-    [PublicAPI]
-    public void AdjustsMutationLevel(Entity<PlantHolderComponent?> ent, float amount)
-    {
-        if (!Resolve(ent.Owner, ref ent.Comp))
-            return;
-
-        ent.Comp.MutationLevel += amount * ent.Comp.MutationMod;
-        ent.Comp.MutationLevel = MathHelper.Clamp(ent.Comp.MutationLevel, 0f, ent.Comp.MaxMutationLevel);
-        DirtyField(ent, nameof(ent.Comp.MutationLevel));
-        CheckHealth(ent);
-    }
-
-    /// <summary>
     /// Adjusts the mutation mod of the plant.
     /// </summary>
     [PublicAPI]
