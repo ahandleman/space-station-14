@@ -85,8 +85,6 @@
     - Sulfur
     - Lithium
 
-
-
 - type: weightedRandomFillSolution
   id: RandomPickFarmReagent
   fills:
@@ -124,8 +122,6 @@
     weight: 0.02 # Ultra rare mega hit farming table
     reagents:
       - Cognizine
-
-
 
 - type: weightedRandomFillSolution
   id: EvilRandomFillSolution
