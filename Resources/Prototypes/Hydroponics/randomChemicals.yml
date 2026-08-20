@@ -4,12 +4,12 @@
   - quantity: 5
     weight: 0.5
     reagents:
-    - Omnizine # Rarest heal chem
-    - Plasma # Rarest raw element chem
-    - Fresium # Rare gimmick chem
-    - HeartbreakerToxin # Rarest toxin
-    - Honk # Rarest funni chem
-    - BuzzochloricBees # Rare gimmick chem
+    - Omnizine
+    - Plasma
+    - Fresium
+    - HeartbreakerToxin
+    - Honk
+    - BuzzochloricBees
   - quantity: 5 # Evil chems
     weight: 1
     reagents:
