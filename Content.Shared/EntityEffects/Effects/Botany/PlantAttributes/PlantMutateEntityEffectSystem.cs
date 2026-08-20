@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.EntityEffects.Effects.Botany.PlantAttributes;
 
 /// <summary>
-/// Entity effect that immediately rolls on a mutation table for a plant.
+/// Entity effect that adds severity to a plant's mutation table for its next mutation check.
 /// </summary>
 /// <inheritdoc cref="EntityEffectSystem{T,TEffect}"/>
 public sealed partial class PlantMutateEntityEffectSystem : EntityEffectSystem<PlantComponent, PlantMutate>
@@ -29,7 +29,7 @@ public sealed partial class PlantMutateEntityEffectSystem : EntityEffectSystem<P
             ? args.Effect.Amount
             : args.Effect.Amount * plantHolder.MutationMod;
 
-        _mutation.CheckRandomMutations(entity.Owner, severity, args.Effect.MutationTable);
+        _mutation.AccumulateMutationSeverity(entity.Owner, severity, args.Effect.MutationTable);
     }
 }
 

@@ -1,5 +1,6 @@
 using Content.Shared.Botany.Systems;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Botany.Components;
 
@@ -11,11 +12,18 @@ namespace Content.Shared.Botany.Components;
 public sealed partial class PlantComponent : Component
 {
     /// <summary>
+    /// Mutation severity accumulated for each table during the current plant update.
+    /// Cleared after every plant update tick
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<RandomPlantMutationListPrototype>, float> PendingMutationTables = [];
+
+    /// <summary>
     /// The mutation effects that have been applied to this plant.
     /// Server-only: mutations are applied as effects which are synced separately.
     /// </summary>
     [DataField]
-    public List<RandomPlantMutation> Mutations = [];
+    public List<ProtoId<PlantMutationPrototype>> Mutations = [];
 
     /// <summary>
     /// The plant's max health.

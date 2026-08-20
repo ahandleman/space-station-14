@@ -1,26 +1,19 @@
 using Content.Shared.EntityEffects;
-using Robust.Shared.Serialization;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Botany.Components;
 
 /// <summary>
-/// Data that specifies the odds and effects of possible random plant mutations.
+/// Defines a named plant mutation that can be shared by multiple mutation tables.
 /// </summary>
-[Serializable, NetSerializable]
-[DataDefinition]
-public sealed partial class RandomPlantMutation
+[Prototype]
+public sealed partial class PlantMutationPrototype : IPrototype
 {
     /// <summary>
-    /// Odds of this mutation occurring with 1 point of mutation severity on a plant.
+    /// The unique ID of this mutation.
     /// </summary>
-    [DataField]
-    public float BaseOdds;
-
-    /// <summary>
-    /// The name of this mutation.
-    /// </summary>
-    [DataField(required: true)]
-    public string Name;
+    [IdDataField]
+    public string ID { get; private set; } = default!;
 
     /// <summary>
     /// The text to display to players when examining something with this mutation.

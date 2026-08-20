@@ -30,10 +30,10 @@ public sealed partial class PlantMutationSystem : EntitySystem
     [Dependency] private EntityQuery<PlantComponent> _plantQuery = default!;
 
     /// <summary>
-    /// For each random mutation, see if it occurs on this plant this check.
+    /// Adds severity to a mutation table for the plant's next mutation check.
     /// </summary>
     [PublicAPI]
-    public void CheckRandomMutations(
+    public void AccumulateMutationSeverity(
         Entity<PlantComponent?> ent,
         float severity,
         ProtoId<RandomPlantMutationListPrototype> mutationTable)
@@ -41,18 +41,59 @@ public sealed partial class PlantMutationSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, false))
             return;
 
-        foreach (var mutation in ProtoMan.Index(mutationTable).Mutations)
-        {
-            if (Random(Math.Min(mutation.BaseOdds * severity, 1.0f)))
-            {
-                if (mutation.AppliesToPlant)
-                    _entityEffects.TryApplyEffect(ent, mutation.Effect);
+        ent.Comp.PendingMutationTables[mutationTable] =
+            ent.Comp.PendingMutationTables.GetValueOrDefault(mutationTable) + severity;
+    }
 
-                // Stat adjustments do not persist by being an attached effect, they just change the stat.
-                if (mutation.Persists && ent.Comp.Mutations.All(m => m.Name != mutation.Name))
-                    ent.Comp.Mutations.Add(mutation);
-            }
+    /// <summary>
+    /// Rolls all accumulated mutations and clears them regardless of the result.
+    /// </summary>
+    [PublicAPI]
+    public void RollPendingMutations(Entity<PlantComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp, false) || ent.Comp.PendingMutationTables.Count == 0)
+            return;
+
+        var mutationOdds = new Dictionary<ProtoId<PlantMutationPrototype>, float>();
+        foreach (var (tableId, severity) in ent.Comp.PendingMutationTables)
+        {
+            foreach (var (mutationId, baseOdds) in ProtoMan.Index(tableId).Mutations)
+                mutationOdds[mutationId] = mutationOdds.GetValueOrDefault(mutationId) + baseOdds * severity;
         }
+
+        // Clear first so effects applied by a successful mutation cannot interfere with this batch.
+        ent.Comp.PendingMutationTables.Clear();
+
+        // Random mutation effects are server-authoritative. The client still clears its predicted batch above.
+        if (!_net.IsServer)
+            return;
+
+        foreach (var (mutationId, totalOdds) in mutationOdds)
+        {
+            var mutation = ProtoMan.Index(mutationId);
+            var remainingOdds = totalOdds;
+            while (remainingOdds >= 1f)
+            {
+                ApplyMutation(ent, mutationId, mutation);
+                remainingOdds -= 1f;
+            }
+
+            if (Random(remainingOdds))
+                ApplyMutation(ent, mutationId, mutation);
+        }
+    }
+
+    private void ApplyMutation(
+        Entity<PlantComponent?> ent,
+        ProtoId<PlantMutationPrototype> mutationId,
+        PlantMutationPrototype mutation)
+    {
+        if (mutation.AppliesToPlant)
+            _entityEffects.TryApplyEffect(ent, mutation.Effect);
+
+        // Stat adjustments do not persist by being an attached effect, they just change the stat.
+        if (mutation.Persists && !ent.Comp!.Mutations.Contains(mutationId))
+            ent.Comp.Mutations.Add(mutationId);
     }
 
     /// <summary>
@@ -129,7 +170,7 @@ public sealed partial class PlantMutationSystem : EntitySystem
         // LINQ Explanation
         // For the list of mutation effects on both plants, use a 50% chance to pick each one.
         // Union all of the chosen mutations into one list, and pick ones with a Distinct (unique) name.
-        targetCore.Mutations = targetCore.Mutations.Where(_ => Random(0.5f)).Union(pollenCore.Mutations.Where(_ => Random(0.5f))).DistinctBy(m => m.Name).ToList();
+        targetCore.Mutations = targetCore.Mutations.Where(_ => Random(0.5f)).Union(pollenCore.Mutations.Where(_ => Random(0.5f))).Distinct().ToList();
 
         // Hybrids have a high chance of being seedless. Balances very
         // effective hybrid crossings.

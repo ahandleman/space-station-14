@@ -134,6 +134,9 @@ public sealed partial class PlantSystem : EntitySystem
         var plantGrow = new PlantGrowEvent(GetNetEntity(trayEnt.Owner));
         RaiseLocalEvent(ent.Owner, ref plantGrow);
 
+        // Reagent effects add mutation odds during the growth event. Roll the completed batch once.
+        _mutation.RollPendingMutations(ent.Owner);
+
         if (ent.Comp.Health <= 0)
             _plantHolder.KillPlant(ent.Owner);
     }

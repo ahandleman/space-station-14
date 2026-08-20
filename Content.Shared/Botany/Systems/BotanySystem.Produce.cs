@@ -22,14 +22,16 @@ public sealed partial class BotanySystem
 
         using (args.PushGroup(nameof(ProduceComponent)))
         {
-            foreach (var m in plant.Mutations)
+            foreach (var mutationId in plant.Mutations)
             {
+                var mutation = ProtoMan.Index(mutationId);
+
                 // Don't show mutations that have no effect on produce (sentience)
-                if (!m.AppliesToProduce)
+                if (!mutation.AppliesToProduce)
                     continue;
 
-                if (m.Description != null)
-                    args.PushMarkup(Loc.GetString(m.Description));
+                if (mutation.Description != null)
+                    args.PushMarkup(Loc.GetString(mutation.Description));
             }
         }
     }
@@ -40,8 +42,9 @@ public sealed partial class BotanySystem
             || !TryGetPlantComponent<PlantChemicalsComponent>(ent.Comp.PlantData, ent.Comp.PlantProtoId, out var chems))
             return;
 
-        foreach (var mutation in plant.Mutations)
+        foreach (var mutationId in plant.Mutations)
         {
+            var mutation = ProtoMan.Index(mutationId);
             if (mutation.AppliesToProduce)
                 _entityEffects.TryApplyEffect(ent.Owner, mutation.Effect);
         }

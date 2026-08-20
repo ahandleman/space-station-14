@@ -12,8 +12,8 @@ public sealed partial class RandomPlantMutationListPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     /// <summary>
-    /// List of RandomFills that can be picked from.
+    /// Mutation prototype IDs and their odds per point of mutation severity.
     /// </summary>
     [DataField(required: true)]
-    public List<RandomPlantMutation> Mutations = [];
+    public Dictionary<ProtoId<PlantMutationPrototype>, float> Mutations = [];
 }
