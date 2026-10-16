@@ -69,6 +69,17 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
             return;
 
         var (linkableControls, _) = GetLinkableControlsAndLinks(EntryContainer);
+        if (!linkableControls.Any(c => c.RepresentedPrototype == prototype)
+            && prototypeLinkControl.TargetGuide is { } targetGuide)
+        {
+            var targetItem = Tree.Items.FirstOrDefault(x => x.Metadata is GuideEntry guide && guide.Id == targetGuide);
+            if (targetItem == null)
+                return;
+
+            Tree.SetSelectedIndex(targetItem.Index);
+            (linkableControls, _) = GetLinkableControlsAndLinks(EntryContainer);
+        }
+
         foreach (var linkableControl in linkableControls)
         {
             if (linkableControl.RepresentedPrototype != prototype)
@@ -169,7 +180,8 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         foreach (var linkControl in linkControls)
         {
             var prototype = linkControl.LinkedPrototype;
-            if (prototype != null && availablePrototypeLinks.Contains(prototype))
+            if (prototype != null && (availablePrototypeLinks.Contains(prototype)
+                || linkControl.TargetGuide is { } targetGuide && _entries.ContainsKey(targetGuide)))
                 linkControl.EnablePrototypeLink();
         }
 

@@ -1,0 +1,10 @@
+<Document>
+# Plant mutation tables
+Each mutation is checked independently. Several mutations can occur in a single check. Base chances below are for mutation severity 1; higher severity can trigger the same mutation more than once.
+
+Stat mutations favor increases below their adjustment range and decreases above it. Values within the range can move in either direction. These ranges guide the direction of adjustment; they are not hard limits on the resulting stat.
+
+[textlink="Browse chemical mutation pools." link="PlantChemicalMutations"]
+
+<GuidePlantMutationTablesEmbed/>
+</Document>

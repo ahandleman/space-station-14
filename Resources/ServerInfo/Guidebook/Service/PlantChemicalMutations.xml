@@ -1,0 +1,10 @@
+<Document>
+# Chemical mutation tables
+Chemical mutations can add a reagent or increase an existing reagent's amount. Each mutation draws from the pools listed below it.
+
+Group chances are conditional on a chemical mutation occurring, and are calculated across all pools available to that mutation. After selecting a group, each reagent in that group is equally likely. The displayed chance applies to the whole group, not each individual reagent.
+
+[textlink="Browse plant mutation chances and effects." link="PlantMutations"]
+
+<GuidePlantChemicalMutationTablesEmbed/>
+</Document>

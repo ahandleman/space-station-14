@@ -19,6 +19,26 @@
   id: Botany
   name: guide-entry-botany
   text: "/ServerInfo/Guidebook/Service/Botany.xml"
+  children:
+  - Plants
+  - PlantMutations
+  - PlantChemicalMutations
+
+- type: guideEntry
+  id: Plants
+  name: guide-entry-plants
+  text: "/ServerInfo/Guidebook/Service/Plants.xml"
+  filterEnabled: true
+
+- type: guideEntry
+  id: PlantMutations
+  name: guide-entry-plant-mutations
+  text: "/ServerInfo/Guidebook/Service/PlantMutations.xml"
+
+- type: guideEntry
+  id: PlantChemicalMutations
+  name: guide-entry-plant-chemical-mutations
+  text: "/ServerInfo/Guidebook/Service/PlantChemicalMutations.xml"
 
 - type: guideEntry
   id: Chef

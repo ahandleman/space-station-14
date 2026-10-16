@@ -1,3 +1,4 @@
+using Content.Shared.Guidebook;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input;
@@ -10,8 +11,8 @@ namespace Content.Client.Guidebook.Controls;
 
 /// <summary>
 /// A RichTextLabel which is a link to a specified IPrototype.
-/// The link is activated by the owner if the prototype is represented
-/// somewhere in the same document.
+/// The link is activated by the owner if the prototype is represented in the
+/// same document or a destination guide page is available.
 /// </summary>
 public sealed class GuidebookRichPrototypeLink : Control, IPrototypeLinkControl
 {
@@ -46,6 +47,8 @@ public sealed class GuidebookRichPrototypeLink : Control, IPrototypeLinkControl
     }
 
     public IPrototype? LinkedPrototype { get; set; }
+
+    public ProtoId<GuideEntryPrototype>? TargetGuide { get; set; }
 
     private void HandleClick(GUIBoundKeyEventArgs args)
     {

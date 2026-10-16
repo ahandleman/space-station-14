@@ -1,0 +1,8 @@
+<Document>
+# Plants
+Each entry shows the fully grown plant, its possible harvest products, and the reagents obtained by grinding or juicing one item.
+
+Mutations and cross-pollination can change the reagents in harvested produce. Juicing uses the product's juice recipe instead of its contents.
+
+<GuidePlantListEmbed/>
+</Document>

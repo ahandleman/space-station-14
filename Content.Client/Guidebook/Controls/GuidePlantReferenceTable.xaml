@@ -1,0 +1,18 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                HorizontalExpand="True" Margin="5 8">
+    <PanelContainer.PanelOverride>
+        <gfx:StyleBoxFlat BorderThickness="1" BorderColor="#777777"/>
+    </PanelContainer.PanelOverride>
+    <BoxContainer Orientation="Vertical">
+        <PanelContainer>
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#393c3f"/>
+            </PanelContainer.PanelOverride>
+            <RichTextLabel Name="TableTitle" Margin="10 8" HorizontalExpand="True"/>
+        </PanelContainer>
+        <RichTextLabel Name="TableNote" Margin="10 8" HorizontalExpand="True"/>
+        <GridContainer Name="Rows" Columns="3" HSeparationOverride="14" VSeparationOverride="10"
+                       Margin="10 4 10 12" HorizontalExpand="True"/>
+    </BoxContainer>
+</PanelContainer>

@@ -1,3 +1,4 @@
+using Content.Shared.Guidebook;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.Guidebook.Controls;
@@ -14,12 +15,17 @@ public interface IPrototypeRepresentationControl
 
 /// <summary>
 ///    Interface for controls which can be clicked to navigate
-///    to a specified prototype representation on the same page.
+///    to a specified prototype representation, optionally on another guide page.
 /// </summary>
 public interface IPrototypeLinkControl
 {
     // This control is a link to the specified prototype
     public IPrototype? LinkedPrototype { get; }
+
+    /// <summary>
+    /// Page to open when the linked prototype is not represented on the current page.
+    /// </summary>
+    public ProtoId<GuideEntryPrototype>? TargetGuide => null;
 
     // Initially the link will not be enabled,
     // the owner can enable the link once there is a valid target

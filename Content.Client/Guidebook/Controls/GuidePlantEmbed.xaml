@@ -1,0 +1,33 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                HorizontalExpand="True"
+                Margin="5 8">
+    <PanelContainer.PanelOverride>
+        <gfx:StyleBoxFlat BorderThickness="1" BorderColor="#777777"/>
+    </PanelContainer.PanelOverride>
+    <BoxContainer Orientation="Vertical">
+        <PanelContainer HorizontalExpand="True">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#393c3f"/>
+            </PanelContainer.PanelOverride>
+            <BoxContainer Orientation="Horizontal" Margin="10 4">
+                <BoxContainer Name="IconContainer"/>
+                <RichTextLabel Name="PlantName" VerticalAlignment="Center" HorizontalExpand="True"/>
+            </BoxContainer>
+        </PanelContainer>
+        <GridContainer Name="ProduceGrid"
+                       Columns="3"
+                       HSeparationOverride="16"
+                       VSeparationOverride="10"
+                       HorizontalExpand="True"
+                       Margin="12 10">
+            <Label Text="{Loc 'guidebook-plant-produce-header'}"/>
+            <Label Text="{Loc 'guidebook-plant-grinding-header'}"/>
+            <Label Text="{Loc 'guidebook-plant-juicing-header'}"/>
+        </GridContainer>
+        <BoxContainer Name="MutationsContainer" Orientation="Vertical" Margin="12 0 12 10">
+            <Label Text="{Loc 'guidebook-plant-mutations-header'}"/>
+            <BoxContainer Name="MutationLinks" Orientation="Vertical" Margin="8 4 0 0"/>
+        </BoxContainer>
+    </BoxContainer>
+</PanelContainer>
