@@ -170,6 +170,8 @@ public sealed partial class PlantMutationSystem : EntitySystem
         // Go through chemicals from the pollen in swab
         foreach (var otherChem in other)
         {
+            if (otherChem.Value.PollinationProtected)
+                continue;
             // if both have same chemical, randomly pick potency ratio from the two.
             if (val.TryGetValue(otherChem.Key, out var value))
             {
@@ -190,6 +192,8 @@ public sealed partial class PlantMutationSystem : EntitySystem
         // if the target plant has chemical that the pollen in swab does not, 50% chance to remove it.
         foreach (var thisChem in val)
         {
+            if (thisChem.Value.PollinationProtected)
+                continue;
             if (!other.ContainsKey(thisChem.Key))
             {
                 if (Random(0.5f))

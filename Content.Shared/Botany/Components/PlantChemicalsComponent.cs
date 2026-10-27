@@ -49,4 +49,11 @@ public partial struct PlantChemQuantity
     /// </summary>
     [DataField]
     public bool Inherent = true;
+
+    /// <summary>
+    /// If true, pollination cannot add or remove this chemical.
+    /// </summary>
+    [DataField]
+    public bool PollinationProtected = false;
+
 }
