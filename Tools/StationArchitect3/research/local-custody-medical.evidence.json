@@ -1,0 +1,2236 @@
+{
+  "maps": [
+    {
+      "sourcePath": "Resources/Maps/hike.yml",
+      "sha256": "1b47bf7e017ac0944c6acb414f65832336f027cc92413a744ee3b787bfff9fa2",
+      "records": [
+        {
+          "uid": 10925,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            1,
+            27.5,
+            -29.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 1,
+              "rot": "1.5707963267948966 rad",
+              "pos": "27.5,-29.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              28.5,
+              -29.5
+            ],
+            "floorCell": [
+              28,
+              -30
+            ],
+            "tile": "Space_or_Lattice",
+            "occupants": [
+              {
+                "uid": 10571,
+                "prototype": "CableApcExtension"
+              },
+              {
+                "uid": 10623,
+                "prototype": "CableApcExtension"
+              },
+              {
+                "uid": 9640,
+                "prototype": "CableMV"
+              },
+              {
+                "uid": 9641,
+                "prototype": "CableMV"
+              },
+              {
+                "uid": 10283,
+                "prototype": "CableMV"
+              },
+              {
+                "uid": 10950,
+                "prototype": "Catwalk"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 10929,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            1,
+            27.5,
+            -28.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 1,
+              "rot": "1.5707963267948966 rad",
+              "pos": "27.5,-28.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              28.5,
+              -28.5
+            ],
+            "floorCell": [
+              28,
+              -29
+            ],
+            "tile": "FloorDark",
+            "occupants": [
+              {
+                "uid": 10651,
+                "prototype": "CableApcExtension"
+              },
+              {
+                "uid": 9638,
+                "prototype": "CableMV"
+              },
+              {
+                "uid": 9639,
+                "prototype": "CableMV"
+              },
+              {
+                "uid": 10953,
+                "prototype": "DecalSpawnerBloodSplatters"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 10935,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            1,
+            27.5,
+            -30.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 1,
+              "rot": "1.5707963267948966 rad",
+              "pos": "27.5,-30.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              28.5,
+              -30.5
+            ],
+            "floorCell": [
+              28,
+              -31
+            ],
+            "tile": "Space_or_Lattice",
+            "occupants": [
+              {
+                "uid": 10858,
+                "prototype": "CableApcExtension"
+              },
+              {
+                "uid": 10951,
+                "prototype": "Catwalk"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/gear.yml",
+      "sha256": "5c1d4bc9fc6caee5525219246d0e95607e4f3c2ca58b598daf7a4dcb768eba91",
+      "records": [
+        {
+          "uid": 1364,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            12,
+            8.5,
+            -40.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 12,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "8.5,-40.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              7.5,
+              -40.5
+            ],
+            "floorCell": [
+              7,
+              -41
+            ],
+            "tile": "FloorDark",
+            "occupants": [
+              {
+                "uid": 26146,
+                "prototype": "CableApcExtension"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 4986,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            12,
+            37.5,
+            30.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 12,
+              "pos": "37.5,30.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              37.5,
+              29.5
+            ],
+            "floorCell": [
+              37,
+              29
+            ],
+            "tile": "FloorDarkMini",
+            "occupants": [
+              {
+                "uid": 12243,
+                "prototype": "Poweredlight"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 4988,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            12,
+            38.5,
+            30.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 12,
+              "pos": "38.5,30.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              38.5,
+              29.5
+            ],
+            "floorCell": [
+              38,
+              29
+            ],
+            "tile": "FloorDarkMini",
+            "occupants": [
+              {
+                "uid": 16067,
+                "prototype": "CableApcExtension"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 4985,
+          "prototype": "Crematorium",
+          "name": "crematorium",
+          "pose": [
+            12,
+            39.5,
+            30.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 12,
+              "pos": "39.5,30.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              39.5,
+              29.5
+            ],
+            "floorCell": [
+              39,
+              29
+            ],
+            "tile": "FloorDarkMini",
+            "occupants": []
+          }
+        },
+        {
+          "uid": 10977,
+          "prototype": "ComputerBodyScanner",
+          "name": "body scanner computer",
+          "pose": [
+            12,
+            -20.5,
+            -27.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 12,
+              "pos": "-20.5,-27.5"
+            },
+            "Computer": {
+              "board": "BodyScannerComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/plasma.yml",
+      "sha256": "bbbb9e77bacacd8ff6fd75af2a9855803516d19f4c1c6db672437d4a8d6ddf28",
+      "records": [
+        {
+          "uid": 5396,
+          "prototype": "BrigTimer",
+          "name": "brig timer",
+          "pose": [
+            2,
+            -22.5,
+            4.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "-22.5,4.5"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 100
+            },
+            "SignalTimer": {
+              "canEditLabel": true
+            },
+            "DeviceLinkSource": {
+              "ports": [
+                "Start",
+                "Timer"
+              ],
+              "linkedPorts": {
+                "8661": [
+                  {
+                    "source": "Timer",
+                    "sink": "Open"
+                  },
+                  {
+                    "source": "Timer",
+                    "sink": "AutoClose"
+                  },
+                  {
+                    "source": "Start",
+                    "sink": "Close"
+                  }
+                ]
+              }
+            },
+            "DeviceLinkSink": {
+              "ports": [
+                "Trigger"
+              ]
+            },
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "BrigTimerElectronics"
+                ]
+              }
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Security"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "uid": 8661,
+          "prototype": "AirlockSecurityGlassLocked",
+          "name": "glass airlock",
+          "pose": [
+            2,
+            -22.5,
+            5.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "4.71238898038469 rad",
+              "pos": "-22.5,5.5"
+            },
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsSecurity"
+                ]
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            },
+            "Door": {
+              "crushDamage": {
+                "types": {
+                  "Blunt": 15
+                }
+              },
+              "openSound": {
+                "path": "/Audio/Machines/airlock_open.ogg"
+              },
+              "closeSound": {
+                "path": "/Audio/Machines/airlock_close.ogg"
+              },
+              "denySound": {
+                "path": "/Audio/Machines/airlock_deny.ogg"
+              },
+              "occludes": false
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 20
+            },
+            "DoorSignalControl": {},
+            "DeviceLinkSink": {
+              "ports": [
+                "Open",
+                "Close",
+                "Toggle",
+                "AutoClose",
+                "DoorBolt"
+              ]
+            },
+            "DeviceLinkSource": {
+              "ports": [
+                "DoorStatus",
+                "DoorBoltStatus"
+              ],
+              "lastSignals": {
+                "DoorStatus": false,
+                "DoorBoltStatus": false
+              }
+            }
+          }
+        },
+        {
+          "uid": 14643,
+          "prototype": "BrigTimer",
+          "name": "brig timer",
+          "pose": [
+            2,
+            -22.5,
+            8.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "-22.5,8.5"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 100
+            },
+            "SignalTimer": {
+              "canEditLabel": true
+            },
+            "DeviceLinkSource": {
+              "ports": [
+                "Start",
+                "Timer"
+              ],
+              "linkedPorts": {
+                "8660": [
+                  {
+                    "source": "Timer",
+                    "sink": "Open"
+                  },
+                  {
+                    "source": "Timer",
+                    "sink": "AutoClose"
+                  },
+                  {
+                    "source": "Start",
+                    "sink": "Close"
+                  }
+                ]
+              }
+            },
+            "DeviceLinkSink": {
+              "ports": [
+                "Trigger"
+              ]
+            },
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "BrigTimerElectronics"
+                ]
+              }
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Security"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "uid": 8660,
+          "prototype": "AirlockSecurityGlassLocked",
+          "name": "glass airlock",
+          "pose": [
+            2,
+            -22.5,
+            7.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "4.71238898038469 rad",
+              "pos": "-22.5,7.5"
+            },
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsSecurity"
+                ]
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            },
+            "Door": {
+              "crushDamage": {
+                "types": {
+                  "Blunt": 15
+                }
+              },
+              "openSound": {
+                "path": "/Audio/Machines/airlock_open.ogg"
+              },
+              "closeSound": {
+                "path": "/Audio/Machines/airlock_close.ogg"
+              },
+              "denySound": {
+                "path": "/Audio/Machines/airlock_deny.ogg"
+              },
+              "occludes": false
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 20
+            },
+            "DoorSignalControl": {},
+            "DeviceLinkSink": {
+              "ports": [
+                "Open",
+                "Close",
+                "Toggle",
+                "AutoClose",
+                "DoorBolt"
+              ]
+            },
+            "DeviceLinkSource": {
+              "ports": [
+                "DoorStatus",
+                "DoorBoltStatus"
+              ],
+              "lastSignals": {
+                "DoorStatus": false,
+                "DoorBoltStatus": false
+              }
+            }
+          }
+        },
+        {
+          "uid": 4662,
+          "prototype": "SignalTimer",
+          "name": "signal timer",
+          "pose": [
+            2,
+            -70.5,
+            -0.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "-70.5,-0.5"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 100
+            },
+            "SignalTimer": {
+              "canEditLabel": false
+            },
+            "DeviceLinkSource": {
+              "ports": [
+                "Start",
+                "Timer"
+              ],
+              "linkedPorts": {
+                "9290": [
+                  {
+                    "source": "Start",
+                    "sink": "Open"
+                  },
+                  {
+                    "source": "Timer",
+                    "sink": "Close"
+                  }
+                ]
+              }
+            },
+            "DeviceLinkSink": {
+              "ports": [
+                "Trigger"
+              ]
+            },
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "SignalTimerElectronics"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 9290,
+          "prototype": "BlastDoor",
+          "name": "blast door",
+          "pose": [
+            2,
+            -70.5,
+            -2.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "1.5707963267948966 rad",
+              "pos": "-70.5,-2.5"
+            },
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronics"
+                ]
+              }
+            },
+            "Door": {
+              "openDrawDepth": "BlastDoors",
+              "closedDrawDepth": "BlastDoors",
+              "bumpOpen": false,
+              "clickOpen": false,
+              "closeTimeOne": 0.4,
+              "closeTimeTwo": 0.4,
+              "openTimeOne": 0.4,
+              "openTimeTwo": 0.4,
+              "openingAnimationTime": 1.0,
+              "closingAnimationTime": 1.0,
+              "crushDamage": {
+                "types": {
+                  "Blunt": 25
+                }
+              },
+              "openSound": {
+                "path": "/Audio/Machines/blastdoor.ogg"
+              },
+              "closeSound": {
+                "path": "/Audio/Machines/blastdoor.ogg"
+              },
+              "canPry": false
+            },
+            "DoorSignalControl": {},
+            "DeviceLinkSink": {
+              "ports": [
+                "Open",
+                "Close",
+                "Toggle"
+              ]
+            },
+            "DeviceLinkSource": {
+              "ports": [
+                "DoorStatus"
+              ],
+              "lastSignals": {
+                "DoorStatus": false
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            }
+          }
+        },
+        {
+          "uid": 16763,
+          "prototype": "SignalTimer",
+          "name": "signal timer",
+          "pose": [
+            2,
+            -102.5,
+            31.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "3.141592653589793 rad",
+              "pos": "-102.5,31.5"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 100
+            },
+            "SignalTimer": {
+              "canEditLabel": false
+            },
+            "DeviceLinkSource": {
+              "ports": [
+                "Start",
+                "Timer"
+              ],
+              "linkedPorts": {
+                "4631": [
+                  {
+                    "source": "Start",
+                    "sink": "Open"
+                  },
+                  {
+                    "source": "Timer",
+                    "sink": "Close"
+                  }
+                ]
+              }
+            },
+            "DeviceLinkSink": {
+              "ports": [
+                "Trigger"
+              ]
+            },
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "SignalTimerElectronics"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 4631,
+          "prototype": "BlastDoor",
+          "name": "blast door",
+          "pose": [
+            2,
+            -100.5,
+            31.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "pos": "-100.5,31.5"
+            },
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronics"
+                ]
+              }
+            },
+            "Door": {
+              "openDrawDepth": "BlastDoors",
+              "closedDrawDepth": "BlastDoors",
+              "bumpOpen": false,
+              "clickOpen": false,
+              "closeTimeOne": 0.4,
+              "closeTimeTwo": 0.4,
+              "openTimeOne": 0.4,
+              "openTimeTwo": 0.4,
+              "openingAnimationTime": 1.0,
+              "closingAnimationTime": 1.0,
+              "crushDamage": {
+                "types": {
+                  "Blunt": 25
+                }
+              },
+              "openSound": {
+                "path": "/Audio/Machines/blastdoor.ogg"
+              },
+              "closeSound": {
+                "path": "/Audio/Machines/blastdoor.ogg"
+              },
+              "canPry": false
+            },
+            "DoorSignalControl": {},
+            "DeviceLinkSink": {
+              "ports": [
+                "Open",
+                "Close",
+                "Toggle"
+              ]
+            },
+            "DeviceLinkSource": {
+              "ports": [
+                "DoorStatus"
+              ],
+              "lastSignals": {
+                "DoorStatus": false
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            }
+          }
+        },
+        {
+          "uid": 3887,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            2,
+            -46.5,
+            -34.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "1.5707963267948966 rad",
+              "pos": "-46.5,-34.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              -45.5,
+              -34.5
+            ],
+            "floorCell": [
+              -46,
+              -35
+            ],
+            "tile": "FloorDark",
+            "occupants": [
+              {
+                "uid": 13323,
+                "prototype": "CableApcExtension"
+              },
+              {
+                "uid": 9231,
+                "prototype": "GasPipeStraight"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 3890,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            2,
+            -44.5,
+            -34.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "pos": "-44.5,-34.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              -44.5,
+              -35.5
+            ],
+            "floorCell": [
+              -45,
+              -36
+            ],
+            "tile": "FloorDark",
+            "occupants": [
+              {
+                "uid": 12311,
+                "prototype": "GasPipeStraight"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 3891,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            2,
+            -43.5,
+            -34.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "pos": "-43.5,-34.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              -43.5,
+              -35.5
+            ],
+            "floorCell": [
+              -44,
+              -36
+            ],
+            "tile": "FloorDark",
+            "occupants": [
+              {
+                "uid": 11382,
+                "prototype": "GasPipeStraight"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 16532,
+          "prototype": "Crematorium",
+          "name": "crematorium",
+          "pose": [
+            2,
+            -46.5,
+            -49.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "pos": "-46.5,-49.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              -46.5,
+              -50.5
+            ],
+            "floorCell": [
+              -47,
+              -51
+            ],
+            "tile": "FloorWood",
+            "occupants": [
+              {
+                "uid": 22302,
+                "prototype": "WindowFrostedDirectional"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 3700,
+          "prototype": "ComputerBodyScanner",
+          "name": "body scanner computer",
+          "pose": [
+            2,
+            -124.5,
+            -53.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "-124.5,-53.5"
+            },
+            "Computer": {
+              "board": "BodyScannerComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            }
+          }
+        },
+        {
+          "uid": 3897,
+          "prototype": "ComputerBodyScanner",
+          "name": "body scanner computer",
+          "pose": [
+            2,
+            -39.5,
+            -38.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "3.141592653589793 rad",
+              "pos": "-39.5,-38.5"
+            },
+            "Computer": {
+              "board": "BodyScannerComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            }
+          }
+        },
+        {
+          "uid": 4048,
+          "prototype": "ComputerBodyScanner",
+          "name": "body scanner computer",
+          "pose": [
+            2,
+            -23.5,
+            -34.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "1.5707963267948966 rad",
+              "pos": "-23.5,-34.5"
+            },
+            "Computer": {
+              "board": "BodyScannerComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/relic.yml",
+      "sha256": "e72c1c425a8bf3e2541e513145f432f46829e3388381aa83436b1cd79f48d8af",
+      "records": [
+        {
+          "uid": 459,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            2,
+            4.5,
+            14.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "1.5707963267948966 rad",
+              "pos": "4.5,14.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              5.5,
+              14.5
+            ],
+            "floorCell": [
+              5,
+              14
+            ],
+            "tile": "FloorSteel",
+            "occupants": [
+              {
+                "uid": 4954,
+                "prototype": "CableApcExtension"
+              },
+              {
+                "uid": 3189,
+                "prototype": "GasPipeStraight"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 460,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            2,
+            4.5,
+            13.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "1.5707963267948966 rad",
+              "pos": "4.5,13.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              5.5,
+              13.5
+            ],
+            "floorCell": [
+              5,
+              13
+            ],
+            "tile": "FloorSteel",
+            "occupants": [
+              {
+                "uid": 11426,
+                "prototype": "CableApcExtension"
+              },
+              {
+                "uid": 3186,
+                "prototype": "GasPipeStraight"
+              },
+              {
+                "uid": 7433,
+                "prototype": "SurveillanceCameraMedical"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 461,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            2,
+            2.5,
+            11.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "1.5707963267948966 rad",
+              "pos": "2.5,11.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              3.5,
+              11.5
+            ],
+            "floorCell": [
+              3,
+              11
+            ],
+            "tile": "FloorSteel",
+            "occupants": [
+              {
+                "uid": 11449,
+                "prototype": "GasVentPump"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 6678,
+          "prototype": "Crematorium",
+          "name": "crematorium",
+          "pose": [
+            2,
+            -5.5,
+            17.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "1.5707963267948966 rad",
+              "pos": "-5.5,17.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              -4.5,
+              17.5
+            ],
+            "floorCell": [
+              -5,
+              17
+            ],
+            "tile": "FloorSteel",
+            "occupants": []
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/snowball.yml",
+      "sha256": "7fda0e0990eea21470ab3312bea1462ee51f44039031c16efbaab802e46027f5",
+      "records": [
+        {
+          "uid": 10064,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            1,
+            71.5,
+            32.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 1,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "71.5,32.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              70.5,
+              32.5
+            ],
+            "floorCell": [
+              70,
+              32
+            ],
+            "tile": "FloorWhite",
+            "occupants": [
+              {
+                "uid": 10668,
+                "prototype": "CableApcExtension"
+              },
+              {
+                "uid": 10651,
+                "prototype": "CableMV"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 10065,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            1,
+            71.5,
+            33.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 1,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "71.5,33.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              70.5,
+              33.5
+            ],
+            "floorCell": [
+              70,
+              33
+            ],
+            "tile": "FloorWhite",
+            "occupants": [
+              {
+                "uid": 10653,
+                "prototype": "CableApcExtension"
+              },
+              {
+                "uid": 10650,
+                "prototype": "CableMV"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 10066,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            1,
+            71.5,
+            34.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 1,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "71.5,34.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              70.5,
+              34.5
+            ],
+            "floorCell": [
+              70,
+              34
+            ],
+            "tile": "FloorWhite",
+            "occupants": [
+              {
+                "uid": 10664,
+                "prototype": "CableApcExtension"
+              },
+              {
+                "uid": 10649,
+                "prototype": "CableMV"
+              },
+              {
+                "uid": 10291,
+                "prototype": "GasVentScrubber"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 9612,
+          "prototype": "Crematorium",
+          "name": "crematorium",
+          "pose": [
+            1,
+            85.5,
+            57.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 1,
+              "rot": "3.141592653589793 rad",
+              "pos": "85.5,57.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              85.5,
+              58.5
+            ],
+            "floorCell": [
+              85,
+              58
+            ],
+            "tile": "FloorDark",
+            "occupants": [
+              {
+                "uid": 9616,
+                "prototype": "Carpet"
+              },
+              {
+                "uid": 9718,
+                "prototype": "SurveillanceCameraSupply"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/tram2.yml",
+      "sha256": "61867ced5f711bc62eec6d9be5fbf0f3e210e9e2b8f2d6e93f54297de0795136",
+      "records": [
+        {
+          "uid": 680,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            15,
+            -29.5,
+            6.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "-29.5,6.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              -30.5,
+              6.5
+            ],
+            "floorCell": [
+              -31,
+              6
+            ],
+            "tile": "FloorWhitePlastic",
+            "occupants": [
+              {
+                "uid": 24182,
+                "prototype": "GasPipeStraight"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 1931,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            15,
+            26.5,
+            -33.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "26.5,-33.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              25.5,
+              -33.5
+            ],
+            "floorCell": [
+              25,
+              -34
+            ],
+            "tile": "FloorDark",
+            "occupants": [
+              {
+                "uid": 3472,
+                "prototype": "PoweredDimSmallLight"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 2252,
+          "prototype": "Morgue",
+          "name": "morgue",
+          "pose": [
+            15,
+            26.5,
+            -34.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "26.5,-34.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              25.5,
+              -34.5
+            ],
+            "floorCell": [
+              25,
+              -35
+            ],
+            "tile": "FloorDark",
+            "occupants": [
+              {
+                "uid": 4814,
+                "prototype": "StairDark"
+              }
+            ]
+          }
+        },
+        {
+          "uid": 10437,
+          "prototype": "Crematorium",
+          "name": "crematorium",
+          "pose": [
+            15,
+            -62.5,
+            -12.5
+          ],
+          "components": {
+            "EntityStorage": {
+              "isCollidableWhenOpen": true,
+              "showContents": false,
+              "capacity": 1,
+              "enteringOffset": "0, -1",
+              "closeSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              },
+              "openSound": {
+                "path": "/Audio/Items/deconstruct.ogg"
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "rot": "3.141592653589793 rad",
+              "pos": "-62.5,-12.5"
+            }
+          },
+          "loadingPosition": {
+            "nativeOffset": [
+              0.0,
+              -1.0
+            ],
+            "rotatedPosition": [
+              -62.5,
+              -11.5
+            ],
+            "floorCell": [
+              -63,
+              -12
+            ],
+            "tile": "FloorLino",
+            "occupants": []
+          }
+        },
+        {
+          "uid": 499,
+          "prototype": "ComputerBodyScanner",
+          "name": "body scanner computer",
+          "pose": [
+            15,
+            -5.5,
+            -44.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "pos": "-5.5,-44.5"
+            },
+            "Computer": {
+              "board": "BodyScannerComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            }
+          }
+        },
+        {
+          "uid": 16625,
+          "prototype": "ComputerBodyScanner",
+          "name": "body scanner computer",
+          "pose": [
+            15,
+            23.5,
+            -35.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "pos": "23.5,-35.5"
+            },
+            "Computer": {
+              "board": "BodyScannerComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            }
+          }
+        },
+        {
+          "uid": 25279,
+          "prototype": "ComputerBodyScanner",
+          "name": "body scanner computer",
+          "pose": [
+            15,
+            23.5,
+            -46.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "rot": "1.5707963267948966 rad",
+              "pos": "23.5,-46.5"
+            },
+            "Computer": {
+              "board": "BodyScannerComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/timer.yml": "bda6618413878cb267794b71cb5cac9e4d538198a3000e09c7e6832aef440423",
+    "Content.Shared/DeviceLinking/Systems/SignalTimerSystem.cs": "9631404f8bf422277135812a18091d5e4f696d17013a8fcbec6277a9a84276d1",
+    "Content.Shared/DeviceLinking/Systems/DoorSignalControlSystem.cs": "747eada685eb80957197a519b8efeac71cc060e18cc9a5d61330fed410fc7b23",
+    "Content.Shared/Doors/Systems/SharedAirlockSystem.cs": "dd6824fdb14fc8c03385d4c03f9180a500b3ebdcd8ab6078c361740cc0e9cb52",
+    "Resources/Prototypes/Entities/Structures/Storage/morgue.yml": "effe99f84850d193253b3e91f693d2e5410625b4ec310f5333767390417cdbc3",
+    "Content.Shared/Storage/EntitySystems/SharedEntityStorageSystem.cs": "c3bc6a439475276b0b29e401dd68bc50983fda19880be202dc8ad689194ef826",
+    "Content.Shared/Morgue/SharedCrematoriumSystem.cs": "339f8b10b2c2b9105aba4b6d7764fc293c6b9803f981c6bbbc5823ccf1dadd60",
+    "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml": "7bcf4b0f33c3b492889a2fee929c24de5f659ae02daa5d172b5eb9e9f1778103",
+    "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml": "e1803de51888c19b074424158afedda4523f43b4b462714d3ec5c786641aff09"
+  },
+  "proposedEvidence": [
+    {
+      "id": "local_brig_timer_prototype",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/timer.yml",
+      "description": "BrigTimer source ports and Security operating credentials."
+    },
+    {
+      "id": "local_cell_timer_native",
+      "kind": "native",
+      "source": "Content.Shared/DeviceLinking/Systems/SignalTimerSystem.cs",
+      "description": "Start signal begins timer; Timer signal completes or cancels it."
+    },
+    {
+      "id": "local_cell_gate_signals_native",
+      "kind": "native",
+      "source": "Content.Shared/DeviceLinking/Systems/DoorSignalControlSystem.cs",
+      "description": "Native Open and Close sinks invoke door operations; their presence does not bypass all door operating conditions."
+    },
+    {
+      "id": "local_cell_autoclose_native",
+      "kind": "native",
+      "source": "Content.Shared/Doors/Systems/SharedAirlockSystem.cs",
+      "description": "AutoClose signal disables automatic closing until the airlock closes again."
+    },
+    {
+      "id": "local_body_storage_offsets",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Storage/morgue.yml",
+      "description": "Morgue and Crematorium use EntityStorage.enteringOffset 0,-1; native profiles do not impose a TEG-like gas hookup."
+    },
+    {
+      "id": "local_body_storage_opening",
+      "kind": "native",
+      "source": "Content.Shared/Storage/EntitySystems/SharedEntityStorageSystem.cs",
+      "description": "Storage opening rejects obstructed entering offset; ejection rotates this offset into the world."
+    },
+    {
+      "id": "local_cremation_operation",
+      "kind": "native",
+      "source": "Content.Shared/Morgue/SharedCrematoriumSystem.cs",
+      "description": "Cremation requires closed storage with contents and blocks opening while active."
+    },
+    {
+      "id": "local_body_scanner_placeholder",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "description": "ComputerBodyScanner lacks dedicated medical-scanner/health-analyzer binding components in this native prototype."
+    },
+    {
+      "id": "local_hike_10925",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=10925",
+      "description": "Morgue at grid-local pose [1, 27.5, -29.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_hike_10929",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=10929",
+      "description": "Morgue at grid-local pose [1, 27.5, -28.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_hike_10935",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=10935",
+      "description": "Morgue at grid-local pose [1, 27.5, -30.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_gear_1364",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=1364",
+      "description": "Morgue at grid-local pose [12, 8.5, -40.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_gear_4986",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=4986",
+      "description": "Morgue at grid-local pose [12, 37.5, 30.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_gear_4988",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=4988",
+      "description": "Morgue at grid-local pose [12, 38.5, 30.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_gear_4985",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=4985",
+      "description": "Crematorium at grid-local pose [12, 39.5, 30.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_gear_10977",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=10977",
+      "description": "ComputerBodyScanner at grid-local pose [12, -20.5, -27.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_5396",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=5396",
+      "description": "BrigTimer at grid-local pose [2, -22.5, 4.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_8661",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=8661",
+      "description": "AirlockSecurityGlassLocked at grid-local pose [2, -22.5, 5.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_14643",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=14643",
+      "description": "BrigTimer at grid-local pose [2, -22.5, 8.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_8660",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=8660",
+      "description": "AirlockSecurityGlassLocked at grid-local pose [2, -22.5, 7.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_4662",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=4662",
+      "description": "SignalTimer at grid-local pose [2, -70.5, -0.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_9290",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=9290",
+      "description": "BlastDoor at grid-local pose [2, -70.5, -2.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_16763",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=16763",
+      "description": "SignalTimer at grid-local pose [2, -102.5, 31.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_4631",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=4631",
+      "description": "BlastDoor at grid-local pose [2, -100.5, 31.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_3887",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=3887",
+      "description": "Morgue at grid-local pose [2, -46.5, -34.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_3890",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=3890",
+      "description": "Morgue at grid-local pose [2, -44.5, -34.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_3891",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=3891",
+      "description": "Morgue at grid-local pose [2, -43.5, -34.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_16532",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=16532",
+      "description": "Crematorium at grid-local pose [2, -46.5, -49.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_3700",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=3700",
+      "description": "ComputerBodyScanner at grid-local pose [2, -124.5, -53.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_3897",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=3897",
+      "description": "ComputerBodyScanner at grid-local pose [2, -39.5, -38.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_plasma_4048",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=4048",
+      "description": "ComputerBodyScanner at grid-local pose [2, -23.5, -34.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_relic_459",
+      "kind": "map",
+      "source": "Resources/Maps/relic.yml#uid=459",
+      "description": "Morgue at grid-local pose [2, 4.5, 14.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_relic_460",
+      "kind": "map",
+      "source": "Resources/Maps/relic.yml#uid=460",
+      "description": "Morgue at grid-local pose [2, 4.5, 13.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_relic_461",
+      "kind": "map",
+      "source": "Resources/Maps/relic.yml#uid=461",
+      "description": "Morgue at grid-local pose [2, 2.5, 11.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_relic_6678",
+      "kind": "map",
+      "source": "Resources/Maps/relic.yml#uid=6678",
+      "description": "Crematorium at grid-local pose [2, -5.5, 17.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_snowball_10064",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=10064",
+      "description": "Morgue at grid-local pose [1, 71.5, 32.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_snowball_10065",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=10065",
+      "description": "Morgue at grid-local pose [1, 71.5, 33.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_snowball_10066",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=10066",
+      "description": "Morgue at grid-local pose [1, 71.5, 34.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_snowball_9612",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=9612",
+      "description": "Crematorium at grid-local pose [1, 85.5, 57.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_tram2_680",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=680",
+      "description": "Morgue at grid-local pose [15, -29.5, 6.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_tram2_1931",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=1931",
+      "description": "Morgue at grid-local pose [15, 26.5, -33.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_tram2_2252",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=2252",
+      "description": "Morgue at grid-local pose [15, 26.5, -34.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_tram2_10437",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10437",
+      "description": "Crematorium at grid-local pose [15, -62.5, -12.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_tram2_499",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=499",
+      "description": "ComputerBodyScanner at grid-local pose [15, -5.5, -44.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_tram2_16625",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=16625",
+      "description": "ComputerBodyScanner at grid-local pose [15, 23.5, -35.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_tram2_25279",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=25279",
+      "description": "ComputerBodyScanner at grid-local pose [15, 23.5, -46.5]; exact saved entity and selected bindings/loading evidence, not an operating or collision certificate."
+    },
+    {
+      "id": "local_cell_gate_prototypes",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml",
+      "description": "Brig and Security glass-door variants preserve their respective native credential boards; the authored catalog keeps its Brig entry policy."
+    }
+  ],
+  "format": "station_architect3_local_custody_medical_evidence",
+  "version": 1,
+  "method": "Read-only map entity/prototype inheritance extraction; exact saved DeviceLinkSource bindings; rotated EntityStorage loading offsets and floor/co-located-entity samples. No runtime collision, machine operation or full approach-path proof."
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Station Architect — Local layout tests</title>
+  <link rel="stylesheet" href="/departments.css">
+  <script src="/departments.js" defer></script>
+</head>
+<body>
+  <header><div><span class="eyebrow">Station Architect 3</span><h1>Local layout workbench</h1>
+    <p>Test departments, suites and individual rooms before placing them in a station.</p></div>
+    <div class="scope">Local constraints and layout quality<br><span>Station distribution and machinery operation remain separate.</span></div>
+  </header>
+  <main>
+    <aside class="controls">
+      <h2>Choose a local test</h2>
+      <form id="controls">
+        <label for="department">Catalog group</label><select id="department" disabled></select>
+        <p id="organization" class="organization"></p>
+        <label for="test-scope">Department, suite or room</label><select id="test-scope" disabled></select>
+        <p id="scope-description" class="hint"></p>
+        <p id="expected" class="muted">Loading the complete station catalog…</p>
+        <label for="area">Usable floor area <span>tiles</span></label><input id="area" type="number" min="1" step="1" required>
+        <p id="bounds" class="hint"></p>
+        <label for="aspect">Preferred width / height</label><input id="aspect" type="number" min="0.25" max="4" step="0.05" value="1" required>
+        <p class="hint">A soft shape preference. Larger values favor width; room and access requirements take priority.</p>
+        <label for="seed">Seed</label><div class="seed"><input id="seed" type="number" min="0" max="4294967295" step="1" value="1" required><button id="new-seed" type="button" title="Choose a new seed">New</button></div>
+        <div class="actions"><button id="generate" class="primary" type="submit" disabled>Generate</button><button id="resize" type="button" disabled>Resize</button></div>
+      </form>
+      <p class="hint">Area and shape apply to the chosen local test. A failed resize keeps its last passing layout. Distributed groups are placed across the station during integration.</p>
+      <section><h2>Rooms <span id="room-count"></span></h2><input id="room-filter" type="search" placeholder="Find a room" aria-label="Find a room"><div id="rooms" class="room-list"></div></section>
+    </aside>
+    <section class="canvas-column">
+      <div id="notice" class="notice" role="status" aria-live="polite">Choose a catalog group and a local test.</div>
+      <div class="map-toolbar"><div class="legend"><span>Floor</span><span class="equipment">Equipment</span><span class="door">Walking access</span><span class="counter">Service border</span></div><div class="zoom"><button id="zoom-out" title="Zoom out" aria-label="Zoom out">−</button><button id="zoom-in" title="Zoom in" aria-label="Zoom in">+</button><button id="fit">Fit</button><button id="labels" aria-pressed="true">Labels</button></div></div>
+      <div class="map-wrap"><div id="empty" class="empty"><h2>Choose the unit to test</h2><p>A department can form one cluster. Public amenities can be separate rooms.<br>Local tests preserve their requirements and keep station placement pending.</p></div><iframe id="map" title="Local test floor plan" sandbox="allow-same-origin" hidden></iframe></div>
+      <div class="artifacts"><a id="svg-link" hidden target="_blank" rel="noopener">Open SVG</a><a id="report-link" hidden target="_blank" rel="noopener">Layout report</a><a id="proposal-link" hidden target="_blank" rel="noopener">Rejected proposal report</a><span id="current-size"></span></div>
+    </section>
+    <aside class="inspector">
+      <h2 id="selection-title">Inventory</h2><p id="summary" class="muted">Generate a layout to inspect placed equipment.</p>
+      <div id="inventory-stats" class="stats"></div><div id="features" class="feature-list"></div>
+      <section><h2 id="checks-title">Local constraint checks</h2><div id="failures"><p class="muted">No layout has been generated.</p></div></section>
+      <section><h2>Layout quality</h2><div id="quality"><p class="muted">Evaluated separately from required constraints.</p></div></section>
+      <details><summary>Group requirements awaiting integration <span id="parent-count">0</span></summary><div id="parent"></div></details>
+      <details><summary>Machinery and other pending checks <span id="pending-count">0</span></summary><div id="pending"></div></details>
+      <details><summary>Connections to the station <span id="external-count">0</span></summary><div id="external"></div></details>
+    </aside>
+  </main>
+</body>
+</html>

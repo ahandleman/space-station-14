@@ -1,0 +1,1910 @@
+{
+  "attempted": 100,
+  "successful": 100,
+  "failed": 0,
+  "uniqueHashes": 100,
+  "elapsedSeconds": 12.7449034,
+  "failures": [],
+  "seeds": [
+    {
+      "seed": 0,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2536,
+        "maintenanceArea": 975,
+        "hullArea": 2354,
+        "filledArea": 8055,
+        "longestEntranceTravel": 151,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 60,
+        "score": 1689.11,
+        "hash": "c76ca922b38331d143d2b4759d848a25a291aabf89a23c3ad6be2bf16236e069"
+      }
+    },
+    {
+      "seed": 1,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2072,
+        "maintenanceArea": 968,
+        "hullArea": 2150,
+        "filledArea": 7380,
+        "longestEntranceTravel": 153,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 44,
+        "score": 1322.4,
+        "hash": "3c4160b7ed9c32d1d980ff7838e0221300249dd3f3d5ac532d4a18b608c38ec5"
+      }
+    },
+    {
+      "seed": 2,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2050,
+        "maintenanceArea": 978,
+        "hullArea": 2117,
+        "filledArea": 7335,
+        "longestEntranceTravel": 147,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 45,
+        "score": 1313.1,
+        "hash": "f5025f7aa17af670cf17cb520dc70156ff95fbe94cef25a4fd3e11a769687746"
+      }
+    },
+    {
+      "seed": 3,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2611,
+        "maintenanceArea": 979,
+        "hullArea": 2333,
+        "filledArea": 8113,
+        "longestEntranceTravel": 150,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 64,
+        "score": 1544.61,
+        "hash": "b3a1168a3d702516987c9b8c5df534c322a68557a124ffa7f2930e206a43f09a"
+      }
+    },
+    {
+      "seed": 4,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2092,
+        "maintenanceArea": 959,
+        "hullArea": 2220,
+        "filledArea": 7461,
+        "longestEntranceTravel": 160,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 48,
+        "score": 1308.11,
+        "hash": "dae10843952dbcd4eb45282889e63e0366da4d2d5d718eba457d526e63dc2d2e"
+      }
+    },
+    {
+      "seed": 5,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2033,
+        "maintenanceArea": 979,
+        "hullArea": 2081,
+        "filledArea": 7283,
+        "longestEntranceTravel": 151,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 51,
+        "score": 1290.675,
+        "hash": "d7ee70e0d7cf4e1af8e4866445b7ab4417507001f3f1b7fa8f6e78fd4edca45d"
+      }
+    },
+    {
+      "seed": 6,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2506,
+        "maintenanceArea": 964,
+        "hullArea": 2307,
+        "filledArea": 7967,
+        "longestEntranceTravel": 157,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 65,
+        "score": 1702.295,
+        "hash": "5a25a1dd34771467b446504cd4de74eba55b22491cf7cdd0a067a978b0d06d35"
+      }
+    },
+    {
+      "seed": 7,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2066,
+        "maintenanceArea": 970,
+        "hullArea": 2159,
+        "filledArea": 7385,
+        "longestEntranceTravel": 154,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 41,
+        "score": 1259.82,
+        "hash": "c63e5efefaed69966a8bea3daa1e71a6c8a689a515aca317af95151758389bf6"
+      }
+    },
+    {
+      "seed": 8,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1992,
+        "maintenanceArea": 964,
+        "hullArea": 2084,
+        "filledArea": 7230,
+        "longestEntranceTravel": 153,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 41,
+        "score": 1237.4,
+        "hash": "77abd30ea50da1610fd1acd7c8abf2596b1ec93cd46cb43da599689297e25f3e"
+      }
+    },
+    {
+      "seed": 9,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2441,
+        "maintenanceArea": 985,
+        "hullArea": 2200,
+        "filledArea": 7816,
+        "longestEntranceTravel": 145,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 56,
+        "score": 1587.42,
+        "hash": "de0e2cb6a3804aee7835ce07913f22e94d3b894ed20b9003edd2adae8c719f00"
+      }
+    },
+    {
+      "seed": 10,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2216,
+        "maintenanceArea": 959,
+        "hullArea": 2320,
+        "filledArea": 7685,
+        "longestEntranceTravel": 152,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 40,
+        "score": 1453.4,
+        "hash": "2039279aae3f8f39e0a4b076dda4195124adacfca69dc2e9eeb000270df08084"
+      }
+    },
+    {
+      "seed": 11,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1973,
+        "maintenanceArea": 980,
+        "hullArea": 2206,
+        "filledArea": 7349,
+        "longestEntranceTravel": 148,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 32,
+        "score": 1252.425,
+        "hash": "baa4fff2d23909615ad3dea6489afa0a8b983a2c3d49d7a1d38546fa73b1e30f"
+      }
+    },
+    {
+      "seed": 12,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2396,
+        "maintenanceArea": 965,
+        "hullArea": 2231,
+        "filledArea": 7782,
+        "longestEntranceTravel": 149,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 59,
+        "score": 1614.185,
+        "hash": "5253e5bc653d1cc0045ea0e7dca28e1e4753f824d8050e4b012abc8fb9ed4a6a"
+      }
+    },
+    {
+      "seed": 13,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1943,
+        "maintenanceArea": 971,
+        "hullArea": 1986,
+        "filledArea": 7090,
+        "longestEntranceTravel": 149,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 46,
+        "score": 1259.14,
+        "hash": "0a3d189fa2ba8b9051c4bc0c2ddb20124a88ef9a930a7bb8fd61d8141aca51f6"
+      }
+    },
+    {
+      "seed": 14,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2149,
+        "maintenanceArea": 968,
+        "hullArea": 2126,
+        "filledArea": 7433,
+        "longestEntranceTravel": 153,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 47,
+        "score": 1342.805,
+        "hash": "6c87b32e640e8006a8a66a872d7f16c7b8466f1fadfb3dd11137774adcf5d7ca"
+      }
+    },
+    {
+      "seed": 15,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2391,
+        "maintenanceArea": 975,
+        "hullArea": 2177,
+        "filledArea": 7733,
+        "longestEntranceTravel": 148,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 64,
+        "score": 1589.92,
+        "hash": "714c38c6298fab2bbc03ae3119b86f947d537319924832510600e14a02f39b16"
+      }
+    },
+    {
+      "seed": 16,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2094,
+        "maintenanceArea": 969,
+        "hullArea": 2214,
+        "filledArea": 7467,
+        "longestEntranceTravel": 148,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 38,
+        "score": 1264.08,
+        "hash": "5d55e73eb3497560da69024a1c2db6401816701d7d57accd725201bccbaa946d"
+      }
+    },
+    {
+      "seed": 17,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1853,
+        "maintenanceArea": 959,
+        "hullArea": 2200,
+        "filledArea": 7202,
+        "longestEntranceTravel": 153,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 32,
+        "score": 1118.1,
+        "hash": "f57fff7d040c5e3028092bedd70d776940491f00d2497dbc251ac99f65cbc6d1"
+      }
+    },
+    {
+      "seed": 18,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2443,
+        "maintenanceArea": 1003,
+        "hullArea": 2189,
+        "filledArea": 7825,
+        "longestEntranceTravel": 146,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 63,
+        "score": 1566.18,
+        "hash": "b2bcca0fa90958a5433da902877fa42ec2fb60d17c2210dee632666d4fd0e984"
+      }
+    },
+    {
+      "seed": 19,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1834,
+        "maintenanceArea": 974,
+        "hullArea": 2119,
+        "filledArea": 7117,
+        "longestEntranceTravel": 145,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 46,
+        "score": 1227.66,
+        "hash": "d639f6a7c1f9b295d5169ce9ce54ec8f5c3b63d1e03f8a80d65036c4114e209f"
+      }
+    },
+    {
+      "seed": 20,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2158,
+        "maintenanceArea": 979,
+        "hullArea": 2225,
+        "filledArea": 7552,
+        "longestEntranceTravel": 150,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 47,
+        "score": 1375.99,
+        "hash": "9621b6048a8ee5cf490b62fa572dd239df6166b515f0cb487492ad58e5fecf41"
+      }
+    },
+    {
+      "seed": 21,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2337,
+        "maintenanceArea": 965,
+        "hullArea": 2216,
+        "filledArea": 7708,
+        "longestEntranceTravel": 147,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 52,
+        "score": 1659.55,
+        "hash": "1a026abe6680b332daf3260d1eca19c171a74805ef67ee8223ed4c85a1f82c7c"
+      }
+    },
+    {
+      "seed": 22,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2081,
+        "maintenanceArea": 973,
+        "hullArea": 2307,
+        "filledArea": 7551,
+        "longestEntranceTravel": 131,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 40,
+        "score": 1258.74,
+        "hash": "ba69913d2e34f15e5489ea876589619e06caa0bbff01b356dd16511fbf643e8f"
+      }
+    },
+    {
+      "seed": 23,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1929,
+        "maintenanceArea": 953,
+        "hullArea": 2203,
+        "filledArea": 7275,
+        "longestEntranceTravel": 154,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 31,
+        "score": 1194.475,
+        "hash": "720ce4d5acbb0d80bc144bd5f188f946b5b2b461636fd39d9bb28950b3b7a43f"
+      }
+    },
+    {
+      "seed": 24,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2421,
+        "maintenanceArea": 978,
+        "hullArea": 2230,
+        "filledArea": 7819,
+        "longestEntranceTravel": 152,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 51,
+        "score": 1568.5,
+        "hash": "568e9816eb1ec8fce6452271e6567e644c2ddeed3bc762fd693e6581373450c0"
+      }
+    },
+    {
+      "seed": 25,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2227,
+        "maintenanceArea": 957,
+        "hullArea": 2152,
+        "filledArea": 7526,
+        "longestEntranceTravel": 183,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 49,
+        "score": 1268.87,
+        "hash": "db673a41c4c5d671dc4ab26201bf745326841799325bb969ccbf49dd73ea2454"
+      }
+    },
+    {
+      "seed": 26,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1930,
+        "maintenanceArea": 964,
+        "hullArea": 2098,
+        "filledArea": 7182,
+        "longestEntranceTravel": 150,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 46,
+        "score": 1292.44,
+        "hash": "6a11fc84fa993d211322dcbde6fab879e692b5c24e89000d864ef9dd05b7c518"
+      }
+    },
+    {
+      "seed": 27,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2348,
+        "maintenanceArea": 977,
+        "hullArea": 2270,
+        "filledArea": 7785,
+        "longestEntranceTravel": 144,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 56,
+        "score": 1586.34,
+        "hash": "62e2b6157dad72df611a29129dd7a7ea2cd2c1961ef89323ec673dc286a56159"
+      }
+    },
+    {
+      "seed": 28,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1887,
+        "maintenanceArea": 960,
+        "hullArea": 2062,
+        "filledArea": 7099,
+        "longestEntranceTravel": 165,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 37,
+        "score": 1106.88,
+        "hash": "8f255ea6a22216c2ae0660697fb4d5747088695f32f2e1882dad4984bf4b497a"
+      }
+    },
+    {
+      "seed": 29,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1948,
+        "maintenanceArea": 975,
+        "hullArea": 2135,
+        "filledArea": 7248,
+        "longestEntranceTravel": 152,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 44,
+        "score": 1230.18,
+        "hash": "f2ee633b0b58269c710caaa6328c5808edb05f6df810c68c51fdf6a4d232b798"
+      }
+    },
+    {
+      "seed": 30,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2380,
+        "maintenanceArea": 977,
+        "hullArea": 2295,
+        "filledArea": 7842,
+        "longestEntranceTravel": 152,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 59,
+        "score": 1526.125,
+        "hash": "4c37df888be48c5dff3c8966063bf91ec56b875ed6b1fcdb2155891e299a70eb"
+      }
+    },
+    {
+      "seed": 31,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2185,
+        "maintenanceArea": 979,
+        "hullArea": 2216,
+        "filledArea": 7570,
+        "longestEntranceTravel": 147,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 49,
+        "score": 1511.895,
+        "hash": "06c19828d491794ed328e784024691f471d20c1cc1ba8b7aafd39baa68d944ba"
+      }
+    },
+    {
+      "seed": 32,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1895,
+        "maintenanceArea": 969,
+        "hullArea": 2142,
+        "filledArea": 7196,
+        "longestEntranceTravel": 145,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 35,
+        "score": 1272.07,
+        "hash": "1a472e31bf0affc6198b1641f8b8839d63587638909aedc69bd7dd9631f8d266"
+      }
+    },
+    {
+      "seed": 33,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2484,
+        "maintenanceArea": 975,
+        "hullArea": 2258,
+        "filledArea": 7907,
+        "longestEntranceTravel": 152,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 70,
+        "score": 1656.6,
+        "hash": "6d17942cd72af25054792621fe94445a86895b2a290ab21dc43b28e896f9ec09"
+      }
+    },
+    {
+      "seed": 34,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2311,
+        "maintenanceArea": 966,
+        "hullArea": 2358,
+        "filledArea": 7825,
+        "longestEntranceTravel": 151,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 41,
+        "score": 1404.8,
+        "hash": "61e9fb9df32897d40ee70e912ad85d0d1b7f3e47d88427cbfc117ba45c735768"
+      }
+    },
+    {
+      "seed": 35,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1829,
+        "maintenanceArea": 976,
+        "hullArea": 2164,
+        "filledArea": 7159,
+        "longestEntranceTravel": 149,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 34,
+        "score": 1183.675,
+        "hash": "8d46dda8de879363e48c17bc9c6869fcae8e650a6d5dd9518710994c13f5ef94"
+      }
+    },
+    {
+      "seed": 36,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2324,
+        "maintenanceArea": 985,
+        "hullArea": 2233,
+        "filledArea": 7732,
+        "longestEntranceTravel": 151,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 59,
+        "score": 1622.035,
+        "hash": "c3e13a22433167fd3fb8e697cd21de3319e159a4b3e5957478eb5f50b86781ad"
+      }
+    },
+    {
+      "seed": 37,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2329,
+        "maintenanceArea": 965,
+        "hullArea": 2334,
+        "filledArea": 7818,
+        "longestEntranceTravel": 148,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 46,
+        "score": 1418.3,
+        "hash": "67eb6f480568553152fdca765b57bd030537e336fca9a8de8cd391a60b898350"
+      }
+    },
+    {
+      "seed": 38,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1921,
+        "maintenanceArea": 969,
+        "hullArea": 2182,
+        "filledArea": 7262,
+        "longestEntranceTravel": 150,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 39,
+        "score": 1373.685,
+        "hash": "1fb66abe6eb7a3428c1d29e252e252994626fa2b7e42327275899011a30c7788"
+      }
+    },
+    {
+      "seed": 39,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2467,
+        "maintenanceArea": 973,
+        "hullArea": 2296,
+        "filledArea": 7926,
+        "longestEntranceTravel": 143,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 51,
+        "score": 1648.64,
+        "hash": "4eee00ce2d6f74f834306e90e682e95b4ec440acc02bce5bbde2e253e00206dc"
+      }
+    },
+    {
+      "seed": 40,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1855,
+        "maintenanceArea": 967,
+        "hullArea": 2006,
+        "filledArea": 7018,
+        "longestEntranceTravel": 128,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 34,
+        "score": 1215.94,
+        "hash": "fa75bd2bc2260a4ac51e33da4718402581d3c54f64151f2c9fb135322fe8d1d4"
+      }
+    },
+    {
+      "seed": 41,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1779,
+        "maintenanceArea": 958,
+        "hullArea": 2020,
+        "filledArea": 6947,
+        "longestEntranceTravel": 153,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 52,
+        "score": 1310.285,
+        "hash": "9ccbb364b91ebeac1b36f32dfd45e2640dc732fc35e38811e2a51ef54cda8282"
+      }
+    },
+    {
+      "seed": 42,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2630,
+        "maintenanceArea": 972,
+        "hullArea": 2336,
+        "filledArea": 8128,
+        "longestEntranceTravel": 153,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 59,
+        "score": 1727.565,
+        "hash": "436437fc0160f884f80b4cea4b2930a03eb4aebece3ea73e35cc88855b7ad1ac"
+      }
+    },
+    {
+      "seed": 43,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2014,
+        "maintenanceArea": 979,
+        "hullArea": 2137,
+        "filledArea": 7320,
+        "longestEntranceTravel": 130,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 41,
+        "score": 1147.79,
+        "hash": "46d8513a5fc2e9225435c60e8d019c59ca383ac09ff3d612e222f0e1a84d3b3b"
+      }
+    },
+    {
+      "seed": 44,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2270,
+        "maintenanceArea": 970,
+        "hullArea": 2088,
+        "filledArea": 7518,
+        "longestEntranceTravel": 154,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 49,
+        "score": 1333.78,
+        "hash": "eaa5f6dc27ff6de2a76608c5fdffaad7b27d9e717d271f4e0115ad9950597233"
+      }
+    },
+    {
+      "seed": 45,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2383,
+        "maintenanceArea": 983,
+        "hullArea": 2294,
+        "filledArea": 7850,
+        "longestEntranceTravel": 144,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 59,
+        "score": 1597.44,
+        "hash": "511f46e91df3994e8401691becb606852445536eec59ee914210ef947498ca5b"
+      }
+    },
+    {
+      "seed": 46,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2406,
+        "maintenanceArea": 965,
+        "hullArea": 2296,
+        "filledArea": 7857,
+        "longestEntranceTravel": 151,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 38,
+        "score": 1405.8,
+        "hash": "47c9781393bb25d9c72a7e4d465145c298893bf7be90b208bb2939ee05efbe21"
+      }
+    },
+    {
+      "seed": 47,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2074,
+        "maintenanceArea": 986,
+        "hullArea": 2079,
+        "filledArea": 7329,
+        "longestEntranceTravel": 153,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 36,
+        "score": 1281.88,
+        "hash": "74c9fe9396f7af379cf5dc7481e210b19cdf8f2e3b2d67ed9fcfde705ade2b04"
+      }
+    },
+    {
+      "seed": 48,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2444,
+        "maintenanceArea": 992,
+        "hullArea": 2373,
+        "filledArea": 7999,
+        "longestEntranceTravel": 152,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 55,
+        "score": 1539.29,
+        "hash": "e6ce99fb59769ccf7b2276fd9c9e01f3b54dd0d24c59f150be8c70679b36b39d"
+      }
+    },
+    {
+      "seed": 49,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2173,
+        "maintenanceArea": 969,
+        "hullArea": 2152,
+        "filledArea": 7484,
+        "longestEntranceTravel": 155,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 41,
+        "score": 1389,
+        "hash": "f048059f982df4ab8a8cb5c589e61f9a3f4d652868669283fb21168ee44b36b4"
+      }
+    },
+    {
+      "seed": 50,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1892,
+        "maintenanceArea": 987,
+        "hullArea": 2095,
+        "filledArea": 7164,
+        "longestEntranceTravel": 150,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 38,
+        "score": 1225.36,
+        "hash": "7d27fde8c421a42e932cffe047fc5327f2c29522b2015fcf49c4b0cdd68e67ce"
+      }
+    },
+    {
+      "seed": 51,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2470,
+        "maintenanceArea": 977,
+        "hullArea": 2289,
+        "filledArea": 7926,
+        "longestEntranceTravel": 149,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 64,
+        "score": 1707.275,
+        "hash": "d98ce5b397ebd3cb3398c527aff2fde0a5f9272bc938ebc365618832b9ed2a96"
+      }
+    },
+    {
+      "seed": 52,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2103,
+        "maintenanceArea": 980,
+        "hullArea": 2125,
+        "filledArea": 7398,
+        "longestEntranceTravel": 129,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 54,
+        "score": 1330.35,
+        "hash": "f65e3cc840c575172ffa8439a427d05bde941a018a12d2fc36bfa5b931ceb18f"
+      }
+    },
+    {
+      "seed": 53,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2121,
+        "maintenanceArea": 973,
+        "hullArea": 2200,
+        "filledArea": 7484,
+        "longestEntranceTravel": 147,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 48,
+        "score": 1273.56,
+        "hash": "6a82a74d1c00681a1b9aee75ceef794fffc71c2c07586fde791c1df793b2bb99"
+      }
+    },
+    {
+      "seed": 54,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2387,
+        "maintenanceArea": 989,
+        "hullArea": 2236,
+        "filledArea": 7802,
+        "longestEntranceTravel": 150,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 55,
+        "score": 1565.425,
+        "hash": "5533ce35f0dc4c4c5991ce4abcda20c554f583c12cbb07e831b46972c15970d8"
+      }
+    },
+    {
+      "seed": 55,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2139,
+        "maintenanceArea": 964,
+        "hullArea": 2281,
+        "filledArea": 7574,
+        "longestEntranceTravel": 153,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 44,
+        "score": 1367.305,
+        "hash": "852b567f5ce338c933cba0edb5e74940e2ef27b7a111114f85554ea415424b9e"
+      }
+    },
+    {
+      "seed": 56,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2158,
+        "maintenanceArea": 985,
+        "hullArea": 2300,
+        "filledArea": 7633,
+        "longestEntranceTravel": 152,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 37,
+        "score": 1311.465,
+        "hash": "87256ef070762d45012b4c284eb3e6bf1cc2143a6eb4c174b02a6e4e1b1fcd97"
+      }
+    },
+    {
+      "seed": 57,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2287,
+        "maintenanceArea": 981,
+        "hullArea": 2230,
+        "filledArea": 7688,
+        "longestEntranceTravel": 146,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 53,
+        "score": 1542.065,
+        "hash": "aa77aab11175fcd382647892e3e182d2a1b174a65506799aa2d7b8a5e96ffd47"
+      }
+    },
+    {
+      "seed": 58,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1932,
+        "maintenanceArea": 952,
+        "hullArea": 2077,
+        "filledArea": 7151,
+        "longestEntranceTravel": 164,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 39,
+        "score": 1120.555,
+        "hash": "af9597610526a77607ff8cc47382e2f0efae1d8cacdcf80252d140640680479b"
+      }
+    },
+    {
+      "seed": 59,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2018,
+        "maintenanceArea": 957,
+        "hullArea": 2047,
+        "filledArea": 7212,
+        "longestEntranceTravel": 147,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 48,
+        "score": 1271.29,
+        "hash": "7731fe172da1d348fa47f68829325f90c842988ab4ff292fc67f526443f01b7a"
+      }
+    },
+    {
+      "seed": 60,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2442,
+        "maintenanceArea": 974,
+        "hullArea": 2229,
+        "filledArea": 7835,
+        "longestEntranceTravel": 154,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 51,
+        "score": 1599.27,
+        "hash": "83073ec50a7600b65af85d07551609a7ba85244a8bfcc14ac62254458a398480"
+      }
+    },
+    {
+      "seed": 61,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2351,
+        "maintenanceArea": 974,
+        "hullArea": 2318,
+        "filledArea": 7833,
+        "longestEntranceTravel": 152,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 39,
+        "score": 1491.89,
+        "hash": "db3118ddc85198419c61e0952d23ffb114c1d838697967f124d5dad0ae5a5c98"
+      }
+    },
+    {
+      "seed": 62,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1856,
+        "maintenanceArea": 969,
+        "hullArea": 2173,
+        "filledArea": 7188,
+        "longestEntranceTravel": 150,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 43,
+        "score": 1184.6,
+        "hash": "ea336ffbf14d9bc189463bddb59c4c65c7ce85abfe39e7ee32fd0300fc6c2eef"
+      }
+    },
+    {
+      "seed": 63,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2600,
+        "maintenanceArea": 981,
+        "hullArea": 2273,
+        "filledArea": 8044,
+        "longestEntranceTravel": 151,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 69,
+        "score": 1658.785,
+        "hash": "03e3001c72598d4b8c52ebc58ddc9aa93c09988d958c0a008419a58d0cb2dd2d"
+      }
+    },
+    {
+      "seed": 64,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2165,
+        "maintenanceArea": 964,
+        "hullArea": 2117,
+        "filledArea": 7436,
+        "longestEntranceTravel": 157,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 47,
+        "score": 1373.2,
+        "hash": "4e36ace541a78d11b331c1956356264d0a7a4a3ea7279044be6dc31dc47d9779"
+      }
+    },
+    {
+      "seed": 65,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2072,
+        "maintenanceArea": 970,
+        "hullArea": 2135,
+        "filledArea": 7367,
+        "longestEntranceTravel": 150,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 46,
+        "score": 1279.23,
+        "hash": "8caa90d18b176cd0b766da6d62a6484c7793550d9a68d6b2446cf0bb9a1b0c76"
+      }
+    },
+    {
+      "seed": 66,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2697,
+        "maintenanceArea": 966,
+        "hullArea": 2316,
+        "filledArea": 8169,
+        "longestEntranceTravel": 155,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 62,
+        "score": 1656.02,
+        "hash": "cb07af3594be45ffe1f664e11cf5493cf57298e0c086c7bee5dd45dd524c863d"
+      }
+    },
+    {
+      "seed": 67,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2010,
+        "maintenanceArea": 962,
+        "hullArea": 2177,
+        "filledArea": 7339,
+        "longestEntranceTravel": 159,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 48,
+        "score": 1235.355,
+        "hash": "f4c7629519efa685464a8785c48fd7ed2251570db642f6078c8c9c886499395a"
+      }
+    },
+    {
+      "seed": 68,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2236,
+        "maintenanceArea": 965,
+        "hullArea": 2183,
+        "filledArea": 7574,
+        "longestEntranceTravel": 154,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 47,
+        "score": 1338.07,
+        "hash": "ac24048477ec6c97de4a3cf12b9eddebddfed1ebc55d1923a0515c8a286c3b45"
+      }
+    },
+    {
+      "seed": 69,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2584,
+        "maintenanceArea": 987,
+        "hullArea": 2206,
+        "filledArea": 7967,
+        "longestEntranceTravel": 152,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 62,
+        "score": 1596,
+        "hash": "5262014ad412dd412bb4be50c965abb1b6d4dc0f3ed75bcee1b36b16985c81fe"
+      }
+    },
+    {
+      "seed": 70,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2099,
+        "maintenanceArea": 969,
+        "hullArea": 2150,
+        "filledArea": 7408,
+        "longestEntranceTravel": 150,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 39,
+        "score": 1373.71,
+        "hash": "ce92d8e00e11e5cdb205d6803f805e04a5bbb9adf79cba4faa43e6cf9a4a4669"
+      }
+    },
+    {
+      "seed": 71,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2130,
+        "maintenanceArea": 969,
+        "hullArea": 2064,
+        "filledArea": 7353,
+        "longestEntranceTravel": 149,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 51,
+        "score": 1416.97,
+        "hash": "e38e0168c8fc682fbcaf834ba2feea4e4bae68cc6141de264bf41e9fe6735cc3"
+      }
+    },
+    {
+      "seed": 72,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2501,
+        "maintenanceArea": 987,
+        "hullArea": 2195,
+        "filledArea": 7873,
+        "longestEntranceTravel": 164,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 49,
+        "score": 1514.1,
+        "hash": "bdab29b62e7960658f4d5849c352cfaa0925e7c6dd66729d7456e1b7255d7101"
+      }
+    },
+    {
+      "seed": 73,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2081,
+        "maintenanceArea": 966,
+        "hullArea": 2168,
+        "filledArea": 7405,
+        "longestEntranceTravel": 154,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 47,
+        "score": 1313.69,
+        "hash": "4e1999678ebf2ae50182b36b85ddcbea82bab111f7f19b87a0ab43eecb3ad6bb"
+      }
+    },
+    {
+      "seed": 74,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1898,
+        "maintenanceArea": 974,
+        "hullArea": 2047,
+        "filledArea": 7109,
+        "longestEntranceTravel": 152,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 51,
+        "score": 1262.995,
+        "hash": "4280b2de6cf89e97f6ebd0e3b1c393639c5349c2ab50961fdec60165db636571"
+      }
+    },
+    {
+      "seed": 75,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2817,
+        "maintenanceArea": 975,
+        "hullArea": 2430,
+        "filledArea": 8412,
+        "longestEntranceTravel": 155,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 62,
+        "score": 1615.5,
+        "hash": "dc4f0b6c133e96312ffaca2bbf03cff2a2379a6a9e40a21a22f75e1381d0279b"
+      }
+    },
+    {
+      "seed": 76,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2221,
+        "maintenanceArea": 959,
+        "hullArea": 2233,
+        "filledArea": 7603,
+        "longestEntranceTravel": 151,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 43,
+        "score": 1416.33,
+        "hash": "72608020d6779ca68b08ca3fcee1f292c3c9706d205724eaefebbd09efa003e7"
+      }
+    },
+    {
+      "seed": 77,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1958,
+        "maintenanceArea": 983,
+        "hullArea": 2102,
+        "filledArea": 7233,
+        "longestEntranceTravel": 156,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 40,
+        "score": 1404.565,
+        "hash": "350b2609d1b8aa98c8324f54efe077895bc786318ea04cc0b4118360fcc9d163"
+      }
+    },
+    {
+      "seed": 78,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2473,
+        "maintenanceArea": 994,
+        "hullArea": 2294,
+        "filledArea": 7951,
+        "longestEntranceTravel": 154,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 69,
+        "score": 1699.185,
+        "hash": "b0b061d62b441f9cd5cbad515debe8a3fd59a914af657323d0a5290e2f1a7424"
+      }
+    },
+    {
+      "seed": 79,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2057,
+        "maintenanceArea": 959,
+        "hullArea": 2248,
+        "filledArea": 7454,
+        "longestEntranceTravel": 156,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 43,
+        "score": 1422.95,
+        "hash": "3508a8202376b20026fc8da0bfd7e82eff03839559a5a8885f4e151ce522ee26"
+      }
+    },
+    {
+      "seed": 80,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2110,
+        "maintenanceArea": 966,
+        "hullArea": 2089,
+        "filledArea": 7355,
+        "longestEntranceTravel": 154,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 40,
+        "score": 1311.895,
+        "hash": "b7d10fa1e2548a82aebd197f840efad8818baa72ee7702df8315bb122a59dab5"
+      }
+    },
+    {
+      "seed": 81,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2367,
+        "maintenanceArea": 980,
+        "hullArea": 2236,
+        "filledArea": 7773,
+        "longestEntranceTravel": 151,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 63,
+        "score": 1510.185,
+        "hash": "390c5e3398d379e9c68b9fba6409c19462e8ee29473c13c8371de56f54ac6e6a"
+      }
+    },
+    {
+      "seed": 82,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2222,
+        "maintenanceArea": 968,
+        "hullArea": 2231,
+        "filledArea": 7611,
+        "longestEntranceTravel": 153,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 41,
+        "score": 1432.475,
+        "hash": "c1774c92421d159290305f8f45fe582affe3d72aef8ca054f9441af8487f6924"
+      }
+    },
+    {
+      "seed": 83,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2128,
+        "maintenanceArea": 963,
+        "hullArea": 2125,
+        "filledArea": 7406,
+        "longestEntranceTravel": 154,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 52,
+        "score": 1297.95,
+        "hash": "cc7b912ad41851a29c6aaa33af63a281bf83e0eaaed7365f28132e6ddcdf354d"
+      }
+    },
+    {
+      "seed": 84,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2335,
+        "maintenanceArea": 981,
+        "hullArea": 2253,
+        "filledArea": 7759,
+        "longestEntranceTravel": 148,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 52,
+        "score": 1455.88,
+        "hash": "3787dbf0112c05fc1a8eb1c3d13f3e1d207248f4c4bddf09b555ccf195a9efeb"
+      }
+    },
+    {
+      "seed": 85,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2189,
+        "maintenanceArea": 964,
+        "hullArea": 2207,
+        "filledArea": 7550,
+        "longestEntranceTravel": 155,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 44,
+        "score": 1337.4,
+        "hash": "4f7f177f11df50a65c5bcb8128a86a374e549e298c3a3ea9bbabd2782ebf5005"
+      }
+    },
+    {
+      "seed": 86,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2040,
+        "maintenanceArea": 977,
+        "hullArea": 2040,
+        "filledArea": 7247,
+        "longestEntranceTravel": 150,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 51,
+        "score": 1335.03,
+        "hash": "1dd3f10e88296f3a5cf2cc81c333be3219f31ac7f84d8ccf09b9c9f186c647af"
+      }
+    },
+    {
+      "seed": 87,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2423,
+        "maintenanceArea": 989,
+        "hullArea": 2208,
+        "filledArea": 7810,
+        "longestEntranceTravel": 149,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 60,
+        "score": 1557.73,
+        "hash": "eff631f83cb75f6d97515e93acbb9276bb641cc87ca45e22a3e19394249d4a15"
+      }
+    },
+    {
+      "seed": 88,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2003,
+        "maintenanceArea": 967,
+        "hullArea": 2190,
+        "filledArea": 7350,
+        "longestEntranceTravel": 130,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 37,
+        "score": 1332.79,
+        "hash": "6b3d3dc280d51c3199bc50d0088beefd561d431e2f2e707577ed5f024bd903c9"
+      }
+    },
+    {
+      "seed": 89,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1877,
+        "maintenanceArea": 959,
+        "hullArea": 2025,
+        "filledArea": 7051,
+        "longestEntranceTravel": 148,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 53,
+        "score": 1243.29,
+        "hash": "f53365d443f3164377ee32c47960efd5a8961a26f5fcfdbd2a2aedc0c501e9e1"
+      }
+    },
+    {
+      "seed": 90,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2707,
+        "maintenanceArea": 976,
+        "hullArea": 2194,
+        "filledArea": 8067,
+        "longestEntranceTravel": 156,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 65,
+        "score": 1843.21,
+        "hash": "3c70c99ec60d5bd41edf5ba6875031866c01f0db52e5f9b37627c84a637daad5"
+      }
+    },
+    {
+      "seed": 91,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1681,
+        "maintenanceArea": 1000,
+        "hullArea": 2049,
+        "filledArea": 6920,
+        "longestEntranceTravel": 141,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 45,
+        "score": 1380.74,
+        "hash": "6ac6f3b1323e02d90565f9c466db49dab0af00652bb592c5b8dd5535021b49b6"
+      }
+    },
+    {
+      "seed": 92,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2010,
+        "maintenanceArea": 964,
+        "hullArea": 2102,
+        "filledArea": 7266,
+        "longestEntranceTravel": 154,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 40,
+        "score": 1152.26,
+        "hash": "b77d11d58f75a6b163ac56e4fe2eae67e37cb7422f4db9598f2920d36e311e50"
+      }
+    },
+    {
+      "seed": 93,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2487,
+        "maintenanceArea": 977,
+        "hullArea": 2310,
+        "filledArea": 7964,
+        "longestEntranceTravel": 162,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 57,
+        "score": 1641.5,
+        "hash": "eca809be8d3938cd5e43513b2c8943b35977339412cf6a58beeb97a8ee9ffab4"
+      }
+    },
+    {
+      "seed": 94,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2064,
+        "maintenanceArea": 965,
+        "hullArea": 2172,
+        "filledArea": 7391,
+        "longestEntranceTravel": 150,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 40,
+        "score": 1353.74,
+        "hash": "d6586d93a9fa8881e241f72bc3efc52c7abd1cd36c780dc64bfd324708e0db36"
+      }
+    },
+    {
+      "seed": 95,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2265,
+        "maintenanceArea": 973,
+        "hullArea": 2323,
+        "filledArea": 7751,
+        "longestEntranceTravel": 157,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 49,
+        "score": 1216.66,
+        "hash": "666ba710fd0247549b80abb2e1b1f7cc52e61264acd29caca1e7e19ce9e5e007"
+      }
+    },
+    {
+      "seed": 96,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2373,
+        "maintenanceArea": 987,
+        "hullArea": 2199,
+        "filledArea": 7749,
+        "longestEntranceTravel": 154,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 57,
+        "score": 1563.2,
+        "hash": "bbdabb1dce05c3d69018bcd38b8ded2ce0e7f8e1cef626d296cfa9ee53a8b4f8"
+      }
+    },
+    {
+      "seed": 97,
+      "archetype": "ring",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 1938,
+        "maintenanceArea": 968,
+        "hullArea": 2245,
+        "filledArea": 7341,
+        "longestEntranceTravel": 146,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 38,
+        "score": 1459.09,
+        "hash": "013f27792643d3229f7aeb00357b4ff55cd6398d9afc97e3e1196274d89d4166"
+      }
+    },
+    {
+      "seed": 98,
+      "archetype": "spine",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2172,
+        "maintenanceArea": 980,
+        "hullArea": 2169,
+        "filledArea": 7511,
+        "longestEntranceTravel": 158,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 56,
+        "score": 1473,
+        "hash": "c652e2f2be8fd323fb0a08aa67f5d8ef0943a0f8607d3382c3e2526abe72d7cf"
+      }
+    },
+    {
+      "seed": 99,
+      "archetype": "hub",
+      "attempts": 1,
+      "metrics": {
+        "interiorArea": 1688,
+        "publicArea": 2452,
+        "maintenanceArea": 983,
+        "hullArea": 2298,
+        "filledArea": 7923,
+        "longestEntranceTravel": 151,
+        "topologyBridges": 0,
+        "topologyArticulations": 0,
+        "circulationArticulations": 0,
+        "routeTurns": 62,
+        "score": 1632.02,
+        "hash": "d0908a3ef6b620c6c849a0f3041a05f380bc40148c8454fa8318d88a701af963"
+      }
+    }
+  ]
+}

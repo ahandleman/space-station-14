@@ -1,0 +1,3031 @@
+{
+  "directionConvention": {
+    "0": [
+      0,
+      -1
+    ],
+    "180": [
+      0,
+      1
+    ],
+    "270": [
+      -1,
+      0
+    ],
+    "90": [
+      1,
+      0
+    ]
+  },
+  "format": "ss14-native-genpop-custody-evidence",
+  "limits": [
+    "No simulated sentence expiration, AI/mob movement, pulling, item retrieval, or native map export.",
+    "Nearby locker coordinates do not prove a named room ownership boundary.",
+    "Map variation is evidence; the current user-requested custody design is authoritative."
+  ],
+  "maps": [
+    {
+      "gateCount": 3,
+      "gates": [
+        {
+          "grid": 8364,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 8364,
+              "pos": "-16.5,27.5",
+              "rot": "-1.5707963267948966 rad",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopEnter"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 3.162,
+              "uid": 9058
+            },
+            {
+              "distance": 3.606,
+              "uid": 9060
+            },
+            {
+              "distance": 4.243,
+              "uid": 9063
+            },
+            {
+              "distance": 1.414,
+              "uid": 9064
+            },
+            {
+              "distance": 2.236,
+              "uid": 9065
+            },
+            {
+              "distance": 3.162,
+              "uid": 9066
+            },
+            {
+              "distance": 4.123,
+              "uid": 9070
+            },
+            {
+              "distance": 5.099,
+              "uid": 9069
+            }
+          ],
+          "position": [
+            -16.5,
+            27.5
+          ],
+          "prototype": "EnergyGateGenpopEnter",
+          "rotationDegrees": 270.0,
+          "source": "Resources/Maps/box.yml#uid=8703",
+          "travelDirection": [
+            -1.0,
+            -0.0
+          ],
+          "uid": 8703
+        },
+        {
+          "grid": 8364,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 8364,
+              "pos": "-16.5,29.5",
+              "rot": "1.5707963267948966 rad",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopLeave"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 1.414,
+              "uid": 9058
+            },
+            {
+              "distance": 2.236,
+              "uid": 9060
+            },
+            {
+              "distance": 3.162,
+              "uid": 9063
+            },
+            {
+              "distance": 3.162,
+              "uid": 9064
+            },
+            {
+              "distance": 3.606,
+              "uid": 9065
+            },
+            {
+              "distance": 4.243,
+              "uid": 9066
+            },
+            {
+              "distance": 5.0,
+              "uid": 9070
+            },
+            {
+              "distance": 5.831,
+              "uid": 9069
+            }
+          ],
+          "position": [
+            -16.5,
+            29.5
+          ],
+          "prototype": "EnergyGateGenpopLeave",
+          "rotationDegrees": 90.0,
+          "source": "Resources/Maps/box.yml#uid=771",
+          "travelDirection": [
+            1.0,
+            -0.0
+          ],
+          "uid": 771
+        },
+        {
+          "grid": 8364,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 8364,
+              "pos": "-6.5,27.5",
+              "rot": "1.5707963267948966 rad",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopLeave"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 9.487,
+              "uid": 9058
+            },
+            {
+              "distance": 8.544,
+              "uid": 9060
+            },
+            {
+              "distance": 7.616,
+              "uid": 9063
+            },
+            {
+              "distance": 9.055,
+              "uid": 9064
+            },
+            {
+              "distance": 8.062,
+              "uid": 9065
+            },
+            {
+              "distance": 7.071,
+              "uid": 9066
+            },
+            {
+              "distance": 6.083,
+              "uid": 9070
+            },
+            {
+              "distance": 5.099,
+              "uid": 9069
+            }
+          ],
+          "position": [
+            -6.5,
+            27.5
+          ],
+          "prototype": "EnergyGateGenpopLeave",
+          "rotationDegrees": 90.0,
+          "source": "Resources/Maps/box.yml#uid=8739",
+          "travelDirection": [
+            1.0,
+            -0.0
+          ],
+          "uid": 8739
+        }
+      ],
+      "lockerCount": 8,
+      "lockers": [
+        {
+          "grid": 8364,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 8364,
+              "pos": "-15.5,30.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -15.5,
+            30.5
+          ],
+          "prototype": "LockerPrisoner",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/box.yml#uid=9058",
+          "uid": 9058
+        },
+        {
+          "grid": 8364,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 8364,
+              "pos": "-14.5,30.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -14.5,
+            30.5
+          ],
+          "prototype": "LockerPrisoner2",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/box.yml#uid=9060",
+          "uid": 9060
+        },
+        {
+          "grid": 8364,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 8364,
+              "pos": "-13.5,30.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -13.5,
+            30.5
+          ],
+          "prototype": "LockerPrisoner3",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/box.yml#uid=9063",
+          "uid": 9063
+        },
+        {
+          "grid": 8364,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 8364,
+              "pos": "-15.5,26.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -15.5,
+            26.5
+          ],
+          "prototype": "LockerPrisoner4",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/box.yml#uid=9064",
+          "uid": 9064
+        },
+        {
+          "grid": 8364,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 8364,
+              "pos": "-14.5,26.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -14.5,
+            26.5
+          ],
+          "prototype": "LockerPrisoner5",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/box.yml#uid=9065",
+          "uid": 9065
+        },
+        {
+          "grid": 8364,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 8364,
+              "pos": "-13.5,26.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -13.5,
+            26.5
+          ],
+          "prototype": "LockerPrisoner6",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/box.yml#uid=9066",
+          "uid": 9066
+        },
+        {
+          "grid": 8364,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 8364,
+              "pos": "-12.5,26.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -12.5,
+            26.5
+          ],
+          "prototype": "LockerPrisoner7",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/box.yml#uid=9070",
+          "uid": 9070
+        },
+        {
+          "grid": 8364,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 8364,
+              "pos": "-11.5,26.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -11.5,
+            26.5
+          ],
+          "prototype": "LockerPrisoner8",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/box.yml#uid=9069",
+          "uid": 9069
+        }
+      ],
+      "map": "box",
+      "sha256": "6683c4279be7af641e396862f7b12e7206a19011382840a49628c61ae28856a2",
+      "source": "Resources/Maps/box.yml"
+    },
+    {
+      "gateCount": 3,
+      "gates": [
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "33.5,22.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopEnter"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 5.0,
+              "uid": 10454
+            },
+            {
+              "distance": 4.243,
+              "uid": 10440
+            },
+            {
+              "distance": 3.606,
+              "uid": 10461
+            },
+            {
+              "distance": 3.162,
+              "uid": 10447
+            }
+          ],
+          "position": [
+            33.5,
+            22.5
+          ],
+          "prototype": "EnergyGateGenpopEnter",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/packed.yml#uid=2312",
+          "travelDirection": [
+            0.0,
+            -1.0
+          ],
+          "uid": 2312
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "30.5,22.5",
+              "rot": "3.141592653589793 rad",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopLeave"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 3.162,
+              "uid": 10454
+            },
+            {
+              "distance": 3.0,
+              "uid": 10440
+            },
+            {
+              "distance": 3.162,
+              "uid": 10461
+            },
+            {
+              "distance": 3.606,
+              "uid": 10447
+            }
+          ],
+          "position": [
+            30.5,
+            22.5
+          ],
+          "prototype": "EnergyGateGenpopLeave",
+          "rotationDegrees": 180.0,
+          "source": "Resources/Maps/packed.yml#uid=3179",
+          "travelDirection": [
+            0.0,
+            1.0
+          ],
+          "uid": 3179
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "28.5,24.5",
+              "rot": "-1.5707963267948966 rad",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopLeave"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 1.414,
+              "uid": 10454
+            },
+            {
+              "distance": 2.236,
+              "uid": 10440
+            },
+            {
+              "distance": 3.162,
+              "uid": 10461
+            },
+            {
+              "distance": 4.123,
+              "uid": 10447
+            }
+          ],
+          "position": [
+            28.5,
+            24.5
+          ],
+          "prototype": "EnergyGateGenpopLeave",
+          "rotationDegrees": 270.0,
+          "source": "Resources/Maps/packed.yml#uid=3212",
+          "travelDirection": [
+            -1.0,
+            -0.0
+          ],
+          "uid": 3212
+        }
+      ],
+      "lockerCount": 4,
+      "lockers": [
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Physics": {
+              "bodyType": "Static",
+              "type": "Physics"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "pos": "29.5,25.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            29.5,
+            25.5
+          ],
+          "prototype": "LockerPrisoner",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/packed.yml#uid=10454",
+          "uid": 10454
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Physics": {
+              "bodyType": "Static",
+              "type": "Physics"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "pos": "30.5,25.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            30.5,
+            25.5
+          ],
+          "prototype": "LockerPrisoner2",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/packed.yml#uid=10440",
+          "uid": 10440
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Physics": {
+              "bodyType": "Static",
+              "type": "Physics"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "pos": "31.5,25.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            31.5,
+            25.5
+          ],
+          "prototype": "LockerPrisoner3",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/packed.yml#uid=10461",
+          "uid": 10461
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Physics": {
+              "bodyType": "Static",
+              "type": "Physics"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "pos": "32.5,25.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            32.5,
+            25.5
+          ],
+          "prototype": "LockerPrisoner4",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/packed.yml#uid=10447",
+          "uid": 10447
+        }
+      ],
+      "map": "packed",
+      "sha256": "ae7613de34f165a5c6fa7df0cfc9869ce2725b2841de5f5fe4e42a1730d7e8d0",
+      "source": "Resources/Maps/packed.yml"
+    },
+    {
+      "gateCount": 3,
+      "gates": [
+        {
+          "grid": 60,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 60,
+              "pos": "-17.5,-16.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopEnter"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 5.831,
+              "uid": 2166
+            },
+            {
+              "distance": 5.385,
+              "uid": 2244
+            },
+            {
+              "distance": 5.0,
+              "uid": 1584
+            },
+            {
+              "distance": 4.0,
+              "uid": 1639
+            },
+            {
+              "distance": 3.0,
+              "uid": 1579
+            },
+            {
+              "distance": 2.0,
+              "uid": 8255
+            },
+            {
+              "distance": 4.243,
+              "uid": 2278
+            },
+            {
+              "distance": 3.162,
+              "uid": 2861
+            }
+          ],
+          "position": [
+            -17.5,
+            -16.5
+          ],
+          "prototype": "EnergyGateGenpopEnter",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/bagel.yml#uid=13624",
+          "travelDirection": [
+            0.0,
+            -1.0
+          ],
+          "uid": 13624
+        },
+        {
+          "grid": 60,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 60,
+              "pos": "-21.5,-14.5",
+              "rot": "-1.5707963267948966 rad",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopLeave"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 3.162,
+              "uid": 2166
+            },
+            {
+              "distance": 3.606,
+              "uid": 2244
+            },
+            {
+              "distance": 5.0,
+              "uid": 1584
+            },
+            {
+              "distance": 4.472,
+              "uid": 1639
+            },
+            {
+              "distance": 4.123,
+              "uid": 1579
+            },
+            {
+              "distance": 4.0,
+              "uid": 8255
+            },
+            {
+              "distance": 1.414,
+              "uid": 2278
+            },
+            {
+              "distance": 1.414,
+              "uid": 2861
+            }
+          ],
+          "position": [
+            -21.5,
+            -14.5
+          ],
+          "prototype": "EnergyGateGenpopLeave",
+          "rotationDegrees": 270.0,
+          "source": "Resources/Maps/bagel.yml#uid=8271",
+          "travelDirection": [
+            -1.0,
+            -0.0
+          ],
+          "uid": 8271
+        },
+        {
+          "grid": 60,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 60,
+              "pos": "-19.5,-16.5",
+              "rot": "3.141592653589793 rad",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopLeave"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 5.099,
+              "uid": 2166
+            },
+            {
+              "distance": 5.0,
+              "uid": 2244
+            },
+            {
+              "distance": 5.385,
+              "uid": 1584
+            },
+            {
+              "distance": 4.472,
+              "uid": 1639
+            },
+            {
+              "distance": 3.606,
+              "uid": 1579
+            },
+            {
+              "distance": 2.828,
+              "uid": 8255
+            },
+            {
+              "distance": 3.162,
+              "uid": 2278
+            },
+            {
+              "distance": 1.414,
+              "uid": 2861
+            }
+          ],
+          "position": [
+            -19.5,
+            -16.5
+          ],
+          "prototype": "EnergyGateGenpopLeave",
+          "rotationDegrees": 180.0,
+          "source": "Resources/Maps/bagel.yml#uid=13631",
+          "travelDirection": [
+            0.0,
+            1.0
+          ],
+          "uid": 13631
+        }
+      ],
+      "lockerCount": 8,
+      "lockers": [
+        {
+          "grid": 60,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 60,
+              "pos": "-20.5,-11.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -20.5,
+            -11.5
+          ],
+          "prototype": "LockerPrisoner",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/bagel.yml#uid=2166",
+          "uid": 2166
+        },
+        {
+          "grid": 60,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 60,
+              "pos": "-19.5,-11.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -19.5,
+            -11.5
+          ],
+          "prototype": "LockerPrisoner2",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/bagel.yml#uid=2244",
+          "uid": 2244
+        },
+        {
+          "grid": 60,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 60,
+              "pos": "-17.5,-11.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -17.5,
+            -11.5
+          ],
+          "prototype": "LockerPrisoner3",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/bagel.yml#uid=1584",
+          "uid": 1584
+        },
+        {
+          "grid": 60,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 60,
+              "pos": "-17.5,-12.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -17.5,
+            -12.5
+          ],
+          "prototype": "LockerPrisoner4",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/bagel.yml#uid=1639",
+          "uid": 1639
+        },
+        {
+          "grid": 60,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 60,
+              "pos": "-17.5,-13.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -17.5,
+            -13.5
+          ],
+          "prototype": "LockerPrisoner5",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/bagel.yml#uid=1579",
+          "uid": 1579
+        },
+        {
+          "grid": 60,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 60,
+              "pos": "-17.5,-14.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -17.5,
+            -14.5
+          ],
+          "prototype": "LockerPrisoner6",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/bagel.yml#uid=8255",
+          "uid": 8255
+        },
+        {
+          "grid": 60,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 60,
+              "pos": "-20.5,-13.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -20.5,
+            -13.5
+          ],
+          "prototype": "LockerPrisoner7",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/bagel.yml#uid=2278",
+          "uid": 2278
+        },
+        {
+          "grid": 60,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 60,
+              "pos": "-20.5,-15.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -20.5,
+            -15.5
+          ],
+          "prototype": "LockerPrisoner8",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/bagel.yml#uid=2861",
+          "uid": 2861
+        }
+      ],
+      "map": "bagel",
+      "sha256": "ef3b8a75e834a7e5b9e6b990abe2d9343ee2e46d38980be76140f6e8717b61a8",
+      "source": "Resources/Maps/bagel.yml"
+    },
+    {
+      "gateCount": 3,
+      "gates": [
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "-89.5,-42.5",
+              "rot": "1.5707963267948966 rad",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopEnter"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 4.123,
+              "uid": 2360
+            },
+            {
+              "distance": 3.162,
+              "uid": 9306
+            },
+            {
+              "distance": 2.236,
+              "uid": 9336
+            },
+            {
+              "distance": 1.414,
+              "uid": 9343
+            },
+            {
+              "distance": 5.0,
+              "uid": 11795
+            },
+            {
+              "distance": 4.243,
+              "uid": 11877
+            },
+            {
+              "distance": 3.606,
+              "uid": 11878
+            },
+            {
+              "distance": 3.162,
+              "uid": 11881
+            }
+          ],
+          "position": [
+            -89.5,
+            -42.5
+          ],
+          "prototype": "EnergyGateGenpopEnter",
+          "rotationDegrees": 90.0,
+          "source": "Resources/Maps/plasma.yml#uid=159",
+          "travelDirection": [
+            1.0,
+            -0.0
+          ],
+          "uid": 159
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "-89.5,-44.5",
+              "rot": "-1.5707963267948966 rad",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopLeave"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 6.083,
+              "uid": 2360
+            },
+            {
+              "distance": 5.099,
+              "uid": 9306
+            },
+            {
+              "distance": 4.123,
+              "uid": 9336
+            },
+            {
+              "distance": 3.162,
+              "uid": 9343
+            },
+            {
+              "distance": 6.708,
+              "uid": 11795
+            },
+            {
+              "distance": 5.831,
+              "uid": 11877
+            },
+            {
+              "distance": 5.0,
+              "uid": 11878
+            },
+            {
+              "distance": 4.243,
+              "uid": 11881
+            }
+          ],
+          "position": [
+            -89.5,
+            -44.5
+          ],
+          "prototype": "EnergyGateGenpopLeave",
+          "rotationDegrees": 270.0,
+          "source": "Resources/Maps/plasma.yml#uid=3173",
+          "travelDirection": [
+            -1.0,
+            -0.0
+          ],
+          "uid": 3173
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "-97.5,-43.5",
+              "rot": "-1.5707963267948966 rad",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "GenpopLeave"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "nearbyLockers": [
+            {
+              "distance": 8.602,
+              "uid": 2360
+            },
+            {
+              "distance": 8.062,
+              "uid": 9306
+            },
+            {
+              "distance": 7.616,
+              "uid": 9336
+            },
+            {
+              "distance": 7.28,
+              "uid": 9343
+            },
+            {
+              "distance": 7.071,
+              "uid": 11795
+            },
+            {
+              "distance": 6.403,
+              "uid": 11877
+            },
+            {
+              "distance": 5.831,
+              "uid": 11878
+            },
+            {
+              "distance": 5.385,
+              "uid": 11881
+            }
+          ],
+          "position": [
+            -97.5,
+            -43.5
+          ],
+          "prototype": "EnergyGateGenpopLeave",
+          "rotationDegrees": 270.0,
+          "source": "Resources/Maps/plasma.yml#uid=20806",
+          "travelDirection": [
+            -1.0,
+            -0.0
+          ],
+          "uid": 20806
+        }
+      ],
+      "lockerCount": 8,
+      "lockers": [
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "-90.5,-38.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -90.5,
+            -38.5
+          ],
+          "prototype": "LockerPrisoner",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/plasma.yml#uid=2360",
+          "uid": 2360
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "-90.5,-39.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -90.5,
+            -39.5
+          ],
+          "prototype": "LockerPrisoner2",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/plasma.yml#uid=9306",
+          "uid": 9306
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "-90.5,-40.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -90.5,
+            -40.5
+          ],
+          "prototype": "LockerPrisoner3",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/plasma.yml#uid=9336",
+          "uid": 9336
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "-90.5,-41.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -90.5,
+            -41.5
+          ],
+          "prototype": "LockerPrisoner4",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/plasma.yml#uid=9343",
+          "uid": 9343
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "-92.5,-38.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -92.5,
+            -38.5
+          ],
+          "prototype": "LockerPrisoner5",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/plasma.yml#uid=11795",
+          "uid": 11795
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "-92.5,-39.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -92.5,
+            -39.5
+          ],
+          "prototype": "LockerPrisoner6",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/plasma.yml#uid=11877",
+          "uid": 11877
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "-92.5,-40.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -92.5,
+            -40.5
+          ],
+          "prototype": "LockerPrisoner7",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/plasma.yml#uid=11878",
+          "uid": 11878
+        },
+        {
+          "grid": 2,
+          "hasDeviceLinkSink": false,
+          "hasDeviceLinkSource": false,
+          "hasNativeAirtightComponent": false,
+          "hasNativeDoorComponent": false,
+          "initialLinkedId": null,
+          "mappedComponents": {
+            "Transform": {
+              "parent": 2,
+              "pos": "-92.5,-41.5",
+              "type": "Transform"
+            }
+          },
+          "nativeAccess": [
+            [
+              "Security"
+            ]
+          ],
+          "position": [
+            -92.5,
+            -41.5
+          ],
+          "prototype": "LockerPrisoner8",
+          "rotationDegrees": 0.0,
+          "source": "Resources/Maps/plasma.yml#uid=11881",
+          "uid": 11881
+        }
+      ],
+      "map": "plasma",
+      "sha256": "bbbb9e77bacacd8ff6fd75af2a9855803516d19f4c1c6db672437d4a8d6ddf28",
+      "source": "Resources/Maps/plasma.yml"
+    },
+    {
+      "gateCount": 0,
+      "gates": [],
+      "lockerCount": 0,
+      "lockers": [],
+      "map": "saltern",
+      "sha256": "f2ce7d0a0529c096cc01429fc14056204ff60cdeb4ded56b7e37c79383f27ffb",
+      "source": "Resources/Maps/saltern.yml"
+    }
+  ],
+  "prototypeFacts": {
+    "EnergyGateGenpopEnter": {
+      "components": {
+        "AccessReader": {
+          "access": [
+            [
+              "GenpopEnter"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "type": "AccessReader"
+        },
+        "AnimationPlayer": {
+          "type": "AnimationPlayer"
+        },
+        "Appearance": {
+          "type": "Appearance"
+        },
+        "Clickable": {
+          "type": "Clickable"
+        },
+        "Construction": {
+          "graph": "EnergyGate",
+          "node": "energyGate",
+          "type": "Construction"
+        },
+        "Damageable": {
+          "damageModifierSet": "SteelStaticMod",
+          "type": "Damageable"
+        },
+        "Destructible": {
+          "thresholds": [
+            {
+              "behaviors": [
+                {
+                  "_nativeType": "PlaySoundBehavior",
+                  "sound": {
+                    "collection": "MetalBreak"
+                  }
+                }
+              ],
+              "trigger": {
+                "_nativeType": "DamageTrigger",
+                "damage": 200
+              }
+            }
+          ],
+          "type": "Destructible"
+        },
+        "DirectionalArrowIndicator": {
+          "type": "DirectionalArrowIndicator"
+        },
+        "Fixtures": {
+          "fixtures": {
+            "fix1": {
+              "density": 100,
+              "layer": [
+                "GlassAirlockLayer"
+              ],
+              "mask": [
+                "FullTileMask"
+              ],
+              "shape": {
+                "_nativeType": "PhysShapeAabb",
+                "bounds": "-0.49,-0.49,0.49,0.49"
+              }
+            },
+            "fix2": {
+              "hard": false,
+              "layer": [
+                "GlassAirlockLayer"
+              ],
+              "mask": [
+                "FullTileMask"
+              ],
+              "shape": {
+                "_nativeType": "PhysShapeAabb",
+                "bounds": "-0.50,-0.50,0.50,0.50"
+              }
+            }
+          },
+          "type": "Fixtures"
+        },
+        "GenericVisualizer": {
+          "type": "GenericVisualizer",
+          "visuals": {
+            "enum.TurnstileVisualLayers.Base": {
+              "barrier": {
+                "Deny": {
+                  "state": "deny"
+                },
+                "Idle": {
+                  "state": "idle-security"
+                },
+                "Spin": {
+                  "state": "operate"
+                }
+              }
+            }
+          }
+        },
+        "GravityAffected": {
+          "type": "GravityAffected"
+        },
+        "IconSmooth": {
+          "key": "doors",
+          "type": "IconSmooth"
+        },
+        "Injurable": {
+          "damageContainer": "StructuralInorganic",
+          "type": "Injurable"
+        },
+        "InteractionOutline": {
+          "type": "InteractionOutline"
+        },
+        "MeleeSound": {
+          "soundGroups": {
+            "Brute": {
+              "path": "/Audio/Weapons/smash.ogg"
+            }
+          },
+          "type": "MeleeSound"
+        },
+        "Physics": {
+          "bodyType": "Static",
+          "type": "Physics"
+        },
+        "PlacementReplacement": {
+          "key": "walls",
+          "type": "PlacementReplacement"
+        },
+        "PointLight": {
+          "color": "#cc3a41",
+          "energy": 2.2,
+          "radius": 2.2,
+          "type": "PointLight"
+        },
+        "Pullable": {
+          "type": "Pullable"
+        },
+        "Sprite": {
+          "drawdepth": "Doors",
+          "layers": [
+            {
+              "state": "security"
+            },
+            {
+              "map": [
+                "barrier"
+              ],
+              "shader": "unshaded",
+              "state": "idle-security"
+            },
+            {
+              "shader": "unshaded",
+              "state": "direction"
+            }
+          ],
+          "sprite": "Structures/Doors/Misc/energy-gate.rsi",
+          "type": "Sprite"
+        },
+        "Tag": {
+          "tags": [
+            "Structure"
+          ],
+          "type": "Tag"
+        },
+        "Transform": {
+          "anchored": true,
+          "type": "Transform"
+        },
+        "Turnstile": {
+          "processWhitelist": {
+            "components": [
+              "MobState",
+              "Pullable"
+            ]
+          },
+          "type": "Turnstile"
+        }
+      },
+      "source": "Resources/Prototypes/Entities/Structures/Doors/EnergyGates/energy-gate.yml"
+    },
+    "EnergyGateGenpopLeave": {
+      "components": {
+        "AccessReader": {
+          "access": [
+            [
+              "GenpopLeave"
+            ],
+            [
+              "Security"
+            ]
+          ],
+          "type": "AccessReader"
+        },
+        "AnimationPlayer": {
+          "type": "AnimationPlayer"
+        },
+        "Appearance": {
+          "type": "Appearance"
+        },
+        "Clickable": {
+          "type": "Clickable"
+        },
+        "Construction": {
+          "graph": "EnergyGate",
+          "node": "energyGate",
+          "type": "Construction"
+        },
+        "Damageable": {
+          "damageModifierSet": "SteelStaticMod",
+          "type": "Damageable"
+        },
+        "Destructible": {
+          "thresholds": [
+            {
+              "behaviors": [
+                {
+                  "_nativeType": "PlaySoundBehavior",
+                  "sound": {
+                    "collection": "MetalBreak"
+                  }
+                }
+              ],
+              "trigger": {
+                "_nativeType": "DamageTrigger",
+                "damage": 200
+              }
+            }
+          ],
+          "type": "Destructible"
+        },
+        "DirectionalArrowIndicator": {
+          "type": "DirectionalArrowIndicator"
+        },
+        "Fixtures": {
+          "fixtures": {
+            "fix1": {
+              "density": 100,
+              "layer": [
+                "GlassAirlockLayer"
+              ],
+              "mask": [
+                "FullTileMask"
+              ],
+              "shape": {
+                "_nativeType": "PhysShapeAabb",
+                "bounds": "-0.49,-0.49,0.49,0.49"
+              }
+            },
+            "fix2": {
+              "hard": false,
+              "layer": [
+                "GlassAirlockLayer"
+              ],
+              "mask": [
+                "FullTileMask"
+              ],
+              "shape": {
+                "_nativeType": "PhysShapeAabb",
+                "bounds": "-0.50,-0.50,0.50,0.50"
+              }
+            }
+          },
+          "type": "Fixtures"
+        },
+        "GenericVisualizer": {
+          "type": "GenericVisualizer",
+          "visuals": {
+            "enum.TurnstileVisualLayers.Base": {
+              "barrier": {
+                "Deny": {
+                  "state": "deny"
+                },
+                "Idle": {
+                  "state": "idle-security"
+                },
+                "Spin": {
+                  "state": "operate"
+                }
+              }
+            }
+          }
+        },
+        "GravityAffected": {
+          "type": "GravityAffected"
+        },
+        "IconSmooth": {
+          "key": "doors",
+          "type": "IconSmooth"
+        },
+        "Injurable": {
+          "damageContainer": "StructuralInorganic",
+          "type": "Injurable"
+        },
+        "InteractionOutline": {
+          "type": "InteractionOutline"
+        },
+        "MeleeSound": {
+          "soundGroups": {
+            "Brute": {
+              "path": "/Audio/Weapons/smash.ogg"
+            }
+          },
+          "type": "MeleeSound"
+        },
+        "Physics": {
+          "bodyType": "Static",
+          "type": "Physics"
+        },
+        "PlacementReplacement": {
+          "key": "walls",
+          "type": "PlacementReplacement"
+        },
+        "PointLight": {
+          "color": "#cc3a41",
+          "energy": 2.2,
+          "radius": 2.2,
+          "type": "PointLight"
+        },
+        "Pullable": {
+          "type": "Pullable"
+        },
+        "Sprite": {
+          "drawdepth": "Doors",
+          "layers": [
+            {
+              "state": "security"
+            },
+            {
+              "map": [
+                "barrier"
+              ],
+              "shader": "unshaded",
+              "state": "idle-security"
+            },
+            {
+              "shader": "unshaded",
+              "state": "direction"
+            }
+          ],
+          "sprite": "Structures/Doors/Misc/energy-gate.rsi",
+          "type": "Sprite"
+        },
+        "Tag": {
+          "tags": [
+            "Structure"
+          ],
+          "type": "Tag"
+        },
+        "Transform": {
+          "anchored": true,
+          "type": "Transform"
+        },
+        "Turnstile": {
+          "processWhitelist": {
+            "components": [
+              "MobState",
+              "Pullable"
+            ]
+          },
+          "type": "Turnstile"
+        }
+      },
+      "source": "Resources/Prototypes/Entities/Structures/Doors/EnergyGates/energy-gate.yml"
+    },
+    "LockerPrisoner": {
+      "components": {
+        "AccessReader": {
+          "access": [
+            [
+              "Security"
+            ]
+          ],
+          "examinationText": "access-reader-examination-functionality-restricted",
+          "type": "AccessReader"
+        },
+        "Anchorable": {
+          "type": "Anchorable"
+        },
+        "Animateable": {
+          "type": "Animateable"
+        },
+        "Appearance": {
+          "type": "Appearance"
+        },
+        "Clickable": {
+          "type": "Clickable"
+        },
+        "Construction": {
+          "containers": [
+            "entity_storage"
+          ],
+          "graph": "ClosetSteelSecure",
+          "node": "done",
+          "type": "Construction"
+        },
+        "ContainerContainer": {
+          "containers": {
+            "entity_storage": "",
+            "paper_label": ""
+          },
+          "type": "ContainerContainer"
+        },
+        "DamageOnHighSpeedImpact": {
+          "damage": {
+            "types": {
+              "Blunt": 5
+            }
+          },
+          "soundHit": {
+            "collection": "MetalThud"
+          },
+          "type": "DamageOnHighSpeedImpact"
+        },
+        "Damageable": {
+          "damageModifierSet": "PlasteelMod",
+          "type": "Damageable"
+        },
+        "Destructible": {
+          "thresholds": [
+            {
+              "behaviors": [
+                {
+                  "_nativeType": "PlaySoundBehavior",
+                  "sound": {
+                    "collection": "MetalBreak",
+                    "params": {
+                      "volume": -6
+                    }
+                  }
+                },
+                {
+                  "_nativeType": "SpawnEntitiesBehavior",
+                  "spawn": {
+                    "SheetSteel1": {
+                      "max": 2,
+                      "min": 1
+                    }
+                  }
+                }
+              ],
+              "trigger": {
+                "_nativeType": "DamageTrigger",
+                "damage": 60
+              }
+            }
+          ],
+          "type": "Destructible"
+        },
+        "EntityStorage": {
+          "open": true,
+          "removedMasks": 20,
+          "type": "EntityStorage"
+        },
+        "EntityStorageVisuals": {
+          "stateBaseClosed": "genpop",
+          "stateDoorClosed": "genpop_door_1",
+          "stateDoorOpen": "genpop_open",
+          "type": "EntityStorageVisuals"
+        },
+        "Fixtures": {
+          "fixtures": {
+            "fix1": {
+              "density": 75,
+              "friction": 0.4,
+              "hard": true,
+              "layer": [
+                "BulletImpassable",
+                "Opaque"
+              ],
+              "mask": [
+                "Impassable",
+                "TableLayer",
+                "LowImpassable"
+              ],
+              "restitution": 0,
+              "shape": {
+                "_nativeType": "PolygonShape",
+                "radius": 0.01,
+                "vertices": [
+                  "-0.25,-0.48",
+                  "0.25,-0.48",
+                  "0.25,0.48",
+                  "-0.25,0.48"
+                ]
+              }
+            }
+          },
+          "type": "Fixtures"
+        },
+        "GenericVisualizer": {
+          "type": "GenericVisualizer",
+          "visuals": {
+            "enum.PaperLabelVisuals.HasLabel": {
+              "enum.PaperLabelVisuals.Layer": {
+                "false": {
+                  "visible": false
+                },
+                "true": {
+                  "visible": true
+                }
+              }
+            },
+            "enum.PaperLabelVisuals.LabelType": {
+              "enum.PaperLabelVisuals.Layer": {
+                "Bounty": {
+                  "state": "bounty"
+                },
+                "CaptainsPaper": {
+                  "state": "captains_paper"
+                },
+                "Invoice": {
+                  "state": "invoice"
+                },
+                "Paper": {
+                  "state": "paper"
+                }
+              }
+            },
+            "enum.StorageVisuals.Open": {
+              "enum.PaperLabelVisuals.Layer": {
+                "true": {
+                  "visible": false
+                }
+              }
+            }
+          }
+        },
+        "GenpopLocker": {
+          "type": "GenpopLocker"
+        },
+        "GravityAffected": {
+          "type": "GravityAffected"
+        },
+        "Injurable": {
+          "damageContainer": "StructuralInorganic",
+          "type": "Injurable"
+        },
+        "InteractionOutline": {
+          "type": "InteractionOutline"
+        },
+        "ItemSlots": {
+          "type": "ItemSlots"
+        },
+        "Lock": {
+          "locked": false,
+          "type": "Lock",
+          "useAccess": false
+        },
+        "LockVisuals": {
+          "type": "LockVisuals"
+        },
+        "MovedByPressure": {
+          "type": "MovedByPressure"
+        },
+        "Paintable": {
+          "group": "Locker",
+          "type": "Paintable"
+        },
+        "PaperLabel": {
+          "labelSlot": {
+            "blacklist": {
+              "tags": [
+                "Book"
+              ]
+            },
+            "ejectVerbText": "comp-paper-label-eject",
+            "insertVerbText": "comp-paper-label-insert",
+            "whitelist": {
+              "components": [
+                "Paper"
+              ]
+            }
+          },
+          "type": "PaperLabel"
+        },
+        "Physics": {
+          "bodyType": "Dynamic",
+          "type": "Physics"
+        },
+        "PlaceableSurface": {
+          "isPlaceable": true,
+          "placeCentered": true,
+          "type": "PlaceableSurface"
+        },
+        "Pullable": {
+          "type": "Pullable"
+        },
+        "ResistLocker": {
+          "type": "ResistLocker"
+        },
+        "Sprite": {
+          "layers": [
+            {
+              "map": [
+                "enum.StorageVisualLayers.Base"
+              ],
+              "state": "generic"
+            },
+            {
+              "map": [
+                "enum.StorageVisualLayers.Door"
+              ],
+              "state": "generic_door"
+            },
+            {
+              "map": [
+                "enum.LockVisualLayers.Lock"
+              ],
+              "shader": "unshaded",
+              "state": "locked"
+            },
+            {
+              "map": [
+                "enum.WeldableLayers.BaseWelded"
+              ],
+              "state": "welded",
+              "visible": false
+            },
+            {
+              "map": [
+                "enum.PaperLabelVisuals.Layer"
+              ],
+              "offset": "-0.065,0",
+              "sprite": "Structures/Storage/closet_labels.rsi",
+              "state": "paper",
+              "visible": false
+            }
+          ],
+          "noRot": true,
+          "sprite": "Structures/Storage/closet.rsi",
+          "type": "Sprite"
+        },
+        "StaticPrice": {
+          "price": 300,
+          "type": "StaticPrice"
+        },
+        "Tag": {
+          "tags": [
+            "Structure"
+          ],
+          "type": "Tag"
+        },
+        "Transform": {
+          "anchored": false,
+          "noRot": true,
+          "type": "Transform"
+        },
+        "UserInterface": {
+          "interfaces": {
+            "enum.GenpopLockerUiKey.Key": {
+              "type": "GenpopLockerBoundUserInterface"
+            }
+          },
+          "type": "UserInterface"
+        },
+        "Weldable": {
+          "type": "Weldable"
+        }
+      },
+      "source": "Resources/Prototypes/Entities/Structures/Storage/Closets/Lockers/lockers.yml"
+    },
+    "LockerPrisoner2": {
+      "components": {
+        "AccessReader": {
+          "access": [
+            [
+              "Security"
+            ]
+          ],
+          "examinationText": "access-reader-examination-functionality-restricted",
+          "type": "AccessReader"
+        },
+        "Anchorable": {
+          "type": "Anchorable"
+        },
+        "Animateable": {
+          "type": "Animateable"
+        },
+        "Appearance": {
+          "type": "Appearance"
+        },
+        "Clickable": {
+          "type": "Clickable"
+        },
+        "Construction": {
+          "containers": [
+            "entity_storage"
+          ],
+          "graph": "ClosetSteelSecure",
+          "node": "done",
+          "type": "Construction"
+        },
+        "ContainerContainer": {
+          "containers": {
+            "entity_storage": "",
+            "paper_label": ""
+          },
+          "type": "ContainerContainer"
+        },
+        "DamageOnHighSpeedImpact": {
+          "damage": {
+            "types": {
+              "Blunt": 5
+            }
+          },
+          "soundHit": {
+            "collection": "MetalThud"
+          },
+          "type": "DamageOnHighSpeedImpact"
+        },
+        "Damageable": {
+          "damageModifierSet": "PlasteelMod",
+          "type": "Damageable"
+        },
+        "Destructible": {
+          "thresholds": [
+            {
+              "behaviors": [
+                {
+                  "_nativeType": "PlaySoundBehavior",
+                  "sound": {
+                    "collection": "MetalBreak",
+                    "params": {
+                      "volume": -6
+                    }
+                  }
+                },
+                {
+                  "_nativeType": "SpawnEntitiesBehavior",
+                  "spawn": {
+                    "SheetSteel1": {
+                      "max": 2,
+                      "min": 1
+                    }
+                  }
+                }
+              ],
+              "trigger": {
+                "_nativeType": "DamageTrigger",
+                "damage": 60
+              }
+            }
+          ],
+          "type": "Destructible"
+        },
+        "EntityStorage": {
+          "open": true,
+          "removedMasks": 20,
+          "type": "EntityStorage"
+        },
+        "EntityStorageVisuals": {
+          "stateBaseClosed": "genpop",
+          "stateDoorClosed": "genpop_door_2",
+          "stateDoorOpen": "genpop_open",
+          "type": "EntityStorageVisuals"
+        },
+        "Fixtures": {
+          "fixtures": {
+            "fix1": {
+              "density": 75,
+              "friction": 0.4,
+              "hard": true,
+              "layer": [
+                "BulletImpassable",
+                "Opaque"
+              ],
+              "mask": [
+                "Impassable",
+                "TableLayer",
+                "LowImpassable"
+              ],
+              "restitution": 0,
+              "shape": {
+                "_nativeType": "PolygonShape",
+                "radius": 0.01,
+                "vertices": [
+                  "-0.25,-0.48",
+                  "0.25,-0.48",
+                  "0.25,0.48",
+                  "-0.25,0.48"
+                ]
+              }
+            }
+          },
+          "type": "Fixtures"
+        },
+        "GenericVisualizer": {
+          "type": "GenericVisualizer",
+          "visuals": {
+            "enum.PaperLabelVisuals.HasLabel": {
+              "enum.PaperLabelVisuals.Layer": {
+                "false": {
+                  "visible": false
+                },
+                "true": {
+                  "visible": true
+                }
+              }
+            },
+            "enum.PaperLabelVisuals.LabelType": {
+              "enum.PaperLabelVisuals.Layer": {
+                "Bounty": {
+                  "state": "bounty"
+                },
+                "CaptainsPaper": {
+                  "state": "captains_paper"
+                },
+                "Invoice": {
+                  "state": "invoice"
+                },
+                "Paper": {
+                  "state": "paper"
+                }
+              }
+            },
+            "enum.StorageVisuals.Open": {
+              "enum.PaperLabelVisuals.Layer": {
+                "true": {
+                  "visible": false
+                }
+              }
+            }
+          }
+        },
+        "GenpopLocker": {
+          "type": "GenpopLocker"
+        },
+        "GravityAffected": {
+          "type": "GravityAffected"
+        },
+        "Injurable": {
+          "damageContainer": "StructuralInorganic",
+          "type": "Injurable"
+        },
+        "InteractionOutline": {
+          "type": "InteractionOutline"
+        },
+        "ItemSlots": {
+          "type": "ItemSlots"
+        },
+        "Lock": {
+          "locked": false,
+          "type": "Lock",
+          "useAccess": false
+        },
+        "LockVisuals": {
+          "type": "LockVisuals"
+        },
+        "MovedByPressure": {
+          "type": "MovedByPressure"
+        },
+        "Paintable": {
+          "group": "Locker",
+          "type": "Paintable"
+        },
+        "PaperLabel": {
+          "labelSlot": {
+            "blacklist": {
+              "tags": [
+                "Book"
+              ]
+            },
+            "ejectVerbText": "comp-paper-label-eject",
+            "insertVerbText": "comp-paper-label-insert",
+            "whitelist": {
+              "components": [
+                "Paper"
+              ]
+            }
+          },
+          "type": "PaperLabel"
+        },
+        "Physics": {
+          "bodyType": "Dynamic",
+          "type": "Physics"
+        },
+        "PlaceableSurface": {
+          "isPlaceable": true,
+          "placeCentered": true,
+          "type": "PlaceableSurface"
+        },
+        "Pullable": {
+          "type": "Pullable"
+        },
+        "ResistLocker": {
+          "type": "ResistLocker"
+        },
+        "Sprite": {
+          "layers": [
+            {
+              "map": [
+                "enum.StorageVisualLayers.Base"
+              ],
+              "state": "generic"
+            },
+            {
+              "map": [
+                "enum.StorageVisualLayers.Door"
+              ],
+              "state": "generic_door"
+            },
+            {
+              "map": [
+                "enum.LockVisualLayers.Lock"
+              ],
+              "shader": "unshaded",
+              "state": "locked"
+            },
+            {
+              "map": [
+                "enum.WeldableLayers.BaseWelded"
+              ],
+              "state": "welded",
+              "visible": false
+            },
+            {
+              "map": [
+                "enum.PaperLabelVisuals.Layer"
+              ],
+              "offset": "-0.065,0",
+              "sprite": "Structures/Storage/closet_labels.rsi",
+              "state": "paper",
+              "visible": false
+            }
+          ],
+          "noRot": true,
+          "sprite": "Structures/Storage/closet.rsi",
+          "type": "Sprite"
+        },
+        "StaticPrice": {
+          "price": 300,
+          "type": "StaticPrice"
+        },
+        "Tag": {
+          "tags": [
+            "Structure"
+          ],
+          "type": "Tag"
+        },
+        "Transform": {
+          "anchored": false,
+          "noRot": true,
+          "type": "Transform"
+        },
+        "UserInterface": {
+          "interfaces": {
+            "enum.GenpopLockerUiKey.Key": {
+              "type": "GenpopLockerBoundUserInterface"
+            }
+          },
+          "type": "UserInterface"
+        },
+        "Weldable": {
+          "type": "Weldable"
+        }
+      },
+      "source": "Resources/Prototypes/Entities/Structures/Storage/Closets/Lockers/lockers.yml"
+    },
+    "LockerWallBasePrisoner": {
+      "components": {
+        "AccessReader": {
+          "access": [
+            [
+              "Security"
+            ]
+          ],
+          "examinationText": "access-reader-examination-functionality-restricted",
+          "type": "AccessReader"
+        },
+        "Anchorable": {
+          "flags": [
+            "Anchorable"
+          ],
+          "type": "Anchorable"
+        },
+        "Appearance": {
+          "type": "Appearance"
+        },
+        "Clickable": {
+          "type": "Clickable"
+        },
+        "Construction": {
+          "containers": [
+            "entity_storage"
+          ],
+          "graph": "ClosetWall",
+          "node": "done",
+          "type": "Construction"
+        },
+        "ContainerContainer": {
+          "containers": {
+            "entity_storage": {
+              "_nativeType": "Container",
+              "ents": []
+            }
+          },
+          "type": "ContainerContainer"
+        },
+        "Damageable": {
+          "damageModifierSet": "SteelMod",
+          "type": "Damageable"
+        },
+        "Destructible": {
+          "thresholds": [
+            {
+              "behaviors": [
+                {
+                  "_nativeType": "PlaySoundBehavior",
+                  "sound": {
+                    "collection": "MetalBreak",
+                    "params": {
+                      "volume": -6
+                    }
+                  }
+                },
+                {
+                  "_nativeType": "SpawnEntitiesBehavior",
+                  "spawn": {
+                    "SheetSteel1": {
+                      "max": 1,
+                      "min": 1
+                    }
+                  }
+                }
+              ],
+              "trigger": {
+                "_nativeType": "DamageTrigger",
+                "damage": 60
+              }
+            }
+          ],
+          "type": "Destructible"
+        },
+        "EntityStorage": {
+          "closeSound": {
+            "path": "/Audio/Items/deconstruct.ogg"
+          },
+          "enteringOffset": "0, -0.6",
+          "enteringRange": 0.03,
+          "isCollidableWhenOpen": true,
+          "open": true,
+          "openSound": {
+            "path": "/Audio/Items/deconstruct.ogg"
+          },
+          "removedMasks": 20,
+          "type": "EntityStorage"
+        },
+        "EntityStorageVisuals": {
+          "stateBaseClosed": "genpop",
+          "stateDoorClosed": "genpop_door_1",
+          "stateDoorOpen": "genpop_open",
+          "type": "EntityStorageVisuals"
+        },
+        "Fixtures": {
+          "fixtures": {
+            "fix1": {
+              "density": 5,
+              "mask": [
+                "FullTileMask"
+              ],
+              "shape": {
+                "_nativeType": "PhysShapeAabb",
+                "bounds": "-0.25,-0.35,0.25,0.35"
+              }
+            }
+          },
+          "type": "Fixtures"
+        },
+        "GenpopLocker": {
+          "type": "GenpopLocker"
+        },
+        "Injurable": {
+          "damageContainer": "StructuralInorganic",
+          "type": "Injurable"
+        },
+        "InteractionOutline": {
+          "type": "InteractionOutline"
+        },
+        "Lock": {
+          "locked": false,
+          "type": "Lock",
+          "useAccess": false
+        },
+        "LockVisuals": {
+          "type": "LockVisuals"
+        },
+        "MeleeSound": {
+          "soundGroups": {
+            "Brute": {
+              "collection": "MetalThud"
+            }
+          },
+          "type": "MeleeSound"
+        },
+        "Paintable": {
+          "group": "WallLocker",
+          "type": "Paintable"
+        },
+        "Physics": {
+          "canCollide": false,
+          "type": "Physics"
+        },
+        "PlaceableSurface": {
+          "isPlaceable": true,
+          "type": "PlaceableSurface"
+        },
+        "Pullable": {
+          "type": "Pullable"
+        },
+        "ResistLocker": {
+          "type": "ResistLocker"
+        },
+        "Rotatable": {
+          "type": "Rotatable"
+        },
+        "Sprite": {
+          "drawdepth": "WallMountedItems",
+          "layers": [
+            {
+              "map": [
+                "enum.StorageVisualLayers.Base"
+              ],
+              "state": "generic"
+            },
+            {
+              "map": [
+                "enum.StorageVisualLayers.Door"
+              ],
+              "state": "generic_door"
+            },
+            {
+              "map": [
+                "enum.LockVisualLayers.Lock"
+              ],
+              "shader": "unshaded",
+              "state": "locked"
+            },
+            {
+              "map": [
+                "enum.WeldableLayers.BaseWelded"
+              ],
+              "state": "welded",
+              "visible": false
+            }
+          ],
+          "noRot": false,
+          "sprite": "Structures/Storage/wall_locker.rsi",
+          "type": "Sprite"
+        },
+        "StaticPrice": {
+          "price": 75,
+          "type": "StaticPrice"
+        },
+        "Tag": {
+          "tags": [
+            "Structure"
+          ],
+          "type": "Tag"
+        },
+        "Transform": {
+          "anchored": true,
+          "type": "Transform"
+        },
+        "UserInterface": {
+          "interfaces": {
+            "enum.GenpopLockerUiKey.Key": {
+              "type": "GenpopLockerBoundUserInterface"
+            }
+          },
+          "type": "UserInterface"
+        },
+        "WallMount": {
+          "type": "WallMount"
+        },
+        "Weldable": {
+          "type": "Weldable"
+        }
+      },
+      "source": "Resources/Prototypes/Entities/Structures/Storage/Closets/wall_lockers.yml"
+    },
+    "PrisonerIDCard": {
+      "components": {
+        "Access": {
+          "tags": [
+            "GenpopEnter"
+          ],
+          "type": "Access"
+        },
+        "Animateable": {
+          "type": "Animateable"
+        },
+        "Clickable": {
+          "type": "Clickable"
+        },
+        "Clothing": {
+          "slots": [
+            "idcard"
+          ],
+          "sprite": "Objects/Misc/id_cards.rsi",
+          "type": "Clothing"
+        },
+        "CollisionWake": {
+          "type": "CollisionWake"
+        },
+        "DamageExaminable": {
+          "type": "DamageExaminable"
+        },
+        "DamageOnHighSpeedImpact": {
+          "damage": {
+            "types": {
+              "Blunt": 5
+            }
+          },
+          "soundHit": {
+            "collection": "MetalThud"
+          },
+          "type": "DamageOnHighSpeedImpact"
+        },
+        "EmitSoundOnCollide": {
+          "sound": {
+            "collection": "WeakHit"
+          },
+          "type": "EmitSoundOnCollide"
+        },
+        "EmitSoundOnLand": {
+          "sound": {
+            "params": {
+              "volume": 2
+            },
+            "path": "/Audio/Effects/drop.ogg"
+          },
+          "type": "EmitSoundOnLand"
+        },
+        "ExpireIdCard": {
+          "expireMessage": "genpop-prisoner-id-expire",
+          "expiredAccess": [
+            "GenpopLeave"
+          ],
+          "type": "ExpireIdCard"
+        },
+        "Fixtures": {
+          "fixtures": {
+            "fix1": {
+              "density": 20,
+              "friction": 0.2,
+              "mask": [
+                "ItemMask"
+              ],
+              "restitution": 0.3,
+              "shape": {
+                "_nativeType": "PhysShapeAabb",
+                "bounds": "-0.25,-0.25,0.25,0.25"
+              }
+            }
+          },
+          "type": "Fixtures"
+        },
+        "FlavorProfile": {
+          "flavors": [
+            "fiber"
+          ],
+          "type": "FlavorProfile"
+        },
+        "GenpopIdCard": {
+          "type": "GenpopIdCard"
+        },
+        "GravityAffected": {
+          "type": "GravityAffected"
+        },
+        "IdCard": {
+          "canMicrowave": false,
+          "jobIcon": "JobIconPrisoner",
+          "jobTitle": "job-name-prisoner",
+          "type": "IdCard"
+        },
+        "InteractionOutline": {
+          "type": "InteractionOutline"
+        },
+        "Item": {
+          "heldPrefix": "orange",
+          "size": "Small",
+          "storedRotation": -90,
+          "type": "Item"
+        },
+        "MovedByPressure": {
+          "type": "MovedByPressure"
+        },
+        "Physics": {
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "type": "Physics"
+        },
+        "Pullable": {
+          "type": "Pullable"
+        },
+        "Rotatable": {
+          "increment": 30,
+          "type": "Rotatable"
+        },
+        "Speech": {
+          "speechVerb": "Robotic",
+          "type": "Speech"
+        },
+        "Sprite": {
+          "drawdepth": "Items",
+          "layers": [
+            {
+              "state": "orange"
+            },
+            {
+              "offset": "-0.09375, 0.0625",
+              "sprite": "Interface/Misc/job_icons.rsi",
+              "state": "Prisoner"
+            }
+          ],
+          "noRot": false,
+          "sprite": "Objects/Misc/id_cards.rsi",
+          "type": "Sprite"
+        },
+        "StaticPrice": {
+          "price": 0,
+          "type": "StaticPrice"
+        },
+        "StationRecordKeyStorage": {
+          "type": "StationRecordKeyStorage"
+        },
+        "StealTarget": {
+          "stealGroup": [
+            "IDCard"
+          ],
+          "type": "StealTarget"
+        },
+        "Tag": {
+          "tags": [
+            "DoorBumpOpener",
+            "WhitelistChameleon",
+            "WhitelistChameleonIdCard",
+            "Recyclable"
+          ],
+          "type": "Tag"
+        }
+      },
+      "source": "Resources/Prototypes/Entities/Objects/Misc/identification_cards.yml"
+    }
+  },
+  "runtimePairing": "Each configured GenpopLocker spawns one PrisonerIDCard and stores that entity as LinkedId. Gates read access tags, with no per-locker gate wiring.",
+  "scope": "Source-backed prototype/mechanic and mapped pose facts; no native execution or room ownership certification.",
+  "sourceHashes": {
+    "Content.Server/Access/Systems/IdCardSystem.cs": "c4ed00d6bfdf9f581c30f750af81ff54f6860164b77c27ece8394dccc73b2ef9",
+    "Content.Server/Security/GenpopSystem.cs": "e85ff5e7de306df1ce643cb9404215d44ad12ffbe468f70241babea56bd255d2",
+    "Content.Shared/Access/Components/ExpireIdCardComponent.cs": "f8cce96bf83747d85e3c969d6696d48ffc092f0cd3b0d5749d3aba2b13394f7a",
+    "Content.Shared/Access/Systems/SharedIdCardSystem.cs": "8ec1e1f35d4400fff4e1b175b7389ae32e78dddfc4940e41d4054074e22a6148",
+    "Content.Shared/Doors/Systems/SharedTurnstileSystem.cs": "03fb482002fcfae607dab1cc0f02ed80ce806dd548f327600322366c4d108f38",
+    "Content.Shared/Security/Components/GenpopLockerComponent.cs": "760c21181a8e987c8b747e004d0780e725729d09a5cfa9bb1b7cdd2de6a6c9ae",
+    "Content.Shared/Security/Systems/SharedGenpopSystem.cs": "9ec43116131cfa2f998e26943813f6c2048a2f385a7bf555ed09f6e3c4ac8244",
+    "Resources/Prototypes/Entities/Objects/Misc/identification_cards.yml": "8438650bca4bcdb7d86d96d9577ce6d21e6bc975656477172e24f8315b7d5197",
+    "Resources/Prototypes/Entities/Structures/Doors/EnergyGates/energy-gate.yml": "69100fe7f287b979ca32e3f3a97ad041b54a052edd36aebc759b9b4e019d5d14",
+    "Resources/Prototypes/Entities/Structures/Storage/Closets/Lockers/lockers.yml": "7fec9c88cfa1772ad66d71e01cc02ba8edf094cfb9bab1f875800f6c716cf35c",
+    "Resources/Prototypes/Entities/Structures/Storage/Closets/wall_lockers.yml": "6db8e4fdd089432fd2beaed531d4f946dde1376d2e2ce7bcdc79023caedc801c",
+    "RobustToolbox/Robust.Shared.Maths/Angle.cs": "f09d73de56ed3fc3f93644a1568a9bcb4f276b18e65926ccf8fe26ea79e203bc"
+  },
+  "userDesign": "Sentencing holds timed prisoner lockers; separate entry/exit turnstiles connect Brig and Sentencing; Sentencing also connects Perma; individual timed cells are absent by default.",
+  "version": 1
+}

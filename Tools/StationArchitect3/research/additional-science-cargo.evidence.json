@@ -1,0 +1,4953 @@
+{
+  "format": "station_architect3_additional_science_cargo_evidence",
+  "version": 1,
+  "method": "Read-only inert map/prototype parser; inherited prototype components plus saved map overrides. Earlier analysis code used only as read-only research aid. No runtime/pathfinding certification.",
+  "maps": [
+    {
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "sha256": "469342d8887d4904b5f10ca2ed56d4cc9963b54b29320809f91955ac0f5148c0"
+    },
+    {
+      "sourcePath": "Resources/Maps/exo.yml",
+      "sha256": "3708fd0bda7fcb1ada5e3ec8be060a4cbc375dad14e34f3a19c6278a6f3d7bd2"
+    },
+    {
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "sha256": "afc60be03bfc73a903b7c8624ac038c69acc5b3ce4685efd43491f905ae8a92f"
+    }
+  ],
+  "records": [
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 10249,
+      "prototype": "BorgCharger",
+      "grid": 30,
+      "position": [
+        4.5,
+        64.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 10250,
+      "prototype": "BorgCharger",
+      "grid": 30,
+      "position": [
+        5.5,
+        64.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 10297,
+      "prototype": "BorgCharger",
+      "grid": 30,
+      "position": [
+        25.5,
+        22.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 10298,
+      "prototype": "BorgCharger",
+      "grid": 30,
+      "position": [
+        25.5,
+        23.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 10305,
+      "prototype": "BorgCharger",
+      "grid": 30,
+      "position": [
+        31.5,
+        27.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 11783,
+      "prototype": "CargoMailTeleporter",
+      "grid": 30,
+      "position": [
+        16.5,
+        2.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 12805,
+      "prototype": "CircuitImprinter",
+      "grid": 30,
+      "position": [
+        28.5,
+        9.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 150
+        },
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 15282,
+      "prototype": "ComputerAnalysisConsole",
+      "grid": 30,
+      "position": [
+        37.5,
+        10.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 50
+        },
+        "ResearchClient": {},
+        "AnalysisConsole": {},
+        "DeviceList": {},
+        "DeviceNetwork": {
+          "deviceNetId": "Wired"
+        },
+        "DeviceLinkSource": {
+          "range": 5,
+          "ports": [
+            "ArtifactAnalyzerSender"
+          ],
+          "linkedPorts": {
+            "22233": [
+              [
+                "ArtifactAnalyzerSender",
+                "ArtifactAnalyzerReceiver"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 7445,
+      "prototype": "ComputerCargoBounty",
+      "grid": 30,
+      "position": [
+        19.5,
+        -4.5
+      ],
+      "rotation": "1.5707963267948966 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 50
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 7266,
+      "prototype": "ComputerSalvageExpedition",
+      "grid": 30,
+      "position": [
+        29.5,
+        -9.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 50
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 12799,
+      "prototype": "ExosuitFabricator",
+      "grid": 30,
+      "position": [
+        22.5,
+        22.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 150
+        },
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 20960,
+      "prototype": "ExosuitFabricator",
+      "grid": 30,
+      "position": [
+        5.5,
+        76.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 150
+        },
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 22436,
+      "prototype": "MachineAnomalyGenerator",
+      "grid": 30,
+      "position": [
+        28.5,
+        21.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1500
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 9523,
+      "prototype": "MachineAnomalyVessel",
+      "grid": 30,
+      "position": [
+        31.5,
+        17.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "AnomalyVessel": {},
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 9531,
+      "prototype": "MachineAnomalyVessel",
+      "grid": 30,
+      "position": [
+        33.5,
+        17.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "AnomalyVessel": {},
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 22233,
+      "prototype": "MachineArtifactAnalyzer",
+      "grid": 30,
+      "position": [
+        36.5,
+        12.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 5000
+        },
+        "ArtifactAnalyzer": {},
+        "DeviceNetwork": {
+          "deviceNetId": "Wired",
+          "receiveFrequencyId": "BasicDevice"
+        },
+        "DeviceList": {},
+        "DeviceLinkSink": {
+          "ports": [
+            "ArtifactAnalyzerReceiver"
+          ]
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 12864,
+      "prototype": "Protolathe",
+      "grid": 30,
+      "position": [
+        28.5,
+        10.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 150
+        },
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 12974,
+      "prototype": "Recycler",
+      "grid": 30,
+      "position": [
+        49.5,
+        23.5
+      ],
+      "rotation": "1.5707963267948966 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "DeviceLinkSink": {
+          "ports": [
+            "Reverse",
+            "Forward",
+            false
+          ]
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 21582,
+      "prototype": "Recycler",
+      "grid": 30,
+      "position": [
+        32.5,
+        -11.5
+      ],
+      "rotation": "1.5707963267948966 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "DeviceLinkSink": {
+          "ports": [
+            "Reverse",
+            "Forward",
+            false
+          ]
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 12746,
+      "prototype": "ResearchAndDevelopmentServer",
+      "grid": 30,
+      "position": [
+        33.5,
+        15.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 200
+        },
+        "ResearchServer": {}
+      }
+    },
+    {
+      "map": "marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "uid": 2040,
+      "prototype": "SalvageMagnet",
+      "grid": 30,
+      "position": [
+        44.5,
+        -18.5
+      ],
+      "rotation": "1.5707963267948966 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 2500
+        },
+        "SalvageMagnet": {}
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 7100,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        -3.5,
+        -19.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 15326,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        -3.5,
+        -20.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 17415,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        -40.5,
+        -62.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 17551,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        -40.5,
+        -61.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 18000,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        89.5,
+        -40.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 18009,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        89.5,
+        -50.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 19481,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        47.5,
+        -95.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 19530,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        30.5,
+        -46.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 3833,
+      "prototype": "CargoMailTeleporter",
+      "grid": 2,
+      "position": [
+        17.5,
+        -99.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 8791,
+      "prototype": "CircuitImprinter",
+      "grid": 2,
+      "position": [
+        -14.5,
+        -27.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 150
+        },
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 5049,
+      "prototype": "ComputerAnalysisConsole",
+      "grid": 2,
+      "position": [
+        -21.5,
+        -27.5
+      ],
+      "rotation": "3.141592653589793 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 50
+        },
+        "ResearchClient": {},
+        "AnalysisConsole": {},
+        "DeviceList": {},
+        "DeviceNetwork": {
+          "deviceNetId": "Wired"
+        },
+        "DeviceLinkSource": {
+          "range": 8,
+          "ports": [
+            "ArtifactAnalyzerSender"
+          ],
+          "linkedPorts": {
+            "5037": [
+              [
+                "ArtifactAnalyzerSender",
+                "ArtifactAnalyzerReceiver"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 16169,
+      "prototype": "ComputerCargoBounty",
+      "grid": 2,
+      "position": [
+        24.5,
+        -95.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 50
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 6894,
+      "prototype": "ComputerSalvageExpedition",
+      "grid": 2,
+      "position": [
+        53.5,
+        -96.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 50
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 15404,
+      "prototype": "ExosuitFabricator",
+      "grid": 2,
+      "position": [
+        -3.5,
+        -21.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 150
+        },
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 583,
+      "prototype": "MachineAnomalyGenerator",
+      "grid": 2,
+      "position": [
+        -13.5,
+        -16.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1500
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 12833,
+      "prototype": "MachineAnomalyVessel",
+      "grid": 2,
+      "position": [
+        -15.5,
+        -22.5
+      ],
+      "rotation": "1.5707963267948966 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "AnomalyVessel": {},
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 12834,
+      "prototype": "MachineAnomalyVessel",
+      "grid": 2,
+      "position": [
+        -16.5,
+        -22.5
+      ],
+      "rotation": "1.5707963267948966 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "AnomalyVessel": {},
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 5037,
+      "prototype": "MachineArtifactAnalyzer",
+      "grid": 2,
+      "position": [
+        -19.5,
+        -32.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 5000
+        },
+        "ArtifactAnalyzer": {},
+        "DeviceNetwork": {
+          "deviceNetId": "Wired",
+          "receiveFrequencyId": "BasicDevice"
+        },
+        "DeviceList": {},
+        "DeviceLinkSink": {
+          "ports": [
+            "ArtifactAnalyzerReceiver"
+          ]
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 7432,
+      "prototype": "Protolathe",
+      "grid": 2,
+      "position": [
+        -12.5,
+        -28.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 150
+        },
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 10332,
+      "prototype": "Recycler",
+      "grid": 2,
+      "position": [
+        77.5,
+        -64.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "DeviceLinkSink": {
+          "ports": [
+            "Reverse",
+            "Forward",
+            false
+          ]
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 11474,
+      "prototype": "Recycler",
+      "grid": 2,
+      "position": [
+        50.5,
+        -96.5
+      ],
+      "rotation": "-1.5707963267948966 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "DeviceLinkSink": {
+          "ports": [
+            "Reverse",
+            "Forward",
+            false
+          ]
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 12845,
+      "prototype": "ResearchAndDevelopmentServer",
+      "grid": 2,
+      "position": [
+        -20.5,
+        -16.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 200
+        },
+        "ResearchServer": {}
+      }
+    },
+    {
+      "map": "exo",
+      "sourcePath": "Resources/Maps/exo.yml",
+      "uid": 17227,
+      "prototype": "SalvageMagnet",
+      "grid": 2,
+      "position": [
+        53.5,
+        -101.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 2500
+        },
+        "SalvageMagnet": {}
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 1107,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        102.5,
+        68.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 1108,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        103.5,
+        68.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 1109,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        38.5,
+        69.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 1110,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        44.5,
+        41.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 1111,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        122.5,
+        41.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 1112,
+      "prototype": "BorgCharger",
+      "grid": 2,
+      "position": [
+        96.5,
+        78.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 6940,
+      "prototype": "CargoMailTeleporter",
+      "grid": 2,
+      "position": [
+        74.5,
+        36.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 8878,
+      "prototype": "CircuitImprinter",
+      "grid": 2,
+      "position": [
+        114.5,
+        75.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 150
+        },
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 9243,
+      "prototype": "ComputerAnalysisConsole",
+      "grid": 2,
+      "position": [
+        124.5,
+        70.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 50
+        },
+        "ResearchClient": {},
+        "AnalysisConsole": {
+          "analyzerEntity": 17036
+        },
+        "DeviceList": {},
+        "DeviceNetwork": {
+          "deviceNetId": "Wired"
+        },
+        "DeviceLinkSource": {
+          "range": 5,
+          "ports": [
+            "ArtifactAnalyzerSender"
+          ],
+          "linkedPorts": {
+            "17036": [
+              {
+                "source": "ArtifactAnalyzerSender",
+                "sink": "ArtifactAnalyzerReceiver"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 9244,
+      "prototype": "ComputerAnalysisConsole",
+      "grid": 2,
+      "position": [
+        124.5,
+        73.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 50
+        },
+        "ResearchClient": {},
+        "AnalysisConsole": {
+          "analyzerEntity": 17035
+        },
+        "DeviceList": {},
+        "DeviceNetwork": {
+          "deviceNetId": "Wired"
+        },
+        "DeviceLinkSource": {
+          "range": 5,
+          "ports": [
+            "ArtifactAnalyzerSender"
+          ],
+          "linkedPorts": {
+            "17035": [
+              {
+                "source": "ArtifactAnalyzerSender",
+                "sink": "ArtifactAnalyzerReceiver"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 12983,
+      "prototype": "ComputerCargoBounty",
+      "grid": 2,
+      "position": [
+        73.5,
+        30.5
+      ],
+      "rotation": "1.5707963267948966 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 50
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 9288,
+      "prototype": "ComputerSalvageExpedition",
+      "grid": 2,
+      "position": [
+        92.5,
+        24.5
+      ],
+      "rotation": "1.5707963267948966 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 50
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 11383,
+      "prototype": "ExosuitFabricator",
+      "grid": 2,
+      "position": [
+        98.5,
+        78.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 150
+        },
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 11384,
+      "prototype": "ExosuitFabricator",
+      "grid": 2,
+      "position": [
+        100.5,
+        78.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 150
+        },
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 17029,
+      "prototype": "MachineAnomalyGenerator",
+      "grid": 2,
+      "position": [
+        130.5,
+        76.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1500
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 17030,
+      "prototype": "MachineAnomalyVessel",
+      "grid": 2,
+      "position": [
+        133.5,
+        81.5
+      ],
+      "rotation": "3.141592653589793 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "AnomalyVessel": {},
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 17031,
+      "prototype": "MachineAnomalyVessel",
+      "grid": 2,
+      "position": [
+        130.5,
+        81.5
+      ],
+      "rotation": "3.141592653589793 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "AnomalyVessel": {},
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 17035,
+      "prototype": "MachineArtifactAnalyzer",
+      "grid": 2,
+      "position": [
+        128.5,
+        72.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 5000
+        },
+        "ArtifactAnalyzer": {},
+        "DeviceNetwork": {
+          "deviceNetId": "Wired",
+          "receiveFrequencyId": "BasicDevice"
+        },
+        "DeviceList": {},
+        "DeviceLinkSink": {
+          "ports": [
+            "ArtifactAnalyzerReceiver"
+          ]
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 17036,
+      "prototype": "MachineArtifactAnalyzer",
+      "grid": 2,
+      "position": [
+        128.5,
+        68.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 5000
+        },
+        "ArtifactAnalyzer": {},
+        "DeviceNetwork": {
+          "deviceNetId": "Wired",
+          "receiveFrequencyId": "BasicDevice"
+        },
+        "DeviceList": {},
+        "DeviceLinkSink": {
+          "ports": [
+            "ArtifactAnalyzerReceiver"
+          ]
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 18194,
+      "prototype": "Protolathe",
+      "grid": 2,
+      "position": [
+        114.5,
+        77.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 150
+        },
+        "ResearchClient": {}
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 18576,
+      "prototype": "Recycler",
+      "grid": 2,
+      "position": [
+        97.5,
+        32.5
+      ],
+      "rotation": "3.141592653589793 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "DeviceLinkSink": {
+          "ports": [
+            "Reverse",
+            "Forward",
+            false
+          ]
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 25102,
+      "prototype": "Recycler",
+      "grid": 2,
+      "position": [
+        111.5,
+        30.5
+      ],
+      "rotation": "1.5707963267948966 rad",
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 1000
+        },
+        "DeviceLinkSink": {
+          "ports": [
+            "Reverse",
+            "Forward",
+            false
+          ]
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 19311,
+      "prototype": "ResearchAndDevelopmentServer",
+      "grid": 2,
+      "position": [
+        125.5,
+        81.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 200
+        },
+        "ResearchServer": {}
+      }
+    },
+    {
+      "map": "sushi",
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "uid": 19323,
+      "prototype": "SalvageMagnet",
+      "grid": 2,
+      "position": [
+        94.5,
+        22.5
+      ],
+      "rotation": 0,
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 2500
+        },
+        "SalvageMagnet": {}
+      }
+    }
+  ],
+  "localEntities": [
+    {
+      "map": "marathon",
+      "uid": 11658,
+      "prototype": "AirlockExternalGlassCargoLocked",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "pos": "34.5,-15.5"
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "11800": [
+              [
+                "DoorStatus",
+                "DoorBolt"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 11800,
+      "prototype": "AirlockExternalGlassCargoLocked",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "pos": "34.5,-12.5"
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "11658": [
+              [
+                "DoorStatus",
+                "DoorBolt"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 1083,
+      "prototype": "AirlockExternalGlassShuttleCargo",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "rot": "1.5707963267948966 rad",
+          "pos": "38.5,-5.5"
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "11710": [
+              [
+                "DoorStatus",
+                "Close"
+              ]
+            ]
+          }
+        },
+        "DeviceLinkSink": {
+          "invokeCounter": 1
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 15622,
+      "prototype": "AirlockSalvageGlassLocked",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "pos": "33.5,-8.5"
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 6726,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "pos": "35.5,-13.5"
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 11639,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "pos": "35.5,-11.5"
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 11926,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "rot": "1.5707963267948966 rad",
+          "pos": "37.5,-6.5"
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 11932,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "pos": "35.5,-16.5"
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 11978,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "rot": "1.5707963267948966 rad",
+          "pos": "38.5,-6.5"
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 12031,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "pos": "35.5,-14.5"
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 12047,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "rot": "1.5707963267948966 rad",
+          "pos": "36.5,-6.5"
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 12096,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "pos": "35.5,-12.5"
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 12231,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "pos": "35.5,-17.5"
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 16126,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "pos": "35.5,-15.5"
+        }
+      }
+    },
+    {
+      "map": "marathon",
+      "uid": 21582,
+      "prototype": "Recycler",
+      "components": {
+        "Transform": {
+          "parent": 30,
+          "rot": "1.5707963267948966 rad",
+          "pos": "32.5,-11.5"
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 6869,
+      "prototype": "AirlockExternalGlassCargoLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "52.5,-102.5"
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 6883,
+      "prototype": "AirlockExternalGlassCargoLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "-1.5707963267948966 rad",
+          "pos": "46.5,-98.5"
+        },
+        "DeviceLinkSink": {
+          "invokeCounter": 1
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "18350": [
+              [
+                "DoorStatus",
+                "InputA"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 6884,
+      "prototype": "AirlockExternalGlassCargoLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "-1.5707963267948966 rad",
+          "pos": "46.5,-99.5"
+        },
+        "DeviceLinkSink": {
+          "invokeCounter": 1
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "18350": [
+              [
+                "DoorStatus",
+                "InputB"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 6885,
+      "prototype": "AirlockExternalGlassCargoLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "-1.5707963267948966 rad",
+          "pos": "48.5,-98.5"
+        },
+        "DeviceLinkSink": {
+          "invokeCounter": 1
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "18351": [
+              [
+                "DoorStatus",
+                "InputA"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 6886,
+      "prototype": "AirlockExternalGlassCargoLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "-1.5707963267948966 rad",
+          "pos": "48.5,-99.5"
+        },
+        "DeviceLinkSink": {
+          "invokeCounter": 1
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "18351": [
+              [
+                "DoorStatus",
+                "InputB"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 6887,
+      "prototype": "AirlockExternalGlassCargoLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "51.5,-102.5"
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 6871,
+      "prototype": "AirlockExternalShuttleLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "51.5,-104.5"
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 6890,
+      "prototype": "AirlockExternalShuttleLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "52.5,-104.5"
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 6868,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "-1.5707963267948966 rad",
+          "pos": "51.5,-96.5"
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 6918,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "-1.5707963267948966 rad",
+          "pos": "49.5,-96.5"
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 9177,
+      "prototype": "LockerSalvageSpecialistFilled",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "56.5,-99.5"
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 17329,
+      "prototype": "LockerSalvageSpecialistFilled",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "56.5,-100.5"
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 18765,
+      "prototype": "LockerSalvageSpecialistFilled",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "56.5,-98.5"
+        }
+      }
+    },
+    {
+      "map": "exo",
+      "uid": 11474,
+      "prototype": "Recycler",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "-1.5707963267948966 rad",
+          "pos": "50.5,-96.5"
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 18829,
+      "prototype": "AirlockExternalCargoLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "99.5,24.5"
+        },
+        "DeviceLinkSink": {
+          "invokeCounter": 1
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "25369": [
+              {
+                "source": "DoorStatus",
+                "sink": "InputB"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 20617,
+      "prototype": "AirlockExternalCargoLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "100.5,24.5"
+        },
+        "DeviceLinkSink": {
+          "invokeCounter": 1
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "25369": [
+              {
+                "source": "DoorStatus",
+                "sink": "InputB"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 299,
+      "prototype": "AirlockExternalGlassShuttleCargo",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "1.5707963267948966 rad",
+          "pos": "82.5,30.5"
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "298": [
+              {
+                "source": "DoorStatus",
+                "sink": "Close"
+              }
+            ]
+          }
+        },
+        "DeviceLinkSink": {
+          "invokeCounter": 1
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 11464,
+      "prototype": "AirlockSalvageGlassLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "-1.5707963267948966 rad",
+          "pos": "97.5,25.5"
+        },
+        "DeviceLinkSink": {
+          "invokeCounter": 1
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "25370": [
+              {
+                "source": "DoorStatus",
+                "sink": "InputB"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 11631,
+      "prototype": "AirlockSalvageGlassLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "-1.5707963267948966 rad",
+          "pos": "97.5,26.5"
+        },
+        "DeviceLinkSink": {
+          "invokeCounter": 1
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "25370": [
+              {
+                "source": "DoorStatus",
+                "sink": "InputA"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 17282,
+      "prototype": "AirlockSalvageGlassLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "3.141592653589793 rad",
+          "pos": "96.5,34.5"
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 17713,
+      "prototype": "AirlockSalvageGlassLocked",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "3.141592653589793 rad",
+          "pos": "95.5,34.5"
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 9309,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "1.5707963267948966 rad",
+          "pos": "81.5,29.5"
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 9469,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "3.141592653589793 rad",
+          "pos": "97.5,31.5"
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 9470,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "3.141592653589793 rad",
+          "pos": "97.5,30.5"
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 9471,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "3.141592653589793 rad",
+          "pos": "97.5,29.5"
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 9475,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "106.5,30.5"
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 9476,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "106.5,29.5"
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 9511,
+      "prototype": "ConveyorBelt",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "1.5707963267948966 rad",
+          "pos": "82.5,29.5"
+        }
+      }
+    },
+    {
+      "map": "sushi",
+      "uid": 18576,
+      "prototype": "Recycler",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "rot": "3.141592653589793 rad",
+          "pos": "97.5,32.5"
+        }
+      }
+    }
+  ],
+  "tilePatches": [
+    {
+      "map": "marathon",
+      "grid": 30,
+      "tilePatch": [
+        {
+          "x": 31,
+          "y": -19,
+          "tile": "Space"
+        },
+        {
+          "x": 31,
+          "y": -18,
+          "tile": "Space"
+        },
+        {
+          "x": 31,
+          "y": -17,
+          "tile": "Space"
+        },
+        {
+          "x": 31,
+          "y": -16,
+          "tile": "Space"
+        },
+        {
+          "x": 31,
+          "y": -15,
+          "tile": "Space"
+        },
+        {
+          "x": 31,
+          "y": -14,
+          "tile": "Space"
+        },
+        {
+          "x": 31,
+          "y": -13,
+          "tile": "Plating"
+        },
+        {
+          "x": 31,
+          "y": -12,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 31,
+          "y": -11,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 31,
+          "y": -10,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 31,
+          "y": -9,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 31,
+          "y": -8,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 32,
+          "y": -19,
+          "tile": "Space"
+        },
+        {
+          "x": 32,
+          "y": -18,
+          "tile": "Space"
+        },
+        {
+          "x": 32,
+          "y": -17,
+          "tile": "Space"
+        },
+        {
+          "x": 32,
+          "y": -16,
+          "tile": "Plating"
+        },
+        {
+          "x": 32,
+          "y": -15,
+          "tile": "Plating"
+        },
+        {
+          "x": 32,
+          "y": -14,
+          "tile": "Plating"
+        },
+        {
+          "x": 32,
+          "y": -13,
+          "tile": "Plating"
+        },
+        {
+          "x": 32,
+          "y": -12,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 32,
+          "y": -11,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 32,
+          "y": -10,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 32,
+          "y": -9,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 32,
+          "y": -8,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 33,
+          "y": -19,
+          "tile": "Space"
+        },
+        {
+          "x": 33,
+          "y": -18,
+          "tile": "Space"
+        },
+        {
+          "x": 33,
+          "y": -17,
+          "tile": "Space"
+        },
+        {
+          "x": 33,
+          "y": -16,
+          "tile": "Plating"
+        },
+        {
+          "x": 33,
+          "y": -15,
+          "tile": "Plating"
+        },
+        {
+          "x": 33,
+          "y": -14,
+          "tile": "Plating"
+        },
+        {
+          "x": 33,
+          "y": -13,
+          "tile": "Plating"
+        },
+        {
+          "x": 33,
+          "y": -12,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 33,
+          "y": -11,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 33,
+          "y": -10,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 33,
+          "y": -9,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 33,
+          "y": -8,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 34,
+          "y": -19,
+          "tile": "Space"
+        },
+        {
+          "x": 34,
+          "y": -18,
+          "tile": "Space"
+        },
+        {
+          "x": 34,
+          "y": -17,
+          "tile": "Space"
+        },
+        {
+          "x": 34,
+          "y": -16,
+          "tile": "Plating"
+        },
+        {
+          "x": 34,
+          "y": -15,
+          "tile": "Plating"
+        },
+        {
+          "x": 34,
+          "y": -14,
+          "tile": "Plating"
+        },
+        {
+          "x": 34,
+          "y": -13,
+          "tile": "Plating"
+        },
+        {
+          "x": 34,
+          "y": -12,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 34,
+          "y": -11,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 34,
+          "y": -10,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 34,
+          "y": -9,
+          "tile": "Plating"
+        },
+        {
+          "x": 34,
+          "y": -8,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 35,
+          "y": -19,
+          "tile": "Space"
+        },
+        {
+          "x": 35,
+          "y": -18,
+          "tile": "Space"
+        },
+        {
+          "x": 35,
+          "y": -17,
+          "tile": "Space"
+        },
+        {
+          "x": 35,
+          "y": -16,
+          "tile": "Plating"
+        },
+        {
+          "x": 35,
+          "y": -15,
+          "tile": "Plating"
+        },
+        {
+          "x": 35,
+          "y": -14,
+          "tile": "Plating"
+        },
+        {
+          "x": 35,
+          "y": -13,
+          "tile": "Plating"
+        },
+        {
+          "x": 35,
+          "y": -12,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 35,
+          "y": -11,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 35,
+          "y": -10,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 35,
+          "y": -9,
+          "tile": "Plating"
+        },
+        {
+          "x": 35,
+          "y": -8,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 36,
+          "y": -19,
+          "tile": "Space"
+        },
+        {
+          "x": 36,
+          "y": -18,
+          "tile": "Space"
+        },
+        {
+          "x": 36,
+          "y": -17,
+          "tile": "Space"
+        },
+        {
+          "x": 36,
+          "y": -16,
+          "tile": "Plating"
+        },
+        {
+          "x": 36,
+          "y": -15,
+          "tile": "Plating"
+        },
+        {
+          "x": 36,
+          "y": -14,
+          "tile": "Plating"
+        },
+        {
+          "x": 36,
+          "y": -13,
+          "tile": "Plating"
+        },
+        {
+          "x": 36,
+          "y": -12,
+          "tile": "Plating"
+        },
+        {
+          "x": 36,
+          "y": -11,
+          "tile": "Plating"
+        },
+        {
+          "x": 36,
+          "y": -10,
+          "tile": "Plating"
+        },
+        {
+          "x": 36,
+          "y": -9,
+          "tile": "Plating"
+        },
+        {
+          "x": 36,
+          "y": -8,
+          "tile": "Plating"
+        },
+        {
+          "x": 37,
+          "y": -19,
+          "tile": "Space"
+        },
+        {
+          "x": 37,
+          "y": -18,
+          "tile": "Space"
+        },
+        {
+          "x": 37,
+          "y": -17,
+          "tile": "Space"
+        },
+        {
+          "x": 37,
+          "y": -16,
+          "tile": "Space"
+        },
+        {
+          "x": 37,
+          "y": -15,
+          "tile": "Space"
+        },
+        {
+          "x": 37,
+          "y": -14,
+          "tile": "Space"
+        },
+        {
+          "x": 37,
+          "y": -13,
+          "tile": "Space"
+        },
+        {
+          "x": 37,
+          "y": -12,
+          "tile": "Space"
+        },
+        {
+          "x": 37,
+          "y": -11,
+          "tile": "Space"
+        },
+        {
+          "x": 37,
+          "y": -10,
+          "tile": "Space"
+        },
+        {
+          "x": 37,
+          "y": -9,
+          "tile": "Space"
+        },
+        {
+          "x": 37,
+          "y": -8,
+          "tile": "Plating"
+        },
+        {
+          "x": 38,
+          "y": -19,
+          "tile": "Space"
+        },
+        {
+          "x": 38,
+          "y": -18,
+          "tile": "Space"
+        },
+        {
+          "x": 38,
+          "y": -17,
+          "tile": "Space"
+        },
+        {
+          "x": 38,
+          "y": -16,
+          "tile": "Space"
+        },
+        {
+          "x": 38,
+          "y": -15,
+          "tile": "Space"
+        },
+        {
+          "x": 38,
+          "y": -14,
+          "tile": "Space"
+        },
+        {
+          "x": 38,
+          "y": -13,
+          "tile": "Space"
+        },
+        {
+          "x": 38,
+          "y": -12,
+          "tile": "Space"
+        },
+        {
+          "x": 38,
+          "y": -11,
+          "tile": "Space"
+        },
+        {
+          "x": 38,
+          "y": -10,
+          "tile": "Space"
+        },
+        {
+          "x": 38,
+          "y": -9,
+          "tile": "Space"
+        },
+        {
+          "x": 38,
+          "y": -8,
+          "tile": "Plating"
+        }
+      ]
+    },
+    {
+      "map": "exo",
+      "grid": 2,
+      "tilePatch": [
+        {
+          "x": 44,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -105,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -104,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -103,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -102,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -101,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -100,
+          "tile": "Plating"
+        },
+        {
+          "x": 44,
+          "y": -99,
+          "tile": "Plating"
+        },
+        {
+          "x": 44,
+          "y": -98,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -97,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -96,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 44,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 45,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 45,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 45,
+          "y": -105,
+          "tile": "Space"
+        },
+        {
+          "x": 45,
+          "y": -104,
+          "tile": "Space"
+        },
+        {
+          "x": 45,
+          "y": -103,
+          "tile": "Space"
+        },
+        {
+          "x": 45,
+          "y": -102,
+          "tile": "Space"
+        },
+        {
+          "x": 45,
+          "y": -101,
+          "tile": "Plating"
+        },
+        {
+          "x": 45,
+          "y": -100,
+          "tile": "Plating"
+        },
+        {
+          "x": 45,
+          "y": -99,
+          "tile": "Plating"
+        },
+        {
+          "x": 45,
+          "y": -98,
+          "tile": "Plating"
+        },
+        {
+          "x": 45,
+          "y": -97,
+          "tile": "Space"
+        },
+        {
+          "x": 45,
+          "y": -96,
+          "tile": "Space"
+        },
+        {
+          "x": 45,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 45,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 45,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 46,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 46,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 46,
+          "y": -105,
+          "tile": "Space"
+        },
+        {
+          "x": 46,
+          "y": -104,
+          "tile": "Space"
+        },
+        {
+          "x": 46,
+          "y": -103,
+          "tile": "Space"
+        },
+        {
+          "x": 46,
+          "y": -102,
+          "tile": "Space"
+        },
+        {
+          "x": 46,
+          "y": -101,
+          "tile": "Plating"
+        },
+        {
+          "x": 46,
+          "y": -100,
+          "tile": "Plating"
+        },
+        {
+          "x": 46,
+          "y": -99,
+          "tile": "Plating"
+        },
+        {
+          "x": 46,
+          "y": -98,
+          "tile": "Plating"
+        },
+        {
+          "x": 46,
+          "y": -97,
+          "tile": "Space"
+        },
+        {
+          "x": 46,
+          "y": -96,
+          "tile": "Space"
+        },
+        {
+          "x": 46,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 46,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 46,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 47,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 47,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 47,
+          "y": -105,
+          "tile": "Space"
+        },
+        {
+          "x": 47,
+          "y": -104,
+          "tile": "Space"
+        },
+        {
+          "x": 47,
+          "y": -103,
+          "tile": "Space"
+        },
+        {
+          "x": 47,
+          "y": -102,
+          "tile": "Plating"
+        },
+        {
+          "x": 47,
+          "y": -101,
+          "tile": "Plating"
+        },
+        {
+          "x": 47,
+          "y": -100,
+          "tile": "Plating"
+        },
+        {
+          "x": 47,
+          "y": -99,
+          "tile": "Plating"
+        },
+        {
+          "x": 47,
+          "y": -98,
+          "tile": "Plating"
+        },
+        {
+          "x": 47,
+          "y": -97,
+          "tile": "Plating"
+        },
+        {
+          "x": 47,
+          "y": -96,
+          "tile": "Space"
+        },
+        {
+          "x": 47,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 47,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 47,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 48,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 48,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 48,
+          "y": -105,
+          "tile": "Space"
+        },
+        {
+          "x": 48,
+          "y": -104,
+          "tile": "Space"
+        },
+        {
+          "x": 48,
+          "y": -103,
+          "tile": "Plating"
+        },
+        {
+          "x": 48,
+          "y": -102,
+          "tile": "Plating"
+        },
+        {
+          "x": 48,
+          "y": -101,
+          "tile": "Plating"
+        },
+        {
+          "x": 48,
+          "y": -100,
+          "tile": "Plating"
+        },
+        {
+          "x": 48,
+          "y": -99,
+          "tile": "Plating"
+        },
+        {
+          "x": 48,
+          "y": -98,
+          "tile": "Plating"
+        },
+        {
+          "x": 48,
+          "y": -97,
+          "tile": "Plating"
+        },
+        {
+          "x": 48,
+          "y": -96,
+          "tile": "Plating"
+        },
+        {
+          "x": 48,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 48,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 48,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 49,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 49,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 49,
+          "y": -105,
+          "tile": "Space"
+        },
+        {
+          "x": 49,
+          "y": -104,
+          "tile": "Plating"
+        },
+        {
+          "x": 49,
+          "y": -103,
+          "tile": "Plating"
+        },
+        {
+          "x": 49,
+          "y": -102,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 49,
+          "y": -101,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 49,
+          "y": -100,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 49,
+          "y": -99,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 49,
+          "y": -98,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 49,
+          "y": -97,
+          "tile": "FloorTechMaint2"
+        },
+        {
+          "x": 49,
+          "y": -96,
+          "tile": "Plating"
+        },
+        {
+          "x": 49,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 49,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 49,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 50,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 50,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 50,
+          "y": -105,
+          "tile": "Plating"
+        },
+        {
+          "x": 50,
+          "y": -104,
+          "tile": "Plating"
+        },
+        {
+          "x": 50,
+          "y": -103,
+          "tile": "Plating"
+        },
+        {
+          "x": 50,
+          "y": -102,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 50,
+          "y": -101,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 50,
+          "y": -100,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 50,
+          "y": -99,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 50,
+          "y": -98,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 50,
+          "y": -97,
+          "tile": "FloorTechMaint2"
+        },
+        {
+          "x": 50,
+          "y": -96,
+          "tile": "Plating"
+        },
+        {
+          "x": 50,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 50,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 50,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 51,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 51,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 51,
+          "y": -105,
+          "tile": "Plating"
+        },
+        {
+          "x": 51,
+          "y": -104,
+          "tile": "Plating"
+        },
+        {
+          "x": 51,
+          "y": -103,
+          "tile": "Plating"
+        },
+        {
+          "x": 51,
+          "y": -102,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 51,
+          "y": -101,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 51,
+          "y": -100,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 51,
+          "y": -99,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 51,
+          "y": -98,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 51,
+          "y": -97,
+          "tile": "FloorTechMaint2"
+        },
+        {
+          "x": 51,
+          "y": -96,
+          "tile": "Plating"
+        },
+        {
+          "x": 51,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 51,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 51,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 52,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 52,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 52,
+          "y": -105,
+          "tile": "Plating"
+        },
+        {
+          "x": 52,
+          "y": -104,
+          "tile": "Plating"
+        },
+        {
+          "x": 52,
+          "y": -103,
+          "tile": "Plating"
+        },
+        {
+          "x": 52,
+          "y": -102,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 52,
+          "y": -101,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 52,
+          "y": -100,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 52,
+          "y": -99,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 52,
+          "y": -98,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 52,
+          "y": -97,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 52,
+          "y": -96,
+          "tile": "Plating"
+        },
+        {
+          "x": 52,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 52,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 52,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 53,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 53,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 53,
+          "y": -105,
+          "tile": "Plating"
+        },
+        {
+          "x": 53,
+          "y": -104,
+          "tile": "Plating"
+        },
+        {
+          "x": 53,
+          "y": -103,
+          "tile": "Plating"
+        },
+        {
+          "x": 53,
+          "y": -102,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 53,
+          "y": -101,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 53,
+          "y": -100,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 53,
+          "y": -99,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 53,
+          "y": -98,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 53,
+          "y": -97,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 53,
+          "y": -96,
+          "tile": "Plating"
+        },
+        {
+          "x": 53,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 53,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 53,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 54,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 54,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 54,
+          "y": -105,
+          "tile": "Plating"
+        },
+        {
+          "x": 54,
+          "y": -104,
+          "tile": "Plating"
+        },
+        {
+          "x": 54,
+          "y": -103,
+          "tile": "Plating"
+        },
+        {
+          "x": 54,
+          "y": -102,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 54,
+          "y": -101,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 54,
+          "y": -100,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 54,
+          "y": -99,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 54,
+          "y": -98,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 54,
+          "y": -97,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 54,
+          "y": -96,
+          "tile": "Plating"
+        },
+        {
+          "x": 54,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 54,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 54,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 55,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 55,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 55,
+          "y": -105,
+          "tile": "Space"
+        },
+        {
+          "x": 55,
+          "y": -104,
+          "tile": "Plating"
+        },
+        {
+          "x": 55,
+          "y": -103,
+          "tile": "Plating"
+        },
+        {
+          "x": 55,
+          "y": -102,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 55,
+          "y": -101,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 55,
+          "y": -100,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 55,
+          "y": -99,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 55,
+          "y": -98,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 55,
+          "y": -97,
+          "tile": "Plating"
+        },
+        {
+          "x": 55,
+          "y": -96,
+          "tile": "Plating"
+        },
+        {
+          "x": 55,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 55,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 55,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 56,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 56,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 56,
+          "y": -105,
+          "tile": "Space"
+        },
+        {
+          "x": 56,
+          "y": -104,
+          "tile": "Space"
+        },
+        {
+          "x": 56,
+          "y": -103,
+          "tile": "Plating"
+        },
+        {
+          "x": 56,
+          "y": -102,
+          "tile": "Plating"
+        },
+        {
+          "x": 56,
+          "y": -101,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 56,
+          "y": -100,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 56,
+          "y": -99,
+          "tile": "FloorSteel"
+        },
+        {
+          "x": 56,
+          "y": -98,
+          "tile": "Plating"
+        },
+        {
+          "x": 56,
+          "y": -97,
+          "tile": "Plating"
+        },
+        {
+          "x": 56,
+          "y": -96,
+          "tile": "Space"
+        },
+        {
+          "x": 56,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 56,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 56,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 57,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 57,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 57,
+          "y": -105,
+          "tile": "Space"
+        },
+        {
+          "x": 57,
+          "y": -104,
+          "tile": "Space"
+        },
+        {
+          "x": 57,
+          "y": -103,
+          "tile": "Space"
+        },
+        {
+          "x": 57,
+          "y": -102,
+          "tile": "Plating"
+        },
+        {
+          "x": 57,
+          "y": -101,
+          "tile": "Plating"
+        },
+        {
+          "x": 57,
+          "y": -100,
+          "tile": "Plating"
+        },
+        {
+          "x": 57,
+          "y": -99,
+          "tile": "Plating"
+        },
+        {
+          "x": 57,
+          "y": -98,
+          "tile": "Plating"
+        },
+        {
+          "x": 57,
+          "y": -97,
+          "tile": "Space"
+        },
+        {
+          "x": 57,
+          "y": -96,
+          "tile": "Space"
+        },
+        {
+          "x": 57,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 57,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 57,
+          "y": -93,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -107,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -106,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -105,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -104,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -103,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -102,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -101,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -100,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -99,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -98,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -97,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -96,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -95,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -94,
+          "tile": "Space"
+        },
+        {
+          "x": 58,
+          "y": -93,
+          "tile": "Space"
+        }
+      ]
+    },
+    {
+      "map": "sushi",
+      "grid": 2,
+      "tilePatch": [
+        {
+          "x": 93,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 93,
+          "y": 21,
+          "tile": "Plating"
+        },
+        {
+          "x": 93,
+          "y": 22,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 23,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 24,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 25,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 26,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 27,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 28,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 29,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 30,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 31,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 32,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 33,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 93,
+          "y": 34,
+          "tile": "Plating"
+        },
+        {
+          "x": 93,
+          "y": 35,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 94,
+          "y": 21,
+          "tile": "Plating"
+        },
+        {
+          "x": 94,
+          "y": 22,
+          "tile": "FloorSteelMono"
+        },
+        {
+          "x": 94,
+          "y": 23,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 24,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 25,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 26,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 27,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 28,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 29,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 30,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 31,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 32,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 33,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 94,
+          "y": 34,
+          "tile": "Plating"
+        },
+        {
+          "x": 94,
+          "y": 35,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 95,
+          "y": 21,
+          "tile": "Plating"
+        },
+        {
+          "x": 95,
+          "y": 22,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 23,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 24,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 25,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 26,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 27,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 28,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 29,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 30,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 31,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 32,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 33,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 34,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 95,
+          "y": 35,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 96,
+          "y": 21,
+          "tile": "Plating"
+        },
+        {
+          "x": 96,
+          "y": 22,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 23,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 24,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 25,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 26,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 27,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 28,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 29,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 30,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 31,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 32,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 33,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 34,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 96,
+          "y": 35,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 97,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 97,
+          "y": 21,
+          "tile": "Plating"
+        },
+        {
+          "x": 97,
+          "y": 22,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 97,
+          "y": 23,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 97,
+          "y": 24,
+          "tile": "Plating"
+        },
+        {
+          "x": 97,
+          "y": 25,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 97,
+          "y": 26,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 97,
+          "y": 27,
+          "tile": "Plating"
+        },
+        {
+          "x": 97,
+          "y": 28,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 97,
+          "y": 29,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 97,
+          "y": 30,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 97,
+          "y": 31,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 97,
+          "y": 32,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 97,
+          "y": 33,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 97,
+          "y": 34,
+          "tile": "Plating"
+        },
+        {
+          "x": 97,
+          "y": 35,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 98,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 98,
+          "y": 21,
+          "tile": "Space"
+        },
+        {
+          "x": 98,
+          "y": 22,
+          "tile": "Space"
+        },
+        {
+          "x": 98,
+          "y": 23,
+          "tile": "Space"
+        },
+        {
+          "x": 98,
+          "y": 24,
+          "tile": "Plating"
+        },
+        {
+          "x": 98,
+          "y": 25,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 98,
+          "y": 26,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 98,
+          "y": 27,
+          "tile": "Plating"
+        },
+        {
+          "x": 98,
+          "y": 28,
+          "tile": "Plating"
+        },
+        {
+          "x": 98,
+          "y": 29,
+          "tile": "Plating"
+        },
+        {
+          "x": 98,
+          "y": 30,
+          "tile": "Plating"
+        },
+        {
+          "x": 98,
+          "y": 31,
+          "tile": "Plating"
+        },
+        {
+          "x": 98,
+          "y": 32,
+          "tile": "Plating"
+        },
+        {
+          "x": 98,
+          "y": 33,
+          "tile": "Plating"
+        },
+        {
+          "x": 98,
+          "y": 34,
+          "tile": "Plating"
+        },
+        {
+          "x": 98,
+          "y": 35,
+          "tile": "Plating"
+        },
+        {
+          "x": 99,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 99,
+          "y": 21,
+          "tile": "Space"
+        },
+        {
+          "x": 99,
+          "y": 22,
+          "tile": "Space"
+        },
+        {
+          "x": 99,
+          "y": 23,
+          "tile": "Space"
+        },
+        {
+          "x": 99,
+          "y": 24,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 99,
+          "y": 25,
+          "tile": "Plating"
+        },
+        {
+          "x": 99,
+          "y": 26,
+          "tile": "Plating"
+        },
+        {
+          "x": 99,
+          "y": 27,
+          "tile": "Plating"
+        },
+        {
+          "x": 99,
+          "y": 28,
+          "tile": "Space"
+        },
+        {
+          "x": 99,
+          "y": 29,
+          "tile": "Space"
+        },
+        {
+          "x": 99,
+          "y": 30,
+          "tile": "Space"
+        },
+        {
+          "x": 99,
+          "y": 31,
+          "tile": "Space"
+        },
+        {
+          "x": 99,
+          "y": 32,
+          "tile": "Space"
+        },
+        {
+          "x": 99,
+          "y": 33,
+          "tile": "Space"
+        },
+        {
+          "x": 99,
+          "y": 34,
+          "tile": "Space"
+        },
+        {
+          "x": 99,
+          "y": 35,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 21,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 22,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 23,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 24,
+          "tile": "FloorDark"
+        },
+        {
+          "x": 100,
+          "y": 25,
+          "tile": "Plating"
+        },
+        {
+          "x": 100,
+          "y": 26,
+          "tile": "Plating"
+        },
+        {
+          "x": 100,
+          "y": 27,
+          "tile": "Plating"
+        },
+        {
+          "x": 100,
+          "y": 28,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 29,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 30,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 31,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 32,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 33,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 34,
+          "tile": "Space"
+        },
+        {
+          "x": 100,
+          "y": 35,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 21,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 22,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 23,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 24,
+          "tile": "Plating"
+        },
+        {
+          "x": 101,
+          "y": 25,
+          "tile": "Plating"
+        },
+        {
+          "x": 101,
+          "y": 26,
+          "tile": "Plating"
+        },
+        {
+          "x": 101,
+          "y": 27,
+          "tile": "Plating"
+        },
+        {
+          "x": 101,
+          "y": 28,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 29,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 30,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 31,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 32,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 33,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 34,
+          "tile": "Space"
+        },
+        {
+          "x": 101,
+          "y": 35,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 21,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 22,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 23,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 24,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 25,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 26,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 27,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 28,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 29,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 30,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 31,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 32,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 33,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 34,
+          "tile": "Space"
+        },
+        {
+          "x": 102,
+          "y": 35,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 21,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 22,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 23,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 24,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 25,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 26,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 27,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 28,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 29,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 30,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 31,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 32,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 33,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 34,
+          "tile": "Space"
+        },
+        {
+          "x": 103,
+          "y": 35,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 20,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 21,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 22,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 23,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 24,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 25,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 26,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 27,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 28,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 29,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 30,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 31,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 32,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 33,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 34,
+          "tile": "Space"
+        },
+        {
+          "x": 104,
+          "y": 35,
+          "tile": "Space"
+        }
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "Content.Shared/Xenoarchaeology/Equipment/SharedArtifactAnalyzerSystem.cs": "827c0bed50c688dc2f233f52b801c42b5d9f12550efaf8a78180679d5b1a7f51",
+    "Content.Shared/DeviceLinking/Systems/DeviceLinkSystem.Links.cs": "555dd02c49e65837e593414d484504c6483e672ab6cf86a3c37fe02b94817e7a",
+    "Content.Shared/DeviceLinking/Systems/DeviceLinkSystem.cs": "b60e5bb69e1ad0090b272da17bfbaefe7bda102faeed5bd7b9e69df28f1b722c",
+    "Content.Server/Xenoarchaeology/Equipment/ArtifactAnalyzerSystem.cs": "0c5ec6e0d70226bafb790873ec20402eb76c7dc152af1490b5a0b0ee5bc6e611",
+    "Content.Server/Research/Systems/ResearchSystem.cs": "6cffb5f1bfcc4de98c8fba20ed5ea4076cb906d1496d0e99c17b7c2b826bcafa",
+    "Content.Server/Research/Systems/ResearchSystem.Client.cs": "741e215386f18cc35dae66b39b28b4c734d4b19a06721c7ae33289730f474248",
+    "Content.Server/Research/Systems/ResearchSystem.Server.cs": "f2aa47588f5dd43d1ea6d6796273a6257dcb71f497a07edd4b6d4065c2200cac",
+    "Content.Server/Research/Systems/ResearchSystem.Technology.cs": "a1a25d31de19fb961dc629d888af2c605b0b5d2cd420715817eb83287524d9eb",
+    "Content.Server/Anomaly/AnomalySystem.Vessel.cs": "897147f94c32ebbaa9f76a5b8ae1610a628ee58335817c72bacbd8561f33c838",
+    "Content.Server/Salvage/SalvageSystem.Magnet.cs": "670035a0a817e132c63d40633c893264fb57ed113d5de6d90b3c001da600d4ae",
+    "Content.Server/Salvage/Magnet/SalvageMagnetComponent.cs": "2de4cd69493d160e4a134f3290d136d17941d72ab073c2df4342592830700560",
+    "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml": "e1803de51888c19b074424158afedda4523f43b4b462714d3ec5c786641aff09",
+    "Resources/Prototypes/Entities/Objects/Devices/Electronics/door_access.yml": "965838e3455432292f6d3a6826a2dd921024c8f517db7c1a604455027e48f15e",
+    "Resources/Prototypes/Entities/Structures/Machines/recycler.yml": "2716e6e8cbdde0c66a3b57e6e46bbbdacdebabf2e80c4c09235d617d8a0c3f29",
+    "Content.Server/Materials/MaterialReclaimerSystem.cs": "bd93dcd13a106aff221f88913a5f559b7b8cf8cadb43046fffbb771397ca6215",
+    "Resources/Prototypes/Entities/Structures/Machines/artifact_analyzer.yml": "7f96dd4ab051c835babe2c5b8f02cca6f2e1828e83489b1004c8d5c2afc04c8e",
+    "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml": "7bcf4b0f33c3b492889a2fee929c24de5f659ae02daa5d172b5eb9e9f1778103"
+  },
+  "proposedEvidence": [
+    {
+      "id": "additional_artifact_binding_native",
+      "kind": "native",
+      "source": "Content.Shared/Xenoarchaeology/Equipment/SharedArtifactAnalyzerSystem.cs",
+      "description": "Artifact analyzer and console preserve explicit one-to-one binding; analyzer power is required."
+    },
+    {
+      "id": "additional_device_link_range_native",
+      "kind": "native",
+      "source": "Content.Shared/DeviceLinking/Systems/DeviceLinkSystem.Links.cs",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_device_link_restore_native",
+      "kind": "native",
+      "source": "Content.Shared/DeviceLinking/Systems/DeviceLinkSystem.cs",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_artifact_points_native",
+      "kind": "native",
+      "source": "Content.Server/Xenoarchaeology/Equipment/ArtifactAnalyzerSystem.cs",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_research_discovery_native",
+      "kind": "native",
+      "source": "Content.Server/Research/Systems/ResearchSystem.cs",
+      "description": "Research servers are discovered on the client engine grid; proximity alone is not registration."
+    },
+    {
+      "id": "additional_research_client_native",
+      "kind": "native",
+      "source": "Content.Server/Research/Systems/ResearchSystem.Client.cs",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_research_server_native",
+      "kind": "native",
+      "source": "Content.Server/Research/Systems/ResearchSystem.Server.cs",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_research_technology_native",
+      "kind": "native",
+      "source": "Content.Server/Research/Systems/ResearchSystem.Technology.cs",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_anomaly_assignment_native",
+      "kind": "native",
+      "source": "Content.Server/Anomaly/AnomalySystem.Vessel.cs",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_magnet_placement_native",
+      "kind": "native",
+      "source": "Content.Server/Salvage/SalvageSystem.Magnet.cs",
+      "description": "Magnet debris placement tests rotated bounds against grids using magnet orientation and a randomized search."
+    },
+    {
+      "id": "additional_magnet_parameters_native",
+      "kind": "native",
+      "source": "Content.Server/Salvage/Magnet/SalvageMagnetComponent.cs",
+      "description": "64 distance and 16 lateral default values are search parameters, not an empty berth specification."
+    },
+    {
+      "id": "additional_salvage_access_native",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_salvage_credentials_native",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Objects/Devices/Electronics/door_access.yml",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_recycler_native",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Machines/recycler.yml",
+      "description": "Recycler combines collision reclaim, material storage, conveyor and directional control sinks."
+    },
+    {
+      "id": "additional_reclaimer_power_native",
+      "kind": "native",
+      "source": "Content.Server/Materials/MaterialReclaimerSystem.cs",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_analyzer_prototype_native",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Machines/artifact_analyzer.yml",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_analysis_console_native",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "description": "Native source for the additional science/cargo dependency review; see the associated report for scope and interpretation."
+    },
+    {
+      "id": "additional_marathon_15282",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=15282",
+      "description": "Marathon entity 15282; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_marathon_22233",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=22233",
+      "description": "Marathon entity 22233; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_marathon_12746",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=12746",
+      "description": "Marathon entity 12746; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_marathon_2040",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=2040",
+      "description": "Marathon entity 2040; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_marathon_11658",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=11658",
+      "description": "Marathon entity 11658; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_marathon_11800",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=11800",
+      "description": "Marathon entity 11800; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_marathon_1083",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=1083",
+      "description": "Marathon entity 1083; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_marathon_21582",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=21582",
+      "description": "Marathon entity 21582; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_marathon_12974",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=12974",
+      "description": "Marathon entity 12974; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_exo_5049",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=5049",
+      "description": "Exo entity 5049; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_exo_5037",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=5037",
+      "description": "Exo entity 5037; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_exo_12845",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=12845",
+      "description": "Exo entity 12845; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_exo_17227",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=17227",
+      "description": "Exo entity 17227; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_exo_11474",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=11474",
+      "description": "Exo entity 11474; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_exo_6868",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=6868",
+      "description": "Exo entity 6868; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_exo_6918",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=6918",
+      "description": "Exo entity 6918; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_exo_6883",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=6883",
+      "description": "Exo entity 6883; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_exo_6884",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=6884",
+      "description": "Exo entity 6884; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_exo_6885",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=6885",
+      "description": "Exo entity 6885; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_exo_6886",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=6886",
+      "description": "Exo entity 6886; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_9243",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=9243",
+      "description": "Sushi entity 9243; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_9244",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=9244",
+      "description": "Sushi entity 9244; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_17035",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=17035",
+      "description": "Sushi entity 17035; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_17036",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=17036",
+      "description": "Sushi entity 17036; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_19311",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=19311",
+      "description": "Sushi entity 19311; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_19323",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=19323",
+      "description": "Sushi entity 19323; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_18576",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=18576",
+      "description": "Sushi entity 18576; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_9469",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=9469",
+      "description": "Sushi entity 9469; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_9470",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=9470",
+      "description": "Sushi entity 9470; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_9471",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=9471",
+      "description": "Sushi entity 9471; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_11464",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=11464",
+      "description": "Sushi entity 11464; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_11631",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=11631",
+      "description": "Sushi entity 11631; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_18829",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=18829",
+      "description": "Sushi entity 18829; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_20617",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=20617",
+      "description": "Sushi entity 20617; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    },
+    {
+      "id": "additional_sushi_299",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=299",
+      "description": "Sushi entity 299; exact prototype, grid-local position and saved relationships are recorded in additional-science-cargo.evidence.json."
+    }
+  ]
+}

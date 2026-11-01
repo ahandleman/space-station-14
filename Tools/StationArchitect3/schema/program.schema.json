@@ -1,0 +1,1832 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ss14.local/station-architect3/program.schema.json",
+  "title": "StationArchitect3 authoring program",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "ss14-station-architect"
+    },
+    "schemaVersion": {
+      "const": 3
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "defaults": {
+      "$ref": "#/$defs/defaults"
+    },
+    "accessProfiles": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/access_profile"
+      }
+    },
+    "environments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/environment"
+      }
+    },
+    "grids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/grid"
+      }
+    },
+    "domains": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/domain"
+      }
+    },
+    "interfaces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/interface"
+      }
+    },
+    "assemblies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/assembly"
+      }
+    },
+    "spaces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/space"
+      }
+    },
+    "choices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/choice"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      }
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/extension"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    }
+  },
+  "required": [
+    "format",
+    "schemaVersion",
+    "id",
+    "name"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "count": {
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "preferred": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "min",
+        "preferred",
+        "max"
+      ],
+      "additionalProperties": false
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+      },
+      "uniqueItems": true
+    },
+    "requirement_default": {
+      "type": "object",
+      "properties": {
+        "priority": {
+          "enum": [
+            "mandatory",
+            "desired"
+          ]
+        },
+        "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "tier": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "priority",
+        "weight"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "type": "object",
+      "properties": {
+        "requirement": {
+          "$ref": "#/$defs/requirement_default"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "access_expression": {
+      "type": "object",
+      "properties": {
+        "anyOf": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "anyOf"
+      ],
+      "additionalProperties": false
+    },
+    "access_profile": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "description": {
+          "type": "string"
+        },
+        "levels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "canTraverseVacuum": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "levels",
+        "canTraverseVacuum"
+      ],
+      "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "description": {
+          "type": "string"
+        },
+        "pressure": {
+          "enum": [
+            "standard",
+            "vacuum",
+            "process"
+          ]
+        },
+        "enclosure": {
+          "enum": [
+            "sealed",
+            "open"
+          ]
+        },
+        "temperature": {
+          "enum": [
+            "ambient",
+            "hot",
+            "cold",
+            "custom"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "pressure",
+        "enclosure",
+        "temperature"
+      ],
+      "additionalProperties": false
+    },
+    "grid": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "description": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "station",
+            "detached"
+          ]
+        },
+        "support": {
+          "enum": [
+            "solid",
+            "lattice",
+            "mixed"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "kind",
+        "support"
+      ],
+      "additionalProperties": false
+    },
+    "domain": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "description": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "vacuum",
+            "station_hull"
+          ]
+        },
+        "connectedToExterior": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "kind",
+        "connectedToExterior"
+      ],
+      "additionalProperties": false
+    },
+    "interface": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "description": {
+          "type": "string"
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "crew_passage",
+              "item_transfer",
+              "visibility",
+              "speech",
+              "gas_transfer",
+              "power_transfer",
+              "docking"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "construction": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "normalState": {
+          "enum": [
+            "open",
+            "closed",
+            "controlled"
+          ]
+        },
+        "geometry": {
+          "enum": [
+            "structural_tile",
+            "open_edge"
+          ],
+          "default": "structural_tile"
+        },
+        "access": {
+          "$ref": "#/$defs/access_expression"
+        },
+        "airtight": {
+          "type": "boolean"
+        },
+        "passage": {
+          "$ref": "#/$defs/interface_passage"
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "capabilities",
+        "construction",
+        "normalState",
+        "access",
+        "airtight"
+      ],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "kind": {
+          "enum": [
+            "map",
+            "native",
+            "user",
+            "policy"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "source",
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    "selector": {
+      "type": "object",
+      "properties": {
+        "tagsAll": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "tagsAny": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "kinds": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "department",
+              "group",
+              "room",
+              "passage"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "within": {
+          "$ref": "#/$defs/space_reference"
+        }
+      },
+      "required": [],
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "tagsAll"
+          ]
+        },
+        {
+          "required": [
+            "tagsAny"
+          ]
+        },
+        {
+          "required": [
+            "kinds"
+          ]
+        },
+        {
+          "required": [
+            "within"
+          ]
+        }
+      ]
+    },
+    "endpoint": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "space": {
+              "$ref": "#/$defs/space_reference"
+            }
+          },
+          "required": [
+            "space"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "domain": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+            }
+          },
+          "required": [
+            "domain"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "feature": {
+              "$ref": "#/$defs/feature_reference"
+            }
+          },
+          "required": [
+            "feature"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "selector": {
+              "$ref": "#/$defs/selector"
+            }
+          },
+          "required": [
+            "selector"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "matching": {
+      "type": "object",
+      "properties": {
+        "targets": {
+          "enum": [
+            "one",
+            "all",
+            "distinct"
+          ]
+        },
+        "scope": {
+          "enum": [
+            "station",
+            "same_owner",
+            "same_parent"
+          ]
+        },
+        "presence": {
+          "enum": [
+            "require_target",
+            "if_both_present"
+          ]
+        }
+      },
+      "required": [
+        "targets",
+        "scope",
+        "presence"
+      ],
+      "additionalProperties": false
+    },
+    "shared_boundary": {
+      "type": "object",
+      "properties": {
+        "interface": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "minLength": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "preferredLength": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maxLength": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "minSegments": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maxSegments": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "continuous": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "interface",
+        "minLength",
+        "continuous"
+      ],
+      "additionalProperties": false
+    },
+    "route": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "enum": [
+            "crew",
+            "maintenance",
+            "eva"
+          ]
+        },
+        "accessProfile": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "minWidth": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maxLength": {
+          "type": "number",
+          "minimum": 0
+        },
+        "through": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/space_reference"
+          },
+          "uniqueItems": true
+        },
+        "within": {
+          "enum": [
+            "owner",
+            "parent",
+            "station"
+          ]
+        },
+        "avoid": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/space_reference"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "mode",
+        "accessProfile",
+        "minWidth",
+        "through",
+        "within",
+        "avoid"
+      ],
+      "additionalProperties": false
+    },
+    "separation": {
+      "type": "object",
+      "properties": {
+        "minDistance": {
+          "type": "number",
+          "minimum": 0
+        },
+        "preferredDistance": {
+          "type": "number",
+          "minimum": 0
+        },
+        "maxDistance": {
+          "type": "number",
+          "minimum": 0
+        },
+        "metric": {
+          "enum": [
+            "boundary_manhattan",
+            "walking"
+          ]
+        },
+        "accessProfile": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        }
+      },
+      "required": [
+        "minDistance",
+        "metric"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "metric": {
+                "const": "walking"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "accessProfile"
+            ]
+          }
+        }
+      ]
+    },
+    "service_link": {
+      "type": "object",
+      "properties": {
+        "system": {
+          "enum": [
+            "gas",
+            "power",
+            "disposal",
+            "data"
+          ]
+        },
+        "fromPort": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "toPort": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "medium": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sameGrid": {
+          "type": "boolean"
+        },
+        "support": {
+          "enum": [
+            "floor_or_lattice",
+            "any"
+          ]
+        },
+        "maxLength": {
+          "type": "number",
+          "minimum": 0
+        },
+        "distinctCircuit": {
+          "type": "boolean"
+        },
+        "flow": {
+          "enum": [
+            "forward",
+            "reverse"
+          ],
+          "default": "forward",
+          "description": "Physical flow: forward is fromPort to toPort; reverse is toPort to fromPort. The from endpoint always owns the requirement."
+        }
+      },
+      "required": [
+        "system",
+        "fromPort",
+        "toPort",
+        "medium",
+        "sameGrid",
+        "support",
+        "distinctCircuit"
+      ],
+      "additionalProperties": false
+    },
+    "grid_relation": {
+      "type": "object",
+      "properties": {
+        "relation": {
+          "enum": [
+            "same",
+            "different"
+          ]
+        },
+        "bridgeAssembly": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        }
+      },
+      "required": [
+        "relation"
+      ],
+      "additionalProperties": false
+    },
+    "dependency": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "metric": {
+      "type": "object",
+      "properties": {
+        "metric": {
+          "enum": [
+            "area.exclusive",
+            "area.aggregate",
+            "shape.aspect_ratio",
+            "shape.short_side",
+            "shape.fill_ratio",
+            "shape.components",
+            "corridor.clear_width",
+            "maintenance.wrap_fraction",
+            "core.components"
+          ]
+        },
+        "min": {
+          "type": "number",
+          "minimum": 0
+        },
+        "preferred": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0
+        },
+        "scale": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "metric",
+        "scale"
+      ],
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "min"
+          ]
+        },
+        {
+          "required": [
+            "preferred"
+          ]
+        },
+        {
+          "required": [
+            "max"
+          ]
+        }
+      ]
+    },
+    "perimeter": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "minLength": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "preferredLength": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "interface": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "continuous": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "domain",
+        "minLength",
+        "interface",
+        "continuous"
+      ],
+      "additionalProperties": false
+    },
+    "access_policy": {
+      "type": "object",
+      "properties": {
+        "entryFrom": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/space_reference"
+          },
+          "uniqueItems": true
+        },
+        "allowPublicEntry": {
+          "type": "boolean"
+        },
+        "allowMaintenanceEntry": {
+          "type": "boolean"
+        },
+        "allowExteriorEntry": {
+          "type": "boolean"
+        },
+        "throughTraffic": {
+          "type": "boolean"
+        },
+        "mustTraverse": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/space_reference"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "entryFrom",
+        "allowPublicEntry",
+        "allowMaintenanceEntry",
+        "allowExteriorEntry",
+        "throughTraffic",
+        "mustTraverse"
+      ],
+      "additionalProperties": false
+    },
+    "docking": {
+      "type": "object",
+      "properties": {
+        "interface": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "berthWidth": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "berthDepth": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "portOffset": {
+          "type": "integer"
+        },
+        "clearance": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "approachWidth": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "approachLength": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "approachToExterior": {
+          "type": "boolean"
+        },
+        "source": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        }
+      },
+      "required": [
+        "interface",
+        "berthWidth",
+        "berthDepth",
+        "portOffset",
+        "clearance",
+        "approachWidth",
+        "approachLength",
+        "approachToExterior",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "environment_rule": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "minVacuumGap": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "relationship": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "type": {
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "mandatory",
+            "desired"
+          ]
+        },
+        "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "tier": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "description": {
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence_refs"
+        },
+        "basis": {
+          "enum": [
+            "user_requirement",
+            "native_mechanic",
+            "map_pattern",
+            "design_policy"
+          ]
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "from": {
+          "$ref": "#/$defs/endpoint"
+        },
+        "to": {
+          "$ref": "#/$defs/endpoint"
+        },
+        "matching": {
+          "$ref": "#/$defs/matching"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "parameters",
+        "from",
+        "to",
+        "matching"
+      ],
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "shared_boundary"
+            },
+            "parameters": {
+              "$ref": "#/$defs/shared_boundary"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "route"
+            },
+            "parameters": {
+              "$ref": "#/$defs/route"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "separation"
+            },
+            "parameters": {
+              "$ref": "#/$defs/separation"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "service_link"
+            },
+            "parameters": {
+              "$ref": "#/$defs/service_link"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "grid_relation"
+            },
+            "parameters": {
+              "$ref": "#/$defs/grid_relation"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "dependency"
+            },
+            "parameters": {
+              "$ref": "#/$defs/dependency"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "type": "string",
+              "pattern": "^x_[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+            },
+            "parameters": {
+              "type": "object"
+            }
+          }
+        }
+      ]
+    },
+    "requirement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "type": {
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "mandatory",
+            "desired"
+          ]
+        },
+        "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "tier": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "description": {
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence_refs"
+        },
+        "basis": {
+          "enum": [
+            "user_requirement",
+            "native_mechanic",
+            "map_pattern",
+            "design_policy"
+          ]
+        },
+        "parameters": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "metric"
+            },
+            "parameters": {
+              "$ref": "#/$defs/metric"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "perimeter"
+            },
+            "parameters": {
+              "$ref": "#/$defs/perimeter"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "access_policy"
+            },
+            "parameters": {
+              "$ref": "#/$defs/access_policy"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "docking"
+            },
+            "parameters": {
+              "$ref": "#/$defs/docking"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "environment"
+            },
+            "parameters": {
+              "$ref": "#/$defs/environment_rule"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "type": "string",
+              "pattern": "^x_[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+            },
+            "parameters": {
+              "type": "object"
+            }
+          }
+        }
+      ]
+    },
+    "port": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "system": {
+          "enum": [
+            "gas",
+            "power",
+            "disposal",
+            "data"
+          ]
+        },
+        "medium": {
+          "type": "string",
+          "minLength": 1
+        },
+        "direction": {
+          "enum": [
+            "in",
+            "out",
+            "bidirectional"
+          ]
+        },
+        "grid": {
+          "const": "host"
+        }
+      },
+      "required": [
+        "id",
+        "system",
+        "medium",
+        "direction",
+        "grid"
+      ],
+      "additionalProperties": false
+    },
+    "feature": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "count": {
+          "$ref": "#/$defs/count"
+        },
+        "prototypes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "assembly": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "ports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/port"
+          }
+        },
+        "clearance": {
+          "type": "object",
+          "properties": {
+            "workingTiles": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "approachWidth": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "workingTiles",
+            "approachWidth"
+          ],
+          "additionalProperties": false
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence_refs"
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "count",
+        "prototypes",
+        "ports",
+        "clearance"
+      ],
+      "additionalProperties": false
+    },
+    "assembly_port": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "part": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "nativeNode": {
+          "type": "string",
+          "minLength": 1
+        },
+        "system": {
+          "enum": [
+            "gas",
+            "power",
+            "disposal",
+            "data"
+          ]
+        },
+        "medium": {
+          "type": "string",
+          "minLength": 1
+        },
+        "direction": {
+          "enum": [
+            "in",
+            "out",
+            "bidirectional"
+          ]
+        },
+        "nativeComponent": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "part",
+        "system",
+        "medium",
+        "direction"
+      ],
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "required": [
+            "nativeNode"
+          ],
+          "not": {
+            "required": [
+              "nativeComponent"
+            ]
+          }
+        },
+        {
+          "required": [
+            "nativeComponent"
+          ],
+          "not": {
+            "required": [
+              "nativeNode"
+            ]
+          }
+        }
+      ]
+    },
+    "assembly": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+              },
+              "prototypes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "x": {
+                "type": "integer"
+              },
+              "y": {
+                "type": "integer"
+              },
+              "rotation": {
+                "enum": [
+                  0,
+                  90,
+                  180,
+                  270
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "prototypes",
+              "x",
+              "y",
+              "rotation"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "ports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/assembly_port"
+          }
+        },
+        "sameGrid": {
+          "type": "boolean"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence_refs"
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "parts",
+        "ports",
+        "sameGrid"
+      ],
+      "additionalProperties": false
+    },
+    "placement": {
+      "type": "object",
+      "properties": {
+        "nesting": {
+          "enum": [
+            "owned",
+            "contained"
+          ]
+        },
+        "zone": {
+          "enum": [
+            "interior",
+            "hull",
+            "outboard",
+            "any"
+          ]
+        },
+        "grid": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "surface": {
+          "enum": [
+            "floor",
+            "lattice",
+            "any"
+          ],
+          "default": "any"
+        }
+      },
+      "required": [
+        "nesting",
+        "zone",
+        "grid"
+      ],
+      "additionalProperties": false
+    },
+    "space": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "department",
+            "group",
+            "room",
+            "passage"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "count": {
+          "$ref": "#/$defs/count"
+        },
+        "placement": {
+          "$ref": "#/$defs/placement"
+        },
+        "environment": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "access": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/requirement"
+          }
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/feature"
+          }
+        },
+        "spaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/space"
+          }
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence_refs"
+        },
+        "relationships": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relationship"
+          }
+        },
+        "choices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/choice"
+          }
+        },
+        "organization": {
+          "$ref": "#/$defs/organization"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "count",
+        "placement"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "room",
+                  "passage"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "environment",
+              "access"
+            ]
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "environment"
+                  ]
+                },
+                {
+                  "required": [
+                    "access"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "choice": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "description": {
+          "type": "string"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/space_reference"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "minSelected": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "preferredSelected": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maxSelected": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "priority": {
+          "enum": [
+            "mandatory",
+            "desired"
+          ]
+        },
+        "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence_refs"
+        }
+      },
+      "required": [
+        "id",
+        "members",
+        "minSelected",
+        "preferredSelected",
+        "maxSelected"
+      ],
+      "additionalProperties": false
+    },
+    "extension": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^x_[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "appliesTo": {
+          "enum": [
+            "node",
+            "relationship"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evaluator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parametersSchema": {
+          "type": [
+            "object",
+            "boolean"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "appliesTo",
+        "description",
+        "evaluator",
+        "parametersSchema"
+      ],
+      "additionalProperties": false
+    },
+    "space_reference": {
+      "type": "string",
+      "pattern": "^/?(?:[a-z][a-z0-9]*(?:_[a-z0-9]+)*|\\.\\.?)(?:/(?:[a-z][a-z0-9]*(?:_[a-z0-9]+)*|\\.\\.?))*$",
+      "description": "Explicit ./ and ../ paths resolve from the declaring space; /path is absolute; bare canonical paths retain root semantics."
+    },
+    "feature_reference": {
+      "type": "string",
+      "pattern": "^(?:/?(?:[a-z][a-z0-9]*(?:_[a-z0-9]+)*|\\.\\.?)(?:/(?:[a-z][a-z0-9]*(?:_[a-z0-9]+)*|\\.\\.?))*)?#[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+    },
+    "organization": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "enum": [
+            "clustered",
+            "distributed",
+            "mixed"
+          ]
+        },
+        "independent": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "suites": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "members": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "members"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "additionalProperties": false
+    },
+    "interface_passage": {
+      "type": "object",
+      "properties": {
+        "direction": {
+          "enum": [
+            "bidirectional",
+            "a_to_b",
+            "b_to_a"
+          ]
+        },
+        "minWidth": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maxWidth": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "direction",
+        "minWidth"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

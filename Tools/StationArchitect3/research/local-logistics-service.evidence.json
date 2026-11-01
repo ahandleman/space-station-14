@@ -1,0 +1,5689 @@
+{
+  "format": "station_architect3_local_logistics_evidence",
+  "version": 1,
+  "method": "Actual native map entity/pose/component inspection, same-cell unit/trunk pairing and saved OrderSender?OrderReceiver link extraction. Prototype defaults resolved by read-only earlier analysis. Native source reviewed independently. No complete pipe-route or runtime simulation.",
+  "maps": [
+    {
+      "sourcePath": "Resources/Maps/gear.yml",
+      "sha256": "5c1d4bc9fc6caee5525219246d0e95607e4f3c2ca58b598daf7a4dcb768eba91",
+      "entities": [
+        {
+          "uid": 16597,
+          "prototype": "CargoTelepad",
+          "name": "cargo telepad",
+          "position": [
+            12,
+            57.5,
+            -22.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 175
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Animateable": {},
+            "Machine": {
+              "board": "CargoTelepadMachineCircuitboard"
+            },
+            "ContainerContainer": {
+              "containers": {
+                "machine_board": "",
+                "machine_parts": ""
+              }
+            },
+            "Construction": {
+              "graph": "Machine",
+              "node": "machine",
+              "containers": [
+                "machine_parts",
+                "machine_board"
+              ]
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "Transform": {
+              "anchored": true,
+              "noRot": true,
+              "parent": 12,
+              "pos": "57.5,-22.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static",
+              "canCollide": false
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.45,-0.45,0.45,0.00"
+                  },
+                  "density": 190,
+                  "mask": [
+                    "MachineMask"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "InteractionOutline": {},
+            "Anchorable": {
+              "delay": 2
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "Sprite": {
+              "sprite": "Structures/cargo_telepad.rsi",
+              "drawdepth": "HighFloorObjects",
+              "layers": [
+                {
+                  "state": "offline",
+                  "map": [
+                    "enum.CargoTelepadLayers.Base"
+                  ]
+                },
+                {
+                  "state": "idle",
+                  "map": [
+                    "enum.CargoTelepadLayers.Beam"
+                  ],
+                  "shader": "unshaded"
+                }
+              ]
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSink": {
+              "ports": [
+                "OrderReceiver"
+              ]
+            },
+            "CargoTelepad": {},
+            "Appearance": {},
+            "CollideOnAnchor": {},
+            "NameIdentifier": {
+              "group": "CargoTelepads"
+            },
+            "AnimationPlayer": {}
+          }
+        },
+        {
+          "uid": 2479,
+          "prototype": "ComputerCargoOrders",
+          "name": "cargo request computer",
+          "position": [
+            12,
+            50.5,
+            -24.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "GlassBreak"
+                      }
+                    },
+                    {
+                      "node": "monitorBroken"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "GlassReinforcedMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 12,
+              "rot": "1.5707963267948966 rad",
+              "pos": "50.5,-24.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.25,-0.35,0.25,0.35"
+                  },
+                  "density": 190,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "MachineLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "InteractionOutline": {},
+            "Rotatable": {},
+            "Anchorable": {},
+            "Construction": {
+              "graph": "Computer",
+              "node": "computer",
+              "containers": [
+                "board"
+              ]
+            },
+            "Sprite": {
+              "drawdepth": "Objects",
+              "sprite": "Structures/Machines/computers.rsi",
+              "layers": [
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Frame"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keyboard"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Screen"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keys"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.WiresVisualLayers.MaintenancePanel"
+                  ]
+                }
+              ]
+            },
+            "Animateable": {},
+            "MeleeSound": {
+              "soundGroups": {
+                "Brute": {
+                  "collection": "GlassSmash"
+                }
+              }
+            },
+            "Computer": {
+              "board": "CargoRequestComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            },
+            "PowerState": {
+              "idlePowerDraw": 50,
+              "workingPowerDraw": 500
+            },
+            "UIPowerState": {},
+            "ExtensionCableReceiver": {},
+            "ActivatableUIRequiresPower": {},
+            "ComputerVisuals": {
+              "stateFrame": "computer",
+              "stateKeyboard": "generic_keyboard",
+              "stateScreen": "request",
+              "stateKeys": "generic_keys",
+              "statePanel": "generic_panel_open"
+            },
+            "Appearance": {},
+            "LitOnPowered": {},
+            "PointLight": {
+              "radius": 1.5,
+              "energy": 4.0,
+              "enabled": false,
+              "lightMask": "ConeSingle",
+              "autoRot": true,
+              "offset": "0, 0.4",
+              "castShadows": false,
+              "color": "#b89f25"
+            },
+            "EmitSoundOnUIOpen": {
+              "sound": {
+                "collection": "Keyboard",
+                "params": {
+                  "volume": -1,
+                  "variation": 0.1,
+                  "pitch": 1.1
+                }
+              },
+              "blacklist": {
+                "tags": [
+                  "NoConsoleSound"
+                ]
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "board": {
+                  "ents": []
+                }
+              }
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "RequireProjectileTarget": {},
+            "Electrified": {
+              "enabled": false,
+              "usesApcPower": true
+            },
+            "WiresPanel": {},
+            "WiresVisuals": {},
+            "Wires": {
+              "boardName": "wires-board-name-computer",
+              "layoutId": "ComputerAi"
+            },
+            "StationAiWhitelist": {},
+            "CargoOrderConsole": {
+              "removeLimitAccess": [
+                "Quartermaster"
+              ]
+            },
+            "ActiveRadio": {
+              "channels": [
+                "Supply"
+              ]
+            },
+            "ActivatableUI": {
+              "key": "enum.CargoConsoleUiKey.Orders"
+            },
+            "UserInterface": {
+              "interfaces": {
+                "enum.CargoConsoleUiKey.Orders": {
+                  "type": "CargoOrderConsoleBoundUserInterface"
+                },
+                "enum.WiresUiKey.Key": {
+                  "type": "WiresBoundUserInterface"
+                }
+              }
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Cargo"
+                ]
+              ]
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSource": {
+              "range": 200,
+              "ports": [
+                "OrderSender"
+              ],
+              "linkedPorts": {
+                "16597": [
+                  {
+                    "source": "OrderSender",
+                    "sink": "OrderReceiver"
+                  }
+                ]
+              }
+            },
+            "GuideHelp": {
+              "guides": [
+                "Cargo"
+              ]
+            }
+          }
+        },
+        {
+          "uid": 3967,
+          "prototype": "ComputerCargoOrders",
+          "name": "cargo request computer",
+          "position": [
+            12,
+            63.5,
+            -15.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "GlassBreak"
+                      }
+                    },
+                    {
+                      "node": "monitorBroken"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "GlassReinforcedMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 12,
+              "rot": "3.141592653589793 rad",
+              "pos": "63.5,-15.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.25,-0.35,0.25,0.35"
+                  },
+                  "density": 190,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "MachineLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "InteractionOutline": {},
+            "Rotatable": {},
+            "Anchorable": {},
+            "Construction": {
+              "graph": "Computer",
+              "node": "computer",
+              "containers": [
+                "board"
+              ]
+            },
+            "Sprite": {
+              "drawdepth": "Objects",
+              "sprite": "Structures/Machines/computers.rsi",
+              "layers": [
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Frame"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keyboard"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Screen"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keys"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.WiresVisualLayers.MaintenancePanel"
+                  ]
+                }
+              ]
+            },
+            "Animateable": {},
+            "MeleeSound": {
+              "soundGroups": {
+                "Brute": {
+                  "collection": "GlassSmash"
+                }
+              }
+            },
+            "Computer": {
+              "board": "CargoRequestComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            },
+            "PowerState": {
+              "idlePowerDraw": 50,
+              "workingPowerDraw": 500
+            },
+            "UIPowerState": {},
+            "ExtensionCableReceiver": {},
+            "ActivatableUIRequiresPower": {},
+            "ComputerVisuals": {
+              "stateFrame": "computer",
+              "stateKeyboard": "generic_keyboard",
+              "stateScreen": "request",
+              "stateKeys": "generic_keys",
+              "statePanel": "generic_panel_open"
+            },
+            "Appearance": {},
+            "LitOnPowered": {},
+            "PointLight": {
+              "radius": 1.5,
+              "energy": 4.0,
+              "enabled": false,
+              "lightMask": "ConeSingle",
+              "autoRot": true,
+              "offset": "0, 0.4",
+              "castShadows": false,
+              "color": "#b89f25"
+            },
+            "EmitSoundOnUIOpen": {
+              "sound": {
+                "collection": "Keyboard",
+                "params": {
+                  "volume": -1,
+                  "variation": 0.1,
+                  "pitch": 1.1
+                }
+              },
+              "blacklist": {
+                "tags": [
+                  "NoConsoleSound"
+                ]
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "board": {
+                  "ents": []
+                }
+              }
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "RequireProjectileTarget": {},
+            "Electrified": {
+              "enabled": false,
+              "usesApcPower": true
+            },
+            "WiresPanel": {},
+            "WiresVisuals": {},
+            "Wires": {
+              "boardName": "wires-board-name-computer",
+              "layoutId": "ComputerAi"
+            },
+            "StationAiWhitelist": {},
+            "CargoOrderConsole": {
+              "removeLimitAccess": [
+                "Quartermaster"
+              ]
+            },
+            "ActiveRadio": {
+              "channels": [
+                "Supply"
+              ]
+            },
+            "ActivatableUI": {
+              "key": "enum.CargoConsoleUiKey.Orders"
+            },
+            "UserInterface": {
+              "interfaces": {
+                "enum.CargoConsoleUiKey.Orders": {
+                  "type": "CargoOrderConsoleBoundUserInterface"
+                },
+                "enum.WiresUiKey.Key": {
+                  "type": "WiresBoundUserInterface"
+                }
+              }
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Cargo"
+                ]
+              ]
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSource": {
+              "range": 200,
+              "ports": [
+                "OrderSender"
+              ],
+              "linkedPorts": {
+                "16597": [
+                  {
+                    "source": "OrderSender",
+                    "sink": "OrderReceiver"
+                  }
+                ]
+              }
+            },
+            "GuideHelp": {
+              "guides": [
+                "Cargo"
+              ]
+            }
+          }
+        },
+        {
+          "uid": 1540,
+          "prototype": "DisposalUnit",
+          "name": "disposal unit",
+          "position": [
+            12,
+            -10.5,
+            2.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak",
+                        "params": {
+                          "volume": -6
+                        }
+                      }
+                    },
+                    {
+                      "spawn": {
+                        "SheetPlastic1": {
+                          "min": 0,
+                          "max": 1
+                        },
+                        "SheetSteel1": {
+                          "min": 0,
+                          "max": 1
+                        }
+                      }
+                    },
+                    {
+                      "containers": [
+                        "DisposalUnitComponent"
+                      ]
+                    },
+                    {
+                      "node": "frame"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "PlasticMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "noRot": true,
+              "parent": 12,
+              "pos": "-10.5,2.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.45,-0.45,0.45,0.45"
+                  },
+                  "density": 55,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "MachineLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "Animateable": {},
+            "InteractionOutline": {},
+            "Anchorable": {
+              "delay": 2
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 5
+            },
+            "ExtensionCableReceiver": {},
+            "LightningTarget": {
+              "priority": 1
+            },
+            "DisposalUnit": {
+              "container": {
+                "occludes": true,
+                "showEnts": false,
+                "ents": []
+              },
+              "whitelist": {
+                "components": [
+                  "Item",
+                  "Body"
+                ]
+              }
+            },
+            "Climbable": {
+              "vaultable": false
+            },
+            "Sprite": {
+              "sprite": "Structures/Piping/disposal.rsi",
+              "layers": [
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.Base"
+                  ],
+                  "state": "disposal"
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayFlushing"
+                  ],
+                  "state": "disposal",
+                  "visible": false
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayCharging"
+                  ],
+                  "state": "dispover-ready"
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayFull"
+                  ],
+                  "state": "dispover-full",
+                  "visible": false
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayEngaged"
+                  ],
+                  "state": "dispover-handle",
+                  "visible": false
+                }
+              ],
+              "snapCardinals": true
+            },
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.DisposalUnitVisuals.IsReady": {
+                  "enum.DisposalUnitVisualLayers.Base": {
+                    "true": {
+                      "state": "disposal"
+                    },
+                    "false": {
+                      "state": "disposal-charging"
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsFlushing": {
+                  "enum.DisposalUnitVisualLayers.OverlayFlushing": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsEngaged": {
+                  "enum.DisposalUnitVisualLayers.OverlayEngaged": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsCharging": {
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "true": {
+                      "state": "dispover-charge",
+                      "visible": true
+                    },
+                    "false": {
+                      "state": "dispover-ready",
+                      "visible": true
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsFull": {
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.PowerDeviceVisuals.Powered": {
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.AnchorVisuals.Anchored": {
+                  "enum.DisposalUnitVisualLayers.Base": {
+                    "true": {
+                      "state": "disposal"
+                    },
+                    "false": {
+                      "state": "condisposal"
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayEngaged": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                }
+              }
+            },
+            "Appearance": {},
+            "UserInterface": {
+              "interfaces": {
+                "enum.DisposalUnitUiKey.Key": {
+                  "type": "DisposalUnitBoundUserInterface"
+                },
+                "enum.DisposalTaggerUiKey.Key": {
+                  "type": "DisposalTaggerBoundUserInterface"
+                }
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "DisposalUnitComponent": ""
+              }
+            },
+            "StaticPrice": {
+              "price": 70
+            },
+            "PowerSwitch": {},
+            "PowerState": {
+              "idlePowerDraw": 5,
+              "workingPowerDraw": 1000
+            },
+            "Construction": {
+              "graph": "DisposalMachine",
+              "node": "disposal_unit"
+            },
+            "ThrowInsertContainer": {
+              "containerId": "DisposalUnitComponent",
+              "probability": 0.67
+            },
+            "Rummageable": {
+              "table": {
+                "tableId": "RatKingLoot"
+              }
+            },
+            "RequireProjectileTarget": {},
+            "DisposalTagger": {
+              "tag": "waste"
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "uid": 30502,
+          "prototype": "DisposalTrunk",
+          "name": "disposal trunk",
+          "position": [
+            12,
+            -10.5,
+            2.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 60
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak"
+                      }
+                    },
+                    {
+                      "node": "broken"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Sprite": {
+              "drawdepth": "ThickPipe",
+              "sprite": "Structures/Piping/disposal.rsi",
+              "visible": false,
+              "layers": [
+                {
+                  "map": [
+                    "pipe"
+                  ],
+                  "state": "conpipe-t"
+                }
+              ]
+            },
+            "Appearance": {},
+            "Visibility": {
+              "layer": 1
+            },
+            "SubFloorHide": {},
+            "Clickable": {},
+            "InteractionOutline": {},
+            "Physics": {
+              "bodyType": "Static",
+              "canCollide": false
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.25,-0.5,0.25,0.4"
+                  },
+                  "mask": [
+                    "SubfloorMask"
+                  ]
+                }
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 12,
+              "pos": "-10.5,2.5"
+            },
+            "Anchorable": {},
+            "Rotatable": {},
+            "Pullable": {},
+            "CollideOnAnchor": {},
+            "DisposalTube": {},
+            "StaticPrice": {
+              "price": 30
+            },
+            "DisposalEntry": {},
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.AnchorVisuals.Anchored": {
+                  "pipe": {
+                    "false": {
+                      "state": "conpipe-t"
+                    },
+                    "true": {
+                      "state": "pipe-t"
+                    }
+                  }
+                }
+              }
+            },
+            "Construction": {
+              "graph": "DisposalPipe",
+              "node": "trunk"
+            }
+          }
+        },
+        {
+          "uid": 13076,
+          "prototype": "DisposalTrunk",
+          "position": [
+            12,
+            37.5,
+            19.5
+          ],
+          "components": {
+            "Transform": {
+              "parent": 12,
+              "pos": "37.5,19.5"
+            }
+          }
+        },
+        {
+          "uid": 16766,
+          "prototype": "Recycler",
+          "position": [
+            12,
+            37.5,
+            15.5
+          ],
+          "components": {
+            "Transform": {
+              "parent": 12,
+              "pos": "37.5,15.5"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/plasma.yml",
+      "sha256": "bbbb9e77bacacd8ff6fd75af2a9855803516d19f4c1c6db672437d4a8d6ddf28",
+      "entities": [
+        {
+          "uid": 27157,
+          "prototype": "CargoTelepad",
+          "name": "cargo telepad",
+          "position": [
+            2,
+            -88.5,
+            19.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 175
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Animateable": {},
+            "Machine": {
+              "board": "CargoTelepadMachineCircuitboard"
+            },
+            "ContainerContainer": {
+              "containers": {
+                "machine_board": "",
+                "machine_parts": ""
+              }
+            },
+            "Construction": {
+              "graph": "Machine",
+              "node": "machine",
+              "containers": [
+                "machine_parts",
+                "machine_board"
+              ]
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "Transform": {
+              "anchored": true,
+              "noRot": true,
+              "parent": 2,
+              "pos": "-88.5,19.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static",
+              "canCollide": false
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.45,-0.45,0.45,0.00"
+                  },
+                  "density": 190,
+                  "mask": [
+                    "MachineMask"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "InteractionOutline": {},
+            "Anchorable": {
+              "delay": 2
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "Sprite": {
+              "sprite": "Structures/cargo_telepad.rsi",
+              "drawdepth": "HighFloorObjects",
+              "layers": [
+                {
+                  "state": "offline",
+                  "map": [
+                    "enum.CargoTelepadLayers.Base"
+                  ]
+                },
+                {
+                  "state": "idle",
+                  "map": [
+                    "enum.CargoTelepadLayers.Beam"
+                  ],
+                  "shader": "unshaded"
+                }
+              ]
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSink": {
+              "ports": [
+                "OrderReceiver"
+              ]
+            },
+            "CargoTelepad": {},
+            "Appearance": {},
+            "CollideOnAnchor": {},
+            "NameIdentifier": {
+              "group": "CargoTelepads"
+            },
+            "AnimationPlayer": {}
+          }
+        },
+        {
+          "uid": 9996,
+          "prototype": "ComputerCargoOrders",
+          "name": "cargo request computer",
+          "position": [
+            2,
+            -101.5,
+            12.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "GlassBreak"
+                      }
+                    },
+                    {
+                      "node": "monitorBroken"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "GlassReinforcedMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "pos": "-101.5,12.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.25,-0.35,0.25,0.35"
+                  },
+                  "density": 190,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "MachineLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "InteractionOutline": {},
+            "Rotatable": {},
+            "Anchorable": {},
+            "Construction": {
+              "graph": "Computer",
+              "node": "computer",
+              "containers": [
+                "board"
+              ]
+            },
+            "Sprite": {
+              "drawdepth": "Objects",
+              "sprite": "Structures/Machines/computers.rsi",
+              "layers": [
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Frame"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keyboard"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Screen"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keys"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.WiresVisualLayers.MaintenancePanel"
+                  ]
+                }
+              ]
+            },
+            "Animateable": {},
+            "MeleeSound": {
+              "soundGroups": {
+                "Brute": {
+                  "collection": "GlassSmash"
+                }
+              }
+            },
+            "Computer": {
+              "board": "CargoRequestComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            },
+            "PowerState": {
+              "idlePowerDraw": 50,
+              "workingPowerDraw": 500
+            },
+            "UIPowerState": {},
+            "ExtensionCableReceiver": {},
+            "ActivatableUIRequiresPower": {},
+            "ComputerVisuals": {
+              "stateFrame": "computer",
+              "stateKeyboard": "generic_keyboard",
+              "stateScreen": "request",
+              "stateKeys": "generic_keys",
+              "statePanel": "generic_panel_open"
+            },
+            "Appearance": {},
+            "LitOnPowered": {},
+            "PointLight": {
+              "radius": 1.5,
+              "energy": 4.0,
+              "enabled": false,
+              "lightMask": "ConeSingle",
+              "autoRot": true,
+              "offset": "0, 0.4",
+              "castShadows": false,
+              "color": "#b89f25"
+            },
+            "EmitSoundOnUIOpen": {
+              "sound": {
+                "collection": "Keyboard",
+                "params": {
+                  "volume": -1,
+                  "variation": 0.1,
+                  "pitch": 1.1
+                }
+              },
+              "blacklist": {
+                "tags": [
+                  "NoConsoleSound"
+                ]
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "board": {
+                  "ents": []
+                }
+              }
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "RequireProjectileTarget": {},
+            "Electrified": {
+              "enabled": false,
+              "usesApcPower": true
+            },
+            "WiresPanel": {},
+            "WiresVisuals": {},
+            "Wires": {
+              "boardName": "wires-board-name-computer",
+              "layoutId": "ComputerAi"
+            },
+            "StationAiWhitelist": {},
+            "CargoOrderConsole": {
+              "removeLimitAccess": [
+                "Quartermaster"
+              ]
+            },
+            "ActiveRadio": {
+              "channels": [
+                "Supply"
+              ]
+            },
+            "ActivatableUI": {
+              "key": "enum.CargoConsoleUiKey.Orders"
+            },
+            "UserInterface": {
+              "interfaces": {
+                "enum.CargoConsoleUiKey.Orders": {
+                  "type": "CargoOrderConsoleBoundUserInterface"
+                },
+                "enum.WiresUiKey.Key": {
+                  "type": "WiresBoundUserInterface"
+                }
+              }
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Cargo"
+                ]
+              ]
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSource": {
+              "range": 200,
+              "ports": [
+                "OrderSender"
+              ],
+              "linkedPorts": {
+                "27157": [
+                  {
+                    "source": "OrderSender",
+                    "sink": "OrderReceiver"
+                  }
+                ]
+              }
+            },
+            "GuideHelp": {
+              "guides": [
+                "Cargo"
+              ]
+            }
+          }
+        },
+        {
+          "uid": 17840,
+          "prototype": "ComputerCargoOrders",
+          "name": "cargo request computer",
+          "position": [
+            2,
+            -98.5,
+            13.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "GlassBreak"
+                      }
+                    },
+                    {
+                      "node": "monitorBroken"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "GlassReinforcedMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "-98.5,13.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.25,-0.35,0.25,0.35"
+                  },
+                  "density": 190,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "MachineLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "InteractionOutline": {},
+            "Rotatable": {},
+            "Anchorable": {},
+            "Construction": {
+              "graph": "Computer",
+              "node": "computer",
+              "containers": [
+                "board"
+              ]
+            },
+            "Sprite": {
+              "drawdepth": "Objects",
+              "sprite": "Structures/Machines/computers.rsi",
+              "layers": [
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Frame"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keyboard"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Screen"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keys"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.WiresVisualLayers.MaintenancePanel"
+                  ]
+                }
+              ]
+            },
+            "Animateable": {},
+            "MeleeSound": {
+              "soundGroups": {
+                "Brute": {
+                  "collection": "GlassSmash"
+                }
+              }
+            },
+            "Computer": {
+              "board": "CargoRequestComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            },
+            "PowerState": {
+              "idlePowerDraw": 50,
+              "workingPowerDraw": 500
+            },
+            "UIPowerState": {},
+            "ExtensionCableReceiver": {},
+            "ActivatableUIRequiresPower": {},
+            "ComputerVisuals": {
+              "stateFrame": "computer",
+              "stateKeyboard": "generic_keyboard",
+              "stateScreen": "request",
+              "stateKeys": "generic_keys",
+              "statePanel": "generic_panel_open"
+            },
+            "Appearance": {},
+            "LitOnPowered": {},
+            "PointLight": {
+              "radius": 1.5,
+              "energy": 4.0,
+              "enabled": false,
+              "lightMask": "ConeSingle",
+              "autoRot": true,
+              "offset": "0, 0.4",
+              "castShadows": false,
+              "color": "#b89f25"
+            },
+            "EmitSoundOnUIOpen": {
+              "sound": {
+                "collection": "Keyboard",
+                "params": {
+                  "volume": -1,
+                  "variation": 0.1,
+                  "pitch": 1.1
+                }
+              },
+              "blacklist": {
+                "tags": [
+                  "NoConsoleSound"
+                ]
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "board": {
+                  "ents": []
+                }
+              }
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "RequireProjectileTarget": {},
+            "Electrified": {
+              "enabled": false,
+              "usesApcPower": true
+            },
+            "WiresPanel": {},
+            "WiresVisuals": {},
+            "Wires": {
+              "boardName": "wires-board-name-computer",
+              "layoutId": "ComputerAi"
+            },
+            "StationAiWhitelist": {},
+            "CargoOrderConsole": {
+              "removeLimitAccess": [
+                "Quartermaster"
+              ]
+            },
+            "ActiveRadio": {
+              "channels": [
+                "Supply"
+              ]
+            },
+            "ActivatableUI": {
+              "key": "enum.CargoConsoleUiKey.Orders"
+            },
+            "UserInterface": {
+              "interfaces": {
+                "enum.CargoConsoleUiKey.Orders": {
+                  "type": "CargoOrderConsoleBoundUserInterface"
+                },
+                "enum.WiresUiKey.Key": {
+                  "type": "WiresBoundUserInterface"
+                }
+              }
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Cargo"
+                ]
+              ]
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSource": {
+              "range": 200,
+              "ports": [
+                "OrderSender"
+              ],
+              "linkedPorts": {
+                "27157": [
+                  {
+                    "source": "OrderSender",
+                    "sink": "OrderReceiver"
+                  }
+                ]
+              }
+            },
+            "GuideHelp": {
+              "guides": [
+                "Cargo"
+              ]
+            }
+          }
+        },
+        {
+          "uid": 696,
+          "prototype": "DisposalUnit",
+          "name": "disposal unit",
+          "position": [
+            2,
+            -113.5,
+            -20.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak",
+                        "params": {
+                          "volume": -6
+                        }
+                      }
+                    },
+                    {
+                      "spawn": {
+                        "SheetPlastic1": {
+                          "min": 0,
+                          "max": 1
+                        },
+                        "SheetSteel1": {
+                          "min": 0,
+                          "max": 1
+                        }
+                      }
+                    },
+                    {
+                      "containers": [
+                        "DisposalUnitComponent"
+                      ]
+                    },
+                    {
+                      "node": "frame"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "PlasticMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "noRot": true,
+              "parent": 2,
+              "pos": "-113.5,-20.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.45,-0.45,0.45,0.45"
+                  },
+                  "density": 55,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "MachineLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "Animateable": {},
+            "InteractionOutline": {},
+            "Anchorable": {
+              "delay": 2
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 5
+            },
+            "ExtensionCableReceiver": {},
+            "LightningTarget": {
+              "priority": 1
+            },
+            "DisposalUnit": {
+              "container": {
+                "occludes": true,
+                "showEnts": false,
+                "ents": []
+              },
+              "whitelist": {
+                "components": [
+                  "Item",
+                  "Body"
+                ]
+              }
+            },
+            "Climbable": {
+              "vaultable": false
+            },
+            "Sprite": {
+              "sprite": "Structures/Piping/disposal.rsi",
+              "layers": [
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.Base"
+                  ],
+                  "state": "disposal"
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayFlushing"
+                  ],
+                  "state": "disposal",
+                  "visible": false
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayCharging"
+                  ],
+                  "state": "dispover-ready"
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayFull"
+                  ],
+                  "state": "dispover-full",
+                  "visible": false
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayEngaged"
+                  ],
+                  "state": "dispover-handle",
+                  "visible": false
+                }
+              ],
+              "snapCardinals": true
+            },
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.DisposalUnitVisuals.IsReady": {
+                  "enum.DisposalUnitVisualLayers.Base": {
+                    "true": {
+                      "state": "disposal"
+                    },
+                    "false": {
+                      "state": "disposal-charging"
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsFlushing": {
+                  "enum.DisposalUnitVisualLayers.OverlayFlushing": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsEngaged": {
+                  "enum.DisposalUnitVisualLayers.OverlayEngaged": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsCharging": {
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "true": {
+                      "state": "dispover-charge",
+                      "visible": true
+                    },
+                    "false": {
+                      "state": "dispover-ready",
+                      "visible": true
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsFull": {
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.PowerDeviceVisuals.Powered": {
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.AnchorVisuals.Anchored": {
+                  "enum.DisposalUnitVisualLayers.Base": {
+                    "true": {
+                      "state": "disposal"
+                    },
+                    "false": {
+                      "state": "condisposal"
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayEngaged": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                }
+              }
+            },
+            "Appearance": {},
+            "UserInterface": {
+              "interfaces": {
+                "enum.DisposalUnitUiKey.Key": {
+                  "type": "DisposalUnitBoundUserInterface"
+                },
+                "enum.DisposalTaggerUiKey.Key": {
+                  "type": "DisposalTaggerBoundUserInterface"
+                }
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "DisposalUnitComponent": ""
+              }
+            },
+            "StaticPrice": {
+              "price": 70
+            },
+            "PowerSwitch": {},
+            "PowerState": {
+              "idlePowerDraw": 5,
+              "workingPowerDraw": 1000
+            },
+            "Construction": {
+              "graph": "DisposalMachine",
+              "node": "disposal_unit"
+            },
+            "ThrowInsertContainer": {
+              "containerId": "DisposalUnitComponent",
+              "probability": 0.67
+            },
+            "Rummageable": {
+              "table": {
+                "tableId": "RatKingLoot"
+              }
+            },
+            "RequireProjectileTarget": {},
+            "DisposalTagger": {
+              "tag": "waste"
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "uid": 6371,
+          "prototype": "DisposalTrunk",
+          "name": "disposal trunk",
+          "position": [
+            2,
+            -113.5,
+            -20.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 60
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak"
+                      }
+                    },
+                    {
+                      "node": "broken"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Sprite": {
+              "drawdepth": "ThickPipe",
+              "sprite": "Structures/Piping/disposal.rsi",
+              "visible": false,
+              "layers": [
+                {
+                  "map": [
+                    "pipe"
+                  ],
+                  "state": "conpipe-t"
+                }
+              ]
+            },
+            "Appearance": {},
+            "Visibility": {
+              "layer": 1
+            },
+            "SubFloorHide": {},
+            "Clickable": {},
+            "InteractionOutline": {},
+            "Physics": {
+              "bodyType": "Static",
+              "canCollide": false
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.25,-0.5,0.25,0.4"
+                  },
+                  "mask": [
+                    "SubfloorMask"
+                  ]
+                }
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 2,
+              "pos": "-113.5,-20.5"
+            },
+            "Anchorable": {},
+            "Rotatable": {},
+            "Pullable": {},
+            "CollideOnAnchor": {},
+            "DisposalTube": {},
+            "StaticPrice": {
+              "price": 30
+            },
+            "DisposalEntry": {},
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.AnchorVisuals.Anchored": {
+                  "pipe": {
+                    "false": {
+                      "state": "conpipe-t"
+                    },
+                    "true": {
+                      "state": "pipe-t"
+                    }
+                  }
+                }
+              }
+            },
+            "Construction": {
+              "graph": "DisposalPipe",
+              "node": "trunk"
+            }
+          }
+        },
+        {
+          "uid": 19731,
+          "prototype": "DisposalTrunk",
+          "position": [
+            2,
+            -102.5,
+            24.5
+          ],
+          "components": {
+            "Transform": {
+              "parent": 2,
+              "rot": "3.141592653589793 rad",
+              "pos": "-102.5,24.5"
+            }
+          }
+        },
+        {
+          "uid": 24821,
+          "prototype": "Recycler",
+          "position": [
+            2,
+            -100.5,
+            20.5
+          ],
+          "components": {
+            "Transform": {
+              "parent": 2,
+              "rot": "1.5707963267948966 rad",
+              "pos": "-100.5,20.5"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/tram2.yml",
+      "sha256": "61867ced5f711bc62eec6d9be5fbf0f3e210e9e2b8f2d6e93f54297de0795136",
+      "entities": [
+        {
+          "uid": 5095,
+          "prototype": "CargoTelepad",
+          "name": "cargo telepad",
+          "position": [
+            15,
+            60.5,
+            -3.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 175
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Animateable": {},
+            "Machine": {
+              "board": "CargoTelepadMachineCircuitboard"
+            },
+            "ContainerContainer": {
+              "containers": {
+                "machine_board": "",
+                "machine_parts": ""
+              }
+            },
+            "Construction": {
+              "graph": "Machine",
+              "node": "machine",
+              "containers": [
+                "machine_parts",
+                "machine_board"
+              ]
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "Transform": {
+              "anchored": true,
+              "noRot": true,
+              "parent": 15,
+              "pos": "60.5,-3.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static",
+              "canCollide": false
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.45,-0.45,0.45,0.00"
+                  },
+                  "density": 190,
+                  "mask": [
+                    "MachineMask"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "InteractionOutline": {},
+            "Anchorable": {
+              "delay": 2
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "Sprite": {
+              "sprite": "Structures/cargo_telepad.rsi",
+              "drawdepth": "HighFloorObjects",
+              "layers": [
+                {
+                  "state": "offline",
+                  "map": [
+                    "enum.CargoTelepadLayers.Base"
+                  ]
+                },
+                {
+                  "state": "idle",
+                  "map": [
+                    "enum.CargoTelepadLayers.Beam"
+                  ],
+                  "shader": "unshaded"
+                }
+              ]
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSink": {
+              "ports": [
+                "OrderReceiver"
+              ]
+            },
+            "CargoTelepad": {},
+            "Appearance": {},
+            "CollideOnAnchor": {},
+            "NameIdentifier": {
+              "group": "CargoTelepads"
+            },
+            "AnimationPlayer": {}
+          }
+        },
+        {
+          "uid": 3611,
+          "prototype": "ComputerCargoOrders",
+          "name": "cargo request computer",
+          "position": [
+            15,
+            61.5,
+            -10.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "GlassBreak"
+                      }
+                    },
+                    {
+                      "node": "monitorBroken"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "GlassReinforcedMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "rot": "1.5707963267948966 rad",
+              "pos": "61.5,-10.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.25,-0.35,0.25,0.35"
+                  },
+                  "density": 190,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "MachineLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "InteractionOutline": {},
+            "Rotatable": {},
+            "Anchorable": {},
+            "Construction": {
+              "graph": "Computer",
+              "node": "computer",
+              "containers": [
+                "board"
+              ]
+            },
+            "Sprite": {
+              "drawdepth": "Objects",
+              "sprite": "Structures/Machines/computers.rsi",
+              "layers": [
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Frame"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keyboard"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Screen"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keys"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.WiresVisualLayers.MaintenancePanel"
+                  ]
+                }
+              ]
+            },
+            "Animateable": {},
+            "MeleeSound": {
+              "soundGroups": {
+                "Brute": {
+                  "collection": "GlassSmash"
+                }
+              }
+            },
+            "Computer": {
+              "board": "CargoRequestComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            },
+            "PowerState": {
+              "idlePowerDraw": 50,
+              "workingPowerDraw": 500
+            },
+            "UIPowerState": {},
+            "ExtensionCableReceiver": {},
+            "ActivatableUIRequiresPower": {},
+            "ComputerVisuals": {
+              "stateFrame": "computer",
+              "stateKeyboard": "generic_keyboard",
+              "stateScreen": "request",
+              "stateKeys": "generic_keys",
+              "statePanel": "generic_panel_open"
+            },
+            "Appearance": {},
+            "LitOnPowered": {},
+            "PointLight": {
+              "radius": 1.5,
+              "energy": 4.0,
+              "enabled": false,
+              "lightMask": "ConeSingle",
+              "autoRot": true,
+              "offset": "0, 0.4",
+              "castShadows": false,
+              "color": "#b89f25"
+            },
+            "EmitSoundOnUIOpen": {
+              "sound": {
+                "collection": "Keyboard",
+                "params": {
+                  "volume": -1,
+                  "variation": 0.1,
+                  "pitch": 1.1
+                }
+              },
+              "blacklist": {
+                "tags": [
+                  "NoConsoleSound"
+                ]
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "board": {
+                  "ents": []
+                }
+              }
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "RequireProjectileTarget": {},
+            "Electrified": {
+              "enabled": false,
+              "usesApcPower": true
+            },
+            "WiresPanel": {},
+            "WiresVisuals": {},
+            "Wires": {
+              "boardName": "wires-board-name-computer",
+              "layoutId": "ComputerAi"
+            },
+            "StationAiWhitelist": {},
+            "CargoOrderConsole": {
+              "removeLimitAccess": [
+                "Quartermaster"
+              ]
+            },
+            "ActiveRadio": {
+              "channels": [
+                "Supply"
+              ]
+            },
+            "ActivatableUI": {
+              "key": "enum.CargoConsoleUiKey.Orders"
+            },
+            "UserInterface": {
+              "interfaces": {
+                "enum.CargoConsoleUiKey.Orders": {
+                  "type": "CargoOrderConsoleBoundUserInterface"
+                },
+                "enum.WiresUiKey.Key": {
+                  "type": "WiresBoundUserInterface"
+                }
+              }
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Cargo"
+                ]
+              ]
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSource": {
+              "range": 200,
+              "ports": [
+                "OrderSender"
+              ],
+              "linkedPorts": {
+                "5095": [
+                  {
+                    "source": "OrderSender",
+                    "sink": "OrderReceiver"
+                  }
+                ]
+              }
+            },
+            "GuideHelp": {
+              "guides": [
+                "Cargo"
+              ]
+            }
+          }
+        },
+        {
+          "uid": 3612,
+          "prototype": "ComputerCargoOrders",
+          "name": "cargo request computer",
+          "position": [
+            15,
+            63.5,
+            -12.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "GlassBreak"
+                      }
+                    },
+                    {
+                      "node": "monitorBroken"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "GlassReinforcedMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "63.5,-12.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.25,-0.35,0.25,0.35"
+                  },
+                  "density": 190,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "MachineLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "InteractionOutline": {},
+            "Rotatable": {},
+            "Anchorable": {},
+            "Construction": {
+              "graph": "Computer",
+              "node": "computer",
+              "containers": [
+                "board"
+              ]
+            },
+            "Sprite": {
+              "drawdepth": "Objects",
+              "sprite": "Structures/Machines/computers.rsi",
+              "layers": [
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Frame"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keyboard"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Screen"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.ComputerVisualLayers.Keys"
+                  ]
+                },
+                {
+                  "map": [
+                    "enum.WiresVisualLayers.MaintenancePanel"
+                  ]
+                }
+              ]
+            },
+            "Animateable": {},
+            "MeleeSound": {
+              "soundGroups": {
+                "Brute": {
+                  "collection": "GlassSmash"
+                }
+              }
+            },
+            "Computer": {
+              "board": "CargoRequestComputerCircuitboard"
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 50
+            },
+            "PowerState": {
+              "idlePowerDraw": 50,
+              "workingPowerDraw": 500
+            },
+            "UIPowerState": {},
+            "ExtensionCableReceiver": {},
+            "ActivatableUIRequiresPower": {},
+            "ComputerVisuals": {
+              "stateFrame": "computer",
+              "stateKeyboard": "generic_keyboard",
+              "stateScreen": "request",
+              "stateKeys": "generic_keys",
+              "statePanel": "generic_panel_open"
+            },
+            "Appearance": {},
+            "LitOnPowered": {},
+            "PointLight": {
+              "radius": 1.5,
+              "energy": 4.0,
+              "enabled": false,
+              "lightMask": "ConeSingle",
+              "autoRot": true,
+              "offset": "0, 0.4",
+              "castShadows": false,
+              "color": "#b89f25"
+            },
+            "EmitSoundOnUIOpen": {
+              "sound": {
+                "collection": "Keyboard",
+                "params": {
+                  "volume": -1,
+                  "variation": 0.1,
+                  "pitch": 1.1
+                }
+              },
+              "blacklist": {
+                "tags": [
+                  "NoConsoleSound"
+                ]
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "board": {
+                  "ents": []
+                }
+              }
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "RequireProjectileTarget": {},
+            "Electrified": {
+              "enabled": false,
+              "usesApcPower": true
+            },
+            "WiresPanel": {},
+            "WiresVisuals": {},
+            "Wires": {
+              "boardName": "wires-board-name-computer",
+              "layoutId": "ComputerAi"
+            },
+            "StationAiWhitelist": {},
+            "CargoOrderConsole": {
+              "removeLimitAccess": [
+                "Quartermaster"
+              ]
+            },
+            "ActiveRadio": {
+              "channels": [
+                "Supply"
+              ]
+            },
+            "ActivatableUI": {
+              "key": "enum.CargoConsoleUiKey.Orders"
+            },
+            "UserInterface": {
+              "interfaces": {
+                "enum.CargoConsoleUiKey.Orders": {
+                  "type": "CargoOrderConsoleBoundUserInterface"
+                },
+                "enum.WiresUiKey.Key": {
+                  "type": "WiresBoundUserInterface"
+                }
+              }
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Cargo"
+                ]
+              ]
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSource": {
+              "range": 200,
+              "ports": [
+                "OrderSender"
+              ],
+              "linkedPorts": {
+                "5095": [
+                  {
+                    "source": "OrderSender",
+                    "sink": "OrderReceiver"
+                  }
+                ]
+              }
+            },
+            "GuideHelp": {
+              "guides": [
+                "Cargo"
+              ]
+            }
+          }
+        },
+        {
+          "uid": 764,
+          "prototype": "DisposalUnit",
+          "name": "disposal unit",
+          "position": [
+            15,
+            12.5,
+            -57.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak",
+                        "params": {
+                          "volume": -6
+                        }
+                      }
+                    },
+                    {
+                      "spawn": {
+                        "SheetPlastic1": {
+                          "min": 0,
+                          "max": 1
+                        },
+                        "SheetSteel1": {
+                          "min": 0,
+                          "max": 1
+                        }
+                      }
+                    },
+                    {
+                      "containers": [
+                        "DisposalUnitComponent"
+                      ]
+                    },
+                    {
+                      "node": "frame"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "PlasticMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "noRot": true,
+              "parent": 15,
+              "pos": "12.5,-57.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.45,-0.45,0.45,0.45"
+                  },
+                  "density": 55,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "MachineLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "Animateable": {},
+            "InteractionOutline": {},
+            "Anchorable": {
+              "delay": 2
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 5
+            },
+            "ExtensionCableReceiver": {},
+            "LightningTarget": {
+              "priority": 1
+            },
+            "DisposalUnit": {
+              "container": {
+                "occludes": true,
+                "showEnts": false,
+                "ents": []
+              },
+              "whitelist": {
+                "components": [
+                  "Item",
+                  "Body"
+                ]
+              }
+            },
+            "Climbable": {
+              "vaultable": false
+            },
+            "Sprite": {
+              "sprite": "Structures/Piping/disposal.rsi",
+              "layers": [
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.Base"
+                  ],
+                  "state": "disposal"
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayFlushing"
+                  ],
+                  "state": "disposal",
+                  "visible": false
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayCharging"
+                  ],
+                  "state": "dispover-ready"
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayFull"
+                  ],
+                  "state": "dispover-full",
+                  "visible": false
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayEngaged"
+                  ],
+                  "state": "dispover-handle",
+                  "visible": false
+                }
+              ],
+              "snapCardinals": true
+            },
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.DisposalUnitVisuals.IsReady": {
+                  "enum.DisposalUnitVisualLayers.Base": {
+                    "true": {
+                      "state": "disposal"
+                    },
+                    "false": {
+                      "state": "disposal-charging"
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsFlushing": {
+                  "enum.DisposalUnitVisualLayers.OverlayFlushing": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsEngaged": {
+                  "enum.DisposalUnitVisualLayers.OverlayEngaged": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsCharging": {
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "true": {
+                      "state": "dispover-charge",
+                      "visible": true
+                    },
+                    "false": {
+                      "state": "dispover-ready",
+                      "visible": true
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsFull": {
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.PowerDeviceVisuals.Powered": {
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.AnchorVisuals.Anchored": {
+                  "enum.DisposalUnitVisualLayers.Base": {
+                    "true": {
+                      "state": "disposal"
+                    },
+                    "false": {
+                      "state": "condisposal"
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayEngaged": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                }
+              }
+            },
+            "Appearance": {},
+            "UserInterface": {
+              "interfaces": {
+                "enum.DisposalUnitUiKey.Key": {
+                  "type": "DisposalUnitBoundUserInterface"
+                },
+                "enum.DisposalTaggerUiKey.Key": {
+                  "type": "DisposalTaggerBoundUserInterface"
+                }
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "DisposalUnitComponent": ""
+              }
+            },
+            "StaticPrice": {
+              "price": 70
+            },
+            "PowerSwitch": {},
+            "PowerState": {
+              "idlePowerDraw": 5,
+              "workingPowerDraw": 1000
+            },
+            "Construction": {
+              "graph": "DisposalMachine",
+              "node": "disposal_unit"
+            },
+            "ThrowInsertContainer": {
+              "containerId": "DisposalUnitComponent",
+              "probability": 0.67
+            },
+            "Rummageable": {
+              "table": {
+                "tableId": "RatKingLoot"
+              }
+            },
+            "RequireProjectileTarget": {},
+            "DisposalTagger": {
+              "tag": "waste"
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "uid": 9296,
+          "prototype": "DisposalTrunk",
+          "name": "disposal trunk",
+          "position": [
+            15,
+            12.5,
+            -57.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 60
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak"
+                      }
+                    },
+                    {
+                      "node": "broken"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Sprite": {
+              "drawdepth": "ThickPipe",
+              "sprite": "Structures/Piping/disposal.rsi",
+              "visible": false,
+              "layers": [
+                {
+                  "map": [
+                    "pipe"
+                  ],
+                  "state": "conpipe-t"
+                }
+              ]
+            },
+            "Appearance": {},
+            "Visibility": {
+              "layer": 1
+            },
+            "SubFloorHide": {},
+            "Clickable": {},
+            "InteractionOutline": {},
+            "Physics": {
+              "bodyType": "Static",
+              "canCollide": false
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.25,-0.5,0.25,0.4"
+                  },
+                  "mask": [
+                    "SubfloorMask"
+                  ]
+                }
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "rot": "3.141592653589793 rad",
+              "pos": "12.5,-57.5"
+            },
+            "Anchorable": {},
+            "Rotatable": {},
+            "Pullable": {},
+            "CollideOnAnchor": {},
+            "DisposalTube": {},
+            "StaticPrice": {
+              "price": 30
+            },
+            "DisposalEntry": {},
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.AnchorVisuals.Anchored": {
+                  "pipe": {
+                    "false": {
+                      "state": "conpipe-t"
+                    },
+                    "true": {
+                      "state": "pipe-t"
+                    }
+                  }
+                }
+              }
+            },
+            "Construction": {
+              "graph": "DisposalPipe",
+              "node": "trunk"
+            }
+          }
+        },
+        {
+          "uid": 11560,
+          "prototype": "DisposalTrunk",
+          "position": [
+            15,
+            80.5,
+            -7.5
+          ],
+          "components": {
+            "Transform": {
+              "parent": 15,
+              "pos": "80.5,-7.5"
+            }
+          }
+        },
+        {
+          "uid": 16587,
+          "prototype": "Recycler",
+          "position": [
+            15,
+            82.5,
+            -8.5
+          ],
+          "components": {
+            "Transform": {
+              "parent": 15,
+              "pos": "82.5,-8.5"
+            }
+          }
+        },
+        {
+          "uid": 183,
+          "prototype": "AirlockFreezerKitchenHydroLocked",
+          "name": "airlock",
+          "position": [
+            15,
+            2.5,
+            2.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 200
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalSlam"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelStaticMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "rot": "1.5707963267948966 rad",
+              "pos": "2.5,2.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "layer": [
+                    "AirlockLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Airlock",
+                "DoorRemoteWhitelist"
+              ]
+            },
+            "Anchorable": {
+              "flags": [
+                "Anchorable"
+              ]
+            },
+            "Rotatable": {},
+            "StationAiWhitelist": {},
+            "MeleeSound": {
+              "soundGroups": {
+                "Brute": {
+                  "path": "/Audio/Weapons/smash.ogg"
+                }
+              }
+            },
+            "InteractionOutline": {},
+            "Sprite": {
+              "sprite": "Structures/Doors/Airlocks/Standard/service-freezer.rsi",
+              "layers": [
+                {
+                  "state": "closed",
+                  "map": [
+                    "enum.DoorVisualLayers.Base"
+                  ]
+                },
+                {
+                  "state": "closed_unlit",
+                  "shader": "unshaded",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects-freezer.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseUnlit"
+                  ],
+                  "visible": true
+                },
+                {
+                  "state": "welded",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects-freezer.rsi",
+                  "map": [
+                    "enum.WeldableLayers.BaseWelded"
+                  ]
+                },
+                {
+                  "state": "bolted_unlit",
+                  "shader": "unshaded",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects-freezer.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseBolted"
+                  ]
+                },
+                {
+                  "state": "emergency_unlit",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects-freezer.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseEmergencyAccess"
+                  ],
+                  "shader": "unshaded"
+                },
+                {
+                  "state": "panel_open",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects-freezer.rsi",
+                  "map": [
+                    "enum.WiresVisualLayers.MaintenancePanel"
+                  ]
+                },
+                {
+                  "state": "electrified_ai",
+                  "sprite": "Interface/Misc/ai_hud.rsi",
+                  "shader": "unshaded",
+                  "visible": false,
+                  "map": [
+                    "enum.ElectrifiedLayers.HUD"
+                  ]
+                },
+                {
+                  "state": "electrified",
+                  "sprite": "Effects/electricity.rsi",
+                  "shader": "unshaded",
+                  "visible": false,
+                  "map": [
+                    "enum.ElectrifiedLayers.Sparks"
+                  ]
+                },
+                {
+                  "state": "sparks",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseEmagging"
+                  ],
+                  "shader": "unshaded",
+                  "visible": false
+                }
+              ]
+            },
+            "IconSmooth": {
+              "key": "doors"
+            },
+            "AnimationPlayer": {},
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsKitchenHydroponics"
+                ]
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "board": ""
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            },
+            "Door": {
+              "crushDamage": {
+                "types": {
+                  "Blunt": 15
+                }
+              },
+              "openSound": {
+                "path": "/Audio/Machines/airlock_open.ogg"
+              },
+              "closeSound": {
+                "path": "/Audio/Machines/airlock_close.ogg"
+              },
+              "denySound": {
+                "path": "/Audio/Machines/airlock_deny.ogg"
+              }
+            },
+            "Weldable": {
+              "fuel": 5,
+              "time": 3
+            },
+            "Airlock": {
+              "openUnlitVisible": true
+            },
+            "NavMapDoor": {},
+            "DoorBolt": {},
+            "Appearance": {},
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.ElectrifiedVisuals.ShowSparks": {
+                  "enum.ElectrifiedLayers.Sparks": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                }
+              }
+            },
+            "WiresVisuals": {},
+            "ElectrocutionHUDVisuals": {},
+            "ApcPowerReceiver": {
+              "powerLoad": 20
+            },
+            "ExtensionCableReceiver": {},
+            "Electrified": {
+              "enabled": false,
+              "usesApcPower": true,
+              "onActivateInWorld": true
+            },
+            "WiresPanel": {},
+            "WiresPanelSecurity": {},
+            "Wires": {
+              "boardName": "wires-board-name-airlock",
+              "layoutId": "AirlockService"
+            },
+            "UserInterface": {
+              "interfaces": {
+                "enum.AiUi.Key": {
+                  "type": "StationAiBoundUserInterface"
+                },
+                "enum.WiresUiKey.Key": {
+                  "type": "WiresBoundUserInterface"
+                }
+              }
+            },
+            "Airtight": {
+              "noAirWhenFullyAirBlocked": false
+            },
+            "RadiationBlocker": {
+              "resistance": 3
+            },
+            "Occluder": {},
+            "Construction": {
+              "graph": "Airlock",
+              "node": "airlock",
+              "containers": [
+                "board"
+              ]
+            },
+            "PlacementReplacement": {
+              "key": "walls"
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "BlockWeather": {},
+            "GuideHelp": {
+              "guides": [
+                "Airlocks",
+                "WirePanels",
+                "Networking"
+              ]
+            },
+            "StaticPrice": {
+              "price": 150
+            },
+            "StructureAligner": {},
+            "StructureAlignerPylon": {},
+            "LayerChangeOnWeld": {
+              "unWeldedLayer": "AirlockLayer",
+              "weldedLayer": "WallLayer"
+            },
+            "DoorSignalControl": {},
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSink": {
+              "ports": [
+                "Open",
+                "Close",
+                "Toggle",
+                "AutoClose",
+                "DoorBolt"
+              ]
+            },
+            "DeviceLinkSource": {
+              "ports": [
+                "DoorStatus",
+                "DoorBoltStatus"
+              ],
+              "lastSignals": {
+                "DoorStatus": false,
+                "DoorBoltStatus": false
+              }
+            },
+            "EntityEffectOnDeviceOverload": {
+              "effects": [
+                {
+                  "entity": "EffectSparks",
+                  "predicted": false
+                },
+                {
+                  "sound": "/Audio/Items/Defib/defib_zap.ogg",
+                  "predicted": false
+                }
+              ]
+            },
+            "RCDDeconstructable": {
+              "cost": 6,
+              "delay": 8,
+              "fx": "EffectRCDDeconstruct8"
+            },
+            "Paintable": {
+              "group": "AirlockStandard"
+            },
+            "PryUnpowered": {}
+          }
+        },
+        {
+          "uid": 21023,
+          "prototype": "AirlockFreezerKitchenHydroLocked",
+          "name": "airlock",
+          "position": [
+            15,
+            -1.5,
+            1.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 200
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalSlam"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelStaticMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "pos": "-1.5,1.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "layer": [
+                    "AirlockLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Airlock",
+                "DoorRemoteWhitelist"
+              ]
+            },
+            "Anchorable": {
+              "flags": [
+                "Anchorable"
+              ]
+            },
+            "Rotatable": {},
+            "StationAiWhitelist": {},
+            "MeleeSound": {
+              "soundGroups": {
+                "Brute": {
+                  "path": "/Audio/Weapons/smash.ogg"
+                }
+              }
+            },
+            "InteractionOutline": {},
+            "Sprite": {
+              "sprite": "Structures/Doors/Airlocks/Standard/service-freezer.rsi",
+              "layers": [
+                {
+                  "state": "closed",
+                  "map": [
+                    "enum.DoorVisualLayers.Base"
+                  ]
+                },
+                {
+                  "state": "closed_unlit",
+                  "shader": "unshaded",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects-freezer.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseUnlit"
+                  ],
+                  "visible": true
+                },
+                {
+                  "state": "welded",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects-freezer.rsi",
+                  "map": [
+                    "enum.WeldableLayers.BaseWelded"
+                  ]
+                },
+                {
+                  "state": "bolted_unlit",
+                  "shader": "unshaded",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects-freezer.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseBolted"
+                  ]
+                },
+                {
+                  "state": "emergency_unlit",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects-freezer.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseEmergencyAccess"
+                  ],
+                  "shader": "unshaded"
+                },
+                {
+                  "state": "panel_open",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects-freezer.rsi",
+                  "map": [
+                    "enum.WiresVisualLayers.MaintenancePanel"
+                  ]
+                },
+                {
+                  "state": "electrified_ai",
+                  "sprite": "Interface/Misc/ai_hud.rsi",
+                  "shader": "unshaded",
+                  "visible": false,
+                  "map": [
+                    "enum.ElectrifiedLayers.HUD"
+                  ]
+                },
+                {
+                  "state": "electrified",
+                  "sprite": "Effects/electricity.rsi",
+                  "shader": "unshaded",
+                  "visible": false,
+                  "map": [
+                    "enum.ElectrifiedLayers.Sparks"
+                  ]
+                },
+                {
+                  "state": "sparks",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseEmagging"
+                  ],
+                  "shader": "unshaded",
+                  "visible": false
+                }
+              ]
+            },
+            "IconSmooth": {
+              "key": "doors"
+            },
+            "AnimationPlayer": {},
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsKitchenHydroponics"
+                ]
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "board": ""
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            },
+            "Door": {
+              "crushDamage": {
+                "types": {
+                  "Blunt": 15
+                }
+              },
+              "openSound": {
+                "path": "/Audio/Machines/airlock_open.ogg"
+              },
+              "closeSound": {
+                "path": "/Audio/Machines/airlock_close.ogg"
+              },
+              "denySound": {
+                "path": "/Audio/Machines/airlock_deny.ogg"
+              }
+            },
+            "Weldable": {
+              "fuel": 5,
+              "time": 3
+            },
+            "Airlock": {
+              "openUnlitVisible": true
+            },
+            "NavMapDoor": {},
+            "DoorBolt": {},
+            "Appearance": {},
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.ElectrifiedVisuals.ShowSparks": {
+                  "enum.ElectrifiedLayers.Sparks": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                }
+              }
+            },
+            "WiresVisuals": {},
+            "ElectrocutionHUDVisuals": {},
+            "ApcPowerReceiver": {
+              "powerLoad": 20
+            },
+            "ExtensionCableReceiver": {},
+            "Electrified": {
+              "enabled": false,
+              "usesApcPower": true,
+              "onActivateInWorld": true
+            },
+            "WiresPanel": {},
+            "WiresPanelSecurity": {},
+            "Wires": {
+              "boardName": "wires-board-name-airlock",
+              "layoutId": "AirlockService"
+            },
+            "UserInterface": {
+              "interfaces": {
+                "enum.AiUi.Key": {
+                  "type": "StationAiBoundUserInterface"
+                },
+                "enum.WiresUiKey.Key": {
+                  "type": "WiresBoundUserInterface"
+                }
+              }
+            },
+            "Airtight": {
+              "noAirWhenFullyAirBlocked": false
+            },
+            "RadiationBlocker": {
+              "resistance": 3
+            },
+            "Occluder": {},
+            "Construction": {
+              "graph": "Airlock",
+              "node": "airlock",
+              "containers": [
+                "board"
+              ]
+            },
+            "PlacementReplacement": {
+              "key": "walls"
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "BlockWeather": {},
+            "GuideHelp": {
+              "guides": [
+                "Airlocks",
+                "WirePanels",
+                "Networking"
+              ]
+            },
+            "StaticPrice": {
+              "price": 150
+            },
+            "StructureAligner": {},
+            "StructureAlignerPylon": {},
+            "LayerChangeOnWeld": {
+              "unWeldedLayer": "AirlockLayer",
+              "weldedLayer": "WallLayer"
+            },
+            "DoorSignalControl": {},
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSink": {
+              "ports": [
+                "Open",
+                "Close",
+                "Toggle",
+                "AutoClose",
+                "DoorBolt"
+              ]
+            },
+            "DeviceLinkSource": {
+              "ports": [
+                "DoorStatus",
+                "DoorBoltStatus"
+              ],
+              "lastSignals": {
+                "DoorStatus": false,
+                "DoorBoltStatus": false
+              }
+            },
+            "EntityEffectOnDeviceOverload": {
+              "effects": [
+                {
+                  "entity": "EffectSparks",
+                  "predicted": false
+                },
+                {
+                  "sound": "/Audio/Items/Defib/defib_zap.ogg",
+                  "predicted": false
+                }
+              ]
+            },
+            "RCDDeconstructable": {
+              "cost": 6,
+              "delay": 8,
+              "fx": "EffectRCDDeconstruct8"
+            },
+            "Paintable": {
+              "group": "AirlockStandard"
+            },
+            "PryUnpowered": {}
+          }
+        },
+        {
+          "uid": 19894,
+          "prototype": "GasThermoMachineFreezerEnabled",
+          "name": "freezer",
+          "position": [
+            15,
+            1.5,
+            3.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 175
+                  },
+                  "behaviors": [
+                    {
+                      "node": "machineFrame"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Animateable": {},
+            "Machine": {
+              "board": "ThermomachineFreezerMachineCircuitBoard"
+            },
+            "ContainerContainer": {
+              "containers": {
+                "machine_board": "",
+                "machine_parts": ""
+              }
+            },
+            "Construction": {
+              "graph": "Machine",
+              "node": "machine",
+              "containers": [
+                "machine_parts",
+                "machine_board"
+              ]
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "Transform": {
+              "anchored": true,
+              "noRot": false,
+              "parent": 15,
+              "rot": "-1.5707963267948966 rad",
+              "pos": "1.5,3.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.45,-0.45,0.45,0.45"
+                  },
+                  "density": 190,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "MachineLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "InteractionOutline": {},
+            "Anchorable": {
+              "delay": 2
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 1000,
+              "powerDisabled": false
+            },
+            "ExtensionCableReceiver": {},
+            "Sprite": {
+              "sprite": "Structures/Piping/Atmospherics/thermomachine.rsi",
+              "snapCardinals": true,
+              "granularLayersRendering": true,
+              "layers": [
+                {
+                  "state": "freezerOff",
+                  "map": [
+                    "enum.PowerDeviceVisualLayers.Powered"
+                  ]
+                },
+                {
+                  "state": "freezerPanelOpen",
+                  "map": [
+                    "enum.WiresVisualLayers.MaintenancePanel"
+                  ]
+                },
+                {
+                  "sprite": "Structures/Piping/Atmospherics/thermomachine.rsi",
+                  "state": "pipe",
+                  "map": [
+                    "enum.PipeVisualLayers.Pipe"
+                  ],
+                  "renderingStrategy": "Default"
+                }
+              ]
+            },
+            "Appearance": {},
+            "PipeColorVisuals": {},
+            "Rotatable": {},
+            "GasThermoMachine": {
+              "coefficientOfPerformance": -3.9,
+              "targetTemperature": 73.15
+            },
+            "AtmosPipeColor": {},
+            "AtmosDevice": {},
+            "UserInterface": {
+              "interfaces": {
+                "enum.ThermomachineUiKey.Key": {
+                  "type": "GasThermomachineBoundUserInterface"
+                }
+              }
+            },
+            "ActivatableUI": {
+              "inHandsOnly": false,
+              "key": "enum.ThermomachineUiKey.Key"
+            },
+            "WiresPanel": {},
+            "WiresVisuals": {},
+            "PipeRestrictOverlap": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "AtmosDevices",
+              "receiveFrequencyId": "AtmosMonitor",
+              "transmitFrequencyId": "AtmosMonitor",
+              "sendBroadcastAttemptEvent": true,
+              "examinableAddress": true,
+              "prefix": "device-address-prefix-freezer"
+            },
+            "WiredNetwork": {},
+            "PowerSwitch": {},
+            "AtmosMonitoringConsoleDevice": {
+              "navMapBlip": "Thermoregulator"
+            },
+            "GuideHelp": {
+              "guides": [
+                "Thermomachines"
+              ]
+            },
+            "StationAiWhitelist": {},
+            "AtmosPipeLayers": {
+              "pipeLayer": 0,
+              "spriteLayersRsiPaths": {
+                "enum.PipeVisualLayers.Pipe": {
+                  "Primary": "Structures/Piping/Atmospherics/thermomachine.rsi",
+                  "Secondary": "Structures/Piping/Atmospherics/thermomachine_alt1.rsi",
+                  "Tertiary": "Structures/Piping/Atmospherics/thermomachine_alt2.rsi"
+                }
+              }
+            },
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.PowerDeviceVisuals.Powered": {
+                  "enum.PowerDeviceVisualLayers.Powered": {
+                    "true": {
+                      "state": "freezerOn"
+                    },
+                    "false": {
+                      "state": "freezerOff"
+                    }
+                  }
+                }
+              }
+            },
+            "StealTarget": {
+              "stealGroup": [
+                "FreezerHeater"
+              ]
+            }
+          }
+        },
+        {
+          "uid": 18988,
+          "prototype": "DefaultStationBeaconKitchen",
+          "name": "station beacon",
+          "position": [
+            15,
+            7.5,
+            2.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak",
+                        "params": {
+                          "volume": -8
+                        }
+                      }
+                    },
+                    {
+                      "spawn": {
+                        "SheetSteel1": {
+                          "min": 1,
+                          "max": 1
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Item": {
+              "size": "Small"
+            },
+            "Animateable": {},
+            "Clickable": {},
+            "InteractionOutline": {},
+            "MovedByPressure": {},
+            "EmitSoundOnCollide": {
+              "sound": {
+                "collection": "WeakHit"
+              }
+            },
+            "EmitSoundOnLand": {
+              "sound": {
+                "path": "/Audio/Effects/drop.ogg",
+                "params": {
+                  "volume": 2
+                }
+              }
+            },
+            "DamageOnHighSpeedImpact": {
+              "damage": {
+                "types": {
+                  "Blunt": 5
+                }
+              },
+              "soundHit": {
+                "collection": "MetalThud"
+              }
+            },
+            "CollisionWake": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "static",
+              "fixedRotation": false,
+              "canCollide": false
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.25,-0.25,0.25,0.25"
+                  },
+                  "density": 20,
+                  "mask": [
+                    "ItemMask"
+                  ],
+                  "restitution": 0.3,
+                  "friction": 0.2
+                }
+              }
+            },
+            "Sprite": {
+              "drawdepth": "BelowFloor",
+              "noRot": false,
+              "sprite": "Objects/Devices/station_beacon.rsi",
+              "layers": [
+                {
+                  "state": "blink",
+                  "map": [
+                    "base"
+                  ]
+                }
+              ]
+            },
+            "Pullable": {},
+            "DamageExaminable": {},
+            "Rotatable": {
+              "increment": 30
+            },
+            "Appearance": {},
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.NavMapBeaconVisuals.Enabled": {
+                  "base": {
+                    "true": {
+                      "state": "blink"
+                    },
+                    "false": {
+                      "state": "icon"
+                    }
+                  }
+                }
+              }
+            },
+            "ConfigurableNavMapBeacon": {},
+            "NavMapBeacon": {
+              "defaultText": "station-beacon-kitchen",
+              "color": "#9FED58"
+            },
+            "WarpPoint": {},
+            "ActivatableUI": {
+              "key": "enum.NavMapBeaconUiKey.Key",
+              "singleUser": true
+            },
+            "UserInterface": {
+              "interfaces": {
+                "enum.NavMapBeaconUiKey.Key": {
+                  "type": "NavMapBeaconBoundUserInterface"
+                }
+              }
+            },
+            "Visibility": {
+              "layer": 1
+            },
+            "SubFloorHide": {},
+            "Anchorable": {},
+            "CollideOnAnchor": {},
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "pos": "7.5,2.5"
+            },
+            "StaticPrice": {
+              "price": 25
+            },
+            "Tag": {
+              "tags": [
+                "NinjaBombingTarget",
+                "TeleportScrollWarp"
+              ]
+            },
+            "Construction": {
+              "graph": "StationBeaconPart",
+              "node": "complete"
+            }
+          }
+        },
+        {
+          "uid": 7355,
+          "prototype": "HydroponicsTray",
+          "name": "hydroponics tray",
+          "position": [
+            15,
+            -0.5,
+            -4.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalGlassBreak"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Animateable": {},
+            "Machine": {
+              "board": "HydroponicsTrayMachineCircuitboard"
+            },
+            "ContainerContainer": {
+              "containers": {
+                "machine_board": "",
+                "machine_parts": ""
+              }
+            },
+            "Construction": {
+              "graph": "Machine",
+              "node": "machine",
+              "containers": [
+                "machine_parts",
+                "machine_board"
+              ]
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "RequireProjectileTarget": {},
+            "Solution": {
+              "solution": {
+                "maxVol": 240
+              },
+              "id": "soil"
+            },
+            "Clickable": {},
+            "InteractionOutline": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.45,-0.45,0.45,0.1"
+                  },
+                  "density": 190,
+                  "hard": true,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "BulletImpassable"
+                  ]
+                }
+              }
+            },
+            "Sprite": {
+              "noRot": true,
+              "layers": [
+                {
+                  "sprite": "Structures/Hydroponics/containers.rsi",
+                  "state": "hydrotray3"
+                },
+                {
+                  "sprite": "Structures/Hydroponics/overlays.rsi",
+                  "state": "lowhealth3",
+                  "map": [
+                    "health_alert"
+                  ],
+                  "visible": false
+                },
+                {
+                  "sprite": "Structures/Hydroponics/overlays.rsi",
+                  "state": "lowwater3",
+                  "map": [
+                    "water_alert"
+                  ],
+                  "visible": false
+                },
+                {
+                  "sprite": "Structures/Hydroponics/overlays.rsi",
+                  "state": "lownutri3",
+                  "map": [
+                    "nutri_alert"
+                  ],
+                  "visible": false
+                },
+                {
+                  "sprite": "Structures/Hydroponics/overlays.rsi",
+                  "state": "alert3",
+                  "map": [
+                    "undefined_alert"
+                  ],
+                  "visible": false
+                },
+                {
+                  "sprite": "Structures/Hydroponics/overlays.rsi",
+                  "state": "harvest3",
+                  "map": [
+                    "harvest_alert"
+                  ],
+                  "visible": false
+                }
+              ]
+            },
+            "PlantTray": {
+              "drawWarnings": true,
+              "wateringSound": {
+                "path": "/Audio/Effects/Fluids/slosh.ogg",
+                "params": {
+                  "volume": -6,
+                  "variation": 0.2
+                }
+              }
+            },
+            "RefillableSolution": {
+              "solution": "soil",
+              "maxRefill": 50
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "rot": "3.141592653589793 rad",
+              "pos": "-0.5,-4.5"
+            },
+            "Reactive": {
+              "reactions": [
+                {
+                  "reagents": [
+                    "Water"
+                  ],
+                  "methods": [
+                    "Touch",
+                    "Ingestion",
+                    "Injection"
+                  ],
+                  "effects": [
+                    {
+                      "reagent": "Water",
+                      "solution": "soil"
+                    }
+                  ]
+                },
+                {
+                  "reagents": [
+                    "Holywater"
+                  ],
+                  "methods": [
+                    "Touch",
+                    "Ingestion",
+                    "Injection"
+                  ],
+                  "effects": [
+                    {
+                      "reagent": "Holywater",
+                      "solution": "soil"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Appearance": {},
+            "PlantTrayVisuals": {},
+            "ActivatableUI": {
+              "key": "enum.PlantTrayUiKey.Key"
+            },
+            "UserInterface": {
+              "interfaces": {
+                "enum.PlantTrayUiKey.Key": {
+                  "type": "PlantTrayBoundUserInterface",
+                  "interactionRange": 2
+                }
+              }
+            },
+            "Anchorable": {},
+            "Pullable": {},
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.PlantTrayVisuals.HealthLight": {
+                  "health_alert": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.PlantTrayVisuals.WaterLight": {
+                  "water_alert": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.PlantTrayVisuals.NutritionLight": {
+                  "nutri_alert": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.PlantTrayVisuals.AlertLight": {
+                  "undefined_alert": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.PlantTrayVisuals.HarvestLight": {
+                  "harvest_alert": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                }
+              }
+            },
+            "WiresPanel": {},
+            "AmbientSound": {
+              "volume": -9,
+              "range": 5,
+              "sound": {
+                "path": "/Audio/Ambience/Objects/flowing_water_open.ogg"
+              }
+            },
+            "GuideHelp": {
+              "guides": [
+                "Botany",
+                "Chemicals"
+              ]
+            }
+          }
+        },
+        {
+          "uid": 867,
+          "prototype": "AirlockMaintHydroLocked",
+          "name": "airlock",
+          "position": [
+            15,
+            -1.5,
+            -1.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 200
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalSlam"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelStaticMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 15,
+              "pos": "-1.5,-1.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "layer": [
+                    "AirlockLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Airlock",
+                "DoorRemoteWhitelist"
+              ]
+            },
+            "Anchorable": {
+              "flags": [
+                "Anchorable"
+              ]
+            },
+            "Rotatable": {},
+            "StationAiWhitelist": {},
+            "MeleeSound": {
+              "soundGroups": {
+                "Brute": {
+                  "path": "/Audio/Weapons/smash.ogg"
+                }
+              }
+            },
+            "InteractionOutline": {},
+            "Sprite": {
+              "sprite": "Structures/Doors/Airlocks/Standard/airlock-maints.rsi",
+              "layers": [
+                {
+                  "state": "closed",
+                  "map": [
+                    "enum.DoorVisualLayers.Base"
+                  ]
+                },
+                {
+                  "state": "closed_unlit",
+                  "shader": "unshaded",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseUnlit"
+                  ],
+                  "visible": true
+                },
+                {
+                  "state": "welded",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects.rsi",
+                  "map": [
+                    "enum.WeldableLayers.BaseWelded"
+                  ]
+                },
+                {
+                  "state": "bolted_unlit",
+                  "shader": "unshaded",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseBolted"
+                  ]
+                },
+                {
+                  "state": "emergency_unlit",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseEmergencyAccess"
+                  ],
+                  "shader": "unshaded"
+                },
+                {
+                  "state": "panel_open",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects.rsi",
+                  "map": [
+                    "enum.WiresVisualLayers.MaintenancePanel"
+                  ]
+                },
+                {
+                  "state": "electrified_ai",
+                  "sprite": "Interface/Misc/ai_hud.rsi",
+                  "shader": "unshaded",
+                  "visible": false,
+                  "map": [
+                    "enum.ElectrifiedLayers.HUD"
+                  ]
+                },
+                {
+                  "state": "electrified",
+                  "sprite": "Effects/electricity.rsi",
+                  "shader": "unshaded",
+                  "visible": false,
+                  "map": [
+                    "enum.ElectrifiedLayers.Sparks"
+                  ]
+                },
+                {
+                  "state": "sparks",
+                  "sprite": "Structures/Doors/Airlocks/Effects/airlock-effects.rsi",
+                  "map": [
+                    "enum.DoorVisualLayers.BaseEmagging"
+                  ],
+                  "shader": "unshaded",
+                  "visible": false
+                }
+              ]
+            },
+            "IconSmooth": {
+              "key": "doors"
+            },
+            "AnimationPlayer": {},
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsHydroponics"
+                ]
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "board": ""
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            },
+            "Door": {
+              "crushDamage": {
+                "types": {
+                  "Blunt": 15
+                }
+              },
+              "openSound": {
+                "path": "/Audio/Machines/airlock_open.ogg"
+              },
+              "closeSound": {
+                "path": "/Audio/Machines/airlock_close.ogg"
+              },
+              "denySound": {
+                "path": "/Audio/Machines/airlock_deny.ogg"
+              }
+            },
+            "Weldable": {
+              "fuel": 5,
+              "time": 3
+            },
+            "Airlock": {
+              "openUnlitVisible": true
+            },
+            "NavMapDoor": {},
+            "DoorBolt": {},
+            "Appearance": {},
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.ElectrifiedVisuals.ShowSparks": {
+                  "enum.ElectrifiedLayers.Sparks": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                }
+              }
+            },
+            "WiresVisuals": {},
+            "ElectrocutionHUDVisuals": {},
+            "ApcPowerReceiver": {
+              "powerLoad": 20
+            },
+            "ExtensionCableReceiver": {},
+            "Electrified": {
+              "enabled": false,
+              "usesApcPower": true,
+              "onActivateInWorld": true
+            },
+            "WiresPanel": {},
+            "WiresPanelSecurity": {},
+            "Wires": {
+              "boardName": "wires-board-name-airlock",
+              "layoutId": "AirlockService"
+            },
+            "UserInterface": {
+              "interfaces": {
+                "enum.AiUi.Key": {
+                  "type": "StationAiBoundUserInterface"
+                },
+                "enum.WiresUiKey.Key": {
+                  "type": "WiresBoundUserInterface"
+                }
+              }
+            },
+            "Airtight": {
+              "noAirWhenFullyAirBlocked": false
+            },
+            "RadiationBlocker": {
+              "resistance": 3
+            },
+            "Occluder": {},
+            "Construction": {
+              "graph": "Airlock",
+              "node": "airlock",
+              "containers": [
+                "board"
+              ]
+            },
+            "PlacementReplacement": {
+              "key": "walls"
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "BlockWeather": {},
+            "GuideHelp": {
+              "guides": [
+                "Airlocks",
+                "WirePanels",
+                "Networking"
+              ]
+            },
+            "StaticPrice": {
+              "price": 150
+            },
+            "StructureAligner": {},
+            "StructureAlignerPylon": {},
+            "LayerChangeOnWeld": {
+              "unWeldedLayer": "AirlockLayer",
+              "weldedLayer": "WallLayer"
+            },
+            "DoorSignalControl": {},
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSink": {
+              "ports": [
+                "Open",
+                "Close",
+                "Toggle",
+                "AutoClose",
+                "DoorBolt"
+              ]
+            },
+            "DeviceLinkSource": {
+              "ports": [
+                "DoorStatus",
+                "DoorBoltStatus"
+              ],
+              "lastSignals": {
+                "DoorStatus": false,
+                "DoorBoltStatus": false
+              }
+            },
+            "EntityEffectOnDeviceOverload": {
+              "effects": [
+                {
+                  "entity": "EffectSparks",
+                  "predicted": false
+                },
+                {
+                  "sound": "/Audio/Items/Defib/defib_zap.ogg",
+                  "predicted": false
+                }
+              ]
+            },
+            "RCDDeconstructable": {
+              "cost": 6,
+              "delay": 8,
+              "fx": "EffectRCDDeconstruct8"
+            },
+            "Paintable": {
+              "group": "AirlockStandard"
+            },
+            "PryUnpowered": {}
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/hike.yml",
+      "sha256": "1b47bf7e017ac0944c6acb414f65832336f027cc92413a744ee3b787bfff9fa2",
+      "entities": [
+        {
+          "uid": 10520,
+          "prototype": "CargoTelepad",
+          "name": "cargo telepad",
+          "position": [
+            1,
+            -2.5,
+            31.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 175
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Animateable": {},
+            "Machine": {
+              "board": "CargoTelepadMachineCircuitboard"
+            },
+            "ContainerContainer": {
+              "containers": {
+                "machine_board": "",
+                "machine_parts": ""
+              }
+            },
+            "Construction": {
+              "graph": "Machine",
+              "node": "machine",
+              "containers": [
+                "machine_parts",
+                "machine_board"
+              ]
+            },
+            "LightningTarget": {
+              "priority": 1
+            },
+            "Transform": {
+              "anchored": true,
+              "noRot": true,
+              "parent": 1,
+              "pos": "-2.5,31.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static",
+              "canCollide": false
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.45,-0.45,0.45,0.00"
+                  },
+                  "density": 190,
+                  "mask": [
+                    "MachineMask"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "InteractionOutline": {},
+            "Anchorable": {
+              "delay": 2
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "Sprite": {
+              "sprite": "Structures/cargo_telepad.rsi",
+              "drawdepth": "HighFloorObjects",
+              "layers": [
+                {
+                  "state": "offline",
+                  "map": [
+                    "enum.CargoTelepadLayers.Base"
+                  ]
+                },
+                {
+                  "state": "idle",
+                  "map": [
+                    "enum.CargoTelepadLayers.Beam"
+                  ],
+                  "shader": "unshaded"
+                }
+              ]
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "Wireless",
+              "receiveFrequencyId": "BasicDevice"
+            },
+            "WirelessNetwork": {
+              "range": 200
+            },
+            "DeviceLinkSink": {
+              "ports": [
+                "OrderReceiver"
+              ]
+            },
+            "CargoTelepad": {},
+            "Appearance": {},
+            "CollideOnAnchor": {},
+            "NameIdentifier": {
+              "group": "CargoTelepads"
+            },
+            "AnimationPlayer": {}
+          }
+        },
+        {
+          "uid": 7364,
+          "prototype": "ComputerCargoOrders",
+          "position": [
+            1,
+            1.5,
+            33.5
+          ],
+          "components": {
+            "Transform": {
+              "anchored": true,
+              "parent": 1,
+              "pos": "1.5,33.5"
+            },
+            "DeviceLinkSource": {
+              "range": 200,
+              "ports": [
+                "OrderSender"
+              ]
+            }
+          }
+        },
+        {
+          "uid": 7452,
+          "prototype": "DisposalUnit",
+          "name": "disposal unit",
+          "position": [
+            1,
+            8.5,
+            -7.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 100
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak",
+                        "params": {
+                          "volume": -6
+                        }
+                      }
+                    },
+                    {
+                      "spawn": {
+                        "SheetPlastic1": {
+                          "min": 0,
+                          "max": 1
+                        },
+                        "SheetSteel1": {
+                          "min": 0,
+                          "max": 1
+                        }
+                      }
+                    },
+                    {
+                      "containers": [
+                        "DisposalUnitComponent"
+                      ]
+                    },
+                    {
+                      "node": "frame"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "PlasticMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Transform": {
+              "anchored": true,
+              "noRot": true,
+              "parent": 1,
+              "pos": "8.5,-7.5"
+            },
+            "Clickable": {},
+            "GravityAffected": {},
+            "Physics": {
+              "bodyType": "Static"
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.45,-0.45,0.45,0.45"
+                  },
+                  "density": 55,
+                  "mask": [
+                    "MachineMask"
+                  ],
+                  "layer": [
+                    "MachineLayer"
+                  ]
+                }
+              }
+            },
+            "Pullable": {},
+            "Tag": {
+              "tags": [
+                "Structure"
+              ]
+            },
+            "Animateable": {},
+            "InteractionOutline": {},
+            "Anchorable": {
+              "delay": 2
+            },
+            "ApcPowerReceiver": {
+              "powerLoad": 5
+            },
+            "ExtensionCableReceiver": {},
+            "LightningTarget": {
+              "priority": 1
+            },
+            "DisposalUnit": {
+              "container": {
+                "occludes": true,
+                "showEnts": false,
+                "ents": []
+              },
+              "whitelist": {
+                "components": [
+                  "Item",
+                  "Body"
+                ]
+              }
+            },
+            "Climbable": {
+              "vaultable": false
+            },
+            "Sprite": {
+              "sprite": "Structures/Piping/disposal.rsi",
+              "layers": [
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.Base"
+                  ],
+                  "state": "disposal"
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayFlushing"
+                  ],
+                  "state": "disposal",
+                  "visible": false
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayCharging"
+                  ],
+                  "state": "dispover-ready"
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayFull"
+                  ],
+                  "state": "dispover-full",
+                  "visible": false
+                },
+                {
+                  "map": [
+                    "enum.DisposalUnitVisualLayers.OverlayEngaged"
+                  ],
+                  "state": "dispover-handle",
+                  "visible": false
+                }
+              ],
+              "snapCardinals": true
+            },
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.DisposalUnitVisuals.IsReady": {
+                  "enum.DisposalUnitVisualLayers.Base": {
+                    "true": {
+                      "state": "disposal"
+                    },
+                    "false": {
+                      "state": "disposal-charging"
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsFlushing": {
+                  "enum.DisposalUnitVisualLayers.OverlayFlushing": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsEngaged": {
+                  "enum.DisposalUnitVisualLayers.OverlayEngaged": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsCharging": {
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "true": {
+                      "state": "dispover-charge",
+                      "visible": true
+                    },
+                    "false": {
+                      "state": "dispover-ready",
+                      "visible": true
+                    }
+                  }
+                },
+                "enum.DisposalUnitVisuals.IsFull": {
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "true": {
+                      "visible": true
+                    },
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.PowerDeviceVisuals.Powered": {
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                },
+                "enum.AnchorVisuals.Anchored": {
+                  "enum.DisposalUnitVisualLayers.Base": {
+                    "true": {
+                      "state": "disposal"
+                    },
+                    "false": {
+                      "state": "condisposal"
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayEngaged": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayCharging": {
+                    "false": {
+                      "visible": false
+                    }
+                  },
+                  "enum.DisposalUnitVisualLayers.OverlayFull": {
+                    "false": {
+                      "visible": false
+                    }
+                  }
+                }
+              }
+            },
+            "Appearance": {},
+            "UserInterface": {
+              "interfaces": {
+                "enum.DisposalUnitUiKey.Key": {
+                  "type": "DisposalUnitBoundUserInterface"
+                },
+                "enum.DisposalTaggerUiKey.Key": {
+                  "type": "DisposalTaggerBoundUserInterface"
+                }
+              }
+            },
+            "ContainerContainer": {
+              "containers": {
+                "DisposalUnitComponent": ""
+              }
+            },
+            "StaticPrice": {
+              "price": 70
+            },
+            "PowerSwitch": {},
+            "PowerState": {
+              "idlePowerDraw": 5,
+              "workingPowerDraw": 1000
+            },
+            "Construction": {
+              "graph": "DisposalMachine",
+              "node": "disposal_unit"
+            },
+            "ThrowInsertContainer": {
+              "containerId": "DisposalUnitComponent",
+              "probability": 0.67
+            },
+            "Rummageable": {
+              "table": {
+                "tableId": "RatKingLoot"
+              }
+            },
+            "RequireProjectileTarget": {},
+            "DisposalTagger": {
+              "tag": "waste"
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "uid": 8140,
+          "prototype": "DisposalTrunk",
+          "name": "disposal trunk",
+          "position": [
+            1,
+            8.5,
+            -7.5
+          ],
+          "components": {
+            "Destructible": {
+              "thresholds": [
+                {
+                  "trigger": {
+                    "damage": 60
+                  },
+                  "behaviors": [
+                    {
+                      "sound": {
+                        "collection": "MetalBreak"
+                      }
+                    },
+                    {
+                      "node": "broken"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Damageable": {
+              "damageModifierSet": "SteelMod"
+            },
+            "Injurable": {
+              "damageContainer": "StructuralInorganic"
+            },
+            "Sprite": {
+              "drawdepth": "ThickPipe",
+              "sprite": "Structures/Piping/disposal.rsi",
+              "visible": false,
+              "layers": [
+                {
+                  "map": [
+                    "pipe"
+                  ],
+                  "state": "conpipe-t"
+                }
+              ]
+            },
+            "Appearance": {},
+            "Visibility": {
+              "layer": 1
+            },
+            "SubFloorHide": {},
+            "Clickable": {},
+            "InteractionOutline": {},
+            "Physics": {
+              "bodyType": "Static",
+              "canCollide": false
+            },
+            "Fixtures": {
+              "fixtures": {
+                "fix1": {
+                  "shape": {
+                    "bounds": "-0.25,-0.5,0.25,0.4"
+                  },
+                  "mask": [
+                    "SubfloorMask"
+                  ]
+                }
+              }
+            },
+            "Transform": {
+              "anchored": true,
+              "parent": 1,
+              "pos": "8.5,-7.5"
+            },
+            "Anchorable": {},
+            "Rotatable": {},
+            "Pullable": {},
+            "CollideOnAnchor": {},
+            "DisposalTube": {},
+            "StaticPrice": {
+              "price": 30
+            },
+            "DisposalEntry": {},
+            "GenericVisualizer": {
+              "visuals": {
+                "enum.AnchorVisuals.Anchored": {
+                  "pipe": {
+                    "false": {
+                      "state": "conpipe-t"
+                    },
+                    "true": {
+                      "state": "pipe-t"
+                    }
+                  }
+                }
+              }
+            },
+            "Construction": {
+              "graph": "DisposalPipe",
+              "node": "trunk"
+            }
+          }
+        },
+        {
+          "uid": 7756,
+          "prototype": "DisposalTrunk",
+          "position": [
+            1,
+            48.5,
+            -13.5
+          ],
+          "components": {
+            "Transform": {
+              "parent": 1,
+              "rot": "4.71238898038469 rad",
+              "pos": "48.5,-13.5"
+            }
+          }
+        },
+        {
+          "uid": 2905,
+          "prototype": "Recycler",
+          "position": [
+            1,
+            50.5,
+            -13.5
+          ],
+          "components": {
+            "Transform": {
+              "parent": 1,
+              "rot": "1.5707963267948966 rad",
+              "pos": "50.5,-13.5"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "Content.Server/Cargo/Systems/CargoSystem.Telepad.cs": "778dc06ec7974a05776cc8613fb962b443029c4d9829e60583bf59d1a3cd2133",
+    "Resources/Prototypes/Entities/Structures/cargo_telepad.yml": "c8ffe15b3b0126ae6e85cf0ff3349ae52a9de9ce47ae72b21f83446c3b446e86",
+    "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml": "7bcf4b0f33c3b492889a2fee929c24de5f659ae02daa5d172b5eb9e9f1778103",
+    "Content.Shared/Disposal/Unit/SharedDisposalUnitSystem.cs": "3e63bcb0de7cc87a0d3181c7d0fc17162510dfe8ecaf5ee01728eedfc1e4d5a7",
+    "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml": "70806ecf088fce6799d269225d37379d36537a43ca982310162b06e98da87d2d",
+    "Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml": "afd4bc93d98bae085e559d279713cd853dbe6b5714be8866931d5a75a20cb586",
+    "Content.Shared/Disposal/Tube/DisposalTubeSystem.cs": "fc333d3d6c4e1c03319e4e0cd009e68545e45b0e0febe34ce6f3e480a3366408",
+    "Content.Shared/Disposal/Holder/SharedDisposalHolderSystem.cs": "850c5958fe4618703414feab9e7b45879c87c317016622ab6cd444d08be366a3",
+    "Content.Server/Disposal/Holder/DisposalHolderSystem.cs": "eb64cb11b5240cf485cdb461fc797c4a20ee9d85006d5b3b5516f2c1ba0b4e23",
+    "Content.Shared/Disposal/Router/DisposalRouterSystem.cs": "1c9a336e21e86fcff313f6b5d8fcc0247190971375d9b7a7d0d4535ae881b1fd",
+    "Resources/Prototypes/Entities/Objects/Devices/Electronics/door_access.yml": "965838e3455432292f6d3a6826a2dd921024c8f517db7c1a604455027e48f15e",
+    "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml": "e1803de51888c19b074424158afedda4523f43b4b462714d3ec5c786641aff09",
+    "Content.Shared/Disposal/Tagger/DisposalTaggerSystem.cs": "b633fc1275dfab2552cc59d061098111eb2f5ab27b1a848ab11631697915826d"
+  },
+  "proposedEvidence": [
+    {
+      "id": "local_logistics_gear_16597",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=16597",
+      "description": "CargoTelepad at grid-local [12, 57.5, -22.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_gear_2479",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=2479",
+      "description": "ComputerCargoOrders at grid-local [12, 50.5, -24.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_gear_3967",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=3967",
+      "description": "ComputerCargoOrders at grid-local [12, 63.5, -15.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_gear_1540",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=1540",
+      "description": "DisposalUnit at grid-local [12, -10.5, 2.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_gear_30502",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=30502",
+      "description": "DisposalTrunk at grid-local [12, -10.5, 2.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_gear_13076",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=13076",
+      "description": "DisposalTrunk at grid-local [12, 37.5, 19.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_gear_16766",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=16766",
+      "description": "Recycler at grid-local [12, 37.5, 15.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_plasma_27157",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=27157",
+      "description": "CargoTelepad at grid-local [2, -88.5, 19.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_plasma_9996",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=9996",
+      "description": "ComputerCargoOrders at grid-local [2, -101.5, 12.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_plasma_17840",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=17840",
+      "description": "ComputerCargoOrders at grid-local [2, -98.5, 13.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_plasma_696",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=696",
+      "description": "DisposalUnit at grid-local [2, -113.5, -20.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_plasma_6371",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=6371",
+      "description": "DisposalTrunk at grid-local [2, -113.5, -20.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_plasma_19731",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=19731",
+      "description": "DisposalTrunk at grid-local [2, -102.5, 24.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_plasma_24821",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=24821",
+      "description": "Recycler at grid-local [2, -100.5, 20.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_5095",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=5095",
+      "description": "CargoTelepad at grid-local [15, 60.5, -3.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_3611",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=3611",
+      "description": "ComputerCargoOrders at grid-local [15, 61.5, -10.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_3612",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=3612",
+      "description": "ComputerCargoOrders at grid-local [15, 63.5, -12.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_764",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=764",
+      "description": "DisposalUnit at grid-local [15, 12.5, -57.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_9296",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=9296",
+      "description": "DisposalTrunk at grid-local [15, 12.5, -57.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_11560",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=11560",
+      "description": "DisposalTrunk at grid-local [15, 80.5, -7.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_16587",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=16587",
+      "description": "Recycler at grid-local [15, 82.5, -8.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_183",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=183",
+      "description": "AirlockFreezerKitchenHydroLocked at grid-local [15, 2.5, 2.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_21023",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=21023",
+      "description": "AirlockFreezerKitchenHydroLocked at grid-local [15, -1.5, 1.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_19894",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=19894",
+      "description": "GasThermoMachineFreezerEnabled at grid-local [15, 1.5, 3.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_18988",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=18988",
+      "description": "DefaultStationBeaconKitchen at grid-local [15, 7.5, 2.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_7355",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7355",
+      "description": "HydroponicsTray at grid-local [15, -0.5, -4.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_tram2_867",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=867",
+      "description": "AirlockMaintHydroLocked at grid-local [15, -1.5, -1.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_hike_10520",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=10520",
+      "description": "CargoTelepad at grid-local [1, -2.5, 31.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_hike_7364",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=7364",
+      "description": "ComputerCargoOrders at grid-local [1, 1.5, 33.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_hike_7452",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=7452",
+      "description": "DisposalUnit at grid-local [1, 8.5, -7.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_hike_8140",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8140",
+      "description": "DisposalTrunk at grid-local [1, 8.5, -7.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_hike_7756",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=7756",
+      "description": "DisposalTrunk at grid-local [1, 48.5, -13.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_logistics_hike_2905",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=2905",
+      "description": "Recycler at grid-local [1, 50.5, -13.5]; exact selected record, not a complete path or operating certificate."
+    },
+    {
+      "id": "local_cargo_telepad_operation",
+      "kind": "native",
+      "source": "Content.Server/Cargo/Systems/CargoSystem.Telepad.cs",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_cargo_telepad_prototype",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/cargo_telepad.yml",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_cargo_order_sender",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_disposal_entry_lookup",
+      "kind": "native",
+      "source": "Content.Shared/Disposal/Unit/SharedDisposalUnitSystem.cs",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_disposal_native_parts",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_disposal_unit_native",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_disposal_tube_direction",
+      "kind": "native",
+      "source": "Content.Shared/Disposal/Tube/DisposalTubeSystem.cs",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_disposal_holder_route",
+      "kind": "native",
+      "source": "Content.Shared/Disposal/Holder/SharedDisposalHolderSystem.cs",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_disposal_holder_exit",
+      "kind": "native",
+      "source": "Content.Server/Disposal/Holder/DisposalHolderSystem.cs",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_disposal_router_tags",
+      "kind": "native",
+      "source": "Content.Shared/Disposal/Router/DisposalRouterSystem.cs",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_kitchen_hydro_access",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Objects/Devices/Electronics/door_access.yml",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_kitchen_hydro_doors",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml",
+      "description": "Native mechanics supporting the local logistics/service review; see local-logistics-service.md for exact scope and caveats."
+    },
+    {
+      "id": "local_disposal_flush_tags",
+      "kind": "native",
+      "source": "Content.Shared/Disposal/Tagger/DisposalTaggerSystem.cs",
+      "description": "OnDisposalFlush adds the selected DisposalTagger.Tag to the flush event. Native DisposalUnit defaults to waste; runtime payload tags are not inferred from an authored service medium."
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "format": "ss14-furnishing-assembly-validation",
+  "scope": "Local geometry, complete native parts and declared table-facing poses; station placement and native operation remain separate.",
+  "catalogSha256": "b06220e1fe1d0128420de2088f06063c6de4d6838261c02c2d5d6a8bcc8166d6",
+  "focusedTests": {
+    "passed": 7,
+    "command": "python -m unittest discover -s Tools/StationArchitect3/tests -p test_comparative_furnishings.py -v"
+  },
+  "nativeAssemblySources": {
+    "map": "Resources/Maps/box.yml",
+    "grid": 8364,
+    "tableUid": 25881,
+    "northSeatUid": 6680,
+    "southSeatUid": 6406
+  },
+  "replayCases": [
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\commons-concourse[0]-103-seed1\\layout.json",
+      "scope": "commons/concourse[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "c001085f79051f008a78c3eb257943c38c0c2ae5e6bc4c4ac319eabea45bfc0f",
+      "realizedFeatureInstances": 2,
+      "realizedNativeParts": 4,
+      "floorArea": 103,
+      "hardFailures": []
+    },
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\commons-concourse[0]-76-seed1\\layout.json",
+      "scope": "commons/concourse[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "c001085f79051f008a78c3eb257943c38c0c2ae5e6bc4c4ac319eabea45bfc0f",
+      "realizedFeatureInstances": 2,
+      "realizedNativeParts": 4,
+      "floorArea": 76,
+      "hardFailures": []
+    },
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\commons-concourse[0]-90-seed1\\layout.json",
+      "scope": "commons/concourse[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "c001085f79051f008a78c3eb257943c38c0c2ae5e6bc4c4ac319eabea45bfc0f",
+      "realizedFeatureInstances": 2,
+      "realizedNativeParts": 4,
+      "floorArea": 90,
+      "hardFailures": []
+    },
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\commons-lounge[0]-38-seed1\\layout.json",
+      "scope": "commons/lounge[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "962e7bab72c95b54bec256fd581d79ec306ca92b83e1f2300298d958c2f5c403",
+      "realizedFeatureInstances": 3,
+      "realizedNativeParts": 7,
+      "floorArea": 38,
+      "hardFailures": []
+    },
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\commons-lounge[0]-45-seed1\\layout.json",
+      "scope": "commons/lounge[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "962e7bab72c95b54bec256fd581d79ec306ca92b83e1f2300298d958c2f5c403",
+      "realizedFeatureInstances": 3,
+      "realizedNativeParts": 7,
+      "floorArea": 45,
+      "hardFailures": []
+    },
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\commons-lounge[0]-52-seed1\\layout.json",
+      "scope": "commons/lounge[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "962e7bab72c95b54bec256fd581d79ec306ca92b83e1f2300298d958c2f5c403",
+      "realizedFeatureInstances": 3,
+      "realizedNativeParts": 7,
+      "floorArea": 52,
+      "hardFailures": []
+    },
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\service-hospitality[0]-170-seed1\\layout.json",
+      "scope": "service/hospitality[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "962e7bab72c95b54bec256fd581d79ec306ca92b83e1f2300298d958c2f5c403",
+      "realizedFeatureInstances": 10,
+      "realizedNativeParts": 16,
+      "floorArea": 170,
+      "hardFailures": []
+    },
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\service-hospitality[0]-200-seed1\\layout.json",
+      "scope": "service/hospitality[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "962e7bab72c95b54bec256fd581d79ec306ca92b83e1f2300298d958c2f5c403",
+      "realizedFeatureInstances": 10,
+      "realizedNativeParts": 16,
+      "floorArea": 200,
+      "hardFailures": []
+    },
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\service-hospitality[0]-230-seed1\\layout.json",
+      "scope": "service/hospitality[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "962e7bab72c95b54bec256fd581d79ec306ca92b83e1f2300298d958c2f5c403",
+      "realizedFeatureInstances": 10,
+      "realizedNativeParts": 16,
+      "floorArea": 230,
+      "hardFailures": []
+    },
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\service-library[0]-38-seed1\\layout.json",
+      "scope": "service/library[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "962e7bab72c95b54bec256fd581d79ec306ca92b83e1f2300298d958c2f5c403",
+      "realizedFeatureInstances": 4,
+      "realizedNativeParts": 7,
+      "floorArea": 38,
+      "hardFailures": []
+    },
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\service-library[0]-45-seed1\\layout.json",
+      "scope": "service/library[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "962e7bab72c95b54bec256fd581d79ec306ca92b83e1f2300298d958c2f5c403",
+      "realizedFeatureInstances": 4,
+      "realizedNativeParts": 7,
+      "floorArea": 45,
+      "hardFailures": []
+    },
+    {
+      "layout": ".tmp\\architect3-furnishing-groups\\service-library[0]-52-seed1\\layout.json",
+      "scope": "service/library[0]",
+      "verifiedAfterReload": true,
+      "sourceHash": "962e7bab72c95b54bec256fd581d79ec306ca92b83e1f2300298d958c2f5c403",
+      "realizedFeatureInstances": 4,
+      "realizedNativeParts": 7,
+      "floorArea": 52,
+      "hardFailures": []
+    }
+  ],
+  "passed": 12,
+  "total": 12
+}

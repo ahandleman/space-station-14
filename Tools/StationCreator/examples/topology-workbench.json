@@ -1,0 +1,500 @@
+{
+    "version":  1,
+    "config":  {
+                   "seed":  14014,
+                   "width":  144,
+                   "height":  112,
+                   "archetype":  "ring",
+                   "corridorWidth":  3,
+                   "candidateBudget":  4,
+                   "optimizationSteps":  150,
+                   "maintenanceWidth":  2,
+                   "hullThickness":  1,
+                   "defaultAllowDisposalShortcuts":  false,
+                   "defaultAllowMailNetwork":  false,
+                   "weights":  {
+                                   "distance":  1,
+                                   "compactness":  0.015,
+                                   "corridor":  0.2,
+                                   "turns":  2
+                               },
+                   "departments":  [
+                                       {
+                                           "id":  "Commons",
+                                           "description":  "",
+                                           "width":  18,
+                                           "height":  14,
+                                           "minArea":  40,
+                                           "maxArea":  600,
+                                           "access":  "public",
+                                           "exterior":  false,
+                                           "entrances":  2,
+                                           "color":  "#c4af72",
+                                           "requiredConnections":  [
+
+                                                                   ],
+                                           "preferredNeighbors":  [
+
+                                                                  ]
+                                       },
+                                       {
+                                           "id":  "Arrivals",
+                                           "description":  "",
+                                           "width":  14,
+                                           "height":  10,
+                                           "minArea":  40,
+                                           "maxArea":  600,
+                                           "access":  "public",
+                                           "exterior":  true,
+                                           "entrances":  1,
+                                           "color":  "#71b9ac",
+                                           "requiredConnections":  [
+
+                                                                   ],
+                                           "preferredNeighbors":  [
+
+                                                                  ]
+                                       },
+                                       {
+                                           "id":  "Service",
+                                           "description":  "",
+                                           "width":  16,
+                                           "height":  12,
+                                           "minArea":  40,
+                                           "maxArea":  600,
+                                           "access":  "public",
+                                           "exterior":  false,
+                                           "entrances":  1,
+                                           "color":  "#9cb86a",
+                                           "requiredConnections":  [
+
+                                                                   ],
+                                           "preferredNeighbors":  [
+                                                                      "Commons",
+                                                                      "Cargo"
+                                                                  ]
+                                       },
+                                       {
+                                           "id":  "Medical",
+                                           "description":  "",
+                                           "width":  16,
+                                           "height":  12,
+                                           "minArea":  40,
+                                           "maxArea":  600,
+                                           "access":  "public",
+                                           "exterior":  false,
+                                           "entrances":  1,
+                                           "color":  "#79b8cf",
+                                           "requiredConnections":  [
+
+                                                                   ],
+                                           "preferredNeighbors":  [
+                                                                      "Commons"
+                                                                  ]
+                                       },
+                                       {
+                                           "id":  "Engineering",
+                                           "description":  "",
+                                           "width":  18,
+                                           "height":  12,
+                                           "minArea":  40,
+                                           "maxArea":  600,
+                                           "access":  "restricted",
+                                           "exterior":  false,
+                                           "entrances":  1,
+                                           "color":  "#dfa45c",
+                                           "requiredConnections":  [
+
+                                                                   ],
+                                           "preferredNeighbors":  [
+                                                                      "Cargo"
+                                                                  ]
+                                       },
+                                       {
+                                           "id":  "Science",
+                                           "description":  "",
+                                           "width":  16,
+                                           "height":  12,
+                                           "minArea":  40,
+                                           "maxArea":  600,
+                                           "access":  "restricted",
+                                           "exterior":  false,
+                                           "entrances":  1,
+                                           "color":  "#b894d5",
+                                           "requiredConnections":  [
+
+                                                                   ],
+                                           "preferredNeighbors":  [
+
+                                                                  ]
+                                       },
+                                       {
+                                           "id":  "Security",
+                                           "description":  "",
+                                           "width":  14,
+                                           "height":  12,
+                                           "minArea":  40,
+                                           "maxArea":  600,
+                                           "access":  "secure",
+                                           "exterior":  false,
+                                           "entrances":  1,
+                                           "color":  "#d67d83",
+                                           "requiredConnections":  [
+
+                                                                   ],
+                                           "preferredNeighbors":  [
+                                                                      "Command"
+                                                                  ]
+                                       },
+                                       {
+                                           "id":  "Cargo",
+                                           "description":  "",
+                                           "width":  18,
+                                           "height":  12,
+                                           "minArea":  40,
+                                           "maxArea":  600,
+                                           "access":  "restricted",
+                                           "exterior":  true,
+                                           "entrances":  1,
+                                           "color":  "#bc956b",
+                                           "requiredConnections":  [
+
+                                                                   ],
+                                           "preferredNeighbors":  [
+
+                                                                  ]
+                                       },
+                                       {
+                                           "id":  "Command",
+                                           "description":  "",
+                                           "width":  12,
+                                           "height":  10,
+                                           "minArea":  40,
+                                           "maxArea":  600,
+                                           "access":  "secure",
+                                           "exterior":  false,
+                                           "entrances":  1,
+                                           "color":  "#6d99d7",
+                                           "requiredConnections":  [
+
+                                                                   ],
+                                           "preferredNeighbors":  [
+
+                                                                  ]
+                                       }
+                                   ]
+               },
+    "topology":  {
+                     "nodes":  [
+                                   "Arrivals",
+                                   "Cargo",
+                                   "Command",
+                                   "Commons",
+                                   "Engineering",
+                                   "Medical",
+                                   "Science",
+                                   "Security",
+                                   "Service"
+                               ],
+                     "edges":  [
+                                   {
+                                       "id":  "template-d48767b4f1854f83ac6fc8908614aeaa",
+                                       "origin":  "custom",
+                                       "from":  "Arrivals",
+                                       "to":  "Command",
+                                       "priority":  "required",
+                                       "hard":  true,
+                                       "weight":  4,
+                                       "description":  "Arrivals should have clear public access to the rest of the station.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-246e2756e6ad082782fd428a09a35fc8",
+                                       "origin":  "template",
+                                       "from":  "Arrivals",
+                                       "to":  "Commons",
+                                       "priority":  "required",
+                                       "hard":  true,
+                                       "weight":  1,
+                                       "description":  "Public walking connection in the selected station structure.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-17e60b5df9b3fa459059e4c5357076fc",
+                                       "origin":  "template",
+                                       "from":  "Cargo",
+                                       "to":  "Engineering",
+                                       "priority":  "required",
+                                       "hard":  true,
+                                       "weight":  1,
+                                       "description":  "Public walking connection in the selected station structure.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-1afd15cbf1187e3642d319cc75e3a134",
+                                       "origin":  "template",
+                                       "from":  "Cargo",
+                                       "to":  "Engineering",
+                                       "priority":  "desired",
+                                       "hard":  false,
+                                       "weight":  2,
+                                       "description":  "Prefer a convenient connection between these departments.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-c34012a4dba20ff6645eb025906608eb",
+                                       "origin":  "template",
+                                       "from":  "Cargo",
+                                       "to":  "Security",
+                                       "priority":  "required",
+                                       "hard":  true,
+                                       "weight":  1,
+                                       "description":  "Public walking connection in the selected station structure.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-79669d2a5116dc9e856c69d8953d14de",
+                                       "origin":  "template",
+                                       "from":  "Cargo",
+                                       "to":  "Service",
+                                       "priority":  "desired",
+                                       "hard":  false,
+                                       "weight":  2,
+                                       "description":  "Prefer a convenient connection between these departments.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-6b7bf023fc9f20b275ac245e1dd3a998",
+                                       "origin":  "template",
+                                       "from":  "Command",
+                                       "to":  "Security",
+                                       "priority":  "required",
+                                       "hard":  true,
+                                       "weight":  1,
+                                       "description":  "Public walking connection in the selected station structure.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-b70e1a2f6369d51978fe082505fde801",
+                                       "origin":  "template",
+                                       "from":  "Command",
+                                       "to":  "Security",
+                                       "priority":  "desired",
+                                       "hard":  false,
+                                       "weight":  2,
+                                       "description":  "Prefer a convenient connection between these departments.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-94db7847085a74f2f521012cf01dc11a",
+                                       "origin":  "template",
+                                       "from":  "Commons",
+                                       "to":  "Medical",
+                                       "priority":  "desired",
+                                       "hard":  false,
+                                       "weight":  2,
+                                       "description":  "Prefer a convenient connection between these departments.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-d2d7112d3641cb3c10ae9726b9e8c1f8",
+                                       "origin":  "template",
+                                       "from":  "Commons",
+                                       "to":  "Service",
+                                       "priority":  "required",
+                                       "hard":  true,
+                                       "weight":  1,
+                                       "description":  "Public walking connection in the selected station structure.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-d59b3a0387f8444c8733a240f531fd3d",
+                                       "origin":  "template",
+                                       "from":  "Commons",
+                                       "to":  "Service",
+                                       "priority":  "desired",
+                                       "hard":  false,
+                                       "weight":  2,
+                                       "description":  "Prefer a convenient connection between these departments.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-094def40101751eced91bf1779bff0a1",
+                                       "origin":  "template",
+                                       "from":  "Engineering",
+                                       "to":  "Science",
+                                       "priority":  "required",
+                                       "hard":  true,
+                                       "weight":  1,
+                                       "description":  "Public walking connection in the selected station structure.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-c3221f4dec1e343129af9cf67dfd0c8e",
+                                       "origin":  "template",
+                                       "from":  "Medical",
+                                       "to":  "Science",
+                                       "priority":  "required",
+                                       "hard":  true,
+                                       "weight":  1,
+                                       "description":  "Public walking connection in the selected station structure.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "template-248290b45de6431c982a90b625af58b6",
+                                       "origin":  "template",
+                                       "from":  "Medical",
+                                       "to":  "Service",
+                                       "priority":  "required",
+                                       "hard":  true,
+                                       "weight":  1,
+                                       "description":  "Public walking connection in the selected station structure.",
+                                       "relation":  "walking",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  null
+                                   },
+                                   {
+                                       "id":  "example-sample-delivery",
+                                       "origin":  "custom",
+                                       "from":  "Science",
+                                       "to":  "Medical",
+                                       "priority":  "desired",
+                                       "hard":  false,
+                                       "weight":  7,
+                                       "description":  "Prefer a convenient route for sealed sample deliveries between Science and Medical.",
+                                       "relation":  "delivery",
+                                       "purpose":  "items",
+                                       "allowedModes":  [
+                                                            "staffPassage",
+                                                            "mail"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  40
+                                   },
+                                   {
+                                       "id":  "example-command-separation",
+                                       "origin":  "custom",
+                                       "from":  "Arrivals",
+                                       "to":  "Command",
+                                       "priority":  "avoided",
+                                       "hard":  false,
+                                       "weight":  8,
+                                       "description":  "Avoid a shared boundary between public arrivals and secure Command spaces.",
+                                       "relation":  "adjacency",
+                                       "purpose":  "crew",
+                                       "allowedModes":  [
+                                                            "publicHall"
+                                                        ],
+                                       "direction":  "both",
+                                       "strictAvoidance":  false,
+                                       "maxDistance":  30
+                                   }
+                               ],
+                     "nodePositions":  {
+
+                                       },
+                     "suppressedTemplateIds":  [
+
+                                               ]
+                 },
+    "layout":  null,
+    "stage":  "topology",
+    "result":  null
+}

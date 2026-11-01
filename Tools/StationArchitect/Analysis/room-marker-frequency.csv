@@ -1,0 +1,124 @@
+label,defaultPoolMapsPresent,allStationMapsPresent,maps,closedDoorAreas
+AI,5,5,Elkridge; Marathon; Packed; Sushi; Tram2,Elkridge:15; Marathon:8; Packed:14; Sushi:16; Tram2:18
+AI Core,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Relic; Snowball; Sushi; Tram2; gear,Bagel:2; Hike:22; Marathon:7; Plasma:2; Relic:45; Snowball:2; gear:2
+AI Foyer,0,1,Relic,Relic:46
+AI Power,4,4,Elkridge; Plasma; Snowball; Sushi,Elkridge:17; Plasma:30; Snowball:10; Sushi:8
+AI Sat,2,2,Bagel; Marathon,Bagel:35; Marathon:1
+AI Upload,7,9,Box; Elkridge; Exo; Packed; Plasma; Relic; Snowball; Sushi; gear,Box:32; Elkridge:6; Exo:26; Packed:3; Plasma:26; Relic:29; Sushi:19; gear:18
+AME,9,12,Box; Elkridge; Exo; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Box:45; Elkridge:30; Exo:1; Marathon:42; Packed:33; Plasma:48; Relic:39; Saltern:15; Snowball:30; Sushi:30; Tram2:50; gear:40
+Air Tunnel,0,1,Relic,
+Anchor,5,8,Elkridge; Hike; Packed; Plasma; Relic; Snowball; Sushi; gear,Elkridge:15; Hike:9; Packed:3; Plasma:9; Relic:42; Snowball:9; Sushi:55; gear:23
+Anomaly,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:15; Box:84; Elkridge:33; Exo:62; Hike:21; Marathon:36; Packed:24; Plasma:65; Saltern:60; Snowball:29; Sushi:37; Tram2:41; gear:46
+Armory,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:18; Box:23; Elkridge:9; Exo:12; Hike:13; Packed:12; Plasma:30; Saltern:15; Snowball:21; Sushi:32
+Arrivals,10,14,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:90; Box:68; Elkridge:68; Exo:42; Hike:150; Marathon:149; Packed:20; Plasma:151; Relic:47; Saltern:58; Snowball:77; Sushi:31; Tram2:45; gear:92
+Artifact,10,12,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:52; Box:55; Box:25; Elkridge:34; Exo:40; Marathon:24; Packed:24; Plasma:49; Saltern:60; Snowball:44; Sushi:43; Tram2:37; Tram2:27; gear:68
+Assembly Room,0,1,Relic,Relic:46
+Atmos,10,14,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:134; Box:202; Elkridge:168; Exo:46; Hike:49; Marathon:36; Packed:152; Plasma:171; Relic:79; Saltern:145; Snowball:126; Sushi:160; Tram2:157; gear:204
+Bar,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:96; Box:96; Elkridge:19; Exo:77; Hike:15; Marathon:91; Packed:48; Plasma:20; Saltern:88; Snowball:165; Sushi:40; Tram2:30; gear:168
+Botany,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:113; Box:67; Elkridge:42; Exo:62; Hike:24; Marathon:71; Packed:41; Plasma:49; Saltern:42; Snowball:59; Sushi:102; Tram2:59; gear:17
+Boxing ring,0,1,gear,gear:71
+Bridge,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:41; Box:81; Exo:145; Hike:44; Marathon:101; Packed:60; Plasma:79; Saltern:50; Snowball:55; Sushi:114; Tram2:69; gear:68
+Brig,6,8,Bagel; Elkridge; Marathon; Plasma; Saltern; Snowball; Sushi; gear,Bagel:23; Elkridge:67; Marathon:21; Plasma:145; Saltern:2; Snowball:63; Sushi:115; gear:67
+Brig Med,3,4,Bagel; Exo; Sushi; gear,Bagel:8; Exo:14; gear:16
+CE,10,12,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:15; Box:34; Elkridge:13; Exo:15; Marathon:20; Packed:18; Plasma:30; Saltern:14; Snowball:12; Sushi:16; Tram2:25; gear:23
+CMO,10,12,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:15; Box:24; Exo:17; Marathon:15; Packed:15; Plasma:24; Saltern:14; Snowball:12; Sushi:27; Tram2:30; gear:11
+Captain,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:13; Box:63; Elkridge:21; Exo:24; Hike:11; Marathon:36; Packed:19; Plasma:31; Saltern:12; Snowball:20; Sushi:28; Tram2:10; gear:19
+Cargo,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:98; Box:38; Elkridge:27; Exo:39; Marathon:49; Packed:20; Plasma:24; Saltern:67; Snowball:24; Sushi:47; Tram2:28; gear:13
+Cargo Bay,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:91; Box:117; Elkridge:106; Exo:202; Hike:33; Marathon:124; Packed:79; Plasma:165; Saltern:21; Snowball:93; Sushi:62; Tram2:131; gear:148
+Cargo Telecoms,1,1,Exo,Exo:6
+Chapel,10,13,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:77; Box:79; Elkridge:38; Exo:67; Marathon:77; Packed:25; Plasma:62; Saltern:20; Snowball:53; Sushi:83; Tram2:72; gear:64
+Checkpoint,8,9,Box; Elkridge; Exo; Marathon; Packed; Plasma; Snowball; Sushi; gear,Box:18; Box:12; Elkridge:12; Elkridge:12; Elkridge:12; Exo:20; Marathon:12; Marathon:12; Packed:6; Plasma:20; Snowball:15; Sushi:10; gear:10; gear:11
+Chem,10,14,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:35; Box:33; Elkridge:31; Exo:28; Hike:14; Marathon:40; Packed:39; Plasma:41; Relic:25; Saltern:28; Snowball:30; Sushi:36; Tram2:80; gear:46
+Clown & Mime Room,1,1,Exo,Exo:16
+Command,1,1,Plasma,Plasma:16; Plasma:61
+Command Telecoms,1,1,Exo,
+Common Telecoms,1,1,Exo,Exo:38
+Control Room,0,1,Relic,
+Courtroom,8,9,Bagel; Box; Elkridge; Marathon; Packed; Snowball; Sushi; Tram2; gear,Box:46; Elkridge:26; Marathon:42; Packed:23; Sushi:31; Tram2:41; gear:109
+Crew Sleeping Area,0,1,Relic,Relic:50
+Cryopods,8,10,Bagel; Box; Elkridge; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; gear,Bagel:20; Box:39; Elkridge:15; Marathon:40; Packed:106; Plasma:25; Saltern:20; Snowball:54; Sushi:28; gear:65
+Cryosleep,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:16; Box:9; Elkridge:13; Exo:15; Hike:12; Marathon:15; Packed:6; Plasma:27; Saltern:9; Snowball:12; Sushi:6; Tram2:12; gear:25
+Detective,10,11,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Snowball; Sushi; Tram2; gear,Bagel:25; Box:30; Elkridge:10; Exo:19; Marathon:20; Packed:25; Plasma:20; Snowball:18; Sushi:20; Tram2:24; gear:28
+Disposals,10,12,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2,Bagel:30; Box:12; Elkridge:24; Exo:77; Hike:22; Marathon:22; Packed:14; Plasma:38; Saltern:17; Snowball:18; Sushi:30; Tram2:29
+Docking Arm,1,1,Sushi,Sushi:87
+Dorms,10,12,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Snowball; Sushi; Tram2; gear,Bagel:94; Box:63; Elkridge:62; Exo:55; Hike:21; Marathon:64; Plasma:79; Snowball:57; Sushi:109; Tram2:37; gear:63
+EVA Storage,10,14,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:20; Box:28; Elkridge:30; Exo:12; Hike:6; Marathon:25; Packed:26; Plasma:53; Relic:18; Saltern:23; Snowball:22; Sushi:23; Tram2:30; gear:54
+Engineering,10,14,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:20; Box:52; Elkridge:120; Exo:28; Hike:36; Marathon:9; Packed:61; Plasma:49; Relic:24; Saltern:23; Snowball:24; Sushi:97; Tram2:47; gear:77
+Escape Pod,2,4,Elkridge; Marathon; Saltern; gear,Elkridge:14; Elkridge:6; Elkridge:6; Elkridge:6; Elkridge:6; Elkridge:6; Marathon:42; Marathon:5; Saltern:1; Saltern:37; gear:5; gear:45; gear:3; gear:3
+Escape Pod E,1,1,Packed,Packed:6
+Escape Pod N,1,1,Plasma,Plasma:4
+Escape Pod NE,2,2,Packed; Sushi,Packed:6; Sushi:33; Sushi:6
+Escape Pod NW,1,1,Plasma,Plasma:6
+Escape Pod S,1,1,Plasma,Plasma:1
+Escape Pod SE,3,3,Packed; Plasma; Sushi,Packed:6; Plasma:6; Sushi:21
+Escape Pod SW,1,1,Plasma,Plasma:3
+Evac,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Relic; Snowball; Sushi; Tram2; gear,Bagel:105; Box:73; Elkridge:78; Exo:24; Hike:104; Marathon:113; Packed:51; Plasma:72; Relic:40; Snowball:72; Sushi:120; Tram2:113; gear:104
+General,1,1,Bagel,Bagel:12
+Genpop,2,2,Exo; Sushi,Exo:110; Sushi:50
+Grav,9,11,Bagel; Elkridge; Exo; Marathon; Packed; Plasma; Relic; Snowball; Sushi; Tram2; gear,Bagel:4; Elkridge:24; Exo:9; Marathon:5; Plasma:25; Relic:9; Snowball:22; Sushi:55; Tram2:16; gear:12
+HOP,10,14,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:27; Box:35; Elkridge:19; Exo:23; Hike:20; Marathon:28; Packed:24; Plasma:27; Relic:21; Saltern:24; Snowball:20; Sushi:23; Tram2:21; gear:19
+HOS,9,11,Box; Elkridge; Exo; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Box:23; Elkridge:17; Exo:26; Marathon:35; Packed:18; Plasma:25; Saltern:12; Snowball:15; Sushi:20; Tram2:22; gear:17
+Janitor,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:30; Box:24; Elkridge:18; Exo:29; Hike:13; Marathon:15; Packed:16; Plasma:18; Saltern:11; Snowball:22; Sushi:25; Tram2:18; gear:33
+Kitchen,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:113; Box:48; Elkridge:74; Exo:40; Hike:21; Marathon:47; Packed:20; Plasma:35; Saltern:42; Snowball:49; Sushi:102; Tram2:67; gear:54
+Law Office,8,9,Bagel; Box; Elkridge; Exo; Marathon; Packed; Snowball; Sushi; gear,Bagel:21; Box:20; Elkridge:18; Exo:24; Marathon:30; Packed:19; Snowball:18; Sushi:12; gear:22
+Library,9,11,Bagel; Elkridge; Exo; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:69; Elkridge:49; Exo:76; Marathon:39; Packed:25; Plasma:46; Saltern:53; Snowball:51; Sushi:45; Tram2:34; gear:132
+Medbay,9,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:15; Box:46; Elkridge:61; Exo:54; Hike:36; Marathon:45; Plasma:63; Relic:61; Saltern:20; Snowball:57; Sushi:56; Tram2:85; gear:57
+Medical,4,6,Elkridge; Marathon; Packed; Saltern; Sushi; gear,Elkridge:23; Marathon:65; Packed:9; Saltern:56; Sushi:42; gear:88
+Medical Telecoms,1,1,Exo,Exo:4
+Mini-Armory,1,1,Exo,Exo:10
+Morgue,10,13,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:36; Box:33; Elkridge:17; Exo:44; Marathon:30; Packed:32; Plasma:35; Relic:24; Saltern:20; Snowball:35; Sushi:21; Tram2:36; gear:46
+NW Escape Pod,1,1,Exo,Exo:6
+Observation,0,1,Relic,Relic:29
+PA Control,8,10,Box; Elkridge; Exo; Marathon; Packed; Saltern; Snowball; Sushi; Tram2; gear,Box:30; Elkridge:33; Exo:30; Marathon:41; Packed:30; Snowball:52; Sushi:59; Tram2:49; gear:35
+Perma,3,5,Bagel; Box; Packed; Saltern; gear,Bagel:99; Box:58; Packed:79; Saltern:18; gear:75
+Plasma Pit #045,1,1,Plasma,Plasma:41
+Plasma Pit #046,1,1,Plasma,Plasma:57
+Pool,0,1,gear,gear:78
+Psychology,4,4,Elkridge; Exo; Plasma; Sushi,Elkridge:18; Exo:14; Plasma:25; Sushi:12
+QM,10,12,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:15; Box:32; Exo:14; Marathon:15; Packed:10; Plasma:25; Saltern:12; Snowball:16; Sushi:27; Tram2:24; gear:25
+RD,10,12,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:20; Box:27; Elkridge:17; Exo:17; Marathon:20; Packed:17; Plasma:30; Saltern:15; Snowball:14; Sushi:13; Tram2:27; gear:18
+Reporter,5,5,Box; Elkridge; Exo; Plasma; Sushi,Box:25; Elkridge:20; Exo:16; Plasma:13; Sushi:17
+Reporter's office,0,1,gear,gear:14
+Research,9,11,Bagel; Box; Elkridge; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2,Bagel:41; Box:92; Elkridge:18; Hike:40; Marathon:25; Packed:74; Plasma:25; Saltern:34; Snowball:60; Sushi:54; Tram2:35
+Robotics,10,12,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:25; Box:62; Elkridge:25; Exo:40; Marathon:55; Packed:39; Plasma:25; Saltern:34; Snowball:31; Sushi:34; Tram2:53; gear:20
+SMES,8,11,Bagel; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; gear,Bagel:24; Elkridge:120; Exo:91; Hike:43; Marathon:15; Packed:50; Plasma:45; Saltern:96; Snowball:21; Sushi:15; gear:30
+SW Escape Pod,1,1,Exo,Exo:6
+Salvage,9,11,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Saltern; Sushi; Tram2; gear,Bagel:60; Box:59; Elkridge:43; Exo:44; Marathon:39; Packed:23; Plasma:73; Saltern:29; Sushi:62; Tram2:60; gear:31
+Science,6,9,Elkridge; Exo; Marathon; Plasma; Relic; Saltern; Snowball; Sushi; gear,Elkridge:32; Exo:21; Marathon:20; Plasma:55; Relic:55; Saltern:29; Snowball:53; Sushi:15
+Science Telecoms,1,1,Exo,Exo:6
+Secure Storage,0,1,Relic,Relic:25
+Security,7,11,Bagel; Elkridge; Exo; Hike; Packed; Plasma; Relic; Saltern; Snowball; Tram2; gear,Bagel:33; Elkridge:37; Exo:68; Hike:40; Packed:38; Plasma:12; Relic:31; Saltern:66; Snowball:38; Tram2:34; gear:89
+Security (West),0,1,Relic,Relic:12
+Security Telecoms,1,1,Exo,Exo:4
+Server,8,10,Bagel; Box; Exo; Marathon; Packed; Saltern; Snowball; Sushi; Tram2; gear,Bagel:9; Box:6; Exo:62; Marathon:6; Packed:6; Saltern:2; Snowball:3; Sushi:6; Tram2:9; gear:6
+Service,4,5,Elkridge; Marathon; Snowball; Sushi; gear,Elkridge:78; Marathon:17; Snowball:22; Sushi:130; gear:65
+Service Telecoms,1,1,Exo,Exo:6
+Solars,1,3,Saltern; Tram2; gear,Saltern:4; Saltern:16; Saltern:9; Tram2:10; gear:6; gear:6; gear:8; gear:14; gear:9
+Solars E,2,2,Bagel; Exo,Bagel:9; Exo:125
+Solars N,3,3,Bagel; Elkridge; Snowball,Bagel:9; Elkridge:10; Snowball:9
+Solars NE,4,4,Marathon; Packed; Plasma; Sushi,Marathon:9; Packed:9; Plasma:9; Plasma:9; Sushi:2
+Solars NW,5,5,Box; Exo; Marathon; Plasma; Sushi,Box:9; Exo:32; Marathon:6; Plasma:1; Sushi:9
+Solars North,0,1,Relic,
+Solars S,2,2,Bagel; Elkridge,Bagel:12; Elkridge:10
+Solars SE,2,2,Box; Sushi,Box:9; Box:9; Sushi:12
+Solars SW,4,4,Box; Exo; Packed; Plasma,Box:9; Exo:32; Packed:9; Plasma:4
+Solars South,0,1,Relic,
+Solars W,1,1,Bagel,Bagel:9
+Southern Escape Pods,1,1,Exo,Exo:15
+Supply,1,2,Elkridge; gear,Elkridge:34; gear:31
+Surgery,7,8,Bagel; Elkridge; Marathon; Packed; Plasma; Snowball; Sushi; gear,Bagel:12; Elkridge:15; Marathon:12; Marathon:12; Packed:16; Plasma:21; Snowball:15; Sushi:20; gear:24
+TEG,9,12,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Relic; Saltern; Sushi; Tram2; gear,Bagel:184; Box:185; Elkridge:82; Exo:205; Marathon:120; Packed:75; Plasma:99; Relic:64; Saltern:145; Sushi:99; Tram2:106; gear:96
+TEG Control Room,1,1,Plasma,Plasma:36
+Tech Storage,1,1,Plasma,Plasma:26
+Tech Vault,7,9,Bagel; Box; Elkridge; Marathon; Packed; Saltern; Snowball; Sushi; gear,Bagel:32; Box:56; Elkridge:8; Marathon:19; Packed:16; Saltern:10; Snowball:6; Sushi:20; gear:29
+Telecoms,9,13,Bagel; Box; Elkridge; Hike; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:20; Box:60; Elkridge:9; Hike:15; Marathon:45; Packed:36; Plasma:35; Relic:24; Saltern:24; Snowball:12; Sushi:40; Tram2:16; gear:9
+Tesla Storage,0,1,Saltern,Saltern:6
+Theater,5,5,Elkridge; Plasma; Snowball; Sushi; Tram2,Elkridge:18; Plasma:131; Snowball:165; Sushi:130
+Tools,10,14,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:25; Box:49; Elkridge:12; Exo:14; Hike:72; Marathon:45; Packed:20; Plasma:61; Relic:35; Saltern:19; Snowball:16; Sushi:45; Tram2:44; gear:38
+Vault,10,13,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; Tram2; gear,Bagel:12; Box:20; Elkridge:16; Exo:15; Hike:9; Marathon:20; Packed:12; Plasma:25; Saltern:12; Snowball:17; Sushi:16; Tram2:21; gear:28
+Virology,1,1,Plasma,Plasma:30
+Vox Break Room,1,1,Sushi,Sushi:12
+Warden,9,11,Bagel; Box; Elkridge; Exo; Marathon; Packed; Plasma; Saltern; Snowball; Sushi; gear,Bagel:24; Box:31; Elkridge:18; Exo:23; Marathon:32; Packed:6; Plasma:40; Saltern:8; Snowball:20; Sushi:22; gear:13
+evac,0,1,Saltern,Saltern:75
+nuclear fission explosive,10,14,Bagel; Box; Elkridge; Exo; Hike; Marathon; Packed; Plasma; Relic; Saltern; Snowball; Sushi; Tram2; gear,Bagel:12; Box:20; Elkridge:16; Exo:27; Hike:9; Marathon:20; Packed:12; Plasma:25; Relic:25; Saltern:12; Snowball:17; Sushi:16; Tram2:21; gear:28
+observatory,0,1,Saltern,Saltern:110

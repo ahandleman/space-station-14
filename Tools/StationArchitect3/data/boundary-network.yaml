@@ -1,0 +1,8 @@
+format: ss14-boundary-network-policy
+version: 1
+canvasPadding: 12
+maximumCanvasCells: 200000
+maximumSearchStates: 200000
+foreignStructureClearance: 1
+reservationClearance: 1
+interfaceApproachDepth: 2

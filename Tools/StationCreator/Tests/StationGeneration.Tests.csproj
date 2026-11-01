@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <IsTestProject>true</IsTestProject>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <RunSettingsFilePath>$(MSBuildThisFileDirectory)StationGeneration.runsettings</RunSettingsFilePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <ProjectReference Include="../Core/StationGeneration.csproj" />
+    <Compile Include="../../../Content.Tests/Shared/Procedural/StationGenerationTests.cs" Link="StationGenerationTests.cs" />
+    <Compile Include="../../../Content.Tests/Shared/Procedural/StationRegionTests.cs" Link="StationRegionTests.cs" />
+    <Compile Include="../../../Content.Tests/Shared/Procedural/StationMaintenanceTests.cs" Link="StationMaintenanceTests.cs" />
+    <Compile Include="../../../Content.Tests/Shared/Procedural/StationMaintenanceWidthTests.cs" Link="StationMaintenanceWidthTests.cs" />
+    <Compile Include="../../../Content.Tests/Shared/Procedural/StationHierarchyTests.cs" Link="StationHierarchyTests.cs" />
+    <Compile Include="../../../Content.Tests/Shared/Procedural/StationDefinitionTests.cs" Link="StationDefinitionTests.cs" />
+    <Compile Include="../../../Content.Tests/Shared/Procedural/StationCandidateTests.cs" Link="StationCandidateTests.cs" />
+  </ItemGroup>
+</Project>

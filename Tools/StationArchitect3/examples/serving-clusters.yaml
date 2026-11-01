@@ -1,0 +1,797 @@
+# Local serving relationships; repeat a suite without cross-binding its neighbors.
+format: ss14-station-architect
+schemaVersion: 3
+defaults:
+  requirement:
+    priority: mandatory
+    weight: 100
+accessProfiles:
+- id: public
+  description: Planning actor credentials for public routes; interface access clauses remain explicit.
+  levels:
+  - public
+  canTraverseVacuum: false
+- id: hop
+  description: Planning actor credentials for hop routes; interface access clauses remain explicit.
+  levels:
+  - public
+  - HeadOfPersonnel
+  - Command
+  - Maintenance
+  canTraverseVacuum: false
+- id: kitchen
+  description: Planning actor credentials for kitchen routes; interface access clauses remain explicit.
+  levels:
+  - public
+  - Kitchen
+  - Service
+  - Maintenance
+  canTraverseVacuum: false
+- id: bar
+  description: Planning actor credentials for bar routes; interface access clauses remain explicit.
+  levels:
+  - public
+  - Bar
+  - Service
+  - Maintenance
+  canTraverseVacuum: false
+environments:
+- id: habitable
+  description: Sealed ordinary crew atmosphere.
+  pressure: standard
+  enclosure: sealed
+  temperature: ambient
+grids:
+- id: station
+  description: Primary engine grid. Outboard supported regions can remain on this grid even across vacuum.
+  kind: station
+  support: mixed
+interfaces:
+- id: service_counter
+  description: Serving surface with working/customer approach floor on opposite sides. Does not fulfill
+    a routine walking edge.
+  capabilities:
+  - item_transfer
+  - speech
+  - visibility
+  construction:
+  - TableCounterMetal
+  normalState: open
+  access:
+    anyOf: []
+  airtight: false
+- id: hop_service_window
+  description: HoP-controlled counter/windoor service border; items transfer during a controlled open
+    cycle. Staff ingress is a separate edge.
+  capabilities:
+  - item_transfer
+  - speech
+  - visibility
+  construction:
+  - TableCounterMetal
+  - WindoorHeadOfPersonnelLocked
+  normalState: controlled
+  access:
+    anyOf:
+    - - HeadOfPersonnel
+  airtight: true
+id: serving_clusters
+name: Repeated serving clusters
+description: Small complete V3 example. Repeat a functional parent without cross-binding its customer
+  room to another instance.
+domains: []
+assemblies: []
+extensions: []
+spaces:
+- id: service
+  name: Service
+  kind: department
+  description: Service is made of functional clusters distributed along public circulation. Food production
+    stays grouped; chapel, library and entertainment can occupy separate useful locations.
+  tags:
+  - distributed
+  count:
+    min: 1
+    preferred: 1
+    max: 1
+  placement:
+    nesting: owned
+    zone: any
+    grid: station
+  requirements: []
+  features: []
+  spaces:
+  - id: hospitality
+    name: Food and drink service cluster
+    kind: group
+    description: Repeated functional cluster; owned siblings are not physically contained until a relationship
+      requires it.
+    tags: []
+    count:
+      min: 1
+      preferred: 1
+      max: 2
+    placement:
+      nesting: owned
+      zone: any
+      grid: station
+    requirements: []
+    features: []
+    spaces:
+    - id: kitchen
+      name: Kitchen
+      kind: room
+      description: Food preparation, cooking and serving clearance.
+      tags:
+      - food
+      - public_service
+      count:
+        min: 1
+        preferred: 1
+        max: 1
+      placement:
+        nesting: owned
+        zone: interior
+        grid: station
+        surface: floor
+      requirements:
+      - id: floor_area
+        type: metric
+        priority: mandatory
+        weight: 100
+        description: Exclusive usable floor; descendants never count twice.
+        parameters:
+          metric: area.exclusive
+          scale: 50
+          min: 25
+          preferred: 50
+          max: 95
+        basis: design_policy
+        evidence:
+        - tools_stationarchitect3_catalog_md
+      features: []
+      spaces: []
+      evidence:
+      - bagel_23370
+      - box_27725
+      - packed_5461
+      - packed_5502
+      environment: habitable
+      access: kitchen
+      relationships:
+      - id: access_service_hospitality_kitchen
+        type: route
+        from:
+          space: .
+        to:
+          space: /public_hall
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        priority: mandatory
+        weight: 100
+        description: Continuous usable route under declared access; an interaction counter or abstract
+          cable does not supply walking access.
+        parameters:
+          mode: crew
+          accessProfile: kitchen
+          minWidth: 2
+          through: []
+          within: station
+          avoid:
+          - ../bar_commons
+        basis: design_policy
+        evidence:
+        - tools_stationarchitect3_catalog_md
+    - id: bar
+      name: Bar workspace
+      kind: room
+      description: Public refreshments and social space.
+      tags:
+      - food
+      - public_service
+      count:
+        min: 1
+        preferred: 1
+        max: 1
+      placement:
+        nesting: owned
+        zone: interior
+        grid: station
+        surface: floor
+      requirements:
+      - id: floor_area
+        type: metric
+        priority: mandatory
+        weight: 100
+        description: Exclusive usable floor; descendants never count twice.
+        parameters:
+          metric: area.exclusive
+          scale: 50
+          min: 30
+          preferred: 50
+          max: 90
+        basis: design_policy
+        evidence:
+        - tools_stationarchitect3_catalog_md
+      features: []
+      spaces: []
+      evidence:
+      - bagel_16141
+      - box_27409
+      - packed_2921
+      - packed_2922
+      environment: habitable
+      access: bar
+      relationships:
+      - id: access_service_hospitality_bar
+        type: route
+        from:
+          space: .
+        to:
+          space: /public_hall
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        priority: mandatory
+        weight: 100
+        description: Continuous usable route under declared access; an interaction counter or abstract
+          cable does not supply walking access.
+        parameters:
+          mode: crew
+          accessProfile: bar
+          minWidth: 2
+          through: []
+          within: station
+          avoid:
+          - ../bar_commons
+        basis: design_policy
+        evidence:
+        - tools_stationarchitect3_catalog_md
+    - id: bar_commons
+      name: Bar and dining commons
+      kind: room
+      description: Public seating/customer floor shared by the kitchen and bar fronts. It is not bar staff
+        workspace.
+      tags:
+      - public_destination
+      count:
+        min: 1
+        preferred: 1
+        max: 1
+      placement:
+        nesting: owned
+        zone: interior
+        grid: station
+        surface: floor
+      environment: habitable
+      access: public
+      requirements:
+      - id: floor_area
+        type: metric
+        priority: mandatory
+        weight: 100
+        description: Exclusive usable floor.
+        parameters:
+          metric: area.exclusive
+          scale: 80
+          min: 45
+          preferred: 80
+          max: 160
+        basis: design_policy
+        evidence:
+        - tools_stationarchitect3_catalog_md
+      features: []
+      spaces: []
+      evidence:
+      - tools_stationarchitect3_catalog_md
+      relationships:
+      - id: access_service_hospitality_bar_commons
+        type: route
+        from:
+          space: .
+        to:
+          space: /public_hall
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        priority: mandatory
+        weight: 100
+        description: Continuous usable route under declared access; an interaction counter or abstract
+          cable does not supply walking access.
+        parameters:
+          mode: crew
+          accessProfile: public
+          minWidth: 2
+          through: []
+          within: station
+          avoid: []
+        basis: design_policy
+        evidence:
+        - tools_stationarchitect3_catalog_md
+    evidence:
+    - conversation_2026_10_31
+    relationships:
+    - id: kitchen_serves_shared_commons
+      type: shared_boundary
+      from:
+        space: ./kitchen
+      to:
+        space: ./bar_commons
+      matching:
+        targets: one
+        scope: same_parent
+        presence: require_target
+      priority: mandatory
+      weight: 100
+      description: Actual shared interface with usable approach floor on both sides; remote reachability
+        does not satisfy it.
+      parameters:
+        interface: service_counter
+        minLength: 3
+        preferredLength: 3
+        minSegments: 1
+        maxSegments: 1
+        continuous: true
+      basis: user_requirement
+      evidence:
+      - conversation_2026_10_31
+      - packed_5813
+    - id: bar_serves_shared_commons
+      type: shared_boundary
+      from:
+        space: ./bar
+      to:
+        space: ./bar_commons
+      matching:
+        targets: one
+        scope: same_parent
+        presence: require_target
+      priority: mandatory
+      weight: 100
+      description: Actual shared interface with usable approach floor on both sides; remote reachability
+        does not satisfy it.
+      parameters:
+        interface: service_counter
+        minLength: 4
+        preferredLength: 4
+        minSegments: 1
+        maxSegments: 1
+        continuous: true
+      basis: user_requirement
+      evidence:
+      - conversation_2026_10_31
+      - packed_572
+  evidence:
+  - bagel_23370
+  - box_27725
+  - packed_5461
+  - packed_5502
+  - bagel_16140
+  - box_27544
+  - packed_2194
+  - packed_6265
+  - packed_2431
+  - elkridge_14614
+  - plasma_22234
+  - bagel_16141
+  - box_27409
+  - packed_2921
+  - packed_2922
+  - bagel_23375
+- id: command
+  name: Command
+  kind: department
+  description: Bridge and command offices behind a connected command boundary. Bounds and room ownership
+    are authored planning policy, informed by the map evidence rather than exact traced partitions.
+  tags: []
+  count:
+    min: 1
+    preferred: 1
+    max: 1
+  placement:
+    nesting: owned
+    zone: any
+    grid: station
+  requirements: []
+  features: []
+  spaces:
+  - id: personnel
+    name: Personnel service cluster
+    kind: group
+    description: Repeated functional cluster; owned siblings are not physically contained until a relationship
+      requires it.
+    tags: []
+    count:
+      min: 1
+      preferred: 1
+      max: 2
+    placement:
+      nesting: owned
+      zone: any
+      grid: station
+    requirements: []
+    features: []
+    spaces:
+    - id: hop_office
+      name: Head of Personnel's office
+      kind: room
+      description: Personnel interviews and access administration; has a controlled public entrance.
+      tags: []
+      count:
+        min: 1
+        preferred: 1
+        max: 1
+      placement:
+        nesting: owned
+        zone: interior
+        grid: station
+        surface: floor
+      requirements:
+      - id: floor_area
+        type: metric
+        priority: mandatory
+        weight: 100
+        description: Exclusive usable floor; descendants never count twice.
+        parameters:
+          metric: area.exclusive
+          scale: 40
+          min: 25
+          preferred: 40
+          max: 70
+        basis: design_policy
+        evidence:
+        - tools_stationarchitect3_catalog_md
+      features: []
+      spaces: []
+      evidence:
+      - bagel_21779
+      - box_27722
+      - packed_4988
+      - packed_8315
+      environment: habitable
+      access: hop
+      relationships:
+      - id: access_command_personnel_hop_office
+        type: route
+        from:
+          space: .
+        to:
+          space: /public_hall
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        priority: mandatory
+        weight: 100
+        description: Continuous usable route under declared access; an interaction counter or abstract
+          cable does not supply walking access.
+        parameters:
+          mode: crew
+          accessProfile: hop
+          minWidth: 2
+          through: []
+          within: station
+          avoid:
+          - ../hop_line
+        basis: design_policy
+        evidence:
+        - tools_stationarchitect3_catalog_md
+    - id: hop_line
+      name: HoP public queue
+      kind: room
+      description: Public queue and customer approach to the HoP counter, outside the restricted office.
+      tags:
+      - public_destination
+      count:
+        min: 1
+        preferred: 1
+        max: 1
+      placement:
+        nesting: owned
+        zone: interior
+        grid: station
+        surface: floor
+      environment: habitable
+      access: public
+      requirements:
+      - id: floor_area
+        type: metric
+        priority: mandatory
+        weight: 100
+        description: Exclusive usable floor.
+        parameters:
+          metric: area.exclusive
+          scale: 24
+          min: 12
+          preferred: 24
+          max: 50
+        basis: design_policy
+        evidence:
+        - tools_stationarchitect3_catalog_md
+      features: []
+      spaces: []
+      evidence:
+      - tools_stationarchitect3_catalog_md
+      relationships:
+      - id: access_command_personnel_hop_line
+        type: route
+        from:
+          space: .
+        to:
+          space: /public_hall
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        priority: mandatory
+        weight: 100
+        description: Continuous usable route under declared access; an interaction counter or abstract
+          cable does not supply walking access.
+        parameters:
+          mode: crew
+          accessProfile: public
+          minWidth: 2
+          through: []
+          within: station
+          avoid: []
+        basis: design_policy
+        evidence:
+        - tools_stationarchitect3_catalog_md
+    evidence:
+    - conversation_2026_10_31
+    relationships:
+    - id: hop_serves_queue
+      type: shared_boundary
+      from:
+        space: ./hop_office
+      to:
+        space: ./hop_line
+      matching:
+        targets: one
+        scope: same_parent
+        presence: require_target
+      priority: mandatory
+      weight: 100
+      description: Actual shared interface with usable approach floor on both sides; remote reachability
+        does not satisfy it.
+      parameters:
+        interface: hop_service_window
+        minLength: 2
+        preferredLength: 2
+        minSegments: 1
+        maxSegments: 1
+        continuous: true
+      basis: user_requirement
+      evidence:
+      - conversation_2026_10_31
+      - box_5585
+  evidence:
+  - bagel_16139
+  - box_27707
+  - packed_405
+  - packed_7925
+  - bagel_15423
+  - box_27711
+  - bagel_21779
+  - box_27722
+  - packed_4988
+  - packed_8315
+  - bagel_24425
+  - box_27735
+  - plasma_22160
+  - plasma_22241
+  - sushi_77
+- id: public_hall
+  name: Public circulation
+  kind: passage
+  description: Public circulation
+  tags:
+  - public_circulation
+  count:
+    min: 1
+    preferred: 1
+    max: 1
+  placement:
+    nesting: owned
+    zone: any
+    grid: station
+    surface: floor
+  environment: habitable
+  access: public
+  requirements:
+  - id: floor_area
+    type: metric
+    priority: mandatory
+    weight: 100
+    description: Exclusive usable floor.
+    parameters:
+      metric: area.exclusive
+      scale: 1600
+      min: 300
+      preferred: 1600
+      max: 5000
+    basis: design_policy
+    evidence:
+    - tools_stationarchitect3_catalog_md
+  - id: aspect
+    type: metric
+    priority: mandatory
+    weight: 100
+    description: Avoid unusably elongated working space.
+    parameters:
+      metric: shape.aspect_ratio
+      scale: 1
+      min: 1
+      max: 3
+    basis: design_policy
+    evidence:
+    - tools_stationarchitect3_catalog_md
+  - id: clear_width
+    type: metric
+    priority: mandatory
+    weight: 100
+    description: Clear passage width; wider maintenance voids must become named rooms.
+    parameters:
+      metric: corridor.clear_width
+      scale: 1
+      min: 3
+      preferred: 3
+      max: 5
+    basis: design_policy
+    evidence:
+    - tools_stationarchitect3_catalog_md
+  features: []
+  spaces: []
+  evidence:
+  - tools_stationarchitect3_catalog_md
+evidence:
+- id: conversation_2026_10_31
+  kind: user
+  source: conversation:2026-10-31
+  description: Required service borders, nested spaces, weighted mandatory/desired constraints, and outboard
+    TEG burn facilities requested by the user.
+- id: tools_stationarchitect3_catalog_md
+  kind: policy
+  source: Tools/StationArchitect3/CATALOG.md
+  description: Authored baseline sizes, counts, access and layout requirements; adjust intentionally for
+    other station archetypes.
+- id: bagel_23370
+  kind: map
+  source: Resources/Maps/bagel.yml#uid=23370
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: box_27725
+  kind: map
+  source: Resources/Maps/box.yml#uid=27725
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_5461
+  kind: map
+  source: Resources/Maps/packed.yml#uid=5461
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_5502
+  kind: map
+  source: Resources/Maps/packed.yml#uid=5502
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: bagel_16140
+  kind: map
+  source: Resources/Maps/bagel.yml#uid=16140
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: box_27544
+  kind: map
+  source: Resources/Maps/box.yml#uid=27544
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_2194
+  kind: map
+  source: Resources/Maps/packed.yml#uid=2194
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_6265
+  kind: map
+  source: Resources/Maps/packed.yml#uid=6265
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_2431
+  kind: map
+  source: Resources/Maps/packed.yml#uid=2431
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: elkridge_14614
+  kind: map
+  source: Resources/Maps/elkridge.yml#uid=14614
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: plasma_22234
+  kind: map
+  source: Resources/Maps/plasma.yml#uid=22234
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: bagel_16141
+  kind: map
+  source: Resources/Maps/bagel.yml#uid=16141
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: box_27409
+  kind: map
+  source: Resources/Maps/box.yml#uid=27409
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_2921
+  kind: map
+  source: Resources/Maps/packed.yml#uid=2921
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_2922
+  kind: map
+  source: Resources/Maps/packed.yml#uid=2922
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: bagel_23375
+  kind: map
+  source: Resources/Maps/bagel.yml#uid=23375
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: bagel_16139
+  kind: map
+  source: Resources/Maps/bagel.yml#uid=16139
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: box_27707
+  kind: map
+  source: Resources/Maps/box.yml#uid=27707
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_405
+  kind: map
+  source: Resources/Maps/packed.yml#uid=405
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_7925
+  kind: map
+  source: Resources/Maps/packed.yml#uid=7925
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: bagel_15423
+  kind: map
+  source: Resources/Maps/bagel.yml#uid=15423
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: box_27711
+  kind: map
+  source: Resources/Maps/box.yml#uid=27711
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: bagel_21779
+  kind: map
+  source: Resources/Maps/bagel.yml#uid=21779
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: box_27722
+  kind: map
+  source: Resources/Maps/box.yml#uid=27722
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_4988
+  kind: map
+  source: Resources/Maps/packed.yml#uid=4988
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_8315
+  kind: map
+  source: Resources/Maps/packed.yml#uid=8315
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: bagel_24425
+  kind: map
+  source: Resources/Maps/bagel.yml#uid=24425
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: box_27735
+  kind: map
+  source: Resources/Maps/box.yml#uid=27735
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: plasma_22160
+  kind: map
+  source: Resources/Maps/plasma.yml#uid=22160
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: plasma_22241
+  kind: map
+  source: Resources/Maps/plasma.yml#uid=22241
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: sushi_77
+  kind: map
+  source: Resources/Maps/sushi.yml#uid=77
+  description: Mapped function or fixture reference; not a traced room polygon or universal layout rule.
+- id: packed_5813
+  kind: map
+  source: Resources/Maps/packed.yml#uid=5813
+  description: Kitchen counter facing the same customer floor as the bar front.
+- id: packed_572
+  kind: map
+  source: Resources/Maps/packed.yml#uid=572
+  description: Bar front faces the shared dining/customer region.
+- id: box_5585
+  kind: map
+  source: Resources/Maps/box.yml#uid=5585
+  description: HoP counter with paired windoors; staff airlocks are distinct.

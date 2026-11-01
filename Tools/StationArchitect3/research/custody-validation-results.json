@@ -1,0 +1,324 @@
+{
+  "format": "ss14-architect-custody-validation",
+  "version": 1,
+  "recordedAt": "2026-11-01T00:04:45.054173+00:00",
+  "scope": "Requested independent legal rooms, Atmos/TEG and Sentencing/Perma borders, shared Brig and native genpop fixture geometry. Native execution remains untested.",
+  "sourceHash": "88e371937a6b68db639ff64bc0eaaca6d1abb8a4c47971d917f1897e9a79dc5b",
+  "catalogSha256": "f407c2e88610e1d4dc669b750b213ac56ce1e2e81cce29a26e83fb1f8480597b",
+  "unitTests": {
+    "command": "python -m unittest discover -s Tools/StationArchitect3/tests",
+    "passed": 306,
+    "failed": 0,
+    "errors": 0,
+    "seconds": 218.538,
+    "logSha256": "4669d49d65d4e6afdb1e60f8fd936c1891754a8c74726157eda2e3765c956a56"
+  },
+  "placementMatrix": {
+    "format": "ss14-architect-department-matrix",
+    "passed": 135,
+    "qualityProfilesPassed": 128,
+    "schemaVersion": 1,
+    "scope": "Local placement inventory, fixture geometry and boundary approaches; station distribution and native operation await integration.",
+    "stationDistributionVerified": false,
+    "total": 135,
+    "scopes": 45,
+    "sizes": [
+      "0.85x",
+      "1.15x",
+      "1x"
+    ],
+    "sha256": "8718545e0bc925c51ab90b6601a901893691964f48ede53c8a1e3abce125d0df",
+    "command": "python Tools/StationArchitect3/departments.py --all --scales 0.85,1,1.15 --seed 1 --output .tmp/architect3-placement-resize-tests"
+  },
+  "selectedInventory": {
+    "selectedRooms": 132,
+    "selectedFeatures": 321,
+    "selectedNativeParts": 340
+  },
+  "targetedChecks": [
+    "Courtroom and Law Office each have independent local placement scopes outside the Security core.",
+    "No individual timed cells or BrigTimer features are selected.",
+    "Atmos and TEG Generator require an actual controlled shared border; a corridor path alone fails.",
+    "Perma has its controlled shared border and route through Sentencing.",
+    "Four independently configured native prisoner lockers serve the shared Brig.",
+    "Separate entry and release gates bind to the exact native prototype, direction and credential phase.",
+    "Admission cannot escape through the release gate; released credentials cannot reenter through admission.",
+    "Released prisoners reach all locker approaches and public circulation.",
+    "Adjacent opposing single-width gates cannot satisfy a bidirectional width-two route."
+  ],
+  "liveWorkbench": [
+    {
+      "department": "security",
+      "scope": "security/core",
+      "accepted": true,
+      "localLayoutVerified": true,
+      "nativeParts": 21,
+      "directionalGateTitles": [
+        "genpop_entry_turnstile: Sentencing -> Brig",
+        "genpop_exit_turnstile: Brig -> Sentencing"
+      ],
+      "custodyChecks": [
+        {
+          "cost": 0,
+          "facet": "layout_geometry",
+          "id": "security[0]/sentencing[0]::local_genpop_custody::spatial",
+          "measured": {
+            "gateInterfaces": {
+              "security[0]/sentencing[0]#brig_entry_gate[0]": "interface:15",
+              "security[0]/sentencing[0]#brig_exit_gate[0]": "interface:16"
+            },
+            "lockerParts": 4,
+            "nativeAdmissionTags": [
+              "GenpopEnter"
+            ],
+            "nativeIdPairingExpiryAndPropertyRetrieval": "not_evaluated",
+            "nativeReleaseTags": [
+              "GenpopLeave"
+            ],
+            "phaseRouteLengths": {
+              "admission": 2,
+              "release": 2,
+              "released_reentry": null,
+              "unserved_escape": null
+            }
+          },
+          "message": "Actual gate poses, credential phases, directed custody routes and every locker approach fit; native ID pairing, timing and retrieval remain unverified.",
+          "owner": "security[0]/sentencing[0]",
+          "priority": "mandatory",
+          "sourceRule": "security[0]/sentencing[0]::local_genpop_custody",
+          "status": "satisfied",
+          "tier": 0,
+          "type": "x_genpop_custody",
+          "weight": 100
+        },
+        {
+          "facet": "native_operation",
+          "id": "security[0]/sentencing[0]::local_genpop_custody",
+          "message": "No implemented evaluator for this requirement semantics.",
+          "owner": "security[0]/sentencing[0]",
+          "priority": "mandatory",
+          "status": "unknown",
+          "tier": 0,
+          "type": "x_genpop_custody",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "department": "engineering",
+      "scope": "engineering/core",
+      "accepted": true,
+      "localLayoutVerified": true,
+      "nativeParts": 56,
+      "directionalGateTitles": [],
+      "custodyChecks": []
+    }
+  ],
+  "advisoryQualityMisses": [
+    {
+      "scope": "security/core",
+      "size": "0.85x",
+      "metrics": [
+        {
+          "cost": 0.6379310344827591,
+          "measured": 0.46228448275862066,
+          "metric": "core.fill_ratio",
+          "min": 0.55,
+          "status": "needs_review",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "scope": "security/core",
+      "size": "1x",
+      "metrics": [
+        {
+          "cost": 0.8980343980343982,
+          "measured": 0.4265202702702703,
+          "metric": "core.fill_ratio",
+          "min": 0.55,
+          "status": "needs_review",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "scope": "security/core",
+      "size": "1.15x",
+      "metrics": [
+        {
+          "cost": 0.4312039312039313,
+          "measured": 0.4907094594594595,
+          "metric": "core.fill_ratio",
+          "min": 0.55,
+          "status": "needs_review",
+          "weight": 4
+        },
+        {
+          "cost": 0.07573149741824459,
+          "max": 0.25,
+          "measured": 0.2547332185886403,
+          "metric": "circulation.fraction",
+          "status": "needs_review",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "scope": "cargo",
+      "size": "0.85x",
+      "metrics": [
+        {
+          "cost": 0.13903743315508052,
+          "measured": 0.5308823529411765,
+          "metric": "core.fill_ratio",
+          "min": 0.55,
+          "status": "needs_review",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "scope": "silicon",
+      "size": "0.85x",
+      "metrics": [
+        {
+          "cost": 0.4568764568764572,
+          "measured": 0.48717948717948717,
+          "metric": "core.fill_ratio",
+          "min": 0.55,
+          "status": "needs_review",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "scope": "silicon",
+      "size": "1x",
+      "metrics": [
+        {
+          "cost": 0.44355644355644397,
+          "measured": 0.489010989010989,
+          "metric": "core.fill_ratio",
+          "min": 0.55,
+          "status": "needs_review",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "scope": "silicon",
+      "size": "1.15x",
+      "metrics": [
+        {
+          "cost": 0.03305785123967003,
+          "measured": 0.5454545454545454,
+          "metric": "core.fill_ratio",
+          "min": 0.55,
+          "status": "needs_review",
+          "weight": 4
+        },
+        {
+          "cost": 0.07843137254901933,
+          "max": 0.25,
+          "measured": 0.2549019607843137,
+          "metric": "circulation.fraction",
+          "status": "needs_review",
+          "weight": 4
+        }
+      ]
+    }
+  ],
+  "nativeSourceAudit": {
+    "success": true,
+    "counts": {
+      "prototypeFiles": 2210,
+      "nativeEntityPrototypeIds": 11198,
+      "generatedVariantIds": 120,
+      "nativeAccessLevelIds": 42,
+      "accessReferences": 165,
+      "evidenceReferences": 679,
+      "distinctMaps": 17,
+      "prototypeReferences": 254,
+      "distinctDeclaredPrototypes": 170,
+      "recordedHashesChecked": 139,
+      "errors": 0
+    },
+    "sha256": "f318903da3f4d381cfb8e7bed1d36478f9689c871ba2cd32509125d85426dea3",
+    "recordedSourcesCurrent": true
+  },
+  "nativeCustodyEvidence": {
+    "path": "research/custody-flow-correction.json",
+    "sha256": "bd32ba73f6f9a2b1f81e827b006233adecbc8043b4be39139b93c313e3791276"
+  },
+  "notEvaluated": [
+    "Native ID spawning and per-locker pairing",
+    "Native sentence expiry and zero-duration permanence",
+    "Native property retrieval",
+    "Native SS14 map export",
+    "Whole-station distribution and gameflow"
+  ],
+  "priorTools": {
+    "filesChecked": 253,
+    "changed": []
+  },
+  "implementationHashes": {
+    "architect/__init__.py": "9fb48c8042b7f0af25fc9354d67a8af8a4c3c3dac135a92675db19d399af4bd4",
+    "architect/boundary_network.py": "87135ebdc487dab259c82ab49a9acf43c89bcbcd6b95a0c0b82b633266ae0ece",
+    "architect/department_packing.py": "be6d9815caa81a4d5c065324677b3cbe67c6366afcb29e865a6f8ec67a9b8396",
+    "architect/department_rules.py": "25b1fbb046daf847badfaa087440e8a24e230ce4879e036a2780001cbfad68e5",
+    "architect/departments.py": "c6460973be6a5b813ea153bf6aa1d94f68533997b49f506c5e396a6135c931f3",
+    "architect/exterior.py": "f734a2765fc7f84219214158689f5cd87c18e552b6815ece4a20a0c512c71520",
+    "architect/fixtures.py": "6740b9ec5f56d67830e06601f342b7932e8bb2c1e3f2a37c216dc48fec122d15",
+    "architect/geometry.py": "bb84160c02323ae31d9ab80f9ddef46a80f021d03808452617a6b0fa8dd84c37",
+    "architect/instances.py": "83df684ba19f02df3df0db74fe548ff8be94cdb56be4c1e83179c0d272423e7f",
+    "architect/packing.py": "afa2bf199b98f13ee20c459b7d807cb047314dcb40b576fb333b4a80743ea27a",
+    "architect/policies.py": "ac639ed06230fba5f114c9c6121ae859000b3a1fedc6a5b397a06487cc72904a",
+    "architect/quality.py": "c50543f31334e171b31d443919b2e94890f713bf8754c244b8f3b3ee84697968",
+    "architect/render.py": "77fe07607d014d9aa8698ac33540a43efe9aa7c9611734362f86475667ca6208",
+    "architect/repair.py": "2e18e90e55bd4c3c163cb5d45b09c716eac37dc0c007de82e456ada2633f2ef9",
+    "architect/run.py": "0240cdc7720d65a00ebec89a0430a4ce70608f2a73ef9c333bcac2daa3168d90",
+    "architect/scenarios.py": "97c2f52aaaa9a22a3b7357fe9b11863fe1a6f703b61a9c9491c307129276fc95",
+    "architect/settings.py": "17e5d833c607d553aef1f548535fe562cef25aba05e529b3750a3568e0c5f880",
+    "architect/state.py": "32caf565c5374270876eb049a760864df3c1daec381541db10dc4b8ee0b7ac86",
+    "architect/verify.py": "af73b65983cb2359164de71dff45fa4db7d5d3a2749ba11e6a65cd00736f35db",
+    "benchmark.py": "fe47ad41fd85adf76d42852bdc6f6dc09d41bb7293042d34e4fa92be8a5259e1",
+    "catalog/standard-station.yaml": "f407c2e88610e1d4dc669b750b213ac56ce1e2e81cce29a26e83fb1f8480597b",
+    "data/boundary-network.yaml": "80dfb5901821042b80fcc2a1b84a23288cd6d48c296d2c2bb762e019248b238f",
+    "data/fixture-footprints.yaml": "298982894c373f4f9aa0fe310dd24fffc3eb14a02b3a7914d1e31763ee0b946b",
+    "data/layout-policy.yaml": "ee9742b33f9bc98dd5f9b44e5db4a7f0498dc0f659883039aee7eec2e0bb0b67",
+    "data/layout-quality.yaml": "5fa7c661c6ccad9037f5492415f61dc0821ea19a39d0f115c18ed2269324087e",
+    "departments.py": "78925396d039a1f939a98fa9cbc5e6e4aaeaf2af1d1d2efc5bac459eda221877",
+    "generate.py": "d79ddd2f5fb41736ac31bb49983152c30d9d06d4068e8d3abf35d1bd6c5758b1",
+    "schema/program.schema.json": "d710dfb36f129abea4e6af8ead6b7db3b464a0670fb4000b9b86bd2c7c2add10",
+    "tests/test_additional_dependencies.py": "a80690520b111116ecaf3a3677080e61c5476ee3a216b7cd77a5a79aaaf3ee59",
+    "tests/test_boundary_network.py": "e88719f68e4bc34ed3445bcc03e1b0c17ce9e9f793d3ae2e57426872786ae133",
+    "tests/test_catalog_contracts.py": "bf64a4b701f3e365dcedbde47d46d8e407830d255946bb0e6f6efd65241c213a",
+    "tests/test_catalog_department_policies.py": "4c5450203a84d35216d9e355f0a0d066e0bb8b508adb4a249a0a61c05600ae28",
+    "tests/test_comparative_furnishings.py": "75cd6a7dafbfe47d3d90070c8097f23149f664cc2f4b006bb195053ffface0ec",
+    "tests/test_custody_connections.py": "af757b691edc3d23c060210d78fa3de420ee578b4e5daa868f81e5bfb550ea62",
+    "tests/test_custody_fixture_geometry.py": "ec2380077de49cb55e2e029535a207c4baac2c8eadcc3a770d299a2696f29ba8",
+    "tests/test_custody_native_facts.py": "58edce65220db7b95a7ae639a1701aa88d9f0eec0bdb8e9eaddaeca06fe11187",
+    "tests/test_department_boundaries.py": "ad23355cbc90cfe1bd6ac114b22c8bfa29b6cc664287c2eec10d3176f550cab6",
+    "tests/test_department_packing.py": "ec45dc5ec00dc8b6d6391c22535e3248fb2242688628973d754e3b3381222909",
+    "tests/test_department_rules.py": "f05da89773b55a3dd1850c0751b367f9576fbf181c383b026af3f45893f01771",
+    "tests/test_department_workbench.py": "853783696cb0835b8581e5a709169aa4f8a983f9fb40e4430d7f271488b70d12",
+    "tests/test_departments.py": "350e981ca743c2e0a6b7dac1751d4d2f5bafefb5ecdb8810c0ef3f21e382191f",
+    "tests/test_fixture_geometry.py": "c2388ec996d8acdb01797f6f863c047f48809523db7b3843e7df529f8b27e1be",
+    "tests/test_generator_instances.py": "8aee679b140923bb8910cc20173d3f6c7f25f007ffa897c4ce12a37a97022104",
+    "tests/test_generator_packing.py": "a14f647c5abb1ebb3a0c971b09d7118ffa6d9d95655ab7983c67c971f43b5c19",
+    "tests/test_generator_repair.py": "7957a1650c7db3deb5793548b8e958c2892bc5ebc421d1e768b913987f5793df",
+    "tests/test_generator_run.py": "9338d9fc0f7f60084d9f3a0f62059a3339440d8d649f35a13792ef816d581adb",
+    "tests/test_generator_verifier.py": "d51d9a88b1c39cb03cdada0c451f55580cc808074380e35e4682378d0329b3e1",
+    "tests/test_hop_frontage.py": "840181a6f08f30fbf73f2430be7ed2e3e57ab71ecc05383b46d969559edb1405",
+    "tests/test_interface_lanes.py": "16704a4830ae7a25080c7a377a963663d1ef1a2bb12035d57a979ee1122aa3cb",
+    "tests/test_layout_quality.py": "2786dd6453509f95767522b2eecfd6780574f7af7531909bb0651951dabaf840",
+    "tests/test_local_relationships.py": "f463e92c36f382533af0e11c9f34e5554a5328bab189a5971e6a518aa2788d36",
+    "tests/test_mapped_local_dependencies.py": "871805533f5d92569b632834c54a981364f750d926ffe5103cab055cc013cd0f",
+    "tests/test_placement_scopes.py": "e3b440ffad3c769025326958979f5b18127510c72cd3438ba0576c428af7bd72",
+    "tests/test_program.py": "ae42f48c88e83720408a1820f788c9ef4fd8da13892996c4d2ef34a975da7738",
+    "validate.py": "d7deed9c8aa3958f43bfe709fb2e8c229d4de18cfc3f17d9af4af8d320bbf1c5",
+    "workbench.py": "9933c338449f0ff14213d099942fce9f2840d0d08df59ceb3e753139c53dc875"
+  }
+}

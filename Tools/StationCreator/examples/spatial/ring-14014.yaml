@@ -1,0 +1,582 @@
+# SS14 station authoring definition: departments, programs, dependencies and generation settings.
+# Paths are Department/Subdepartment/Room; generated geometry is saved in project JSON instead.
+schemaVersion: 1
+config:
+  hierarchyRelations: []
+  seed: 14014
+  width: 144
+  height: 112
+  archetype: "ring"
+  corridorWidth: 3
+  candidateBudget: 4
+  optimizationSteps: 150
+  maintenanceWidth: 2
+  hullThickness: 1
+  defaultAllowDisposalShortcuts: false
+  defaultAllowMailNetwork: false
+  weights:
+    distance: 1
+    compactness: 0.015
+    corridor: 0.2
+    turns: 2
+  spatial:
+    cellSize: 5
+    fillRatio: 0.78
+    maintenanceFraction: 0.3
+    maintenancePassageMaxWidth: 3
+    departmentBoundaryMaxDepth: 1
+    maintenancePocketPreference: "departments"
+    deepMaintenanceMin: 2
+    deepMaintenanceMax: 4
+    deepMaintenanceRoomMinArea: 9
+    deepMaintenanceRoomTargetArea: 49
+    deepMaintenanceRoomMaxArea: 300
+    commonMaintenanceMin: 0
+    commonMaintenanceMax: 8
+    commonMaintenanceRoomMinArea: 9
+    commonMaintenanceRoomTargetArea: 49
+    commonMaintenanceRoomMaxArea: 300
+    solarMin: 2
+    solarMax: 4
+    spaceAccessMin: 2
+    spaceAccessMax: 3
+    growthSteps: 100000
+  departments:
+  - placementOrder: 1
+    topologyHub: true
+    grouping: "preferGrouped"
+    allowSplit: true
+    subdepartments: []
+    id: "Commons"
+    description: "Public station commons and shared circulation."
+    width: 18
+    height: 14
+    minArea: 40
+    maxArea: 1200
+    access: "public"
+    exterior: false
+    entrances: 2
+    color: "#c4af72"
+    requiredConnections: []
+    preferredNeighbors: []
+  - placementOrder: 0
+    topologyHub: false
+    grouping: "preferGrouped"
+    allowSplit: true
+    subdepartments: []
+    id: "Arrivals"
+    description: "Arrival docking and passenger reception."
+    width: 14
+    height: 10
+    minArea: 40
+    maxArea: 1200
+    access: "public"
+    exterior: true
+    entrances: 1
+    color: "#71b9ac"
+    requiredConnections: []
+    preferredNeighbors: []
+  - placementOrder: 2
+    topologyHub: false
+    grouping: "preferGrouped"
+    allowSplit: true
+    subdepartments:
+    - id: "Kitchen"
+      name: "Kitchen"
+      description: "Food preparation and food service."
+      minArea: 40
+      targetArea: 65
+      maxArea: 400
+      requireInternalAccess: false
+      allowSplit: true
+      rooms: []
+    - id: "Botany"
+      name: "Botany"
+      description: "Hydroponics and kitchen crop supply."
+      minArea: 40
+      targetArea: 65
+      maxArea: 400
+      requireInternalAccess: false
+      allowSplit: true
+      rooms: []
+    - id: "Theatre"
+      name: "Theatre"
+      description: "Performance, costumes and public entertainment."
+      minArea: 30
+      targetArea: 50
+      maxArea: 400
+      requireInternalAccess: false
+      allowSplit: true
+      rooms: []
+    id: "Service"
+    description: "Civilian services; keep the group together when practical, permit satellites."
+    width: 16
+    height: 12
+    minArea: 40
+    maxArea: 1200
+    access: "public"
+    exterior: false
+    entrances: 1
+    color: "#9cb86a"
+    requiredConnections: []
+    preferredNeighbors:
+    - "Commons"
+    - "Cargo"
+  - placementOrder: 3
+    topologyHub: false
+    grouping: "preferGrouped"
+    allowSplit: true
+    subdepartments: []
+    id: "Medical"
+    description: "Clinical care and emergency treatment."
+    width: 16
+    height: 12
+    minArea: 40
+    maxArea: 1200
+    access: "public"
+    exterior: false
+    entrances: 1
+    color: "#79b8cf"
+    requiredConnections: []
+    preferredNeighbors:
+    - "Commons"
+  - placementOrder: 5
+    topologyHub: false
+    grouping: "preferGrouped"
+    allowSplit: true
+    subdepartments:
+    - id: "Atmos"
+      name: "Atmos"
+      description: "Atmospherics must be reachable from inside Engineering."
+      minArea: 75
+      targetArea: 105
+      maxArea: 400
+      requireInternalAccess: true
+      allowSplit: false
+      rooms:
+      - id: "TEG"
+        name: "Thermoelectric generator"
+        description: "Reserve the generator and working clearance, with access from Atmos and Engineering."
+        kind: "feature"
+        minCount: 1
+        maxCount: 1
+        minArea: 25
+        maxArea: 120
+        accessibleFrom:
+        - "Engineering"
+        - "Engineering/Atmos"
+    id: "Engineering"
+    description: "Station power, repairs and atmosphere support."
+    width: 18
+    height: 12
+    minArea: 40
+    maxArea: 1200
+    access: "restricted"
+    exterior: false
+    entrances: 1
+    color: "#dfa45c"
+    requiredConnections: []
+    preferredNeighbors:
+    - "Cargo"
+  - placementOrder: 4
+    topologyHub: false
+    grouping: "preferGrouped"
+    allowSplit: true
+    subdepartments: []
+    id: "Science"
+    description: "Research and experimental work."
+    width: 16
+    height: 12
+    minArea: 40
+    maxArea: 1200
+    access: "restricted"
+    exterior: false
+    entrances: 1
+    color: "#b894d5"
+    requiredConnections: []
+    preferredNeighbors: []
+  - placementOrder: 7
+    topologyHub: false
+    grouping: "grouped"
+    allowSplit: false
+    subdepartments:
+    - id: "Brig"
+      name: "Brig"
+      description: "Security rooms connected by secured internal circulation."
+      minArea: 150
+      targetArea: 240
+      maxArea: 400
+      requireInternalAccess: true
+      allowSplit: false
+      rooms:
+      - id: "Armory"
+        name: "Armory"
+        description: "Secured weapons and equipment storage."
+        kind: "room"
+        minCount: 1
+        maxCount: 1
+        minArea: 25
+        maxArea: 120
+        accessibleFrom: []
+      - id: "Perma"
+        name: "Permanent detention"
+        description: "Long-term secured detention and inmate living area."
+        kind: "room"
+        minCount: 1
+        maxCount: 1
+        minArea: 35
+        maxArea: 120
+        accessibleFrom: []
+      - id: "Sentencing"
+        name: "Sentencing room"
+        description: "Custody processing and sentencing."
+        kind: "room"
+        minCount: 1
+        maxCount: 1
+        minArea: 20
+        maxArea: 120
+        accessibleFrom: []
+      - id: "WardensOffice"
+        name: "Warden's office"
+        description: "Warden administration with access to detention."
+        kind: "room"
+        minCount: 1
+        maxCount: 1
+        minArea: 16
+        maxArea: 120
+        accessibleFrom: []
+      - id: "Interrogation"
+        name: "Interrogation room"
+        description: "Private secured interview and interrogation."
+        kind: "room"
+        minCount: 1
+        maxCount: 1
+        minArea: 16
+        maxArea: 120
+        accessibleFrom: []
+    id: "Security"
+    description: "Secure detention, evidence and security operations."
+    width: 14
+    height: 12
+    minArea: 40
+    maxArea: 1200
+    access: "secure"
+    exterior: false
+    entrances: 1
+    color: "#d67d83"
+    requiredConnections: []
+    preferredNeighbors:
+    - "Command"
+  - placementOrder: 6
+    topologyHub: false
+    grouping: "preferGrouped"
+    allowSplit: true
+    subdepartments:
+    - id: "Salvage"
+      name: "Salvage"
+      description: "Salvage staging must be reachable from within Cargo."
+      minArea: 55
+      targetArea: 80
+      maxArea: 400
+      requireInternalAccess: true
+      allowSplit: false
+      rooms: []
+    id: "Cargo"
+    description: "Cargo handling, logistics and salvage support."
+    width: 18
+    height: 12
+    minArea: 40
+    maxArea: 1200
+    access: "restricted"
+    exterior: true
+    entrances: 1
+    color: "#bc956b"
+    requiredConnections: []
+    preferredNeighbors: []
+  - placementOrder: 8
+    topologyHub: false
+    grouping: "grouped"
+    allowSplit: false
+    subdepartments:
+    - id: "Operations"
+      name: "Operations"
+      description: "Connected command rooms behind command access."
+      minArea: 160
+      targetArea: 245
+      maxArea: 400
+      requireInternalAccess: true
+      allowSplit: false
+      rooms:
+      - id: "Bridge"
+        name: "Bridge"
+        description: "Station command and status monitoring."
+        kind: "room"
+        minCount: 1
+        maxCount: 1
+        minArea: 36
+        maxArea: 120
+        accessibleFrom: []
+      - id: "CaptainsRoom"
+        name: "Captain's room"
+        description: "Captain office and private quarters."
+        kind: "room"
+        minCount: 1
+        maxCount: 1
+        minArea: 25
+        maxArea: 120
+        accessibleFrom: []
+      - id: "HoPOffice"
+        name: "Head of Personnel's office"
+        description: "Personnel and access administration."
+        kind: "room"
+        minCount: 1
+        maxCount: 1
+        minArea: 25
+        maxArea: 120
+        accessibleFrom: []
+      - id: "MeetingRoom"
+        name: "Meeting room"
+        description: "Command and department coordination meetings."
+        kind: "room"
+        minCount: 1
+        maxCount: 1
+        minArea: 35
+        maxArea: 120
+        accessibleFrom: []
+    id: "Command"
+    description: "Bridge, command offices and coordination."
+    width: 12
+    height: 10
+    minArea: 40
+    maxArea: 1200
+    access: "secure"
+    exterior: false
+    entrances: 1
+    color: "#6d99d7"
+    requiredConnections: []
+    preferredNeighbors: []
+topology:
+  nodes:
+  - "Arrivals"
+  - "Cargo"
+  - "Command"
+  - "Commons"
+  - "Engineering"
+  - "Medical"
+  - "Science"
+  - "Security"
+  - "Service"
+  edges:
+  - id: "template-d48767b4f1854f83ac6fc8908614aeaa"
+    origin: "template"
+    from: "Arrivals"
+    to: "Command"
+    priority: "required"
+    hard: true
+    weight: 1
+    description: "Public walking connection in the selected station structure."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-246e2756e6ad082782fd428a09a35fc8"
+    origin: "template"
+    from: "Arrivals"
+    to: "Commons"
+    priority: "required"
+    hard: true
+    weight: 1
+    description: "Public walking connection in the selected station structure."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-17e60b5df9b3fa459059e4c5357076fc"
+    origin: "template"
+    from: "Cargo"
+    to: "Engineering"
+    priority: "required"
+    hard: true
+    weight: 1
+    description: "Public walking connection in the selected station structure."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-1afd15cbf1187e3642d319cc75e3a134"
+    origin: "template"
+    from: "Cargo"
+    to: "Engineering"
+    priority: "desired"
+    hard: false
+    weight: 2
+    description: "Prefer a convenient connection between these departments."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-c34012a4dba20ff6645eb025906608eb"
+    origin: "template"
+    from: "Cargo"
+    to: "Security"
+    priority: "required"
+    hard: true
+    weight: 1
+    description: "Public walking connection in the selected station structure."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-79669d2a5116dc9e856c69d8953d14de"
+    origin: "template"
+    from: "Cargo"
+    to: "Service"
+    priority: "desired"
+    hard: false
+    weight: 2
+    description: "Prefer a convenient connection between these departments."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-6b7bf023fc9f20b275ac245e1dd3a998"
+    origin: "template"
+    from: "Command"
+    to: "Security"
+    priority: "required"
+    hard: true
+    weight: 1
+    description: "Public walking connection in the selected station structure."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-b70e1a2f6369d51978fe082505fde801"
+    origin: "template"
+    from: "Command"
+    to: "Security"
+    priority: "desired"
+    hard: false
+    weight: 2
+    description: "Prefer a convenient connection between these departments."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-94db7847085a74f2f521012cf01dc11a"
+    origin: "template"
+    from: "Commons"
+    to: "Medical"
+    priority: "desired"
+    hard: false
+    weight: 2
+    description: "Prefer a convenient connection between these departments."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-d2d7112d3641cb3c10ae9726b9e8c1f8"
+    origin: "template"
+    from: "Commons"
+    to: "Service"
+    priority: "required"
+    hard: true
+    weight: 1
+    description: "Public walking connection in the selected station structure."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-d59b3a0387f8444c8733a240f531fd3d"
+    origin: "template"
+    from: "Commons"
+    to: "Service"
+    priority: "desired"
+    hard: false
+    weight: 2
+    description: "Prefer a convenient connection between these departments."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-094def40101751eced91bf1779bff0a1"
+    origin: "template"
+    from: "Engineering"
+    to: "Science"
+    priority: "required"
+    hard: true
+    weight: 1
+    description: "Public walking connection in the selected station structure."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-c3221f4dec1e343129af9cf67dfd0c8e"
+    origin: "template"
+    from: "Medical"
+    to: "Science"
+    priority: "required"
+    hard: true
+    weight: 1
+    description: "Public walking connection in the selected station structure."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  - id: "template-248290b45de6431c982a90b625af58b6"
+    origin: "template"
+    from: "Medical"
+    to: "Service"
+    priority: "required"
+    hard: true
+    weight: 1
+    description: "Public walking connection in the selected station structure."
+    relation: "walking"
+    purpose: "crew"
+    allowedModes:
+    - "publicHall"
+    direction: "both"
+    strictAvoidance: false
+    maxDistance: null
+  nodePositions: {}
+  suppressedTemplateIds: []
+...

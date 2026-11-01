@@ -1,0 +1,4561 @@
+enabled: true
+profiles:
+- id: hv-cable
+  prototype: CableHV
+  kind: cable
+  ports:
+  - id: power
+    kind: power
+    connection: cable
+    nodeGroup: HVPower
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - NodeContainer
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/cables.yml
+  occupancyLayer: auto
+  blocksCrew: false
+  carriesCrew: false
+- id: mv-cable
+  prototype: CableMV
+  kind: cable
+  ports:
+  - id: power
+    kind: power
+    connection: cable
+    nodeGroup: MVPower
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - NodeContainer
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/cables.yml
+  occupancyLayer: auto
+  blocksCrew: false
+  carriesCrew: false
+- id: lv-cable
+  prototype: CableApcExtension
+  kind: cable
+  ports:
+  - id: power
+    kind: power
+    connection: cable
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  - id: provider
+    kind: power
+    connection: rangeProvider
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - NodeContainer
+  - PowerProvider
+  - ExtensionCableProvider
+  transfers:
+  - fromPort: power
+    toPort: provider
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/cables.yml
+  occupancyLayer: auto
+  blocksCrew: false
+  carriesCrew: false
+- id: cable-terminal
+  prototype: CableTerminal
+  kind: cable
+  ports:
+  - id: powerHV
+    kind: power
+    connection: terminal
+    nodeGroup: HVPower
+    directions:
+    - South
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  - id: powerMV
+    kind: power
+    connection: terminal
+    nodeGroup: MVPower
+    directions:
+    - South
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - NodeContainer
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/cable_terminal.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: smesbasic
+  prototype: SMESBasic
+  kind: device
+  ports:
+  - id: input
+    kind: power
+    connection: terminalPort
+    nodeGroup: HVPower
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  - id: output
+    kind: power
+    connection: cableDevice
+    nodeGroup: HVPower
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - NodeContainer
+  - Battery
+  - BatteryCharger
+  - BatteryDischarger
+  - PowerNetworkBattery
+  transfers:
+  - fromPort: input
+    toPort: output
+  sources:
+  - portId: output
+    kind: power
+    storedEnergyJoules: 8000000
+  requiresPower: false
+  components:
+    Battery:
+      startingCharge: 8000000
+      maxCharge: 8000000
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/smes.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: smesadvanced
+  prototype: SMESAdvanced
+  kind: device
+  ports:
+  - id: input
+    kind: power
+    connection: terminalPort
+    nodeGroup: HVPower
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  - id: output
+    kind: power
+    connection: cableDevice
+    nodeGroup: HVPower
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - NodeContainer
+  - Battery
+  - BatteryCharger
+  - BatteryDischarger
+  - PowerNetworkBattery
+  transfers:
+  - fromPort: input
+    toPort: output
+  sources:
+  - portId: output
+    kind: power
+    storedEnergyJoules: 16000000
+  requiresPower: false
+  components:
+    Battery:
+      startingCharge: 16000000
+      maxCharge: 16000000
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/smes.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: substation
+  prototype: SubstationBasic
+  kind: device
+  ports:
+  - id: input
+    kind: power
+    connection: cableDevice
+    nodeGroup: HVPower
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  - id: output
+    kind: power
+    connection: cableDevice
+    nodeGroup: MVPower
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - NodeContainer
+  - Battery
+  - BatteryCharger
+  - BatteryDischarger
+  - PowerNetworkBattery
+  transfers:
+  - fromPort: input
+    toPort: output
+  sources:
+  - portId: output
+    kind: power
+    storedEnergyJoules: 2500000
+  requiresPower: false
+  components:
+    Battery:
+      startingCharge: 2500000
+      maxCharge: 2500000
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/substation.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: apc
+  prototype: APCBasic
+  kind: device
+  ports:
+  - id: input
+    kind: power
+    connection: cableDevice
+    nodeGroup: MVPower
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  - id: output
+    kind: power
+    connection: cableDevice
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  - id: provider
+    kind: power
+    connection: rangeProvider
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - NodeContainer
+  - Battery
+  - BatteryCharger
+  - PowerNetworkBattery
+  - Apc
+  - PowerProvider
+  - ExtensionCableProvider
+  transfers:
+  - fromPort: input
+    toPort: output
+  - fromPort: output
+    toPort: provider
+  sources:
+  - portId: output
+    kind: power
+    storedEnergyJoules: 50000
+  requiresPower: false
+  components:
+    Battery:
+      startingCharge: 50000
+      maxCharge: 50000
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/apc.yml
+  occupancyLayer: boundary
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-0-half
+  prototype: GasPipeHalf
+  kind: pipe
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 100
+  requiredComponents:
+  - NodeContainer
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
+  occupancyLayer: atmosphere0
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-0-straight
+  prototype: GasPipeStraight
+  kind: pipe
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    - North
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 200
+  requiredComponents:
+  - NodeContainer
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
+  occupancyLayer: atmosphere0
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-0-bend
+  prototype: GasPipeBend
+  kind: pipe
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    - West
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 200
+  requiredComponents:
+  - NodeContainer
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
+  occupancyLayer: atmosphere0
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-0-tee
+  prototype: GasPipeTJunction
+  kind: pipe
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    - East
+    - West
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 200
+  requiredComponents:
+  - NodeContainer
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
+  occupancyLayer: atmosphere0
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-0-cross
+  prototype: GasPipeFourway
+  kind: pipe
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    - East
+    - North
+    - West
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 200
+  requiredComponents:
+  - NodeContainer
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
+  occupancyLayer: atmosphere0
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-0-connector
+  prototype: GasPort
+  kind: pipe
+  ports:
+  - id: connected
+    kind: gas
+    connection: pipePort
+    nodeGroup: Pipe
+    directions:
+    - South
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 200
+  requiredComponents:
+  - NodeContainer
+  - GasPort
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/binary.yml
+  occupancyLayer: atmosphere0
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-1-half
+  prototype: GasPipeHalfAlt1
+  kind: pipe
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    pipeLayer: 1
+    range: 0
+    volumeLitres: 100
+  requiredComponents:
+  - NodeContainer
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
+  occupancyLayer: atmosphere1
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-1-straight
+  prototype: GasPipeStraightAlt1
+  kind: pipe
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    - North
+    pipeLayer: 1
+    range: 0
+    volumeLitres: 200
+  requiredComponents:
+  - NodeContainer
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
+  occupancyLayer: atmosphere1
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-1-bend
+  prototype: GasPipeBendAlt1
+  kind: pipe
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    - West
+    pipeLayer: 1
+    range: 0
+    volumeLitres: 200
+  requiredComponents:
+  - NodeContainer
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
+  occupancyLayer: atmosphere1
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-1-tee
+  prototype: GasPipeTJunctionAlt1
+  kind: pipe
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    - East
+    - West
+    pipeLayer: 1
+    range: 0
+    volumeLitres: 200
+  requiredComponents:
+  - NodeContainer
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
+  occupancyLayer: atmosphere1
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-1-cross
+  prototype: GasPipeFourwayAlt1
+  kind: pipe
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    - East
+    - North
+    - West
+    pipeLayer: 1
+    range: 0
+    volumeLitres: 200
+  requiredComponents:
+  - NodeContainer
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
+  occupancyLayer: atmosphere1
+  blocksCrew: false
+  carriesCrew: false
+- id: gas-1-connector
+  prototype: GasPortAlt1
+  kind: pipe
+  ports:
+  - id: connected
+    kind: gas
+    connection: pipePort
+    nodeGroup: Pipe
+    directions:
+    - South
+    pipeLayer: 1
+    range: 0
+    volumeLitres: 200
+  requiredComponents:
+  - NodeContainer
+  - GasPort
+  - AtmosPipeLayers
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/binary.yml
+  occupancyLayer: atmosphere1
+  blocksCrew: false
+  carriesCrew: false
+- id: vent
+  prototype: GasVentPump
+  kind: device
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 200
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - NodeContainer
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  - AtmosDevice
+  - DeviceNetwork
+  - GasVentPump
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml
+  occupancyLayer: atmosphere0
+  blocksCrew: false
+  carriesCrew: false
+- id: scrubber
+  prototype: GasVentScrubberAlt1
+  kind: device
+  ports:
+  - id: pipe
+    kind: gas
+    connection: pipe
+    nodeGroup: Pipe
+    directions:
+    - South
+    pipeLayer: 1
+    range: 0
+    volumeLitres: 200
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - NodeContainer
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  - AtmosDevice
+  - DeviceNetwork
+  - GasVentScrubber
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml
+  occupancyLayer: atmosphere1
+  blocksCrew: false
+  carriesCrew: false
+- id: air-reserve
+  prototype: AirCanister
+  kind: device
+  ports:
+  - id: port
+    kind: gas
+    connection: portable
+    nodeGroup: Pipe
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 1
+  requiredComponents:
+  - NodeContainer
+  - GasPortable
+  - GasCanister
+  transfers: []
+  sources:
+  - portId: port
+    kind: gas
+    volumeLitres: 1500
+    pressureKpa: 4499.980909698037
+    temperatureKelvin: 293.15
+    gasFractions:
+      Oxygen: 0.2099987361655262
+      Nitrogen: 0.7900012638344738
+  requiresPower: false
+  components:
+    GasCanister:
+      air:
+        volume: 1500
+        moles:
+          Oxygen: 581.56
+          Nitrogen: 2187.79
+        temperature: 293.15
+    Physics:
+      bodyType: Static
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: scrub-reserve
+  prototype: StorageCanister
+  kind: device
+  ports:
+  - id: port
+    kind: gas
+    connection: portable
+    nodeGroup: Pipe
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 1
+  requiredComponents:
+  - NodeContainer
+  - GasPortable
+  - GasCanister
+  transfers: []
+  sources:
+  - portId: port
+    kind: gasSink
+    volumeLitres: 1500
+    pressureKpa: 0
+    temperatureKelvin: 293.15
+  requiresPower: false
+  components:
+    GasCanister:
+      air:
+        volume: 1500
+        temperature: 293.15
+        moles: {}
+    Physics:
+      bodyType: Static
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: light
+  prototype: Poweredlight
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  - PoweredLight
+  - DeviceNetwork
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Lighting/base_lighting.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: air-alarm
+  prototype: AirAlarm
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  - AirAlarm
+  - AtmosAlarmable
+  - DeviceList
+  - DeviceNetwork
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/air_alarm.yml
+  occupancyLayer: boundary
+  blocksCrew: false
+  carriesCrew: false
+- id: fire-alarm
+  prototype: FireAlarm
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  - FireAlarm
+  - AtmosAlarmable
+  - DeviceList
+  - DeviceNetwork
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/fire_alarm.yml
+  occupancyLayer: boundary
+  blocksCrew: false
+  carriesCrew: false
+- id: air-sensor
+  prototype: AirSensor
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  - DeviceNetwork
+  - AtmosMonitor
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Specific/Atmospherics/sensor.yml
+  occupancyLayer: sensor
+  blocksCrew: false
+  carriesCrew: false
+- id: firelock
+  prototype: Firelock
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - Door
+  - Firelock
+  - AtmosAlarmable
+  - DeviceNetwork
+  - DeviceNetworkRequiresPower
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Firelocks/firelock.yml
+  occupancyLayer: boundary
+  blocksCrew: true
+  carriesCrew: false
+- id: door-airlock
+  prototype: Airlock
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - Door
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Airlocks/base_structureairlocks.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: door-airlockexternal
+  prototype: AirlockExternal
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - Door
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Airlocks/external.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: door-airlockshuttle
+  prototype: AirlockShuttle
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - Door
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Airlocks/shuttle.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: door-airlockexternalglassshuttlearrivals
+  prototype: AirlockExternalGlassShuttleArrivals
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - Door
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: door-airlockexternalglassshuttleemergencylocked
+  prototype: AirlockExternalGlassShuttleEmergencyLocked
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - Door
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: door-airlockexternalglassshuttlecargo
+  prototype: AirlockExternalGlassShuttleCargo
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  requiredComponents:
+  - Door
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: waste-unit
+  prototype: DisposalUnit
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  - id: entry
+    kind: disposal
+    connection: disposalUnit
+    nodeGroup: Disposal
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - DisposalUnit
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: true
+- id: waste-trunk
+  prototype: DisposalTrunk
+  kind: disposal
+  ports:
+  - id: tube
+    kind: disposal
+    connection: disposalEntry
+    nodeGroup: Disposal
+    directions:
+    - South
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - DisposalTube
+  - DisposalEntry
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml
+  occupancyLayer: disposal
+  blocksCrew: false
+  carriesCrew: false
+- id: waste-straight
+  prototype: DisposalPipe
+  kind: disposal
+  ports:
+  - id: tube
+    kind: disposal
+    connection: disposal
+    nodeGroup: Disposal
+    directions:
+    - South
+    - North
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - DisposalTube
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml
+  occupancyLayer: disposal
+  blocksCrew: false
+  carriesCrew: false
+- id: waste-bend
+  prototype: DisposalBend
+  kind: disposal
+  ports:
+  - id: tube
+    kind: disposal
+    connection: disposal
+    nodeGroup: Disposal
+    directions:
+    - South
+    - West
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - DisposalTube
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml
+  occupancyLayer: disposal
+  blocksCrew: false
+  carriesCrew: false
+- id: waste-junction
+  prototype: DisposalJunction
+  kind: disposal
+  ports:
+  - id: tube
+    kind: disposal
+    connection: disposal
+    nodeGroup: Disposal
+    directions:
+    - South
+    - West
+    - North
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - DisposalTube
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml
+  occupancyLayer: disposal
+  blocksCrew: false
+  carriesCrew: false
+- id: waste-junction-flipped
+  prototype: DisposalJunctionFlipped
+  kind: disposal
+  ports:
+  - id: tube
+    kind: disposal
+    connection: disposal
+    nodeGroup: Disposal
+    directions:
+    - South
+    - East
+    - North
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - DisposalTube
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml
+  occupancyLayer: disposal
+  blocksCrew: false
+  carriesCrew: false
+- id: waste-y-junction
+  prototype: DisposalYJunction
+  kind: disposal
+  ports:
+  - id: tube
+    kind: disposal
+    connection: disposal
+    nodeGroup: Disposal
+    directions:
+    - South
+    - West
+    - East
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - DisposalTube
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml
+  occupancyLayer: disposal
+  blocksCrew: false
+  carriesCrew: false
+- id: mail-unit
+  prototype: MailingUnit
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    directions: []
+    pipeLayer: 0
+    range: 3
+    volumeLitres: 0
+  - id: entry
+    kind: disposal
+    connection: disposalUnit
+    nodeGroup: Disposal
+    directions: []
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - DisposalUnit
+  - ApcPowerReceiver
+  - ExtensionCableReceiver
+  transfers: []
+  sources: []
+  requiresPower: true
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml
+  occupancyLayer: auto
+  blocksCrew: true
+  carriesCrew: false
+- id: waste-receiving-trunk
+  prototype: DisposalTrunk
+  kind: device
+  ports:
+  - id: tube
+    kind: disposal
+    connection: disposalEntry
+    nodeGroup: Disposal
+    directions:
+    - South
+    pipeLayer: 0
+    range: 0
+    volumeLitres: 0
+  requiredComponents:
+  - DisposalTube
+  - DisposalEntry
+  transfers: []
+  sources: []
+  requiresPower: false
+  components: {}
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml
+  occupancyLayer: disposal
+  blocksCrew: false
+  carriesCrew: false
+- id: native-airlockexternalglassengineeringlocked
+  prototype: AirlockExternalGlassEngineeringLocked
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  - Door
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-airlockexternalglassshuttleescape
+  prototype: AirlockExternalGlassShuttleEscape
+  kind: device
+  ports:
+  - id: power
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  - Door
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-amecontroller
+  prototype: AmeController
+  kind: device
+  ports:
+  - id: input
+    kind: power
+    connection: cableDevice
+    nodeGroup: HVPower
+  requiredComponents:
+  - NodeContainer
+  requiresPower: false
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/Generation/ame.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-autolathe
+  prototype: Autolathe
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-biogenerator
+  prototype: Biogenerator
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-boozedispenser
+  prototype: BoozeDispenser
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Dispensers/booze.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-borgcharger
+  prototype: BorgCharger
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/chargers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-cargomailteleporter
+  prototype: CargoMailTeleporter
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/mail_teleporter.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-chemdispenser
+  prototype: ChemDispenser
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Dispensers/chem.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-circuitimprinter
+  prototype: CircuitImprinter
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computeranalysisconsole
+  prototype: ComputerAnalysisConsole
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computeratmosmonitoring
+  prototype: ComputerAtmosMonitoring
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computerbodyscanner
+  prototype: ComputerBodyScanner
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computercargobounty
+  prototype: ComputerCargoBounty
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computercargoorders
+  prototype: ComputerCargoOrders
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computercomms
+  prototype: ComputerComms
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computercrewmonitoring
+  prototype: ComputerCrewMonitoring
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computercriminalrecords
+  prototype: ComputerCriminalRecords
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computerid
+  prototype: ComputerId
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computerpowermonitoring
+  prototype: ComputerPowerMonitoring
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  - id: hv
+    kind: power
+    connection: cableDevice
+    nodeGroup: HVPower
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computerradar
+  prototype: ComputerRadar
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computerresearchanddevelopment
+  prototype: ComputerResearchAndDevelopment
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computersalvageexpedition
+  prototype: ComputerSalvageExpedition
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computersalvagejobboard
+  prototype: ComputerSalvageJobBoard
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computershuttlecargo
+  prototype: ComputerShuttleCargo
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computersolarcontrol
+  prototype: ComputerSolarControl
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-computerstationrecords
+  prototype: ComputerStationRecords
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-cryopod
+  prototype: CryoPod
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Medical/cryo_pod.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-exosuitfabricator
+  prototype: ExosuitFabricator
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-gasthermomachinefreezer
+  prototype: GasThermoMachineFreezer
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-gasthermomachinefreezerenabled
+  prototype: GasThermoMachineFreezerEnabled
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-gravitygenerator
+  prototype: GravityGenerator
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/gravity_generator.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-kitchenelectricgrill
+  prototype: KitchenElectricGrill
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/grill.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-kitchenmicrowave
+  prototype: KitchenMicrowave
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/microwave.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-machineanomalygenerator
+  prototype: MachineAnomalyGenerator
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/anomaly_equipment.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-machineanomalyvessel
+  prototype: MachineAnomalyVessel
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/anomaly_equipment.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-machineartifactanalyzer
+  prototype: MachineArtifactAnalyzer
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/artifact_analyzer.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-machinecentrifuge
+  prototype: MachineCentrifuge
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Medical/chemistry_machines.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-machineelectrolysisunit
+  prototype: MachineElectrolysisUnit
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Medical/chemistry_machines.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-particleacceleratorcontrolbox
+  prototype: ParticleAcceleratorControlBox
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/Generation/PA/control_box.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-playerstationai
+  prototype: PlayerStationAi
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Mobs/Player/silicon.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-protolathe
+  prototype: Protolathe
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-recycler
+  prototype: Recycler
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/recycler.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-researchanddevelopmentserver
+  prototype: ResearchAndDevelopmentServer
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/research.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-salvagemagnet
+  prototype: SalvageMagnet
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/salvage.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-seedextractor
+  prototype: SeedExtractor
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/seed_extractor.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-sodadispenser
+  prototype: SodaDispenser
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Dispensers/soda.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-solarpanel
+  prototype: SolarPanel
+  kind: device
+  ports:
+  - id: output
+    kind: power
+    connection: cableDevice
+    nodeGroup: HVPower
+  requiredComponents:
+  - NodeContainer
+  requiresPower: false
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/Generation/solar.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-stasisbed
+  prototype: StasisBed
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/stasisbed.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-stationaiuploadcomputer
+  prototype: StationAiUploadComputer
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-stationanchor
+  prototype: StationAnchor
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Shuttles/station_anchor.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-tegcenter
+  prototype: TegCenter
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  - id: output
+    kind: power
+    connection: cableDevice
+    nodeGroup: HVPower
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/Generation/teg.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-telecomserverfilledcargo
+  prototype: TelecomServerFilledCargo
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-telecomserverfilledcommand
+  prototype: TelecomServerFilledCommand
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-telecomserverfilledcommon
+  prototype: TelecomServerFilledCommon
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-telecomserverfilledengineering
+  prototype: TelecomServerFilledEngineering
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-telecomserverfilledmedical
+  prototype: TelecomServerFilledMedical
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-telecomserverfilledscience
+  prototype: TelecomServerFilledScience
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-telecomserverfilledsecurity
+  prototype: TelecomServerFilledSecurity
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-telecomserverfilledservice
+  prototype: TelecomServerFilledService
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-toiletdirtywater
+  prototype: ToiletDirtyWater
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Furniture/toilet.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-toiletempty
+  prototype: ToiletEmpty
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Furniture/toilet.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-toiletgoldendirtywater
+  prototype: ToiletGoldenDirtyWater
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Furniture/toilet.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+- id: native-weaponcapacitorrecharger
+  prototype: WeaponCapacitorRecharger
+  kind: device
+  ports:
+  - id: receiver
+    kind: power
+    connection: rangeReceiver
+    nodeGroup: Apc
+    range: 3
+  requiredComponents:
+  - ExtensionCableReceiver
+  - ApcPowerReceiver
+  requiresPower: true
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/chargers.yml
+  carriesCrew: false
+  blocksCrew: true
+  occupancyLayer: auto
+devices:
+- id: StorageBanks
+  profileId: smesbasic
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: StorageBanks
+    prototypes:
+    - SMESBasic
+    - SMESAdvanced
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/smes.yml
+  bindExisting: true
+  profileIds:
+  - smesbasic
+  - smesadvanced
+  description: Bind every actual selected SMES variant. This proves finite stored energy, not generator startup
+    or recharge.
+- id: Substations
+  profileId: substation
+  selector:
+    networks:
+    - rooms
+    - publicHall
+    - maintenance
+    - exteriorMaintenance
+  scope: owner
+  content:
+    id: Substations
+    prototypes:
+    - SubstationBasic
+    count:
+      min: 1
+      target: 1
+      max: 1
+    placement: floor
+    minArea: 1
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/substation.yml
+  description: One native HV-to-MV substation for each selected owner, including station circulation.
+- id: AreaPower
+  profileId: apc
+  selector:
+    networks:
+    - rooms
+    - publicHall
+    - maintenance
+    - exteriorMaintenance
+  scope: compartment
+  content:
+    id: AreaPower
+    prototypes:
+    - APCBasic
+    count:
+      min: 1
+      target: 1
+      max: 2
+    placement: boundary
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/apc.yml
+  description: Native APCs divide LV service by actual closed-door air compartments.
+- id: RoomLighting
+  profileId: light
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: RoomLighting
+    prototypes:
+    - Poweredlight
+    count:
+      min: 1
+      target: 1
+      max: 8
+    placement: boundary
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Lighting/base_lighting.yml
+  description: Wall lights cover room floor within a configurable geodesic distance.
+  maxCoverageDistance: 8
+- id: PassageLighting
+  profileId: light
+  selector:
+    networks:
+    - publicHall
+    - maintenance
+    - exteriorMaintenance
+  scope: compartment
+  content:
+    id: PassageLighting
+    prototypes:
+    - Poweredlight
+    count:
+      min: 1
+      target: 2
+      max: 64
+    placement: boundary
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Lighting/base_lighting.yml
+  maxCoverageDistance: 10
+- id: AirSupplyVents
+  profileId: vent
+  selector:
+    networks:
+    - rooms
+    - publicHall
+    - maintenance
+    pressures:
+    - standard
+    placements:
+    - interior
+    - either
+  scope: compartment
+  content:
+    id: AirSupplyVents
+    prototypes:
+    - GasVentPump
+    count:
+      min: 1
+      target: 1
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml
+  maxCoverageDistance: 16
+- id: AirScrubbers
+  profileId: scrubber
+  selector:
+    networks:
+    - rooms
+    - publicHall
+    - maintenance
+    pressures:
+    - standard
+    placements:
+    - interior
+    - either
+  scope: compartment
+  content:
+    id: AirScrubbers
+    prototypes:
+    - GasVentScrubberAlt1
+    count:
+      min: 1
+      target: 1
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml
+  maxCoverageDistance: 16
+- id: AirSensors
+  profileId: air-sensor
+  selector:
+    networks:
+    - rooms
+    - publicHall
+    - maintenance
+    pressures:
+    - standard
+    placements:
+    - interior
+    - either
+  scope: compartment
+  content:
+    id: AirSensors
+    prototypes:
+    - AirSensor
+    count:
+      min: 1
+      target: 1
+      max: 1
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Specific/Atmospherics/sensor.yml
+- id: AirAlarms
+  profileId: air-alarm
+  selector:
+    networks:
+    - rooms
+    - publicHall
+    - maintenance
+    pressures:
+    - standard
+    placements:
+    - interior
+    - either
+  scope: compartment
+  content:
+    id: AirAlarms
+    prototypes:
+    - AirAlarm
+    count:
+      min: 1
+      target: 1
+      max: 1
+    placement: boundary
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/air_alarm.yml
+- id: FireAlarms
+  profileId: fire-alarm
+  selector:
+    networks:
+    - rooms
+    - publicHall
+    - maintenance
+    pressures:
+    - standard
+    placements:
+    - interior
+    - either
+  scope: compartment
+  content:
+    id: FireAlarms
+    prototypes:
+    - FireAlarm
+    count:
+      min: 1
+      target: 1
+      max: 64
+    placement: boundary
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/fire_alarm.yml
+  maxCoverageDistance: 16
+- id: WalkingDoorPower
+  profileId: door-airlock
+  selector:
+    networks:
+    - rooms
+    - publicHall
+    - maintenance
+    - exteriorMaintenance
+    interfaceTypes:
+    - doorway
+    - airlock
+    - dockingPort
+  scope: room
+  content:
+    id: WalkingDoorPower
+    prototypes:
+    - Firelock
+    - Airlock
+    - AirlockExternal
+    - AirlockShuttle
+    - AirlockExternalGlassShuttleArrivals
+    - AirlockExternalGlassShuttleEmergencyLocked
+    - AirlockExternalGlassShuttleCargo
+    - AirlockExternalGlassEngineeringLocked
+    - AirlockExternalGlassShuttleEscape
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: boundary
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Airlocks/base_structureairlocks.yml
+  bindInterfaces: true
+  profileIds:
+  - firelock
+  - door-airlock
+  - door-airlockexternal
+  - door-airlockshuttle
+  - door-airlockexternalglassshuttlearrivals
+  - door-airlockexternalglassshuttleemergencylocked
+  - door-airlockexternalglassshuttlecargo
+  - native-airlockexternalglassengineeringlocked
+  - native-airlockexternalglassshuttleescape
+  description: Bind actual exported doorway hardware, including shuttle docks, without creating duplicate doors.
+- id: ExistingFirelocks
+  profileId: firelock
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: ExistingFirelocks
+    prototypes:
+    - Firelock
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Firelocks/firelock.yml
+  bindExisting: true
+  description: Bind authored real Firelock hardware. Ordinary airlocks are not automatic firelock outputs.
+- id: TransportTerminalPower
+  profileId: waste-unit
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: TransportTerminalPower
+    prototypes:
+    - DisposalUnit
+    - MailingUnit
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml
+  bindTransport: true
+  profileIds:
+  - mail-unit
+  description: Power actual crew-tube and mail endpoints without connecting their separate tubes to the waste network.
+- id: AirReserve
+  profileId: air-reserve
+  selector:
+    paths:
+    - Engineering/GasStorage
+  scope: room
+  content:
+    id: AirReserve
+    prototypes:
+    - AirCanister
+    count:
+      min: 12
+      target: 12
+      max: 16
+    placement: floor
+    minArea: 2
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml
+  bindExisting: true
+  contentIds:
+  - BreathingAirCanisters
+  description: Bind the room program's twelve native 1500-litre air canisters. Their mandatory working area pressures
+    room growth before infrastructure routing; capacity and diluted supply pressure are checked separately.
+- id: ScrubReserve
+  profileId: scrub-reserve
+  selector:
+    paths:
+    - Engineering/GasStorage
+  scope: room
+  content:
+    id: ScrubReserve
+    prototypes:
+    - StorageCanister
+    count:
+      min: 2
+      target: 2
+      max: 6
+    placement: floor
+    minArea: 2
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml
+  bindExisting: true
+  contentIds:
+  - ScrubberStorageCanisters
+  description: Bind the room program's finite empty scrubber storage. Reclamation and replenishment require later
+    plant design.
+- id: ExistingWasteUnits
+  profileId: waste-unit
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: ExistingWasteUnits
+    prototypes:
+    - DisposalUnit
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml
+  bindExisting: true
+- id: PublicWasteUnits
+  profileId: waste-unit
+  selector:
+    paths:
+    - Commons/Concourse
+    - Service/ServiceCirculation
+    - Cargo/CargoCirculation
+  scope: room
+  content:
+    id: PublicWasteUnits
+    prototypes:
+    - DisposalUnit
+    count:
+      min: 1
+      target: 1
+      max: 2
+    placement: floor
+    minArea: 1
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml
+- id: WasteReceivingTrunk
+  profileId: waste-receiving-trunk
+  selector:
+    paths:
+    - Engineering/Disposals
+  scope: room
+  content:
+    id: WasteReceivingTrunk
+    prototypes:
+    - DisposalTrunk
+    count:
+      min: 1
+      target: 1
+      max: 1
+    placement: floor
+    minArea: 4
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml
+  description: A real unoccupied native disposal trunk ejects into reserved receiving floor beside the recycling
+    area.
+- id: BindAirlockExternalGlassEngineeringLocked
+  profileId: native-airlockexternalglassengineeringlocked
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindAirlockExternalGlassEngineeringLocked
+    prototypes:
+    - AirlockExternalGlassEngineeringLocked
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml
+  bindExisting: true
+- id: BindAirlockExternalGlassShuttleEscape
+  profileId: native-airlockexternalglassshuttleescape
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindAirlockExternalGlassShuttleEscape
+    prototypes:
+    - AirlockExternalGlassShuttleEscape
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml
+  bindExisting: true
+- id: BindAmeController
+  profileId: native-amecontroller
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindAmeController
+    prototypes:
+    - AmeController
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/Generation/ame.yml
+  bindExisting: true
+- id: BindAutolathe
+  profileId: native-autolathe
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindAutolathe
+    prototypes:
+    - Autolathe
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+  bindExisting: true
+- id: BindBiogenerator
+  profileId: native-biogenerator
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindBiogenerator
+    prototypes:
+    - Biogenerator
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+  bindExisting: true
+- id: BindBoozeDispenser
+  profileId: native-boozedispenser
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindBoozeDispenser
+    prototypes:
+    - BoozeDispenser
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Dispensers/booze.yml
+  bindExisting: true
+- id: BindBorgCharger
+  profileId: native-borgcharger
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindBorgCharger
+    prototypes:
+    - BorgCharger
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/chargers.yml
+  bindExisting: true
+- id: BindCargoMailTeleporter
+  profileId: native-cargomailteleporter
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindCargoMailTeleporter
+    prototypes:
+    - CargoMailTeleporter
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/mail_teleporter.yml
+  bindExisting: true
+- id: BindChemDispenser
+  profileId: native-chemdispenser
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindChemDispenser
+    prototypes:
+    - ChemDispenser
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Dispensers/chem.yml
+  bindExisting: true
+- id: BindCircuitImprinter
+  profileId: native-circuitimprinter
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindCircuitImprinter
+    prototypes:
+    - CircuitImprinter
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+  bindExisting: true
+- id: BindComputerAnalysisConsole
+  profileId: native-computeranalysisconsole
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerAnalysisConsole
+    prototypes:
+    - ComputerAnalysisConsole
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerAtmosMonitoring
+  profileId: native-computeratmosmonitoring
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerAtmosMonitoring
+    prototypes:
+    - ComputerAtmosMonitoring
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerBodyScanner
+  profileId: native-computerbodyscanner
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerBodyScanner
+    prototypes:
+    - ComputerBodyScanner
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerCargoBounty
+  profileId: native-computercargobounty
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerCargoBounty
+    prototypes:
+    - ComputerCargoBounty
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerCargoOrders
+  profileId: native-computercargoorders
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerCargoOrders
+    prototypes:
+    - ComputerCargoOrders
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerComms
+  profileId: native-computercomms
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerComms
+    prototypes:
+    - ComputerComms
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerCrewMonitoring
+  profileId: native-computercrewmonitoring
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerCrewMonitoring
+    prototypes:
+    - ComputerCrewMonitoring
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerCriminalRecords
+  profileId: native-computercriminalrecords
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerCriminalRecords
+    prototypes:
+    - ComputerCriminalRecords
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerId
+  profileId: native-computerid
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerId
+    prototypes:
+    - ComputerId
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerPowerMonitoring
+  profileId: native-computerpowermonitoring
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerPowerMonitoring
+    prototypes:
+    - ComputerPowerMonitoring
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerRadar
+  profileId: native-computerradar
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerRadar
+    prototypes:
+    - ComputerRadar
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerResearchAndDevelopment
+  profileId: native-computerresearchanddevelopment
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerResearchAndDevelopment
+    prototypes:
+    - ComputerResearchAndDevelopment
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerSalvageExpedition
+  profileId: native-computersalvageexpedition
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerSalvageExpedition
+    prototypes:
+    - ComputerSalvageExpedition
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerSalvageJobBoard
+  profileId: native-computersalvagejobboard
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerSalvageJobBoard
+    prototypes:
+    - ComputerSalvageJobBoard
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerShuttleCargo
+  profileId: native-computershuttlecargo
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerShuttleCargo
+    prototypes:
+    - ComputerShuttleCargo
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerSolarControl
+  profileId: native-computersolarcontrol
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerSolarControl
+    prototypes:
+    - ComputerSolarControl
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindComputerStationRecords
+  profileId: native-computerstationrecords
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindComputerStationRecords
+    prototypes:
+    - ComputerStationRecords
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindCryoPod
+  profileId: native-cryopod
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindCryoPod
+    prototypes:
+    - CryoPod
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Medical/cryo_pod.yml
+  bindExisting: true
+- id: BindExosuitFabricator
+  profileId: native-exosuitfabricator
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindExosuitFabricator
+    prototypes:
+    - ExosuitFabricator
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+  bindExisting: true
+- id: BindGasThermoMachineFreezer
+  profileId: native-gasthermomachinefreezer
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindGasThermoMachineFreezer
+    prototypes:
+    - GasThermoMachineFreezer
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml
+  bindExisting: true
+- id: BindGasThermoMachineFreezerEnabled
+  profileId: native-gasthermomachinefreezerenabled
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindGasThermoMachineFreezerEnabled
+    prototypes:
+    - GasThermoMachineFreezerEnabled
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml
+  bindExisting: true
+- id: BindGravityGenerator
+  profileId: native-gravitygenerator
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindGravityGenerator
+    prototypes:
+    - GravityGenerator
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/gravity_generator.yml
+  bindExisting: true
+- id: BindKitchenElectricGrill
+  profileId: native-kitchenelectricgrill
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindKitchenElectricGrill
+    prototypes:
+    - KitchenElectricGrill
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/grill.yml
+  bindExisting: true
+- id: BindKitchenMicrowave
+  profileId: native-kitchenmicrowave
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindKitchenMicrowave
+    prototypes:
+    - KitchenMicrowave
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/microwave.yml
+  bindExisting: true
+- id: BindMachineAnomalyGenerator
+  profileId: native-machineanomalygenerator
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindMachineAnomalyGenerator
+    prototypes:
+    - MachineAnomalyGenerator
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/anomaly_equipment.yml
+  bindExisting: true
+- id: BindMachineAnomalyVessel
+  profileId: native-machineanomalyvessel
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindMachineAnomalyVessel
+    prototypes:
+    - MachineAnomalyVessel
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/anomaly_equipment.yml
+  bindExisting: true
+- id: BindMachineArtifactAnalyzer
+  profileId: native-machineartifactanalyzer
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindMachineArtifactAnalyzer
+    prototypes:
+    - MachineArtifactAnalyzer
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/artifact_analyzer.yml
+  bindExisting: true
+- id: BindMachineCentrifuge
+  profileId: native-machinecentrifuge
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindMachineCentrifuge
+    prototypes:
+    - MachineCentrifuge
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Medical/chemistry_machines.yml
+  bindExisting: true
+- id: BindMachineElectrolysisUnit
+  profileId: native-machineelectrolysisunit
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindMachineElectrolysisUnit
+    prototypes:
+    - MachineElectrolysisUnit
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Medical/chemistry_machines.yml
+  bindExisting: true
+- id: BindParticleAcceleratorControlBox
+  profileId: native-particleacceleratorcontrolbox
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindParticleAcceleratorControlBox
+    prototypes:
+    - ParticleAcceleratorControlBox
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/Generation/PA/control_box.yml
+  bindExisting: true
+- id: BindPlayerStationAi
+  profileId: native-playerstationai
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindPlayerStationAi
+    prototypes:
+    - PlayerStationAi
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Mobs/Player/silicon.yml
+  bindExisting: true
+- id: BindProtolathe
+  profileId: native-protolathe
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindProtolathe
+    prototypes:
+    - Protolathe
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+  bindExisting: true
+- id: BindRecycler
+  profileId: native-recycler
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindRecycler
+    prototypes:
+    - Recycler
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/recycler.yml
+  bindExisting: true
+- id: BindResearchAndDevelopmentServer
+  profileId: native-researchanddevelopmentserver
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindResearchAndDevelopmentServer
+    prototypes:
+    - ResearchAndDevelopmentServer
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/research.yml
+  bindExisting: true
+- id: BindSalvageMagnet
+  profileId: native-salvagemagnet
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindSalvageMagnet
+    prototypes:
+    - SalvageMagnet
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/salvage.yml
+  bindExisting: true
+- id: BindSeedExtractor
+  profileId: native-seedextractor
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindSeedExtractor
+    prototypes:
+    - SeedExtractor
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/seed_extractor.yml
+  bindExisting: true
+- id: BindSodaDispenser
+  profileId: native-sodadispenser
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindSodaDispenser
+    prototypes:
+    - SodaDispenser
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Dispensers/soda.yml
+  bindExisting: true
+- id: BindSolarPanel
+  profileId: native-solarpanel
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindSolarPanel
+    prototypes:
+    - SolarPanel
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/Generation/solar.yml
+  bindExisting: true
+- id: BindStasisBed
+  profileId: native-stasisbed
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindStasisBed
+    prototypes:
+    - StasisBed
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/stasisbed.yml
+  bindExisting: true
+- id: BindStationAiUploadComputer
+  profileId: native-stationaiuploadcomputer
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindStationAiUploadComputer
+    prototypes:
+    - StationAiUploadComputer
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+  bindExisting: true
+- id: BindStationAnchor
+  profileId: native-stationanchor
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindStationAnchor
+    prototypes:
+    - StationAnchor
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Shuttles/station_anchor.yml
+  bindExisting: true
+- id: BindTegCenter
+  profileId: native-tegcenter
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindTegCenter
+    prototypes:
+    - TegCenter
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/Generation/teg.yml
+  bindExisting: true
+- id: BindTelecomServerFilledCargo
+  profileId: native-telecomserverfilledcargo
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindTelecomServerFilledCargo
+    prototypes:
+    - TelecomServerFilledCargo
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  bindExisting: true
+- id: BindTelecomServerFilledCommand
+  profileId: native-telecomserverfilledcommand
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindTelecomServerFilledCommand
+    prototypes:
+    - TelecomServerFilledCommand
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  bindExisting: true
+- id: BindTelecomServerFilledCommon
+  profileId: native-telecomserverfilledcommon
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindTelecomServerFilledCommon
+    prototypes:
+    - TelecomServerFilledCommon
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  bindExisting: true
+- id: BindTelecomServerFilledEngineering
+  profileId: native-telecomserverfilledengineering
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindTelecomServerFilledEngineering
+    prototypes:
+    - TelecomServerFilledEngineering
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  bindExisting: true
+- id: BindTelecomServerFilledMedical
+  profileId: native-telecomserverfilledmedical
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindTelecomServerFilledMedical
+    prototypes:
+    - TelecomServerFilledMedical
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  bindExisting: true
+- id: BindTelecomServerFilledScience
+  profileId: native-telecomserverfilledscience
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindTelecomServerFilledScience
+    prototypes:
+    - TelecomServerFilledScience
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  bindExisting: true
+- id: BindTelecomServerFilledSecurity
+  profileId: native-telecomserverfilledsecurity
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindTelecomServerFilledSecurity
+    prototypes:
+    - TelecomServerFilledSecurity
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  bindExisting: true
+- id: BindTelecomServerFilledService
+  profileId: native-telecomserverfilledservice
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindTelecomServerFilledService
+    prototypes:
+    - TelecomServerFilledService
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+  bindExisting: true
+- id: BindToiletDirtyWater
+  profileId: native-toiletdirtywater
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindToiletDirtyWater
+    prototypes:
+    - ToiletDirtyWater
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Furniture/toilet.yml
+  bindExisting: true
+- id: BindToiletEmpty
+  profileId: native-toiletempty
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindToiletEmpty
+    prototypes:
+    - ToiletEmpty
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Furniture/toilet.yml
+  bindExisting: true
+- id: BindToiletGoldenDirtyWater
+  profileId: native-toiletgoldendirtywater
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindToiletGoldenDirtyWater
+    prototypes:
+    - ToiletGoldenDirtyWater
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Furniture/toilet.yml
+  bindExisting: true
+- id: BindWeaponCapacitorRecharger
+  profileId: native-weaponcapacitorrecharger
+  selector:
+    networks:
+    - rooms
+  scope: room
+  content:
+    id: BindWeaponCapacitorRecharger
+    prototypes:
+    - WeaponCapacitorRecharger
+    count:
+      min: 0
+      target: 0
+      max: 64
+    placement: floor
+    minArea: 0
+  sourceRefs:
+  - Resources/Prototypes/Entities/Structures/Power/chargers.yml
+  bindExisting: true
+networks:
+- id: HighVoltageDistribution
+  kind: power
+  scope: station
+  priority: required
+  segmentProfiles:
+  - hv-cable
+  - cable-terminal
+  terminals:
+  - deviceRuleId: StorageBanks
+    portId: output
+    role: source
+    required: false
+  - deviceRuleId: Substations
+    portId: input
+    role: consumer
+    required: true
+  - deviceRuleId: BindAmeController
+    portId: input
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerPowerMonitoring
+    portId: hv
+    role: consumer
+    required: false
+  - deviceRuleId: BindSolarPanel
+    portId: output
+    role: consumer
+    required: false
+  - deviceRuleId: BindTegCenter
+    portId: output
+    role: consumer
+    required: false
+  maxLength: 4096
+- id: MediumVoltageDistribution
+  kind: power
+  scope: owner
+  priority: required
+  segmentProfiles:
+  - mv-cable
+  terminals:
+  - deviceRuleId: Substations
+    portId: output
+    role: source
+    required: true
+  - deviceRuleId: AreaPower
+    portId: input
+    role: consumer
+    required: true
+  maxLength: 4096
+- id: LowVoltageService
+  kind: power
+  scope: compartment
+  priority: required
+  segmentProfiles:
+  - lv-cable
+  terminals:
+  - deviceRuleId: AreaPower
+    portId: output
+    role: source
+    required: true
+  - deviceRuleId: RoomLighting
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: PassageLighting
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: AirSupplyVents
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: AirScrubbers
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: AirSensors
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: AirAlarms
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: FireAlarms
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: WalkingDoorPower
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: ExistingFirelocks
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: TransportTerminalPower
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: ExistingWasteUnits
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: PublicWasteUnits
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: BindAirlockExternalGlassEngineeringLocked
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: BindAirlockExternalGlassShuttleEscape
+    portId: power
+    role: consumer
+    required: false
+  - deviceRuleId: BindAutolathe
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindBiogenerator
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindBoozeDispenser
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindBorgCharger
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindCargoMailTeleporter
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindChemDispenser
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindCircuitImprinter
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerAnalysisConsole
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerAtmosMonitoring
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerBodyScanner
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerCargoBounty
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerCargoOrders
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerComms
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerCrewMonitoring
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerCriminalRecords
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerId
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerPowerMonitoring
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerRadar
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerResearchAndDevelopment
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerSalvageExpedition
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerSalvageJobBoard
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerShuttleCargo
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerSolarControl
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindComputerStationRecords
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindCryoPod
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindExosuitFabricator
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindGasThermoMachineFreezer
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindGasThermoMachineFreezerEnabled
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindGravityGenerator
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindKitchenElectricGrill
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindKitchenMicrowave
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindMachineAnomalyGenerator
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindMachineAnomalyVessel
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindMachineArtifactAnalyzer
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindMachineCentrifuge
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindMachineElectrolysisUnit
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindParticleAcceleratorControlBox
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindPlayerStationAi
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindProtolathe
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindRecycler
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindResearchAndDevelopmentServer
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindSalvageMagnet
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindSeedExtractor
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindSodaDispenser
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindStasisBed
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindStationAiUploadComputer
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindStationAnchor
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindTegCenter
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindTelecomServerFilledCargo
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindTelecomServerFilledCommand
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindTelecomServerFilledCommon
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindTelecomServerFilledEngineering
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindTelecomServerFilledMedical
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindTelecomServerFilledScience
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindTelecomServerFilledSecurity
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindTelecomServerFilledService
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindToiletDirtyWater
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindToiletEmpty
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindToiletGoldenDirtyWater
+    portId: receiver
+    role: consumer
+    required: false
+  - deviceRuleId: BindWeaponCapacitorRecharger
+    portId: receiver
+    role: consumer
+    required: false
+  maxLength: 4096
+- id: BreathingAir
+  kind: gas
+  scope: station
+  priority: required
+  segmentProfiles:
+  - gas-0-half
+  - gas-0-straight
+  - gas-0-bend
+  - gas-0-tee
+  - gas-0-cross
+  - gas-0-connector
+  terminals:
+  - deviceRuleId: AirReserve
+    portId: port
+    role: source
+    required: true
+  - deviceRuleId: AirSupplyVents
+    portId: pipe
+    role: consumer
+    required: true
+  maxLength: 4096
+  minPressureKpa: 101.325
+- id: ScrubberExhaust
+  kind: gas
+  scope: station
+  priority: required
+  segmentProfiles:
+  - gas-1-half
+  - gas-1-straight
+  - gas-1-bend
+  - gas-1-tee
+  - gas-1-cross
+  - gas-1-connector
+  terminals:
+  - deviceRuleId: AirScrubbers
+    portId: pipe
+    role: inlet
+    required: true
+  - deviceRuleId: ScrubReserve
+    portId: port
+    role: outlet
+    required: true
+  maxLength: 4096
+- id: StationWaste
+  kind: disposal
+  scope: station
+  priority: required
+  segmentProfiles:
+  - waste-trunk
+  - waste-straight
+  - waste-bend
+  - waste-junction
+  - waste-junction-flipped
+  - waste-y-junction
+  terminals:
+  - deviceRuleId: ExistingWasteUnits
+    portId: entry
+    role: inlet
+    required: false
+  - deviceRuleId: PublicWasteUnits
+    portId: entry
+    role: inlet
+    required: false
+  - deviceRuleId: WasteReceivingTrunk
+    portId: tube
+    role: outlet
+    required: true
+  maxLength: 4096
+controls:
+- id: CompartmentAirControls
+  controllerRuleId: AirAlarms
+  deviceRuleIds:
+  - AirSupplyVents
+  - AirScrubbers
+  - AirSensors
+  scope: compartment
+  component: DeviceList
+  maxDevices: 192
+  priority: required
+- id: CompartmentFireControls
+  controllerRuleId: FireAlarms
+  deviceRuleIds:
+  - AirSupplyVents
+  - AirScrubbers
+  - AirSensors
+  - ExistingFirelocks
+  scope: compartment
+  component: DeviceList
+  maxDevices: 192
+  priority: required
+generation:
+  maxStatesPerConnection: 50000
+  maxTotalSearchStates: 2000000
+  maxGeneratedSegments: 65536
+  maxDeviceCandidatesPerScope: 16384
+  maxDevices: 4096
+  maxWitnessSteps: 32

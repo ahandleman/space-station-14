@@ -1,0 +1,151 @@
+# Design sketch only. Not accepted by validate.py, not a station program,
+# and not yet an implemented generator configuration.
+format: ss14-architect-search-policy-proposal
+version: 1
+status: proposed_not_executable
+authority: ../GENERATOR_PLAN.md
+
+# These are experimental search budgets, not proofs of feasibility limits.
+search:
+  seed: 1
+  exact_tile_size: 1
+  coarse_proposal_tile_size: 4
+  alternatives_per_suite: 3
+  alternatives_per_parent: 4
+  proposals_per_local_attempt: 200
+  transactions_per_parent_request: 40
+  negotiations_per_conflict: 8
+  selection_backtracks: 24
+  root_restarts: 4
+  global_proposal_limit: 100000
+  canvas_expansions: 3
+  canvas_growth_step_tiles: 8
+  deterministic_commit_order: true
+  random_stream_keys: [seed, instance_id, operator_class]
+  budget_failure: unresolved_not_infeasible
+
+# Canvas size comes from the selected program and conservative lower bounds.
+# Any automatic estimate is provisional until exact geometry fits.
+allocation:
+  territory: negotiable_tile_claims
+  reserve_structure_before_floor_growth: true
+  reserve_exterior_before_compaction: true
+  reserve_minimum_deep_rooms_before_growth: true
+  shared_resource_ownership: explicit
+  repair_order: [feature, room, siblings, department, resource_common_ancestor, station]
+  allow_direct_escalation_for_nonlocal_resource: true
+
+preferences:
+  # Authored requirements and their tiers remain intact. These additional
+  # metrics are proposed evaluator IDs, not supported catalog metric names.
+  # Lower tier first. Weights compare normalized costs within a tier only.
+  authored_rules: preserve
+  # Use the catalog's default tier so policies can trade with its soft targets.
+  # A later tier would make these only tie-breakers regardless of weight.
+  default_policy_tier: 0
+  policies:
+    - id: department_clusters
+      selector: {kind: department}
+      split_penalty: 12
+      spread_weight: 2
+    - id: distributed_clusters
+      selector: {kind: department, tags_all: [distributed]}
+      overrides: department_clusters
+      split_penalty: 2
+      spread_weight: 0.5
+      destination_coverage:
+        weight: 3
+        actor: public
+        sample: public_circulation
+        eligible_destinations:
+          - publicly_reachable_selected_rooms
+          - publicly_reachable_approach_of_item_transfer_interface
+        candidate_owners: matched_distributed_department
+        grant_access_to_improve_score: false
+        unreachable_samples: penalize_explicitly
+    - id: maintenance_facilities
+      selector: {kind: department, tags_all: [maintenance_owner]}
+      overrides: department_clusters
+      split_penalty: 1
+      spread_weight: 0
+      destination_coverage:
+        weight: 3
+        actor: maintenance
+        sample: maintenance_circulation
+        eligible_destinations: [authored_maintenance_destinations]
+        candidate_owners: matched_maintenance_owner
+        grant_access_to_improve_score: false
+        unreachable_samples: penalize_explicitly
+    # A tag has no behavior unless a selector explicitly assigns it here.
+    # Overrides alter search-policy preferences only, never authored rules.
+
+  objectives:
+    - id: compact_core
+      metric: proposed.core_squared_radius_of_gyration
+      weight: 4
+      normalization: selected_program_reference_area
+      exclude: declared_outboard
+    - id: discourage_unrequired_department_contacts
+      metric: proposed.foreign_owner_boundary_fraction
+      weight: 3
+    - id: maintenance_wrap_average
+      metric: proposed.maintenance_wrap_shortfall
+      weight: 4
+      target_fraction: 0.65
+    - id: maintenance_wrap_balance
+      metric: proposed.worst_cluster_wrap_shortfall
+      weight: 6
+      target_fraction: 0.35
+    - id: maintenance_alternatives
+      metric: proposed.maintenance_bridge_exposure
+      weight: 1
+      exclude_terminal_branches: true
+    - id: coherent_room_shapes
+      metric: proposed.boundary_notch_cost
+      weight: 1
+
+maintenance:
+  selector: {kind: passage, tags_all: [maintenance_circulation]}
+  # This policy implements the user's width requirement as an additional
+  # hard generation constraint. Intersect with authored bounds; conflict is
+  # invalid input, never an override of a program requirement.
+  clear_width: {min: 2, preferred: 2, max: 3, priority: mandatory}
+  geometry_witness: cardinal_strips_and_checked_junctions
+  implicit_doorway_bottleneck_exception: false
+  wrap_requires_connected_realized_passage: true
+  coverage_targets_are: experimental_soft_preferences
+  eligible_boundary_exclusions:
+    - internal_same_cluster_seam
+    - explicitly_required_exterior_or_dock_frontage
+    - explicitly_required_direct_interface
+  report_excluded_boundary_length: true
+  infer_complete_ring_requirement: false
+  oversized_residual_actions:
+    - feasible_neighbor_room_growth
+    - allowed_named_room_within_counts_and_bounds
+    - joint_reshape
+    - compatible_intentional_exterior_or_unresolved
+  area_preferences: preserve_authored
+
+variation:
+  proposal_area_target_jitter_fraction: 0.12
+  acceptance_area_targets: original_authored_preferences
+  preserve_hard_bounds: true
+  reconcile_targets_with_ancestor_budgets: true
+  coherent_patch_growth: true
+  randomize: [suite_topology, interface_side, room_proportion, cluster_order]
+  compare_signatures: [room_adjacency, gateway_order, cluster_positions, room_shapes]
+  canonicalize_global: [translation, rotation, reflection]
+  compare_packing_with_fixed_instance_selection: true
+
+verification:
+  independent_recomputation: true
+  full_program_with_unknown_mandatory_evaluator: unsupported_required
+  unknown_desired_evaluator: report_unscored
+  all_path_access_invalidation: affected_credential_component
+  exterior_invalidation: affected_exclusion_region_or_conservative_revision
+  record: [source_hash, settings_hash, evaluator_versions, seed, work_counts]
+
+# Width comes from the requested station behavior. All other numeric search
+# budgets, jitter, weights and wrap targets above are pilot values to calibrate
+# against M1/M2 fixtures, not native SS14 constants or benchmarked defaults.

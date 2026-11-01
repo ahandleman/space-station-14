@@ -1,0 +1,128 @@
+# Authored planning preferences, informed by map landmarks rather than universal balance claims.
+accessProfiles:
+- id: public
+  description: Crew using public rooms and halls without restricted access or exterior traversal.
+  accessPolicy: levels
+  allowedLevels: [public]
+  networks: [publicHall]
+  doorPenalty: 1
+- id: infiltrator
+  description: Structural comparison assuming every walking door can be opened. No space or mail travel.
+  accessPolicy: allDoors
+  networks: [publicHall, maintenance]
+  allowExterior: false
+  allowCrewTubes: false
+  doorPenalty: 2
+rules:
+- id: PublicChaseLoops
+  description: Prefer more than one substantial public chase loop, with separated paths around blocked geometry.
+  kind: chaseLoops
+  priority: desired
+  weight: 12
+  accessProfile: public
+  from:
+    networks: [publicHall]
+  bounds: {min: 1, target: 2}
+  routes:
+    minSeparation: 4
+    endpointRadius: 5
+    minPathLength: 12
+    minLoopLength: 40
+    minEnclosedBlockedArea: 16
+    maxDetourRatio: 4
+- id: MaintenanceChaseLoops
+  description: Prefer usable alternate maintenance paths around departments for pursuits and evasions.
+  kind: chaseLoops
+  priority: desired
+  weight: 8
+  accessProfile: infiltrator
+  from:
+    networks: [maintenance]
+  bounds: {min: 1, target: 2}
+  routes:
+    minSeparation: 4
+    endpointRadius: 5
+    minPathLength: 12
+    minLoopLength: 40
+    minEnclosedBlockedArea: 16
+    maxDetourRatio: 4
+- id: StrategicTargetSeparation
+  description: Discourage placing every strategic objective along one very short route. Command ownership remains a competing pressure.
+  kind: travelDistance
+  aggregation: min
+  priority: desired
+  weight: 8
+  accessProfile: infiltrator
+  from:
+    paths: [Command/Bridge, Command/Vault, Silicon/AICore, Security/Armory]
+  to:
+    paths: [Command/Bridge, Command/Vault, Silicon/AICore, Security/Armory]
+  bounds: {min: 16}
+  sourceRefs:
+  - Tools/StationArchitect/Analysis/gameflow-evidence.json
+- id: DepartmentEscapeRoutes
+  description: Prefer two physically distinct exits from major department circulation to public or maintenance passages under the stated access assumption.
+  kind: escapeRoutes
+  priority: desired
+  weight: 6
+  accessProfile: infiltrator
+  from:
+    paths: [Engineering/EngineeringCirculation, Medical/MedicalCirculation, Science/ScienceCirculation, Security/SecureCirculation, Cargo/CargoCirculation]
+  to:
+    networks: [publicHall, maintenance]
+  bounds: {min: 2}
+- id: StrategicApproachBalance
+  description: Limit extreme travel-cost differences between major ingress rooms and strategic objectives; this does not model a nuclear-operative assault.
+  kind: travelBalance
+  priority: desired
+  weight: 10
+  accessProfile: infiltrator
+  from:
+    paths: [Arrivals/Waiting, Commons/Evacuation, Cargo/LoadingBay]
+  to:
+    paths: [Command/Bridge, Command/Vault, Silicon/AICore, Security/Armory]
+  bounds: {min: 0, target: 50, max: 140}
+  sourceRefs:
+  - Tools/StationArchitect/Analysis/gameflow-evidence.json
+- id: ArrivalEvacTravel
+  description: Keep the public trip from arrival reception to evacuation within a useful station-scale distance.
+  kind: travelDistance
+  aggregation: max
+  priority: desired
+  weight: 4
+  accessProfile: public
+  from:
+    paths: [Arrivals/Reception]
+  to:
+    paths: [Commons/Evacuation]
+  bounds: {max: 180}
+- id: ArrivalEvacChokepoints
+  description: Discourage narrow single cuts along the public arrival-to-evacuation route, excluding shared endpoints.
+  kind: chokepoints
+  aggregation: max
+  priority: desired
+  weight: 5
+  accessProfile: public
+  from:
+    paths: [Arrivals/Reception]
+  to:
+    paths: [Commons/Evacuation]
+  bounds: {target: 0, max: 2}
+  routes:
+    chokepointWidth: 3
+    endpointRadius: 6
+    deduplicationRadius: 6
+settings:
+  maxGraphCells: 65536
+  maxSearchVisits: 100000
+  maxTotalSearchVisits: 10000000
+  maxPairTests: 64
+  maxTerminals: 32
+  maxWitnesses: 16
+  maxWitnessCells: 4096
+  maxIndependentRoutes: 8
+  allowRepairs: true
+  repairBudget: 2
+  candidateBudget: 12
+  maxRepairLength: 48
+  repairNetworks: [publicHall, maintenance]

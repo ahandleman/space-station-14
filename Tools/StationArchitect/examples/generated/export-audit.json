@@ -1,0 +1,90 @@
+{
+  "success": true,
+  "bundle": "Tools\\StationArchitect\\examples\\generated\\station-14014.zip",
+  "entityCount": 16085,
+  "distinctEntityPrototypes": 134,
+  "tilePalette": {
+    "0": "Space",
+    "1": "FloorSteel",
+    "2": "FloorTechMaint2",
+    "3": "Lattice"
+  },
+  "materializedTiles": 14038,
+  "mapChunks": 77,
+  "plannedRoomInstances": 139,
+  "verifiedHardwarePlacements": 6443,
+  "dockingClearanceAudit": [
+    {
+      "id": "Arrivals/Waiting#1/dock:ArrivalsBerth#1",
+      "clearBerthCells": 200,
+      "clearApproachCells": 820,
+      "geometryAndHardwareVerified": true
+    },
+    {
+      "id": "Commons/Evacuation#1/dock:EvacuationBerth#1",
+      "clearBerthCells": 276,
+      "clearApproachCells": 1449,
+      "geometryAndHardwareVerified": true
+    },
+    {
+      "id": "Cargo/LoadingBay#1/dock:CargoBerth#1",
+      "clearBerthCells": 136,
+      "clearApproachCells": 476,
+      "geometryAndHardwareVerified": true
+    }
+  ],
+  "nativeSystemsAudit": {
+    "enabled": true,
+    "actualNativePorts": 15575,
+    "powerReceiverCount": 1673,
+    "verifiedPoweredReceiverCount": 1673,
+    "initialStoredEnergyJoules": 117400000.0,
+    "finiteGasReservoirs": [
+      {
+        "sourceUids": [
+          4747,
+          4748,
+          4749,
+          4750,
+          4751,
+          4752,
+          4753,
+          4754,
+          4755,
+          4756,
+          4757,
+          4758
+        ],
+        "sourceVolumeLitres": 18000,
+        "connectedContainerVolumeLitres": 18000,
+        "pipeVolumeLitres": 442412.0,
+        "initialPressureLowerBoundKpa": 175.92863864226965
+      }
+    ],
+    "controlCount": 372,
+    "verifiedWasteInlets": 9,
+    "verifiedCrewCapableWasteInlets": 9,
+    "repositoryComponentsInspected": true,
+    "simulationVerified": false
+  },
+  "atmosphereEncoding": "GridAtmosphere-v2-mapping",
+  "atmosphereUniqueMixtures": 4,
+  "atmosphereChunks": 954,
+  "atmosphereTiles": 9578,
+  "verifiedExplicitZoneTiles": 9306,
+  "unconfiguredCustomZones": [
+    "Science/ExperimentChamber#1"
+  ],
+  "geometryAcceptedByDesigner": true,
+  "engineLoadTested": false,
+  "simulationVerified": false,
+  "warnings": [
+    "Initial custom gas mixtures remain explicitly unconfigured for: Science/ExperimentChamber#1"
+  ],
+  "errors": [],
+  "serializerReferences": [
+    "RobustToolbox/Robust.Shared/EntitySerialization/MapChunkSerializer.cs",
+    "Content.Shared/Atmos/Serialization/TileAtmosCollectionSerializer.cs",
+    "Content.Shared/Atmos/GasArraySerializer.cs"
+  ]
+}

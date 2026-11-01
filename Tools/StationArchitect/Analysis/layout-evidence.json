@@ -1,0 +1,3248 @@
+{
+  "evidenceVersion": 1,
+  "method": "Decoded main-grid floor tiles, inherited entity components, mapped names/positions, and conservative closed-door floor components.",
+  "limitations": [
+    "Marker labels denote named destinations, not an exhaustive room partition or room-count census.",
+    "Geometric estimates close every door and treat directional walls/windows as whole tiles; furniture is ignored.",
+    "Several labels may occupy one component, and generic department labels often mark circulation; do not treat every estimate as a room's exact size.",
+    "Nested entity positions use parent translations; only direct main-grid marker children receive component sizing estimates.",
+    "Boundary adjacencies are neighboring closed-door components, not verified gameplay paths or required design rules.",
+    "Feature counts cover explicit mapped prototypes on the largest grid, not runtime-spawned contents, optional construction, or guaranteed operation."
+  ],
+  "prototypeInputHash": "e227c0970297f50d4ba3112cc152cb37d65d6a3c05906cbebae683fb847a7dee",
+  "maps": [
+    {
+      "id": "Bagel",
+      "sourcePath": "Resources/Maps/bagel.yml",
+      "sha256": "ef3b8a75e834a7e5b9e6b990abe2d9343ee2e46d38980be76140f6e8717b61a8",
+      "mainGrid": 60,
+      "mainGridFloorTiles": 12531,
+      "floorBounds": {
+        "x": -124,
+        "y": -81,
+        "width": 195,
+        "height": 148
+      },
+      "floorBoundingFill": 0.4342,
+      "beacons": [
+        {
+          "uid": 18266,
+          "prototype": "DefaultStationBeaconArrivals",
+          "rawPrototype": "DefaultStationBeaconArrivals",
+          "grid": 60,
+          "position": [
+            0.5,
+            -63.5
+          ],
+          "onMainGrid": true,
+          "label": "Arrivals",
+          "defaultText": "station-beacon-arrivals",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 193
+        },
+        {
+          "uid": 16141,
+          "prototype": "DefaultStationBeaconBar",
+          "rawPrototype": "DefaultStationBeaconBar",
+          "grid": 60,
+          "position": [
+            18.5,
+            -33.5
+          ],
+          "onMainGrid": true,
+          "label": "Bar",
+          "defaultText": "station-beacon-bar",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 254
+        },
+        {
+          "uid": 16140,
+          "prototype": "DefaultStationBeaconBotany",
+          "rawPrototype": "DefaultStationBeaconBotany",
+          "grid": 60,
+          "position": [
+            31.5,
+            -28.5
+          ],
+          "onMainGrid": true,
+          "label": "Botany",
+          "defaultText": "station-beacon-botany",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 285
+        },
+        {
+          "uid": 13601,
+          "prototype": "DefaultStationBeaconChapel",
+          "rawPrototype": "DefaultStationBeaconChapel",
+          "grid": 60,
+          "position": [
+            -25.5,
+            17.5
+          ],
+          "onMainGrid": true,
+          "label": "Chapel",
+          "defaultText": "station-beacon-chapel",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 4149,
+          "prototype": "DefaultStationBeaconCryonics",
+          "rawPrototype": "DefaultStationBeaconCryonics",
+          "grid": 60,
+          "position": [
+            49.5,
+            -21.5
+          ],
+          "onMainGrid": true,
+          "label": "Cryopods",
+          "defaultText": "station-beacon-cryonics",
+          "color": "#52B4E9",
+          "closedDoorFloorComponent": 337
+        },
+        {
+          "uid": 3128,
+          "prototype": "DefaultStationBeaconCryosleep",
+          "rawPrototype": "DefaultStationBeaconCryosleep",
+          "grid": 60,
+          "position": [
+            11.5,
+            -15.5
+          ],
+          "onMainGrid": true,
+          "label": "Cryosleep",
+          "defaultText": "station-beacon-cryosleep",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 255
+        },
+        {
+          "uid": 25312,
+          "prototype": "DefaultStationBeaconEvac",
+          "rawPrototype": "DefaultStationBeaconEvac",
+          "grid": 60,
+          "position": [
+            46.5,
+            24.5
+          ],
+          "onMainGrid": true,
+          "label": "Evac",
+          "defaultText": "station-beacon-evac",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 323
+        },
+        {
+          "uid": 23370,
+          "prototype": "DefaultStationBeaconKitchen",
+          "rawPrototype": "DefaultStationBeaconKitchen",
+          "grid": 60,
+          "position": [
+            25.5,
+            -32.5
+          ],
+          "onMainGrid": true,
+          "label": "Kitchen",
+          "defaultText": "station-beacon-kitchen",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 285
+        },
+        {
+          "uid": 23375,
+          "prototype": "DefaultStationBeaconLibrary",
+          "rawPrototype": "DefaultStationBeaconLibrary",
+          "grid": 60,
+          "position": [
+            -9.5,
+            19.5
+          ],
+          "onMainGrid": true,
+          "label": "Library",
+          "defaultText": "station-beacon-library",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 169
+        }
+      ],
+      "selectedClosedDoorComponents": [
+        {
+          "componentId": 85,
+          "area": 33,
+          "bounds": {
+            "x": -44,
+            "y": 16,
+            "width": 14,
+            "height": 6
+          },
+          "aspectRatio": 2.3333,
+          "fillRatio": 0.3929,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 94,
+          "area": 94,
+          "bounds": {
+            "x": -40,
+            "y": 23,
+            "width": 26,
+            "height": 4
+          },
+          "aspectRatio": 6.5,
+          "fillRatio": 0.9038,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 106,
+          "area": 51,
+          "bounds": {
+            "x": -35,
+            "y": 7,
+            "width": 17,
+            "height": 3
+          },
+          "aspectRatio": 5.6667,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 118,
+          "area": 77,
+          "bounds": {
+            "x": -29,
+            "y": 11,
+            "width": 7,
+            "height": 11
+          },
+          "aspectRatio": 1.5714,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 139,
+          "area": 3,
+          "bounds": {
+            "x": -21,
+            "y": 15,
+            "width": 3,
+            "height": 1
+          },
+          "aspectRatio": 3.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 140,
+          "area": 6,
+          "bounds": {
+            "x": -21,
+            "y": 17,
+            "width": 3,
+            "height": 2
+          },
+          "aspectRatio": 1.5,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 141,
+          "area": 2,
+          "bounds": {
+            "x": -21,
+            "y": 20,
+            "width": 1,
+            "height": 2
+          },
+          "aspectRatio": 2.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 169,
+          "area": 69,
+          "bounds": {
+            "x": -13,
+            "y": 11,
+            "width": 7,
+            "height": 12
+          },
+          "aspectRatio": 1.7143,
+          "fillRatio": 0.8214,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 193,
+          "area": 90,
+          "bounds": {
+            "x": -5,
+            "y": -74,
+            "width": 11,
+            "height": 14
+          },
+          "aspectRatio": 1.2727,
+          "fillRatio": 0.5844,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 254,
+          "area": 96,
+          "bounds": {
+            "x": 10,
+            "y": -39,
+            "width": 12,
+            "height": 13
+          },
+          "aspectRatio": 1.0833,
+          "fillRatio": 0.6154,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 255,
+          "area": 16,
+          "bounds": {
+            "x": 10,
+            "y": -18,
+            "width": 4,
+            "height": 4
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 285,
+          "area": 113,
+          "bounds": {
+            "x": 23,
+            "y": -39,
+            "width": 13,
+            "height": 13
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 0.6686,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 323,
+          "area": 105,
+          "bounds": {
+            "x": 39,
+            "y": 20,
+            "width": 20,
+            "height": 6
+          },
+          "aspectRatio": 3.3333,
+          "fillRatio": 0.875,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 337,
+          "area": 20,
+          "bounds": {
+            "x": 47,
+            "y": -24,
+            "width": 5,
+            "height": 4
+          },
+          "aspectRatio": 1.25,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        }
+      ],
+      "chapelDoorBoundaries": [
+        {
+          "uid": 14450,
+          "prototype": "AirlockChapelLocked",
+          "cell": [
+            -22,
+            17
+          ],
+          "components": [
+            118,
+            140
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 14479,
+          "prototype": "AirlockGlass",
+          "cell": [
+            -25,
+            10
+          ],
+          "components": [
+            106,
+            118
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 14480,
+          "prototype": "AirlockGlass",
+          "cell": [
+            -26,
+            10
+          ],
+          "components": [
+            106,
+            118
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 14481,
+          "prototype": "AirlockGlass",
+          "cell": [
+            -27,
+            10
+          ],
+          "components": [
+            106,
+            118
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 14482,
+          "prototype": "AirlockGlass",
+          "cell": [
+            -25,
+            22
+          ],
+          "components": [
+            94,
+            118
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 14483,
+          "prototype": "AirlockGlass",
+          "cell": [
+            -26,
+            22
+          ],
+          "components": [
+            94,
+            118
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 14484,
+          "prototype": "AirlockGlass",
+          "cell": [
+            -27,
+            22
+          ],
+          "components": [
+            94,
+            118
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 14443,
+          "prototype": "AirlockMaintLocked",
+          "cell": [
+            -30,
+            17
+          ],
+          "components": [
+            85,
+            118
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 13851,
+          "prototype": "WoodDoor",
+          "cell": [
+            -22,
+            20
+          ],
+          "components": [
+            118,
+            141
+          ],
+          "access": [],
+          "externalAccess": []
+        }
+      ],
+      "chapelRelatedFeatures": [
+        {
+          "uid": 14509,
+          "prototype": "AltarSpawner",
+          "name": "random altar spawner",
+          "position": [
+            -25.5,
+            19.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 17262,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -35.5,
+            26.5
+          ],
+          "closedDoorFloorComponent": 94
+        },
+        {
+          "uid": 17263,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -36.5,
+            26.5
+          ],
+          "closedDoorFloorComponent": 94
+        },
+        {
+          "uid": 17264,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -33.5,
+            26.5
+          ],
+          "closedDoorFloorComponent": 94
+        },
+        {
+          "uid": 17265,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -27.5,
+            26.5
+          ],
+          "closedDoorFloorComponent": 94
+        },
+        {
+          "uid": 17266,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -28.5,
+            26.5
+          ],
+          "closedDoorFloorComponent": 94
+        },
+        {
+          "uid": 17267,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -26.5,
+            26.5
+          ],
+          "closedDoorFloorComponent": 94
+        },
+        {
+          "uid": 18524,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -29.5,
+            9.5
+          ],
+          "closedDoorFloorComponent": 106
+        },
+        {
+          "uid": 18786,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -37.5,
+            16.5
+          ],
+          "closedDoorFloorComponent": 85
+        },
+        {
+          "uid": 18787,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -38.5,
+            16.5
+          ],
+          "closedDoorFloorComponent": 85
+        },
+        {
+          "uid": 5636,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -27.5,
+            17.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 8201,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -27.5,
+            15.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14522,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -26.5,
+            17.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14526,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -24.5,
+            17.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14527,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -23.5,
+            17.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14528,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -23.5,
+            15.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14529,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -24.5,
+            15.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14530,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -24.5,
+            14.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14531,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -23.5,
+            14.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14532,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -23.5,
+            13.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14533,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -24.5,
+            13.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14534,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -26.5,
+            13.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14535,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -27.5,
+            13.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14536,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -27.5,
+            14.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14537,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -26.5,
+            14.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14538,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -26.5,
+            15.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 14620,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -20.5,
+            21.5
+          ],
+          "closedDoorFloorComponent": 141
+        },
+        {
+          "uid": 14525,
+          "prototype": "ComfyChair",
+          "name": "comfy chair",
+          "position": [
+            -25.5,
+            20.5
+          ],
+          "closedDoorFloorComponent": 118
+        },
+        {
+          "uid": 11884,
+          "prototype": "Crematorium",
+          "name": "crematorium",
+          "position": [
+            -18.5,
+            15.5
+          ],
+          "closedDoorFloorComponent": 139
+        },
+        {
+          "uid": 13851,
+          "prototype": "WoodDoor",
+          "name": "Confessional",
+          "position": [
+            -21.5,
+            20.5
+          ],
+          "closedDoorFloorComponent": null
+        },
+        {
+          "uid": 14518,
+          "prototype": "WoodDoor",
+          "name": "Confessional",
+          "position": [
+            -18.5,
+            19.5
+          ],
+          "closedDoorFloorComponent": null
+        }
+      ]
+    },
+    {
+      "id": "Box",
+      "sourcePath": "Resources/Maps/box.yml",
+      "sha256": "6683c4279be7af641e396862f7b12e7206a19011382840a49628c61ae28856a2",
+      "mainGrid": 8364,
+      "mainGridFloorTiles": 15104,
+      "floorBounds": {
+        "x": -82,
+        "y": -103,
+        "width": 176,
+        "height": 163
+      },
+      "floorBoundingFill": 0.5265,
+      "beacons": [
+        {
+          "uid": 27710,
+          "prototype": "DefaultStationBeaconArrivals",
+          "rawPrototype": "DefaultStationBeaconArrivals",
+          "grid": 8364,
+          "position": [
+            -64.5,
+            2.5
+          ],
+          "onMainGrid": true,
+          "label": "Arrivals",
+          "defaultText": "station-beacon-arrivals",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 3
+        },
+        {
+          "uid": 27409,
+          "prototype": "DefaultStationBeaconBar",
+          "rawPrototype": "DefaultStationBeaconBar",
+          "grid": 8364,
+          "position": [
+            23.5,
+            -6.5
+          ],
+          "onMainGrid": true,
+          "label": "Bar",
+          "defaultText": "station-beacon-bar",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 277
+        },
+        {
+          "uid": 27544,
+          "prototype": "DefaultStationBeaconBotany",
+          "rawPrototype": "DefaultStationBeaconBotany",
+          "grid": 8364,
+          "position": [
+            46.5,
+            -7.5
+          ],
+          "onMainGrid": true,
+          "label": "Botany",
+          "defaultText": "station-beacon-botany",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 334
+        },
+        {
+          "uid": 5736,
+          "prototype": "DefaultStationBeaconChapel",
+          "rawPrototype": "DefaultStationBeaconChapel",
+          "grid": 8364,
+          "position": [
+            69.5,
+            -4.5
+          ],
+          "onMainGrid": true,
+          "label": "Chapel",
+          "defaultText": "station-beacon-chapel",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 27717,
+          "prototype": "DefaultStationBeaconCryonics",
+          "rawPrototype": "DefaultStationBeaconCryonics",
+          "grid": 8364,
+          "position": [
+            31.5,
+            -35.5
+          ],
+          "onMainGrid": true,
+          "label": "Cryopods",
+          "defaultText": "station-beacon-cryonics",
+          "color": "#52B4E9",
+          "closedDoorFloorComponent": 303
+        },
+        {
+          "uid": 9541,
+          "prototype": "DefaultStationBeaconCryosleep",
+          "rawPrototype": "DefaultStationBeaconCryosleep",
+          "grid": 8364,
+          "position": [
+            24.5,
+            18.5
+          ],
+          "onMainGrid": true,
+          "label": "Cryosleep",
+          "defaultText": "station-beacon-cryosleep",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 288
+        },
+        {
+          "uid": 14082,
+          "prototype": "DefaultStationBeaconEvac",
+          "rawPrototype": "DefaultStationBeaconEvac",
+          "grid": 8364,
+          "position": [
+            81.5,
+            -8.5
+          ],
+          "onMainGrid": true,
+          "label": "Evac",
+          "defaultText": "station-beacon-evac",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 416
+        },
+        {
+          "uid": 27725,
+          "prototype": "DefaultStationBeaconKitchen",
+          "rawPrototype": "DefaultStationBeaconKitchen",
+          "grid": 8364,
+          "position": [
+            35.5,
+            -5.5
+          ],
+          "onMainGrid": true,
+          "label": "Kitchen",
+          "defaultText": "station-beacon-kitchen",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 311
+        }
+      ],
+      "selectedClosedDoorComponents": [
+        {
+          "componentId": 3,
+          "area": 68,
+          "bounds": {
+            "x": -79,
+            "y": -6,
+            "width": 16,
+            "height": 13
+          },
+          "aspectRatio": 1.2308,
+          "fillRatio": 0.3269,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 277,
+          "area": 96,
+          "bounds": {
+            "x": 18,
+            "y": -11,
+            "width": 14,
+            "height": 12
+          },
+          "aspectRatio": 1.1667,
+          "fillRatio": 0.5714,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 288,
+          "area": 9,
+          "bounds": {
+            "x": 23,
+            "y": 17,
+            "width": 3,
+            "height": 3
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 303,
+          "area": 39,
+          "bounds": {
+            "x": 28,
+            "y": -37,
+            "width": 10,
+            "height": 5
+          },
+          "aspectRatio": 2.0,
+          "fillRatio": 0.78,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 311,
+          "area": 48,
+          "bounds": {
+            "x": 33,
+            "y": -10,
+            "width": 8,
+            "height": 6
+          },
+          "aspectRatio": 1.3333,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 334,
+          "area": 67,
+          "bounds": {
+            "x": 42,
+            "y": -11,
+            "width": 8,
+            "height": 9
+          },
+          "aspectRatio": 1.125,
+          "fillRatio": 0.9306,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 383,
+          "area": 8,
+          "bounds": {
+            "x": 60,
+            "y": -1,
+            "width": 2,
+            "height": 4
+          },
+          "aspectRatio": 2.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 390,
+          "area": 20,
+          "bounds": {
+            "x": 63,
+            "y": -1,
+            "width": 4,
+            "height": 5
+          },
+          "aspectRatio": 1.25,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 398,
+          "area": 79,
+          "bounds": {
+            "x": 65,
+            "y": -11,
+            "width": 9,
+            "height": 10
+          },
+          "aspectRatio": 1.1111,
+          "fillRatio": 0.8778,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 399,
+          "area": 42,
+          "bounds": {
+            "x": 68,
+            "y": 0,
+            "width": 7,
+            "height": 7
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 0.8571,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 408,
+          "area": 1,
+          "bounds": {
+            "x": 74,
+            "y": -4,
+            "width": 1,
+            "height": 1
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 409,
+          "area": 1,
+          "bounds": {
+            "x": 74,
+            "y": -2,
+            "width": 1,
+            "height": 1
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 416,
+          "area": 73,
+          "bounds": {
+            "x": 75,
+            "y": -16,
+            "width": 8,
+            "height": 11
+          },
+          "aspectRatio": 1.375,
+          "fillRatio": 0.8295,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        }
+      ],
+      "chapelDoorBoundaries": [
+        {
+          "uid": 26882,
+          "prototype": "AirlockGlass",
+          "cell": [
+            69,
+            -1
+          ],
+          "components": [
+            398,
+            399
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 10765,
+          "prototype": "AirlockMaintChapelLocked",
+          "cell": [
+            66,
+            -2
+          ],
+          "components": [
+            390,
+            398
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 10537,
+          "prototype": "WoodDoor",
+          "cell": [
+            73,
+            -4
+          ],
+          "components": [
+            398,
+            408
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 10538,
+          "prototype": "WoodDoor",
+          "cell": [
+            73,
+            -2
+          ],
+          "components": [
+            398,
+            409
+          ],
+          "access": [],
+          "externalAccess": []
+        }
+      ],
+      "chapelRelatedFeatures": [
+        {
+          "uid": 10764,
+          "prototype": "AirlockChapelLocked",
+          "name": "Chaplain Crematorium",
+          "position": [
+            62.5,
+            0.5
+          ],
+          "closedDoorFloorComponent": null
+        },
+        {
+          "uid": 10761,
+          "prototype": "AirlockMaintChapelLocked",
+          "name": "Crematorium Maintenance",
+          "position": [
+            61.5,
+            3.5
+          ],
+          "closedDoorFloorComponent": null
+        },
+        {
+          "uid": 10541,
+          "prototype": "AltarSpawner",
+          "name": "random altar spawner",
+          "position": [
+            69.5,
+            -3.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10824,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            64.5,
+            2.5
+          ],
+          "closedDoorFloorComponent": 390
+        },
+        {
+          "uid": 10825,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            64.5,
+            0.5
+          ],
+          "closedDoorFloorComponent": 390
+        },
+        {
+          "uid": 26890,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            70.5,
+            6.5
+          ],
+          "closedDoorFloorComponent": 399
+        },
+        {
+          "uid": 26891,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            72.5,
+            6.5
+          ],
+          "closedDoorFloorComponent": 399
+        },
+        {
+          "uid": 26892,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            71.5,
+            6.5
+          ],
+          "closedDoorFloorComponent": 399
+        },
+        {
+          "uid": 10793,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            66.5,
+            -5.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10794,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            66.5,
+            -6.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10795,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            66.5,
+            -7.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10796,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            74.5,
+            -3.5
+          ],
+          "closedDoorFloorComponent": 408
+        },
+        {
+          "uid": 10797,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            67.5,
+            -5.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10798,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            67.5,
+            -6.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10799,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            67.5,
+            -7.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10801,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            71.5,
+            -5.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10802,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            71.5,
+            -6.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10803,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            71.5,
+            -7.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10805,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            72.5,
+            -5.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10806,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            72.5,
+            -6.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10807,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            72.5,
+            -7.5
+          ],
+          "closedDoorFloorComponent": 398
+        },
+        {
+          "uid": 10810,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            74.5,
+            -1.5
+          ],
+          "closedDoorFloorComponent": 409
+        },
+        {
+          "uid": 10576,
+          "prototype": "Crematorium",
+          "name": "crematorium",
+          "position": [
+            60.5,
+            2.5
+          ],
+          "closedDoorFloorComponent": 383
+        }
+      ]
+    },
+    {
+      "id": "Marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "sha256": "469342d8887d4904b5f10ca2ed56d4cc9963b54b29320809f91955ac0f5148c0",
+      "mainGrid": 30,
+      "mainGridFloorTiles": 12425,
+      "floorBounds": {
+        "x": -90,
+        "y": -78,
+        "width": 166,
+        "height": 169
+      },
+      "floorBoundingFill": 0.4429,
+      "beacons": [
+        {
+          "uid": 20532,
+          "prototype": "DefaultStationBeaconArrivals",
+          "rawPrototype": "DefaultStationBeaconArrivals",
+          "grid": 30,
+          "position": [
+            -46.5,
+            5.5
+          ],
+          "onMainGrid": true,
+          "label": "Arrivals",
+          "defaultText": "station-beacon-arrivals",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 48
+        },
+        {
+          "uid": 1755,
+          "prototype": "DefaultStationBeaconBar",
+          "rawPrototype": "DefaultStationBeaconBar",
+          "grid": 30,
+          "position": [
+            -2.5,
+            9.5
+          ],
+          "onMainGrid": true,
+          "label": "Bar",
+          "defaultText": "station-beacon-bar",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 217
+        },
+        {
+          "uid": 20535,
+          "prototype": "DefaultStationBeaconBotany",
+          "rawPrototype": "DefaultStationBeaconBotany",
+          "grid": 30,
+          "position": [
+            -26.5,
+            8.5
+          ],
+          "onMainGrid": true,
+          "label": "Botany",
+          "defaultText": "station-beacon-botany",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 134
+        },
+        {
+          "uid": 20543,
+          "prototype": "DefaultStationBeaconChapel",
+          "rawPrototype": "DefaultStationBeaconChapel",
+          "grid": 30,
+          "position": [
+            -63.5,
+            -44.5
+          ],
+          "onMainGrid": true,
+          "label": "Chapel",
+          "defaultText": "station-beacon-chapel",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 3162,
+          "prototype": "DefaultStationBeaconCryonics",
+          "rawPrototype": "DefaultStationBeaconCryonics",
+          "grid": 30,
+          "position": [
+            -31.5,
+            -11.5
+          ],
+          "onMainGrid": true,
+          "label": "Cryopods",
+          "defaultText": "station-beacon-cryonics",
+          "color": "#52B4E9",
+          "closedDoorFloorComponent": 121
+        },
+        {
+          "uid": 14843,
+          "prototype": "DefaultStationBeaconCryosleep",
+          "rawPrototype": "DefaultStationBeaconCryosleep",
+          "grid": 30,
+          "position": [
+            30.5,
+            41.5
+          ],
+          "onMainGrid": true,
+          "label": "Cryosleep",
+          "defaultText": "station-beacon-cryosleep",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 332
+        },
+        {
+          "uid": 20692,
+          "prototype": "DefaultStationBeaconEvac",
+          "rawPrototype": "DefaultStationBeaconEvac",
+          "grid": 30,
+          "position": [
+            -51.5,
+            16.5
+          ],
+          "onMainGrid": true,
+          "label": "Evac",
+          "defaultText": "station-beacon-evac",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 53
+        },
+        {
+          "uid": 20557,
+          "prototype": "DefaultStationBeaconKitchen",
+          "rawPrototype": "DefaultStationBeaconKitchen",
+          "grid": 30,
+          "position": [
+            -13.5,
+            8.5
+          ],
+          "onMainGrid": true,
+          "label": "Kitchen",
+          "defaultText": "station-beacon-kitchen",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 185
+        },
+        {
+          "uid": 20684,
+          "prototype": "DefaultStationBeaconLibrary",
+          "rawPrototype": "DefaultStationBeaconLibrary",
+          "grid": 30,
+          "position": [
+            -62.5,
+            -62.5
+          ],
+          "onMainGrid": true,
+          "label": "Library",
+          "defaultText": "station-beacon-library",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 33
+        },
+        {
+          "uid": 20698,
+          "prototype": "DefaultStationBeaconService",
+          "rawPrototype": "DefaultStationBeaconService",
+          "grid": 30,
+          "position": [
+            -10.5,
+            14.5
+          ],
+          "onMainGrid": true,
+          "label": "Service",
+          "defaultText": "station-beacon-service",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 202
+        }
+      ],
+      "selectedClosedDoorComponents": [
+        {
+          "componentId": 11,
+          "area": 10,
+          "bounds": {
+            "x": -81,
+            "y": -41,
+            "width": 4,
+            "height": 3
+          },
+          "aspectRatio": 1.3333,
+          "fillRatio": 0.8333,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 29,
+          "area": 98,
+          "bounds": {
+            "x": -71,
+            "y": -61,
+            "width": 16,
+            "height": 13
+          },
+          "aspectRatio": 1.2308,
+          "fillRatio": 0.4712,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 31,
+          "area": 6,
+          "bounds": {
+            "x": -69,
+            "y": -47,
+            "width": 2,
+            "height": 3
+          },
+          "aspectRatio": 1.5,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 33,
+          "area": 39,
+          "bounds": {
+            "x": -68,
+            "y": -67,
+            "width": 10,
+            "height": 5
+          },
+          "aspectRatio": 2.0,
+          "fillRatio": 0.78,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 34,
+          "area": 1,
+          "bounds": {
+            "x": -68,
+            "y": -41,
+            "width": 1,
+            "height": 1
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 38,
+          "area": 77,
+          "bounds": {
+            "x": -66,
+            "y": -47,
+            "width": 9,
+            "height": 10
+          },
+          "aspectRatio": 1.1111,
+          "fillRatio": 0.8556,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 48,
+          "area": 149,
+          "bounds": {
+            "x": -61,
+            "y": -10,
+            "width": 18,
+            "height": 21
+          },
+          "aspectRatio": 1.1667,
+          "fillRatio": 0.3942,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 53,
+          "area": 113,
+          "bounds": {
+            "x": -58,
+            "y": 12,
+            "width": 10,
+            "height": 14
+          },
+          "aspectRatio": 1.4,
+          "fillRatio": 0.8071,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 57,
+          "area": 6,
+          "bounds": {
+            "x": -57,
+            "y": -47,
+            "width": 4,
+            "height": 2
+          },
+          "aspectRatio": 2.0,
+          "fillRatio": 0.75,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 121,
+          "area": 40,
+          "bounds": {
+            "x": -35,
+            "y": -14,
+            "width": 8,
+            "height": 5
+          },
+          "aspectRatio": 1.6,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 134,
+          "area": 71,
+          "bounds": {
+            "x": -29,
+            "y": 5,
+            "width": 10,
+            "height": 9
+          },
+          "aspectRatio": 1.1111,
+          "fillRatio": 0.7889,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 185,
+          "area": 47,
+          "bounds": {
+            "x": -18,
+            "y": 5,
+            "width": 7,
+            "height": 7
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 0.9592,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 202,
+          "area": 17,
+          "bounds": {
+            "x": -14,
+            "y": 13,
+            "width": 7,
+            "height": 4
+          },
+          "aspectRatio": 1.75,
+          "fillRatio": 0.6071,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 217,
+          "area": 91,
+          "bounds": {
+            "x": -10,
+            "y": 6,
+            "width": 17,
+            "height": 6
+          },
+          "aspectRatio": 2.8333,
+          "fillRatio": 0.8922,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 332,
+          "area": 15,
+          "bounds": {
+            "x": 29,
+            "y": 41,
+            "width": 5,
+            "height": 3
+          },
+          "aspectRatio": 1.6667,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        }
+      ],
+      "chapelDoorBoundaries": [
+        {
+          "uid": 17484,
+          "prototype": "AirlockGlass",
+          "cell": [
+            -67,
+            -46
+          ],
+          "components": [
+            31,
+            38
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 17485,
+          "prototype": "AirlockGlass",
+          "cell": [
+            -62,
+            -48
+          ],
+          "components": [
+            29,
+            38
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 17486,
+          "prototype": "AirlockGlass",
+          "cell": [
+            -63,
+            -48
+          ],
+          "components": [
+            29,
+            38
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 17487,
+          "prototype": "AirlockGlass",
+          "cell": [
+            -58,
+            -46
+          ],
+          "components": [
+            38,
+            57
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 17393,
+          "prototype": "WoodDoor",
+          "cell": [
+            -67,
+            -41
+          ],
+          "components": [
+            34,
+            38
+          ],
+          "access": [],
+          "externalAccess": []
+        }
+      ],
+      "chapelRelatedFeatures": [
+        {
+          "uid": 17468,
+          "prototype": "AltarConvertRed",
+          "name": "red altar",
+          "position": [
+            -61.5,
+            -44.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17469,
+          "prototype": "AltarConvertRed",
+          "name": "red altar",
+          "position": [
+            -62.5,
+            -44.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 13673,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -64.5,
+            -48.5
+          ],
+          "closedDoorFloorComponent": 29
+        },
+        {
+          "uid": 17395,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -67.5,
+            -40.5
+          ],
+          "closedDoorFloorComponent": 34
+        },
+        {
+          "uid": 17447,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -64.5,
+            -39.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17448,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -63.5,
+            -39.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17449,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -63.5,
+            -40.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17450,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -64.5,
+            -40.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17451,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -64.5,
+            -41.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17452,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -63.5,
+            -41.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17453,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -63.5,
+            -42.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17454,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -64.5,
+            -42.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17455,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -64.5,
+            -43.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17456,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -63.5,
+            -43.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17457,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -60.5,
+            -43.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17458,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -59.5,
+            -43.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17459,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -59.5,
+            -42.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17460,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -60.5,
+            -42.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17461,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -60.5,
+            -41.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17462,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -59.5,
+            -41.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17463,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -59.5,
+            -40.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17464,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -60.5,
+            -40.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17465,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -59.5,
+            -39.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17466,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -59.5,
+            -39.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 17467,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -60.5,
+            -39.5
+          ],
+          "closedDoorFloorComponent": 38
+        },
+        {
+          "uid": 18078,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -59.5,
+            -48.5
+          ],
+          "closedDoorFloorComponent": 29
+        },
+        {
+          "uid": 18080,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -65.5,
+            -48.5
+          ],
+          "closedDoorFloorComponent": 29
+        },
+        {
+          "uid": 18083,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -58.5,
+            -48.5
+          ],
+          "closedDoorFloorComponent": 29
+        },
+        {
+          "uid": 6908,
+          "prototype": "Crematorium",
+          "name": "crematorium",
+          "position": [
+            -77.5,
+            -38.5
+          ],
+          "closedDoorFloorComponent": 11
+        }
+      ]
+    },
+    {
+      "id": "Packed",
+      "sourcePath": "Resources/Maps/packed.yml",
+      "sha256": "ae7613de34f165a5c6fa7df0cfc9869ce2725b2841de5f5fe4e42a1730d7e8d0",
+      "mainGrid": 2,
+      "mainGridFloorTiles": 8122,
+      "floorBounds": {
+        "x": -30,
+        "y": -61,
+        "width": 151,
+        "height": 116
+      },
+      "floorBoundingFill": 0.4637,
+      "beacons": [
+        {
+          "uid": 14028,
+          "prototype": "DefaultStationBeaconArrivals",
+          "rawPrototype": "DefaultStationBeaconArrivals",
+          "grid": 2,
+          "position": [
+            -23.5,
+            -12.5
+          ],
+          "onMainGrid": true,
+          "label": "Arrivals",
+          "defaultText": "station-beacon-arrivals",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 4
+        },
+        {
+          "uid": 11974,
+          "prototype": "DefaultStationBeaconBar",
+          "rawPrototype": "DefaultStationBeaconBar",
+          "grid": 2,
+          "position": [
+            32.5,
+            -3.5
+          ],
+          "onMainGrid": true,
+          "label": "Bar",
+          "defaultText": "station-beacon-bar",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 122
+        },
+        {
+          "uid": 11007,
+          "prototype": "DefaultStationBeaconBotany",
+          "rawPrototype": "DefaultStationBeaconBotany",
+          "grid": 2,
+          "position": [
+            44.5,
+            -3.5
+          ],
+          "onMainGrid": true,
+          "label": "Botany",
+          "defaultText": "station-beacon-botany",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 160
+        },
+        {
+          "uid": 12827,
+          "prototype": "DefaultStationBeaconChapel",
+          "rawPrototype": "DefaultStationBeaconChapel",
+          "grid": 2,
+          "position": [
+            36.5,
+            7.5
+          ],
+          "onMainGrid": true,
+          "label": "Chapel",
+          "defaultText": "station-beacon-chapel",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 141
+        },
+        {
+          "uid": 12850,
+          "prototype": "DefaultStationBeaconCryonics",
+          "rawPrototype": "DefaultStationBeaconCryonics",
+          "grid": 2,
+          "position": [
+            59.5,
+            -1.5
+          ],
+          "onMainGrid": true,
+          "label": "Cryopods",
+          "defaultText": "station-beacon-cryonics",
+          "color": "#52B4E9",
+          "closedDoorFloorComponent": 193
+        },
+        {
+          "uid": 15113,
+          "prototype": "DefaultStationBeaconCryosleep",
+          "rawPrototype": "DefaultStationBeaconCryosleep",
+          "grid": 2,
+          "position": [
+            21.5,
+            18.5
+          ],
+          "onMainGrid": true,
+          "label": "Cryosleep",
+          "defaultText": "station-beacon-cryosleep",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 100
+        },
+        {
+          "uid": 4139,
+          "prototype": "DefaultStationBeaconEvac",
+          "rawPrototype": "DefaultStationBeaconEvac",
+          "grid": 2,
+          "position": [
+            -7.5,
+            -0.5
+          ],
+          "onMainGrid": true,
+          "label": "Evac",
+          "defaultText": "station-beacon-evac",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 8
+        },
+        {
+          "uid": 13134,
+          "prototype": "DefaultStationBeaconKitchen",
+          "rawPrototype": "DefaultStationBeaconKitchen",
+          "grid": 2,
+          "position": [
+            35.5,
+            -9.5
+          ],
+          "onMainGrid": true,
+          "label": "Kitchen",
+          "defaultText": "station-beacon-kitchen",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 136
+        },
+        {
+          "uid": 13136,
+          "prototype": "DefaultStationBeaconLibrary",
+          "rawPrototype": "DefaultStationBeaconLibrary",
+          "grid": 2,
+          "position": [
+            10.5,
+            5.5
+          ],
+          "onMainGrid": true,
+          "label": "Library",
+          "defaultText": "station-beacon-library",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 57
+        }
+      ],
+      "selectedClosedDoorComponents": [
+        {
+          "componentId": 4,
+          "area": 20,
+          "bounds": {
+            "x": -26,
+            "y": -15,
+            "width": 5,
+            "height": 4
+          },
+          "aspectRatio": 1.25,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 8,
+          "area": 51,
+          "bounds": {
+            "x": -20,
+            "y": -2,
+            "width": 21,
+            "height": 3
+          },
+          "aspectRatio": 7.0,
+          "fillRatio": 0.8095,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 57,
+          "area": 25,
+          "bounds": {
+            "x": 8,
+            "y": 3,
+            "width": 6,
+            "height": 5
+          },
+          "aspectRatio": 1.2,
+          "fillRatio": 0.8333,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 100,
+          "area": 6,
+          "bounds": {
+            "x": 20,
+            "y": 17,
+            "width": 3,
+            "height": 2
+          },
+          "aspectRatio": 1.5,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 122,
+          "area": 48,
+          "bounds": {
+            "x": 29,
+            "y": -8,
+            "width": 8,
+            "height": 6
+          },
+          "aspectRatio": 1.3333,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 123,
+          "area": 4,
+          "bounds": {
+            "x": 29,
+            "y": 4,
+            "width": 4,
+            "height": 1
+          },
+          "aspectRatio": 4.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 124,
+          "area": 14,
+          "bounds": {
+            "x": 29,
+            "y": 6,
+            "width": 4,
+            "height": 4
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 0.875,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 132,
+          "area": 8,
+          "bounds": {
+            "x": 31,
+            "y": 11,
+            "width": 8,
+            "height": 1
+          },
+          "aspectRatio": 8.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 136,
+          "area": 20,
+          "bounds": {
+            "x": 33,
+            "y": -13,
+            "width": 5,
+            "height": 4
+          },
+          "aspectRatio": 1.25,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 140,
+          "area": 1,
+          "bounds": {
+            "x": 34,
+            "y": 3,
+            "width": 1,
+            "height": 1
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 141,
+          "area": 25,
+          "bounds": {
+            "x": 34,
+            "y": 5,
+            "width": 5,
+            "height": 5
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 146,
+          "area": 1,
+          "bounds": {
+            "x": 36,
+            "y": 3,
+            "width": 1,
+            "height": 1
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 151,
+          "area": 1,
+          "bounds": {
+            "x": 38,
+            "y": 3,
+            "width": 1,
+            "height": 1
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 159,
+          "area": 21,
+          "bounds": {
+            "x": 40,
+            "y": 4,
+            "width": 3,
+            "height": 7
+          },
+          "aspectRatio": 2.3333,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 160,
+          "area": 41,
+          "bounds": {
+            "x": 41,
+            "y": -11,
+            "width": 7,
+            "height": 8
+          },
+          "aspectRatio": 1.1429,
+          "fillRatio": 0.7321,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 193,
+          "area": 106,
+          "bounds": {
+            "x": 53,
+            "y": -8,
+            "width": 17,
+            "height": 13
+          },
+          "aspectRatio": 1.3077,
+          "fillRatio": 0.4796,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        }
+      ],
+      "chapelDoorBoundaries": [
+        {
+          "uid": 1193,
+          "prototype": "AirlockChapelLocked",
+          "cell": [
+            33,
+            6
+          ],
+          "components": [
+            124,
+            141
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 2541,
+          "prototype": "AirlockGlass",
+          "cell": [
+            39,
+            7
+          ],
+          "components": [
+            141,
+            159
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 2540,
+          "prototype": "AirlockMaintLocked",
+          "cell": [
+            35,
+            10
+          ],
+          "components": [
+            132,
+            141
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 15968,
+          "prototype": "FirelockGlass",
+          "cell": [
+            39,
+            7
+          ],
+          "components": [
+            141,
+            159
+          ],
+          "access": [
+            [
+              "Engineering"
+            ]
+          ],
+          "externalAccess": []
+        },
+        {
+          "uid": 2528,
+          "prototype": "Windoor",
+          "cell": [
+            38,
+            4
+          ],
+          "components": [
+            141,
+            151
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 12392,
+          "prototype": "WoodDoor",
+          "cell": [
+            36,
+            4
+          ],
+          "components": [
+            141,
+            146
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 15327,
+          "prototype": "WoodDoor",
+          "cell": [
+            34,
+            4
+          ],
+          "components": [
+            140,
+            141
+          ],
+          "access": [],
+          "externalAccess": []
+        }
+      ],
+      "chapelRelatedFeatures": [
+        {
+          "uid": 2526,
+          "prototype": "AltarSpawner",
+          "name": "random altar spawner",
+          "position": [
+            35.5,
+            7.5
+          ],
+          "closedDoorFloorComponent": 141
+        },
+        {
+          "uid": 5100,
+          "prototype": "BookshelfFilled",
+          "name": "bookshelf",
+          "position": [
+            29.5,
+            6.5
+          ],
+          "closedDoorFloorComponent": 124
+        },
+        {
+          "uid": 10637,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            31.5,
+            7.5
+          ],
+          "closedDoorFloorComponent": 124
+        },
+        {
+          "uid": 2337,
+          "prototype": "ComfyChair",
+          "name": "comfy chair",
+          "position": [
+            36.5,
+            3.5
+          ],
+          "closedDoorFloorComponent": 146
+        },
+        {
+          "uid": 2527,
+          "prototype": "ComfyChair",
+          "name": "comfy chair",
+          "position": [
+            34.5,
+            7.5
+          ],
+          "closedDoorFloorComponent": 141
+        },
+        {
+          "uid": 10636,
+          "prototype": "ComfyChair",
+          "name": "comfy chair",
+          "position": [
+            29.5,
+            7.5
+          ],
+          "closedDoorFloorComponent": 124
+        },
+        {
+          "uid": 15960,
+          "prototype": "ComfyChair",
+          "name": "comfy chair",
+          "position": [
+            34.5,
+            3.5
+          ],
+          "closedDoorFloorComponent": 140
+        },
+        {
+          "uid": 9729,
+          "prototype": "Crematorium",
+          "name": "crematorium",
+          "position": [
+            29.5,
+            4.5
+          ],
+          "closedDoorFloorComponent": 123
+        }
+      ]
+    },
+    {
+      "id": "Saltern",
+      "sourcePath": "Resources/Maps/saltern.yml",
+      "sha256": "f2ce7d0a0529c096cc01429fc14056204ff60cdeb4ded56b7e37c79383f27ffb",
+      "mainGrid": 31,
+      "mainGridFloorTiles": 5930,
+      "floorBounds": {
+        "x": -55,
+        "y": -46,
+        "width": 136,
+        "height": 85
+      },
+      "floorBoundingFill": 0.513,
+      "beacons": [
+        {
+          "uid": 812,
+          "prototype": "DefaultStationBeaconArrivals",
+          "rawPrototype": "DefaultStationBeaconArrivals",
+          "grid": 31,
+          "position": [
+            -44.5,
+            -10.5
+          ],
+          "onMainGrid": true,
+          "label": "Arrivals",
+          "defaultText": "station-beacon-arrivals",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 0
+        },
+        {
+          "uid": 11319,
+          "prototype": "DefaultStationBeaconBar",
+          "rawPrototype": "DefaultStationBeaconBar",
+          "grid": 31,
+          "position": [
+            -5.5,
+            -5.5
+          ],
+          "onMainGrid": true,
+          "label": "Bar",
+          "defaultText": "station-beacon-bar",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 82
+        },
+        {
+          "uid": 11320,
+          "prototype": "DefaultStationBeaconBotany",
+          "rawPrototype": "DefaultStationBeaconBotany",
+          "grid": 31,
+          "position": [
+            -18.5,
+            -0.5
+          ],
+          "onMainGrid": true,
+          "label": "Botany",
+          "defaultText": "station-beacon-botany",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 59
+        },
+        {
+          "uid": 11324,
+          "prototype": "DefaultStationBeaconChapel",
+          "rawPrototype": "DefaultStationBeaconChapel",
+          "grid": 31,
+          "position": [
+            -36.5,
+            14.5
+          ],
+          "onMainGrid": true,
+          "label": "Chapel",
+          "defaultText": "station-beacon-chapel",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 11
+        },
+        {
+          "uid": 8316,
+          "prototype": "DefaultStationBeaconCryonics",
+          "rawPrototype": "DefaultStationBeaconCryonics",
+          "grid": 31,
+          "position": [
+            8.5,
+            -15.5
+          ],
+          "onMainGrid": true,
+          "label": "Cryopods",
+          "defaultText": "station-beacon-cryonics",
+          "color": "#52B4E9",
+          "closedDoorFloorComponent": 121
+        },
+        {
+          "uid": 9207,
+          "prototype": "DefaultStationBeaconCryosleep",
+          "rawPrototype": "DefaultStationBeaconCryosleep",
+          "grid": 31,
+          "position": [
+            -41.5,
+            -4.5
+          ],
+          "onMainGrid": true,
+          "label": "Cryosleep",
+          "defaultText": "station-beacon-cryosleep",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 5
+        },
+        {
+          "uid": 11318,
+          "prototype": "DefaultStationBeaconKitchen",
+          "rawPrototype": "DefaultStationBeaconKitchen",
+          "grid": 31,
+          "position": [
+            -12.5,
+            -0.5
+          ],
+          "onMainGrid": true,
+          "label": "Kitchen",
+          "defaultText": "station-beacon-kitchen",
+          "color": "#9FED58",
+          "closedDoorFloorComponent": 59
+        },
+        {
+          "uid": 11325,
+          "prototype": "DefaultStationBeaconLibrary",
+          "rawPrototype": "DefaultStationBeaconLibrary",
+          "grid": 31,
+          "position": [
+            9.5,
+            -26.5
+          ],
+          "onMainGrid": true,
+          "label": "Library",
+          "defaultText": "station-beacon-library",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 112
+        },
+        {
+          "uid": 774,
+          "prototype": "DefaultStationBeacon",
+          "rawPrototype": "DefaultStationBeacon",
+          "grid": 31,
+          "position": [
+            -39.5,
+            5.5
+          ],
+          "onMainGrid": true,
+          "label": "evac",
+          "defaultText": "station-beacon-general",
+          "color": "#D4D4D496",
+          "closedDoorFloorComponent": 6
+        }
+      ],
+      "selectedClosedDoorComponents": [
+        {
+          "componentId": 0,
+          "area": 58,
+          "bounds": {
+            "x": -54,
+            "y": -13,
+            "width": 19,
+            "height": 4
+          },
+          "aspectRatio": 4.75,
+          "fillRatio": 0.7632,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 5,
+          "area": 9,
+          "bounds": {
+            "x": -43,
+            "y": -6,
+            "width": 3,
+            "height": 3
+          },
+          "aspectRatio": 1.0,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 6,
+          "area": 75,
+          "bounds": {
+            "x": -41,
+            "y": -2,
+            "width": 7,
+            "height": 13
+          },
+          "aspectRatio": 1.8571,
+          "fillRatio": 0.8242,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 11,
+          "area": 20,
+          "bounds": {
+            "x": -39,
+            "y": 12,
+            "width": 5,
+            "height": 4
+          },
+          "aspectRatio": 1.25,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 12,
+          "area": 10,
+          "bounds": {
+            "x": -39,
+            "y": 17,
+            "width": 4,
+            "height": 3
+          },
+          "aspectRatio": 1.3333,
+          "fillRatio": 0.8333,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 29,
+          "area": 28,
+          "bounds": {
+            "x": -33,
+            "y": 9,
+            "width": 10,
+            "height": 6
+          },
+          "aspectRatio": 1.6667,
+          "fillRatio": 0.4667,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 59,
+          "area": 42,
+          "bounds": {
+            "x": -21,
+            "y": -3,
+            "width": 10,
+            "height": 5
+          },
+          "aspectRatio": 2.0,
+          "fillRatio": 0.84,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 82,
+          "area": 88,
+          "bounds": {
+            "x": -10,
+            "y": -7,
+            "width": 11,
+            "height": 9
+          },
+          "aspectRatio": 1.2222,
+          "fillRatio": 0.8889,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 112,
+          "area": 53,
+          "bounds": {
+            "x": 6,
+            "y": -31,
+            "width": 7,
+            "height": 9
+          },
+          "aspectRatio": 1.2857,
+          "fillRatio": 0.8413,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        },
+        {
+          "componentId": 121,
+          "area": 20,
+          "bounds": {
+            "x": 7,
+            "y": -18,
+            "width": 4,
+            "height": 5
+          },
+          "aspectRatio": 1.25,
+          "fillRatio": 1.0,
+          "openEdgesToMissingFloor": 0,
+          "labels": []
+        }
+      ],
+      "chapelDoorBoundaries": [
+        {
+          "uid": 10439,
+          "prototype": "AirlockChapelLocked",
+          "cell": [
+            -39,
+            16
+          ],
+          "components": [
+            11,
+            12
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 7708,
+          "prototype": "AirlockGlass",
+          "cell": [
+            -37,
+            11
+          ],
+          "components": [
+            6,
+            11
+          ],
+          "access": [],
+          "externalAccess": []
+        },
+        {
+          "uid": 2053,
+          "prototype": "AirlockMaintLocked",
+          "cell": [
+            -34,
+            14
+          ],
+          "components": [
+            11,
+            29
+          ],
+          "access": [],
+          "externalAccess": []
+        }
+      ],
+      "chapelRelatedFeatures": [
+        {
+          "uid": 5771,
+          "prototype": "AltarSpawner",
+          "name": "random altar spawner",
+          "position": [
+            -36.5,
+            13.5
+          ],
+          "closedDoorFloorComponent": 11
+        },
+        {
+          "uid": 654,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -35.5,
+            -0.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 9239,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -40.5,
+            4.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 9240,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -40.5,
+            5.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 9241,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -40.5,
+            6.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 9242,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -38.5,
+            4.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 9243,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -38.5,
+            5.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 9244,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -38.5,
+            6.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 9245,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -37.5,
+            4.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 9246,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -37.5,
+            5.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 9247,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -37.5,
+            6.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 9336,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -35.5,
+            0.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 9337,
+          "prototype": "Chair",
+          "name": "chair",
+          "position": [
+            -35.5,
+            1.5
+          ],
+          "closedDoorFloorComponent": 6
+        },
+        {
+          "uid": 7702,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -37.5,
+            12.5
+          ],
+          "closedDoorFloorComponent": 11
+        },
+        {
+          "uid": 7704,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -35.5,
+            12.5
+          ],
+          "closedDoorFloorComponent": 11
+        },
+        {
+          "uid": 7705,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -35.5,
+            13.5
+          ],
+          "closedDoorFloorComponent": 11
+        },
+        {
+          "uid": 7707,
+          "prototype": "ChairWood",
+          "name": "wooden chair",
+          "position": [
+            -37.5,
+            13.5
+          ],
+          "closedDoorFloorComponent": 11
+        },
+        {
+          "uid": 7701,
+          "prototype": "ComfyChair",
+          "name": "comfy chair",
+          "position": [
+            -36.5,
+            14.5
+          ],
+          "closedDoorFloorComponent": 11
+        },
+        {
+          "uid": 7631,
+          "prototype": "Crematorium",
+          "name": "crematorium",
+          "position": [
+            -35.5,
+            19.5
+          ],
+          "closedDoorFloorComponent": 12
+        }
+      ]
+    }
+  ]
+}

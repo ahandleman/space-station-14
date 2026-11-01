@@ -1,0 +1,15 @@
+# Runtime settings for generate.py. All are search policy, not native constants.
+suite_alternatives: 3
+parent_alternatives: 4
+local_proposals: 200
+root_restarts: 4
+max_proposals: 100000
+maintenance_width: 2
+department_gap: 5
+compactness_weight: 4.0
+wrap_weight: 4.0
+split_weight: 12.0
+distributed_split_weight: 2.0
+maintenance_split_weight: 1.0
+area_jitter: 0.12
+room_growth_steps: 200

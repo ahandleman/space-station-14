@@ -1,0 +1,109 @@
+{
+  "currentExample": {
+    "rooms": 139,
+    "canvas": [
+      162,
+      149
+    ],
+    "allOwnedFloor": {
+      "cells": 4879,
+      "bounds": {
+        "width": 139,
+        "height": 131
+      },
+      "bboxArea": 18209,
+      "density": 0.26794442308748423
+    },
+    "interiorOwnedFloor": {
+      "cells": 4769,
+      "bounds": {
+        "width": 139,
+        "height": 122
+      },
+      "bboxArea": 16958,
+      "density": 0.28122420096709516
+    },
+    "coreOwnedFloor": {
+      "cells": 4541,
+      "bounds": {
+        "width": 139,
+        "height": 113
+      },
+      "bboxArea": 15707,
+      "density": 0.2891067676831986
+    },
+    "allMaterialized": {
+      "cells": 14038,
+      "bounds": {
+        "width": 159,
+        "height": 143
+      },
+      "bboxArea": 22737,
+      "density": 0.6174077494832212
+    },
+    "hardErrors": [],
+    "source": "Tools/StationArchitect/examples/generated/station-14014.station.json",
+    "snapshotSha256": "c34d91604f8677536f9f4d720c3687463a5cadbde537cd353492b067861ceaf2",
+    "compactness": 1,
+    "stage": "validation"
+  },
+  "historicalPreDenseExample": {
+    "rooms": 137,
+    "canvas": [
+      176,
+      208
+    ],
+    "allOwnedFloor": {
+      "cells": 4854,
+      "bounds": {
+        "width": 151,
+        "height": 190
+      },
+      "bboxArea": 28690,
+      "density": 0.1691878703380969
+    },
+    "interiorOwnedFloor": {
+      "cells": 4744,
+      "bounds": {
+        "width": 151,
+        "height": 163
+      },
+      "bboxArea": 24613,
+      "density": 0.19274367204322918
+    },
+    "coreOwnedFloor": {
+      "cells": 4516,
+      "bounds": {
+        "width": 150,
+        "height": 136
+      },
+      "bboxArea": 20400,
+      "density": 0.22137254901960784
+    },
+    "allMaterialized": {
+      "cells": 16533,
+      "bounds": {
+        "width": 160,
+        "height": 195
+      },
+      "bboxArea": 31200,
+      "density": 0.5299038461538461
+    },
+    "hardErrors": []
+  },
+  "comparisonBasis": "Historical bounding masks only. The room program, mandatory content capacity, docks and maintenance policy changed; this is not a matched-program quality comparison.",
+  "historicalBBoxAreaChange": {
+    "allOwnedFloor": -0.3653189264552109,
+    "interiorOwnedFloor": -0.31101450453012636,
+    "coreOwnedFloor": -0.23004901960784319
+  },
+  "matchedCompactnessComparison": {
+    "available": false,
+    "reason": "No accepted compactness .9 snapshot with the exact final authored program was retained. Earlier .65 drafts are excluded."
+  },
+  "geometryMatrix": {
+    "source": "verification.json",
+    "section": "layoutCases"
+  },
+  "note": "Actual room, passage and structural masks only; the unbuilt planning envelope is excluded. Geometry/contents matrix checks and the full native pipeline are reported separately."
+}

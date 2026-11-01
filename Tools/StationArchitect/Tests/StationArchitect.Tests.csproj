@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsTestProject>true</IsTestProject>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <ProjectReference Include="../Core/StationArchitect.Core.csproj" />
+    <None Include="../examples/station-program.yaml" Link="examples/station-program.yaml" CopyToOutputDirectory="PreserveNewest" Condition="Exists('../examples/station-program.yaml')" />
+    <None Include="../Catalog/standard-station.yaml" Link="Catalog/standard-station.yaml" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

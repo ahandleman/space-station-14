@@ -1,0 +1,341 @@
+{
+  "format": "ss14-comparative-furnishing-baseline",
+  "countBasis": "Authored conservative minimum functional contents, not copied map quantities.",
+  "newPhysicalInstancesByDefault": 30,
+  "newPhysicalInstancesWithTwoOptionalConcourses": 34,
+  "localRooms": {
+    "commons/concourse": [
+      {
+        "feature": "snack_vendor",
+        "prototype": "VendingMachineSnack",
+        "minimum": 1,
+        "workingTiles": 1,
+        "evidence": "comparative_furnishing_box_6450"
+      },
+      {
+        "feature": "waiting_table_groups",
+        "assembly": "furniture_table_pair_native",
+        "minimum": 1,
+        "workingTiles": 1,
+        "nativePartCount": 3,
+        "evidence": "comparative_furnishing_box_25881"
+      }
+    ],
+    "commons/lounge": [
+      {
+        "feature": "snack_vendor",
+        "prototype": "VendingMachineSnack",
+        "minimum": 1,
+        "workingTiles": 1,
+        "evidence": "comparative_furnishing_box_6450"
+      },
+      {
+        "feature": "lounge_table_groups",
+        "assembly": "furniture_table_pair_native",
+        "minimum": 2,
+        "workingTiles": 1,
+        "nativePartCount": 3,
+        "evidence": "comparative_furnishing_box_25881"
+      }
+    ],
+    "commons/emergency_storage": [
+      {
+        "feature": "emergency_supply_lockers",
+        "prototype": "ClosetEmergencyFilledRandom",
+        "minimum": 2,
+        "workingTiles": 1,
+        "evidence": "comparative_furnishing_box_607"
+      }
+    ],
+    "commons/arcade": [
+      {
+        "feature": "block_game",
+        "prototype": "BlockGameArcade",
+        "minimum": 1,
+        "workingTiles": 1,
+        "evidence": "comparative_furnishing_box_1873"
+      },
+      {
+        "feature": "space_villain",
+        "prototype": "SpaceVillainArcadeFilled",
+        "minimum": 1,
+        "workingTiles": 1,
+        "evidence": "comparative_furnishing_box_1883"
+      },
+      {
+        "feature": "game_seats",
+        "prototype": "ChairWood",
+        "minimum": 2,
+        "workingTiles": 0,
+        "evidence": "comparative_furnishing_box_6406"
+      }
+    ],
+    "commons/reporter_office": [
+      {
+        "feature": "news_computer",
+        "prototype": "ComputerMassMedia",
+        "minimum": 1,
+        "workingTiles": 1,
+        "evidence": "comparative_furnishing_box_23828"
+      },
+      {
+        "feature": "desk_seat",
+        "prototype": "ChairOfficeDark",
+        "minimum": 1,
+        "workingTiles": 0,
+        "evidence": "comparative_furnishing_box_3824"
+      },
+      {
+        "feature": "news_desk",
+        "prototype": "TableWood",
+        "minimum": 1,
+        "workingTiles": 1,
+        "evidence": "comparative_furnishing_box_1550"
+      }
+    ],
+    "service/library": [
+      {
+        "feature": "filled_bookshelves",
+        "prototype": "BookshelfFilled",
+        "minimum": 2,
+        "workingTiles": 1,
+        "evidence": "comparative_furnishing_packed_229"
+      },
+      {
+        "feature": "paired_reading_group",
+        "assembly": "furniture_table_pair_native",
+        "minimum": 1,
+        "workingTiles": 1,
+        "nativePartCount": 3,
+        "evidence": "comparative_furnishing_box_25881"
+      },
+      {
+        "feature": "single_reading_group",
+        "assembly": "furniture_table_single_native",
+        "minimum": 1,
+        "workingTiles": 1,
+        "nativePartCount": 2,
+        "evidence": "comparative_furnishing_box_25881"
+      }
+    ],
+    "service/chapel": [
+      {
+        "feature": "congregation_seats",
+        "prototype": "ChairWood",
+        "minimum": 4,
+        "workingTiles": 0,
+        "evidence": "comparative_furnishing_box_10793"
+      },
+      {
+        "feature": "altar_table",
+        "prototype": "TableWood",
+        "minimum": 1,
+        "workingTiles": 1,
+        "evidence": "comparative_furnishing_box_1550"
+      }
+    ],
+    "service/theatre": [
+      {
+        "feature": "audience_seats",
+        "prototype": "ChairWood",
+        "minimum": 4,
+        "workingTiles": 0,
+        "evidence": "comparative_furnishing_box_6406"
+      },
+      {
+        "feature": "costume_vendor",
+        "prototype": "VendingMachineTheater",
+        "minimum": 1,
+        "workingTiles": 1,
+        "evidence": "comparative_furnishing_box_6688"
+      },
+      {
+        "feature": "prop_table",
+        "prototype": "TableWood",
+        "minimum": 1,
+        "workingTiles": 1,
+        "evidence": "comparative_furnishing_box_1550"
+      }
+    ],
+    "service/hospitality/bar_commons": [
+      {
+        "feature": "dining_table_groups",
+        "assembly": "furniture_table_pair_native",
+        "minimum": 3,
+        "workingTiles": 1,
+        "nativePartCount": 3,
+        "evidence": "comparative_furnishing_box_25881"
+      }
+    ]
+  },
+  "nativeEvidence": [
+    {
+      "id": "comparative_furnishing_box_6406",
+      "map": "Resources/Maps/box.yml",
+      "uid": 6406,
+      "prototype": "ChairWood",
+      "grid": 8364,
+      "position": [
+        20.5,
+        -10.5
+      ]
+    },
+    {
+      "id": "comparative_furnishing_box_1550",
+      "map": "Resources/Maps/box.yml",
+      "uid": 1550,
+      "prototype": "TableWood",
+      "grid": 8364,
+      "position": [
+        18.5,
+        -6.5
+      ]
+    },
+    {
+      "id": "comparative_furnishing_box_6450",
+      "map": "Resources/Maps/box.yml",
+      "uid": 6450,
+      "prototype": "VendingMachineSnack",
+      "grid": 8364,
+      "position": [
+        7.5,
+        1.5
+      ]
+    },
+    {
+      "id": "comparative_furnishing_box_607",
+      "map": "Resources/Maps/box.yml",
+      "uid": 607,
+      "prototype": "ClosetEmergencyFilledRandom",
+      "grid": 8364,
+      "position": [
+        -72.5,
+        8.5
+      ]
+    },
+    {
+      "id": "comparative_furnishing_box_1873",
+      "map": "Resources/Maps/box.yml",
+      "uid": 1873,
+      "prototype": "BlockGameArcade",
+      "grid": 8364,
+      "position": [
+        47.5,
+        -33.5
+      ]
+    },
+    {
+      "id": "comparative_furnishing_box_1883",
+      "map": "Resources/Maps/box.yml",
+      "uid": 1883,
+      "prototype": "SpaceVillainArcadeFilled",
+      "grid": 8364,
+      "position": [
+        47.5,
+        -32.5
+      ]
+    },
+    {
+      "id": "comparative_furnishing_box_23828",
+      "map": "Resources/Maps/box.yml",
+      "uid": 23828,
+      "prototype": "ComputerMassMedia",
+      "grid": 8364,
+      "position": [
+        -20.5,
+        -12.5
+      ]
+    },
+    {
+      "id": "comparative_furnishing_box_3824",
+      "map": "Resources/Maps/box.yml",
+      "uid": 3824,
+      "prototype": "ChairOfficeDark",
+      "grid": 8364,
+      "position": [
+        -24.5,
+        -9.5
+      ]
+    },
+    {
+      "id": "comparative_furnishing_packed_229",
+      "map": "Resources/Maps/packed.yml",
+      "uid": 229,
+      "prototype": "BookshelfFilled",
+      "grid": 2,
+      "position": [
+        8.5,
+        6.5
+      ]
+    },
+    {
+      "id": "comparative_furnishing_box_10793",
+      "map": "Resources/Maps/box.yml",
+      "uid": 10793,
+      "prototype": "ChairWood",
+      "grid": 8364,
+      "position": [
+        66.5,
+        -5.5
+      ]
+    },
+    {
+      "id": "comparative_furnishing_box_6688",
+      "map": "Resources/Maps/box.yml",
+      "uid": 6688,
+      "prototype": "VendingMachineTheater",
+      "grid": 8364,
+      "position": [
+        22.5,
+        6.5
+      ]
+    },
+    {
+      "id": "comparative_furnishing_box_25881",
+      "map": "Resources/Maps/box.yml",
+      "uid": 25881,
+      "prototype": "TableWood",
+      "grid": 8364,
+      "position": [
+        20.5,
+        -9.5
+      ],
+      "rotation": 0
+    },
+    {
+      "id": "comparative_furnishing_box_6680",
+      "map": "Resources/Maps/box.yml",
+      "uid": 6680,
+      "prototype": "ChairWood",
+      "grid": 8364,
+      "position": [
+        20.5,
+        -8.5
+      ],
+      "rotation": 0
+    }
+  ],
+  "nativeAssemblyEvidence": {
+    "furniture_table_pair_native": {
+      "map": "Resources/Maps/box.yml",
+      "grid": 8364,
+      "anchorUid": 25881,
+      "parts": {
+        "table": 25881,
+        "north_seat": 6680,
+        "south_seat": 6406
+      }
+    },
+    "furniture_table_single_native": {
+      "map": "Resources/Maps/box.yml",
+      "grid": 8364,
+      "anchorUid": 25881,
+      "parts": {
+        "table": 25881,
+        "north_seat": 6680
+      }
+    }
+  },
+  "newNativePartsByDefault": 43,
+  "newNativePartsWithTwoOptionalConcourses": 51
+}

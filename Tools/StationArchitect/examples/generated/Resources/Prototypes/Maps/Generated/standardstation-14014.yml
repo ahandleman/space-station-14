@@ -1,0 +1,10 @@
+# Companion descriptor. Install alongside Resources/Maps/Generated/standardstation-14014.yml.
+- type: "gameMap"
+  id: "GeneratedStandardStation"
+  mapName: "Standard SS14 station program"
+  mapPath: "/Maps/Generated/standardstation-14014.yml"
+  stations:
+    GeneratedStandardStation:
+      stationProto: "StandardNanotrasenStation"
+      components: []
+...

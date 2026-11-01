@@ -1,0 +1,35 @@
+# Explicit construction preferences. Actor names and interface IDs belong to YAML,
+# not department-specific branches in the solver. Local interface rules win.
+internalInterfaces:
+  public: public_door
+  service: service_door
+  engineering: engineering_door
+  atmospherics: atmospherics_door
+  medical: medical_door
+  science: science_door
+  security: security_door
+  command: command_door
+  captain: captain_door
+  armory: armory_door
+  detention: detention_door
+  detective: detective_door
+  evidence: evidence_door
+  lawyer: lawyer_door
+  cargo: cargo_door
+  salvage: salvage_door
+  maintenance: maintenance_door
+  ai: ai_door
+  hop: hop_door
+  kitchen: kitchen_door
+  bar: bar_door
+  botany: botany_door
+  chaplain: chaplain_door
+  chemistry: chemistry_door
+  janitor: janitor_door
+  theatre: theatre_door
+  cmo: cmo_door
+  ce: ce_door
+  rd: rd_door
+  hos: hos_door
+  qm: qm_door
+  eva: maintenance_door

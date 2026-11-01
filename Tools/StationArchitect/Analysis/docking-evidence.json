@@ -1,0 +1,960 @@
+{
+  "format": "StationArchitectDockEvidence",
+  "version": 1,
+  "simulationVerified": false,
+  "frame": "Outward N; tangent=(-N.y,N.x). berthOffset shifts the centered tangent span; clearance pads only lateral/far exterior sides.",
+  "assumptions": [
+    "Complete non-Space tile rectangle includes hull/plating/lattice; all resolved fixture bounds are also included.",
+    "AABB, circle, polygon and default unit fixture shapes are conservatively enclosed after entity transforms.",
+    "The selected native docking port determines asymmetric lateral alignment. Other ports may need different offsets.",
+    "One-tile adjacent port alignment follows DockingSystem.Shuttle.cs; sprite clamp extension is not a collision fixture.",
+    "Profiles reserve empty space and a straight exit. FTL docking choice, thrust and maneuvering still need in-engine verification."
+  ],
+  "shuttles": [
+    {
+      "source": "Resources/Maps/Shuttles/arrivals.yml",
+      "sha256": "a277e513cfdf1a68ed11ac2e0f3a9768ce4fff86f3723316f3b4bfcbcb73cf96",
+      "grids": [
+        {
+          "gridUid": 292,
+          "nonSpaceTiles": 144,
+          "resolvedFixtures": 205,
+          "envelopeMin": [
+            -5,
+            -7
+          ],
+          "envelopeMaxExclusive": [
+            4,
+            11
+          ],
+          "docks": [
+            {
+              "uid": 177,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                3.5,
+                -2.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 178,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                3.5,
+                4.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 179,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                -4.5,
+                4.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 180,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                -4.5,
+                -2.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            }
+          ]
+        }
+      ],
+      "recommendedProfile": {
+        "dockUid": 179,
+        "berthWidth": 18,
+        "berthDepth": 9,
+        "berthOffset": -2,
+        "clearance": 1,
+        "approachLength": 16,
+        "approachWidth": 0
+      }
+    },
+    {
+      "source": "Resources/Maps/Shuttles/emergency.yml",
+      "sha256": "edbd1efe89826c7ee37dd336047bd7d0bf5dbe637d6b7045d0e750ca279b6c3d",
+      "grids": [
+        {
+          "gridUid": 410,
+          "nonSpaceTiles": 223,
+          "resolvedFixtures": 318,
+          "envelopeMin": [
+            -8,
+            -6
+          ],
+          "envelopeMaxExclusive": [
+            3,
+            15
+          ],
+          "docks": [
+            {
+              "uid": 4,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                -7.5,
+                7.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 6,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                -7.5,
+                5.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 12,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                -7.5,
+                -0.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 14,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                -7.5,
+                -2.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 99,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                2.5,
+                -0.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 100,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                2.5,
+                -2.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 145,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                2.5,
+                7.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 152,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                2.5,
+                5.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            }
+          ]
+        }
+      ],
+      "recommendedProfile": {
+        "dockUid": 6,
+        "berthWidth": 21,
+        "berthDepth": 11,
+        "berthOffset": -1,
+        "clearance": 1,
+        "approachLength": 16,
+        "approachWidth": 0
+      }
+    },
+    {
+      "source": "Resources/Maps/Shuttles/cargo.yml",
+      "sha256": "7fdb9a362f8776c21a2492bf25597ac9e12821b25513488fa804c6a2034c8168",
+      "grids": [
+        {
+          "gridUid": 173,
+          "nonSpaceTiles": 101,
+          "resolvedFixtures": 138,
+          "envelopeMin": [
+            -6,
+            -5
+          ],
+          "envelopeMaxExclusive": [
+            1,
+            10
+          ],
+          "docks": [
+            {
+              "uid": 2,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                0.5,
+                3.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 45,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                -5.5,
+                3.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 50,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                -5.5,
+                1.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 53,
+              "prototype": "AirlockGlassShuttle",
+              "position": [
+                0.5,
+                1.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": null,
+              "docking": {},
+              "hasDoor": true
+            }
+          ]
+        }
+      ],
+      "recommendedProfile": {
+        "dockUid": 50,
+        "berthWidth": 15,
+        "berthDepth": 7,
+        "berthOffset": 1,
+        "clearance": 1,
+        "approachLength": 16,
+        "approachWidth": 0
+      }
+    }
+  ],
+  "stations": [
+    {
+      "source": "Resources/Maps/saltern.yml",
+      "sha256": "f2ce7d0a0529c096cc01429fc14056204ff60cdeb4ded56b7e37c79383f27ffb",
+      "grids": [
+        {
+          "gridUid": 31,
+          "nonSpaceTiles": 6905,
+          "resolvedFixtures": 8232,
+          "docks": [
+            {
+              "uid": 1755,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -51.5,
+                -13.5
+              ],
+              "rotationDegrees": 0.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 7788,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -44.5,
+                -13.5
+              ],
+              "rotationDegrees": 0.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 9377,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                -44.5,
+                8.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 9388,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                -44.5,
+                2.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 9391,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                -44.5,
+                10.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 9392,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                -44.5,
+                0.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Resources/Maps/bagel.yml",
+      "sha256": "ef3b8a75e834a7e5b9e6b990abe2d9343ee2e46d38980be76140f6e8717b61a8",
+      "grids": [
+        {
+          "gridUid": 60,
+          "nonSpaceTiles": 15998,
+          "resolvedFixtures": 18518,
+          "docks": [
+            {
+              "uid": 5137,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -5.5,
+                -70.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 7344,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -5.5,
+                -63.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 5477,
+              "prototype": "AirlockExternalGlassShuttleCargo",
+              "position": [
+                59.5,
+                12.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": null,
+              "docking": {
+                "radarColor": "#FFFF9F",
+                "highlightedRadarColor": "LightYellow",
+                "dockLegendCategory": "Cargo"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 6768,
+              "prototype": "AirlockExternalGlassShuttleCargo",
+              "position": [
+                59.5,
+                14.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": null,
+              "docking": {
+                "radarColor": "#FFFF9F",
+                "highlightedRadarColor": "LightYellow",
+                "dockLegendCategory": "Cargo"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 6372,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                38.5,
+                39.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 6373,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                50.5,
+                47.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 6693,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                38.5,
+                47.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 7526,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                50.5,
+                39.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 7527,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                38.5,
+                45.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 7530,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                50.5,
+                37.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 7531,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                38.5,
+                37.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 7532,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                50.5,
+                45.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            }
+          ]
+        },
+        {
+          "gridUid": 7536,
+          "nonSpaceTiles": 183,
+          "resolvedFixtures": 229,
+          "docks": []
+        }
+      ]
+    },
+    {
+      "source": "Resources/Maps/box.yml",
+      "sha256": "6683c4279be7af641e396862f7b12e7206a19011382840a49628c61ae28856a2",
+      "grids": [
+        {
+          "gridUid": 8364,
+          "nonSpaceTiles": 17225,
+          "resolvedFixtures": 20000,
+          "docks": [
+            {
+              "uid": 606,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -70.5,
+                -2.5
+              ],
+              "rotationDegrees": 180.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 616,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -77.5,
+                -2.5
+              ],
+              "rotationDegrees": 180.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 648,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -70.5,
+                7.5
+              ],
+              "rotationDegrees": 0.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 1508,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -77.5,
+                7.5
+              ],
+              "rotationDegrees": 0.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 17677,
+              "prototype": "AirlockExternalGlassShuttleCargo",
+              "position": [
+                -44.5,
+                -28.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {
+                "radarColor": "#FFFF9F",
+                "highlightedRadarColor": "LightYellow",
+                "dockLegendCategory": "Cargo"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 18039,
+              "prototype": "AirlockExternalGlassShuttleCargo",
+              "position": [
+                -44.5,
+                -30.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {
+                "radarColor": "#FFFF9F",
+                "highlightedRadarColor": "LightYellow",
+                "dockLegendCategory": "Cargo"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 682,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                87.5,
+                -5.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 5094,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                87.5,
+                -13.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 20798,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                87.5,
+                -11.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 20799,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                87.5,
+                -3.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            }
+          ]
+        },
+        {
+          "gridUid": 11906,
+          "nonSpaceTiles": 5,
+          "resolvedFixtures": 2,
+          "docks": []
+        }
+      ]
+    },
+    {
+      "source": "Resources/Maps/packed.yml",
+      "sha256": "ae7613de34f165a5c6fa7df0cfc9869ce2725b2841de5f5fe4e42a1730d7e8d0",
+      "grids": [
+        {
+          "gridUid": 2,
+          "nonSpaceTiles": 9578,
+          "resolvedFixtures": 11497,
+          "docks": [
+            {
+              "uid": 13727,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -19.5,
+                -9.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 13730,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -9.5,
+                -9.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 13756,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -19.5,
+                -16.5
+              ],
+              "rotationDegrees": 90.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 13764,
+              "prototype": "AirlockExternalGlassShuttleArrivals",
+              "position": [
+                -9.5,
+                -16.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": {
+                "tag": "DockArrivals"
+              },
+              "docking": {
+                "radarColor": "#B22222",
+                "highlightedRadarColor": "Red",
+                "dockLegendCategory": "Arrivals"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 451,
+              "prototype": "AirlockExternalGlassShuttleCargo",
+              "position": [
+                3.5,
+                24.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {
+                "radarColor": "#FFFF9F",
+                "highlightedRadarColor": "LightYellow",
+                "dockLegendCategory": "Cargo"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 607,
+              "prototype": "AirlockExternalGlassShuttleCargo",
+              "position": [
+                3.5,
+                26.5
+              ],
+              "rotationDegrees": -90.0,
+              "priorityDock": null,
+              "docking": {
+                "radarColor": "#FFFF9F",
+                "highlightedRadarColor": "LightYellow",
+                "dockLegendCategory": "Cargo"
+              },
+              "hasDoor": true
+            },
+            {
+              "uid": 139,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                -2.5,
+                2.5
+              ],
+              "rotationDegrees": 180.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 7544,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                -4.5,
+                2.5
+              ],
+              "rotationDegrees": 180.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 7985,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                -12.5,
+                2.5
+              ],
+              "rotationDegrees": 180.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            },
+            {
+              "uid": 12910,
+              "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+              "position": [
+                -10.5,
+                2.5
+              ],
+              "rotationDegrees": 180.0,
+              "priorityDock": {
+                "tag": "DockEmergency"
+              },
+              "docking": {},
+              "hasDoor": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "engineReferences": [
+    "Content.Server/Shuttles/Systems/DockingSystem.Shuttle.cs",
+    "Content.Shared/Shuttles/Systems/SharedDockingSystem.cs",
+    "Resources/Prototypes/Entities/Structures/Doors/Airlocks/shuttle.yml"
+  ]
+}

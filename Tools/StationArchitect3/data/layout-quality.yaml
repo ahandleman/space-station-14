@@ -1,0 +1,22 @@
+format: ss14-layout-quality
+version: 1
+# Design targets for local specimens, not measurements of every native map.
+# Native maps motivate short shared circulation and compact functional clusters.
+profiles:
+  department:
+    - {metric: core.aspect_ratio, max: 2.4, weight: 4}
+    - {metric: core.fill_ratio, min: 0.55, weight: 4}
+    - {metric: circulation.fraction, max: 0.25, weight: 4}
+  core:
+    - {metric: core.aspect_ratio, max: 2.4, weight: 4}
+    - {metric: core.fill_ratio, min: 0.55, weight: 4}
+    - {metric: circulation.fraction, max: 0.25, weight: 4}
+  suite:
+    - {metric: core.aspect_ratio, max: 3, weight: 3}
+    - {metric: core.fill_ratio, min: 0.5, weight: 3}
+  room:
+    - {metric: core.fill_ratio, min: 0.5, weight: 2}
+  installation:
+    # An installation can span vacuum; evaluate its room masks rather than
+    # penalizing the separation required between occupied and outboard spaces.
+    - {metric: rooms.mean_fill_ratio, min: 0.7, weight: 2}

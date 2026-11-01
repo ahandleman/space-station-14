@@ -1,0 +1,1009 @@
+# Supported geometric generation fixture; not a native playable map.
+format: ss14-station-architect
+schemaVersion: 3
+id: hierarchy_station
+name: Hierarchical station fixture
+description: 'Supported geometric fixture: repeated local serving suites, containment,
+  secure access, maintenance and a real exterior berth. It does not request native
+  machinery or runtime certification.'
+defaults:
+  requirement:
+    priority: mandatory
+    weight: 100
+accessProfiles:
+- id: public
+  description: Uncredentialed crew.
+  levels:
+  - public
+  canTraverseVacuum: false
+- id: staff
+  description: Fixture staff and maintenance access.
+  levels:
+  - public
+  - Staff
+  - Maintenance
+  canTraverseVacuum: false
+- id: maintenance
+  description: Maintenance credential.
+  levels:
+  - public
+  - Maintenance
+  - Staff
+  canTraverseVacuum: false
+environments:
+- id: habitable
+  description: Sealed habitable planning environment.
+  pressure: standard
+  enclosure: sealed
+  temperature: ambient
+grids:
+- id: station
+  description: Main station grid.
+  kind: station
+  support: mixed
+- id: visitor
+  description: Visiting shuttle grid reservation.
+  kind: detached
+  support: solid
+domains:
+- id: exterior_space
+  description: Exterior connected vacuum.
+  kind: vacuum
+  connectedToExterior: true
+interfaces:
+- id: public_open_edge
+  description: Unobstructed edge between public floor zones; no wall, door or threshold tile.
+  geometry: open_edge
+  capabilities:
+  - crew_passage
+  - gas_transfer
+  - visibility
+  - speech
+  construction: []
+  normalState: open
+  access:
+    anyOf: []
+  airtight: false
+- id: public_door
+  description: public door
+  capabilities:
+  - crew_passage
+  - gas_transfer
+  construction:
+  - Airlock
+  normalState: controlled
+  access:
+    anyOf: []
+  airtight: true
+- id: staff_door
+  description: staff door
+  capabilities:
+  - crew_passage
+  - gas_transfer
+  construction:
+  - Airlock
+  normalState: controlled
+  access:
+    anyOf:
+    - - Staff
+  airtight: true
+- id: maintenance_door
+  description: maintenance door
+  capabilities:
+  - crew_passage
+  - gas_transfer
+  construction:
+  - Airlock
+  normalState: controlled
+  access:
+    anyOf:
+    - - Maintenance
+  airtight: true
+- id: counter
+  description: counter
+  capabilities:
+  - item_transfer
+  - speech
+  - visibility
+  construction:
+  - TableCounterMetal
+  normalState: open
+  access:
+    anyOf: []
+  airtight: false
+- id: hop_window
+  description: hop window
+  capabilities:
+  - item_transfer
+  - speech
+  - visibility
+  construction:
+  - WindoorHeadOfPersonnelLocked
+  normalState: controlled
+  access:
+    anyOf:
+    - - Staff
+  airtight: true
+- id: dock
+  description: dock
+  capabilities:
+  - crew_passage
+  - docking
+  construction:
+  - Airlock
+  normalState: controlled
+  access:
+    anyOf: []
+  airtight: true
+assemblies: []
+extensions: []
+evidence:
+- id: fixture_policy
+  kind: policy
+  source: GENERATOR_PLAN.md
+  description: Geometric test fixture dimensions, not measured native shuttle defaults.
+spaces:
+- id: service
+  name: Service
+  kind: department
+  tags:
+  - distributed
+  count:
+    min: 1
+    preferred: 1
+    max: 1
+  placement:
+    nesting: owned
+    zone: any
+    grid: station
+  requirements:
+  - id: department_area
+    type: metric
+    parameters:
+      metric: area.aggregate
+      min: 240
+      preferred: 390
+      max: 650
+      scale: 390
+  features: []
+  spaces:
+  - id: hospitality
+    name: Hospitality
+    kind: group
+    tags: []
+    count:
+      min: 2
+      preferred: 2
+      max: 2
+    placement:
+      nesting: owned
+      zone: any
+      grid: station
+    requirements: []
+    features: []
+    spaces:
+    - id: kitchen
+      name: Kitchen
+      kind: room
+      tags: []
+      count:
+        min: 1
+        preferred: 1
+        max: 1
+      placement:
+        nesting: owned
+        zone: interior
+        grid: station
+        surface: floor
+      requirements:
+      - id: floor_area
+        type: metric
+        parameters:
+          metric: area.exclusive
+          min: 24
+          preferred: 42
+          max: 80
+          scale: 42
+      features: []
+      spaces: []
+      environment: habitable
+      access: staff
+      relationships:
+      - id: staff_access
+        type: route
+        from:
+          space: .
+        to:
+          space: /public_hall
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        parameters:
+          mode: crew
+          accessProfile: staff
+          minWidth: 2
+          through: []
+          within: station
+          avoid:
+          - ../bar_commons
+    - id: bar
+      name: Bar
+      kind: room
+      tags: []
+      count:
+        min: 1
+        preferred: 1
+        max: 1
+      placement:
+        nesting: owned
+        zone: interior
+        grid: station
+        surface: floor
+      requirements:
+      - id: floor_area
+        type: metric
+        parameters:
+          metric: area.exclusive
+          min: 24
+          preferred: 42
+          max: 80
+          scale: 42
+      features: []
+      spaces: []
+      environment: habitable
+      access: staff
+      relationships:
+      - id: staff_access
+        type: route
+        from:
+          space: .
+        to:
+          space: /public_hall
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        parameters:
+          mode: crew
+          accessProfile: staff
+          minWidth: 2
+          through: []
+          within: station
+          avoid:
+          - ../bar_commons
+    - id: bar_commons
+      name: Bar Commons
+      kind: room
+      tags:
+      - public_destination
+      count:
+        min: 1
+        preferred: 1
+        max: 1
+      placement:
+        nesting: owned
+        zone: interior
+        grid: station
+        surface: floor
+      requirements:
+      - id: floor_area
+        type: metric
+        parameters:
+          metric: area.exclusive
+          min: 40
+          preferred: 64
+          max: 110
+          scale: 64
+      features: []
+      spaces: []
+      environment: habitable
+      access: public
+      relationships:
+      - id: public_access
+        type: route
+        from:
+          space: .
+        to:
+          space: /public_hall
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        parameters:
+          mode: crew
+          accessProfile: public
+          minWidth: 2
+          through: []
+          within: station
+          avoid: []
+    relationships:
+    - id: kitchen_counter
+      type: shared_boundary
+      from:
+        space: ./kitchen
+      to:
+        space: ./bar_commons
+      matching:
+        targets: one
+        scope: same_parent
+        presence: require_target
+      parameters:
+        interface: counter
+        minLength: 3
+        preferredLength: 3
+        minSegments: 1
+        maxSegments: 1
+        continuous: true
+    - id: bar_counter
+      type: shared_boundary
+      from:
+        space: ./bar
+      to:
+        space: ./bar_commons
+      matching:
+        targets: one
+        scope: same_parent
+        presence: require_target
+      parameters:
+        interface: counter
+        minLength: 4
+        preferredLength: 4
+        minSegments: 1
+        maxSegments: 1
+        continuous: true
+  - id: chapel
+    name: Chapel
+    kind: room
+    tags: []
+    count:
+      min: 1
+      preferred: 1
+      max: 1
+    placement:
+      nesting: owned
+      zone: interior
+      grid: station
+      surface: floor
+    requirements:
+    - id: floor_area
+      type: metric
+      parameters:
+        metric: area.exclusive
+        min: 36
+        preferred: 56
+        max: 100
+        scale: 56
+    features: []
+    spaces:
+    - id: confessional
+      name: Confessional
+      kind: room
+      tags: []
+      count:
+        min: 1
+        preferred: 1
+        max: 1
+      placement:
+        nesting: contained
+        zone: interior
+        grid: station
+        surface: floor
+      requirements:
+      - id: floor_area
+        type: metric
+        parameters:
+          metric: area.exclusive
+          min: 12
+          preferred: 16
+          max: 28
+          scale: 16
+      - id: host_access
+        type: access_policy
+        parameters:
+          entryFrom:
+          - ..
+          allowPublicEntry: true
+          allowMaintenanceEntry: false
+          allowExteriorEntry: false
+          throughTraffic: false
+          mustTraverse:
+          - ..
+      features: []
+      spaces: []
+      environment: habitable
+      access: public
+      relationships:
+      - id: via_host
+        type: route
+        from:
+          space: .
+        to:
+          space: ..
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        parameters:
+          mode: crew
+          accessProfile: public
+          minWidth: 2
+          through: []
+          within: station
+          avoid: []
+    environment: habitable
+    access: public
+    relationships:
+    - id: public_access
+      type: route
+      from:
+        space: .
+      to:
+        space: /public_hall
+      matching:
+        targets: one
+        scope: station
+        presence: require_target
+      parameters:
+        mode: crew
+        accessProfile: public
+        minWidth: 2
+        through: []
+        within: station
+        avoid: []
+- id: command
+  name: Command
+  kind: department
+  tags: []
+  count:
+    min: 1
+    preferred: 1
+    max: 1
+  placement:
+    nesting: owned
+    zone: any
+    grid: station
+  requirements:
+  - id: department_area
+    type: metric
+    parameters:
+      metric: area.aggregate
+      min: 27
+      preferred: 46
+      max: 88
+      scale: 46
+  features: []
+  spaces:
+  - id: personnel
+    name: Personnel
+    kind: group
+    tags: []
+    count:
+      min: 1
+      preferred: 1
+      max: 1
+    placement:
+      nesting: owned
+      zone: any
+      grid: station
+    requirements: []
+    features: []
+    spaces:
+    - id: hop_office
+      name: Hop Office
+      kind: room
+      tags: []
+      count:
+        min: 1
+        preferred: 1
+        max: 1
+      placement:
+        nesting: owned
+        zone: interior
+        grid: station
+        surface: floor
+      requirements:
+      - id: floor_area
+        type: metric
+        parameters:
+          metric: area.exclusive
+          min: 24
+          preferred: 42
+          max: 80
+          scale: 42
+      features: []
+      spaces: []
+      environment: habitable
+      access: staff
+      relationships:
+      - id: staff_access
+        type: route
+        from:
+          space: .
+        to:
+          space: /public_hall
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        parameters:
+          mode: crew
+          accessProfile: staff
+          minWidth: 2
+          through: []
+          within: station
+          avoid:
+          - ../hop_line
+    - id: hop_line
+      name: HoP public queue
+      kind: room
+      tags:
+      - public_destination
+      count:
+        min: 1
+        preferred: 1
+        max: 1
+      placement:
+        nesting: owned
+        zone: interior
+        grid: station
+        surface: floor
+      requirements:
+      - id: floor_area
+        type: metric
+        parameters:
+          metric: area.exclusive
+          min: 3
+          preferred: 4
+          max: 8
+          scale: 4
+      - id: queue_depth
+        type: metric
+        priority: mandatory
+        weight: 100
+        description: A single-tile-deep public frontage strip.
+        parameters:
+          metric: shape.short_side
+          min: 1
+          preferred: 1
+          max: 1
+          scale: 1
+      - id: queue_connected
+        type: metric
+        parameters:
+          metric: shape.components
+          min: 1
+          max: 1
+          scale: 1
+      features: []
+      spaces: []
+      environment: habitable
+      access: public
+      relationships:
+      - id: public_access
+        type: route
+        from:
+          space: .
+        to:
+          space: /public_hall
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        parameters:
+          mode: crew
+          accessProfile: public
+          minWidth: 1
+          through: []
+          within: station
+          avoid: []
+      - id: queue_open_to_hall
+        type: shared_boundary
+        from:
+          space: .
+        to:
+          space: /public_hall
+        matching:
+          targets: one
+          scope: station
+          presence: require_target
+        priority: mandatory
+        weight: 100
+        description: Queue is directly open to public hall floor without an intervening structural row.
+        parameters:
+          interface: public_open_edge
+          minLength: 3
+          preferredLength: 4
+          maxLength: 8
+          minSegments: 1
+          maxSegments: 1
+          continuous: true
+    relationships:
+    - id: hop_counter
+      type: shared_boundary
+      from:
+        space: ./hop_office
+      to:
+        space: ./hop_line
+      matching:
+        targets: one
+        scope: same_parent
+        presence: require_target
+      parameters:
+        interface: hop_window
+        minLength: 2
+        preferredLength: 2
+        minSegments: 1
+        maxSegments: 1
+        continuous: true
+- id: security
+  name: Security
+  kind: department
+  tags: []
+  count:
+    min: 1
+    preferred: 1
+    max: 1
+  placement:
+    nesting: owned
+    zone: any
+    grid: station
+  requirements:
+  - id: department_area
+    type: metric
+    parameters:
+      metric: area.aggregate
+      min: 48
+      preferred: 84
+      max: 160
+      scale: 84
+  features: []
+  spaces:
+  - id: security_office
+    name: Security Office
+    kind: room
+    tags: []
+    count:
+      min: 1
+      preferred: 1
+      max: 1
+    placement:
+      nesting: owned
+      zone: interior
+      grid: station
+      surface: floor
+    requirements:
+    - id: floor_area
+      type: metric
+      parameters:
+        metric: area.exclusive
+        min: 24
+        preferred: 42
+        max: 80
+        scale: 42
+    features: []
+    spaces: []
+    environment: habitable
+    access: staff
+    relationships:
+    - id: staff_access
+      type: route
+      from:
+        space: .
+      to:
+        space: /public_hall
+      matching:
+        targets: one
+        scope: station
+        presence: require_target
+      parameters:
+        mode: crew
+        accessProfile: staff
+        minWidth: 2
+        through: []
+        within: station
+        avoid: []
+  - id: armory
+    name: Armory
+    kind: room
+    tags: []
+    count:
+      min: 1
+      preferred: 1
+      max: 1
+    placement:
+      nesting: owned
+      zone: interior
+      grid: station
+      surface: floor
+    requirements:
+    - id: floor_area
+      type: metric
+      parameters:
+        metric: area.exclusive
+        min: 24
+        preferred: 42
+        max: 80
+        scale: 42
+    - id: controlled_entry
+      type: access_policy
+      parameters:
+        entryFrom:
+        - ../security_office
+        allowPublicEntry: false
+        allowMaintenanceEntry: false
+        allowExteriorEntry: false
+        throughTraffic: false
+        mustTraverse:
+        - ../security_office
+    features: []
+    spaces: []
+    environment: habitable
+    access: staff
+    relationships:
+    - id: internal_access
+      type: route
+      from:
+        space: .
+      to:
+        space: ../security_office
+      matching:
+        targets: one
+        scope: station
+        presence: require_target
+      parameters:
+        mode: crew
+        accessProfile: staff
+        minWidth: 2
+        through: []
+        within: owner
+        avoid: []
+  relationships:
+  - id: armory_door
+    type: shared_boundary
+    from:
+      space: ./security_office
+    to:
+      space: ./armory
+    matching:
+      targets: one
+      scope: same_parent
+      presence: require_target
+    parameters:
+      interface: staff_door
+      minLength: 2
+      preferredLength: 2
+      minSegments: 1
+      maxSegments: 1
+      continuous: true
+- id: transport
+  name: Transport
+  kind: department
+  tags: []
+  count:
+    min: 1
+    preferred: 1
+    max: 1
+  placement:
+    nesting: owned
+    zone: any
+    grid: station
+  requirements: []
+  features: []
+  spaces:
+  - id: evac
+    name: Evac
+    kind: room
+    tags: []
+    count:
+      min: 1
+      preferred: 1
+      max: 1
+    placement:
+      nesting: owned
+      zone: hull
+      grid: station
+      surface: floor
+    requirements:
+    - id: floor_area
+      type: metric
+      parameters:
+        metric: area.exclusive
+        min: 40
+        preferred: 64
+        max: 110
+        scale: 64
+    - id: shuttle_clearance
+      type: docking
+      parameters:
+        interface: dock
+        berthWidth: 8
+        berthDepth: 8
+        portOffset: 0
+        clearance: 1
+        approachWidth: 10
+        approachLength: 8
+        approachToExterior: true
+        source: fixture_policy
+    features: []
+    spaces: []
+    environment: habitable
+    access: public
+    relationships:
+    - id: public_access
+      type: route
+      from:
+        space: .
+      to:
+        space: /public_hall
+      matching:
+        targets: one
+        scope: station
+        presence: require_target
+      parameters:
+        mode: crew
+        accessProfile: public
+        minWidth: 2
+        through: []
+        within: station
+        avoid: []
+- id: maintenance_rooms
+  name: Maintenance Rooms
+  kind: department
+  tags:
+  - maintenance_owner
+  count:
+    min: 1
+    preferred: 1
+    max: 1
+  placement:
+    nesting: owned
+    zone: any
+    grid: station
+  requirements: []
+  features: []
+  spaces:
+  - id: deep_store
+    name: Deep Store
+    kind: room
+    tags:
+    - deep_maintenance
+    count:
+      min: 2
+      preferred: 2
+      max: 2
+    placement:
+      nesting: owned
+      zone: interior
+      grid: station
+      surface: floor
+    requirements:
+    - id: floor_area
+      type: metric
+      parameters:
+        metric: area.exclusive
+        min: 16
+        preferred: 25
+        max: 45
+        scale: 25
+    - id: maintenance_only
+      type: access_policy
+      parameters:
+        entryFrom:
+        - /maintenance
+        allowPublicEntry: false
+        allowMaintenanceEntry: true
+        allowExteriorEntry: false
+        throughTraffic: false
+        mustTraverse:
+        - /maintenance
+    features: []
+    spaces: []
+    environment: habitable
+    access: maintenance
+    relationships:
+    - id: maintenance_access
+      type: route
+      from:
+        space: .
+      to:
+        space: /maintenance
+      matching:
+        targets: one
+        scope: station
+        presence: require_target
+      parameters:
+        mode: crew
+        accessProfile: maintenance
+        minWidth: 2
+        through: []
+        within: station
+        avoid: []
+- id: public_hall
+  name: Public Hall
+  kind: passage
+  tags:
+  - public_circulation
+  count:
+    min: 1
+    preferred: 1
+    max: 1
+  placement:
+    nesting: owned
+    zone: interior
+    grid: station
+    surface: floor
+  requirements:
+  - id: floor_area
+    type: metric
+    parameters:
+      metric: area.exclusive
+      min: 20
+      preferred: 200
+      max: 3000
+      scale: 200
+  - id: clear_width
+    type: metric
+    parameters:
+      metric: corridor.clear_width
+      min: 3
+      preferred: 3
+      max: 3
+      scale: 1
+  features: []
+  spaces: []
+  environment: habitable
+  access: public
+- id: maintenance
+  name: Maintenance
+  kind: passage
+  tags:
+  - maintenance_circulation
+  count:
+    min: 1
+    preferred: 1
+    max: 1
+  placement:
+    nesting: owned
+    zone: interior
+    grid: station
+    surface: floor
+  requirements:
+  - id: floor_area
+    type: metric
+    parameters:
+      metric: area.exclusive
+      min: 30
+      preferred: 300
+      max: 4000
+      scale: 300
+  - id: clear_width
+    type: metric
+    parameters:
+      metric: corridor.clear_width
+      min: 2
+      preferred: 2
+      max: 3
+      scale: 1
+  features: []
+  spaces: []
+  environment: habitable
+  access: maintenance
+  relationships:
+  - id: network_entry
+    type: route
+    from:
+      space: .
+    to:
+      space: /public_hall
+    matching:
+      targets: one
+      scope: station
+      presence: require_target
+    parameters:
+      mode: crew
+      accessProfile: maintenance
+      minWidth: 2
+      through: []
+      within: station
+      avoid: []

@@ -1,0 +1,61 @@
+format: ss14-spatial-fixture-policy
+version: 1
+description: >-
+  Placement policy over native prototype collision geometry. The policy does not
+  replace native operating requirements. Collision layers are expanded from the
+  repository's CollisionGroup enum; shapes and parent components come from the
+  native prototype files.
+classification:
+  - id: directional_turnstile_interface
+    componentsAll: [Turnstile]
+    layer: interface
+    interfaceBinding:
+      requireConstructionPrototype: true
+      requireDirectedPassage: true
+      nativeForward: [0, -1]
+  - id: existing_door_interface
+    componentsAll: [Door]
+    layer: interface
+  - id: wall_mount
+    componentsAll: [WallMount]
+    layer: wall
+  - id: subfloor_device
+    componentsAll: [SubFloorHide]
+    layer: underfloor
+  - id: portable_inventory
+    componentsAll: [Item]
+    layer: portable
+defaultLayer: floor
+anchorCells: [[0, 0]]
+rotations: [0, 90, 180, 270]
+workingClearance:
+  mayShareUnblockedFloor: true
+  defaultApproachWidth: 1
+  preserveInterfaceApproachDepth: 2
+  preserveInterfaceCapabilities: [crew_passage, item_transfer, docking]
+placement:
+  attemptsPerRoom: 4
+  preserveRouteWidth: 2
+  candidateLimit: 6000
+  preferBoundary: true
+compatibleLayers:
+  underfloor: [floor, wall, interface, portable]
+  portable: [underfloor]
+  floor: [underfloor]
+  wall: [underfloor]
+  interface: [underfloor]
+nativeDefaults:
+  circleRadius: 0.5
+  aabbBounds: [-0.5, -0.5, 0.5, 0.5]
+  componentFields:
+    DeviceLinkSource:
+      range:
+        value: 30
+        source: Content.Shared/DeviceLinking/Components/DeviceLinkSourceComponent.cs
+evidence:
+  - Content.Shared/Doors/Systems/SharedTurnstileSystem.cs
+  - RobustToolbox/Robust.Shared.Maths/Angle.cs
+  - RobustToolbox/Robust.Shared/Physics/Collision/Shapes/PhysShapeCircle.cs
+  - RobustToolbox/Robust.Shared/Physics/Collision/Shapes/PhysShapeAabb.cs
+  - RobustToolbox/Robust.Shared/Physics/Systems/SharedPhysicsSystem.Contacts.cs
+  - Content.Shared/Physics/CollisionGroup.cs

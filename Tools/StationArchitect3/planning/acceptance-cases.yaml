@@ -1,0 +1,178 @@
+status: proposed_not_executable
+purpose: >-
+  Planned acceptance checks for the hierarchical V3 generator. These are design
+  cases, not executable tests, and none is recorded here as having been run.
+milestone_reference: >-
+  M0 semantics and contracts; M1 supported end-to-end fixture; M2 packing and
+  variation; M3 full spatial catalog extension adapters; M4 services, native
+  realization and runtime. minimum_milestone identifies the first intended gate.
+cases:
+  - id: local_repair_preserves_parent
+    minimum_milestone: M1
+    setup: A room contains a misplaced supported feature with sufficient free local approach space.
+    action: Request repair while parent boundaries and other rooms are fixed.
+    assertions:
+      - The feature obtains a valid approach and its mandatory requirements pass.
+      - Parent geometry, siblings and external reservations do not change.
+      - No parent escalation occurs before the successful bounded local search.
+
+  - id: sibling_rebalance_preserves_department
+    minimum_milestone: M1
+    setup: A room needs more floor; an adjacent sibling has removable slack within their department.
+    action: Exhaust room-local proposals, then request a bounded sibling boundary exchange.
+    assertions:
+      - The receiving room gains usable area without violating the sibling minimum or connectivity.
+      - Department aggregate bounds and external boundary remain valid.
+      - Unrelated departments remain unchanged and the trace records the scope expansion.
+
+  - id: parent_escalation_retains_requirements
+    minimum_milestone: M1
+    setup: A suite cannot fit a required continuous interface and approach inside its current allocation.
+    action: Exhaust local and sibling operators, then request additional compatible frontage from its parent.
+    assertions:
+      - The request preserves frontage, shape and clearance needs together instead of requesting only area.
+      - The requirement remains declared locally and binds the same room instances after parent repair.
+      - All changed ancestor summaries and affected neighbor witnesses are checked before acceptance.
+      - A failed heuristic attempt is reported as exhausted search, not proven infeasibility.
+
+  - id: transaction_rollback_restores_state
+    minimum_milestone: M1
+    setup: A proposed room expansion consumes a protected docking reservation and invalidates a route witness.
+    action: Evaluate the complete repair transaction and reject it.
+    assertions:
+      - Geometry, instance selection, reservations, matchings and cached summaries return to the preproposal state.
+      - No stale satisfied witness survives the attempted edit.
+      - A subsequent repair starts from the restored state and cannot reuse the rejected geometry.
+
+  - id: new_bypass_invalidates_access_proof
+    minimum_milestone: M1
+    setup: A contained room has an accepted must-traverse-host policy and a valid route through its host.
+    action: Add a new doorway from a public hall to that room without modifying the existing route.
+    assertions:
+      - The negative access policy is invalidated by the new interface even though its old witness path is intact.
+      - The verifier detects the bypass and rejects acceptance until it is removed or otherwise prevented.
+      - Dependency tracking includes the relevant access cut or region, not only tiles on existing paths.
+
+  - id: repeated_suite_instance_binding
+    minimum_milestone: M1
+    setup: Two selected hospitality suite instances each contain a kitchen, bar and commons.
+    action: Place one kitchen nearer the other suite's commons and solve their mandatory same-parent counters.
+    assertions:
+      - Each kitchen and bar binds to the commons under the same instantiated ancestor indices.
+      - Template path equality or a closer foreign commons cannot satisfy the relationship.
+      - A corner touch, proximity or intervening corridor cannot substitute for the required real seam.
+
+  - id: feature_checks_reuse_binding
+    minimum_milestone: M3
+    setup: Two analyzer-console pairs have exclusive bindings and a separate local reach preference.
+    action: Make an unbound analyzer nearer to one console than its actual bound analyzer.
+    assertions:
+      - Reach is evaluated against the existing binding witness rather than an independent convenient match.
+      - A rebinding transaction updates all dependent checks and preserves exclusivity.
+      - Spatial acceptance does not imply that native saved device links or operating power have been verified.
+
+  - id: maintenance_width_and_junctions
+    minimum_milestone: M1
+    setup: A maintenance route includes narrow segments, a bend and a branching junction.
+    action: Realize and compact the route using the declared width and junction conventions.
+    assertions:
+      - Passage segments retain clear widths of two to three tiles with walls and feature blockers included.
+      - The junction convention is explicit and cannot classify arbitrarily large chambers as junctions.
+      - A single-tile choke or an unclassified wide passage fails the independent geometry check.
+
+  - id: maintenance_pocket_assignment
+    minimum_milestone: M2
+    setup: Department growth leaves a wide connected void alongside the maintenance network.
+    action: Classify and fill the residual space after maintenance corridors are reserved.
+    assertions:
+      - The void becomes a compatible explicit maintenance room or is assigned to a neighboring room.
+      - It cannot remain an oversized passage or silently enlarge a logical nonphysical group.
+      - The chosen assignment respects room count, area, connection and access requirements.
+
+  - id: deep_maintenance_requires_maintenance
+    minimum_milestone: M1
+    setup: Multiple deep-maintenance rooms are selected within configured count bounds.
+    action: Build their access routes and then propose a direct public-hall shortcut to one room.
+    assertions:
+      - Every selected deep room has a valid approach that traverses maintenance.
+      - The shortcut fails the no-hall-entry policy even while the original maintenance route still exists.
+      - Count bounds apply to actual selected instances and cannot be met by unnamed empty pockets.
+
+  - id: compaction_retains_maintenance_coverage
+    minimum_milestone: M2
+    setup: A fixture explicitly requires minimum maintenance wrap and reachable coverage, and its candidate meets both.
+    action: Apply repeated density-improvement proposals that move or grow department boundaries.
+    assertions:
+      - Accepted changes retain required passage width, connected coverage and protected access.
+      - Coverage uses the declared eligible perimeter and route metrics rather than total maintenance area.
+      - Large maintenance rooms cannot compensate for lost passage coverage.
+      - Density reports use the declared core convex-hull denominator and report passage and room areas separately.
+      - In a separate soft-coverage variant, report permitted cost tradeoffs rather than treating every preference as hard.
+
+  - id: exclusive_aggregate_and_containment
+    minimum_milestone: M1
+    setup: A physical chapel contains a confessional; a logical department owns several physical rooms.
+    action: Move and grow the confessional inside the chapel complex, then inspect exact area accounting.
+    assertions:
+      - Parent and child exclusive usable-floor sets remain disjoint and walls are not counted as usable floor.
+      - Aggregate area counts each descendant tile once while the contained child stays inside the host complex.
+      - Logical departments and groups own no invented floor and impose no implicit rectangular containment.
+      - Host entry requirements remain valid after the child move.
+
+  - id: mandatory_rules_resist_soft_tradeoffs
+    minimum_milestone: M1
+    setup: A feasible candidate has an expensive desired compactness target beside mandatory room and corridor bounds.
+    action: Increase desired weights and offer a denser candidate that violates a mandatory bound.
+    assertions:
+      - The violating candidate cannot replace the accepted feasible candidate at any finite desired weight.
+      - Mandatory weights affect repair priority without converting failures into affordable penalties.
+      - Desired targets within mandatory metric bounds retain their separate soft meaning.
+
+  - id: unknown_evaluator_is_unresolved
+    minimum_milestone: M0
+    setup: An authoring-valid program contains an extension with no registered evaluator.
+    action: Request full acceptance, then inspect a candidate-only run and a desired-rule variant.
+    assertions:
+      - Unsupported mandatory semantics prevent full-program acceptance and identify the local rule and evaluator.
+      - Candidate-only output lists unresolved obligations and never implies complete requirement satisfaction.
+      - An unknown desired rule is reported as unevaluated rather than assigned zero violation.
+      - A partial geometry result cannot certify a mixed geometry-and-runtime extension in full.
+
+  - id: bounded_search_is_not_infeasibility_proof
+    minimum_milestone: M1
+    setup: One fixture is feasible but given a tiny proposal budget; another has an exactly provable matching conflict.
+    action: Run both with finite local, escalation, backtracking and restart budgets.
+    assertions:
+      - The first run terminates with budget exhaustion rather than a false infeasibility claim.
+      - The second cites its finite conflict proof and scope when reporting proven infeasibility.
+      - Repeated identical request-state cycles terminate without silently relaxing mandatory requirements.
+      - If optional improvement exhausts its budget, the best independently verified candidate remains available.
+
+  - id: deterministic_budget_replay
+    minimum_milestone: M1
+    setup: Identical source, settings, evaluator versions, seed and deterministic work budget are recorded.
+    action: Repeat the run and replay a recorded wall-clock cancellation at its recorded proposal count.
+    assertions:
+      - Deterministic runs reproduce instance selections, geometry, bindings and escalation decisions.
+      - Independent random streams use stable instance identities and deterministic commit ordering.
+      - Wall-clock cancellation is not itself claimed to be deterministic; its recorded work count enables replay.
+
+  - id: seed_variety_beyond_rotation
+    minimum_milestone: M2
+    setup: A fixed seed suite generates candidates under the same mandatory program and density settings.
+    action: Compare only feasible results after normalizing global rotations and reflections.
+    assertions:
+      - Reported diversity includes room adjacency, relative placement and mask-shape differences.
+      - Rotations, reflections, label swaps and palette changes alone do not establish layout variation.
+      - Feasibility rate and clustering, density and maintenance metrics accompany diversity results.
+      - Novelty cannot justify violating mandatory rules; numeric quality targets are calibrated from measured baselines.
+
+  - id: exterior_reservations_survive_growth
+    minimum_milestone: M1
+    setup: A hull room reserves a docking berth and approach; another feature requires exterior-connected vacuum frontage.
+    action: Grow nearby rooms toward the berth and close an exterior opening into a vacuum courtyard.
+    assertions:
+      - The berth, approach and required clearances cannot be consumed by ordinary room growth.
+      - A courtyard with no exterior connection fails the exterior-frontage obligation.
+      - Every accepted parent-level movement rechecks affected reservations and exposure, not only room overlap.
+      - Later spatial extension adapters apply the same protection mechanism to beams, salvage and outboard setup footprints.

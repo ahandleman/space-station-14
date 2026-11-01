@@ -1,0 +1,1670 @@
+{
+  "format": "station_architect3_additional_utility_evidence",
+  "version": 1,
+  "method": "Read-only inert native map/prototype parsing with inherited component resolution and migrations via prior analysis helper; selected structural entities are direct grid children. Counts are full-map counts of named prototypes, not requirements. No runtime or circuit traversal was performed. Native source conditions were inspected separately.",
+  "maps": [
+    {
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "sha256": "469342d8887d4904b5f10ca2ed56d4cc9963b54b29320809f91955ac0f5148c0",
+      "counts": {
+        "AirAlarm": 139,
+        "APCBasic": 66,
+        "ComputerComms": 2,
+        "GasVentPump": 199,
+        "GasVentScrubber": 183,
+        "GravityGenerator": 1,
+        "PlayerStationAi": 1,
+        "SMESAdvanced": 6,
+        "SMESBasic": 9,
+        "SpawnPointLatejoin": 4,
+        "SubstationBasic": 18,
+        "TelecomServerFilledCargo": 1,
+        "TelecomServerFilledCommand": 1,
+        "TelecomServerFilledCommon": 1,
+        "TelecomServerFilledEngineering": 1,
+        "TelecomServerFilledMedical": 1,
+        "TelecomServerFilledScience": 1,
+        "TelecomServerFilledSecurity": 1,
+        "TelecomServerFilledService": 1
+      },
+      "entities": [
+        {
+          "uid": 2333,
+          "prototype": "AirAlarm",
+          "grid": 30,
+          "position": [
+            -44.5,
+            59.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 100
+            },
+            "ExtensionCableReceiver": {},
+            "DeviceNetwork": {
+              "deviceNetId": "AtmosDevices",
+              "receiveFrequencyId": "AtmosMonitor",
+              "transmitFrequencyId": "AtmosMonitor",
+              "prefix": "device-address-prefix-air-alarm",
+              "sendBroadcastAttemptEvent": true
+            },
+            "DeviceList": {
+              "devices": [
+                2350,
+                4660,
+                4529,
+                1710,
+                4673,
+                2713,
+                2664,
+                4667,
+                4527,
+                2399,
+                4669,
+                4670,
+                2670,
+                2669,
+                21914,
+                448,
+                2334,
+                2718
+              ]
+            },
+            "AtmosDevice": {},
+            "AirAlarm": {},
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "AirAlarmElectronics"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 406,
+          "prototype": "APCBasic",
+          "grid": 30,
+          "position": [
+            -26.5,
+            14.5
+          ],
+          "components": {
+            "NodeContainer": {
+              "examinable": true,
+              "nodes": {
+                "input": {
+                  "nodeGroupID": "MVPower"
+                },
+                "output": {
+                  "nodeGroupID": "Apc"
+                }
+              }
+            },
+            "ExtensionCableProvider": {}
+          }
+        },
+        {
+          "uid": 448,
+          "prototype": "GasVentPump",
+          "grid": 30,
+          "position": [
+            -46.5,
+            41.5
+          ],
+          "components": {
+            "DeviceNetwork": {
+              "deviceNetId": "AtmosDevices",
+              "receiveFrequencyId": "AtmosMonitor",
+              "transmitFrequencyId": "AtmosMonitor",
+              "prefix": "device-address-prefix-vent",
+              "sendBroadcastAttemptEvent": true,
+              "examinableAddress": true,
+              "deviceLists": [
+                2333
+              ]
+            },
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "ApcPowerReceiver": {},
+            "ExtensionCableReceiver": {},
+            "GasVentPump": {}
+          }
+        },
+        {
+          "uid": 2334,
+          "prototype": "GasVentScrubber",
+          "grid": 30,
+          "position": [
+            -48.5,
+            41.5
+          ],
+          "components": {
+            "DeviceNetwork": {
+              "deviceNetId": "AtmosDevices",
+              "receiveFrequencyId": "AtmosMonitor",
+              "transmitFrequencyId": "AtmosMonitor",
+              "prefix": "device-address-prefix-scrubber",
+              "sendBroadcastAttemptEvent": true,
+              "examinableAddress": true,
+              "deviceLists": [
+                2333
+              ]
+            },
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "ApcPowerReceiver": {},
+            "ExtensionCableReceiver": {},
+            "GasVentScrubber": {}
+          }
+        },
+        {
+          "uid": 5478,
+          "prototype": "GravityGenerator",
+          "grid": 30,
+          "position": [
+            10.5,
+            44.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 2500
+            },
+            "ExtensionCableReceiver": {},
+            "PowerCharge": {
+              "windowTitle": "gravity-generator-window-title",
+              "idlePower": 50,
+              "activePower": 2500
+            },
+            "GravityGenerator": {
+              "lightRadiusMin": 0.75,
+              "lightRadiusMax": 2.5,
+              "spriteMap": {
+                "broken": "broken",
+                "unpowered": "off",
+                "false": "off",
+                "true": "on"
+              }
+            }
+          }
+        },
+        {
+          "uid": 21587,
+          "prototype": "PlayerStationAi",
+          "grid": 30,
+          "position": [
+            -0.5,
+            82.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 500
+            },
+            "ExtensionCableReceiver": {},
+            "StationAiVision": {},
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "StationAiCoreElectronics"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 3115,
+          "prototype": "SMESBasic",
+          "grid": 30,
+          "position": [
+            -56.5,
+            -63.5
+          ],
+          "components": {
+            "NodeContainer": {
+              "examinable": true,
+              "nodes": {
+                "input": {
+                  "nodeGroupID": "HVPower"
+                },
+                "output": {
+                  "nodeGroupID": "HVPower"
+                }
+              }
+            },
+            "DeviceNetwork": {
+              "deviceNetId": "AtmosDevices",
+              "receiveFrequencyId": "AtmosMonitor",
+              "transmitFrequencyId": "AtmosMonitor",
+              "prefix": "device-address-prefix-smes",
+              "sendBroadcastAttemptEvent": true,
+              "examinableAddress": true
+            }
+          }
+        },
+        {
+          "uid": 3656,
+          "prototype": "SpawnPointLatejoin",
+          "grid": 30,
+          "position": [
+            -56.5,
+            8.5
+          ],
+          "components": {
+            "SpawnPoint": {
+              "spawn_type": "LateJoin"
+            }
+          }
+        },
+        {
+          "uid": 1414,
+          "prototype": "SubstationBasic",
+          "grid": 30,
+          "position": [
+            -44.5,
+            10.5
+          ],
+          "components": {
+            "NodeContainer": {
+              "examinable": true,
+              "nodes": {
+                "input": {
+                  "nodeGroupID": "HVPower"
+                },
+                "output": {
+                  "nodeGroupID": "MVPower"
+                }
+              }
+            }
+          }
+        },
+        {
+          "uid": 10551,
+          "prototype": "TelecomServerFilledCargo",
+          "grid": 30,
+          "position": [
+            -10.5,
+            -28.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyCargo"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 9972,
+          "prototype": "TelecomServerFilledCommand",
+          "grid": 30,
+          "position": [
+            -10.5,
+            -30.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyCommand"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 9389,
+          "prototype": "TelecomServerFilledCommon",
+          "grid": 30,
+          "position": [
+            -12.5,
+            -30.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyCommon"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 10550,
+          "prototype": "TelecomServerFilledEngineering",
+          "grid": 30,
+          "position": [
+            -8.5,
+            -30.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyEngineering"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 19181,
+          "prototype": "TelecomServerFilledMedical",
+          "grid": 30,
+          "position": [
+            -6.5,
+            -28.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyMedical"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 19185,
+          "prototype": "TelecomServerFilledScience",
+          "grid": 30,
+          "position": [
+            -8.5,
+            -28.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyScience"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 11161,
+          "prototype": "TelecomServerFilledSecurity",
+          "grid": 30,
+          "position": [
+            -6.5,
+            -30.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeySecurity"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 19179,
+          "prototype": "TelecomServerFilledService",
+          "grid": 30,
+          "position": [
+            -12.5,
+            -28.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyService"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/exo.yml",
+      "sha256": "3708fd0bda7fcb1ada5e3ec8be060a4cbc375dad14e34f3a19c6278a6f3d7bd2",
+      "counts": {
+        "AirAlarm": 118,
+        "APCBasic": 65,
+        "ComputerComms": 2,
+        "GasVentPump": 127,
+        "GasVentScrubber": 128,
+        "GravityGenerator": 1,
+        "PlayerStationAi": 1,
+        "SMESAdvanced": 7,
+        "SMESBasic": 6,
+        "SpawnPointLatejoin": 4,
+        "SubstationBasic": 18,
+        "TelecomServerFilledCargo": 1,
+        "TelecomServerFilledCommand": 1,
+        "TelecomServerFilledCommon": 1,
+        "TelecomServerFilledEngineering": 1,
+        "TelecomServerFilledMedical": 1,
+        "TelecomServerFilledScience": 1,
+        "TelecomServerFilledSecurity": 1,
+        "TelecomServerFilledService": 1
+      },
+      "entities": [
+        {
+          "uid": 295,
+          "prototype": "APCBasic",
+          "grid": 2,
+          "position": [
+            34.5,
+            -19.5
+          ],
+          "components": {
+            "NodeContainer": {
+              "examinable": true,
+              "nodes": {
+                "input": {
+                  "nodeGroupID": "MVPower"
+                },
+                "output": {
+                  "nodeGroupID": "Apc"
+                }
+              }
+            },
+            "ExtensionCableProvider": {}
+          }
+        },
+        {
+          "uid": 3637,
+          "prototype": "GravityGenerator",
+          "grid": 2,
+          "position": [
+            -39.5,
+            -45.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 2500
+            },
+            "ExtensionCableReceiver": {},
+            "PowerCharge": {
+              "windowTitle": "gravity-generator-window-title",
+              "idlePower": 50,
+              "activePower": 2500
+            },
+            "GravityGenerator": {
+              "lightRadiusMin": 0.75,
+              "lightRadiusMax": 2.5,
+              "spriteMap": {
+                "broken": "broken",
+                "unpowered": "off",
+                "false": "off",
+                "true": "on"
+              }
+            }
+          }
+        },
+        {
+          "uid": 10852,
+          "prototype": "PlayerStationAi",
+          "grid": 2,
+          "position": [
+            91.5,
+            -45.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 500
+            },
+            "ExtensionCableReceiver": {},
+            "StationAiVision": {},
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "StationAiCoreElectronics"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 2711,
+          "prototype": "SubstationBasic",
+          "grid": 2,
+          "position": [
+            -62.5,
+            -65.5
+          ],
+          "components": {
+            "NodeContainer": {
+              "examinable": true,
+              "nodes": {
+                "input": {
+                  "nodeGroupID": "HVPower"
+                },
+                "output": {
+                  "nodeGroupID": "MVPower"
+                }
+              }
+            }
+          }
+        },
+        {
+          "uid": 5843,
+          "prototype": "TelecomServerFilledCargo",
+          "grid": 2,
+          "position": [
+            33.5,
+            -94.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyCargo"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 15384,
+          "prototype": "TelecomServerFilledCommand",
+          "grid": 2,
+          "position": [
+            -45.5,
+            -38.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyCommand"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 15359,
+          "prototype": "TelecomServerFilledCommon",
+          "grid": 2,
+          "position": [
+            -33.5,
+            -45.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyCommon"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 8025,
+          "prototype": "TelecomServerFilledEngineering",
+          "grid": 2,
+          "position": [
+            -11.5,
+            -72.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyEngineering"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 6591,
+          "prototype": "TelecomServerFilledMedical",
+          "grid": 2,
+          "position": [
+            7.5,
+            -25.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyMedical"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 17868,
+          "prototype": "TelecomServerFilledScience",
+          "grid": 2,
+          "position": [
+            -24.5,
+            -22.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyScience"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 8865,
+          "prototype": "TelecomServerFilledSecurity",
+          "grid": 2,
+          "position": [
+            53.5,
+            -28.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeySecurity"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 6605,
+          "prototype": "TelecomServerFilledService",
+          "grid": 2,
+          "position": [
+            19.5,
+            -60.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyService"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/elkridge.yml",
+      "sha256": "be5629de2b66da5657e4377c72a72338f3194c419d213795ce9e24af71bbdef8",
+      "counts": {
+        "AirAlarm": 126,
+        "APCBasic": 108,
+        "ComputerComms": 1,
+        "GasVentPump": 124,
+        "GasVentScrubber": 125,
+        "GravityGenerator": 1,
+        "PlayerStationAi": 1,
+        "SMESAdvanced": 6,
+        "SMESBasic": 6,
+        "SpawnPointLatejoin": 4,
+        "SubstationBasic": 15,
+        "TelecomServerFilledCargo": 1,
+        "TelecomServerFilledCommand": 1,
+        "TelecomServerFilledCommon": 1,
+        "TelecomServerFilledEngineering": 1,
+        "TelecomServerFilledMedical": 1,
+        "TelecomServerFilledScience": 1,
+        "TelecomServerFilledSecurity": 1,
+        "TelecomServerFilledService": 1
+      },
+      "entities": [
+        {
+          "uid": 488,
+          "prototype": "AirAlarm",
+          "grid": 2,
+          "position": [
+            2.5,
+            -3.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 100
+            },
+            "ExtensionCableReceiver": {},
+            "DeviceNetwork": {
+              "deviceNetId": "AtmosDevices",
+              "receiveFrequencyId": "AtmosMonitor",
+              "transmitFrequencyId": "AtmosMonitor",
+              "prefix": "device-address-prefix-air-alarm",
+              "sendBroadcastAttemptEvent": true
+            },
+            "DeviceList": {
+              "devices": [
+                486,
+                716,
+                454,
+                18629,
+                18628
+              ]
+            },
+            "AtmosDevice": {},
+            "AirAlarm": {},
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "AirAlarmElectronics"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 45,
+          "prototype": "APCBasic",
+          "grid": 2,
+          "position": [
+            -2.5,
+            4.5
+          ],
+          "components": {
+            "NodeContainer": {
+              "examinable": true,
+              "nodes": {
+                "input": {
+                  "nodeGroupID": "MVPower"
+                },
+                "output": {
+                  "nodeGroupID": "Apc"
+                }
+              }
+            },
+            "ExtensionCableProvider": {}
+          }
+        },
+        {
+          "uid": 486,
+          "prototype": "GasVentPump",
+          "grid": 2,
+          "position": [
+            1.5,
+            -6.5
+          ],
+          "components": {
+            "DeviceNetwork": {
+              "deviceNetId": "AtmosDevices",
+              "receiveFrequencyId": "AtmosMonitor",
+              "transmitFrequencyId": "AtmosMonitor",
+              "prefix": "device-address-prefix-vent",
+              "sendBroadcastAttemptEvent": true,
+              "examinableAddress": true
+            },
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "ApcPowerReceiver": {},
+            "ExtensionCableReceiver": {},
+            "GasVentPump": {}
+          }
+        },
+        {
+          "uid": 716,
+          "prototype": "GasVentScrubber",
+          "grid": 2,
+          "position": [
+            1.5,
+            -5.5
+          ],
+          "components": {
+            "DeviceNetwork": {
+              "deviceNetId": "AtmosDevices",
+              "receiveFrequencyId": "AtmosMonitor",
+              "transmitFrequencyId": "AtmosMonitor",
+              "prefix": "device-address-prefix-scrubber",
+              "sendBroadcastAttemptEvent": true,
+              "examinableAddress": true
+            },
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "ApcPowerReceiver": {},
+            "ExtensionCableReceiver": {},
+            "GasVentScrubber": {}
+          }
+        },
+        {
+          "uid": 2525,
+          "prototype": "GravityGenerator",
+          "grid": 2,
+          "position": [
+            42.5,
+            -3.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 2500
+            },
+            "ExtensionCableReceiver": {},
+            "PowerCharge": {
+              "windowTitle": "gravity-generator-window-title",
+              "idlePower": 50,
+              "activePower": 2500
+            },
+            "GravityGenerator": {
+              "lightRadiusMin": 0.75,
+              "lightRadiusMax": 2.5,
+              "spriteMap": {
+                "broken": "broken",
+                "unpowered": "off",
+                "false": "off",
+                "true": "on"
+              }
+            }
+          }
+        },
+        {
+          "uid": 5395,
+          "prototype": "PlayerStationAi",
+          "grid": 2,
+          "position": [
+            -42.5,
+            20.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 500
+            },
+            "ExtensionCableReceiver": {},
+            "StationAiVision": {},
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "StationAiCoreElectronics"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 674,
+          "prototype": "SubstationBasic",
+          "grid": 2,
+          "position": [
+            12.5,
+            -10.5
+          ],
+          "components": {
+            "NodeContainer": {
+              "examinable": true,
+              "nodes": {
+                "input": {
+                  "nodeGroupID": "HVPower"
+                },
+                "output": {
+                  "nodeGroupID": "MVPower"
+                }
+              }
+            }
+          }
+        },
+        {
+          "uid": 2705,
+          "prototype": "TelecomServerFilledCargo",
+          "grid": 2,
+          "position": [
+            30.5,
+            -3.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyCargo"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 2897,
+          "prototype": "TelecomServerFilledCommand",
+          "grid": 2,
+          "position": [
+            26.5,
+            -1.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyCommand"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 1617,
+          "prototype": "TelecomServerFilledCommon",
+          "grid": 2,
+          "position": [
+            30.5,
+            -1.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyCommon"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 5575,
+          "prototype": "TelecomServerFilledEngineering",
+          "grid": 2,
+          "position": [
+            29.5,
+            -1.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyEngineering"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 2706,
+          "prototype": "TelecomServerFilledMedical",
+          "grid": 2,
+          "position": [
+            29.5,
+            -3.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyMedical"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 5604,
+          "prototype": "TelecomServerFilledScience",
+          "grid": 2,
+          "position": [
+            28.5,
+            -1.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyScience"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 2716,
+          "prototype": "TelecomServerFilledSecurity",
+          "grid": 2,
+          "position": [
+            26.5,
+            -3.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeySecurity"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "uid": 5605,
+          "prototype": "TelecomServerFilledService",
+          "grid": 2,
+          "position": [
+            28.5,
+            -3.5
+          ],
+          "components": {
+            "ApcPowerReceiver": {
+              "powerLoad": 1000
+            },
+            "ExtensionCableReceiver": {},
+            "EncryptionKeyHolder": {
+              "keysExtractionMethod": "Prying",
+              "keySlots": 10
+            },
+            "TelecomServer": {},
+            "ContainerFill": {
+              "containers": {
+                "key_slots": [
+                  "EncryptionKeyService"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "Content.Server/Radio/EntitySystems/RadioSystem.cs": "49aa08ffbc1c3b901af68042b79143d63d1ba7f208357c6721c87e1b330adaa0",
+    "Resources/Prototypes/Entities/Structures/Machines/telecomms.yml": "b7d3c5e3f337a4dc3a0348ba97962de4d3790d1f7a2ead9f25c0f03b7653f379",
+    "Resources/Prototypes/Entities/Structures/Power/smes.yml": "6b58a2f0d9684ba20e26e8bb6306a08c879198cec1ba1bd410cdab985b22f0b5",
+    "Resources/Prototypes/Entities/Structures/Power/substation.yml": "9294a37c8a86ebc97aa9133364e093374213081169cf945487038a8d93c344ed",
+    "Resources/Prototypes/Entities/Structures/Power/apc.yml": "607a0fc45b3f771c905c182930eab71cf316cb2a943817093975dea9a6b0e18d",
+    "Content.Server/Power/EntitySystems/ExtensionCableSystem.cs": "3cb816513127044b696342cc2e81b4b8357c46b0df12ac53244df22d95780940",
+    "Content.Server/Power/Components/ExtensionCableProviderComponent.cs": "c1e044f823526c1b9df4dd024752718b87d41e844d815512f30ed41a0e74deec",
+    "Content.Server/Power/Components/ExtensionCableReceiverComponent.cs": "69c5f93c4001859a1a4185c897cc2ec821a245e237f85a4d6130d7f7cac91b9a",
+    "Content.Server/Atmos/Piping/Unary/EntitySystems/GasVentPumpSystem.cs": "1656d425dfdaa7f6435802b2c465e1e0ad7a8d87d55ddd068e5ed8d1abdb7537",
+    "Content.Server/Atmos/Piping/Unary/EntitySystems/GasVentScrubberSystem.cs": "694c24234f6cd1eeb5a54ac3f156a3644b26be4fb931b913f90aa6fd571c9cde",
+    "Content.Server/Atmos/Monitor/Systems/AirAlarmSystem.cs": "17179db046494b6f93dfc224854992664401ed0a8e0db94eae223a3d2e960642",
+    "Content.Server/Gravity/GravitySystem.cs": "2af52ae6d5c5458a7b6749e5052c51c8b84a816ecf4bf2341138ae8a8a8226aa",
+    "Content.Server/Gravity/GravityGeneratorSystem.cs": "62a57582e0dd9c6f501c6b2fc132f98185a0d336bfcd62fccc226526cd374271",
+    "Resources/Prototypes/Entities/Structures/Machines/gravity_generator.yml": "b57071dedc4753248a7b6268f9bae0cefeca0b7d1f83ad91cd648357723ffc74",
+    "Resources/Prototypes/Entities/Objects/Devices/encryption_keys.yml": "d2d5f108b5f9ea2c198364dd4b03f4332b791a20718de71986236d077d83b886"
+  },
+  "proposedEvidence": [
+    {
+      "id": "utility_marathon_2333",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=2333",
+      "description": "AirAlarm on grid 30 at (-44.5, 59.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_406",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=406",
+      "description": "APCBasic on grid 30 at (-26.5, 14.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_448",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=448",
+      "description": "GasVentPump on grid 30 at (-46.5, 41.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_2334",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=2334",
+      "description": "GasVentScrubber on grid 30 at (-48.5, 41.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_5478",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=5478",
+      "description": "GravityGenerator on grid 30 at (10.5, 44.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_21587",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=21587",
+      "description": "PlayerStationAi on grid 30 at (-0.5, 82.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_3115",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=3115",
+      "description": "SMESBasic on grid 30 at (-56.5, -63.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_3656",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=3656",
+      "description": "SpawnPointLatejoin on grid 30 at (-56.5, 8.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_1414",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=1414",
+      "description": "SubstationBasic on grid 30 at (-44.5, 10.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_10551",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=10551",
+      "description": "TelecomServerFilledCargo on grid 30 at (-10.5, -28.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_9972",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=9972",
+      "description": "TelecomServerFilledCommand on grid 30 at (-10.5, -30.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_9389",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=9389",
+      "description": "TelecomServerFilledCommon on grid 30 at (-12.5, -30.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_10550",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=10550",
+      "description": "TelecomServerFilledEngineering on grid 30 at (-8.5, -30.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_19181",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=19181",
+      "description": "TelecomServerFilledMedical on grid 30 at (-6.5, -28.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_19185",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=19185",
+      "description": "TelecomServerFilledScience on grid 30 at (-8.5, -28.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_11161",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=11161",
+      "description": "TelecomServerFilledSecurity on grid 30 at (-6.5, -30.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_marathon_19179",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=19179",
+      "description": "TelecomServerFilledService on grid 30 at (-12.5, -28.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_295",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=295",
+      "description": "APCBasic on grid 2 at (34.5, -19.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_3637",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=3637",
+      "description": "GravityGenerator on grid 2 at (-39.5, -45.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_10852",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=10852",
+      "description": "PlayerStationAi on grid 2 at (91.5, -45.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_2711",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=2711",
+      "description": "SubstationBasic on grid 2 at (-62.5, -65.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_5843",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=5843",
+      "description": "TelecomServerFilledCargo on grid 2 at (33.5, -94.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_15384",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=15384",
+      "description": "TelecomServerFilledCommand on grid 2 at (-45.5, -38.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_15359",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=15359",
+      "description": "TelecomServerFilledCommon on grid 2 at (-33.5, -45.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_8025",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=8025",
+      "description": "TelecomServerFilledEngineering on grid 2 at (-11.5, -72.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_6591",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=6591",
+      "description": "TelecomServerFilledMedical on grid 2 at (7.5, -25.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_17868",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=17868",
+      "description": "TelecomServerFilledScience on grid 2 at (-24.5, -22.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_8865",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=8865",
+      "description": "TelecomServerFilledSecurity on grid 2 at (53.5, -28.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_exo_6605",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=6605",
+      "description": "TelecomServerFilledService on grid 2 at (19.5, -60.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_488",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=488",
+      "description": "AirAlarm on grid 2 at (2.5, -3.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_45",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=45",
+      "description": "APCBasic on grid 2 at (-2.5, 4.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_486",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=486",
+      "description": "GasVentPump on grid 2 at (1.5, -6.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_716",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=716",
+      "description": "GasVentScrubber on grid 2 at (1.5, -5.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_2525",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=2525",
+      "description": "GravityGenerator on grid 2 at (42.5, -3.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_5395",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=5395",
+      "description": "PlayerStationAi on grid 2 at (-42.5, 20.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_674",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=674",
+      "description": "SubstationBasic on grid 2 at (12.5, -10.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_2705",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=2705",
+      "description": "TelecomServerFilledCargo on grid 2 at (30.5, -3.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_2897",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=2897",
+      "description": "TelecomServerFilledCommand on grid 2 at (26.5, -1.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_1617",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=1617",
+      "description": "TelecomServerFilledCommon on grid 2 at (30.5, -1.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_5575",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=5575",
+      "description": "TelecomServerFilledEngineering on grid 2 at (29.5, -1.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_2706",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=2706",
+      "description": "TelecomServerFilledMedical on grid 2 at (29.5, -3.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_5604",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=5604",
+      "description": "TelecomServerFilledScience on grid 2 at (28.5, -1.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_2716",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=2716",
+      "description": "TelecomServerFilledSecurity on grid 2 at (26.5, -3.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "utility_elkridge_5605",
+      "kind": "map",
+      "source": "Resources/Maps/elkridge.yml#uid=5605",
+      "description": "TelecomServerFilledService on grid 2 at (28.5, -3.5). Exact saved entity, not a route or operating certificate."
+    },
+    {
+      "id": "native_radio_requires_channel_server",
+      "kind": "native",
+      "source": "Content.Server/Radio/EntitySystems/RadioSystem.cs",
+      "description": "Non-exempt local headset messages require a powered telecom server carrying the channel on the same map; HasActiveServer checks map identity, not grid identity."
+    },
+    {
+      "id": "native_telecom_key_families",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Machines/telecomms.yml",
+      "description": "Filled per-channel server prototypes carry one encryption key; TelecomServerFilled instead carries all eight standard channels."
+    },
+    {
+      "id": "native_smes_hv_storage",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Power/smes.yml",
+      "description": "SMES input and output are HVPower, so SMES is not an HV-to-MV substation."
+    },
+    {
+      "id": "native_substation_hv_mv",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Power/substation.yml",
+      "description": "Substation input is HVPower and output is MVPower."
+    },
+    {
+      "id": "native_apc_mv_lv",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Power/apc.yml",
+      "description": "APC input is MVPower and output is Apc, with an ExtensionCableProvider."
+    },
+    {
+      "id": "native_apc_receiver_coverage",
+      "kind": "native",
+      "source": "Content.Server/Power/EntitySystems/ExtensionCableSystem.cs",
+      "description": "APC extension receivers need a connectable provider on the same grid within both native ranges; a wire elsewhere is insufficient."
+    },
+    {
+      "id": "native_apc_provider_range",
+      "kind": "native",
+      "source": "Content.Server/Power/Components/ExtensionCableProviderComponent.cs",
+      "description": "Default extension-provider transfer range is three tiles."
+    },
+    {
+      "id": "native_apc_receiver_range",
+      "kind": "native",
+      "source": "Content.Server/Power/Components/ExtensionCableReceiverComponent.cs",
+      "description": "Default extension-receiver reception range is three tiles."
+    },
+    {
+      "id": "native_vent_operating_dependencies",
+      "kind": "native",
+      "source": "Content.Server/Atmos/Piping/Unary/EntitySystems/GasVentPumpSystem.cs",
+      "description": "Vent pumping requires power, enabled state, a pipe node, valid environment and supply pressure/inventory."
+    },
+    {
+      "id": "native_scrubber_operating_dependencies",
+      "kind": "native",
+      "source": "Content.Server/Atmos/Piping/Unary/EntitySystems/GasVentScrubberSystem.cs",
+      "description": "Scrubbing requires power, enabled state and outlet; high destination pressure stops extraction."
+    },
+    {
+      "id": "native_air_alarm_registration",
+      "kind": "native",
+      "source": "Content.Server/Atmos/Monitor/Systems/AirAlarmSystem.cs",
+      "description": "Air alarms register/synchronize their listed atmos devices and address those devices when setting modes/configuration."
+    },
+    {
+      "id": "native_gravity_grid_scope",
+      "kind": "native",
+      "source": "Content.Server/Gravity/GravitySystem.cs",
+      "description": "A non-inherent gravity grid requires an active generator directly parented to that grid."
+    },
+    {
+      "id": "native_gravity_activation",
+      "kind": "native",
+      "source": "Content.Server/Gravity/GravityGeneratorSystem.cs",
+      "description": "Gravity generator activates from charged-machine events; a static entity count alone does not establish active gravity."
+    },
+    {
+      "id": "native_gravity_power",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Machines/gravity_generator.yml",
+      "description": "Gravity generator consumes APC power and has a 3x3 physical fixture; do not place other working floor inside that footprint."
+    },
+    {
+      "id": "native_standard_radio_channel_ids",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Objects/Devices/encryption_keys.yml",
+      "description": "Native Cargo encryption key supplies channel Supply; standard channel IDs are Common, Supply, Engineering, Medical, Science, Security, Service and Command."
+    }
+  ]
+}

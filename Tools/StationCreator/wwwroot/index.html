@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SS14 Station Creator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="topology.css">
+  <link rel="stylesheet" href="spatial.css">
+  <link rel="stylesheet" href="hierarchy.css">
+  <script type="module" src="workbench.js"></script>
+</head>
+<body>
+  <header>
+    <div class="brand-mark" aria-hidden="true">S<span>14</span></div>
+    <div class="brand"><strong>STATION CREATOR</strong><small>SPACE STATION 14 · FLOOR-PLAN WORKBENCH</small></div>
+    <div class="header-spacer"></div>
+    <span class="local"><i></i> LOCAL WORKSPACE</span>
+    <button id="open-project">Open project</button>
+    <button id="save-project">Save project</button>
+    <button id="generate" class="primary" title="Build placement, territories and maintenance using your authored topology">Generate spatial plan <span>↗</span></button>
+    <input id="project-file" type="file" accept=".json,application/json" hidden>
+    <input id="definition-file" type="file" accept=".yaml,.yml,application/yaml,text/yaml" hidden>
+  </header>
+  <nav id="stages" aria-label="Generation stages"></nav>
+  <main>
+    <aside class="inspector">
+      <div class="panel-heading"><span id="stage-number">01</span><div><small>AUTHORING STAGE</small><h1 id="stage-title">Topology</h1></div></div>
+      <div id="inspector-content"></div>
+      <div class="stage-action"><button id="run-stage" class="primary">Check topology ↗</button><button id="topology-next" class="full">Set up physical placement →</button><p id="stage-hint"></p></div>
+    </aside>
+    <section class="workspace" aria-label="Map editor">
+      <div class="canvas-toolbar"><div class="workspace-label"><i></i><span id="view-title">STATION TOPOLOGY</span></div><span class="toolbar-spacer"></span><label id="graph-toggle" class="toggle"><input id="show-graph" type="checkbox"> Graph</label><label id="grid-toggle" class="toggle"><input id="show-grid" type="checkbox" checked> Grid</label><button id="zoom-out" title="Zoom out">−</button><span id="zoom-label">100%</span><button id="zoom-in" title="Zoom in">+</button><button id="fit">Fit</button></div>
+      <div class="canvas-wrap" id="canvas-wrap"><svg id="canvas" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Editable station topology and floor plan" tabindex="0"></svg><div id="empty-state"><div class="empty-icon">⊞</div><h2>A station starts with a plan.</h2><p>Select its topology and department dependencies,<br>then place and grow the station territories.</p><button id="empty-generate" class="primary">Generate spatial plan ↗</button></div><div id="busy" hidden><div class="spinner"></div><strong>Working on station plan…</strong><span>Growing territories and planning station routes</span></div><div class="canvas-caption"><span id="canvas-help">Drag departments to arrange · select lines to edit</span><span id="coordinates">—</span></div></div>
+      <div id="topology-legend" class="legend topology-legend"><span><i style="background:#8cdbc4"></i>Required</span><span><i style="background:#e1b96c"></i>Desired</span><span><i style="background:#e28b96"></i>Avoided</span><span>Line thickness = weight · arrow = direction</span></div>
+      <div id="map-legend" class="legend" hidden><span><i style="background:#23323b"></i>Envelope</span><span><i style="background:#ced6cd"></i>Public halls</span><span><i style="background:#798064"></i>Maintenance</span><span><i style="background:#91a2af"></i>Hull</span><span><i style="background:#69e3cd"></i>Public ports</span><span><i style="background:#e0bd75"></i>Service ports</span></div>
+    </section>
+    <aside class="results-panel">
+      <div class="results-heading"><h2 id="review-title">Dependency editor</h2><span id="result-badge" class="badge">CONCEPT</span></div>
+      <div id="result-summary" class="result-summary">Generate a plan to inspect its geometry and diagnostics.</div>
+      <div id="topology-details"></div>
+      <div id="metrics"></div>
+      <div class="section-label">VALIDATION LOG <button id="validate-now" class="text-button">Run checks ↗</button></div>
+      <div id="diagnostics" aria-live="polite"><p class="muted">No checks run yet.</p></div>
+      <div class="export-panel"><div class="section-label">KEEP YOUR WORK</div><button id="export-svg">Export SVG preview ↓</button><button id="export-json">Export project JSON ↓</button><button id="export-definition">Export definition YAML</button><button id="open-definition">Import definition YAML</button><p>YAML stores the reusable station program and relationships. JSON also preserves edited geometry. SS14 entity placement and playable map export are future stages.</p></div>
+    </aside>
+  </main>
+  <footer><span><i></i><span id="status" role="status">Ready</span></span><span id="project-meta">SEED 14014 · RING · 112 × 96 TILES</span><span class="history"><button id="undo" title="Undo (Ctrl+Z)">↶ Undo</button><button id="redo" title="Redo (Ctrl+Y)">↷ Redo</button></span></footer>
+  <div id="toast" role="alert" hidden></div>
+</body>
+</html>

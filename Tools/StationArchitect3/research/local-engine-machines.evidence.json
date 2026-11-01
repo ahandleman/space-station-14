@@ -1,0 +1,2716 @@
+{
+  "format": "station_architect3_local_engine_evidence",
+  "version": 1,
+  "method": "Direct inert YAML entity extraction, native-source review and SHA256 identity. No world simulation, collision tracing, power tracing or runtime certification. Current map data may deliberately stage unfinished machines.",
+  "maps": [
+    {
+      "name": "hike",
+      "sourcePath": "Resources/Maps/hike.yml",
+      "sha256": "1b47bf7e017ac0944c6acb414f65832336f027cc92413a744ee3b787bfff9fa2",
+      "grids": [
+        1,
+        11516
+      ],
+      "selected": [
+        {
+          "uid": 8433,
+          "prototype": "AmeControllerFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.24325,-5.0735426"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8432,
+          "prototype": "AmeJar",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.663986,-5.422908"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8434,
+          "prototype": "AmePartFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.193283,-5.511205"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8435,
+          "prototype": "AmePartFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.169113,-5.4850006"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8436,
+          "prototype": "AmePartFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.169113,-5.4850006"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8437,
+          "prototype": "AmePartFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.169113,-5.4850006"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8438,
+          "prototype": "AmePartFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.169113,-5.4850006"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8439,
+          "prototype": "AmePartFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.169113,-5.4850006"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8440,
+          "prototype": "AmePartFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.169113,-5.4850006"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8441,
+          "prototype": "AmePartFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.169113,-5.4850006"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8442,
+          "prototype": "AmePartFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.169113,-5.4850006"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8421,
+          "prototype": "CrateEngineeringParticleAccelerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "-41.5,-6.5"
+          },
+          "components": {}
+        }
+      ]
+    },
+    {
+      "name": "gear",
+      "sourcePath": "Resources/Maps/gear.yml",
+      "sha256": "5c1d4bc9fc6caee5525219246d0e95607e4f3c2ca58b598daf7a4dcb768eba91",
+      "grids": [
+        12
+      ],
+      "selected": [
+        {
+          "uid": 9418,
+          "prototype": "AmeController",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "9.5,-4.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 9451,
+          "prototype": "AmePartFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "12.571229,-5.4287987"
+          },
+          "components": {}
+        },
+        {
+          "uid": 9452,
+          "prototype": "AmePartFlatpack",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "12.3602915,-4.9600487"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5345,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "11.5,17.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7546,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "11.5,19.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8989,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "9.5,19.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 9008,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "9.5,17.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5596,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "26.5,9.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5597,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "26.5,7.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 9611,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "19.5,19.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 12676,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "16.5,24.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 13198,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "16.5,17.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 13199,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "9.5,9.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 13200,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "7.5,9.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 13201,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "7.5,27.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 13203,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "2.5,22.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 13204,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "1.5,17.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 18266,
+          "prototype": "ParticleAcceleratorControlBoxUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "11.5,4.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 4581,
+          "prototype": "ParticleAcceleratorEmitterForeUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "10.5,6.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5288,
+          "prototype": "ParticleAcceleratorEmitterPortUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "9.5,6.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 4722,
+          "prototype": "ParticleAcceleratorEmitterStarboardUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "11.5,6.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5291,
+          "prototype": "ParticleAcceleratorEndCapUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "10.5,3.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 4582,
+          "prototype": "ParticleAcceleratorFuelChamberUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "10.5,4.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 4669,
+          "prototype": "ParticleAcceleratorPowerBoxUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "10.5,5.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 4665,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "1.5707963267948966 rad",
+            "pos": "19.5,20.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 5082,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "1.5707963267948966 rad",
+            "pos": "12.5,27.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 5091,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "1.5707963267948966 rad",
+            "pos": "8.5,27.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 5377,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "1.5707963267948966 rad",
+            "pos": "19.5,16.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 12677,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "20.5,6.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 13202,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "21.5,6.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 17333,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "1.5,16.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 28562,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "8.5,18.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 33727,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "8.5,9.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 33728,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "12.5,9.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 5135,
+          "prototype": "TeslaGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "24.5,8.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 21403,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "24.5,6.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 21618,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "22.5,6.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 26698,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "23.5,6.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 28563,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "rot": "3.141592653589793 rad",
+            "pos": "13.5,15.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 9424,
+          "prototype": "CrateEngineeringAMEJar",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "9.5,-5.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 9416,
+          "prototype": "CrateEngineeringAMEShielding",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "12.5,-6.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 9422,
+          "prototype": "CrateEngineeringAMEShielding",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "12.5,-2.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 28798,
+          "prototype": "DefaultStationBeaconAME",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "11.5,-4.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5899,
+          "prototype": "PlayerStationAi",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "-9.5,83.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7745,
+          "prototype": "StationAiUploadComputer",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "-7.5,78.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 30375,
+          "prototype": "StationAiUploadComputer",
+          "transform": {
+            "type": "Transform",
+            "parent": 12,
+            "pos": "-11.5,78.5"
+          },
+          "components": {}
+        }
+      ]
+    },
+    {
+      "name": "snowball",
+      "sourcePath": "Resources/Maps/snowball.yml",
+      "sha256": "7fda0e0990eea21470ab3312bea1462ee51f44039031c16efbaab802e46027f5",
+      "grids": [
+        1
+      ],
+      "selected": [
+        {
+          "uid": 6922,
+          "prototype": "AmeController",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "69.5,105.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 2672,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "52.5,119.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5275,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "52.5,117.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5330,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "50.5,119.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5331,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "50.5,117.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 2627,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "43.5,110.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 2655,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "43.5,109.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 16047,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "42.5,110.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 16094,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "42.5,109.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 8894,
+          "prototype": "ParticleAcceleratorControlBox",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "52.5,110.5"
+          },
+          "components": {
+            "AccessReader": {
+              "type": "AccessReader",
+              "accessListsOriginal": [
+                [
+                  "Engineering"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "uid": 2617,
+          "prototype": "ParticleAcceleratorEmitterForeUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "51.5,112.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 2712,
+          "prototype": "ParticleAcceleratorEmitterPortUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "50.5,112.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 2804,
+          "prototype": "ParticleAcceleratorEmitterStarboardUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "52.5,112.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 2618,
+          "prototype": "ParticleAcceleratorEndCapUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "51.5,109.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 3575,
+          "prototype": "ParticleAcceleratorFuelChamberUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "51.5,110.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 2807,
+          "prototype": "ParticleAcceleratorPowerBoxUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "51.5,111.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5326,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "53.5,122.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5335,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "48.5,122.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5442,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "49.5,122.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5446,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "54.5,122.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5447,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "50.5,122.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5448,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "52.5,122.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7013,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "1.5707963267948966 rad",
+            "pos": "69.5,112.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 7014,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "1.5707963267948966 rad",
+            "pos": "68.5,108.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 7019,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "1.5707963267948966 rad",
+            "pos": "68.5,109.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 7020,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "1.5707963267948966 rad",
+            "pos": "69.5,108.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 7023,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "1.5707963267948966 rad",
+            "pos": "71.5,111.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 7024,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "1.5707963267948966 rad",
+            "pos": "70.5,111.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 2333,
+          "prototype": "TeslaGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "1.5707963267948966 rad",
+            "pos": "70.5,110.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5337,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "54.5,120.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5338,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "48.5,116.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5342,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "48.5,120.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5343,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "54.5,116.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7016,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "1.5707963267948966 rad",
+            "pos": "72.5,110.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 7017,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "1.5707963267948966 rad",
+            "pos": "73.5,110.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 6994,
+          "prototype": "CrateEngineeringAMEJar",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "71.5,104.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 6997,
+          "prototype": "CrateEngineeringAMEShielding",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "70.5,103.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 6757,
+          "prototype": "DefaultStationBeaconAME",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "70.5,104.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 3457,
+          "prototype": "PlayerStationAi",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "pos": "66.5,7.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 3630,
+          "prototype": "StationAiUploadComputer",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "64.5,13.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 3716,
+          "prototype": "StationAiUploadComputer",
+          "transform": {
+            "type": "Transform",
+            "parent": 1,
+            "rot": "3.141592653589793 rad",
+            "pos": "69.5,13.5"
+          },
+          "components": {}
+        }
+      ]
+    },
+    {
+      "name": "tram2",
+      "sourcePath": "Resources/Maps/tram2.yml",
+      "sha256": "61867ced5f711bc62eec6d9be5fbf0f3e210e9e2b8f2d6e93f54297de0795136",
+      "grids": [
+        15,
+        17588
+      ],
+      "selected": [
+        {
+          "uid": 7862,
+          "prototype": "AmeController",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-65.5,-52.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7850,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "-19.5,-46.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7851,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "-27.5,-38.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7852,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "-19.5,-38.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7858,
+          "prototype": "ContainmentFieldGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "-27.5,-46.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5100,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "-17.5,-46.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5249,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-19.5,-48.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 19715,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-27.5,-36.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 20060,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "-17.5,-38.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 20061,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-19.5,-36.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 20062,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "1.5707963267948966 rad",
+            "pos": "-29.5,-38.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 20063,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "1.5707963267948966 rad",
+            "pos": "-29.5,-46.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 20064,
+          "prototype": "Emitter",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-27.5,-48.5"
+          },
+          "components": {
+            "AccessReader": {
+              "type": "AccessReader",
+              "accessListsOriginal": [
+                [
+                  "Engineering"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "uid": 19423,
+          "prototype": "ParticleAcceleratorControlBoxUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "-1.5707963267948966 rad",
+            "pos": "-22.5,-54.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 151,
+          "prototype": "ParticleAcceleratorEmitterForeUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-23.5,-52.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 10612,
+          "prototype": "ParticleAcceleratorEmitterPortUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-24.5,-52.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 10712,
+          "prototype": "ParticleAcceleratorEmitterStarboardUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-22.5,-52.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7608,
+          "prototype": "ParticleAcceleratorEndCapUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-23.5,-55.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7605,
+          "prototype": "ParticleAcceleratorFuelChamberUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-23.5,-54.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7606,
+          "prototype": "ParticleAcceleratorPowerBoxUnfinished",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-23.5,-53.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 939,
+          "prototype": "RadiationCollector",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-25.5,-49.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 3061,
+          "prototype": "RadiationCollector",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-21.5,-49.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7844,
+          "prototype": "RadiationCollector",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-24.5,-35.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7846,
+          "prototype": "RadiationCollector",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-22.5,-35.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7854,
+          "prototype": "RadiationCollector",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-16.5,-40.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 7856,
+          "prototype": "RadiationCollector",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-16.5,-44.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 9678,
+          "prototype": "RadiationCollectorFullTank",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-30.5,-44.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 9691,
+          "prototype": "RadiationCollectorFullTank",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-30.5,-40.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 10955,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-42.5,-51.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 10956,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-41.5,-51.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 10957,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-40.5,-51.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 10958,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-39.5,-51.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 10960,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-42.5,-50.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 10961,
+          "prototype": "TeslaCoil",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-42.5,-49.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 1153,
+          "prototype": "TeslaGenerator",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-41.5,-48.5",
+            "anchored": true
+          },
+          "components": {}
+        },
+        {
+          "uid": 10688,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-40.5,-50.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 10952,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-41.5,-50.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 10953,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-41.5,-49.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 10954,
+          "prototype": "TeslaGroundingRod",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "3.141592653589793 rad",
+            "pos": "-40.5,-49.5",
+            "anchored": false
+          },
+          "components": {}
+        },
+        {
+          "uid": 11634,
+          "prototype": "CrateEngineeringAMEJar",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-63.5,-52.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 11633,
+          "prototype": "CrateEngineeringAMEShielding",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-64.5,-52.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 24290,
+          "prototype": "CrateEngineeringAMEShielding",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-61.5,-52.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 19012,
+          "prototype": "DefaultStationBeaconAME",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "-63.5,-58.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 11940,
+          "prototype": "PlayerStationAi",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "pos": "33.5,29.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5374,
+          "prototype": "StationAiUploadComputer",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "1.5707963267948966 rad",
+            "pos": "28.5,-12.5"
+          },
+          "components": {}
+        },
+        {
+          "uid": 5379,
+          "prototype": "StationAiUploadComputer",
+          "transform": {
+            "type": "Transform",
+            "parent": 15,
+            "rot": "1.5707963267948966 rad",
+            "pos": "28.5,-9.5"
+          },
+          "components": {}
+        }
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "Resources/Prototypes/Entities/Structures/Power/Generation/PA/control_box.yml": "6920cdc5df13155a3351ea2cec98a05f0da6bebe2dadb769f48b3e8b5ad68d39",
+    "Content.Server/Machines/EntitySystems/MultipartMachineSystem.cs": "b46071284057f78832c6a8073b5808a5c0e9c086b606792bf74cbf802dcc5a53",
+    "Resources/Prototypes/Entities/Structures/Power/Generation/PA/power_box.yml": "4b4ac372d4f10ded1c0a130bc7884894947ec61812353ca68eebf3fb899dd1b4",
+    "Content.Server/ParticleAccelerator/EntitySystems/ParticleAcceleratorSystem.ControlBox.cs": "7d997de0a969cc1fb2f966d2600fa86ba97f5d270802bc47e589f3110f5e8b51",
+    "Content.Server/ParticleAccelerator/EntitySystems/ParticleAcceleratorSystem.Emitter.cs": "02217ea27bf028e9b61d43aa9c96d28de60ca79aef6da1b3e76abc52c90c58ce",
+    "Content.Server/AME/AmeNodeGroup.cs": "2a962ead7d8bae2d4b52cdcaa7f3ce9d78308874a92c4aecaeed6c94beca0c11",
+    "Content.Server/AME/EntitySystems/AmeControllerSystem.cs": "52659bc2e4b4839e1ad69002e6f6f9881eab0cc3623326850c1580407f737e9b",
+    "Resources/Prototypes/Entities/Structures/Power/Generation/ame.yml": "d1633f57bfe04f5dacf3282db61be23c21223acc9fa7949916c02263d47970c7",
+    "Resources/Prototypes/Catalog/Fills/Crates/engines.yml": "9430a61f1624304b40e4e06d644844691a360ef809f108a71170c4f25aad9e27",
+    "Resources/Prototypes/Entities/Objects/Devices/flatpack.yml": "e6219b25fa2abd4f73b1f917563c8458fc5d6d4090fad1df0ea6b782169ee7bc",
+    "Resources/Prototypes/Entities/Objects/Power/antimatter_jar.yml": "87d8dd8cb327a66da23f7922d1178e211d0d817b2229004bc210e89fd564fc81",
+    "Content.Server/Singularity/EntitySystems/ContainmentFieldGeneratorSystem.cs": "136841d3c7a150d10b9cab15d2872662f388e0330fb07fcfea6d0db3d801ae29",
+    "Content.Shared/Singularity/Components/ContainmentFieldGeneratorComponent.cs": "af3975952373f7135b6283d8406d5f6ee8e2b820bde4e69b30536030234b42a7",
+    "Content.Server/Singularity/EntitySystems/SingularityGeneratorSystem.cs": "b1ea7ca1866c81d9c59d0584d63372a57fe9f1c82c41f9afc5f60c31e4457fe5",
+    "Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/emitter.yml": "64b11d942c9892e3c40c84ec645c8a5ae669c629c2f96318c4409d65eb7e230b",
+    "Content.Server/Singularity/EntitySystems/RadiationCollectorSystem.cs": "b21673d0a57921635975a36a8209a478722d6dd190def9c5dd642cf48a5c27f9",
+    "Content.Server/Tesla/EntitySystem/TeslaCoilSystem.cs": "10407828497ef2adaea86342264e4a9f3890b7a4801aa16bbcb0d34686c853a1",
+    "Resources/Prototypes/Entities/Structures/Power/Generation/Tesla/coil.yml": "8454aa67514f00bff4d81c2dfaf3c4988cc41b2461cc88287e7e1fb06529384a",
+    "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml": "7bcf4b0f33c3b492889a2fee929c24de5f659ae02daa5d172b5eb9e9f1778103",
+    "Content.Server/Silicons/Laws/SiliconLawSystem.cs": "cdda259745fba8ebf3b31c718e2711dbdd2bc3e5ce6cc243cd4ced81a999797d",
+    "Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/collector.yml": "15f8403f8c75444f8046221cae35548ec68143657f2f2018510ef4225591eb6a"
+  },
+  "proposedEvidence": [
+    {
+      "id": "local_engine_hike_8433",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8433",
+      "description": "Mapped AmeControllerFlatpack at grid/parent 1 position -41.24325,-5.0735426, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_hike_8432",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8432",
+      "description": "Mapped AmeJar at grid/parent 1 position -41.663986,-5.422908, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_hike_8434",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8434",
+      "description": "Mapped AmePartFlatpack at grid/parent 1 position -41.193283,-5.511205, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_hike_8435",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8435",
+      "description": "Mapped AmePartFlatpack at grid/parent 1 position -41.169113,-5.4850006, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_hike_8436",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8436",
+      "description": "Mapped AmePartFlatpack at grid/parent 1 position -41.169113,-5.4850006, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_hike_8437",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8437",
+      "description": "Mapped AmePartFlatpack at grid/parent 1 position -41.169113,-5.4850006, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_hike_8438",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8438",
+      "description": "Mapped AmePartFlatpack at grid/parent 1 position -41.169113,-5.4850006, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_hike_8439",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8439",
+      "description": "Mapped AmePartFlatpack at grid/parent 1 position -41.169113,-5.4850006, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_hike_8440",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8440",
+      "description": "Mapped AmePartFlatpack at grid/parent 1 position -41.169113,-5.4850006, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_hike_8441",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8441",
+      "description": "Mapped AmePartFlatpack at grid/parent 1 position -41.169113,-5.4850006, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_hike_8442",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8442",
+      "description": "Mapped AmePartFlatpack at grid/parent 1 position -41.169113,-5.4850006, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_hike_8421",
+      "kind": "map",
+      "source": "Resources/Maps/hike.yml#uid=8421",
+      "description": "Mapped CrateEngineeringParticleAccelerator at grid/parent 1 position -41.5,-6.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_9418",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=9418",
+      "description": "Mapped AmeController at grid/parent 12 position 9.5,-4.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_9451",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=9451",
+      "description": "Mapped AmePartFlatpack at grid/parent 12 position 12.571229,-5.4287987, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_9452",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=9452",
+      "description": "Mapped AmePartFlatpack at grid/parent 12 position 12.3602915,-4.9600487, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_5345",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=5345",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 12 position 11.5,17.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_7546",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=7546",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 12 position 11.5,19.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_8989",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=8989",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 12 position 9.5,19.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_9008",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=9008",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 12 position 9.5,17.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_5596",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=5596",
+      "description": "Mapped Emitter at grid/parent 12 position 26.5,9.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_5597",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=5597",
+      "description": "Mapped Emitter at grid/parent 12 position 26.5,7.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_9611",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=9611",
+      "description": "Mapped Emitter at grid/parent 12 position 19.5,19.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_12676",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=12676",
+      "description": "Mapped Emitter at grid/parent 12 position 16.5,24.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_13198",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=13198",
+      "description": "Mapped Emitter at grid/parent 12 position 16.5,17.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_13199",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=13199",
+      "description": "Mapped Emitter at grid/parent 12 position 9.5,9.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_13200",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=13200",
+      "description": "Mapped Emitter at grid/parent 12 position 7.5,9.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_13201",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=13201",
+      "description": "Mapped Emitter at grid/parent 12 position 7.5,27.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_13203",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=13203",
+      "description": "Mapped Emitter at grid/parent 12 position 2.5,22.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_13204",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=13204",
+      "description": "Mapped Emitter at grid/parent 12 position 1.5,17.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_18266",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=18266",
+      "description": "Mapped ParticleAcceleratorControlBoxUnfinished at grid/parent 12 position 11.5,4.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_4581",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=4581",
+      "description": "Mapped ParticleAcceleratorEmitterForeUnfinished at grid/parent 12 position 10.5,6.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_5288",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=5288",
+      "description": "Mapped ParticleAcceleratorEmitterPortUnfinished at grid/parent 12 position 9.5,6.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_4722",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=4722",
+      "description": "Mapped ParticleAcceleratorEmitterStarboardUnfinished at grid/parent 12 position 11.5,6.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_5291",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=5291",
+      "description": "Mapped ParticleAcceleratorEndCapUnfinished at grid/parent 12 position 10.5,3.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_4582",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=4582",
+      "description": "Mapped ParticleAcceleratorFuelChamberUnfinished at grid/parent 12 position 10.5,4.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_4669",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=4669",
+      "description": "Mapped ParticleAcceleratorPowerBoxUnfinished at grid/parent 12 position 10.5,5.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_4665",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=4665",
+      "description": "Mapped TeslaCoil at grid/parent 12 position 19.5,20.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_5082",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=5082",
+      "description": "Mapped TeslaCoil at grid/parent 12 position 12.5,27.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_5091",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=5091",
+      "description": "Mapped TeslaCoil at grid/parent 12 position 8.5,27.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_5377",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=5377",
+      "description": "Mapped TeslaCoil at grid/parent 12 position 19.5,16.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_12677",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=12677",
+      "description": "Mapped TeslaCoil at grid/parent 12 position 20.5,6.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_13202",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=13202",
+      "description": "Mapped TeslaCoil at grid/parent 12 position 21.5,6.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_17333",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=17333",
+      "description": "Mapped TeslaCoil at grid/parent 12 position 1.5,16.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_28562",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=28562",
+      "description": "Mapped TeslaCoil at grid/parent 12 position 8.5,18.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_33727",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=33727",
+      "description": "Mapped TeslaCoil at grid/parent 12 position 8.5,9.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_33728",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=33728",
+      "description": "Mapped TeslaCoil at grid/parent 12 position 12.5,9.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_5135",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=5135",
+      "description": "Mapped TeslaGenerator at grid/parent 12 position 24.5,8.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_21403",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=21403",
+      "description": "Mapped TeslaGroundingRod at grid/parent 12 position 24.5,6.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_21618",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=21618",
+      "description": "Mapped TeslaGroundingRod at grid/parent 12 position 22.5,6.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_26698",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=26698",
+      "description": "Mapped TeslaGroundingRod at grid/parent 12 position 23.5,6.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_28563",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=28563",
+      "description": "Mapped TeslaGroundingRod at grid/parent 12 position 13.5,15.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_9424",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=9424",
+      "description": "Mapped CrateEngineeringAMEJar at grid/parent 12 position 9.5,-5.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_9416",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=9416",
+      "description": "Mapped CrateEngineeringAMEShielding at grid/parent 12 position 12.5,-6.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_9422",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=9422",
+      "description": "Mapped CrateEngineeringAMEShielding at grid/parent 12 position 12.5,-2.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_28798",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=28798",
+      "description": "Mapped DefaultStationBeaconAME at grid/parent 12 position 11.5,-4.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_5899",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=5899",
+      "description": "Mapped PlayerStationAi at grid/parent 12 position -9.5,83.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_7745",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=7745",
+      "description": "Mapped StationAiUploadComputer at grid/parent 12 position -7.5,78.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_gear_30375",
+      "kind": "map",
+      "source": "Resources/Maps/gear.yml#uid=30375",
+      "description": "Mapped StationAiUploadComputer at grid/parent 12 position -11.5,78.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_6922",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=6922",
+      "description": "Mapped AmeController at grid/parent 1 position 69.5,105.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_2672",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=2672",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 1 position 52.5,119.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5275",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5275",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 1 position 52.5,117.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5330",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5330",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 1 position 50.5,119.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5331",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5331",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 1 position 50.5,117.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_2627",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=2627",
+      "description": "Mapped Emitter at grid/parent 1 position 43.5,110.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_2655",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=2655",
+      "description": "Mapped Emitter at grid/parent 1 position 43.5,109.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_16047",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=16047",
+      "description": "Mapped Emitter at grid/parent 1 position 42.5,110.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_16094",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=16094",
+      "description": "Mapped Emitter at grid/parent 1 position 42.5,109.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_8894",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=8894",
+      "description": "Mapped ParticleAcceleratorControlBox at grid/parent 1 position 52.5,110.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_2617",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=2617",
+      "description": "Mapped ParticleAcceleratorEmitterForeUnfinished at grid/parent 1 position 51.5,112.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_2712",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=2712",
+      "description": "Mapped ParticleAcceleratorEmitterPortUnfinished at grid/parent 1 position 50.5,112.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_2804",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=2804",
+      "description": "Mapped ParticleAcceleratorEmitterStarboardUnfinished at grid/parent 1 position 52.5,112.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_2618",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=2618",
+      "description": "Mapped ParticleAcceleratorEndCapUnfinished at grid/parent 1 position 51.5,109.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_3575",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=3575",
+      "description": "Mapped ParticleAcceleratorFuelChamberUnfinished at grid/parent 1 position 51.5,110.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_2807",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=2807",
+      "description": "Mapped ParticleAcceleratorPowerBoxUnfinished at grid/parent 1 position 51.5,111.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5326",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5326",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 53.5,122.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5335",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5335",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 48.5,122.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5442",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5442",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 49.5,122.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5446",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5446",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 54.5,122.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5447",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5447",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 50.5,122.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5448",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5448",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 52.5,122.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_7013",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=7013",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 69.5,112.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_7014",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=7014",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 68.5,108.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_7019",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=7019",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 68.5,109.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_7020",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=7020",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 69.5,108.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_7023",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=7023",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 71.5,111.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_7024",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=7024",
+      "description": "Mapped TeslaCoil at grid/parent 1 position 70.5,111.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_2333",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=2333",
+      "description": "Mapped TeslaGenerator at grid/parent 1 position 70.5,110.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5337",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5337",
+      "description": "Mapped TeslaGroundingRod at grid/parent 1 position 54.5,120.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5338",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5338",
+      "description": "Mapped TeslaGroundingRod at grid/parent 1 position 48.5,116.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5342",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5342",
+      "description": "Mapped TeslaGroundingRod at grid/parent 1 position 48.5,120.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_5343",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=5343",
+      "description": "Mapped TeslaGroundingRod at grid/parent 1 position 54.5,116.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_7016",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=7016",
+      "description": "Mapped TeslaGroundingRod at grid/parent 1 position 72.5,110.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_7017",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=7017",
+      "description": "Mapped TeslaGroundingRod at grid/parent 1 position 73.5,110.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_6994",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=6994",
+      "description": "Mapped CrateEngineeringAMEJar at grid/parent 1 position 71.5,104.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_6997",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=6997",
+      "description": "Mapped CrateEngineeringAMEShielding at grid/parent 1 position 70.5,103.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_6757",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=6757",
+      "description": "Mapped DefaultStationBeaconAME at grid/parent 1 position 70.5,104.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_3457",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=3457",
+      "description": "Mapped PlayerStationAi at grid/parent 1 position 66.5,7.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_3630",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=3630",
+      "description": "Mapped StationAiUploadComputer at grid/parent 1 position 64.5,13.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_snowball_3716",
+      "kind": "map",
+      "source": "Resources/Maps/snowball.yml#uid=3716",
+      "description": "Mapped StationAiUploadComputer at grid/parent 1 position 69.5,13.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7862",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7862",
+      "description": "Mapped AmeController at grid/parent 15 position -65.5,-52.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7850",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7850",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 15 position -19.5,-46.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7851",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7851",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 15 position -27.5,-38.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7852",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7852",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 15 position -19.5,-38.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7858",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7858",
+      "description": "Mapped ContainmentFieldGenerator at grid/parent 15 position -27.5,-46.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_5100",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=5100",
+      "description": "Mapped Emitter at grid/parent 15 position -17.5,-46.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_5249",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=5249",
+      "description": "Mapped Emitter at grid/parent 15 position -19.5,-48.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_19715",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=19715",
+      "description": "Mapped Emitter at grid/parent 15 position -27.5,-36.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_20060",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=20060",
+      "description": "Mapped Emitter at grid/parent 15 position -17.5,-38.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_20061",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=20061",
+      "description": "Mapped Emitter at grid/parent 15 position -19.5,-36.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_20062",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=20062",
+      "description": "Mapped Emitter at grid/parent 15 position -29.5,-38.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_20063",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=20063",
+      "description": "Mapped Emitter at grid/parent 15 position -29.5,-46.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_20064",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=20064",
+      "description": "Mapped Emitter at grid/parent 15 position -27.5,-48.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_19423",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=19423",
+      "description": "Mapped ParticleAcceleratorControlBoxUnfinished at grid/parent 15 position -22.5,-54.5, rotation -1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_151",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=151",
+      "description": "Mapped ParticleAcceleratorEmitterForeUnfinished at grid/parent 15 position -23.5,-52.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10612",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10612",
+      "description": "Mapped ParticleAcceleratorEmitterPortUnfinished at grid/parent 15 position -24.5,-52.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10712",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10712",
+      "description": "Mapped ParticleAcceleratorEmitterStarboardUnfinished at grid/parent 15 position -22.5,-52.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7608",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7608",
+      "description": "Mapped ParticleAcceleratorEndCapUnfinished at grid/parent 15 position -23.5,-55.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7605",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7605",
+      "description": "Mapped ParticleAcceleratorFuelChamberUnfinished at grid/parent 15 position -23.5,-54.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7606",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7606",
+      "description": "Mapped ParticleAcceleratorPowerBoxUnfinished at grid/parent 15 position -23.5,-53.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_939",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=939",
+      "description": "Mapped RadiationCollector at grid/parent 15 position -25.5,-49.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_3061",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=3061",
+      "description": "Mapped RadiationCollector at grid/parent 15 position -21.5,-49.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7844",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7844",
+      "description": "Mapped RadiationCollector at grid/parent 15 position -24.5,-35.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7846",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7846",
+      "description": "Mapped RadiationCollector at grid/parent 15 position -22.5,-35.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7854",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7854",
+      "description": "Mapped RadiationCollector at grid/parent 15 position -16.5,-40.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_7856",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=7856",
+      "description": "Mapped RadiationCollector at grid/parent 15 position -16.5,-44.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_9678",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=9678",
+      "description": "Mapped RadiationCollectorFullTank at grid/parent 15 position -30.5,-44.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_9691",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=9691",
+      "description": "Mapped RadiationCollectorFullTank at grid/parent 15 position -30.5,-40.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10955",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10955",
+      "description": "Mapped TeslaCoil at grid/parent 15 position -42.5,-51.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10956",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10956",
+      "description": "Mapped TeslaCoil at grid/parent 15 position -41.5,-51.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10957",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10957",
+      "description": "Mapped TeslaCoil at grid/parent 15 position -40.5,-51.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10958",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10958",
+      "description": "Mapped TeslaCoil at grid/parent 15 position -39.5,-51.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10960",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10960",
+      "description": "Mapped TeslaCoil at grid/parent 15 position -42.5,-50.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10961",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10961",
+      "description": "Mapped TeslaCoil at grid/parent 15 position -42.5,-49.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_1153",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=1153",
+      "description": "Mapped TeslaGenerator at grid/parent 15 position -41.5,-48.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10688",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10688",
+      "description": "Mapped TeslaGroundingRod at grid/parent 15 position -40.5,-50.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10952",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10952",
+      "description": "Mapped TeslaGroundingRod at grid/parent 15 position -41.5,-50.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10953",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10953",
+      "description": "Mapped TeslaGroundingRod at grid/parent 15 position -41.5,-49.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_10954",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=10954",
+      "description": "Mapped TeslaGroundingRod at grid/parent 15 position -40.5,-49.5, rotation 3.141592653589793 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_11634",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=11634",
+      "description": "Mapped CrateEngineeringAMEJar at grid/parent 15 position -63.5,-52.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_11633",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=11633",
+      "description": "Mapped CrateEngineeringAMEShielding at grid/parent 15 position -64.5,-52.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_24290",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=24290",
+      "description": "Mapped CrateEngineeringAMEShielding at grid/parent 15 position -61.5,-52.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_19012",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=19012",
+      "description": "Mapped DefaultStationBeaconAME at grid/parent 15 position -63.5,-58.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_11940",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=11940",
+      "description": "Mapped PlayerStationAi at grid/parent 15 position 33.5,29.5, rotation default. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_5374",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=5374",
+      "description": "Mapped StationAiUploadComputer at grid/parent 15 position 28.5,-12.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_tram2_5379",
+      "kind": "map",
+      "source": "Resources/Maps/tram2.yml#uid=5379",
+      "description": "Mapped StationAiUploadComputer at grid/parent 15 position 28.5,-9.5, rotation 1.5707963267948966 rad. Initial assembly/anchoring state is recorded, not assumed operational."
+    },
+    {
+      "id": "local_engine_native_pa_layout",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Power/Generation/PA/control_box.yml",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_pa_multipart",
+      "kind": "native",
+      "source": "Content.Server/Machines/EntitySystems/MultipartMachineSystem.cs",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_pa_power",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Power/Generation/PA/power_box.yml",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_pa_operation",
+      "kind": "native",
+      "source": "Content.Server/ParticleAccelerator/EntitySystems/ParticleAcceleratorSystem.ControlBox.cs",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_pa_beams",
+      "kind": "native",
+      "source": "Content.Server/ParticleAccelerator/EntitySystems/ParticleAcceleratorSystem.Emitter.cs",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_ame_core",
+      "kind": "native",
+      "source": "Content.Server/AME/AmeNodeGroup.cs",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_ame_controller",
+      "kind": "native",
+      "source": "Content.Server/AME/EntitySystems/AmeControllerSystem.cs",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_ame_prototype",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Power/Generation/ame.yml",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_ame_kit",
+      "kind": "native",
+      "source": "Resources/Prototypes/Catalog/Fills/Crates/engines.yml",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_ame_flatpack",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Objects/Devices/flatpack.yml",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_ame_fuel",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Objects/Power/antimatter_jar.yml",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_containment_bolts",
+      "kind": "native",
+      "source": "Content.Server/Singularity/EntitySystems/ContainmentFieldGeneratorSystem.cs",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_containment_limits",
+      "kind": "native",
+      "source": "Content.Shared/Singularity/Components/ContainmentFieldGeneratorComponent.cs",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_containment_failsafe",
+      "kind": "native",
+      "source": "Content.Server/Singularity/EntitySystems/SingularityGeneratorSystem.cs",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_emitter_power",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/emitter.yml",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_collector_reaction",
+      "kind": "native",
+      "source": "Content.Server/Singularity/EntitySystems/RadiationCollectorSystem.cs",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_coil_collection",
+      "kind": "native",
+      "source": "Content.Server/Tesla/EntitySystem/TeslaCoilSystem.cs",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_coil_hv",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Power/Generation/Tesla/coil.yml",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_upload_credentials",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_upload_targeting",
+      "kind": "native",
+      "source": "Content.Server/Silicons/Laws/SiliconLawSystem.cs",
+      "description": "Native verification for the mapped local engine-machine relationship; see local-engine-machines.md for interpretation and startup-state limits."
+    },
+    {
+      "id": "local_engine_native_collector_hv",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/collector.yml",
+      "description": "RadiationCollector uses native HVPower node input; FullTank initializes gas_tank with PlasmaTankFilled."
+    }
+  ],
+  "canonicalPaAssembly": {
+    "description": "Native control rotation0, offsets/part rotations from MultipartMachine. Initial unfinished versus finished realization is separate.",
+    "parts": [
+      {
+        "id": "control",
+        "prototype": "ParticleAcceleratorControlBox",
+        "x": 0,
+        "y": 0,
+        "rotation": 0
+      },
+      {
+        "id": "end_cap",
+        "prototype": "ParticleAcceleratorEndCap",
+        "x": 1,
+        "y": -1,
+        "rotation": 270
+      },
+      {
+        "id": "fuel_chamber",
+        "prototype": "ParticleAcceleratorFuelChamber",
+        "x": 0,
+        "y": -1,
+        "rotation": 270
+      },
+      {
+        "id": "power_box",
+        "prototype": "ParticleAcceleratorPowerBox",
+        "x": -1,
+        "y": -1,
+        "rotation": 270
+      },
+      {
+        "id": "port_emitter",
+        "prototype": "ParticleAcceleratorEmitterPort",
+        "x": -2,
+        "y": -2,
+        "rotation": 270
+      },
+      {
+        "id": "fore_emitter",
+        "prototype": "ParticleAcceleratorEmitterFore",
+        "x": -2,
+        "y": -1,
+        "rotation": 270
+      },
+      {
+        "id": "starboard_emitter",
+        "prototype": "ParticleAcceleratorEmitterStarboard",
+        "x": -2,
+        "y": 0,
+        "rotation": 270
+      }
+    ]
+  }
+}

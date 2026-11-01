@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Station Architect · Room program</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo" aria-hidden="true">S<span>II</span></div>
+    <div class="brand"><strong>STATION ARCHITECT</strong><span>ROOM-FIRST STATION PLANNING</span></div>
+    <div class="header-space"></div>
+    <span class="phase">01 / ROOM PROGRAM</span>
+    <button id="use-in-designer">Use in station designer ↗</button>
+    <button id="open">Open YAML / JSON</button>
+    <button id="save-json">Save draft</button>
+    <button id="save-yaml" class="primary">Export YAML ↓</button>
+    <input id="file" type="file" accept=".yaml,.yml,.json" hidden>
+  </header>
+  <div class="workspace">
+    <aside class="tree-panel">
+      <div class="panel-title"><h2>Station program</h2><button id="add-department" title="Add department">+ Dept</button></div>
+      <label class="search"><span>Find a department or room</span><input id="search" type="search" placeholder="Search rooms…"></label>
+      <nav id="tree" aria-label="Requirement tree"></nav>
+      <div class="tree-foot"><button id="undo" disabled>↶ Undo</button><button id="redo" disabled>↷ Redo</button><button id="reset">Default program</button></div>
+    </aside>
+    <main>
+      <div class="page-heading"><div><div class="eyebrow" id="breadcrumb">STATION / REQUIREMENTS</div><h1 id="title">Room program</h1></div><div id="item-actions"></div></div>
+      <div class="tabs" role="tablist" aria-label="Program views"><button data-tab="edit" role="tab" aria-selected="true">Requirements</button><button data-tab="yaml" role="tab" aria-selected="false">YAML source</button><button data-tab="pressure" role="tab" aria-selected="false">Growth pressures</button></div>
+      <section id="editor"></section>
+    </main>
+    <aside class="review-panel">
+      <div class="panel-title"><h2>Program review</h2><span id="badge" class="badge">LOADING</span></div>
+      <p class="intro">Departments are made of rooms. Filler rooms own usable floor and can carry internal circulation. Public halls and maintenance passages remain separate.</p>
+      <div id="summary"></div>
+      <div id="budget"></div>
+      <div class="tree-export"><button id="save-tree">Export requirement tree ↓</button></div>
+      <div class="review-heading"><h3>Checks</h3><button id="validate">Run checks ↗</button></div>
+      <div id="diagnostics" aria-live="polite"></div>
+      <details class="scope"><summary>What this stage does</summary><p>Author and validate a room program, compile its requirement tree, and inspect size and split pressures. Geometry, route satisfaction, and playable SS14 map export come in subsequent stages.</p><p>This is a separate tool. Definitions from Station Creator use a different schema.</p></details>
+    </aside>
+  </div>
+  <footer><span id="status" role="status">Loading the station program…</span><span>SCHEMA 2 · LOCAL WORKSPACE · NO MAP GENERATED</span></footer>
+  <div id="toast" role="alert" hidden></div>
+</body>
+</html>

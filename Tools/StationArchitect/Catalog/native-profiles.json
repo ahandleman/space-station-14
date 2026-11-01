@@ -1,0 +1,1720 @@
+{
+  "profiles": [
+    {
+      "id": "hv-cable",
+      "prototype": "CableHV",
+      "kind": "cable",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "cable",
+          "nodeGroup": "HVPower",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Power/cables.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "mv-cable",
+      "prototype": "CableMV",
+      "kind": "cable",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "cable",
+          "nodeGroup": "MVPower",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Power/cables.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "lv-cable",
+      "prototype": "CableApcExtension",
+      "kind": "cable",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "cable",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        },
+        {
+          "id": "provider",
+          "kind": "power",
+          "connection": "rangeProvider",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "PowerProvider",
+        "ExtensionCableProvider"
+      ],
+      "transfers": [
+        {
+          "fromPort": "power",
+          "toPort": "provider"
+        }
+      ],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Power/cables.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "cable-terminal",
+      "prototype": "CableTerminal",
+      "kind": "cable",
+      "ports": [
+        {
+          "id": "powerHV",
+          "kind": "power",
+          "connection": "terminal",
+          "nodeGroup": "HVPower",
+          "directions": [
+            "South"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        },
+        {
+          "id": "powerMV",
+          "kind": "power",
+          "connection": "terminal",
+          "nodeGroup": "MVPower",
+          "directions": [
+            "South"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Power/cable_terminal.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "smesbasic",
+      "prototype": "SMESBasic",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "input",
+          "kind": "power",
+          "connection": "terminalPort",
+          "nodeGroup": "HVPower",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        },
+        {
+          "id": "output",
+          "kind": "power",
+          "connection": "cableDevice",
+          "nodeGroup": "HVPower",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "Battery",
+        "BatteryCharger",
+        "BatteryDischarger",
+        "PowerNetworkBattery"
+      ],
+      "transfers": [
+        {
+          "fromPort": "input",
+          "toPort": "output"
+        }
+      ],
+      "sources": [
+        {
+          "portId": "output",
+          "kind": "power",
+          "storedEnergyJoules": 8000000
+        }
+      ],
+      "requiresPower": false,
+      "components": {
+        "Battery": {
+          "startingCharge": 8000000,
+          "maxCharge": 8000000
+        }
+      },
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Power/smes.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "smesadvanced",
+      "prototype": "SMESAdvanced",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "input",
+          "kind": "power",
+          "connection": "terminalPort",
+          "nodeGroup": "HVPower",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        },
+        {
+          "id": "output",
+          "kind": "power",
+          "connection": "cableDevice",
+          "nodeGroup": "HVPower",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "Battery",
+        "BatteryCharger",
+        "BatteryDischarger",
+        "PowerNetworkBattery"
+      ],
+      "transfers": [
+        {
+          "fromPort": "input",
+          "toPort": "output"
+        }
+      ],
+      "sources": [
+        {
+          "portId": "output",
+          "kind": "power",
+          "storedEnergyJoules": 16000000
+        }
+      ],
+      "requiresPower": false,
+      "components": {
+        "Battery": {
+          "startingCharge": 16000000,
+          "maxCharge": 16000000
+        }
+      },
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Power/smes.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "substation",
+      "prototype": "SubstationBasic",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "input",
+          "kind": "power",
+          "connection": "cableDevice",
+          "nodeGroup": "HVPower",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        },
+        {
+          "id": "output",
+          "kind": "power",
+          "connection": "cableDevice",
+          "nodeGroup": "MVPower",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "Battery",
+        "BatteryCharger",
+        "BatteryDischarger",
+        "PowerNetworkBattery"
+      ],
+      "transfers": [
+        {
+          "fromPort": "input",
+          "toPort": "output"
+        }
+      ],
+      "sources": [
+        {
+          "portId": "output",
+          "kind": "power",
+          "storedEnergyJoules": 2500000
+        }
+      ],
+      "requiresPower": false,
+      "components": {
+        "Battery": {
+          "startingCharge": 2500000,
+          "maxCharge": 2500000
+        }
+      },
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Power/substation.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "apc",
+      "prototype": "APCBasic",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "input",
+          "kind": "power",
+          "connection": "cableDevice",
+          "nodeGroup": "MVPower",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        },
+        {
+          "id": "output",
+          "kind": "power",
+          "connection": "cableDevice",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        },
+        {
+          "id": "provider",
+          "kind": "power",
+          "connection": "rangeProvider",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "Battery",
+        "BatteryCharger",
+        "PowerNetworkBattery",
+        "Apc",
+        "PowerProvider",
+        "ExtensionCableProvider"
+      ],
+      "transfers": [
+        {
+          "fromPort": "input",
+          "toPort": "output"
+        },
+        {
+          "fromPort": "output",
+          "toPort": "provider"
+        }
+      ],
+      "sources": [
+        {
+          "portId": "output",
+          "kind": "power",
+          "storedEnergyJoules": 50000
+        }
+      ],
+      "requiresPower": false,
+      "components": {
+        "Battery": {
+          "startingCharge": 50000,
+          "maxCharge": 50000
+        }
+      },
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Power/apc.yml"
+      ],
+      "occupancyLayer": "boundary",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-0-half",
+      "prototype": "GasPipeHalf",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 100
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml"
+      ],
+      "occupancyLayer": "atmosphere0",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-0-straight",
+      "prototype": "GasPipeStraight",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South",
+            "North"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 200
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml"
+      ],
+      "occupancyLayer": "atmosphere0",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-0-bend",
+      "prototype": "GasPipeBend",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South",
+            "West"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 200
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml"
+      ],
+      "occupancyLayer": "atmosphere0",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-0-tee",
+      "prototype": "GasPipeTJunction",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South",
+            "East",
+            "West"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 200
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml"
+      ],
+      "occupancyLayer": "atmosphere0",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-0-cross",
+      "prototype": "GasPipeFourway",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South",
+            "East",
+            "North",
+            "West"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 200
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml"
+      ],
+      "occupancyLayer": "atmosphere0",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-0-connector",
+      "prototype": "GasPort",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "connected",
+          "kind": "gas",
+          "connection": "pipePort",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 200
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "GasPort",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/binary.yml"
+      ],
+      "occupancyLayer": "atmosphere0",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-1-half",
+      "prototype": "GasPipeHalfAlt1",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South"
+          ],
+          "pipeLayer": 1,
+          "range": 0,
+          "volumeLitres": 100
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml"
+      ],
+      "occupancyLayer": "atmosphere1",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-1-straight",
+      "prototype": "GasPipeStraightAlt1",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South",
+            "North"
+          ],
+          "pipeLayer": 1,
+          "range": 0,
+          "volumeLitres": 200
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml"
+      ],
+      "occupancyLayer": "atmosphere1",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-1-bend",
+      "prototype": "GasPipeBendAlt1",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South",
+            "West"
+          ],
+          "pipeLayer": 1,
+          "range": 0,
+          "volumeLitres": 200
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml"
+      ],
+      "occupancyLayer": "atmosphere1",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-1-tee",
+      "prototype": "GasPipeTJunctionAlt1",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South",
+            "East",
+            "West"
+          ],
+          "pipeLayer": 1,
+          "range": 0,
+          "volumeLitres": 200
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml"
+      ],
+      "occupancyLayer": "atmosphere1",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-1-cross",
+      "prototype": "GasPipeFourwayAlt1",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South",
+            "East",
+            "North",
+            "West"
+          ],
+          "pipeLayer": 1,
+          "range": 0,
+          "volumeLitres": 200
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml"
+      ],
+      "occupancyLayer": "atmosphere1",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "gas-1-connector",
+      "prototype": "GasPortAlt1",
+      "kind": "pipe",
+      "ports": [
+        {
+          "id": "connected",
+          "kind": "gas",
+          "connection": "pipePort",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South"
+          ],
+          "pipeLayer": 1,
+          "range": 0,
+          "volumeLitres": 200
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "GasPort",
+        "AtmosPipeLayers"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/binary.yml"
+      ],
+      "occupancyLayer": "atmosphere1",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "vent",
+      "prototype": "GasVentPump",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 200
+        },
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver",
+        "AtmosDevice",
+        "DeviceNetwork",
+        "GasVentPump"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml"
+      ],
+      "occupancyLayer": "atmosphere0",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "scrubber",
+      "prototype": "GasVentScrubberAlt1",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "pipe",
+          "kind": "gas",
+          "connection": "pipe",
+          "nodeGroup": "Pipe",
+          "directions": [
+            "South"
+          ],
+          "pipeLayer": 1,
+          "range": 0,
+          "volumeLitres": 200
+        },
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver",
+        "AtmosDevice",
+        "DeviceNetwork",
+        "GasVentScrubber"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml"
+      ],
+      "occupancyLayer": "atmosphere1",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "air-reserve",
+      "prototype": "AirCanister",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "port",
+          "kind": "gas",
+          "connection": "portable",
+          "nodeGroup": "Pipe",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 1
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "GasPortable",
+        "GasCanister"
+      ],
+      "transfers": [],
+      "sources": [
+        {
+          "portId": "port",
+          "kind": "gas",
+          "volumeLitres": 1500,
+          "pressureKpa": 4499.980909698037,
+          "temperatureKelvin": 293.15,
+          "gasFractions": {
+            "Oxygen": 0.2099987361655262,
+            "Nitrogen": 0.7900012638344738
+          }
+        }
+      ],
+      "requiresPower": false,
+      "components": {
+        "GasCanister": {
+          "air": {
+            "volume": 1500,
+            "moles": {
+              "Oxygen": 581.56,
+              "Nitrogen": 2187.79
+            },
+            "temperature": 293.15
+          }
+        },
+        "Physics": {
+          "bodyType": "Static"
+        }
+      },
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "scrub-reserve",
+      "prototype": "StorageCanister",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "port",
+          "kind": "gas",
+          "connection": "portable",
+          "nodeGroup": "Pipe",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 1
+        }
+      ],
+      "requiredComponents": [
+        "NodeContainer",
+        "GasPortable",
+        "GasCanister"
+      ],
+      "transfers": [],
+      "sources": [
+        {
+          "portId": "port",
+          "kind": "gasSink",
+          "volumeLitres": 1500,
+          "pressureKpa": 0,
+          "temperatureKelvin": 293.15
+        }
+      ],
+      "requiresPower": false,
+      "components": {
+        "GasCanister": {
+          "air": {
+            "volume": 1500,
+            "temperature": 293.15,
+            "moles": {}
+          }
+        },
+        "Physics": {
+          "bodyType": "Static"
+        }
+      },
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "light",
+      "prototype": "Poweredlight",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver",
+        "PoweredLight",
+        "DeviceNetwork"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Lighting/base_lighting.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "air-alarm",
+      "prototype": "AirAlarm",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver",
+        "AirAlarm",
+        "AtmosAlarmable",
+        "DeviceList",
+        "DeviceNetwork"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/air_alarm.yml"
+      ],
+      "occupancyLayer": "boundary",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "fire-alarm",
+      "prototype": "FireAlarm",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver",
+        "FireAlarm",
+        "AtmosAlarmable",
+        "DeviceList",
+        "DeviceNetwork"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/fire_alarm.yml"
+      ],
+      "occupancyLayer": "boundary",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "air-sensor",
+      "prototype": "AirSensor",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver",
+        "DeviceNetwork",
+        "AtmosMonitor"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Specific/Atmospherics/sensor.yml"
+      ],
+      "occupancyLayer": "sensor",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "firelock",
+      "prototype": "Firelock",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "Door",
+        "Firelock",
+        "AtmosAlarmable",
+        "DeviceNetwork",
+        "DeviceNetworkRequiresPower",
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Doors/Firelocks/firelock.yml"
+      ],
+      "occupancyLayer": "boundary",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "door-airlock",
+      "prototype": "Airlock",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "Door",
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Doors/Airlocks/base_structureairlocks.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "door-airlockexternal",
+      "prototype": "AirlockExternal",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "Door",
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Doors/Airlocks/external.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "door-airlockshuttle",
+      "prototype": "AirlockShuttle",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "Door",
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Doors/Airlocks/shuttle.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "door-airlockexternalglassshuttlearrivals",
+      "prototype": "AirlockExternalGlassShuttleArrivals",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "Door",
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "door-airlockexternalglassshuttleemergencylocked",
+      "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "Door",
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "door-airlockexternalglassshuttlecargo",
+      "prototype": "AirlockExternalGlassShuttleCargo",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "Door",
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": false
+    },
+    {
+      "id": "waste-unit",
+      "prototype": "DisposalUnit",
+      "kind": "device",
+      "ports": [
+        {
+          "id": "power",
+          "kind": "power",
+          "connection": "rangeReceiver",
+          "nodeGroup": "Apc",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 3,
+          "volumeLitres": 0
+        },
+        {
+          "id": "entry",
+          "kind": "disposal",
+          "connection": "disposalUnit",
+          "nodeGroup": "Disposal",
+          "directions": [],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "DisposalUnit",
+        "ApcPowerReceiver",
+        "ExtensionCableReceiver"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": true,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml"
+      ],
+      "occupancyLayer": "auto",
+      "blocksCrew": true,
+      "carriesCrew": true
+    },
+    {
+      "id": "waste-trunk",
+      "prototype": "DisposalTrunk",
+      "kind": "disposal",
+      "ports": [
+        {
+          "id": "tube",
+          "kind": "disposal",
+          "connection": "disposalEntry",
+          "nodeGroup": "Disposal",
+          "directions": [
+            "South"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "DisposalTube",
+        "DisposalEntry"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml"
+      ],
+      "occupancyLayer": "disposal",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "waste-straight",
+      "prototype": "DisposalPipe",
+      "kind": "disposal",
+      "ports": [
+        {
+          "id": "tube",
+          "kind": "disposal",
+          "connection": "disposal",
+          "nodeGroup": "Disposal",
+          "directions": [
+            "South",
+            "North"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "DisposalTube"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml"
+      ],
+      "occupancyLayer": "disposal",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "waste-bend",
+      "prototype": "DisposalBend",
+      "kind": "disposal",
+      "ports": [
+        {
+          "id": "tube",
+          "kind": "disposal",
+          "connection": "disposal",
+          "nodeGroup": "Disposal",
+          "directions": [
+            "South",
+            "West"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "DisposalTube"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml"
+      ],
+      "occupancyLayer": "disposal",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "waste-junction",
+      "prototype": "DisposalJunction",
+      "kind": "disposal",
+      "ports": [
+        {
+          "id": "tube",
+          "kind": "disposal",
+          "connection": "disposal",
+          "nodeGroup": "Disposal",
+          "directions": [
+            "South",
+            "West",
+            "North"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "DisposalTube"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml"
+      ],
+      "occupancyLayer": "disposal",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "waste-junction-flipped",
+      "prototype": "DisposalJunctionFlipped",
+      "kind": "disposal",
+      "ports": [
+        {
+          "id": "tube",
+          "kind": "disposal",
+          "connection": "disposal",
+          "nodeGroup": "Disposal",
+          "directions": [
+            "South",
+            "East",
+            "North"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "DisposalTube"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml"
+      ],
+      "occupancyLayer": "disposal",
+      "blocksCrew": false,
+      "carriesCrew": false
+    },
+    {
+      "id": "waste-y-junction",
+      "prototype": "DisposalYJunction",
+      "kind": "disposal",
+      "ports": [
+        {
+          "id": "tube",
+          "kind": "disposal",
+          "connection": "disposal",
+          "nodeGroup": "Disposal",
+          "directions": [
+            "South",
+            "West",
+            "East"
+          ],
+          "pipeLayer": 0,
+          "range": 0,
+          "volumeLitres": 0
+        }
+      ],
+      "requiredComponents": [
+        "DisposalTube"
+      ],
+      "transfers": [],
+      "sources": [],
+      "requiresPower": false,
+      "components": {},
+      "sourceRefs": [
+        "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml"
+      ],
+      "occupancyLayer": "disposal",
+      "blocksCrew": false,
+      "carriesCrew": false
+    }
+  ],
+  "evidence": {
+    "simulationVerified": false,
+    "notes": [
+      "Finite native stored energy and gas only; no AME/TEG startup or sustained gas production is asserted.",
+      "Air bank12 uses33232.2mol in18000L; native200L-per-segment volume must be added when estimating diluted initial pressure.",
+      "GasPort is an underfloor native connector segment at the same tile as its anchored canister.",
+      "Native CableTerminal rotation0 points South, as Direction.South.ToAngle() is zero."
+    ],
+    "airCanister": {
+      "moles": {
+        "Oxygen": 581.56,
+        "Nitrogen": 2187.79
+      },
+      "volumeLitres": 1500,
+      "temperatureKelvin": 293.15,
+      "pressureKpa": 4499.980909698037
+    },
+    "sourcePaths": [
+      "Content.Server/Power/Nodes/CableDeviceNode.cs",
+      "Content.Server/Power/Nodes/CableTerminalNode.cs",
+      "Content.Server/Power/Nodes/CableTerminalPortNode.cs",
+      "Content.Server/NodeContainer/Nodes/PipeNode.cs",
+      "Content.Server/NodeContainer/Nodes/PortPipeNode.cs",
+      "Content.Server/NodeContainer/Nodes/PortablePipeNode.cs",
+      "Content.Server/Atmos/Piping/Unary/EntitySystems/GasCanisterSystem.cs",
+      "Content.Shared/DeviceConfigurator/Components/DeviceListComponent.cs",
+      "Content.Shared/Disposal/Tube/DisposalTubeSystem.cs",
+      "Content.Shared/Disposal/Unit/SharedDisposalUnitSystem.cs"
+    ],
+    "prototypeInputsSha256": "e227c0970297f50d4ba3112cc152cb37d65d6a3c05906cbebae683fb847a7dee",
+    "sourceHashes": {
+      "Content.Server/Atmos/Monitor/Systems/AtmosAlarmableSystem.cs": "aa288eecb9e19be741b3df4b06f1402e6b47cfb9ecc4220aaa8673a974aef780",
+      "Content.Server/Atmos/Monitor/Systems/FireAlarmSystem.cs": "4086cb480fb6cb6bf93d4378e6a9a49264ed08a560285d58dfe180aaa6df3f5a",
+      "Content.Server/Atmos/Piping/Unary/EntitySystems/GasCanisterSystem.cs": "c98c2873fbe0ecc617c0743df72a38ba439628ed897be1029f48c33fd5677d42",
+      "Content.Server/Doors/Systems/FirelockSystem.cs": "354b69716b0dc90f90d7b2fd0f6bf7cae9b56d49be192e5a8c1d2fe85ead8582",
+      "Content.Server/NodeContainer/Nodes/PipeNode.cs": "b67aac70633665b6b1c890f54be70daf22dbafdd153418d6dc0bf32a63667a7c",
+      "Content.Server/NodeContainer/Nodes/PortPipeNode.cs": "f31234e91e7b7b29190ef3ec1e131fd89a3b0c14feb6384baac57d4c9cbf1dd2",
+      "Content.Server/NodeContainer/Nodes/PortablePipeNode.cs": "e6c94812e906747a7502b58ef84731a91739edcf95f3339e266030d4051fa07a",
+      "Content.Server/Power/Components/ExtensionCableProviderComponent.cs": "c1e044f823526c1b9df4dd024752718b87d41e844d815512f30ed41a0e74deec",
+      "Content.Server/Power/Components/ExtensionCableReceiverComponent.cs": "69c5f93c4001859a1a4185c897cc2ec821a245e237f85a4d6130d7f7cac91b9a",
+      "Content.Server/Power/EntitySystems/ExtensionCableSystem.cs": "3cb816513127044b696342cc2e81b4b8357c46b0df12ac53244df22d95780940",
+      "Content.Server/Power/Nodes/CableDeviceNode.cs": "fe1d6098b43f0f18432453c7e03da4e7dad610d7f408866b1ea110b1fda1035e",
+      "Content.Server/Power/Nodes/CableTerminalNode.cs": "afe4baee0e29d86c51a3bdafdf48d387318fc2a76aefaf33651b108e8452d1d2",
+      "Content.Server/Power/Nodes/CableTerminalPortNode.cs": "19cef68cb4fc010cb06771bb752f7eed782d3d188f1fc9374ff2f1788bb8b730",
+      "Content.Shared/Atmos/PipeDirection.cs": "69214da5bf7f58eb8fcb9ef7ebd4386a7f5273245e001cb9ae83f796d3fb3a10",
+      "Content.Shared/DeviceConfigurator/Components/DeviceListComponent.cs": "621fd2e4d67a224c672e9369024393c20e184c90af9207299711d50dbecf276a",
+      "Content.Shared/DeviceConfigurator/Systems/DeviceListSystem.cs": "8212123423108e4502d8aa537fde23b37846384bf818ce3cff634fc428c4b81e",
+      "Content.Shared/DeviceNetwork/Components/DeviceNetworkComponent.cs": "76075ea5b628250975f0d44e7f894ee81068c9ce6f86b707a3da8f92524c4d04",
+      "Content.Shared/DeviceNetwork/Systems/DeviceNetworkSystem.cs": "be9c51530e04611fff1ac6c3996f86a9e84b09d03f0c64302e0ea17cbcf8bb20",
+      "Content.Shared/DeviceNetwork/Systems/WiredNetworkSystem.cs": "4ecd908ecec83c78036262fee5e90aaa3950b903b7eda803f6d52856276d514f",
+      "Content.Shared/Disposal/Tube/DisposalTubeSystem.cs": "fc333d3d6c4e1c03319e4e0cd009e68545e45b0e0febe34ce6f3e480a3366408",
+      "Content.Shared/Disposal/Unit/DisposalUnitComponent.cs": "fbae81d9f200194e2baff0bc79ab96580a0cd28c4b26940dd0e5b214aaa7d734",
+      "Content.Shared/Disposal/Unit/SharedDisposalUnitSystem.Interactions.cs": "2a809860cb3862a52e171c1daff1d9e62e6af84433b01e816afb24114fec02dd",
+      "Content.Shared/Disposal/Unit/SharedDisposalUnitSystem.cs": "3e63bcb0de7cc87a0d3181c7d0fc17162510dfe8ecaf5ee01728eedfc1e4d5a7",
+      "Resources/Prototypes/Entities/Objects/base_item.yml": "d76498c72b07a68c72d16b521ab3dc540fa0ecb4d942a9a9e7337afa9317dfa5",
+      "Resources/Prototypes/Entities/Structures/Bases/structure_health.yml": "e8d5e1595356fc7bfcf5e1de920528d804bab6bb6f686abab09ecdc0135392a2",
+      "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml": "e1803de51888c19b074424158afedda4523f43b4b462714d3ec5c786641aff09",
+      "Resources/Prototypes/Entities/Structures/Doors/Airlocks/base_structureairlocks.yml": "71cc4756efe3526af5a969a67f43039fa9d5dab65d4b9dee7087e1c70e824070",
+      "Resources/Prototypes/Entities/Structures/Doors/Airlocks/external.yml": "bc90e9ad5137a9f27b31f7877d608d2aee2c2d1ab84a02cb65e073cb08390270",
+      "Resources/Prototypes/Entities/Structures/Doors/Airlocks/shuttle.yml": "dd6479ad22aca606ed393090a9e4f1a88624ddceef4a2971fb06653c07e42d9e",
+      "Resources/Prototypes/Entities/Structures/Doors/Firelocks/firelock.yml": "f355dea23bbe9a7908a3d76ba97b770fed1f3e41b34f0a2bab8b016c6c034c77",
+      "Resources/Prototypes/Entities/Structures/Lighting/base_lighting.yml": "08b8240cbd486e65a812deddeef412846e013ee4150803a396aec8d7211a8959",
+      "Resources/Prototypes/Entities/Structures/Machines/base_structuremachines.yml": "6c025df2af85f2c3b29d3243ae8208067de6b59d9d782e423841fe20095c0d64",
+      "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/binary.yml": "0f38400dce51f2768e87558ba5a754e1c134ffa7dd8a49d30f0da187fd0a9797",
+      "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml": "63c37e225651bf90edb7ea3d873ba7d7049e8a389dbbe793f4fa4f6ca093c4a9",
+      "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml": "39f251aad00e461ea8b336fd4fb9f192d9861660b86053db26db2b9bfd5b0815",
+      "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml": "70806ecf088fce6799d269225d37379d36537a43ca982310162b06e98da87d2d",
+      "Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml": "afd4bc93d98bae085e559d279713cd853dbe6b5714be8866931d5a75a20cb586",
+      "Resources/Prototypes/Entities/Structures/Power/apc.yml": "607a0fc45b3f771c905c182930eab71cf316cb2a943817093975dea9a6b0e18d",
+      "Resources/Prototypes/Entities/Structures/Power/cable_terminal.yml": "7008d14e52eaac14f919bbe7171ffa14bd0ded59ee857243469a76be7755c0d2",
+      "Resources/Prototypes/Entities/Structures/Power/cables.yml": "1c7f42bd45577eb2b637d44bcc86ba656c655ae3a284697b98dbc1a7aab4009d",
+      "Resources/Prototypes/Entities/Structures/Power/smes.yml": "6b58a2f0d9684ba20e26e8bb6306a08c879198cec1ba1bd410cdab985b22f0b5",
+      "Resources/Prototypes/Entities/Structures/Power/substation.yml": "9294a37c8a86ebc97aa9133364e093374213081169cf945487038a8d93c344ed",
+      "Resources/Prototypes/Entities/Structures/Specific/Atmospherics/sensor.yml": "c42645c5c8fb68837f377f150faa6c001b2b81083758fbfdeeb71dc6839b446d",
+      "Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml": "79708a8e1f78c17725a13f615de99cdab40a8cb5944fba3fbbe8c780225b49b7",
+      "Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/air_alarm.yml": "ea5dce5e46aac545ded7f719ee317da16aabaed587d6ad392381186b24e98f2d",
+      "Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/fire_alarm.yml": "25f7a6615e90ad24265255f7abc703f9bcb206e613cffbc353764ea0d0c133fe",
+      "Resources/Prototypes/Entities/Structures/Wallmounts/base_wallmount.yml": "9b03649754cfeb0bcae9089b0d31b15275bf1c45cbb647b66695c98e01f2b27a",
+      "Resources/Prototypes/Entities/Structures/base_structure.yml": "885282720a0d19bbe9b858707e2fecd01b96e3dbfe58652355776f355a23302b",
+      "Tools/StationArchitect/Analysis/analyze_maps.py": "53b09bc5fc47927c565c218a635f5f99cc8a3d3f5706cc0cd239abc9b48fa9cc",
+      "Tools/StationArchitect/Analysis/audit_native_profiles.py": "6a615f39b173eb345bb1e09749cfcbe939d744de18b76e318f5fb933584e0d5a",
+      "Tools/StationArchitect/Analysis/native_system_sources.py": "e9df5f1efd9cd272e50a33dd064108067070d55c9f9dde6c73938bcab7d975b0",
+      "Tools/StationArchitect/Analysis/survey_native_systems.py": "e8efedb213f1207e9d544ee289b8c239965a2a42a64fbb1111063e51bc695fb1",
+      "Tools/StationArchitect/Analysis/write_native_profiles.py": "d97cfb4132d796c461ea04e8fa53abb499804218d2b9c98d2049c6bc1c5a9565"
+    },
+    "generator": "Tools/StationArchitect/Analysis/write_native_profiles.py"
+  }
+}

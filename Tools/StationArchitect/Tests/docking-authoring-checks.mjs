@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';
+import {roomDocksHtml} from '../wwwroot/program-panels.js';
+import {designSvg,allDesignCells} from '../wwwroot/design-renderer.js';
+
+const room={id:'Dock',contents:[{id:'NativePort'}],exterior:{docks:[{id:'Arrival <berth>',contentId:'NativePort',berthWidth:18,berthDepth:9,berthOffset:-2,approachLength:16,approachWidth:0,clearance:1,directions:['north'],sourceRefs:['Resources/Maps/Shuttles/arrivals.yml#uid=179']}]}};
+const form=roomDocksHtml(room);
+assert.match(form,/Arrival &lt;berth&gt;/);
+assert.match(form,/data-dock-field="berthOffset"/);
+assert.match(form,/value="NativePort" selected/);
+assert.match(form,/data-action="remove-dock"/);
+assert.doesNotMatch(roomDocksHtml({...room,contents:[{id:'"><img src=x>'}]}),/<img/);
+const dock={id:'Alpha/Dock#1/dock:Arrival#1',roomId:'Alpha/Dock#1',requirementId:'Arrival <berth>',boundaryCells:[{x:0,y:0}],berthCells:[{x:-1,y:-1}],approachCells:[{x:-1,y:-20}],outward:{x:0,y:-1}};
+const project={definition:{departments:[]},layout:{rooms:[],departments:[],envelope:[],publicCorridors:[],maintenance:[],walls:[],hull:[],windows:[],reservedSpace:[...dock.berthCells,...dock.approachCells],interfaces:[],equipment:[],utilities:[],docks:[dock],circulationReservations:[]}};
+assert.ok(allDesignCells(project).some(cell=>cell.y===-20),'Fit must include exterior approach space.');
+assert.equal(allDesignCells(project,false).length,0);
+const shown=designSvg(project,{stage:'placement'}),hidden=designSvg(project,{stage:'placement',clearances:false});
+assert.match(shown,/dock-berth-/);assert.match(shown,/dock-approach-/);
+assert.match(shown,/Arrival &lt;berth&gt;/);
+assert.doesNotMatch(hidden,/dock-berth-|dock-approach-/);
+assert.doesNotMatch(hidden,/<rect[^>]*y="-20"/,'Hidden docking masks must not remain as generic space hatching.');
+console.log('Dock authoring/render checks passed: editable binding and dimensions, escaped labels, exterior fit and clearances toggle.');

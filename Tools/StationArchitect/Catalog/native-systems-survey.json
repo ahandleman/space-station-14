@@ -1,0 +1,1676 @@
+{
+  "simulationVerified": false,
+  "profiles": {
+    "CableHV": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Power/cables.yml",
+      "ancestors": [
+        "CableBase",
+        "CablePhysBase",
+        "StructureHealthContainerWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "NodeContainer": {
+          "nodes": {
+            "power": {
+              "nodeGroupID": "HVPower",
+              "_nodeType": "CableNode"
+            }
+          }
+        }
+      }
+    },
+    "CableMV": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Power/cables.yml",
+      "ancestors": [
+        "CableBase",
+        "CablePhysBase",
+        "StructureHealthContainerWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "NodeContainer": {
+          "nodes": {
+            "power": {
+              "nodeGroupID": "MVPower",
+              "_nodeType": "CableNode"
+            }
+          }
+        }
+      }
+    },
+    "CableApcExtension": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Power/cables.yml",
+      "ancestors": [
+        "CableBase",
+        "CablePhysBase",
+        "StructureHealthContainerWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "NodeContainer": {
+          "nodes": {
+            "power": {
+              "nodeGroupID": "Apc",
+              "_nodeType": "CableNode"
+            }
+          }
+        },
+        "PowerProvider": {
+          "voltage": "Apc"
+        },
+        "ExtensionCableProvider": {}
+      }
+    },
+    "CableTerminal": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Power/cable_terminal.yml",
+      "ancestors": [
+        "StructureHealthContainerWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "NodeContainer": {
+          "nodes": {
+            "powerHV": {
+              "nodeGroupID": "HVPower",
+              "_nodeType": "CableTerminalNode"
+            },
+            "powerMV": {
+              "nodeGroupID": "MVPower",
+              "_nodeType": "CableTerminalNode"
+            }
+          }
+        }
+      }
+    },
+    "SubstationBasic": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Power/substation.yml",
+      "ancestors": [
+        "BaseSubstation",
+        "CoreSubstation",
+        "BaseMachine",
+        "BaseStructure",
+        "ConstructibleMachine",
+        "BaseConstructibleMachineDestructible",
+        "StructureHealthMachine",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "Battery": {
+          "netsync": false,
+          "maxCharge": 2500000,
+          "startingCharge": 2500000
+        },
+        "NodeContainer": {
+          "examinable": true,
+          "nodes": {
+            "input": {
+              "nodeGroupID": "HVPower",
+              "_nodeType": "CableDeviceNode"
+            },
+            "output": {
+              "nodeGroupID": "MVPower",
+              "_nodeType": "CableDeviceNode"
+            }
+          }
+        },
+        "BatteryCharger": {
+          "voltage": "High"
+        },
+        "BatteryDischarger": {
+          "voltage": "Medium"
+        },
+        "PowerNetworkBattery": {
+          "maxSupply": 150000,
+          "maxChargeRate": 5000,
+          "supplyRampTolerance": 5000,
+          "supplyRampRate": 1000
+        }
+      }
+    },
+    "APCBasic": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Power/apc.yml",
+      "ancestors": [
+        "BaseAPC",
+        "BaseWallmount",
+        "StructureHealthMachineWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "Battery": {
+          "netsync": false,
+          "maxCharge": 50000,
+          "startingCharge": 50000
+        },
+        "NodeContainer": {
+          "examinable": true,
+          "nodes": {
+            "input": {
+              "nodeGroupID": "MVPower",
+              "_nodeType": "CableDeviceNode"
+            },
+            "output": {
+              "nodeGroupID": "Apc",
+              "_nodeType": "CableDeviceNode"
+            }
+          }
+        },
+        "BatteryCharger": {
+          "voltage": "Medium"
+        },
+        "PowerProvider": {
+          "voltage": "Apc"
+        },
+        "ExtensionCableProvider": {},
+        "PowerNetworkBattery": {
+          "maxSupply": 10000,
+          "maxChargeRate": 5000,
+          "supplyRampTolerance": 1000,
+          "supplyRampRate": 500
+        }
+      }
+    },
+    "SMESBasic": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Power/smes.yml",
+      "ancestors": [
+        "BaseSMES",
+        "BaseMachine",
+        "BaseStructure",
+        "ConstructibleMachine",
+        "BaseConstructibleMachineDestructible",
+        "StructureHealthMachine",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "Battery": {
+          "netsync": false,
+          "startingCharge": 8000000,
+          "maxCharge": 8000000
+        },
+        "NodeContainer": {
+          "examinable": true,
+          "nodes": {
+            "input": {
+              "nodeGroupID": "HVPower",
+              "_nodeType": "CableTerminalPortNode"
+            },
+            "output": {
+              "nodeGroupID": "HVPower",
+              "_nodeType": "CableDeviceNode"
+            }
+          }
+        },
+        "BatteryDischarger": {
+          "voltage": "High",
+          "node": "output"
+        },
+        "BatteryCharger": {
+          "voltage": "High",
+          "node": "input"
+        },
+        "PowerNetworkBattery": {
+          "maxSupply": 150000,
+          "maxChargeRate": 5000,
+          "supplyRampTolerance": 5000,
+          "supplyRampRate": 1000
+        },
+        "DeviceNetwork": {
+          "deviceNetId": "AtmosDevices",
+          "receiveFrequencyId": "AtmosMonitor",
+          "transmitFrequencyId": "AtmosMonitor",
+          "prefix": "device-address-prefix-smes",
+          "sendBroadcastAttemptEvent": true,
+          "examinableAddress": true
+        }
+      }
+    },
+    "SMESAdvanced": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Power/smes.yml",
+      "ancestors": [
+        "BaseSMES",
+        "BaseMachine",
+        "BaseStructure",
+        "ConstructibleMachine",
+        "BaseConstructibleMachineDestructible",
+        "StructureHealthMachine",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "Battery": {
+          "netsync": false,
+          "startingCharge": 16000000,
+          "maxCharge": 16000000
+        },
+        "NodeContainer": {
+          "examinable": true,
+          "nodes": {
+            "input": {
+              "nodeGroupID": "HVPower",
+              "_nodeType": "CableTerminalPortNode"
+            },
+            "output": {
+              "nodeGroupID": "HVPower",
+              "_nodeType": "CableDeviceNode"
+            }
+          }
+        },
+        "BatteryDischarger": {
+          "voltage": "High",
+          "node": "output"
+        },
+        "BatteryCharger": {
+          "voltage": "High",
+          "node": "input"
+        },
+        "PowerNetworkBattery": {
+          "maxSupply": 150000,
+          "maxChargeRate": 5000,
+          "supplyRampTolerance": 5000,
+          "supplyRampRate": 1000
+        },
+        "DeviceNetwork": {
+          "deviceNetId": "AtmosDevices",
+          "receiveFrequencyId": "AtmosMonitor",
+          "transmitFrequencyId": "AtmosMonitor",
+          "prefix": "device-address-prefix-smes",
+          "sendBroadcastAttemptEvent": true,
+          "examinableAddress": true
+        }
+      }
+    },
+    "GeneratorBasic": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Power/Generation/generators.yml",
+      "ancestors": [
+        "BaseGenerator",
+        "BaseMachine",
+        "BaseStructure",
+        "StructureHealthMachineWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "NodeContainer": {
+          "examinable": true,
+          "nodes": {
+            "output": {
+              "nodeGroupID": "HVPower",
+              "_nodeType": "CableDeviceNode"
+            }
+          }
+        },
+        "PowerSupplier": {
+          "supplyRate": 3000,
+          "supplyRampRate": 500,
+          "supplyRampTolerance": 500
+        }
+      }
+    },
+    "GasPipeStraight": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml",
+      "ancestors": [
+        "GasPipeBase",
+        "GasPipeSansLayers",
+        "GasPipeSansLayersIndestructible",
+        "BaseItem",
+        "StructureHealthContainer",
+        "BaseStructureHealth",
+        "BaseGasPipeLayers"
+      ],
+      "components": {
+        "AtmosPipeLayers": {
+          "spriteLayersRsiPaths": {
+            "enum.PipeVisualLayers.Pipe": {
+              "Primary": "Structures/Piping/Atmospherics/pipe.rsi",
+              "Secondary": "Structures/Piping/Atmospherics/pipe_alt1.rsi",
+              "Tertiary": "Structures/Piping/Atmospherics/pipe_alt2.rsi"
+            }
+          },
+          "pipeLayer": 0
+        },
+        "NodeContainer": {
+          "nodes": {
+            "pipe": {
+              "nodeGroupID": "Pipe",
+              "pipeDirection": "Longitudinal",
+              "_nodeType": "PipeNode"
+            }
+          }
+        }
+      }
+    },
+    "GasPipeStraightAlt1": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml",
+      "ancestors": [
+        "GasPipeBase",
+        "GasPipeSansLayers",
+        "GasPipeSansLayersIndestructible",
+        "BaseItem",
+        "StructureHealthContainer",
+        "BaseStructureHealth",
+        "BaseGasPipeLayers"
+      ],
+      "components": {
+        "AtmosPipeLayers": {
+          "spriteLayersRsiPaths": {
+            "enum.PipeVisualLayers.Pipe": {
+              "Primary": "Structures/Piping/Atmospherics/pipe.rsi",
+              "Secondary": "Structures/Piping/Atmospherics/pipe_alt1.rsi",
+              "Tertiary": "Structures/Piping/Atmospherics/pipe_alt2.rsi"
+            }
+          },
+          "pipeLayer": 1
+        },
+        "NodeContainer": {
+          "nodes": {
+            "pipe": {
+              "nodeGroupID": "Pipe",
+              "pipeDirection": "Longitudinal",
+              "_nodeType": "PipeNode"
+            }
+          }
+        }
+      }
+    },
+    "GasVentPump": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml",
+      "ancestors": [
+        "GasUnaryBase",
+        "GasPipeBase",
+        "GasPipeSansLayers",
+        "GasPipeSansLayersIndestructible",
+        "BaseItem",
+        "StructureHealthContainer",
+        "BaseStructureHealth",
+        "BaseGasPipeLayers",
+        "AirSensorBase"
+      ],
+      "components": {
+        "DeviceNetwork": {
+          "deviceNetId": "AtmosDevices",
+          "receiveFrequencyId": "AtmosMonitor",
+          "transmitFrequencyId": "AtmosMonitor",
+          "prefix": "device-address-prefix-vent",
+          "sendBroadcastAttemptEvent": true,
+          "examinableAddress": true
+        },
+        "AtmosMonitor": {
+          "temperatureThresholdId": "stationTemperature",
+          "pressureThresholdId": "stationPressure",
+          "gasThresholdPrototypes": {
+            "Oxygen": "stationOxygen",
+            "Nitrogen": "stationNitrogen",
+            "CarbonDioxide": "stationCO2",
+            "Plasma": "stationPlasma",
+            "Tritium": "stationTritium",
+            "WaterVapor": "stationWaterVapor",
+            "Ammonia": "stationAmmonia",
+            "NitrousOxide": "stationNO",
+            "Frezon": "danger"
+          }
+        },
+        "AtmosPipeLayers": {
+          "spriteLayersRsiPaths": {
+            "enum.PipeVisualLayers.Pipe": {
+              "Primary": "Structures/Piping/Atmospherics/pipe.rsi",
+              "Secondary": "Structures/Piping/Atmospherics/pipe_alt1.rsi",
+              "Tertiary": "Structures/Piping/Atmospherics/pipe_alt2.rsi"
+            }
+          },
+          "pipeLayer": 0
+        },
+        "NodeContainer": {
+          "nodes": {
+            "pipe": {
+              "nodeGroupID": "Pipe",
+              "pipeDirection": "South",
+              "_nodeType": "PipeNode"
+            }
+          }
+        },
+        "ApcPowerReceiver": {},
+        "ExtensionCableReceiver": {},
+        "GasVentPump": {}
+      }
+    },
+    "GasVentScrubber": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml",
+      "ancestors": [
+        "GasUnaryBase",
+        "GasPipeBase",
+        "GasPipeSansLayers",
+        "GasPipeSansLayersIndestructible",
+        "BaseItem",
+        "StructureHealthContainer",
+        "BaseStructureHealth",
+        "BaseGasPipeLayers",
+        "AirSensorBase"
+      ],
+      "components": {
+        "DeviceNetwork": {
+          "deviceNetId": "AtmosDevices",
+          "receiveFrequencyId": "AtmosMonitor",
+          "transmitFrequencyId": "AtmosMonitor",
+          "prefix": "device-address-prefix-scrubber",
+          "sendBroadcastAttemptEvent": true,
+          "examinableAddress": true
+        },
+        "AtmosMonitor": {
+          "temperatureThresholdId": "stationTemperature",
+          "pressureThresholdId": "stationPressure",
+          "gasThresholdPrototypes": {
+            "Oxygen": "stationOxygen",
+            "Nitrogen": "stationNitrogen",
+            "CarbonDioxide": "stationCO2",
+            "Plasma": "stationPlasma",
+            "Tritium": "stationTritium",
+            "WaterVapor": "stationWaterVapor",
+            "Ammonia": "stationAmmonia",
+            "NitrousOxide": "stationNO",
+            "Frezon": "danger"
+          }
+        },
+        "AtmosPipeLayers": {
+          "spriteLayersRsiPaths": {
+            "enum.PipeVisualLayers.Pipe": {
+              "Primary": "Structures/Piping/Atmospherics/pipe.rsi",
+              "Secondary": "Structures/Piping/Atmospherics/pipe_alt1.rsi",
+              "Tertiary": "Structures/Piping/Atmospherics/pipe_alt2.rsi"
+            }
+          },
+          "pipeLayer": 0
+        },
+        "NodeContainer": {
+          "nodes": {
+            "pipe": {
+              "nodeGroupID": "Pipe",
+              "pipeDirection": "South",
+              "_nodeType": "PipeNode"
+            }
+          }
+        },
+        "ApcPowerReceiver": {},
+        "ExtensionCableReceiver": {},
+        "GasVentScrubber": {}
+      }
+    },
+    "AirAlarm": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/air_alarm.yml",
+      "ancestors": [
+        "BaseWallmountMachine",
+        "BaseWallmountMetallic",
+        "BaseWallmount",
+        "StructureHealthMachineWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 100
+        },
+        "ExtensionCableReceiver": {},
+        "DeviceNetwork": {
+          "deviceNetId": "AtmosDevices",
+          "receiveFrequencyId": "AtmosMonitor",
+          "transmitFrequencyId": "AtmosMonitor",
+          "prefix": "device-address-prefix-air-alarm",
+          "sendBroadcastAttemptEvent": true
+        },
+        "DeviceList": {},
+        "AtmosAlarmable": {
+          "syncWith": [
+            "AirAlarm",
+            "AirSensor",
+            "GasVent",
+            "GasScrubber"
+          ]
+        },
+        "AirAlarm": {}
+      }
+    },
+    "FireAlarm": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/fire_alarm.yml",
+      "ancestors": [
+        "BaseWallmountMachine",
+        "BaseWallmountMetallic",
+        "BaseWallmount",
+        "StructureHealthMachineFlimsy",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 100
+        },
+        "ExtensionCableReceiver": {},
+        "DeviceNetwork": {
+          "deviceNetId": "AtmosDevices",
+          "receiveFrequencyId": "AtmosMonitor",
+          "transmitFrequencyId": "AtmosMonitor",
+          "prefix": "device-address-prefix-fire-alarm",
+          "sendBroadcastAttemptEvent": true,
+          "examinableAddress": true
+        },
+        "DeviceList": {},
+        "AtmosAlarmable": {
+          "syncWith": [
+            "FireAlarm",
+            "AirSensor",
+            "GasVent",
+            "GasScrubber"
+          ],
+          "monitorAlertTypes": [
+            "Temperature"
+          ]
+        },
+        "FireAlarm": {}
+      }
+    },
+    "Firelock": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Doors/Firelocks/firelock.yml",
+      "ancestors": [
+        "BaseFirelock",
+        "BaseStructure",
+        "StructureHealthDoor",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "AtmosAlarmable": {
+          "syncWith": [
+            "FireAlarm",
+            "AirAlarm"
+          ]
+        },
+        "ApcPowerReceiver": {},
+        "ExtensionCableReceiver": {},
+        "DeviceNetwork": {
+          "deviceNetId": "AtmosDevices",
+          "receiveFrequencyId": "AtmosMonitor"
+        },
+        "Firelock": {}
+      }
+    },
+    "AirSensor": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Specific/Atmospherics/sensor.yml",
+      "ancestors": [
+        "AirSensorBase",
+        "StructureHealthMachineFlimsy",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "DeviceNetwork": {
+          "deviceNetId": "AtmosDevices",
+          "receiveFrequencyId": "AtmosMonitor",
+          "transmitFrequencyId": "AtmosMonitor",
+          "prefix": "device-address-prefix-sensor",
+          "sendBroadcastAttemptEvent": true,
+          "examinableAddress": true
+        },
+        "AtmosMonitor": {
+          "temperatureThresholdId": "stationTemperature",
+          "pressureThresholdId": "stationPressure",
+          "gasThresholdPrototypes": {
+            "Oxygen": "stationOxygen",
+            "Nitrogen": "stationNitrogen",
+            "CarbonDioxide": "stationCO2",
+            "Plasma": "stationPlasma",
+            "Tritium": "stationTritium",
+            "WaterVapor": "stationWaterVapor",
+            "Ammonia": "stationAmmonia",
+            "NitrousOxide": "stationNO",
+            "Frezon": "danger"
+          }
+        },
+        "ApcPowerReceiver": {},
+        "ExtensionCableReceiver": {}
+      }
+    },
+    "DisposalUnit": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml",
+      "ancestors": [
+        "DisposalUnitBase",
+        "BaseMachinePowered",
+        "BaseMachine",
+        "BaseStructure",
+        "StructureHealthMachineWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "ApcPowerReceiver": {
+          "powerLoad": 5
+        },
+        "ExtensionCableReceiver": {},
+        "DisposalUnit": {
+          "container": {
+            "occludes": true,
+            "showEnts": false,
+            "ents": []
+          },
+          "whitelist": {
+            "components": [
+              "Item",
+              "Body"
+            ]
+          }
+        }
+      }
+    },
+    "DisposalTrunk": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml",
+      "ancestors": [
+        "DisposalPipeBase",
+        "StructureHealthContainerWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "DisposalTube": {},
+        "DisposalEntry": {}
+      }
+    },
+    "DisposalPipe": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml",
+      "ancestors": [
+        "DisposalPipeBase",
+        "StructureHealthContainerWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "DisposalTube": {
+          "exits": [
+            "South",
+            "North"
+          ]
+        }
+      }
+    },
+    "DisposalBend": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml",
+      "ancestors": [
+        "DisposalPipeBase",
+        "StructureHealthContainerWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "DisposalTube": {
+          "exits": [
+            "South",
+            "West"
+          ]
+        }
+      }
+    },
+    "DisposalJunction": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml",
+      "ancestors": [
+        "DisposalPipeBase",
+        "StructureHealthContainerWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "DisposalTube": {
+          "exits": [
+            "South",
+            "West",
+            "North"
+          ]
+        }
+      }
+    },
+    "DisposalYJunction": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml",
+      "ancestors": [
+        "DisposalPipeBase",
+        "StructureHealthContainerWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "DisposalTube": {
+          "exits": [
+            "South",
+            "West",
+            "East"
+          ]
+        }
+      }
+    },
+    "DisposalRouterWaste": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml",
+      "ancestors": [
+        "DisposalRouter",
+        "DisposalPipeBase",
+        "StructureHealthContainerWeak",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "DisposalTube": {
+          "exits": [
+            "West",
+            "South",
+            "North"
+          ]
+        }
+      }
+    },
+    "Poweredlight": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Lighting/base_lighting.yml",
+      "ancestors": [
+        "PoweredlightEmpty",
+        "AlwaysPoweredWallLight",
+        "BaseWallLight",
+        "BaseLightHousingDestructible",
+        "StructureHealthMachineFlimsy",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "PoweredLight": {
+          "bulb": "Tube",
+          "hasLampOnSpawn": "LightTube"
+        },
+        "ApcPowerReceiver": {},
+        "ExtensionCableReceiver": {},
+        "DeviceNetwork": {
+          "deviceNetId": "Wireless",
+          "receiveFrequencyId": "SmartLight"
+        }
+      }
+    },
+    "PoweredlightLED": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Lighting/base_lighting.yml",
+      "ancestors": [
+        "Poweredlight",
+        "PoweredlightEmpty",
+        "AlwaysPoweredWallLight",
+        "BaseWallLight",
+        "BaseLightHousingDestructible",
+        "StructureHealthMachineFlimsy",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "PoweredLight": {
+          "bulb": "Tube",
+          "hasLampOnSpawn": "LedLightTube"
+        },
+        "ApcPowerReceiver": {},
+        "ExtensionCableReceiver": {},
+        "DeviceNetwork": {
+          "deviceNetId": "Wireless",
+          "receiveFrequencyId": "SmartLight"
+        }
+      }
+    },
+    "GasPort": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/binary.yml",
+      "ancestors": [
+        "GasBinaryBase",
+        "GasPipeBase",
+        "GasPipeSansLayers",
+        "GasPipeSansLayersIndestructible",
+        "BaseItem",
+        "StructureHealthContainer",
+        "BaseStructureHealth",
+        "BaseGasPipeLayers"
+      ],
+      "components": {
+        "AtmosPipeLayers": {
+          "spriteLayersRsiPaths": {
+            "enum.PipeVisualLayers.Pipe": {
+              "Primary": "Structures/Piping/Atmospherics/pipe.rsi",
+              "Secondary": "Structures/Piping/Atmospherics/pipe_alt1.rsi",
+              "Tertiary": "Structures/Piping/Atmospherics/pipe_alt2.rsi"
+            }
+          },
+          "spriteRsiPaths": {},
+          "pipeLayer": 0
+        },
+        "NodeContainer": {
+          "nodes": {
+            "connected": {
+              "nodeGroupID": "Pipe",
+              "pipeDirection": "South",
+              "_nodeType": "PortPipeNode"
+            }
+          }
+        }
+      }
+    },
+    "AirCanister": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml",
+      "ancestors": [
+        "GasCanister",
+        "BaseStructureDynamic",
+        "BaseStructure",
+        "BasePaperLabelableVisualized",
+        "BasePaperLabelable",
+        "StructureHealthContainerStrong",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "NodeContainer": {
+          "nodes": {
+            "port": {
+              "nodeGroupID": "Pipe",
+              "rotationsEnabled": false,
+              "volume": 1,
+              "_nodeType": "PortablePipeNode"
+            }
+          }
+        },
+        "GasCanister": {
+          "maxIntegrity": 15,
+          "integrity": 15,
+          "maxReleasePressure": 1013.25,
+          "safetyPressure": 10132.5,
+          "overpressure": 20265,
+          "gasTankSlot": {
+            "name": "comp-gas-canister-slot-name-gas-tank",
+            "ejectOnBreak": true,
+            "whitelist": {
+              "components": [
+                "GasTank"
+              ]
+            }
+          },
+          "air": {
+            "volume": 1500,
+            "moles": {
+              "Oxygen": 581.56,
+              "Nitrogen": 2187.79
+            },
+            "temperature": 293.15
+          }
+        }
+      }
+    },
+    "StorageCanister": {
+      "sourcePath": "Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml",
+      "ancestors": [
+        "GasCanister",
+        "BaseStructureDynamic",
+        "BaseStructure",
+        "BasePaperLabelableVisualized",
+        "BasePaperLabelable",
+        "StructureHealthContainerStrong",
+        "BaseStructureHealth"
+      ],
+      "components": {
+        "NodeContainer": {
+          "nodes": {
+            "port": {
+              "nodeGroupID": "Pipe",
+              "rotationsEnabled": false,
+              "volume": 1,
+              "_nodeType": "PortablePipeNode"
+            }
+          }
+        },
+        "GasCanister": {
+          "maxIntegrity": 15,
+          "integrity": 15,
+          "maxReleasePressure": 1013.25,
+          "safetyPressure": 10132.5,
+          "overpressure": 20265,
+          "gasTankSlot": {
+            "name": "comp-gas-canister-slot-name-gas-tank",
+            "ejectOnBreak": true,
+            "whitelist": {
+              "components": [
+                "GasTank"
+              ]
+            }
+          },
+          "air": {
+            "volume": 1500,
+            "temperature": 293.15
+          }
+        }
+      }
+    }
+  },
+  "maps": [
+    {
+      "path": "Resources/Maps/box.yml",
+      "gridUid": 8364,
+      "entityCount": 28767,
+      "componentCounts": {
+        "AirAlarm": 113,
+        "ApcPowerReceiver": 3195,
+        "AtmosAlarmable": 471,
+        "AtmosMonitor": 583,
+        "AtmosPipeLayers": 3783,
+        "Battery": 291,
+        "BatteryCharger": 140,
+        "BatteryDischarger": 43,
+        "DeviceList": 186,
+        "DeviceNetwork": 2817,
+        "DisposalEntry": 59,
+        "DisposalTube": 1456,
+        "DisposalUnit": 70,
+        "ExtensionCableProvider": 4527,
+        "ExtensionCableReceiver": 3195,
+        "FireAlarm": 62,
+        "Firelock": 296,
+        "GasCanister": 90,
+        "GasVentPump": 210,
+        "GasVentScrubber": 207,
+        "NodeContainer": 13572,
+        "PowerNetworkBattery": 150,
+        "PowerProvider": 4527,
+        "PowerSupplier": 266,
+        "PoweredLight": 586
+      },
+      "cables": {
+        "CableApcExtension": 4420,
+        "CableApcStack": 17,
+        "CableApcStack1": 4,
+        "CableHV": 1335,
+        "CableHVStack": 14,
+        "CableMV": 1971,
+        "CableMVStack": 13,
+        "CableMVStack1": 7,
+        "CableTerminal": 13
+      },
+      "airAlarmExamples": [
+        {
+          "uid": 2,
+          "prototype": "AirAlarm",
+          "position": "47.5,-29.5",
+          "devices": [
+            {
+              "uid": 24674,
+              "prototype": "GasVentScrubber",
+              "position": "45.5,-26.5"
+            },
+            {
+              "uid": 22679,
+              "prototype": "AirSensor",
+              "position": "45.5,-27.5"
+            },
+            {
+              "uid": 24673,
+              "prototype": "GasVentScrubber",
+              "position": "41.5,-27.5"
+            },
+            {
+              "uid": 24672,
+              "prototype": "GasVentPump",
+              "position": "45.5,-28.5"
+            },
+            {
+              "uid": 24671,
+              "prototype": "GasVentPump",
+              "position": "40.5,-27.5"
+            }
+          ]
+        },
+        {
+          "uid": 256,
+          "prototype": "AirAlarm",
+          "position": "-6.5,-60.5",
+          "devices": [
+            {
+              "uid": 22778,
+              "prototype": "GasVentScrubber",
+              "position": "-6.5,-65.5"
+            },
+            {
+              "uid": 16399,
+              "prototype": "GasVentPump",
+              "position": "-6.5,-63.5"
+            },
+            {
+              "uid": 22993,
+              "prototype": "AirSensor",
+              "position": "-1.5,-64.5"
+            },
+            {
+              "uid": 22800,
+              "prototype": "GasVentScrubber",
+              "position": "-1.5,-63.5"
+            },
+            {
+              "uid": 23146,
+              "prototype": "GasVentPump",
+              "position": "-1.5,-62.5"
+            }
+          ]
+        }
+      ],
+      "fireAlarmExamples": [
+        {
+          "uid": 935,
+          "prototype": "FireAlarm",
+          "position": "9.5,-50.5",
+          "devices": [
+            {
+              "uid": 22572,
+              "prototype": "AirSensor",
+              "position": "4.5,-54.5"
+            },
+            {
+              "uid": 22960,
+              "prototype": "FirelockGlass",
+              "position": "2.5,-56.5"
+            },
+            {
+              "uid": 16975,
+              "prototype": "FirelockGlass",
+              "position": "4.5,-58.5"
+            },
+            {
+              "uid": 16976,
+              "prototype": "FirelockGlass",
+              "position": "8.5,-58.5"
+            },
+            {
+              "uid": 23000,
+              "prototype": "FirelockGlass",
+              "position": "3.5,-50.5"
+            }
+          ]
+        },
+        {
+          "uid": 1447,
+          "prototype": "FireAlarm",
+          "position": "-28.5,-18.5",
+          "devices": [
+            {
+              "uid": 14192,
+              "prototype": "FirelockGlass",
+              "position": "-24.5,-28.5"
+            },
+            {
+              "uid": 14174,
+              "prototype": "FirelockGlass",
+              "position": "-23.5,-22.5"
+            },
+            {
+              "uid": 930,
+              "prototype": "FirelockEdge",
+              "position": "-25.5,-27.5"
+            },
+            {
+              "uid": 17627,
+              "prototype": "FirelockEdge",
+              "position": "-25.5,-29.5"
+            },
+            {
+              "uid": 15396,
+              "prototype": "FirelockEdge",
+              "position": "-30.5,-21.5"
+            },
+            {
+              "uid": 14853,
+              "prototype": "FirelockEdge",
+              "position": "-30.5,-20.5"
+            },
+            {
+              "uid": 15393,
+              "prototype": "FirelockEdge",
+              "position": "-28.5,-20.5"
+            },
+            {
+              "uid": 15392,
+              "prototype": "FirelockEdge",
+              "position": "-28.5,-21.5"
+            },
+            {
+              "uid": 22624,
+              "prototype": "AirSensor",
+              "position": "-26.5,-24.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Resources/Maps/packed.yml",
+      "gridUid": 2,
+      "entityCount": 16421,
+      "componentCounts": {
+        "AirAlarm": 80,
+        "ApcPowerReceiver": 2014,
+        "AtmosAlarmable": 353,
+        "AtmosMonitor": 293,
+        "AtmosPipeLayers": 2031,
+        "Battery": 180,
+        "BatteryCharger": 120,
+        "BatteryDischarger": 37,
+        "DeviceList": 126,
+        "DeviceNetwork": 1818,
+        "DisposalEntry": 30,
+        "DisposalTube": 451,
+        "DisposalUnit": 42,
+        "ExtensionCableProvider": 2144,
+        "ExtensionCableReceiver": 2014,
+        "FireAlarm": 40,
+        "Firelock": 233,
+        "GasCanister": 59,
+        "GasVentPump": 108,
+        "GasVentScrubber": 97,
+        "NodeContainer": 7748,
+        "PowerNetworkBattery": 126,
+        "PowerProvider": 2144,
+        "PowerSupplier": 154,
+        "PoweredLight": 355
+      },
+      "cables": {
+        "CableApcExtension": 2055,
+        "CableApcStack": 5,
+        "CableApcStack1": 3,
+        "CableHV": 1054,
+        "CableHVStack": 2,
+        "CableMV": 1231,
+        "CableMVStack": 2,
+        "CableTerminal": 13,
+        "CablecuffsBroken": 1
+      },
+      "airAlarmExamples": [
+        {
+          "uid": 5,
+          "prototype": "AirAlarm",
+          "position": "14.5,26.5",
+          "devices": [
+            {
+              "uid": 8106,
+              "prototype": "FirelockGlass",
+              "position": "8.5,20.5"
+            },
+            {
+              "uid": 14672,
+              "prototype": "FirelockGlass",
+              "position": "8.5,29.5"
+            },
+            {
+              "uid": 29,
+              "prototype": "FirelockGlass",
+              "position": "16.5,21.5"
+            },
+            {
+              "uid": 8238,
+              "prototype": "FirelockGlass",
+              "position": "16.5,20.5"
+            },
+            {
+              "uid": 371,
+              "prototype": "AirSensor",
+              "position": "11.5,25.5"
+            },
+            {
+              "uid": 14735,
+              "prototype": "GasVentScrubber",
+              "position": "14.5,20.5"
+            },
+            {
+              "uid": 14736,
+              "prototype": "GasVentPump",
+              "position": "15.5,21.5"
+            },
+            {
+              "uid": 429,
+              "prototype": "GasVentPump",
+              "position": "9.5,23.5"
+            },
+            {
+              "uid": 8203,
+              "prototype": "GasVentScrubber",
+              "position": "9.5,27.5"
+            }
+          ]
+        },
+        {
+          "uid": 9,
+          "prototype": "AirAlarm",
+          "position": "21.5,-20.5",
+          "devices": [
+            {
+              "uid": 7269,
+              "prototype": "AirSensor",
+              "position": "21.5,-17.5"
+            },
+            {
+              "uid": 5866,
+              "prototype": "GasVentPump",
+              "position": "21.5,-16.5"
+            },
+            {
+              "uid": 5821,
+              "prototype": "GasVentScrubber",
+              "position": "21.5,-18.5"
+            }
+          ]
+        }
+      ],
+      "fireAlarmExamples": [
+        {
+          "uid": 194,
+          "prototype": "FireAlarm",
+          "position": "15.5,11.5",
+          "devices": [
+            {
+              "uid": 36,
+              "prototype": "FirelockEdge",
+              "position": "6.5,9.5"
+            },
+            {
+              "uid": 6952,
+              "prototype": "FirelockEdge",
+              "position": "6.5,10.5"
+            },
+            {
+              "uid": 11245,
+              "prototype": "FirelockEdge",
+              "position": "8.5,9.5"
+            },
+            {
+              "uid": 11244,
+              "prototype": "FirelockEdge",
+              "position": "8.5,10.5"
+            },
+            {
+              "uid": 12449,
+              "prototype": "AirSensor",
+              "position": "10.5,9.5"
+            },
+            {
+              "uid": 6931,
+              "prototype": "FirelockEdge",
+              "position": "18.5,10.5"
+            },
+            {
+              "uid": 6930,
+              "prototype": "FirelockEdge",
+              "position": "19.5,10.5"
+            },
+            {
+              "uid": 11247,
+              "prototype": "FirelockEdge",
+              "position": "19.5,12.5"
+            },
+            {
+              "uid": 11246,
+              "prototype": "FirelockEdge",
+              "position": "18.5,12.5"
+            }
+          ]
+        },
+        {
+          "uid": 762,
+          "prototype": "FireAlarm",
+          "position": "24.5,-7.5",
+          "devices": [
+            {
+              "uid": 8923,
+              "prototype": "AirSensor",
+              "position": "26.5,-5.5"
+            },
+            {
+              "uid": 6801,
+              "prototype": "FirelockEdge",
+              "position": "25.5,-3.5"
+            },
+            {
+              "uid": 6802,
+              "prototype": "FirelockEdge",
+              "position": "26.5,-3.5"
+            },
+            {
+              "uid": 6803,
+              "prototype": "FirelockEdge",
+              "position": "27.5,-3.5"
+            },
+            {
+              "uid": 6790,
+              "prototype": "FirelockEdge",
+              "position": "27.5,-1.5"
+            },
+            {
+              "uid": 6799,
+              "prototype": "FirelockEdge",
+              "position": "26.5,-1.5"
+            },
+            {
+              "uid": 6800,
+              "prototype": "FirelockEdge",
+              "position": "25.5,-1.5"
+            },
+            {
+              "uid": 10206,
+              "prototype": "FirelockGlass",
+              "position": "24.5,-10.5"
+            },
+            {
+              "uid": 10205,
+              "prototype": "FirelockGlass",
+              "position": "24.5,-11.5"
+            },
+            {
+              "uid": 6573,
+              "prototype": "FirelockGlass",
+              "position": "35.5,-1.5"
+            },
+            {
+              "uid": 6523,
+              "prototype": "FirelockGlass",
+              "position": "33.5,-1.5"
+            },
+            {
+              "uid": 6636,
+              "prototype": "AirSensor",
+              "position": "35.5,-5.5"
+            },
+            {
+              "uid": 8317,
+              "prototype": "AirSensor",
+              "position": "21.5,0.5"
+            },
+            {
+              "uid": 5531,
+              "prototype": "FirelockGlass",
+              "position": "28.5,-5.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Resources/Maps/exo.yml",
+      "gridUid": 2,
+      "entityCount": 19966,
+      "componentCounts": {
+        "AirAlarm": 119,
+        "ApcPowerReceiver": 2618,
+        "AtmosAlarmable": 542,
+        "AtmosMonitor": 352,
+        "AtmosPipeLayers": 2524,
+        "Battery": 190,
+        "BatteryCharger": 97,
+        "BatteryDischarger": 37,
+        "DeviceList": 195,
+        "DeviceNetwork": 2358,
+        "DisposalEntry": 47,
+        "DisposalTube": 987,
+        "DisposalUnit": 47,
+        "ExtensionCableProvider": 2803,
+        "ExtensionCableReceiver": 2618,
+        "FireAlarm": 70,
+        "Firelock": 353,
+        "GasCanister": 56,
+        "GasVentPump": 127,
+        "GasVentScrubber": 128,
+        "NodeContainer": 8612,
+        "PowerNetworkBattery": 103,
+        "PowerProvider": 2803,
+        "PowerSupplier": 96,
+        "PoweredLight": 395
+      },
+      "cables": {
+        "CableApcExtension": 2737,
+        "CableApcStack": 2,
+        "CableHV": 1158,
+        "CableMV": 974,
+        "CableTerminal": 11
+      },
+      "airAlarmExamples": [
+        {
+          "uid": 364,
+          "prototype": "AirAlarm",
+          "position": "16.5,-25.5",
+          "devices": [
+            {
+              "uid": 2381,
+              "prototype": "FirelockGlass",
+              "position": "18.5,-21.5"
+            },
+            {
+              "uid": 1595,
+              "prototype": "FirelockGlass",
+              "position": "17.5,-21.5"
+            },
+            {
+              "uid": 3279,
+              "prototype": "FirelockGlass",
+              "position": "16.5,-23.5"
+            },
+            {
+              "uid": 18775,
+              "prototype": "FirelockGlass",
+              "position": "16.5,-24.5"
+            },
+            {
+              "uid": 530,
+              "prototype": "FirelockGlass",
+              "position": "17.5,-26.5"
+            },
+            {
+              "uid": 8920,
+              "prototype": "FirelockGlass",
+              "position": "18.5,-26.5"
+            },
+            {
+              "uid": 18544,
+              "prototype": "GasVentScrubber",
+              "position": "20.5,-22.5"
+            },
+            {
+              "uid": 18545,
+              "prototype": "GasVentPump",
+              "position": "20.5,-23.5"
+            },
+            {
+              "uid": 19139,
+              "prototype": "AirSensor",
+              "position": "17.5,-25.5"
+            },
+            {
+              "uid": 19838,
+              "prototype": "FirelockGlass",
+              "position": "22.5,-23.5"
+            },
+            {
+              "uid": 19837,
+              "prototype": "FirelockGlass",
+              "position": "22.5,-22.5"
+            }
+          ]
+        },
+        {
+          "uid": 459,
+          "prototype": "AirAlarm",
+          "position": "13.5,-14.5",
+          "devices": [
+            {
+              "uid": 10476,
+              "prototype": "FirelockGlass",
+              "position": "8.5,-12.5"
+            },
+            {
+              "uid": 10477,
+              "prototype": "FirelockGlass",
+              "position": "8.5,-11.5"
+            },
+            {
+              "uid": 10478,
+              "prototype": "FirelockGlass",
+              "position": "8.5,-10.5"
+            },
+            {
+              "uid": 16422,
+              "prototype": "GasVentScrubber",
+              "position": "12.5,-12.5"
+            },
+            {
+              "uid": 1099,
+              "prototype": "GasVentPump",
+              "position": "13.5,-11.5"
+            },
+            {
+              "uid": 16423,
+              "prototype": "AirSensor",
+              "position": "10.5,-12.5"
+            },
+            {
+              "uid": 19831,
+              "prototype": "FirelockGlass",
+              "position": "15.5,-13.5"
+            },
+            {
+              "uid": 19832,
+              "prototype": "FirelockGlass",
+              "position": "15.5,-12.5"
+            },
+            {
+              "uid": 19833,
+              "prototype": "FirelockGlass",
+              "position": "15.5,-11.5"
+            }
+          ]
+        }
+      ],
+      "fireAlarmExamples": [
+        {
+          "uid": 349,
+          "prototype": "FireAlarm",
+          "position": "14.5,-21.5",
+          "devices": [
+            {
+              "uid": 8664,
+              "prototype": "FirelockGlass",
+              "position": "12.5,-18.5"
+            },
+            {
+              "uid": 8757,
+              "prototype": "FirelockGlass",
+              "position": "8.5,-20.5"
+            },
+            {
+              "uid": 2381,
+              "prototype": "FirelockGlass",
+              "position": "18.5,-21.5"
+            },
+            {
+              "uid": 1595,
+              "prototype": "FirelockGlass",
+              "position": "17.5,-21.5"
+            },
+            {
+              "uid": 18775,
+              "prototype": "FirelockGlass",
+              "position": "16.5,-24.5"
+            },
+            {
+              "uid": 3279,
+              "prototype": "FirelockGlass",
+              "position": "16.5,-23.5"
+            }
+          ]
+        },
+        {
+          "uid": 1691,
+          "prototype": "FireAlarm",
+          "position": "6.5,-46.5",
+          "devices": [
+            {
+              "uid": 8505,
+              "prototype": "FirelockGlass",
+              "position": "2.5,-53.5"
+            },
+            {
+              "uid": 8506,
+              "prototype": "FirelockGlass",
+              "position": "2.5,-54.5"
+            },
+            {
+              "uid": 8507,
+              "prototype": "FirelockGlass",
+              "position": "2.5,-52.5"
+            },
+            {
+              "uid": 19888,
+              "prototype": "FirelockGlass",
+              "position": "6.5,-54.5"
+            },
+            {
+              "uid": 19887,
+              "prototype": "FirelockGlass",
+              "position": "6.5,-53.5"
+            },
+            {
+              "uid": 19886,
+              "prototype": "FirelockGlass",
+              "position": "6.5,-52.5"
+            },
+            {
+              "uid": 19892,
+              "prototype": "FirelockGlass",
+              "position": "4.5,-45.5"
+            },
+            {
+              "uid": 19891,
+              "prototype": "FirelockGlass",
+              "position": "5.5,-45.5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unresolvedRequestedPrototypes": [
+    "DisposalOutlet",
+    "GasPipeCap"
+  ],
+  "evidence": {
+    "prototypeInputsSha256": "e227c0970297f50d4ba3112cc152cb37d65d6a3c05906cbebae683fb847a7dee",
+    "sourceHashes": {
+      "Content.Server/Atmos/Monitor/Systems/AtmosAlarmableSystem.cs": "aa288eecb9e19be741b3df4b06f1402e6b47cfb9ecc4220aaa8673a974aef780",
+      "Content.Server/Atmos/Monitor/Systems/FireAlarmSystem.cs": "4086cb480fb6cb6bf93d4378e6a9a49264ed08a560285d58dfe180aaa6df3f5a",
+      "Content.Server/Atmos/Piping/Unary/EntitySystems/GasCanisterSystem.cs": "c98c2873fbe0ecc617c0743df72a38ba439628ed897be1029f48c33fd5677d42",
+      "Content.Server/Doors/Systems/FirelockSystem.cs": "354b69716b0dc90f90d7b2fd0f6bf7cae9b56d49be192e5a8c1d2fe85ead8582",
+      "Content.Server/NodeContainer/Nodes/PipeNode.cs": "b67aac70633665b6b1c890f54be70daf22dbafdd153418d6dc0bf32a63667a7c",
+      "Content.Server/NodeContainer/Nodes/PortPipeNode.cs": "f31234e91e7b7b29190ef3ec1e131fd89a3b0c14feb6384baac57d4c9cbf1dd2",
+      "Content.Server/NodeContainer/Nodes/PortablePipeNode.cs": "e6c94812e906747a7502b58ef84731a91739edcf95f3339e266030d4051fa07a",
+      "Content.Server/Power/Components/ExtensionCableProviderComponent.cs": "c1e044f823526c1b9df4dd024752718b87d41e844d815512f30ed41a0e74deec",
+      "Content.Server/Power/Components/ExtensionCableReceiverComponent.cs": "69c5f93c4001859a1a4185c897cc2ec821a245e237f85a4d6130d7f7cac91b9a",
+      "Content.Server/Power/EntitySystems/ExtensionCableSystem.cs": "3cb816513127044b696342cc2e81b4b8357c46b0df12ac53244df22d95780940",
+      "Content.Server/Power/Nodes/CableDeviceNode.cs": "fe1d6098b43f0f18432453c7e03da4e7dad610d7f408866b1ea110b1fda1035e",
+      "Content.Server/Power/Nodes/CableTerminalNode.cs": "afe4baee0e29d86c51a3bdafdf48d387318fc2a76aefaf33651b108e8452d1d2",
+      "Content.Server/Power/Nodes/CableTerminalPortNode.cs": "19cef68cb4fc010cb06771bb752f7eed782d3d188f1fc9374ff2f1788bb8b730",
+      "Content.Shared/Atmos/PipeDirection.cs": "69214da5bf7f58eb8fcb9ef7ebd4386a7f5273245e001cb9ae83f796d3fb3a10",
+      "Content.Shared/DeviceConfigurator/Components/DeviceListComponent.cs": "621fd2e4d67a224c672e9369024393c20e184c90af9207299711d50dbecf276a",
+      "Content.Shared/DeviceConfigurator/Systems/DeviceListSystem.cs": "8212123423108e4502d8aa537fde23b37846384bf818ce3cff634fc428c4b81e",
+      "Content.Shared/DeviceNetwork/Components/DeviceNetworkComponent.cs": "76075ea5b628250975f0d44e7f894ee81068c9ce6f86b707a3da8f92524c4d04",
+      "Content.Shared/DeviceNetwork/Systems/DeviceNetworkSystem.cs": "be9c51530e04611fff1ac6c3996f86a9e84b09d03f0c64302e0ea17cbcf8bb20",
+      "Content.Shared/DeviceNetwork/Systems/WiredNetworkSystem.cs": "4ecd908ecec83c78036262fee5e90aaa3950b903b7eda803f6d52856276d514f",
+      "Content.Shared/Disposal/Tube/DisposalTubeSystem.cs": "fc333d3d6c4e1c03319e4e0cd009e68545e45b0e0febe34ce6f3e480a3366408",
+      "Content.Shared/Disposal/Unit/DisposalUnitComponent.cs": "fbae81d9f200194e2baff0bc79ab96580a0cd28c4b26940dd0e5b214aaa7d734",
+      "Content.Shared/Disposal/Unit/SharedDisposalUnitSystem.Interactions.cs": "2a809860cb3862a52e171c1daff1d9e62e6af84433b01e816afb24114fec02dd",
+      "Content.Shared/Disposal/Unit/SharedDisposalUnitSystem.cs": "3e63bcb0de7cc87a0d3181c7d0fc17162510dfe8ecaf5ee01728eedfc1e4d5a7",
+      "Resources/Maps/box.yml": "6683c4279be7af641e396862f7b12e7206a19011382840a49628c61ae28856a2",
+      "Resources/Maps/exo.yml": "3708fd0bda7fcb1ada5e3ec8be060a4cbc375dad14e34f3a19c6278a6f3d7bd2",
+      "Resources/Maps/packed.yml": "ae7613de34f165a5c6fa7df0cfc9869ce2725b2841de5f5fe4e42a1730d7e8d0",
+      "Resources/Prototypes/Entities/Objects/base_item.yml": "d76498c72b07a68c72d16b521ab3dc540fa0ecb4d942a9a9e7337afa9317dfa5",
+      "Resources/Prototypes/Entities/Structures/Bases/structure_health.yml": "e8d5e1595356fc7bfcf5e1de920528d804bab6bb6f686abab09ecdc0135392a2",
+      "Resources/Prototypes/Entities/Structures/Doors/Firelocks/firelock.yml": "f355dea23bbe9a7908a3d76ba97b770fed1f3e41b34f0a2bab8b016c6c034c77",
+      "Resources/Prototypes/Entities/Structures/Lighting/base_lighting.yml": "08b8240cbd486e65a812deddeef412846e013ee4150803a396aec8d7211a8959",
+      "Resources/Prototypes/Entities/Structures/Machines/base_structuremachines.yml": "6c025df2af85f2c3b29d3243ae8208067de6b59d9d782e423841fe20095c0d64",
+      "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/binary.yml": "0f38400dce51f2768e87558ba5a754e1c134ffa7dd8a49d30f0da187fd0a9797",
+      "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml": "63c37e225651bf90edb7ea3d873ba7d7049e8a389dbbe793f4fa4f6ca093c4a9",
+      "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml": "39f251aad00e461ea8b336fd4fb9f192d9861660b86053db26db2b9bfd5b0815",
+      "Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml": "70806ecf088fce6799d269225d37379d36537a43ca982310162b06e98da87d2d",
+      "Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml": "afd4bc93d98bae085e559d279713cd853dbe6b5714be8866931d5a75a20cb586",
+      "Resources/Prototypes/Entities/Structures/Power/Generation/generators.yml": "2accafda70018e7a704a3482e2846dc652f33581b35c0417a543196b23030345",
+      "Resources/Prototypes/Entities/Structures/Power/apc.yml": "607a0fc45b3f771c905c182930eab71cf316cb2a943817093975dea9a6b0e18d",
+      "Resources/Prototypes/Entities/Structures/Power/cable_terminal.yml": "7008d14e52eaac14f919bbe7171ffa14bd0ded59ee857243469a76be7755c0d2",
+      "Resources/Prototypes/Entities/Structures/Power/cables.yml": "1c7f42bd45577eb2b637d44bcc86ba656c655ae3a284697b98dbc1a7aab4009d",
+      "Resources/Prototypes/Entities/Structures/Power/smes.yml": "6b58a2f0d9684ba20e26e8bb6306a08c879198cec1ba1bd410cdab985b22f0b5",
+      "Resources/Prototypes/Entities/Structures/Power/substation.yml": "9294a37c8a86ebc97aa9133364e093374213081169cf945487038a8d93c344ed",
+      "Resources/Prototypes/Entities/Structures/Specific/Atmospherics/sensor.yml": "c42645c5c8fb68837f377f150faa6c001b2b81083758fbfdeeb71dc6839b446d",
+      "Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml": "79708a8e1f78c17725a13f615de99cdab40a8cb5944fba3fbbe8c780225b49b7",
+      "Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/air_alarm.yml": "ea5dce5e46aac545ded7f719ee317da16aabaed587d6ad392381186b24e98f2d",
+      "Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/fire_alarm.yml": "25f7a6615e90ad24265255f7abc703f9bcb206e613cffbc353764ea0d0c133fe",
+      "Resources/Prototypes/Entities/Structures/Wallmounts/base_wallmount.yml": "9b03649754cfeb0bcae9089b0d31b15275bf1c45cbb647b66695c98e01f2b27a",
+      "Resources/Prototypes/Entities/Structures/base_structure.yml": "885282720a0d19bbe9b858707e2fecd01b96e3dbfe58652355776f355a23302b",
+      "Tools/StationArchitect/Analysis/analyze_maps.py": "53b09bc5fc47927c565c218a635f5f99cc8a3d3f5706cc0cd239abc9b48fa9cc",
+      "Tools/StationArchitect/Analysis/audit_native_profiles.py": "6a615f39b173eb345bb1e09749cfcbe939d744de18b76e318f5fb933584e0d5a",
+      "Tools/StationArchitect/Analysis/native_system_sources.py": "e9df5f1efd9cd272e50a33dd064108067070d55c9f9dde6c73938bcab7d975b0",
+      "Tools/StationArchitect/Analysis/survey_native_systems.py": "e8efedb213f1207e9d544ee289b8c239965a2a42a64fbb1111063e51bc695fb1",
+      "Tools/StationArchitect/Analysis/write_native_profiles.py": "d97cfb4132d796c461ea04e8fa53abb499804218d2b9c98d2049c6bc1c5a9565"
+    },
+    "generator": "Tools/StationArchitect/Analysis/survey_native_systems.py"
+  }
+}

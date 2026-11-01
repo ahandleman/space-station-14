@@ -1,0 +1,2012 @@
+{
+  "format": "station_architect3_additional_medical_service_evidence",
+  "version": 1,
+  "method": "Read-only map and inherited prototype inspection, with conservative closed-door floor components. Existing analyze_maps.py used only as research parser, not a v3 runtime dependency. Saved grid atmos decoded using native TileAtmosCollectionSerializer; no game simulation, runtime connectivity proof, sustained cold-room performance proof or equipment commissioning performed.",
+  "maps": [
+    {
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "sha256": "469342d8887d4904b5f10ca2ed56d4cc9963b54b29320809f91955ac0f5148c0",
+      "entities": [
+        {
+          "uid": 6712,
+          "prototype": "CryoPod",
+          "grid": 30,
+          "position": [
+            -33.5,
+            -9.5
+          ],
+          "rotation": 0,
+          "name": "cryo pod",
+          "components": {
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "port": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "CryoPodAir": {}
+          },
+          "coarseComponent": 121
+        },
+        {
+          "uid": 6784,
+          "prototype": "CryoPod",
+          "grid": 30,
+          "position": [
+            -31.5,
+            -9.5
+          ],
+          "rotation": 0,
+          "name": "cryo pod",
+          "components": {
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "port": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "CryoPodAir": {}
+          },
+          "coarseComponent": 121
+        },
+        {
+          "uid": 901,
+          "prototype": "GasThermoMachineFreezer",
+          "grid": 30,
+          "position": [
+            -36.5,
+            -9.5
+          ],
+          "rotation": 0,
+          "name": "freezer",
+          "components": {
+            "GasThermoMachine": {
+              "coefficientOfPerformance": -3.9
+            },
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            }
+          },
+          "coarseComponent": 106
+        },
+        {
+          "uid": 7598,
+          "prototype": "GasThermoMachineFreezer",
+          "grid": 30,
+          "position": [
+            -34.5,
+            -13.5
+          ],
+          "rotation": "3.141592653589793 rad",
+          "name": "freezer",
+          "components": {
+            "GasThermoMachine": {
+              "coefficientOfPerformance": -3.9
+            },
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            }
+          },
+          "coarseComponent": 121
+        },
+        {
+          "uid": 7602,
+          "prototype": "GasFilter",
+          "grid": 30,
+          "position": [
+            -32.5,
+            -11.5
+          ],
+          "rotation": "1.5707963267948966 rad",
+          "name": "Filter to Waste",
+          "components": {
+            "NodeContainer": {
+              "nodes": {
+                "inlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "North"
+                },
+                "filter": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "West"
+                },
+                "outlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "AtmosDevice": {},
+            "GasFilter": {
+              "enabled": false,
+              "transferRate": 1000,
+              "maxTransferRate": 1000
+            }
+          },
+          "coarseComponent": 121
+        },
+        {
+          "uid": 7140,
+          "prototype": "GasPressurePump",
+          "grid": 30,
+          "position": [
+            -36.5,
+            -11.5
+          ],
+          "rotation": "1.5707963267948966 rad",
+          "name": "Canisters to Cryo",
+          "components": {
+            "NodeContainer": {
+              "nodes": {
+                "inlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "North"
+                },
+                "outlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "AtmosDevice": {},
+            "GasPressurePump": {
+              "enabled": false
+            }
+          },
+          "coarseComponent": 106
+        },
+        {
+          "uid": 7970,
+          "prototype": "OxygenCanister",
+          "grid": 30,
+          "position": [
+            -38.5,
+            -9.5
+          ],
+          "rotation": 0,
+          "name": "oxygen canister",
+          "components": {
+            "AtmosDevice": {
+              "requireAnchored": false,
+              "joinSystem": true
+            },
+            "NodeContainer": {
+              "nodes": {
+                "port": {
+                  "nodeGroupID": "Pipe",
+                  "rotationsEnabled": false,
+                  "volume": 1
+                }
+              }
+            },
+            "GasCanister": {
+              "maxIntegrity": 15,
+              "integrity": 15,
+              "maxReleasePressure": 1013.25,
+              "safetyPressure": 10132.5,
+              "overpressure": 20265,
+              "gasTankSlot": {
+                "name": "comp-gas-canister-slot-name-gas-tank",
+                "ejectOnBreak": true,
+                "whitelist": {
+                  "components": [
+                    "GasTank"
+                  ]
+                }
+              },
+              "air": {
+                "volume": 1500,
+                "moles": {
+                  "Oxygen": 2769.36
+                },
+                "temperature": 293.15
+              }
+            },
+            "AccessReader": {
+              "access": [
+                [
+                  "Atmospherics"
+                ],
+                [
+                  "Engineering"
+                ],
+                [
+                  "Research"
+                ]
+              ]
+            }
+          },
+          "coarseComponent": 106
+        },
+        {
+          "uid": 6757,
+          "prototype": "GasPort",
+          "grid": 30,
+          "position": [
+            -38.5,
+            -9.5
+          ],
+          "rotation": "1.5707963267948966 rad",
+          "name": "connector port",
+          "components": {
+            "NodeContainer": {
+              "nodes": {
+                "connected": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "AtmosDevice": {}
+          },
+          "coarseComponent": 106
+        },
+        {
+          "uid": 482,
+          "prototype": "GasThermoMachineFreezer",
+          "grid": 30,
+          "position": [
+            -16.5,
+            17.5
+          ],
+          "rotation": 0,
+          "name": "freezer",
+          "components": {
+            "GasThermoMachine": {
+              "coefficientOfPerformance": -3.9
+            },
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            }
+          },
+          "coarseComponent": 169
+        },
+        {
+          "uid": 368,
+          "prototype": "GasPassiveVent",
+          "grid": 30,
+          "position": [
+            -17.5,
+            16.5
+          ],
+          "rotation": "1.5707963267948966 rad",
+          "name": "passive vent",
+          "components": {
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "AtmosDevice": {}
+          },
+          "coarseComponent": 169
+        },
+        {
+          "uid": 460,
+          "prototype": "AirlockFreezerKitchenHydroLocked",
+          "grid": 30,
+          "position": [
+            -16.5,
+            12.5
+          ],
+          "rotation": 0,
+          "name": "airlock",
+          "components": {
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsKitchenHydroponics"
+                ]
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            }
+          },
+          "coarseComponent": null
+        },
+        {
+          "uid": 13365,
+          "prototype": "WaterTankHighCapacity",
+          "name": "high-capacity water tank",
+          "grid": 30,
+          "position": [
+            -23.5,
+            5.5
+          ],
+          "rotation": 0,
+          "coarseComponent": 134,
+          "components": {}
+        },
+        {
+          "uid": 400,
+          "prototype": "SinkWide",
+          "name": "wide sink",
+          "grid": 30,
+          "position": [
+            -23.5,
+            13.5
+          ],
+          "rotation": 0,
+          "coarseComponent": 134,
+          "components": {}
+        },
+        {
+          "uid": 328,
+          "prototype": "HydroponicsTray",
+          "name": "hydroponics tray",
+          "grid": 30,
+          "position": [
+            -19.5,
+            12.5
+          ],
+          "rotation": 0,
+          "coarseComponent": 134,
+          "components": {}
+        },
+        {
+          "uid": 583,
+          "prototype": "AirlockMedicalMorgueLocked",
+          "grid": 30,
+          "position": [
+            -20.5,
+            -5.5
+          ],
+          "rotation": "1.5707963267948966 rad",
+          "name": "airlock",
+          "components": {
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsMorgue"
+                ]
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            }
+          },
+          "coarseComponent": null
+        },
+        {
+          "uid": 1757,
+          "prototype": "AirlockMedicalMorgueLocked",
+          "grid": 30,
+          "position": [
+            -22.5,
+            0.5
+          ],
+          "rotation": 0,
+          "name": "airlock",
+          "components": {
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsMorgue"
+                ]
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            }
+          },
+          "coarseComponent": null
+        }
+      ],
+      "coldStore": [
+        {
+          "freezer": 482,
+          "coarseComponent": 169,
+          "componentSummary": {
+            "componentId": 169,
+            "area": 24,
+            "bounds": {
+              "x": -21,
+              "y": 13,
+              "width": 6,
+              "height": 5
+            },
+            "aspectRatio": 1.2,
+            "fillRatio": 0.8,
+            "openEdgesToMissingFloor": 0,
+            "labels": []
+          },
+          "serviceEntities": [
+            4165,
+            4166,
+            4167,
+            4168,
+            4169,
+            4170,
+            4171,
+            4172,
+            4173,
+            4174,
+            4175,
+            368,
+            481,
+            475,
+            3395,
+            3468,
+            3470,
+            3397,
+            3399,
+            3404,
+            482,
+            3469,
+            3398
+          ],
+          "doors": [
+            {
+              "uid": 460,
+              "prototype": "AirlockFreezerKitchenHydroLocked",
+              "cell": [
+                -17,
+                12
+              ],
+              "components": [
+                169,
+                185
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 443,
+              "prototype": "AirlockMaintKitchenLocked",
+              "cell": [
+                -20,
+                17
+              ],
+              "components": [
+                124,
+                169
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ],
+          "sampleAtmosphere": [
+            {
+              "cell": [
+                -21,
+                14
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            },
+            {
+              "cell": [
+                -20,
+                14
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            },
+            {
+              "cell": [
+                -21,
+                15
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            },
+            {
+              "cell": [
+                -20,
+                15
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            }
+          ],
+          "temperatures": [
+            235
+          ]
+        }
+      ],
+      "morgue": [
+        {
+          "door": 583,
+          "neighborComponents": [
+            151,
+            152
+          ],
+          "neighborBeacons": [
+            {
+              "uid": 13319,
+              "prototype": "DefaultStationBeaconMedical",
+              "grid": 30,
+              "position": [
+                -22.5,
+                -9.5
+              ],
+              "rotation": 0,
+              "name": "station beacon",
+              "components": {
+                "NavMapBeacon": {
+                  "defaultText": "station-beacon-medical",
+                  "color": "#52B4E9"
+                }
+              },
+              "coarseComponent": 151
+            },
+            {
+              "uid": 20560,
+              "prototype": "DefaultStationBeaconMorgue",
+              "grid": 30,
+              "position": [
+                -22.5,
+                -1.5
+              ],
+              "rotation": 0,
+              "name": "station beacon",
+              "components": {
+                "NavMapBeacon": {
+                  "defaultText": "station-beacon-morgue",
+                  "color": "#52B4E9"
+                }
+              },
+              "coarseComponent": 152
+            }
+          ]
+        },
+        {
+          "door": 907,
+          "neighborComponents": [
+            128,
+            152
+          ],
+          "neighborBeacons": [
+            {
+              "uid": 20560,
+              "prototype": "DefaultStationBeaconMorgue",
+              "grid": 30,
+              "position": [
+                -22.5,
+                -1.5
+              ],
+              "rotation": 0,
+              "name": "station beacon",
+              "components": {
+                "NavMapBeacon": {
+                  "defaultText": "station-beacon-morgue",
+                  "color": "#52B4E9"
+                }
+              },
+              "coarseComponent": 152
+            }
+          ]
+        },
+        {
+          "door": 1757,
+          "neighborComponents": [
+            133,
+            152
+          ],
+          "neighborBeacons": [
+            {
+              "uid": 20560,
+              "prototype": "DefaultStationBeaconMorgue",
+              "grid": 30,
+              "position": [
+                -22.5,
+                -1.5
+              ],
+              "rotation": 0,
+              "name": "station beacon",
+              "components": {
+                "NavMapBeacon": {
+                  "defaultText": "station-beacon-morgue",
+                  "color": "#52B4E9"
+                }
+              },
+              "coarseComponent": 152
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/exo.yml",
+      "sha256": "3708fd0bda7fcb1ada5e3ec8be060a4cbc375dad14e34f3a19c6278a6f3d7bd2",
+      "entities": [
+        {
+          "uid": 1044,
+          "prototype": "CryoPod",
+          "grid": 2,
+          "position": [
+            14.5,
+            -22.5
+          ],
+          "rotation": 0,
+          "name": "cryo pod",
+          "components": {
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "port": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "CryoPodAir": {}
+          },
+          "coarseComponent": 146
+        },
+        {
+          "uid": 7884,
+          "prototype": "CryoPod",
+          "grid": 2,
+          "position": [
+            15.5,
+            -22.5
+          ],
+          "rotation": 0,
+          "name": "cryo pod",
+          "components": {
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "port": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "CryoPodAir": {}
+          },
+          "coarseComponent": 146
+        },
+        {
+          "uid": 17411,
+          "prototype": "GasThermoMachineFreezer",
+          "grid": 2,
+          "position": [
+            14.5,
+            -25.5
+          ],
+          "rotation": "3.141592653589793 rad",
+          "name": "freezer",
+          "components": {
+            "GasThermoMachine": {
+              "coefficientOfPerformance": -3.9
+            },
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            }
+          },
+          "coarseComponent": 146
+        },
+        {
+          "uid": 17412,
+          "prototype": "GasPressurePump",
+          "grid": 2,
+          "position": [
+            17.5,
+            -23.5
+          ],
+          "rotation": "-1.5707963267948966 rad",
+          "name": "gas pump",
+          "components": {
+            "NodeContainer": {
+              "nodes": {
+                "inlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "North"
+                },
+                "outlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "AtmosDevice": {},
+            "GasPressurePump": {
+              "enabled": false
+            }
+          },
+          "coarseComponent": 171
+        },
+        {
+          "uid": 19476,
+          "prototype": "GasFilter",
+          "grid": 2,
+          "position": [
+            15.5,
+            -24.5
+          ],
+          "rotation": "1.5707963267948966 rad",
+          "name": "gas filter",
+          "components": {
+            "NodeContainer": {
+              "nodes": {
+                "inlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "North"
+                },
+                "filter": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "West"
+                },
+                "outlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "AtmosDevice": {},
+            "GasFilter": {
+              "enabled": false,
+              "transferRate": 1000,
+              "maxTransferRate": 1000
+            }
+          },
+          "coarseComponent": 146
+        },
+        {
+          "uid": 5297,
+          "prototype": "GasThermoMachineFreezer",
+          "grid": 2,
+          "position": [
+            44.5,
+            -36.5
+          ],
+          "rotation": 0,
+          "name": "freezer",
+          "components": {
+            "GasThermoMachine": {
+              "coefficientOfPerformance": -3.9
+            },
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            }
+          },
+          "coarseComponent": 218
+        },
+        {
+          "uid": 6353,
+          "prototype": "GasPassiveVent",
+          "grid": 2,
+          "position": [
+            44.5,
+            -37.5
+          ],
+          "rotation": "3.141592653589793 rad",
+          "name": "passive vent",
+          "components": {
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "AtmosDevice": {}
+          },
+          "coarseComponent": 218
+        },
+        {
+          "uid": 606,
+          "prototype": "AirlockFreezerLocked",
+          "grid": 2,
+          "position": [
+            42.5,
+            -39.5
+          ],
+          "rotation": 0,
+          "name": "airlock",
+          "components": {
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsKitchen"
+                ]
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            }
+          },
+          "coarseComponent": null
+        },
+        {
+          "uid": 19013,
+          "prototype": "WaterTankHighCapacity",
+          "name": "high-capacity water tank",
+          "grid": 2,
+          "position": [
+            -3.5,
+            -54.5
+          ],
+          "rotation": 0,
+          "coarseComponent": 113,
+          "components": {}
+        },
+        {
+          "uid": 5029,
+          "prototype": "HydroponicsTray",
+          "name": "hydroponics tray",
+          "grid": 2,
+          "position": [
+            -2.5,
+            -52.5
+          ],
+          "rotation": 0,
+          "coarseComponent": 113,
+          "components": {}
+        },
+        {
+          "uid": 3714,
+          "prototype": "AirlockMedicalMorgueLocked",
+          "grid": 2,
+          "position": [
+            28.5,
+            -25.5
+          ],
+          "rotation": 0,
+          "name": "airlock",
+          "components": {
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsMorgue"
+                ]
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            }
+          },
+          "coarseComponent": null
+        }
+      ],
+      "coldStore": [
+        {
+          "freezer": 5297,
+          "coarseComponent": 218,
+          "componentSummary": {
+            "componentId": 218,
+            "area": 18,
+            "bounds": {
+              "x": 40,
+              "y": -39,
+              "width": 6,
+              "height": 3
+            },
+            "aspectRatio": 2.0,
+            "fillRatio": 1.0,
+            "openEdgesToMissingFloor": 0,
+            "labels": []
+          },
+          "serviceEntities": [
+            3388,
+            3389,
+            3390,
+            3623,
+            3704,
+            4080,
+            4634,
+            6353,
+            7132,
+            7137,
+            7189,
+            5297,
+            8453,
+            7074
+          ],
+          "doors": [
+            {
+              "uid": 606,
+              "prototype": "AirlockFreezerLocked",
+              "cell": [
+                42,
+                -40
+              ],
+              "components": [
+                215,
+                218
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 3473,
+              "prototype": "AirlockFreezerLocked",
+              "cell": [
+                39,
+                -38
+              ],
+              "components": [
+                189,
+                218
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ],
+          "sampleAtmosphere": [
+            {
+              "cell": [
+                40,
+                -39
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            },
+            {
+              "cell": [
+                41,
+                -39
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            },
+            {
+              "cell": [
+                40,
+                -38
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            },
+            {
+              "cell": [
+                41,
+                -38
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            }
+          ],
+          "temperatures": [
+            235
+          ]
+        }
+      ],
+      "morgue": [
+        {
+          "door": 3714,
+          "neighborComponents": [
+            182,
+            188
+          ],
+          "neighborBeacons": [
+            {
+              "uid": 8744,
+              "prototype": "DefaultStationBeaconMorgue",
+              "grid": 2,
+              "position": [
+                31.5,
+                -28.5
+              ],
+              "rotation": 0,
+              "name": "station beacon",
+              "components": {
+                "NavMapBeacon": {
+                  "defaultText": "station-beacon-morgue",
+                  "color": "#52B4E9"
+                }
+              },
+              "coarseComponent": 188
+            }
+          ]
+        },
+        {
+          "door": 9409,
+          "neighborComponents": [
+            182,
+            188
+          ],
+          "neighborBeacons": [
+            {
+              "uid": 8744,
+              "prototype": "DefaultStationBeaconMorgue",
+              "grid": 2,
+              "position": [
+                31.5,
+                -28.5
+              ],
+              "rotation": 0,
+              "name": "station beacon",
+              "components": {
+                "NavMapBeacon": {
+                  "defaultText": "station-beacon-morgue",
+                  "color": "#52B4E9"
+                }
+              },
+              "coarseComponent": 188
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "Resources/Maps/sushi.yml",
+      "sha256": "afc60be03bfc73a903b7c8624ac038c69acc5b3ce4685efd43491f905ae8a92f",
+      "entities": [
+        {
+          "uid": 9671,
+          "prototype": "CryoPod",
+          "grid": 2,
+          "position": [
+            129.5,
+            46.5
+          ],
+          "rotation": 0,
+          "name": "cryo pod",
+          "components": {
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "port": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "CryoPodAir": {}
+          },
+          "coarseComponent": 251
+        },
+        {
+          "uid": 9672,
+          "prototype": "CryoPod",
+          "grid": 2,
+          "position": [
+            125.5,
+            46.5
+          ],
+          "rotation": 0,
+          "name": "cryo pod",
+          "components": {
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "port": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "CryoPodAir": {}
+          },
+          "coarseComponent": 251
+        },
+        {
+          "uid": 14953,
+          "prototype": "GasThermoMachineFreezer",
+          "grid": 2,
+          "position": [
+            127.5,
+            44.5
+          ],
+          "rotation": "3.141592653589793 rad",
+          "name": "freezer",
+          "components": {
+            "GasThermoMachine": {
+              "coefficientOfPerformance": -3.9
+            },
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            }
+          },
+          "coarseComponent": 251
+        },
+        {
+          "uid": 11955,
+          "prototype": "GasFilterFlipped",
+          "grid": 2,
+          "position": [
+            127.5,
+            46.5
+          ],
+          "rotation": "-1.5707963267948966 rad",
+          "name": "gas filter",
+          "components": {
+            "NodeContainer": {
+              "nodes": {
+                "inlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                },
+                "filter": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "West"
+                },
+                "outlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "North"
+                }
+              }
+            },
+            "AtmosDevice": {},
+            "GasFilter": {
+              "enabled": false,
+              "transferRate": 1000,
+              "maxTransferRate": 1000
+            }
+          },
+          "coarseComponent": 251
+        },
+        {
+          "uid": 14934,
+          "prototype": "GasPressurePump",
+          "grid": 2,
+          "position": [
+            130.5,
+            46.5
+          ],
+          "rotation": 0,
+          "name": "gas pump",
+          "components": {
+            "NodeContainer": {
+              "nodes": {
+                "inlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "North"
+                },
+                "outlet": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "AtmosDevice": {},
+            "GasPressurePump": {
+              "enabled": false
+            }
+          },
+          "coarseComponent": 251
+        },
+        {
+          "uid": 14956,
+          "prototype": "GasThermoMachineFreezerEnabled",
+          "grid": 2,
+          "position": [
+            73.5,
+            88.5
+          ],
+          "rotation": 0,
+          "name": "freezer",
+          "components": {
+            "GasThermoMachine": {
+              "coefficientOfPerformance": -3.9
+            },
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            }
+          },
+          "coarseComponent": 136
+        },
+        {
+          "uid": 15136,
+          "prototype": "GasVentPumpFreezer",
+          "grid": 2,
+          "position": [
+            74.5,
+            87.5
+          ],
+          "rotation": "-1.5707963267948966 rad",
+          "name": "air vent",
+          "components": {
+            "AtmosDevice": {},
+            "NodeContainer": {
+              "nodes": {
+                "pipe": {
+                  "nodeGroupID": "Pipe",
+                  "pipeDirection": "South"
+                }
+              }
+            },
+            "GasVentPump": {}
+          },
+          "coarseComponent": 136
+        },
+        {
+          "uid": 308,
+          "prototype": "AirlockFreezerLocked",
+          "grid": 2,
+          "position": [
+            71.5,
+            85.5
+          ],
+          "rotation": "1.5707963267948966 rad",
+          "name": "airlock",
+          "components": {
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsKitchen"
+                ]
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            }
+          },
+          "coarseComponent": null
+        },
+        {
+          "uid": 24488,
+          "prototype": "WaterTankHighCapacity",
+          "name": "high-capacity water tank",
+          "grid": 2,
+          "position": [
+            56.5,
+            80.5
+          ],
+          "rotation": 0,
+          "coarseComponent": 105,
+          "components": {}
+        },
+        {
+          "uid": 19829,
+          "prototype": "SinkWide",
+          "name": "wide sink",
+          "grid": 2,
+          "position": [
+            58.5,
+            82.5
+          ],
+          "rotation": "-1.5707963267948966 rad",
+          "coarseComponent": 105,
+          "components": {}
+        },
+        {
+          "uid": 16804,
+          "prototype": "HydroponicsTray",
+          "name": "hydroponics tray",
+          "grid": 2,
+          "position": [
+            56.5,
+            82.5
+          ],
+          "rotation": 0,
+          "coarseComponent": 105,
+          "components": {}
+        },
+        {
+          "uid": 526,
+          "prototype": "AirlockMedicalMorgueGlassLocked",
+          "grid": 2,
+          "position": [
+            119.5,
+            60.5
+          ],
+          "rotation": "3.141592653589793 rad",
+          "name": "glass airlock",
+          "components": {
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsMorgue"
+                ]
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            }
+          },
+          "coarseComponent": null
+        },
+        {
+          "uid": 491,
+          "prototype": "AirlockMedicalMorgueMaintLocked",
+          "grid": 2,
+          "position": [
+            119.5,
+            64.5
+          ],
+          "rotation": 0,
+          "name": "airlock",
+          "components": {
+            "ContainerFill": {
+              "containers": {
+                "board": [
+                  "DoorElectronicsMorgue"
+                ]
+              }
+            },
+            "AccessReader": {
+              "containerAccessProvider": "board"
+            }
+          },
+          "coarseComponent": null
+        }
+      ],
+      "coldStore": [
+        {
+          "freezer": 14956,
+          "coarseComponent": 136,
+          "componentSummary": {
+            "componentId": 136,
+            "area": 17,
+            "bounds": {
+              "x": 72,
+              "y": 83,
+              "width": 3,
+              "height": 6
+            },
+            "aspectRatio": 2.0,
+            "fillRatio": 0.9444,
+            "openEdgesToMissingFloor": 0,
+            "labels": []
+          },
+          "serviceEntities": [
+            2285,
+            2286,
+            2287,
+            2288,
+            2289,
+            2290,
+            2291,
+            11708,
+            12187,
+            12188,
+            14856,
+            14956,
+            15136,
+            15312
+          ],
+          "doors": [
+            {
+              "uid": 308,
+              "prototype": "AirlockFreezerLocked",
+              "cell": [
+                71,
+                85
+              ],
+              "components": [
+                105,
+                136
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 309,
+              "prototype": "AirlockFreezerLocked",
+              "cell": [
+                72,
+                82
+              ],
+              "components": [
+                123,
+                136
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ],
+          "sampleAtmosphere": [
+            {
+              "cell": [
+                72,
+                83
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            },
+            {
+              "cell": [
+                73,
+                83
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            },
+            {
+              "cell": [
+                72,
+                84
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            },
+            {
+              "cell": [
+                73,
+                84
+              ],
+              "savedGas": {
+                "temperature": 235,
+                "volume": 2500,
+                "moles": {
+                  "Oxygen": 27.225372,
+                  "Nitrogen": 102.419266
+                }
+              }
+            }
+          ],
+          "temperatures": [
+            235
+          ]
+        }
+      ],
+      "morgue": [
+        {
+          "door": 526,
+          "neighborComponents": [
+            215,
+            235
+          ],
+          "neighborBeacons": [
+            {
+              "uid": 9805,
+              "prototype": "DefaultStationBeaconMorgue",
+              "grid": 2,
+              "position": [
+                119.5,
+                62.5
+              ],
+              "rotation": 0,
+              "name": "station beacon",
+              "components": {
+                "NavMapBeacon": {
+                  "defaultText": "station-beacon-morgue",
+                  "color": "#52B4E9"
+                }
+              },
+              "coarseComponent": 235
+            }
+          ]
+        },
+        {
+          "door": 529,
+          "neighborComponents": [
+            222,
+            235
+          ],
+          "neighborBeacons": [
+            {
+              "uid": 9805,
+              "prototype": "DefaultStationBeaconMorgue",
+              "grid": 2,
+              "position": [
+                119.5,
+                62.5
+              ],
+              "rotation": 0,
+              "name": "station beacon",
+              "components": {
+                "NavMapBeacon": {
+                  "defaultText": "station-beacon-morgue",
+                  "color": "#52B4E9"
+                }
+              },
+              "coarseComponent": 235
+            },
+            {
+              "uid": 9821,
+              "prototype": "DefaultStationBeaconSurgery",
+              "grid": 2,
+              "position": [
+                111.5,
+                62.5
+              ],
+              "rotation": 0,
+              "name": "station beacon",
+              "components": {
+                "NavMapBeacon": {
+                  "defaultText": "station-beacon-surgery",
+                  "color": "#52B4E9"
+                }
+              },
+              "coarseComponent": 222
+            }
+          ]
+        },
+        {
+          "door": 491,
+          "neighborComponents": [
+            216,
+            235
+          ],
+          "neighborBeacons": [
+            {
+              "uid": 9805,
+              "prototype": "DefaultStationBeaconMorgue",
+              "grid": 2,
+              "position": [
+                119.5,
+                62.5
+              ],
+              "rotation": 0,
+              "name": "station beacon",
+              "components": {
+                "NavMapBeacon": {
+                  "defaultText": "station-beacon-morgue",
+                  "color": "#52B4E9"
+                }
+              },
+              "coarseComponent": 235
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "Resources/Prototypes/Entities/Structures/Machines/Medical/cryo_pod.yml": "35e133cf6c5dfbde1d8390e833eb5477afb1f64389ccd61b63e96a4dcc4c3cdb",
+    "Content.Server/Medical/CryoPodSystem.cs": "f9e8cb0d2d2768ccdbe704effee6c6ce009b1eed4bc913e9a28e8173d3cfce65",
+    "Content.Server/Medical/InsideCryoPodSystem.cs": "bf1f6afca05435c50452b379c89db0a7660bf23ce474fa7f91b8ab6641e45ff8",
+    "Content.Shared/Medical/Cryogenics/SharedCryoPodSystem.cs": "a8e822e07ddd3a460cb5db07cfb1bc36d25c870d51f5849034df7491ae90465f",
+    "Resources/Prototypes/Reagents/medicine.yml": "856d44917600bcba85caca702fbe9818230b348ce7f1195ae9ec3767473abf96",
+    "Content.Server/NodeContainer/Nodes/PortablePipeNode.cs": "e6c94812e906747a7502b58ef84731a91739edcf95f3339e266030d4051fa07a",
+    "Resources/ServerInfo/Guidebook/Medical/Cryogenics.xml": "ef3b8e74d71a477e89218060df4b1abbefdeb8c1684e1758e34fd24e235e3c58",
+    "Content.Shared/Botany/Systems/PlantGrowthSystem.cs": "b56df23311d45a6637ccfc036073ccbf4e9b5e9c1eb9163caa2506bb7d656d01",
+    "Resources/Prototypes/Entities/Structures/Storage/Tanks/tanks.yml": "e607fa32851716db02b3fbb6a5905d5ff2346bb640aa80568c5cd247823622f8",
+    "Resources/Prototypes/Entities/Structures/Furniture/sink.yml": "d192ddaa7ad5f3940812d4171bdaab8b55c479713d0c17c95eae512b1b85a691",
+    "Resources/Prototypes/Entities/Objects/Devices/Electronics/door_access.yml": "965838e3455432292f6d3a6826a2dd921024c8f517db7c1a604455027e48f15e",
+    "Content.Server/Atmos/Piping/Unary/EntitySystems/GasThermoMachineSystem.cs": "3d9d7fe19f3f9112025d22799b7b78943b07c2c2afa0bc6fd5a178112e158702",
+    "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml": "39f251aad00e461ea8b336fd4fb9f192d9861660b86053db26db2b9bfd5b0815",
+    "Content.Shared/Atmos/Serialization/TileAtmosCollectionSerializer.cs": "41ee75c4a472ae1493f144f5d170d1969baa6df6199a3b876cef6c26465880e7",
+    "Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemistry.yml": "6c6ab2c19cc3c663719becbf79e95f1aea634f2758444e0727d4221dfa20e48f",
+    "Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml": "79708a8e1f78c17725a13f615de99cdab40a8cb5944fba3fbbe8c780225b49b7",
+    "Content.Server/Atmos/Piping/Trinary/EntitySystems/GasFilterSystem.cs": "97590e2641c2c79aa32beb917d7a2d872d28b61ef80abe4759b6f632502a694b"
+  },
+  "proposedEvidence": [
+    {
+      "id": "additional_marathon_6712",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=6712",
+      "description": "Marathon: clinical cryopod A; grid 30, position [-33.5, -9.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_6784",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=6784",
+      "description": "Marathon: clinical cryopod B; grid 30, position [-31.5, -9.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_901",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=901",
+      "description": "Marathon: clinical cryogenic freezer; grid 30, position [-36.5, -9.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_7598",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=7598",
+      "description": "Marathon: second clinical cryogenic freezer; grid 30, position [-34.5, -13.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_7602",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=7602",
+      "description": "Marathon: clinical cryogenic filter; grid 30, position [-32.5, -11.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_7140",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=7140",
+      "description": "Marathon: clinical cryogenic supply pressure pump; grid 30, position [-36.5, -11.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_7970",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=7970",
+      "description": "Marathon: clinical oxygen canister at connection port; grid 30, position [-38.5, -9.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_6757",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=6757",
+      "description": "Marathon: clinical canister connection port; grid 30, position [-38.5, -9.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_482",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=482",
+      "description": "Marathon: kitchen cold-store freezer; grid 30, position [-16.5, 17.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_368",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=368",
+      "description": "Marathon: cold-store room-gas passive vent; grid 30, position [-17.5, 16.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_460",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=460",
+      "description": "Marathon: cold-store door directly adjoining kitchen floor component; grid 30, position [-16.5, 12.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_13365",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=13365",
+      "description": "Marathon: Botany high-capacity full water tank; grid 30, position [-23.5, 5.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_400",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=400",
+      "description": "Marathon: Botany sink; grid 30, position [-23.5, 13.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_328",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=328",
+      "description": "Marathon: Botany hydroponics tray; grid 30, position [-19.5, 12.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_583",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=583",
+      "description": "Marathon: morgue Medical/Detective/Chapel door; grid 30, position [-20.5, -5.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_marathon_1757",
+      "kind": "map",
+      "source": "Resources/Maps/marathon.yml#uid=1757",
+      "description": "Marathon: second morgue Medical/Detective/Chapel door; grid 30, position [-22.5, 0.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_exo_1044",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=1044",
+      "description": "Exo: clinical cryopod A; grid 2, position [14.5, -22.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_exo_7884",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=7884",
+      "description": "Exo: clinical cryopod B; grid 2, position [15.5, -22.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_exo_17411",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=17411",
+      "description": "Exo: clinical cryogenic freezer; grid 2, position [14.5, -25.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_exo_17412",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=17412",
+      "description": "Exo: clinical cryogenic pressure pump; grid 2, position [17.5, -23.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_exo_19476",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=19476",
+      "description": "Exo: clinical cryogenic gas filter; grid 2, position [15.5, -24.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_exo_5297",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=5297",
+      "description": "Exo: kitchen cold-store freezer; grid 2, position [44.5, -36.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_exo_6353",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=6353",
+      "description": "Exo: cold-store room-gas passive vent; grid 2, position [44.5, -37.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_exo_606",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=606",
+      "description": "Exo: cold-store door adjoining kitchen component; grid 2, position [42.5, -39.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_exo_19013",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=19013",
+      "description": "Exo: Botany high-capacity full water tank; grid 2, position [-3.5, -54.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_exo_5029",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=5029",
+      "description": "Exo: Botany hydroponics tray; grid 2, position [-2.5, -52.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_exo_3714",
+      "kind": "map",
+      "source": "Resources/Maps/exo.yml#uid=3714",
+      "description": "Exo: morgue Medical/Detective/Chapel door; grid 2, position [28.5, -25.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_9671",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=9671",
+      "description": "Sushi: clinical cryopod A; grid 2, position [129.5, 46.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_9672",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=9672",
+      "description": "Sushi: clinical cryopod B; grid 2, position [125.5, 46.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_14953",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=14953",
+      "description": "Sushi: clinical cryogenic freezer; grid 2, position [127.5, 44.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_11955",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=11955",
+      "description": "Sushi: clinical cryogenic gas filter; grid 2, position [127.5, 46.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_14934",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=14934",
+      "description": "Sushi: clinical cryogenic pressure pump; grid 2, position [130.5, 46.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_14956",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=14956",
+      "description": "Sushi: kitchen cold-store enabled freezer; grid 2, position [73.5, 88.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_15136",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=15136",
+      "description": "Sushi: cold-store room-gas vent pump; grid 2, position [74.5, 87.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_308",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=308",
+      "description": "Sushi: cold-store door adjoining kitchen/Botany component; grid 2, position [71.5, 85.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_24488",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=24488",
+      "description": "Sushi: Botany high-capacity full water tank; grid 2, position [56.5, 80.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_19829",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=19829",
+      "description": "Sushi: Botany sink; grid 2, position [58.5, 82.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_16804",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=16804",
+      "description": "Sushi: Botany hydroponics tray; grid 2, position [56.5, 82.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_526",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=526",
+      "description": "Sushi: morgue Medical/Detective/Chapel door; grid 2, position [119.5, 60.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_sushi_491",
+      "kind": "map",
+      "source": "Resources/Maps/sushi.yml#uid=491",
+      "description": "Sushi: morgue maintenance Medical/Detective/Chapel door; grid 2, position [119.5, 64.5]. See additional-medical-service.evidence.json for recorded local geometry and limitations."
+    },
+    {
+      "id": "additional_cryo_pod_native",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Machines/Medical/cryo_pod.yml",
+      "description": "Native source for cryo pod native. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_cryo_gas_mixing",
+      "kind": "native",
+      "source": "Content.Server/Medical/CryoPodSystem.cs",
+      "description": "Native source for cryo gas mixing. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_cryo_occupant_air",
+      "kind": "native",
+      "source": "Content.Server/Medical/InsideCryoPodSystem.cs",
+      "description": "Native source for cryo occupant air. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_cryo_injection",
+      "kind": "native",
+      "source": "Content.Shared/Medical/Cryogenics/SharedCryoPodSystem.cs",
+      "description": "Native source for cryo injection. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_cryo_drug_temperature",
+      "kind": "native",
+      "source": "Resources/Prototypes/Reagents/medicine.yml",
+      "description": "Native source for cryo drug temperature. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_portable_pipe_contacts",
+      "kind": "native",
+      "source": "Content.Server/NodeContainer/Nodes/PortablePipeNode.cs",
+      "description": "Native source for portable pipe contacts. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_cryo_guide",
+      "kind": "native",
+      "source": "Resources/ServerInfo/Guidebook/Medical/Cryogenics.xml",
+      "description": "Native source for cryo guide. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_plant_water_consumption",
+      "kind": "native",
+      "source": "Content.Shared/Botany/Systems/PlantGrowthSystem.cs",
+      "description": "Native source for plant water consumption. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_botany_water_inventory",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Storage/Tanks/tanks.yml",
+      "description": "Native source for botany water inventory. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_sink_water_regeneration",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Furniture/sink.yml",
+      "description": "Native source for sink water regeneration. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_morgue_role_access",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Objects/Devices/Electronics/door_access.yml",
+      "description": "Native source for morgue role access. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_gas_cooling_native",
+      "kind": "native",
+      "source": "Content.Server/Atmos/Piping/Unary/EntitySystems/GasThermoMachineSystem.cs",
+      "description": "Native source for gas cooling native. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_gas_cooling_ports",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml",
+      "description": "Native source for gas cooling ports. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_saved_atmos_encoding",
+      "kind": "native",
+      "source": "Content.Shared/Atmos/Serialization/TileAtmosCollectionSerializer.cs",
+      "description": "Native source for saved atmos encoding. See additional-medical-service.md for the precise scope and caveats."
+    },
+    {
+      "id": "additional_cryo_inventory",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemistry.yml",
+      "description": "CryoxadoneBeakerSmall contains an initial 60 units of Cryoxadone. This establishes stock, not automatic insertion or administration."
+    },
+    {
+      "id": "additional_gas_canister_ports",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml",
+      "description": "Native AirCanister initial mixture and portable connection; StorageCanister is an initially empty receiver. Real docking and operating capacity need separate validation."
+    },
+    {
+      "id": "additional_cryo_filter_operation",
+      "kind": "native",
+      "source": "Content.Server/Atmos/Piping/Trinary/EntitySystems/GasFilterSystem.cs",
+      "description": "OnFilterUpdated removes an inlet volume, separates selected gas to filter output and returns the remainder. No inlet/outlet same-network or pressure-difference rejection is present; operating state, capacity and transfer rate still matter."
+    }
+  ]
+}

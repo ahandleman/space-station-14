@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Station Architect · Station designer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="designer.css">
+  <script type="module" src="designer.js"></script>
+</head>
+<body class="designer">
+  <header>
+    <div class="logo" aria-hidden="true">S<span>II</span></div>
+    <div class="brand"><strong>STATION ARCHITECT</strong><span>ROOM TREE · STAGED STATION DESIGN</span></div>
+    <div class="header-space"></div>
+    <a href="index.html" class="button-link">Program editor</a>
+    <button id="open-design">Open project</button>
+    <button id="import-program">Import program YAML</button>
+    <button id="save-design">Save project</button>
+    <button id="generate-design" class="primary">Build station ↗</button>
+    <input id="design-file" type="file" accept=".json" hidden>
+    <input id="program-file" type="file" accept=".yaml,.yml" hidden>
+  </header>
+  <nav id="design-stages" aria-label="Station generation stages"></nav>
+  <div class="design-workspace">
+    <aside class="design-tree-panel">
+      <div class="panel-title"><h2>Requirements & instances</h2><button id="new-design" title="Start a new map-based design">New</button></div>
+      <div class="tree-search"><input id="design-search" type="search" placeholder="Find rooms, owners, requirements…" aria-label="Search requirement tree"><label><input id="issues-only" type="checkbox"> Issues only</label></div>
+      <nav id="design-tree" aria-label="Station, department, room template and instance tree"></nav>
+      <div class="tree-foot"><button id="design-undo" disabled>↶ Undo</button><button id="design-redo" disabled>↷ Redo</button></div>
+    </aside>
+    <main class="design-main">
+      <div class="design-toolbar"><strong id="design-view-title">STATION PLAN</strong><span class="toolbar-space"></span><label><input id="show-labels" type="checkbox" checked> Labels</label><label><input id="show-clearance" type="checkbox" checked> Clearances</label><label><input id="show-utilities" type="checkbox" checked> Utilities</label><label><input id="show-equipment" type="checkbox" checked> Contents</label><button id="design-zoom-out" aria-label="Zoom out">−</button><button id="design-zoom-in" aria-label="Zoom in">+</button><button id="design-fit">Fit</button></div>
+      <div class="design-tools" id="design-tools"></div>
+      <div class="design-canvas-wrap" id="design-canvas-wrap">
+        <svg id="design-canvas" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Editable room-first station plan" tabindex="0"></svg>
+        <div class="design-empty" id="design-empty"><strong>Rooms grow from their requirements.</strong><p>Select the room program, place the room instances,<br>then grow, connect and furnish the station.</p><button id="build-first" class="primary">Build station ↗</button></div>
+        <div id="design-busy" hidden><div class="spinner"></div><strong id="busy-stage">Working on the station…</strong><span>Pinned seeds and locked floors remain protected.</span><button id="cancel-build">Stop after this stage</button></div>
+        <div class="design-canvas-caption"><span id="design-help">Select a department or room in the tree.</span><span id="design-coordinates">—</span></div>
+      </div>
+      <div class="design-legend"><span><i style="background:#65b7d2"></i>Shuttle berth / approach</span><span><i style="background:#d2d9cc"></i>Public hall</span><span><i style="background:#7e8760"></i>Maintenance</span><span><i style="background:#46565d"></i>Walls / hull</span><span><i style="background:#83d9b6"></i>Walking doorway</span><span><i style="background:#73bed6"></i>Service interface</span><span><i style="background:#e3bd73"></i>Equipment</span></div>
+      <div class="design-stage-action"><div><strong id="active-stage-title">Station program</strong><p id="active-stage-hint"></p></div><button id="run-design-stage" class="primary">Run stage ↗</button><button id="next-design-stage">Next stage →</button></div>
+      <details class="design-source" id="gameflow-panel"><summary>Gameflow pressures and access assumptions</summary><div id="gameflow-editor"></div></details>
+      <details class="design-source" id="systems-panel"><summary>Native infrastructure requirements</summary><div id="systems-editor"></div></details>
+      <details class="design-source"><summary>Edit the complete room program YAML</summary><p>Applying requirements preserves the project geometry and marks dependent stages stale. Conflicts stay visible in the tree.</p><div><button id="refresh-design-yaml">Load current requirements</button><button id="apply-design-yaml" class="primary">Apply YAML</button></div><textarea id="design-yaml" spellcheck="false" aria-label="Project room program YAML"></textarea></details>
+    </main>
+    <aside class="design-inspector">
+      <div class="panel-title"><h2 id="selected-title">Station</h2><span class="badge" id="design-badge">DRAFT</span></div>
+      <div id="design-node-inspector"></div>
+      <details class="design-settings"><summary>Generation settings</summary><div id="design-settings-fields"></div><button id="apply-design-settings">Apply settings</button><details><summary>Footprints, export prototypes, access and jobs</summary><p>These are project settings. Configure entity footprint sizes and real SS14 access tags before using a map in a round.</p><button id="load-design-profile">Load current settings JSON</button><textarea id="design-profile" spellcheck="false" aria-label="Advanced generation and export settings JSON"></textarea><button id="apply-design-profile">Apply settings JSON</button></details></details>
+      <div class="review-heading"><h3>Requirement checks</h3><button id="check-design">Validate ↗</button></div>
+      <div id="design-summary"></div><div id="gameflow-report"></div><div id="systems-report"></div><div id="design-diagnostics" aria-live="polite"></div>
+      <div class="design-exports"><h3>Export this revision</h3><button id="export-design-bundle">Complete map bundle (.zip)</button><button id="export-design-svg">SVG plan</button><button id="export-design-yaml">Room program YAML</button><button id="export-design-map">SS14 map draft</button><button id="export-design-manifest">Validation / systems manifest</button><p>Map export records planned geometry and entities. Runtime operation must be checked in SS14.</p></div>
+    </aside>
+  </div>
+  <footer><span id="design-status" role="status">Loading the design workspace…</span><span id="design-meta">ROOM-FIRST STATION DESIGN</span></footer>
+  <div id="toast" role="alert" hidden></div>
+</body>
+</html>

@@ -1,0 +1,5978 @@
+{
+  "evidenceVersion": 1,
+  "prototypeInputHash": "e227c0970297f50d4ba3112cc152cb37d65d6a3c05906cbebae683fb847a7dee",
+  "method": "Native map tiles and inherited wall/window/grille/door components; exact mapped navigation beacons and closed-door component boundaries.",
+  "assumptions": [
+    "Every door is traversable regardless of access, bolts, power or pressure.",
+    "Furniture, equipment, collision-fixture subtleties, combat and player tactics are ignored.",
+    "Directional walls/windows occupy the whole tile in this approximation; space and lattice tiles are excluded.",
+    "A beacon may snap at most four Manhattan tiles to observed floor; both coordinates are recorded.",
+    "Door boundaries are component observations, not independent escape-route proofs.",
+    "These measurements do not prescribe generator bounds or certify nuclear-operative balance."
+  ],
+  "maps": [
+    {
+      "id": "Bagel",
+      "sourcePath": "Resources/Maps/bagel.yml",
+      "sha256": "ef3b8a75e834a7e5b9e6b990abe2d9343ee2e46d38980be76140f6e8717b61a8",
+      "mainGrid": 60,
+      "landmarks": [
+        {
+          "label": "AI Core",
+          "role": "ai",
+          "uid": 18703,
+          "prototype": "DefaultStationBeaconAICore",
+          "position": [
+            -111.5,
+            26.5
+          ],
+          "observedFloorCell": [
+            -112,
+            26
+          ],
+          "closedDoorComponent": 11,
+          "componentDoorBoundaries": [
+            {
+              "uid": 22463,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                -112,
+                27
+              ],
+              "components": [
+                6,
+                11
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 23052,
+              "prototype": "WindoorCommandLocked",
+              "cell": [
+                -113,
+                26
+              ],
+              "components": [
+                6,
+                11
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 23053,
+              "prototype": "WindoorCommandLocked",
+              "cell": [
+                -111,
+                26
+              ],
+              "components": [
+                6,
+                11
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Armory",
+          "role": "armory",
+          "uid": 2806,
+          "prototype": "DefaultStationBeaconArmory",
+          "position": [
+            -28.5,
+            -8.5
+          ],
+          "observedFloorCell": [
+            -29,
+            -9
+          ],
+          "closedDoorComponent": 112,
+          "componentDoorBoundaries": [
+            {
+              "uid": 7920,
+              "prototype": "AirlockArmoryGlassLocked",
+              "cell": [
+                -32,
+                -8
+              ],
+              "components": [
+                101,
+                112
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 13585,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -32,
+                -8
+              ],
+              "components": [
+                101,
+                112
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 13599,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -32,
+                -9
+              ],
+              "components": [
+                101,
+                112
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 8278,
+              "prototype": "WindoorArmoryLocked",
+              "cell": [
+                -32,
+                -9
+              ],
+              "components": [
+                101,
+                112
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 8280,
+              "prototype": "WindoorSecurityLocked",
+              "cell": [
+                -32,
+                -9
+              ],
+              "components": [
+                101,
+                112
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Arrivals",
+          "role": "arrivals",
+          "uid": 18266,
+          "prototype": "DefaultStationBeaconArrivals",
+          "position": [
+            0.5,
+            -63.5
+          ],
+          "observedFloorCell": [
+            0,
+            -64
+          ],
+          "closedDoorComponent": 193,
+          "componentDoorBoundaries": [
+            {
+              "uid": 5227,
+              "prototype": "AirlockMaintLocked",
+              "cell": [
+                -4,
+                -62
+              ],
+              "components": [
+                193,
+                194
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 25398,
+              "prototype": "AirlockMaintLocked",
+              "cell": [
+                4,
+                -62
+              ],
+              "components": [
+                193,
+                243
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 10854,
+              "prototype": "Windoor",
+              "cell": [
+                0,
+                -70
+              ],
+              "components": [
+                193,
+                217
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 10855,
+              "prototype": "Windoor",
+              "cell": [
+                0,
+                -65
+              ],
+              "components": [
+                193,
+                217
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Bridge",
+          "role": "bridge",
+          "uid": 16139,
+          "prototype": "DefaultStationBeaconBridge",
+          "position": [
+            0.5,
+            0.5
+          ],
+          "observedFloorCell": [
+            0,
+            0
+          ],
+          "closedDoorComponent": 200,
+          "componentDoorBoundaries": [
+            {
+              "uid": 18507,
+              "prototype": "AirlockCaptainLocked",
+              "cell": [
+                -4,
+                -2
+              ],
+              "components": [
+                192,
+                200
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 18403,
+              "prototype": "AirlockCommandGlassLocked",
+              "cell": [
+                0,
+                -2
+              ],
+              "components": [
+                200,
+                212
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 18125,
+              "prototype": "AirlockCommandLocked",
+              "cell": [
+                4,
+                -2
+              ],
+              "components": [
+                200,
+                233
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 189,
+              "prototype": "BlastDoorOpen",
+              "cell": [
+                1,
+                -2
+              ],
+              "components": [
+                200,
+                212
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 190,
+              "prototype": "BlastDoorOpen",
+              "cell": [
+                -1,
+                -2
+              ],
+              "components": [
+                200,
+                212
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 18609,
+              "prototype": "FirelockGlass",
+              "cell": [
+                0,
+                -2
+              ],
+              "components": [
+                200,
+                212
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Evac",
+          "role": "evac",
+          "uid": 25312,
+          "prototype": "DefaultStationBeaconEvac",
+          "position": [
+            46.5,
+            24.5
+          ],
+          "observedFloorCell": [
+            46,
+            24
+          ],
+          "closedDoorComponent": 323,
+          "componentDoorBoundaries": [
+            {
+              "uid": 100,
+              "prototype": "AirlockCargoLocked",
+              "cell": [
+                48,
+                19
+              ],
+              "components": [
+                323,
+                341
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 12004,
+              "prototype": "AirlockMaintLocked",
+              "cell": [
+                38,
+                21
+              ],
+              "components": [
+                291,
+                323
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 25146,
+              "prototype": "FirelockGlass",
+              "cell": [
+                38,
+                23
+              ],
+              "components": [
+                280,
+                323
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 25147,
+              "prototype": "FirelockGlass",
+              "cell": [
+                38,
+                24
+              ],
+              "components": [
+                280,
+                323
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 25148,
+              "prototype": "FirelockGlass",
+              "cell": [
+                38,
+                25
+              ],
+              "components": [
+                280,
+                323
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Medbay",
+          "role": "medical",
+          "uid": 23378,
+          "prototype": "DefaultStationBeaconMedbay",
+          "position": [
+            40.5,
+            -23.5
+          ],
+          "observedFloorCell": [
+            40,
+            -24
+          ],
+          "closedDoorComponent": 316,
+          "componentDoorBoundaries": [
+            {
+              "uid": 2768,
+              "prototype": "AirlockGlass",
+              "cell": [
+                36,
+                -24
+              ],
+              "components": [
+                262,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 5924,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                42,
+                -24
+              ],
+              "components": [
+                316,
+                329
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2680,
+              "prototype": "FirelockGlass",
+              "cell": [
+                39,
+                -26
+              ],
+              "components": [
+                315,
+                316
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 2687,
+              "prototype": "FirelockGlass",
+              "cell": [
+                38,
+                -26
+              ],
+              "components": [
+                315,
+                316
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 4503,
+              "prototype": "FirelockGlass",
+              "cell": [
+                36,
+                -24
+              ],
+              "components": [
+                262,
+                316
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 5466,
+              "prototype": "FirelockGlass",
+              "cell": [
+                42,
+                -24
+              ],
+              "components": [
+                316,
+                329
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 1454,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                41,
+                -26
+              ],
+              "components": [
+                315,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 3200,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                40,
+                -26
+              ],
+              "components": [
+                315,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 24366,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                38,
+                -22
+              ],
+              "components": [
+                302,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 24367,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                39,
+                -22
+              ],
+              "components": [
+                302,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 24368,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                40,
+                -22
+              ],
+              "components": [
+                302,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 17379,
+              "prototype": "ShuttersWindowOpen",
+              "cell": [
+                38,
+                -26
+              ],
+              "components": [
+                315,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 17491,
+              "prototype": "ShuttersWindowOpen",
+              "cell": [
+                39,
+                -26
+              ],
+              "components": [
+                315,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 285,
+              "prototype": "Windoor",
+              "cell": [
+                39,
+                -26
+              ],
+              "components": [
+                315,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 6821,
+              "prototype": "Windoor",
+              "cell": [
+                38,
+                -26
+              ],
+              "components": [
+                315,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2684,
+              "prototype": "WindoorChemistryLocked",
+              "cell": [
+                39,
+                -26
+              ],
+              "components": [
+                315,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2685,
+              "prototype": "WindoorChemistryLocked",
+              "cell": [
+                38,
+                -26
+              ],
+              "components": [
+                315,
+                316
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Security",
+          "role": "security",
+          "uid": 12356,
+          "prototype": "DefaultStationBeaconSecurity",
+          "position": [
+            -27.5,
+            -2.5
+          ],
+          "observedFloorCell": [
+            -28,
+            -3
+          ],
+          "closedDoorComponent": 102,
+          "componentDoorBoundaries": [
+            {
+              "uid": 1644,
+              "prototype": "AirlockHeadOfSecurityLocked",
+              "cell": [
+                -31,
+                -2
+              ],
+              "components": [
+                102,
+                113
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 777,
+              "prototype": "AirlockMaintSecLocked",
+              "cell": [
+                -24,
+                -6
+              ],
+              "components": [
+                102,
+                129
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1727,
+              "prototype": "AirlockSecurityGlassLocked",
+              "cell": [
+                -23,
+                -4
+              ],
+              "components": [
+                102,
+                134
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 132,
+              "prototype": "AirlockSecurityLocked",
+              "cell": [
+                -25,
+                -2
+              ],
+              "components": [
+                102,
+                125
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 24365,
+              "prototype": "BlastDoorOpen",
+              "cell": [
+                -36,
+                -4
+              ],
+              "components": [
+                92,
+                102
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1861,
+              "prototype": "CurtainsBlackOpen",
+              "cell": [
+                -29,
+                -2
+              ],
+              "components": [
+                102,
+                113
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1867,
+              "prototype": "CurtainsBlackOpen",
+              "cell": [
+                -30,
+                -2
+              ],
+              "components": [
+                102,
+                113
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 8264,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -35,
+                -6
+              ],
+              "components": [
+                101,
+                102
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 8285,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -34,
+                -6
+              ],
+              "components": [
+                101,
+                102
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 8286,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -33,
+                -6
+              ],
+              "components": [
+                101,
+                102
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 12685,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -31,
+                -2
+              ],
+              "components": [
+                102,
+                113
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 13098,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -25,
+                -2
+              ],
+              "components": [
+                102,
+                125
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14392,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -23,
+                -4
+              ],
+              "components": [
+                102,
+                134
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 24337,
+              "prototype": "WindoorBrigLocked",
+              "cell": [
+                -34,
+                -3
+              ],
+              "components": [
+                102,
+                103
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Vault",
+          "role": "vault",
+          "uid": 24425,
+          "prototype": "DefaultStationBeaconVault",
+          "position": [
+            3.5,
+            -6.5
+          ],
+          "observedFloorCell": [
+            3,
+            -7
+          ],
+          "closedDoorComponent": 232,
+          "componentDoorBoundaries": [
+            {
+              "uid": 12879,
+              "prototype": "HighSecCommandLocked",
+              "cell": [
+                2,
+                -7
+              ],
+              "components": [
+                212,
+                232
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        }
+      ],
+      "pairDistances": [
+        {
+          "fromUid": 18703,
+          "toUid": 25312,
+          "from": "ai",
+          "to": "evac",
+          "manhattanTiles": 160,
+          "allDoorsOpenFloorDistance": 194
+        },
+        {
+          "fromUid": 18703,
+          "toUid": 23378,
+          "from": "ai",
+          "to": "medical",
+          "manhattanTiles": 202,
+          "allDoorsOpenFloorDistance": 206
+        },
+        {
+          "fromUid": 18703,
+          "toUid": 24425,
+          "from": "ai",
+          "to": "vault",
+          "manhattanTiles": 148,
+          "allDoorsOpenFloorDistance": 184
+        },
+        {
+          "fromUid": 2806,
+          "toUid": 18703,
+          "from": "armory",
+          "to": "ai",
+          "manhattanTiles": 118,
+          "allDoorsOpenFloorDistance": 122
+        },
+        {
+          "fromUid": 2806,
+          "toUid": 18266,
+          "from": "armory",
+          "to": "arrivals",
+          "manhattanTiles": 84,
+          "allDoorsOpenFloorDistance": 92
+        },
+        {
+          "fromUid": 2806,
+          "toUid": 16139,
+          "from": "armory",
+          "to": "bridge",
+          "manhattanTiles": 38,
+          "allDoorsOpenFloorDistance": 74
+        },
+        {
+          "fromUid": 2806,
+          "toUid": 25312,
+          "from": "armory",
+          "to": "evac",
+          "manhattanTiles": 108,
+          "allDoorsOpenFloorDistance": 116
+        },
+        {
+          "fromUid": 2806,
+          "toUid": 23378,
+          "from": "armory",
+          "to": "medical",
+          "manhattanTiles": 84,
+          "allDoorsOpenFloorDistance": 92
+        },
+        {
+          "fromUid": 2806,
+          "toUid": 12356,
+          "from": "armory",
+          "to": "security",
+          "manhattanTiles": 7,
+          "allDoorsOpenFloorDistance": 15
+        },
+        {
+          "fromUid": 2806,
+          "toUid": 24425,
+          "from": "armory",
+          "to": "vault",
+          "manhattanTiles": 34,
+          "allDoorsOpenFloorDistance": 70
+        },
+        {
+          "fromUid": 18266,
+          "toUid": 18703,
+          "from": "arrivals",
+          "to": "ai",
+          "manhattanTiles": 202,
+          "allDoorsOpenFloorDistance": 206
+        },
+        {
+          "fromUid": 18266,
+          "toUid": 25312,
+          "from": "arrivals",
+          "to": "evac",
+          "manhattanTiles": 134,
+          "allDoorsOpenFloorDistance": 134
+        },
+        {
+          "fromUid": 18266,
+          "toUid": 23378,
+          "from": "arrivals",
+          "to": "medical",
+          "manhattanTiles": 80,
+          "allDoorsOpenFloorDistance": 80
+        },
+        {
+          "fromUid": 18266,
+          "toUid": 24425,
+          "from": "arrivals",
+          "to": "vault",
+          "manhattanTiles": 60,
+          "allDoorsOpenFloorDistance": 60
+        },
+        {
+          "fromUid": 16139,
+          "toUid": 18703,
+          "from": "bridge",
+          "to": "ai",
+          "manhattanTiles": 138,
+          "allDoorsOpenFloorDistance": 180
+        },
+        {
+          "fromUid": 16139,
+          "toUid": 18266,
+          "from": "bridge",
+          "to": "arrivals",
+          "manhattanTiles": 64,
+          "allDoorsOpenFloorDistance": 64
+        },
+        {
+          "fromUid": 16139,
+          "toUid": 25312,
+          "from": "bridge",
+          "to": "evac",
+          "manhattanTiles": 70,
+          "allDoorsOpenFloorDistance": 78
+        },
+        {
+          "fromUid": 16139,
+          "toUid": 23378,
+          "from": "bridge",
+          "to": "medical",
+          "manhattanTiles": 64,
+          "allDoorsOpenFloorDistance": 64
+        },
+        {
+          "fromUid": 16139,
+          "toUid": 24425,
+          "from": "bridge",
+          "to": "vault",
+          "manhattanTiles": 10,
+          "allDoorsOpenFloorDistance": 10
+        },
+        {
+          "fromUid": 23378,
+          "toUid": 25312,
+          "from": "medical",
+          "to": "evac",
+          "manhattanTiles": 54,
+          "allDoorsOpenFloorDistance": 58
+        },
+        {
+          "fromUid": 23378,
+          "toUid": 24425,
+          "from": "medical",
+          "to": "vault",
+          "manhattanTiles": 54,
+          "allDoorsOpenFloorDistance": 60
+        },
+        {
+          "fromUid": 12356,
+          "toUid": 18703,
+          "from": "security",
+          "to": "ai",
+          "manhattanTiles": 113,
+          "allDoorsOpenFloorDistance": 119
+        },
+        {
+          "fromUid": 12356,
+          "toUid": 18266,
+          "from": "security",
+          "to": "arrivals",
+          "manhattanTiles": 89,
+          "allDoorsOpenFloorDistance": 89
+        },
+        {
+          "fromUid": 12356,
+          "toUid": 16139,
+          "from": "security",
+          "to": "bridge",
+          "manhattanTiles": 31,
+          "allDoorsOpenFloorDistance": 71
+        },
+        {
+          "fromUid": 12356,
+          "toUid": 25312,
+          "from": "security",
+          "to": "evac",
+          "manhattanTiles": 101,
+          "allDoorsOpenFloorDistance": 103
+        },
+        {
+          "fromUid": 12356,
+          "toUid": 23378,
+          "from": "security",
+          "to": "medical",
+          "manhattanTiles": 89,
+          "allDoorsOpenFloorDistance": 89
+        },
+        {
+          "fromUid": 12356,
+          "toUid": 24425,
+          "from": "security",
+          "to": "vault",
+          "manhattanTiles": 35,
+          "allDoorsOpenFloorDistance": 67
+        },
+        {
+          "fromUid": 24425,
+          "toUid": 25312,
+          "from": "vault",
+          "to": "evac",
+          "manhattanTiles": 74,
+          "allDoorsOpenFloorDistance": 86
+        }
+      ]
+    },
+    {
+      "id": "Box",
+      "sourcePath": "Resources/Maps/box.yml",
+      "sha256": "6683c4279be7af641e396862f7b12e7206a19011382840a49628c61ae28856a2",
+      "mainGrid": 8364,
+      "landmarks": [
+        {
+          "label": "AI Core",
+          "role": "ai",
+          "uid": 563,
+          "prototype": "DefaultStationBeaconAICore",
+          "position": [
+            -0.5,
+            -15.5
+          ],
+          "observedFloorCell": [
+            -1,
+            -16
+          ],
+          "closedDoorComponent": null,
+          "componentDoorBoundaries": []
+        },
+        {
+          "label": "Armory",
+          "role": "armory",
+          "uid": 28732,
+          "prototype": "DefaultStationBeaconArmory",
+          "position": [
+            -11.5,
+            45.5
+          ],
+          "observedFloorCell": [
+            -12,
+            45
+          ],
+          "closedDoorComponent": 155,
+          "componentDoorBoundaries": [
+            {
+              "uid": 28705,
+              "prototype": "HighSecArmoryLocked",
+              "cell": [
+                -12,
+                44
+              ],
+              "components": [
+                154,
+                155
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 28503,
+              "prototype": "PlasmaWindoorArmoryLocked",
+              "cell": [
+                -14,
+                44
+              ],
+              "components": [
+                154,
+                155
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 26285,
+              "prototype": "PlasmaWindoorSecurityLocked",
+              "cell": [
+                -14,
+                44
+              ],
+              "components": [
+                154,
+                155
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 28712,
+              "prototype": "ShuttersNormal",
+              "cell": [
+                -8,
+                46
+              ],
+              "components": [
+                155,
+                188
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 28713,
+              "prototype": "ShuttersNormal",
+              "cell": [
+                -8,
+                45
+              ],
+              "components": [
+                155,
+                188
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Arrivals",
+          "role": "arrivals",
+          "uid": 27710,
+          "prototype": "DefaultStationBeaconArrivals",
+          "position": [
+            -64.5,
+            2.5
+          ],
+          "observedFloorCell": [
+            -65,
+            2
+          ],
+          "closedDoorComponent": 3,
+          "componentDoorBoundaries": [
+            {
+              "uid": 610,
+              "prototype": "AirlockExternalLocked",
+              "cell": [
+                -80,
+                -5
+              ],
+              "components": [
+                0,
+                3
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2944,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -63,
+                0
+              ],
+              "components": [
+                3,
+                16
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14167,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -63,
+                -6
+              ],
+              "components": [
+                3,
+                16
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14342,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -63,
+                1
+              ],
+              "components": [
+                3,
+                16
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14343,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -63,
+                -5
+              ],
+              "components": [
+                3,
+                16
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 21815,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -64,
+                7
+              ],
+              "components": [
+                3,
+                4
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 21816,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -65,
+                7
+              ],
+              "components": [
+                3,
+                4
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 26131,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -64,
+                -7
+              ],
+              "components": [
+                3,
+                11
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 26132,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -65,
+                -7
+              ],
+              "components": [
+                3,
+                11
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Bridge",
+          "role": "bridge",
+          "uid": 27707,
+          "prototype": "DefaultStationBeaconBridge",
+          "position": [
+            -1.5,
+            -7.5
+          ],
+          "observedFloorCell": [
+            -2,
+            -8
+          ],
+          "closedDoorComponent": 180,
+          "componentDoorBoundaries": [
+            {
+              "uid": 5693,
+              "prototype": "AirlockCaptainLocked",
+              "cell": [
+                6,
+                -11
+              ],
+              "components": [
+                180,
+                236
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 5619,
+              "prototype": "AirlockCommandLocked",
+              "cell": [
+                -8,
+                -11
+              ],
+              "components": [
+                160,
+                180
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 26786,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                -6,
+                -4
+              ],
+              "components": [
+                180,
+                191
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 26787,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                -5,
+                -4
+              ],
+              "components": [
+                180,
+                191
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 26788,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                -3,
+                -4
+              ],
+              "components": [
+                180,
+                191
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 26789,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                -2,
+                -4
+              ],
+              "components": [
+                180,
+                191
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 26790,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                -1,
+                -4
+              ],
+              "components": [
+                180,
+                191
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 26791,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                0,
+                -4
+              ],
+              "components": [
+                180,
+                191
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 26792,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                1,
+                -4
+              ],
+              "components": [
+                180,
+                191
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 26793,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                4,
+                -4
+              ],
+              "components": [
+                180,
+                191
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 26794,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                3,
+                -4
+              ],
+              "components": [
+                180,
+                191
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Evac",
+          "role": "evac",
+          "uid": 14082,
+          "prototype": "DefaultStationBeaconEvac",
+          "position": [
+            81.5,
+            -8.5
+          ],
+          "observedFloorCell": [
+            81,
+            -9
+          ],
+          "closedDoorComponent": 416,
+          "componentDoorBoundaries": [
+            {
+              "uid": 11368,
+              "prototype": "AirlockExternalGlass",
+              "cell": [
+                83,
+                -14
+              ],
+              "components": [
+                416,
+                444
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 11369,
+              "prototype": "AirlockExternalGlass",
+              "cell": [
+                83,
+                -12
+              ],
+              "components": [
+                416,
+                445
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 11370,
+              "prototype": "AirlockExternalGlass",
+              "cell": [
+                83,
+                -6
+              ],
+              "components": [
+                416,
+                446
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 20005,
+              "prototype": "AirlockMaintLocked",
+              "cell": [
+                76,
+                -17
+              ],
+              "components": [
+                416,
+                421
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 11883,
+              "prototype": "AirlockSecurityGlassLocked",
+              "cell": [
+                77,
+                -5
+              ],
+              "components": [
+                416,
+                422
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 6401,
+              "prototype": "FirelockGlass",
+              "cell": [
+                79,
+                -5
+              ],
+              "components": [
+                416,
+                422
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 26035,
+              "prototype": "FirelockGlass",
+              "cell": [
+                77,
+                -5
+              ],
+              "components": [
+                416,
+                422
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 25968,
+              "prototype": "WindoorSecurityLocked",
+              "cell": [
+                79,
+                -5
+              ],
+              "components": [
+                416,
+                422
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Medbay",
+          "role": "medical",
+          "uid": 27727,
+          "prototype": "DefaultStationBeaconMedbay",
+          "position": [
+            30.5,
+            -17.5
+          ],
+          "observedFloorCell": [
+            30,
+            -18
+          ],
+          "closedDoorComponent": 293,
+          "componentDoorBoundaries": [
+            {
+              "uid": 2201,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                34,
+                -22
+              ],
+              "components": [
+                292,
+                293
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2505,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                25,
+                -22
+              ],
+              "components": [
+                292,
+                293
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2506,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                26,
+                -22
+              ],
+              "components": [
+                292,
+                293
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 3838,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                35,
+                -22
+              ],
+              "components": [
+                292,
+                293
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2946,
+              "prototype": "FirelockGlass",
+              "cell": [
+                23,
+                -18
+              ],
+              "components": [
+                276,
+                293
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 11719,
+              "prototype": "FirelockGlass",
+              "cell": [
+                35,
+                -16
+              ],
+              "components": [
+                280,
+                293
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 11725,
+              "prototype": "FirelockGlass",
+              "cell": [
+                34,
+                -16
+              ],
+              "components": [
+                280,
+                293
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14093,
+              "prototype": "FirelockGlass",
+              "cell": [
+                25,
+                -16
+              ],
+              "components": [
+                280,
+                293
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14094,
+              "prototype": "FirelockGlass",
+              "cell": [
+                33,
+                -16
+              ],
+              "components": [
+                280,
+                293
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14149,
+              "prototype": "FirelockGlass",
+              "cell": [
+                23,
+                -20
+              ],
+              "components": [
+                276,
+                293
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14208,
+              "prototype": "FirelockGlass",
+              "cell": [
+                26,
+                -16
+              ],
+              "components": [
+                280,
+                293
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14220,
+              "prototype": "FirelockGlass",
+              "cell": [
+                27,
+                -16
+              ],
+              "components": [
+                280,
+                293
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 19022,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                23,
+                -18
+              ],
+              "components": [
+                276,
+                293
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 19023,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                23,
+                -19
+              ],
+              "components": [
+                276,
+                293
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 19024,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                23,
+                -20
+              ],
+              "components": [
+                276,
+                293
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1758,
+              "prototype": "WindoorChemistryLocked",
+              "cell": [
+                23,
+                -18
+              ],
+              "components": [
+                276,
+                293
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2563,
+              "prototype": "WindoorChemistryLocked",
+              "cell": [
+                23,
+                -20
+              ],
+              "components": [
+                276,
+                293
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 25888,
+              "prototype": "WindoorMedicalLocked",
+              "cell": [
+                28,
+                -20
+              ],
+              "components": [
+                293,
+                304
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 25889,
+              "prototype": "WindoorMedicalLocked",
+              "cell": [
+                30,
+                -20
+              ],
+              "components": [
+                293,
+                304
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 25890,
+              "prototype": "WindoorMedicalLocked",
+              "cell": [
+                32,
+                -20
+              ],
+              "components": [
+                293,
+                304
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Vault",
+          "role": "vault",
+          "uid": 27735,
+          "prototype": "DefaultStationBeaconVault",
+          "position": [
+            -31.5,
+            4.5
+          ],
+          "observedFloorCell": [
+            -32,
+            4
+          ],
+          "closedDoorComponent": 92,
+          "componentDoorBoundaries": [
+            {
+              "uid": 8140,
+              "prototype": "HighSecCommandLocked",
+              "cell": [
+                -32,
+                2
+              ],
+              "components": [
+                92,
+                97
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        }
+      ],
+      "pairDistances": [
+        {
+          "fromUid": 563,
+          "toUid": 28732,
+          "from": "ai",
+          "to": "armory",
+          "manhattanTiles": 72,
+          "allDoorsOpenFloorDistance": 124
+        },
+        {
+          "fromUid": 563,
+          "toUid": 27710,
+          "from": "ai",
+          "to": "arrivals",
+          "manhattanTiles": 82,
+          "allDoorsOpenFloorDistance": 110
+        },
+        {
+          "fromUid": 563,
+          "toUid": 27707,
+          "from": "ai",
+          "to": "bridge",
+          "manhattanTiles": 9,
+          "allDoorsOpenFloorDistance": 49
+        },
+        {
+          "fromUid": 563,
+          "toUid": 14082,
+          "from": "ai",
+          "to": "evac",
+          "manhattanTiles": 89,
+          "allDoorsOpenFloorDistance": 117
+        },
+        {
+          "fromUid": 563,
+          "toUid": 27727,
+          "from": "ai",
+          "to": "medical",
+          "manhattanTiles": 33,
+          "allDoorsOpenFloorDistance": 57
+        },
+        {
+          "fromUid": 563,
+          "toUid": 27735,
+          "from": "ai",
+          "to": "vault",
+          "manhattanTiles": 51,
+          "allDoorsOpenFloorDistance": 79
+        },
+        {
+          "fromUid": 27710,
+          "toUid": 28732,
+          "from": "arrivals",
+          "to": "armory",
+          "manhattanTiles": 96,
+          "allDoorsOpenFloorDistance": 116
+        },
+        {
+          "fromUid": 27710,
+          "toUid": 27727,
+          "from": "arrivals",
+          "to": "medical",
+          "manhattanTiles": 115,
+          "allDoorsOpenFloorDistance": 115
+        },
+        {
+          "fromUid": 27710,
+          "toUid": 27735,
+          "from": "arrivals",
+          "to": "vault",
+          "manhattanTiles": 35,
+          "allDoorsOpenFloorDistance": 41
+        },
+        {
+          "fromUid": 27707,
+          "toUid": 28732,
+          "from": "bridge",
+          "to": "armory",
+          "manhattanTiles": 63,
+          "allDoorsOpenFloorDistance": 89
+        },
+        {
+          "fromUid": 27707,
+          "toUid": 27710,
+          "from": "bridge",
+          "to": "arrivals",
+          "manhattanTiles": 73,
+          "allDoorsOpenFloorDistance": 75
+        },
+        {
+          "fromUid": 27707,
+          "toUid": 27727,
+          "from": "bridge",
+          "to": "medical",
+          "manhattanTiles": 42,
+          "allDoorsOpenFloorDistance": 42
+        },
+        {
+          "fromUid": 27707,
+          "toUid": 27735,
+          "from": "bridge",
+          "to": "vault",
+          "manhattanTiles": 42,
+          "allDoorsOpenFloorDistance": 44
+        },
+        {
+          "fromUid": 14082,
+          "toUid": 28732,
+          "from": "evac",
+          "to": "armory",
+          "manhattanTiles": 147,
+          "allDoorsOpenFloorDistance": 151
+        },
+        {
+          "fromUid": 14082,
+          "toUid": 27710,
+          "from": "evac",
+          "to": "arrivals",
+          "manhattanTiles": 157,
+          "allDoorsOpenFloorDistance": 165
+        },
+        {
+          "fromUid": 14082,
+          "toUid": 27707,
+          "from": "evac",
+          "to": "bridge",
+          "manhattanTiles": 84,
+          "allDoorsOpenFloorDistance": 92
+        },
+        {
+          "fromUid": 14082,
+          "toUid": 27727,
+          "from": "evac",
+          "to": "medical",
+          "manhattanTiles": 60,
+          "allDoorsOpenFloorDistance": 60
+        },
+        {
+          "fromUid": 14082,
+          "toUid": 27735,
+          "from": "evac",
+          "to": "vault",
+          "manhattanTiles": 126,
+          "allDoorsOpenFloorDistance": 134
+        },
+        {
+          "fromUid": 27727,
+          "toUid": 28732,
+          "from": "medical",
+          "to": "armory",
+          "manhattanTiles": 105,
+          "allDoorsOpenFloorDistance": 105
+        },
+        {
+          "fromUid": 27727,
+          "toUid": 27735,
+          "from": "medical",
+          "to": "vault",
+          "manhattanTiles": 84,
+          "allDoorsOpenFloorDistance": 84
+        },
+        {
+          "fromUid": 27735,
+          "toUid": 28732,
+          "from": "vault",
+          "to": "armory",
+          "manhattanTiles": 61,
+          "allDoorsOpenFloorDistance": 85
+        }
+      ]
+    },
+    {
+      "id": "Marathon",
+      "sourcePath": "Resources/Maps/marathon.yml",
+      "sha256": "469342d8887d4904b5f10ca2ed56d4cc9963b54b29320809f91955ac0f5148c0",
+      "mainGrid": 30,
+      "landmarks": [
+        {
+          "label": "AI Core",
+          "role": "ai",
+          "uid": 20685,
+          "prototype": "DefaultStationBeaconAICore",
+          "position": [
+            -0.5,
+            83.5
+          ],
+          "observedFloorCell": [
+            -1,
+            83
+          ],
+          "closedDoorComponent": 244,
+          "componentDoorBoundaries": []
+        },
+        {
+          "label": "Armory",
+          "role": "armory",
+          "uid": 23141,
+          "prototype": "DefaultStationBeaconArmory",
+          "position": [
+            -40.5,
+            53.5
+          ],
+          "observedFloorCell": [
+            -42,
+            53
+          ],
+          "closedDoorComponent": null,
+          "componentDoorBoundaries": []
+        },
+        {
+          "label": "Arrivals",
+          "role": "arrivals",
+          "uid": 20532,
+          "prototype": "DefaultStationBeaconArrivals",
+          "position": [
+            -46.5,
+            5.5
+          ],
+          "observedFloorCell": [
+            -47,
+            5
+          ],
+          "closedDoorComponent": 48,
+          "componentDoorBoundaries": [
+            {
+              "uid": 3198,
+              "prototype": "AirlockEngineeringLocked",
+              "cell": [
+                -47,
+                10
+              ],
+              "components": [
+                48,
+                83
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1092,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -52,
+                11
+              ],
+              "components": [
+                48,
+                53
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1093,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -53,
+                11
+              ],
+              "components": [
+                48,
+                53
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7135,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -43,
+                -9
+              ],
+              "components": [
+                48,
+                92
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 12063,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -45,
+                -11
+              ],
+              "components": [
+                48,
+                79
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 12091,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -46,
+                -11
+              ],
+              "components": [
+                48,
+                79
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 13387,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -47,
+                -11
+              ],
+              "components": [
+                48,
+                79
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1099,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -44,
+                5
+              ],
+              "components": [
+                48,
+                94
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 1100,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -44,
+                6
+              ],
+              "components": [
+                48,
+                94
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 1101,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -44,
+                7
+              ],
+              "components": [
+                48,
+                94
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 13644,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -45,
+                -11
+              ],
+              "components": [
+                48,
+                79
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 15116,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -46,
+                -11
+              ],
+              "components": [
+                48,
+                79
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 15117,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -47,
+                -11
+              ],
+              "components": [
+                48,
+                79
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 17059,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -52,
+                11
+              ],
+              "components": [
+                48,
+                53
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 17625,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -53,
+                11
+              ],
+              "components": [
+                48,
+                53
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Bridge",
+          "role": "bridge",
+          "uid": 20536,
+          "prototype": "DefaultStationBeaconBridge",
+          "position": [
+            -9.5,
+            42.5
+          ],
+          "observedFloorCell": [
+            -10,
+            42
+          ],
+          "closedDoorComponent": 170,
+          "componentDoorBoundaries": [
+            {
+              "uid": 5820,
+              "prototype": "AirlockCaptainLocked",
+              "cell": [
+                -17,
+                37
+              ],
+              "components": [
+                142,
+                170
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 4920,
+              "prototype": "AirlockCommandGlassLocked",
+              "cell": [
+                -10,
+                38
+              ],
+              "components": [
+                170,
+                206
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 5647,
+              "prototype": "AirlockCommandGlassLocked",
+              "cell": [
+                -3,
+                37
+              ],
+              "components": [
+                170,
+                242
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 6028,
+              "prototype": "AirlockCommandLocked",
+              "cell": [
+                -20,
+                41
+              ],
+              "components": [
+                170,
+                171
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 20279,
+              "prototype": "AirlockMaintCommandLocked",
+              "cell": [
+                -22,
+                39
+              ],
+              "components": [
+                158,
+                170
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Evac",
+          "role": "evac",
+          "uid": 20692,
+          "prototype": "DefaultStationBeaconEvac",
+          "position": [
+            -51.5,
+            16.5
+          ],
+          "observedFloorCell": [
+            -52,
+            16
+          ],
+          "closedDoorComponent": 53,
+          "componentDoorBoundaries": [
+            {
+              "uid": 1144,
+              "prototype": "AirlockExternalGlass",
+              "cell": [
+                -59,
+                15
+              ],
+              "components": [
+                41,
+                53
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1146,
+              "prototype": "AirlockExternalGlass",
+              "cell": [
+                -59,
+                23
+              ],
+              "components": [
+                43,
+                53
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1147,
+              "prototype": "AirlockExternalGlass",
+              "cell": [
+                -59,
+                21
+              ],
+              "components": [
+                42,
+                53
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1153,
+              "prototype": "AirlockExternalGlass",
+              "cell": [
+                -59,
+                13
+              ],
+              "components": [
+                40,
+                53
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1092,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -52,
+                11
+              ],
+              "components": [
+                48,
+                53
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1093,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -53,
+                11
+              ],
+              "components": [
+                48,
+                53
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1289,
+              "prototype": "AirlockMaintLocked",
+              "cell": [
+                -54,
+                26
+              ],
+              "components": [
+                53,
+                54
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 17059,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -52,
+                11
+              ],
+              "components": [
+                48,
+                53
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 17625,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -53,
+                11
+              ],
+              "components": [
+                48,
+                53
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Medbay",
+          "role": "medical",
+          "uid": 20559,
+          "prototype": "DefaultStationBeaconMedbay",
+          "position": [
+            -11.5,
+            -3.5
+          ],
+          "observedFloorCell": [
+            -12,
+            -4
+          ],
+          "closedDoorComponent": 193,
+          "componentDoorBoundaries": [
+            {
+              "uid": 2,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -9,
+                0
+              ],
+              "components": [
+                193,
+                207
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 27,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -10,
+                0
+              ],
+              "components": [
+                193,
+                207
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 55,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -11,
+                0
+              ],
+              "components": [
+                193,
+                207
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 994,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -9,
+                -6
+              ],
+              "components": [
+                193,
+                216
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 6646,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -7,
+                -6
+              ],
+              "components": [
+                193,
+                216
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 6733,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -5,
+                -4
+              ],
+              "components": [
+                193,
+                233
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 6734,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -5,
+                -3
+              ],
+              "components": [
+                193,
+                233
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 6787,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -14,
+                -5
+              ],
+              "components": [
+                190,
+                193
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 6788,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -14,
+                -6
+              ],
+              "components": [
+                190,
+                193
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 6785,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                -9,
+                -6
+              ],
+              "components": [
+                193,
+                216
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 6797,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                -10,
+                -6
+              ],
+              "components": [
+                193,
+                216
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7971,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                -8,
+                -6
+              ],
+              "components": [
+                193,
+                216
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7972,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                -6,
+                -6
+              ],
+              "components": [
+                193,
+                216
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7991,
+              "prototype": "ShuttersNormalOpen",
+              "cell": [
+                -7,
+                -6
+              ],
+              "components": [
+                193,
+                216
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 6674,
+              "prototype": "WindoorChemistryLocked",
+              "cell": [
+                -7,
+                -6
+              ],
+              "components": [
+                193,
+                216
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 6677,
+              "prototype": "WindoorChemistryLocked",
+              "cell": [
+                -9,
+                -6
+              ],
+              "components": [
+                193,
+                216
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7093,
+              "prototype": "WindoorMedicalLocked",
+              "cell": [
+                -14,
+                -6
+              ],
+              "components": [
+                190,
+                193
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 8047,
+              "prototype": "WindoorMedicalLocked",
+              "cell": [
+                -14,
+                -5
+              ],
+              "components": [
+                190,
+                193
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Medical",
+          "role": "medical",
+          "uid": 13319,
+          "prototype": "DefaultStationBeaconMedical",
+          "position": [
+            -22.5,
+            -9.5
+          ],
+          "observedFloorCell": [
+            -23,
+            -10
+          ],
+          "closedDoorComponent": 151,
+          "componentDoorBoundaries": [
+            {
+              "uid": 3188,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                -22,
+                -14
+              ],
+              "components": [
+                151,
+                161
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7193,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                -27,
+                -10
+              ],
+              "components": [
+                121,
+                151
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7402,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                -17,
+                -11
+              ],
+              "components": [
+                151,
+                189
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7417,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                -17,
+                -10
+              ],
+              "components": [
+                151,
+                189
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7442,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                -27,
+                -11
+              ],
+              "components": [
+                121,
+                151
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 6780,
+              "prototype": "AirlockMedicalLocked",
+              "cell": [
+                -17,
+                -6
+              ],
+              "components": [
+                151,
+                190
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 583,
+              "prototype": "AirlockMedicalMorgueLocked",
+              "cell": [
+                -21,
+                -6
+              ],
+              "components": [
+                151,
+                152
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 6751,
+              "prototype": "AirlockSecurityGlassLocked",
+              "cell": [
+                -19,
+                -4
+              ],
+              "components": [
+                151,
+                176
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7007,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -17,
+                -11
+              ],
+              "components": [
+                151,
+                189
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 7155,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -27,
+                -11
+              ],
+              "components": [
+                121,
+                151
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 7156,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -27,
+                -10
+              ],
+              "components": [
+                121,
+                151
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 7200,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -17,
+                -10
+              ],
+              "components": [
+                151,
+                189
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 7960,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -22,
+                -14
+              ],
+              "components": [
+                151,
+                161
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Vault",
+          "role": "vault",
+          "uid": 20572,
+          "prototype": "DefaultStationBeaconVault",
+          "position": [
+            5.5,
+            42.5
+          ],
+          "observedFloorCell": [
+            5,
+            42
+          ],
+          "closedDoorComponent": 260,
+          "componentDoorBoundaries": [
+            {
+              "uid": 2128,
+              "prototype": "HighSecCommandLocked",
+              "cell": [
+                5,
+                40
+              ],
+              "components": [
+                260,
+                264
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        }
+      ],
+      "pairDistances": [
+        {
+          "fromUid": 20685,
+          "toUid": 23141,
+          "from": "ai",
+          "to": "armory",
+          "manhattanTiles": 71,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 20685,
+          "toUid": 20692,
+          "from": "ai",
+          "to": "evac",
+          "manhattanTiles": 118,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 20532,
+          "toUid": 20685,
+          "from": "arrivals",
+          "to": "ai",
+          "manhattanTiles": 124,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 20532,
+          "toUid": 23141,
+          "from": "arrivals",
+          "to": "armory",
+          "manhattanTiles": 53,
+          "allDoorsOpenFloorDistance": 63
+        },
+        {
+          "fromUid": 20532,
+          "toUid": 20536,
+          "from": "arrivals",
+          "to": "bridge",
+          "manhattanTiles": 74,
+          "allDoorsOpenFloorDistance": 74
+        },
+        {
+          "fromUid": 20532,
+          "toUid": 20692,
+          "from": "arrivals",
+          "to": "evac",
+          "manhattanTiles": 16,
+          "allDoorsOpenFloorDistance": 18
+        },
+        {
+          "fromUid": 20532,
+          "toUid": 20559,
+          "from": "arrivals",
+          "to": "medical",
+          "manhattanTiles": 44,
+          "allDoorsOpenFloorDistance": 46
+        },
+        {
+          "fromUid": 20532,
+          "toUid": 20572,
+          "from": "arrivals",
+          "to": "vault",
+          "manhattanTiles": 89,
+          "allDoorsOpenFloorDistance": 95
+        },
+        {
+          "fromUid": 20536,
+          "toUid": 20685,
+          "from": "bridge",
+          "to": "ai",
+          "manhattanTiles": 50,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 20536,
+          "toUid": 23141,
+          "from": "bridge",
+          "to": "armory",
+          "manhattanTiles": 43,
+          "allDoorsOpenFloorDistance": 47
+        },
+        {
+          "fromUid": 20536,
+          "toUid": 20692,
+          "from": "bridge",
+          "to": "evac",
+          "manhattanTiles": 68,
+          "allDoorsOpenFloorDistance": 70
+        },
+        {
+          "fromUid": 20536,
+          "toUid": 20559,
+          "from": "bridge",
+          "to": "medical",
+          "manhattanTiles": 48,
+          "allDoorsOpenFloorDistance": 68
+        },
+        {
+          "fromUid": 20536,
+          "toUid": 20572,
+          "from": "bridge",
+          "to": "vault",
+          "manhattanTiles": 15,
+          "allDoorsOpenFloorDistance": 41
+        },
+        {
+          "fromUid": 20692,
+          "toUid": 23141,
+          "from": "evac",
+          "to": "armory",
+          "manhattanTiles": 47,
+          "allDoorsOpenFloorDistance": 53
+        },
+        {
+          "fromUid": 20559,
+          "toUid": 20685,
+          "from": "medical",
+          "to": "ai",
+          "manhattanTiles": 98,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 20559,
+          "toUid": 23141,
+          "from": "medical",
+          "to": "armory",
+          "manhattanTiles": 87,
+          "allDoorsOpenFloorDistance": 89
+        },
+        {
+          "fromUid": 20559,
+          "toUid": 20692,
+          "from": "medical",
+          "to": "evac",
+          "manhattanTiles": 60,
+          "allDoorsOpenFloorDistance": 62
+        },
+        {
+          "fromUid": 20559,
+          "toUid": 20572,
+          "from": "medical",
+          "to": "vault",
+          "manhattanTiles": 63,
+          "allDoorsOpenFloorDistance": 69
+        },
+        {
+          "fromUid": 13319,
+          "toUid": 20685,
+          "from": "medical",
+          "to": "ai",
+          "manhattanTiles": 115,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 13319,
+          "toUid": 23141,
+          "from": "medical",
+          "to": "armory",
+          "manhattanTiles": 82,
+          "allDoorsOpenFloorDistance": 82
+        },
+        {
+          "fromUid": 13319,
+          "toUid": 20532,
+          "from": "medical",
+          "to": "arrivals",
+          "manhattanTiles": 39,
+          "allDoorsOpenFloorDistance": 39
+        },
+        {
+          "fromUid": 13319,
+          "toUid": 20536,
+          "from": "medical",
+          "to": "bridge",
+          "manhattanTiles": 65,
+          "allDoorsOpenFloorDistance": 73
+        },
+        {
+          "fromUid": 13319,
+          "toUid": 20692,
+          "from": "medical",
+          "to": "evac",
+          "manhattanTiles": 55,
+          "allDoorsOpenFloorDistance": 55
+        },
+        {
+          "fromUid": 13319,
+          "toUid": 20559,
+          "from": "medical",
+          "to": "medical",
+          "manhattanTiles": 17,
+          "allDoorsOpenFloorDistance": 17
+        },
+        {
+          "fromUid": 13319,
+          "toUid": 20572,
+          "from": "medical",
+          "to": "vault",
+          "manhattanTiles": 80,
+          "allDoorsOpenFloorDistance": 86
+        },
+        {
+          "fromUid": 20572,
+          "toUid": 20685,
+          "from": "vault",
+          "to": "ai",
+          "manhattanTiles": 47,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 20572,
+          "toUid": 23141,
+          "from": "vault",
+          "to": "armory",
+          "manhattanTiles": 58,
+          "allDoorsOpenFloorDistance": 84
+        },
+        {
+          "fromUid": 20572,
+          "toUid": 20692,
+          "from": "vault",
+          "to": "evac",
+          "manhattanTiles": 83,
+          "allDoorsOpenFloorDistance": 91
+        }
+      ]
+    },
+    {
+      "id": "Packed",
+      "sourcePath": "Resources/Maps/packed.yml",
+      "sha256": "ae7613de34f165a5c6fa7df0cfc9869ce2725b2841de5f5fe4e42a1730d7e8d0",
+      "mainGrid": 2,
+      "landmarks": [
+        {
+          "label": "AI Core",
+          "role": "ai",
+          "uid": 15916,
+          "prototype": "DefaultStationBeaconAICore",
+          "position": [
+            95.5,
+            30.5
+          ],
+          "observedFloorCell": [
+            95,
+            30
+          ],
+          "closedDoorComponent": null,
+          "componentDoorBoundaries": []
+        },
+        {
+          "label": "Armory",
+          "role": "armory",
+          "uid": 15787,
+          "prototype": "DefaultStationBeaconArmory",
+          "position": [
+            41.5,
+            34.5
+          ],
+          "observedFloorCell": [
+            41,
+            34
+          ],
+          "closedDoorComponent": 156,
+          "componentDoorBoundaries": [
+            {
+              "uid": 8550,
+              "prototype": "AirlockSecurityLocked",
+              "cell": [
+                40,
+                32
+              ],
+              "components": [
+                135,
+                156
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 19,
+              "prototype": "HighSecArmoryLocked",
+              "cell": [
+                42,
+                34
+              ],
+              "components": [
+                156,
+                168
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2459,
+              "prototype": "PlasmaWindoorSecurityLocked",
+              "cell": [
+                42,
+                35
+              ],
+              "components": [
+                156,
+                168
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 3080,
+              "prototype": "PlasmaWindoorSecurityLocked",
+              "cell": [
+                42,
+                35
+              ],
+              "components": [
+                156,
+                168
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Arrivals",
+          "role": "arrivals",
+          "uid": 14028,
+          "prototype": "DefaultStationBeaconArrivals",
+          "position": [
+            -23.5,
+            -12.5
+          ],
+          "observedFloorCell": [
+            -24,
+            -13
+          ],
+          "closedDoorComponent": 4,
+          "componentDoorBoundaries": [
+            {
+              "uid": 13977,
+              "prototype": "FirelockEdge",
+              "cell": [
+                -23,
+                -11
+              ],
+              "components": [
+                4,
+                6
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 13978,
+              "prototype": "FirelockEdge",
+              "cell": [
+                -24,
+                -11
+              ],
+              "components": [
+                4,
+                6
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 13979,
+              "prototype": "FirelockEdge",
+              "cell": [
+                -25,
+                -11
+              ],
+              "components": [
+                4,
+                6
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 13981,
+              "prototype": "FirelockEdge",
+              "cell": [
+                -25,
+                -16
+              ],
+              "components": [
+                4,
+                5
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 13982,
+              "prototype": "FirelockEdge",
+              "cell": [
+                -24,
+                -16
+              ],
+              "components": [
+                4,
+                5
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 13983,
+              "prototype": "FirelockEdge",
+              "cell": [
+                -23,
+                -16
+              ],
+              "components": [
+                4,
+                5
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Bridge",
+          "role": "bridge",
+          "uid": 12106,
+          "prototype": "DefaultStationBeaconBridge",
+          "position": [
+            26.5,
+            45.5
+          ],
+          "observedFloorCell": [
+            26,
+            45
+          ],
+          "closedDoorComponent": 96,
+          "componentDoorBoundaries": [
+            {
+              "uid": 2616,
+              "prototype": "AirlockCaptainLocked",
+              "cell": [
+                32,
+                44
+              ],
+              "components": [
+                96,
+                130
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2758,
+              "prototype": "AirlockCommandGlassLocked",
+              "cell": [
+                26,
+                43
+              ],
+              "components": [
+                96,
+                116
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2759,
+              "prototype": "AirlockCommandGlassLocked",
+              "cell": [
+                28,
+                43
+              ],
+              "components": [
+                96,
+                116
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7766,
+              "prototype": "AirlockGlass",
+              "cell": [
+                22,
+                43
+              ],
+              "components": [
+                96,
+                104
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7767,
+              "prototype": "AirlockGlass",
+              "cell": [
+                23,
+                43
+              ],
+              "components": [
+                96,
+                104
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Evac",
+          "role": "evac",
+          "uid": 4139,
+          "prototype": "DefaultStationBeaconEvac",
+          "position": [
+            -7.5,
+            -0.5
+          ],
+          "observedFloorCell": [
+            -8,
+            -1
+          ],
+          "closedDoorComponent": 8,
+          "componentDoorBoundaries": [
+            {
+              "uid": 7736,
+              "prototype": "AirlockSecurityLocked",
+              "cell": [
+                -1,
+                -3
+              ],
+              "components": [
+                8,
+                30
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1318,
+              "prototype": "Windoor",
+              "cell": [
+                -13,
+                0
+              ],
+              "components": [
+                8,
+                12
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1332,
+              "prototype": "Windoor",
+              "cell": [
+                -11,
+                0
+              ],
+              "components": [
+                8,
+                15
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 6852,
+              "prototype": "Windoor",
+              "cell": [
+                -3,
+                0
+              ],
+              "components": [
+                8,
+                29
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7617,
+              "prototype": "Windoor",
+              "cell": [
+                -5,
+                0
+              ],
+              "components": [
+                8,
+                24
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Medical",
+          "role": "medical",
+          "uid": 15914,
+          "prototype": "DefaultStationBeaconMedical",
+          "position": [
+            51.5,
+            3.5
+          ],
+          "observedFloorCell": [
+            51,
+            3
+          ],
+          "closedDoorComponent": 184,
+          "componentDoorBoundaries": [
+            {
+              "uid": 5012,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                48,
+                3
+              ],
+              "components": [
+                169,
+                184
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2993,
+              "prototype": "FirelockEdge",
+              "cell": [
+                50,
+                1
+              ],
+              "components": [
+                158,
+                184
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 2994,
+              "prototype": "FirelockEdge",
+              "cell": [
+                49,
+                1
+              ],
+              "components": [
+                158,
+                184
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 3983,
+              "prototype": "FirelockEdge",
+              "cell": [
+                51,
+                1
+              ],
+              "components": [
+                158,
+                184
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 12161,
+              "prototype": "FirelockEdge",
+              "cell": [
+                51,
+                1
+              ],
+              "components": [
+                158,
+                184
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14992,
+              "prototype": "FirelockEdge",
+              "cell": [
+                50,
+                1
+              ],
+              "components": [
+                158,
+                184
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14994,
+              "prototype": "FirelockEdge",
+              "cell": [
+                49,
+                1
+              ],
+              "components": [
+                158,
+                184
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 9615,
+              "prototype": "WindoorMedicalLocked",
+              "cell": [
+                52,
+                3
+              ],
+              "components": [
+                184,
+                193
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 12159,
+              "prototype": "WindoorMedicalLocked",
+              "cell": [
+                51,
+                1
+              ],
+              "components": [
+                158,
+                184
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 12237,
+              "prototype": "WindoorMedicalLocked",
+              "cell": [
+                50,
+                1
+              ],
+              "components": [
+                158,
+                184
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 14991,
+              "prototype": "WindoorMedicalLocked",
+              "cell": [
+                49,
+                1
+              ],
+              "components": [
+                158,
+                184
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Security",
+          "role": "security",
+          "uid": 15908,
+          "prototype": "DefaultStationBeaconSecurity",
+          "position": [
+            33.5,
+            29.5
+          ],
+          "observedFloorCell": [
+            33,
+            29
+          ],
+          "closedDoorComponent": 135,
+          "componentDoorBoundaries": [
+            {
+              "uid": 265,
+              "prototype": "AirlockBrigGlassLocked",
+              "cell": [
+                31,
+                27
+              ],
+              "components": [
+                127,
+                135
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 267,
+              "prototype": "AirlockBrigGlassLocked",
+              "cell": [
+                31,
+                28
+              ],
+              "components": [
+                127,
+                135
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2117,
+              "prototype": "AirlockBrigGlassLocked",
+              "cell": [
+                46,
+                31
+              ],
+              "components": [
+                135,
+                174
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 3082,
+              "prototype": "AirlockBrigGlassLocked",
+              "cell": [
+                46,
+                30
+              ],
+              "components": [
+                135,
+                174
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 590,
+              "prototype": "AirlockBrigLocked",
+              "cell": [
+                33,
+                26
+              ],
+              "components": [
+                126,
+                135
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 2284,
+              "prototype": "AirlockSecurityGlassLocked",
+              "cell": [
+                38,
+                29
+              ],
+              "components": [
+                135,
+                147
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 8550,
+              "prototype": "AirlockSecurityLocked",
+              "cell": [
+                40,
+                32
+              ],
+              "components": [
+                135,
+                156
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 73,
+              "prototype": "FirelockGlass",
+              "cell": [
+                46,
+                31
+              ],
+              "components": [
+                135,
+                174
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 248,
+              "prototype": "FirelockGlass",
+              "cell": [
+                46,
+                30
+              ],
+              "components": [
+                135,
+                174
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 2334,
+              "prototype": "FirelockGlass",
+              "cell": [
+                31,
+                28
+              ],
+              "components": [
+                127,
+                135
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 5395,
+              "prototype": "FirelockGlass",
+              "cell": [
+                33,
+                26
+              ],
+              "components": [
+                126,
+                135
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 10527,
+              "prototype": "FirelockGlass",
+              "cell": [
+                31,
+                27
+              ],
+              "components": [
+                127,
+                135
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 14867,
+              "prototype": "WindoorBrigLocked",
+              "cell": [
+                43,
+                29
+              ],
+              "components": [
+                135,
+                165
+              ],
+              "access": [
+                [
+                  "Medical"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 15038,
+              "prototype": "WindoorBrigLocked",
+              "cell": [
+                31,
+                30
+              ],
+              "components": [
+                128,
+                135
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 5116,
+              "prototype": "WindoorSecurityLocked",
+              "cell": [
+                35,
+                32
+              ],
+              "components": [
+                135,
+                142
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Vault",
+          "role": "vault",
+          "uid": 13176,
+          "prototype": "DefaultStationBeaconVault",
+          "position": [
+            18.5,
+            41.5
+          ],
+          "observedFloorCell": [
+            18,
+            41
+          ],
+          "closedDoorComponent": 91,
+          "componentDoorBoundaries": [
+            {
+              "uid": 9110,
+              "prototype": "HighSecCommandLocked",
+              "cell": [
+                18,
+                38
+              ],
+              "components": [
+                90,
+                91
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        }
+      ],
+      "pairDistances": [
+        {
+          "fromUid": 15787,
+          "toUid": 15916,
+          "from": "armory",
+          "to": "ai",
+          "manhattanTiles": 58,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 15787,
+          "toUid": 15914,
+          "from": "armory",
+          "to": "medical",
+          "manhattanTiles": 41,
+          "allDoorsOpenFloorDistance": 59
+        },
+        {
+          "fromUid": 15787,
+          "toUid": 15908,
+          "from": "armory",
+          "to": "security",
+          "manhattanTiles": 13,
+          "allDoorsOpenFloorDistance": 13
+        },
+        {
+          "fromUid": 14028,
+          "toUid": 15916,
+          "from": "arrivals",
+          "to": "ai",
+          "manhattanTiles": 162,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 14028,
+          "toUid": 15787,
+          "from": "arrivals",
+          "to": "armory",
+          "manhattanTiles": 112,
+          "allDoorsOpenFloorDistance": 112
+        },
+        {
+          "fromUid": 14028,
+          "toUid": 15914,
+          "from": "arrivals",
+          "to": "medical",
+          "manhattanTiles": 91,
+          "allDoorsOpenFloorDistance": 91
+        },
+        {
+          "fromUid": 14028,
+          "toUid": 15908,
+          "from": "arrivals",
+          "to": "security",
+          "manhattanTiles": 99,
+          "allDoorsOpenFloorDistance": 99
+        },
+        {
+          "fromUid": 12106,
+          "toUid": 15916,
+          "from": "bridge",
+          "to": "ai",
+          "manhattanTiles": 84,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 12106,
+          "toUid": 15787,
+          "from": "bridge",
+          "to": "armory",
+          "manhattanTiles": 26,
+          "allDoorsOpenFloorDistance": 38
+        },
+        {
+          "fromUid": 12106,
+          "toUid": 14028,
+          "from": "bridge",
+          "to": "arrivals",
+          "manhattanTiles": 108,
+          "allDoorsOpenFloorDistance": 108
+        },
+        {
+          "fromUid": 12106,
+          "toUid": 15914,
+          "from": "bridge",
+          "to": "medical",
+          "manhattanTiles": 67,
+          "allDoorsOpenFloorDistance": 73
+        },
+        {
+          "fromUid": 12106,
+          "toUid": 15908,
+          "from": "bridge",
+          "to": "security",
+          "manhattanTiles": 23,
+          "allDoorsOpenFloorDistance": 25
+        },
+        {
+          "fromUid": 12106,
+          "toUid": 13176,
+          "from": "bridge",
+          "to": "vault",
+          "manhattanTiles": 12,
+          "allDoorsOpenFloorDistance": 20
+        },
+        {
+          "fromUid": 4139,
+          "toUid": 15916,
+          "from": "evac",
+          "to": "ai",
+          "manhattanTiles": 134,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 4139,
+          "toUid": 15787,
+          "from": "evac",
+          "to": "armory",
+          "manhattanTiles": 84,
+          "allDoorsOpenFloorDistance": 84
+        },
+        {
+          "fromUid": 4139,
+          "toUid": 14028,
+          "from": "evac",
+          "to": "arrivals",
+          "manhattanTiles": 28,
+          "allDoorsOpenFloorDistance": 28
+        },
+        {
+          "fromUid": 4139,
+          "toUid": 12106,
+          "from": "evac",
+          "to": "bridge",
+          "manhattanTiles": 80,
+          "allDoorsOpenFloorDistance": 80
+        },
+        {
+          "fromUid": 4139,
+          "toUid": 15914,
+          "from": "evac",
+          "to": "medical",
+          "manhattanTiles": 63,
+          "allDoorsOpenFloorDistance": 63
+        },
+        {
+          "fromUid": 4139,
+          "toUid": 15908,
+          "from": "evac",
+          "to": "security",
+          "manhattanTiles": 71,
+          "allDoorsOpenFloorDistance": 71
+        },
+        {
+          "fromUid": 4139,
+          "toUid": 13176,
+          "from": "evac",
+          "to": "vault",
+          "manhattanTiles": 68,
+          "allDoorsOpenFloorDistance": 82
+        },
+        {
+          "fromUid": 15914,
+          "toUid": 15916,
+          "from": "medical",
+          "to": "ai",
+          "manhattanTiles": 71,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 15908,
+          "toUid": 15916,
+          "from": "security",
+          "to": "ai",
+          "manhattanTiles": 63,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 15908,
+          "toUid": 15914,
+          "from": "security",
+          "to": "medical",
+          "manhattanTiles": 44,
+          "allDoorsOpenFloorDistance": 62
+        },
+        {
+          "fromUid": 13176,
+          "toUid": 15916,
+          "from": "vault",
+          "to": "ai",
+          "manhattanTiles": 88,
+          "allDoorsOpenFloorDistance": null
+        },
+        {
+          "fromUid": 13176,
+          "toUid": 15787,
+          "from": "vault",
+          "to": "armory",
+          "manhattanTiles": 30,
+          "allDoorsOpenFloorDistance": 42
+        },
+        {
+          "fromUid": 13176,
+          "toUid": 14028,
+          "from": "vault",
+          "to": "arrivals",
+          "manhattanTiles": 96,
+          "allDoorsOpenFloorDistance": 110
+        },
+        {
+          "fromUid": 13176,
+          "toUid": 15914,
+          "from": "vault",
+          "to": "medical",
+          "manhattanTiles": 71,
+          "allDoorsOpenFloorDistance": 77
+        },
+        {
+          "fromUid": 13176,
+          "toUid": 15908,
+          "from": "vault",
+          "to": "security",
+          "manhattanTiles": 27,
+          "allDoorsOpenFloorDistance": 29
+        }
+      ]
+    },
+    {
+      "id": "Saltern",
+      "sourcePath": "Resources/Maps/saltern.yml",
+      "sha256": "f2ce7d0a0529c096cc01429fc14056204ff60cdeb4ded56b7e37c79383f27ffb",
+      "mainGrid": 31,
+      "landmarks": [
+        {
+          "label": "Armory",
+          "role": "armory",
+          "uid": 10088,
+          "prototype": "DefaultStationBeaconArmory",
+          "position": [
+            -12.5,
+            19.5
+          ],
+          "observedFloorCell": [
+            -13,
+            19
+          ],
+          "closedDoorComponent": 73,
+          "componentDoorBoundaries": [
+            {
+              "uid": 573,
+              "prototype": "AirlockHeadOfSecurityGlassLocked",
+              "cell": [
+                -11,
+                20
+              ],
+              "components": [
+                73,
+                84
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Arrivals",
+          "role": "arrivals",
+          "uid": 812,
+          "prototype": "DefaultStationBeaconArrivals",
+          "position": [
+            -44.5,
+            -10.5
+          ],
+          "observedFloorCell": [
+            -45,
+            -11
+          ],
+          "closedDoorComponent": 0,
+          "componentDoorBoundaries": [
+            {
+              "uid": 7325,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -38,
+                -9
+              ],
+              "components": [
+                0,
+                10
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 10245,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -37,
+                -9
+              ],
+              "components": [
+                0,
+                10
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 10246,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -36,
+                -9
+              ],
+              "components": [
+                0,
+                10
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Bridge",
+          "role": "bridge",
+          "uid": 11269,
+          "prototype": "DefaultStationBeaconBridge",
+          "position": [
+            3.5,
+            30.5
+          ],
+          "observedFloorCell": [
+            3,
+            30
+          ],
+          "closedDoorComponent": 98,
+          "componentDoorBoundaries": [
+            {
+              "uid": 8810,
+              "prototype": "FirelockGlass",
+              "cell": [
+                2,
+                29
+              ],
+              "components": [
+                98,
+                109
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 8813,
+              "prototype": "FirelockGlass",
+              "cell": [
+                1,
+                28
+              ],
+              "components": [
+                98,
+                109
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 8814,
+              "prototype": "FirelockGlass",
+              "cell": [
+                3,
+                29
+              ],
+              "components": [
+                98,
+                109
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 8815,
+              "prototype": "FirelockGlass",
+              "cell": [
+                4,
+                29
+              ],
+              "components": [
+                98,
+                109
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 8816,
+              "prototype": "FirelockGlass",
+              "cell": [
+                5,
+                28
+              ],
+              "components": [
+                98,
+                109
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Medbay",
+          "role": "medical",
+          "uid": 5767,
+          "prototype": "DefaultStationBeaconMedbay",
+          "position": [
+            9.5,
+            -9.5
+          ],
+          "observedFloorCell": [
+            9,
+            -10
+          ],
+          "closedDoorComponent": 124,
+          "componentDoorBoundaries": [
+            {
+              "uid": 44,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                9,
+                -7
+              ],
+              "components": [
+                115,
+                124
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 124,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                10,
+                -7
+              ],
+              "components": [
+                115,
+                124
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7278,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                13,
+                -10
+              ],
+              "components": [
+                124,
+                135
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 8855,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                9,
+                -13
+              ],
+              "components": [
+                121,
+                124
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 673,
+              "prototype": "FirelockGlass",
+              "cell": [
+                10,
+                -7
+              ],
+              "components": [
+                115,
+                124
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 4334,
+              "prototype": "FirelockGlass",
+              "cell": [
+                8,
+                -9
+              ],
+              "components": [
+                114,
+                124
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 4345,
+              "prototype": "FirelockGlass",
+              "cell": [
+                8,
+                -11
+              ],
+              "components": [
+                113,
+                124
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 8940,
+              "prototype": "FirelockGlass",
+              "cell": [
+                9,
+                -7
+              ],
+              "components": [
+                115,
+                124
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 10017,
+              "prototype": "FirelockGlass",
+              "cell": [
+                13,
+                -10
+              ],
+              "components": [
+                124,
+                135
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 11000,
+              "prototype": "FirelockGlass",
+              "cell": [
+                9,
+                -13
+              ],
+              "components": [
+                121,
+                124
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 6587,
+              "prototype": "HospitalCurtainsOpen",
+              "cell": [
+                8,
+                -9
+              ],
+              "components": [
+                114,
+                124
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7111,
+              "prototype": "HospitalCurtainsOpen",
+              "cell": [
+                8,
+                -11
+              ],
+              "components": [
+                113,
+                124
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Medical",
+          "role": "medical",
+          "uid": 1215,
+          "prototype": "DefaultStationBeaconMedical",
+          "position": [
+            9.5,
+            -2.5
+          ],
+          "observedFloorCell": [
+            9,
+            -3
+          ],
+          "closedDoorComponent": 115,
+          "componentDoorBoundaries": [
+            {
+              "uid": 44,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                9,
+                -7
+              ],
+              "components": [
+                115,
+                124
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 124,
+              "prototype": "AirlockMedicalGlassLocked",
+              "cell": [
+                10,
+                -7
+              ],
+              "components": [
+                115,
+                124
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 5104,
+              "prototype": "Firelock",
+              "cell": [
+                13,
+                -1
+              ],
+              "components": [
+                115,
+                136
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 673,
+              "prototype": "FirelockGlass",
+              "cell": [
+                10,
+                -7
+              ],
+              "components": [
+                115,
+                124
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 3987,
+              "prototype": "FirelockGlass",
+              "cell": [
+                5,
+                -2
+              ],
+              "components": [
+                107,
+                115
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 3988,
+              "prototype": "FirelockGlass",
+              "cell": [
+                5,
+                -1
+              ],
+              "components": [
+                107,
+                115
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 3989,
+              "prototype": "FirelockGlass",
+              "cell": [
+                5,
+                -3
+              ],
+              "components": [
+                107,
+                115
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 8940,
+              "prototype": "FirelockGlass",
+              "cell": [
+                9,
+                -7
+              ],
+              "components": [
+                115,
+                124
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 5086,
+              "prototype": "Windoor",
+              "cell": [
+                13,
+                -1
+              ],
+              "components": [
+                115,
+                136
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 9227,
+              "prototype": "WindoorChemistryLocked",
+              "cell": [
+                13,
+                -1
+              ],
+              "components": [
+                115,
+                136
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Security",
+          "role": "security",
+          "uid": 1136,
+          "prototype": "DefaultStationBeaconSecurity",
+          "position": [
+            -7.5,
+            11.5
+          ],
+          "observedFloorCell": [
+            -8,
+            11
+          ],
+          "closedDoorComponent": 76,
+          "componentDoorBoundaries": [
+            {
+              "uid": 30,
+              "prototype": "AirlockBrigGlassLocked",
+              "cell": [
+                -11,
+                9
+              ],
+              "components": [
+                76,
+                81
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 574,
+              "prototype": "AirlockBrigGlassLocked",
+              "cell": [
+                -5,
+                9
+              ],
+              "components": [
+                76,
+                91
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1417,
+              "prototype": "AirlockBrigGlassLocked",
+              "cell": [
+                -6,
+                9
+              ],
+              "components": [
+                76,
+                91
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 560,
+              "prototype": "AirlockHeadOfSecurityGlassLocked",
+              "cell": [
+                -9,
+                18
+              ],
+              "components": [
+                76,
+                84
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1203,
+              "prototype": "AirlockSecurityGlassLocked",
+              "cell": [
+                -13,
+                9
+              ],
+              "components": [
+                75,
+                76
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1411,
+              "prototype": "AirlockSecurityGlassLocked",
+              "cell": [
+                0,
+                9
+              ],
+              "components": [
+                76,
+                96
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 5068,
+              "prototype": "AirlockSecurityGlassLocked",
+              "cell": [
+                0,
+                11
+              ],
+              "components": [
+                76,
+                102
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 5069,
+              "prototype": "AirlockSecurityGlassLocked",
+              "cell": [
+                -11,
+                15
+              ],
+              "components": [
+                72,
+                76
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 5070,
+              "prototype": "AirlockSecurityGlassLocked",
+              "cell": [
+                -9,
+                9
+              ],
+              "components": [
+                76,
+                87
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7786,
+              "prototype": "AirlockSecurityGlassLocked",
+              "cell": [
+                -15,
+                10
+              ],
+              "components": [
+                63,
+                76
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "Vault",
+          "role": "vault",
+          "uid": 11315,
+          "prototype": "DefaultStationBeaconVault",
+          "position": [
+            -1.5,
+            17.5
+          ],
+          "observedFloorCell": [
+            -2,
+            17
+          ],
+          "closedDoorComponent": 95,
+          "componentDoorBoundaries": [
+            {
+              "uid": 1052,
+              "prototype": "HighSecCommandLocked",
+              "cell": [
+                0,
+                17
+              ],
+              "components": [
+                95,
+                105
+              ],
+              "access": [],
+              "externalAccess": []
+            }
+          ]
+        },
+        {
+          "label": "evac",
+          "role": "evac",
+          "uid": 774,
+          "prototype": "DefaultStationBeacon",
+          "position": [
+            -39.5,
+            5.5
+          ],
+          "observedFloorCell": [
+            -40,
+            5
+          ],
+          "closedDoorComponent": 6,
+          "componentDoorBoundaries": [
+            {
+              "uid": 1012,
+              "prototype": "AirlockExternalGlass",
+              "cell": [
+                -41,
+                2
+              ],
+              "components": [
+                2,
+                6
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 1459,
+              "prototype": "AirlockExternalGlass",
+              "cell": [
+                -41,
+                0
+              ],
+              "components": [
+                1,
+                6
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 4009,
+              "prototype": "AirlockExternalGlass",
+              "cell": [
+                -41,
+                8
+              ],
+              "components": [
+                3,
+                6
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 9162,
+              "prototype": "AirlockExternalGlass",
+              "cell": [
+                -41,
+                10
+              ],
+              "components": [
+                4,
+                6
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 660,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -36,
+                -3
+              ],
+              "components": [
+                6,
+                10
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7708,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -37,
+                11
+              ],
+              "components": [
+                6,
+                11
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 9180,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -38,
+                -3
+              ],
+              "components": [
+                6,
+                10
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 9181,
+              "prototype": "AirlockGlass",
+              "cell": [
+                -37,
+                -3
+              ],
+              "components": [
+                6,
+                10
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 7378,
+              "prototype": "AirlockMaintLocked",
+              "cell": [
+                -34,
+                9
+              ],
+              "components": [
+                6,
+                29
+              ],
+              "access": [],
+              "externalAccess": []
+            },
+            {
+              "uid": 3975,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -34,
+                3
+              ],
+              "components": [
+                6,
+                27
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 3976,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -34,
+                4
+              ],
+              "components": [
+                6,
+                27
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            },
+            {
+              "uid": 3977,
+              "prototype": "FirelockGlass",
+              "cell": [
+                -34,
+                5
+              ],
+              "components": [
+                6,
+                27
+              ],
+              "access": [
+                [
+                  "Engineering"
+                ]
+              ],
+              "externalAccess": []
+            }
+          ]
+        }
+      ],
+      "pairDistances": [
+        {
+          "fromUid": 10088,
+          "toUid": 11269,
+          "from": "armory",
+          "to": "bridge",
+          "manhattanTiles": 27,
+          "allDoorsOpenFloorDistance": 55
+        },
+        {
+          "fromUid": 10088,
+          "toUid": 11315,
+          "from": "armory",
+          "to": "vault",
+          "manhattanTiles": 13,
+          "allDoorsOpenFloorDistance": 45
+        },
+        {
+          "fromUid": 812,
+          "toUid": 10088,
+          "from": "arrivals",
+          "to": "armory",
+          "manhattanTiles": 62,
+          "allDoorsOpenFloorDistance": 62
+        },
+        {
+          "fromUid": 812,
+          "toUid": 11269,
+          "from": "arrivals",
+          "to": "bridge",
+          "manhattanTiles": 89,
+          "allDoorsOpenFloorDistance": 89
+        },
+        {
+          "fromUid": 812,
+          "toUid": 5767,
+          "from": "arrivals",
+          "to": "medical",
+          "manhattanTiles": 55,
+          "allDoorsOpenFloorDistance": 75
+        },
+        {
+          "fromUid": 812,
+          "toUid": 1215,
+          "from": "arrivals",
+          "to": "medical",
+          "manhattanTiles": 62,
+          "allDoorsOpenFloorDistance": 68
+        },
+        {
+          "fromUid": 812,
+          "toUid": 1136,
+          "from": "arrivals",
+          "to": "security",
+          "manhattanTiles": 59,
+          "allDoorsOpenFloorDistance": 63
+        },
+        {
+          "fromUid": 812,
+          "toUid": 11315,
+          "from": "arrivals",
+          "to": "vault",
+          "manhattanTiles": 71,
+          "allDoorsOpenFloorDistance": 79
+        },
+        {
+          "fromUid": 11269,
+          "toUid": 11315,
+          "from": "bridge",
+          "to": "vault",
+          "manhattanTiles": 18,
+          "allDoorsOpenFloorDistance": 18
+        },
+        {
+          "fromUid": 5767,
+          "toUid": 10088,
+          "from": "medical",
+          "to": "armory",
+          "manhattanTiles": 51,
+          "allDoorsOpenFloorDistance": 51
+        },
+        {
+          "fromUid": 5767,
+          "toUid": 11269,
+          "from": "medical",
+          "to": "bridge",
+          "manhattanTiles": 46,
+          "allDoorsOpenFloorDistance": 46
+        },
+        {
+          "fromUid": 5767,
+          "toUid": 11315,
+          "from": "medical",
+          "to": "vault",
+          "manhattanTiles": 38,
+          "allDoorsOpenFloorDistance": 38
+        },
+        {
+          "fromUid": 1215,
+          "toUid": 10088,
+          "from": "medical",
+          "to": "armory",
+          "manhattanTiles": 44,
+          "allDoorsOpenFloorDistance": 44
+        },
+        {
+          "fromUid": 1215,
+          "toUid": 11269,
+          "from": "medical",
+          "to": "bridge",
+          "manhattanTiles": 39,
+          "allDoorsOpenFloorDistance": 39
+        },
+        {
+          "fromUid": 1215,
+          "toUid": 5767,
+          "from": "medical",
+          "to": "medical",
+          "manhattanTiles": 7,
+          "allDoorsOpenFloorDistance": 7
+        },
+        {
+          "fromUid": 1215,
+          "toUid": 11315,
+          "from": "medical",
+          "to": "vault",
+          "manhattanTiles": 31,
+          "allDoorsOpenFloorDistance": 31
+        },
+        {
+          "fromUid": 1136,
+          "toUid": 10088,
+          "from": "security",
+          "to": "armory",
+          "manhattanTiles": 13,
+          "allDoorsOpenFloorDistance": 13
+        },
+        {
+          "fromUid": 1136,
+          "toUid": 11269,
+          "from": "security",
+          "to": "bridge",
+          "manhattanTiles": 30,
+          "allDoorsOpenFloorDistance": 42
+        },
+        {
+          "fromUid": 1136,
+          "toUid": 5767,
+          "from": "security",
+          "to": "medical",
+          "manhattanTiles": 38,
+          "allDoorsOpenFloorDistance": 38
+        },
+        {
+          "fromUid": 1136,
+          "toUid": 1215,
+          "from": "security",
+          "to": "medical",
+          "manhattanTiles": 31,
+          "allDoorsOpenFloorDistance": 31
+        },
+        {
+          "fromUid": 1136,
+          "toUid": 11315,
+          "from": "security",
+          "to": "vault",
+          "manhattanTiles": 12,
+          "allDoorsOpenFloorDistance": 32
+        },
+        {
+          "fromUid": 774,
+          "toUid": 10088,
+          "from": "evac",
+          "to": "armory",
+          "manhattanTiles": 41,
+          "allDoorsOpenFloorDistance": 41
+        },
+        {
+          "fromUid": 774,
+          "toUid": 812,
+          "from": "evac",
+          "to": "arrivals",
+          "manhattanTiles": 21,
+          "allDoorsOpenFloorDistance": 25
+        },
+        {
+          "fromUid": 774,
+          "toUid": 11269,
+          "from": "evac",
+          "to": "bridge",
+          "manhattanTiles": 68,
+          "allDoorsOpenFloorDistance": 68
+        },
+        {
+          "fromUid": 774,
+          "toUid": 5767,
+          "from": "evac",
+          "to": "medical",
+          "manhattanTiles": 64,
+          "allDoorsOpenFloorDistance": 64
+        },
+        {
+          "fromUid": 774,
+          "toUid": 1215,
+          "from": "evac",
+          "to": "medical",
+          "manhattanTiles": 57,
+          "allDoorsOpenFloorDistance": 57
+        },
+        {
+          "fromUid": 774,
+          "toUid": 1136,
+          "from": "evac",
+          "to": "security",
+          "manhattanTiles": 38,
+          "allDoorsOpenFloorDistance": 42
+        },
+        {
+          "fromUid": 774,
+          "toUid": 11315,
+          "from": "evac",
+          "to": "vault",
+          "manhattanTiles": 50,
+          "allDoorsOpenFloorDistance": 58
+        }
+      ]
+    }
+  ]
+}

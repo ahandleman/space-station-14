@@ -1,0 +1,624 @@
+{
+  "format": "station_architect3_local_thermal_controls",
+  "version": 1,
+  "method": "Inert saved-map parsing; actual button/igniter associations and selected floor/wall neighborhood inspection; no runtime simulation.",
+  "maps": [
+    {
+      "sourcePath": "Resources/Maps/hike.yml",
+      "sha256": "1b47bf7e017ac0944c6acb414f65832336f027cc92413a744ee3b787bfff9fa2"
+    },
+    {
+      "sourcePath": "Resources/Maps/gear.yml",
+      "sha256": "5c1d4bc9fc6caee5525219246d0e95607e4f3c2ca58b598daf7a4dcb768eba91"
+    },
+    {
+      "sourcePath": "Resources/Maps/plasma.yml",
+      "sha256": "bbbb9e77bacacd8ff6fd75af2a9855803516d19f4c1c6db672437d4a8d6ddf28"
+    },
+    {
+      "sourcePath": "Resources/Maps/relic.yml",
+      "sha256": "e72c1c425a8bf3e2541e513145f432f46829e3388381aa83436b1cd79f48d8af"
+    },
+    {
+      "sourcePath": "Resources/Maps/snowball.yml",
+      "sha256": "7fda0e0990eea21470ab3312bea1462ee51f44039031c16efbaab802e46027f5"
+    },
+    {
+      "sourcePath": "Resources/Maps/tram2.yml",
+      "sha256": "61867ced5f711bc62eec6d9be5fbf0f3e210e9e2b8f2d6e93f54297de0795136"
+    }
+  ],
+  "records": [
+    {
+      "uid": 6068,
+      "prototype": "SignalButtonDirectional",
+      "grid": 2,
+      "position": "-145.5,-1.5",
+      "components": {
+        "MetaData": {
+          "name": "signal button (Ignite Chamber)"
+        },
+        "Transform": {
+          "parent": 2,
+          "pos": "-145.5,-1.5"
+        },
+        "DeviceLinkSource": {
+          "linkedPorts": {
+            "27024": [
+              {
+                "source": "Pressed",
+                "sink": "Trigger"
+              }
+            ],
+            "27025": [
+              {
+                "source": "Pressed",
+                "sink": "Trigger"
+              }
+            ],
+            "27023": [
+              {
+                "source": "Pressed",
+                "sink": "Trigger"
+              }
+            ],
+            "5982": [
+              {
+                "source": "Pressed",
+                "sink": "Trigger"
+              }
+            ],
+            "6071": [
+              {
+                "source": "Pressed",
+                "sink": "Trigger"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "uid": 27024,
+      "prototype": "Igniter",
+      "grid": 2,
+      "position": "-147.5,1.5",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "-147.5,1.5"
+        }
+      }
+    },
+    {
+      "uid": 27025,
+      "prototype": "Igniter",
+      "grid": 2,
+      "position": "-146.5,2.5",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "-146.5,2.5"
+        }
+      }
+    },
+    {
+      "uid": 27023,
+      "prototype": "Igniter",
+      "grid": 2,
+      "position": "-147.5,2.5",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "-147.5,2.5"
+        }
+      }
+    },
+    {
+      "uid": 5982,
+      "prototype": "Igniter",
+      "grid": 2,
+      "position": "-148.5,2.5",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "-148.5,2.5"
+        }
+      }
+    },
+    {
+      "uid": 6071,
+      "prototype": "Igniter",
+      "grid": 2,
+      "position": "-147.5,3.5",
+      "components": {
+        "Transform": {
+          "parent": 2,
+          "pos": "-147.5,3.5"
+        }
+      }
+    },
+    {
+      "uid": 6058,
+      "prototype": "GasOutletInjector",
+      "position": [
+        -146.5,
+        2.5
+      ],
+      "grid": 2
+    },
+    {
+      "uid": 6018,
+      "prototype": "HeatExchanger",
+      "position": [
+        -147.5,
+        1.5
+      ],
+      "grid": 2
+    },
+    {
+      "uid": 6019,
+      "prototype": "HeatExchanger",
+      "position": [
+        -147.5,
+        3.5
+      ],
+      "grid": 2
+    },
+    {
+      "uid": 6038,
+      "prototype": "HeatExchanger",
+      "position": [
+        -147.5,
+        2.5
+      ],
+      "grid": 2
+    }
+  ],
+  "savedLinks": [
+    {
+      "source": {
+        "uid": 6068,
+        "prototype": "SignalButtonDirectional",
+        "grid": 2,
+        "position": "-145.5,-1.5",
+        "components": {
+          "MetaData": {
+            "name": "signal button (Ignite Chamber)"
+          },
+          "Transform": {
+            "parent": 2,
+            "pos": "-145.5,-1.5"
+          },
+          "DeviceLinkSource": {
+            "linkedPorts": {
+              "27024": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "27025": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "27023": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "5982": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "6071": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "target": {
+        "uid": 27024,
+        "prototype": "Igniter",
+        "grid": 2,
+        "position": "-147.5,1.5",
+        "components": {
+          "Transform": {
+            "parent": 2,
+            "pos": "-147.5,1.5"
+          }
+        }
+      },
+      "ports": [
+        {
+          "source": "Pressed",
+          "sink": "Trigger"
+        }
+      ]
+    },
+    {
+      "source": {
+        "uid": 6068,
+        "prototype": "SignalButtonDirectional",
+        "grid": 2,
+        "position": "-145.5,-1.5",
+        "components": {
+          "MetaData": {
+            "name": "signal button (Ignite Chamber)"
+          },
+          "Transform": {
+            "parent": 2,
+            "pos": "-145.5,-1.5"
+          },
+          "DeviceLinkSource": {
+            "linkedPorts": {
+              "27024": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "27025": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "27023": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "5982": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "6071": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "target": {
+        "uid": 27025,
+        "prototype": "Igniter",
+        "grid": 2,
+        "position": "-146.5,2.5",
+        "components": {
+          "Transform": {
+            "parent": 2,
+            "pos": "-146.5,2.5"
+          }
+        }
+      },
+      "ports": [
+        {
+          "source": "Pressed",
+          "sink": "Trigger"
+        }
+      ]
+    },
+    {
+      "source": {
+        "uid": 6068,
+        "prototype": "SignalButtonDirectional",
+        "grid": 2,
+        "position": "-145.5,-1.5",
+        "components": {
+          "MetaData": {
+            "name": "signal button (Ignite Chamber)"
+          },
+          "Transform": {
+            "parent": 2,
+            "pos": "-145.5,-1.5"
+          },
+          "DeviceLinkSource": {
+            "linkedPorts": {
+              "27024": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "27025": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "27023": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "5982": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "6071": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "target": {
+        "uid": 27023,
+        "prototype": "Igniter",
+        "grid": 2,
+        "position": "-147.5,2.5",
+        "components": {
+          "Transform": {
+            "parent": 2,
+            "pos": "-147.5,2.5"
+          }
+        }
+      },
+      "ports": [
+        {
+          "source": "Pressed",
+          "sink": "Trigger"
+        }
+      ]
+    },
+    {
+      "source": {
+        "uid": 6068,
+        "prototype": "SignalButtonDirectional",
+        "grid": 2,
+        "position": "-145.5,-1.5",
+        "components": {
+          "MetaData": {
+            "name": "signal button (Ignite Chamber)"
+          },
+          "Transform": {
+            "parent": 2,
+            "pos": "-145.5,-1.5"
+          },
+          "DeviceLinkSource": {
+            "linkedPorts": {
+              "27024": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "27025": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "27023": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "5982": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "6071": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "target": {
+        "uid": 5982,
+        "prototype": "Igniter",
+        "grid": 2,
+        "position": "-148.5,2.5",
+        "components": {
+          "Transform": {
+            "parent": 2,
+            "pos": "-148.5,2.5"
+          }
+        }
+      },
+      "ports": [
+        {
+          "source": "Pressed",
+          "sink": "Trigger"
+        }
+      ]
+    },
+    {
+      "source": {
+        "uid": 6068,
+        "prototype": "SignalButtonDirectional",
+        "grid": 2,
+        "position": "-145.5,-1.5",
+        "components": {
+          "MetaData": {
+            "name": "signal button (Ignite Chamber)"
+          },
+          "Transform": {
+            "parent": 2,
+            "pos": "-145.5,-1.5"
+          },
+          "DeviceLinkSource": {
+            "linkedPorts": {
+              "27024": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "27025": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "27023": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "5982": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ],
+              "6071": [
+                {
+                  "source": "Pressed",
+                  "sink": "Trigger"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "target": {
+        "uid": 6071,
+        "prototype": "Igniter",
+        "grid": 2,
+        "position": "-147.5,3.5",
+        "components": {
+          "Transform": {
+            "parent": 2,
+            "pos": "-147.5,3.5"
+          }
+        }
+      },
+      "ports": [
+        {
+          "source": "Pressed",
+          "sink": "Trigger"
+        }
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "Resources/Prototypes/Entities/Objects/Devices/Electronics/igniter.yml": "bc59c1b24bb0b737d2c2885526a836a572b42b1945bfd4f0e4950a2bb3b79cec",
+    "Resources/Prototypes/Entities/Structures/Wallmounts/Switches/switch.yml": "e5230c1f5f06bfcb63914597fee92e3fe5b54fbd20dd89cdcf87a4b7e171771c",
+    "Content.Shared/Trigger/Systems/TriggerSystem.Signal.cs": "9db68264a291af5f8ff29d39d8c27e5b5a7962023afec2e4b77a071050c3dd60",
+    "Content.Server/Trigger/Systems/IgniteOnTriggerSystem.cs": "f3cacde6a3f0f4b69204f60ae4f44bb481e6b789df37eb1ac54efb4e84a7cc06",
+    "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml": "39f251aad00e461ea8b336fd4fb9f192d9861660b86053db26db2b9bfd5b0815"
+  },
+  "proposedEvidence": [
+    {
+      "id": "local_thermal_plasma_6068",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=6068",
+      "description": "SignalButtonDirectional at -145.5,-1.5 on grid2; selected thermal-control evidence, not runtime certification."
+    },
+    {
+      "id": "local_thermal_plasma_27024",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=27024",
+      "description": "Igniter at -147.5,1.5 on grid2; selected thermal-control evidence, not runtime certification."
+    },
+    {
+      "id": "local_thermal_plasma_27025",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=27025",
+      "description": "Igniter at -146.5,2.5 on grid2; selected thermal-control evidence, not runtime certification."
+    },
+    {
+      "id": "local_thermal_plasma_27023",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=27023",
+      "description": "Igniter at -147.5,2.5 on grid2; selected thermal-control evidence, not runtime certification."
+    },
+    {
+      "id": "local_thermal_plasma_5982",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=5982",
+      "description": "Igniter at -148.5,2.5 on grid2; selected thermal-control evidence, not runtime certification."
+    },
+    {
+      "id": "local_thermal_plasma_6071",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=6071",
+      "description": "Igniter at -147.5,3.5 on grid2; selected thermal-control evidence, not runtime certification."
+    },
+    {
+      "id": "local_thermal_plasma_6058",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=6058",
+      "description": "GasOutletInjector at [-146.5, 2.5] on grid2; selected thermal-control evidence, not runtime certification."
+    },
+    {
+      "id": "local_thermal_plasma_6018",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=6018",
+      "description": "HeatExchanger at [-147.5, 1.5] on grid2; selected thermal-control evidence, not runtime certification."
+    },
+    {
+      "id": "local_thermal_plasma_6019",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=6019",
+      "description": "HeatExchanger at [-147.5, 3.5] on grid2; selected thermal-control evidence, not runtime certification."
+    },
+    {
+      "id": "local_thermal_plasma_6038",
+      "kind": "map",
+      "source": "Resources/Maps/plasma.yml#uid=6038",
+      "description": "HeatExchanger at [-147.5, 2.5] on grid2; selected thermal-control evidence, not runtime certification."
+    },
+    {
+      "id": "local_thermal_igniter_ports",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Objects/Devices/Electronics/igniter.yml",
+      "description": "Native thermal-control component/port evidence; see local-thermal-controls.md for interpretation."
+    },
+    {
+      "id": "local_thermal_button_ports",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Wallmounts/Switches/switch.yml",
+      "description": "Native thermal-control component/port evidence; see local-thermal-controls.md for interpretation."
+    },
+    {
+      "id": "local_thermal_trigger_signal",
+      "kind": "native",
+      "source": "Content.Shared/Trigger/Systems/TriggerSystem.Signal.cs",
+      "description": "Native thermal-control component/port evidence; see local-thermal-controls.md for interpretation."
+    },
+    {
+      "id": "local_thermal_ignition_effect",
+      "kind": "native",
+      "source": "Content.Server/Trigger/Systems/IgniteOnTriggerSystem.cs",
+      "description": "Native thermal-control component/port evidence; see local-thermal-controls.md for interpretation."
+    },
+    {
+      "id": "local_thermal_injector_ports",
+      "kind": "native",
+      "source": "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml",
+      "description": "Native thermal-control component/port evidence; see local-thermal-controls.md for interpretation."
+    }
+  ]
+}

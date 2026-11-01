@@ -1,0 +1,448 @@
+{
+  "verifiedAtUtc": "2026-10-31T12:03:39.243094+00:00",
+  "build": {
+    "warnings": 0,
+    "errors": 0,
+    "snapshot": "architect-native-app-v31"
+  },
+  "coreTests": {
+    "fullSuitePassed": 365,
+    "failed": 0,
+    "skipped": 0,
+    "latestFocusedRerunsPassed": 37,
+    "scope": "Full v29 frozen suite plus v31 focused carrier, direction, maintenance, growth, portable gas trunk, segment reuse and catalog regressions."
+  },
+  "mapAnalysisTests": {
+    "passed": 41,
+    "failed": 0
+  },
+  "nativeProfileAudits": {
+    "libraryProfiles": 42,
+    "infrastructureProfiles": 108,
+    "verifiedSourceHashes": 53,
+    "errors": 0
+  },
+  "frontendChecks": {
+    "stationDesigner": true,
+    "lastHarnessSnapshot": "v29",
+    "scope": "Functional stage generation, requirement tree, protected edits, undo, packing, nesting, docks, gameflow, service passes and exports.",
+    "manualBrowserChecks": [
+      "saved project opening",
+      "stage navigation",
+      "map rendering",
+      "gameflow pressure editor",
+      "final exported project reload",
+      "native infrastructure authoring panel"
+    ],
+    "browser": "Chrome",
+    "baseUrl": "http://127.0.0.1:8423"
+  },
+  "layoutCases": [
+    {
+      "topology": "ring",
+      "seed": 14014,
+      "compactness": 1,
+      "attempt": 0,
+      "source": ".tmp/architect-geometry-matrix-v28-default/ring-14014/growth.station.json",
+      "phases": [
+        {
+          "stage": "growth-input",
+          "milliseconds": 157,
+          "errors": []
+        },
+        {
+          "stage": "circulation",
+          "milliseconds": 4364,
+          "errors": []
+        },
+        {
+          "stage": "contents",
+          "milliseconds": 1348,
+          "errors": []
+        },
+        {
+          "stage": "contents-geometry",
+          "milliseconds": 3965,
+          "errors": []
+        }
+      ],
+      "published": true,
+      "nativePending": [
+        "_maintenance/SolarArray:SolarPowerCable"
+      ],
+      "floor": 4879,
+      "bounds": {
+        "x": 11,
+        "y": 10,
+        "width": 139,
+        "height": 131
+      },
+      "floorHash": "63a5904c078e8903e056fe9e02e8fd29b18fa28e2747d6438484e379acf7d402",
+      "maintenanceComponents": 9,
+      "maintenanceTransitions": 14,
+      "dockErrors": [],
+      "success": true,
+      "complete": false
+    },
+    {
+      "topology": "hub",
+      "seed": 14014,
+      "compactness": 1,
+      "attempt": 1,
+      "source": ".tmp/architect-geometry-attempts-v27/hub-14014/attempt-1/growth.station.json",
+      "phases": [
+        {
+          "stage": "growth-input",
+          "milliseconds": 129,
+          "errors": []
+        },
+        {
+          "stage": "circulation",
+          "milliseconds": 4067,
+          "errors": []
+        },
+        {
+          "stage": "contents",
+          "milliseconds": 1037,
+          "errors": []
+        },
+        {
+          "stage": "contents-geometry",
+          "milliseconds": 3198,
+          "errors": []
+        }
+      ],
+      "published": true,
+      "nativePending": [
+        "_maintenance/SolarArray:SolarPowerCable"
+      ],
+      "floor": 4879,
+      "bounds": {
+        "x": 159,
+        "y": 15,
+        "width": 183,
+        "height": 115
+      },
+      "floorHash": "007b3e98011657139633fdf3dfdc6e38b21d5883fe8735fe56e948eeed824817",
+      "maintenanceComponents": 11,
+      "maintenanceTransitions": 14,
+      "dockErrors": [],
+      "success": true,
+      "complete": false
+    },
+    {
+      "topology": "spine",
+      "seed": 14014,
+      "compactness": 1,
+      "attempt": 0,
+      "source": ".tmp/architect-geometry-matrix-v30/spine-14014/growth.station.json",
+      "phases": [
+        {
+          "stage": "growth-input",
+          "milliseconds": 165,
+          "errors": []
+        },
+        {
+          "stage": "circulation",
+          "milliseconds": 4682,
+          "errors": []
+        },
+        {
+          "stage": "contents",
+          "milliseconds": 2465,
+          "errors": []
+        },
+        {
+          "stage": "contents-geometry",
+          "milliseconds": 4623,
+          "errors": []
+        }
+      ],
+      "published": true,
+      "nativePending": [
+        "_maintenance/SolarArray:SolarPowerCable"
+      ],
+      "floor": 4879,
+      "bounds": {
+        "x": 95,
+        "y": 10,
+        "width": 142,
+        "height": 159
+      },
+      "floorHash": "fda9ae7750c290ba91118a9b97f79ef54c5d66c47ba71c0a7996e24f1143cbb4",
+      "maintenanceComponents": 11,
+      "maintenanceTransitions": 15,
+      "dockErrors": [],
+      "success": true,
+      "complete": false
+    },
+    {
+      "topology": "ring",
+      "seed": 14015,
+      "compactness": 1,
+      "attempt": 1,
+      "source": ".tmp/architect-geometry-attempts-v27/ring-14015/attempt-1/growth.station.json",
+      "phases": [
+        {
+          "stage": "growth-input",
+          "milliseconds": 112,
+          "errors": []
+        },
+        {
+          "stage": "circulation",
+          "milliseconds": 3209,
+          "errors": []
+        },
+        {
+          "stage": "contents",
+          "milliseconds": 820,
+          "errors": []
+        },
+        {
+          "stage": "contents-geometry",
+          "milliseconds": 2985,
+          "errors": []
+        }
+      ],
+      "published": true,
+      "nativePending": [
+        "_maintenance/SolarArray:SolarPowerCable"
+      ],
+      "floor": 4881,
+      "bounds": {
+        "x": 10,
+        "y": 11,
+        "width": 117,
+        "height": 147
+      },
+      "floorHash": "dd11f24b033ee707cb6828e3a9dd8c4c8e43113de0d79d36f31463d06a294902",
+      "maintenanceComponents": 11,
+      "maintenanceTransitions": 17,
+      "dockErrors": [],
+      "success": true,
+      "complete": false
+    },
+    {
+      "topology": "ring",
+      "seed": 14016,
+      "compactness": 1,
+      "attempt": 0,
+      "source": ".tmp/architect-geometry-matrix-v30/ring-14016/growth.station.json",
+      "phases": [
+        {
+          "stage": "growth-input",
+          "milliseconds": 117,
+          "errors": []
+        },
+        {
+          "stage": "circulation",
+          "milliseconds": 3855,
+          "errors": []
+        },
+        {
+          "stage": "contents",
+          "milliseconds": 1096,
+          "errors": []
+        },
+        {
+          "stage": "contents-geometry",
+          "milliseconds": 3448,
+          "errors": []
+        }
+      ],
+      "published": true,
+      "nativePending": [
+        "_maintenance/SolarArray:SolarPowerCable"
+      ],
+      "floor": 4884,
+      "bounds": {
+        "x": 10,
+        "y": 11,
+        "width": 146,
+        "height": 149
+      },
+      "floorHash": "e7467bb0f3294637848840111f20493c687b34c84d25038201bc861dad5a83f4",
+      "maintenanceComponents": 11,
+      "maintenanceTransitions": 18,
+      "dockErrors": [],
+      "success": true,
+      "complete": false
+    }
+  ],
+  "layoutCaseScope": "Geometry, owned access, maintenance, docks and contents. Native utility requirements stay pending until native stages; complete=false is intentional for these cases.",
+  "includedExample": {
+    "seed": 14014,
+    "topology": "ring",
+    "compactness": 1,
+    "placementAttempt": 0,
+    "optimizedAcrossCandidates": false,
+    "success": true,
+    "complete": true,
+    "hardErrors": [],
+    "metrics": {
+      "rooms": 139,
+      "roomFloor": 4879,
+      "publicFloor": 2090,
+      "maintenanceFloor": 2365,
+      "interfaces": 191,
+      "routes": 148,
+      "equipment": 1748,
+      "pressureCost": 1484.6636865218716,
+      "maintenanceComponents": 9,
+      "maintenanceStationTransitions": 14,
+      "maintenanceComponentPenalty": 800,
+      "physicalClusters": 28,
+      "maintenanceBoundaryEdges": 1986,
+      "maintenanceCoveredEdges": 460,
+      "maintenanceCoverage": 0.23162134944612287,
+      "maintenanceClusterConnections": 16,
+      "gameflowCost": 13030.89501234568,
+      "gameflowObservedRules": 7,
+      "gameflowRules": 7,
+      "generationCost": 14515.558698867551,
+      "systems.devices": 1951,
+      "systems.segments": 9500,
+      "systems.verifiedTerminals": 2578,
+      "systems.startupStoredJoules": 117400000,
+      "systems.declaredSupplyWatts": 0,
+      "systems.fireDetectionControllers": 227,
+      "systems.fireAutomaticClosureControllers": 0
+    },
+    "gameflowRules": [
+      {
+        "id": "PublicChaseLoops",
+        "kind": "chaseLoops",
+        "observed": true,
+        "satisfied": false,
+        "targetMet": false,
+        "coverageComplete": true,
+        "value": 0,
+        "cost": 312
+      },
+      {
+        "id": "MaintenanceChaseLoops",
+        "kind": "chaseLoops",
+        "observed": true,
+        "satisfied": false,
+        "targetMet": false,
+        "coverageComplete": false,
+        "value": 0,
+        "cost": 208
+      },
+      {
+        "id": "StrategicTargetSeparation",
+        "kind": "travelDistance",
+        "observed": true,
+        "satisfied": false,
+        "targetMet": true,
+        "coverageComplete": true,
+        "value": 14,
+        "cost": 12.5
+      },
+      {
+        "id": "DepartmentEscapeRoutes",
+        "kind": "escapeRoutes",
+        "observed": true,
+        "satisfied": false,
+        "targetMet": true,
+        "coverageComplete": false,
+        "value": 1,
+        "cost": 150
+      },
+      {
+        "id": "StrategicApproachBalance",
+        "kind": "travelBalance",
+        "observed": true,
+        "satisfied": false,
+        "targetMet": false,
+        "coverageComplete": true,
+        "value": 277,
+        "cost": 7713.716
+      },
+      {
+        "id": "ArrivalEvacTravel",
+        "kind": "travelDistance",
+        "observed": true,
+        "satisfied": false,
+        "targetMet": true,
+        "coverageComplete": true,
+        "value": 208,
+        "cost": 9.679012345679013
+      },
+      {
+        "id": "ArrivalEvacChokepoints",
+        "kind": "chokepoints",
+        "observed": true,
+        "satisfied": false,
+        "targetMet": false,
+        "coverageComplete": true,
+        "value": 5,
+        "cost": 4625
+      }
+    ],
+    "acceptedGameflowRepairs": 0,
+    "systemsWarnings": [
+      {
+        "path": "systems.controls",
+        "code": "native-firelock-outputs",
+        "message": "227 fire alarm controllers have no actual Firelock output. Sensor/control wiring does not provide automatic boundary closure through ordinary airlocks.",
+        "severity": "warning"
+      }
+    ]
+  },
+  "savedProjectReload": {
+    "success": true,
+    "complete": true,
+    "layoutHash": "177b3d7e25424a7c9e4d29535e7293debb3e9c51f41719c03e6007e4cc165f8f",
+    "physicalStatePreserved": true,
+    "definitionPreserved": true,
+    "roomInstances": 139,
+    "requirementsRebuilt": true,
+    "hardErrors": []
+  },
+  "packingComparison": "packing-comparison.json",
+  "exportAudit": {
+    "report": "export-audit.json",
+    "success": true,
+    "errors": 0,
+    "entities": 16085,
+    "docks": 3,
+    "native": {
+      "enabled": true,
+      "actualNativePorts": 15575,
+      "powerReceiverCount": 1673,
+      "verifiedPoweredReceiverCount": 1673,
+      "initialStoredEnergyJoules": 117400000.0,
+      "finiteGasReservoirs": [
+        {
+          "sourceUids": [
+            4747,
+            4748,
+            4749,
+            4750,
+            4751,
+            4752,
+            4753,
+            4754,
+            4755,
+            4756,
+            4757,
+            4758
+          ],
+          "sourceVolumeLitres": 18000,
+          "connectedContainerVolumeLitres": 18000,
+          "pipeVolumeLitres": 442412.0,
+          "initialPressureLowerBoundKpa": 175.92863864226965
+        }
+      ],
+      "controlCount": 372,
+      "verifiedWasteInlets": 9,
+      "verifiedCrewCapableWasteInlets": 9,
+      "repositoryComponentsInspected": true,
+      "simulationVerified": false
+    }
+  },
+  "engineLoadTested": false,
+  "simulationVerified": false,
+  "operational": false
+}

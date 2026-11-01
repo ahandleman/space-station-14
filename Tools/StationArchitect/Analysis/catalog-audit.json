@@ -1,0 +1,3387 @@
+{
+  "success": true,
+  "catalog": "Tools/StationArchitect/Catalog/standard-station.yaml",
+  "catalogSha256": "ce80657197501c31773f78666814fae0ab3364a9d3bdd691de82e35da383b950",
+  "evidenceSha256": "079ee9b4c6ea8e169b1d412f3d411c435152e990a85b683edb38070a4ed49359",
+  "stationMapsSurveyed": 14,
+  "defaultPoolMapsSurveyed": 10,
+  "departments": 10,
+  "roomTemplates": 117,
+  "contentRequirements": 96,
+  "distinctContentPrototypes": 107,
+  "sourceReferenceCount": 512,
+  "errors": [],
+  "warnings": [],
+  "references": [
+    {
+      "owner": "$station",
+      "reference": "Resources/Prototypes/Maps/Pools/default.yml"
+    },
+    {
+      "owner": "$station",
+      "reference": "Resources/Maps/bagel.yml"
+    },
+    {
+      "owner": "$station",
+      "reference": "Resources/Maps/box.yml"
+    },
+    {
+      "owner": "$station",
+      "reference": "Resources/Maps/elkridge.yml"
+    },
+    {
+      "owner": "$station",
+      "reference": "Resources/Maps/exo.yml"
+    },
+    {
+      "owner": "$station",
+      "reference": "Resources/Maps/marathon.yml"
+    },
+    {
+      "owner": "$station",
+      "reference": "Resources/Maps/packed.yml"
+    },
+    {
+      "owner": "$station",
+      "reference": "Resources/Maps/plasma.yml"
+    },
+    {
+      "owner": "$station",
+      "reference": "Resources/Maps/snowball.yml"
+    },
+    {
+      "owner": "$station",
+      "reference": "Resources/Maps/sushi.yml"
+    },
+    {
+      "owner": "$station",
+      "reference": "Resources/Maps/tram2.yml"
+    },
+    {
+      "owner": "Arrivals",
+      "reference": "Resources/Maps/bagel.yml#uid=18266",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Arrivals",
+      "reference": "Resources/Maps/box.yml#uid=27710",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Arrivals",
+      "reference": "Resources/Maps/packed.yml#uid=2531",
+      "prototype": "ComputerRadar"
+    },
+    {
+      "owner": "Arrivals",
+      "reference": "Resources/Maps/bagel.yml#uid=3128",
+      "prototype": "DefaultStationBeaconCryosleep"
+    },
+    {
+      "owner": "Arrivals",
+      "reference": "Resources/Maps/box.yml#uid=9541",
+      "prototype": "DefaultStationBeaconCryosleep"
+    },
+    {
+      "owner": "Arrivals/Reception",
+      "reference": "Resources/Maps/bagel.yml#uid=18266",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Arrivals/Reception",
+      "reference": "Resources/Maps/box.yml#uid=27710",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Arrivals/DockingControl",
+      "reference": "Resources/Maps/bagel.yml#uid=18266",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Arrivals/DockingControl",
+      "reference": "Resources/Maps/box.yml#uid=27710",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Arrivals/DockingControl",
+      "reference": "Resources/Maps/packed.yml#uid=2531",
+      "prototype": "ComputerRadar"
+    },
+    {
+      "owner": "Arrivals/Waiting",
+      "reference": "Resources/Maps/bagel.yml#uid=18266",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Arrivals/Waiting",
+      "reference": "Resources/Maps/box.yml#uid=27710",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Arrivals/Waiting",
+      "reference": "Resources/Maps/packed.yml#uid=13727",
+      "prototype": "AirlockExternalGlassShuttleArrivals"
+    },
+    {
+      "owner": "Arrivals/Waiting/dock:ArrivalsBerth",
+      "reference": "Resources/Maps/Shuttles/arrivals.yml#uid=179",
+      "prototype": "AirlockGlassShuttle"
+    },
+    {
+      "owner": "Arrivals/Luggage",
+      "reference": "Resources/Maps/bagel.yml#uid=18266",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Arrivals/Luggage",
+      "reference": "Resources/Maps/box.yml#uid=27710",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Arrivals/ArrivalCirculation",
+      "reference": "Resources/Maps/bagel.yml#uid=18266",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Arrivals/ArrivalCirculation",
+      "reference": "Resources/Maps/box.yml#uid=27710",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/bagel.yml#uid=18266",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/box.yml#uid=27710",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/bagel.yml#uid=25312",
+      "prototype": "DefaultStationBeaconEvac"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/box.yml#uid=14082",
+      "prototype": "DefaultStationBeaconEvac"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/bagel.yml#uid=18705",
+      "prototype": "DefaultStationBeaconDorms"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/box.yml#uid=10196",
+      "prototype": "DefaultStationBeaconDorms"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/packed.yml#uid=460",
+      "prototype": "ToiletEmpty"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/packed.yml#uid=8395",
+      "prototype": "ToiletDirtyWater"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/packed.yml#uid=1530",
+      "prototype": "Sink"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/packed.yml#uid=4559",
+      "prototype": "SinkWide"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/bagel.yml#uid=4148",
+      "prototype": "DefaultStationBeaconEVAStorage"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/box.yml#uid=27720",
+      "prototype": "DefaultStationBeaconEVAStorage"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/bagel.yml#uid=24427",
+      "prototype": "DefaultStationBeaconToolRoom"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/box.yml#uid=27734",
+      "prototype": "DefaultStationBeaconToolRoom"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/packed.yml#uid=139",
+      "prototype": "AirlockExternalGlassShuttleEmergencyLocked"
+    },
+    {
+      "owner": "Commons",
+      "reference": "Resources/Maps/elkridge.yml#uid=6762",
+      "prototype": "DefaultStationBeaconEscapePod"
+    },
+    {
+      "owner": "Commons/Concourse",
+      "reference": "Resources/Maps/bagel.yml#uid=18266",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Commons/Concourse",
+      "reference": "Resources/Maps/box.yml#uid=27710",
+      "prototype": "DefaultStationBeaconArrivals"
+    },
+    {
+      "owner": "Commons/Concourse",
+      "reference": "Resources/Maps/bagel.yml#uid=25312",
+      "prototype": "DefaultStationBeaconEvac"
+    },
+    {
+      "owner": "Commons/Concourse",
+      "reference": "Resources/Maps/box.yml#uid=14082",
+      "prototype": "DefaultStationBeaconEvac"
+    },
+    {
+      "owner": "Commons/Restrooms",
+      "reference": "Resources/Maps/bagel.yml#uid=18705",
+      "prototype": "DefaultStationBeaconDorms"
+    },
+    {
+      "owner": "Commons/Restrooms",
+      "reference": "Resources/Maps/box.yml#uid=10196",
+      "prototype": "DefaultStationBeaconDorms"
+    },
+    {
+      "owner": "Commons/Restrooms",
+      "reference": "Resources/Maps/packed.yml#uid=460",
+      "prototype": "ToiletEmpty"
+    },
+    {
+      "owner": "Commons/Restrooms",
+      "reference": "Resources/Maps/packed.yml#uid=8395",
+      "prototype": "ToiletDirtyWater"
+    },
+    {
+      "owner": "Commons/Restrooms",
+      "reference": "Resources/Maps/packed.yml#uid=1530",
+      "prototype": "Sink"
+    },
+    {
+      "owner": "Commons/Restrooms",
+      "reference": "Resources/Maps/packed.yml#uid=4559",
+      "prototype": "SinkWide"
+    },
+    {
+      "owner": "Commons/Lounge",
+      "reference": "Resources/Maps/bagel.yml#uid=18705",
+      "prototype": "DefaultStationBeaconDorms"
+    },
+    {
+      "owner": "Commons/Lounge",
+      "reference": "Resources/Maps/box.yml#uid=10196",
+      "prototype": "DefaultStationBeaconDorms"
+    },
+    {
+      "owner": "Commons/EmergencyStorage",
+      "reference": "Resources/Maps/bagel.yml#uid=4148",
+      "prototype": "DefaultStationBeaconEVAStorage"
+    },
+    {
+      "owner": "Commons/EmergencyStorage",
+      "reference": "Resources/Maps/box.yml#uid=27720",
+      "prototype": "DefaultStationBeaconEVAStorage"
+    },
+    {
+      "owner": "Commons/Dormitory",
+      "reference": "Resources/Maps/bagel.yml#uid=18705",
+      "prototype": "DefaultStationBeaconDorms"
+    },
+    {
+      "owner": "Commons/Dormitory",
+      "reference": "Resources/Maps/box.yml#uid=10196",
+      "prototype": "DefaultStationBeaconDorms"
+    },
+    {
+      "owner": "Commons/EVAStorage",
+      "reference": "Resources/Maps/bagel.yml#uid=4148",
+      "prototype": "DefaultStationBeaconEVAStorage"
+    },
+    {
+      "owner": "Commons/EVAStorage",
+      "reference": "Resources/Maps/box.yml#uid=27720",
+      "prototype": "DefaultStationBeaconEVAStorage"
+    },
+    {
+      "owner": "Commons/ToolRoom",
+      "reference": "Resources/Maps/bagel.yml#uid=24427",
+      "prototype": "DefaultStationBeaconToolRoom"
+    },
+    {
+      "owner": "Commons/ToolRoom",
+      "reference": "Resources/Maps/box.yml#uid=27734",
+      "prototype": "DefaultStationBeaconToolRoom"
+    },
+    {
+      "owner": "Commons/Evacuation",
+      "reference": "Resources/Maps/bagel.yml#uid=25312",
+      "prototype": "DefaultStationBeaconEvac"
+    },
+    {
+      "owner": "Commons/Evacuation",
+      "reference": "Resources/Maps/box.yml#uid=14082",
+      "prototype": "DefaultStationBeaconEvac"
+    },
+    {
+      "owner": "Commons/Evacuation",
+      "reference": "Resources/Maps/packed.yml#uid=139",
+      "prototype": "AirlockExternalGlassShuttleEmergencyLocked"
+    },
+    {
+      "owner": "Commons/Evacuation/dock:EvacuationBerth",
+      "reference": "Resources/Maps/Shuttles/emergency.yml#uid=6",
+      "prototype": "AirlockGlassShuttle"
+    },
+    {
+      "owner": "Commons/EscapePodAccess",
+      "reference": "Resources/Maps/elkridge.yml#uid=6762",
+      "prototype": "DefaultStationBeaconEscapePod"
+    },
+    {
+      "owner": "Commons/EscapePodAccess",
+      "reference": "Resources/Maps/elkridge.yml#uid=13879",
+      "prototype": "DefaultStationBeaconEscapePod"
+    },
+    {
+      "owner": "Commons/EscapePodAccess",
+      "reference": "Resources/Maps/packed.yml#uid=3868",
+      "prototype": "DefaultStationBeaconEscapePodSE"
+    },
+    {
+      "owner": "Commons/EscapePodAccess",
+      "reference": "Resources/Maps/plasma.yml#uid=9985",
+      "prototype": "DefaultStationBeaconEscapePodSE"
+    },
+    {
+      "owner": "Commons/EscapePodAccess",
+      "reference": "Resources/Maps/packed.yml#uid=389",
+      "prototype": "AirlockExternalGlassShuttleEscape"
+    },
+    {
+      "owner": "Commons/Arcade",
+      "reference": "Resources/Maps/bagel.yml#uid=18705",
+      "prototype": "DefaultStationBeaconDorms"
+    },
+    {
+      "owner": "Commons/Arcade",
+      "reference": "Resources/Maps/box.yml#uid=10196",
+      "prototype": "DefaultStationBeaconDorms"
+    },
+    {
+      "owner": "Commons/ReporterOffice",
+      "reference": "Resources/Maps/box.yml#uid=3786",
+      "prototype": "DefaultStationBeaconReporter"
+    },
+    {
+      "owner": "Commons/ReporterOffice",
+      "reference": "Resources/Maps/elkridge.yml#uid=18696",
+      "prototype": "DefaultStationBeaconReporter"
+    },
+    {
+      "owner": "Commons/VoxLounge",
+      "reference": "Resources/Maps/sushi.yml#uid=9828",
+      "prototype": "DefaultStationBeaconVox"
+    },
+    {
+      "owner": "Commons/Cryosleep",
+      "reference": "Resources/Maps/bagel.yml#uid=3128",
+      "prototype": "DefaultStationBeaconCryosleep"
+    },
+    {
+      "owner": "Commons/Cryosleep",
+      "reference": "Resources/Maps/box.yml#uid=9541",
+      "prototype": "DefaultStationBeaconCryosleep"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/bagel.yml#uid=23370",
+      "prototype": "DefaultStationBeaconKitchen"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/box.yml#uid=27725",
+      "prototype": "DefaultStationBeaconKitchen"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/packed.yml#uid=5461",
+      "prototype": "KitchenMicrowave"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/packed.yml#uid=5502",
+      "prototype": "KitchenElectricGrill"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/bagel.yml#uid=16140",
+      "prototype": "DefaultStationBeaconBotany"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/box.yml#uid=27544",
+      "prototype": "DefaultStationBeaconBotany"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/packed.yml#uid=2194",
+      "prototype": "hydroponicsTray"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/packed.yml#uid=6265",
+      "prototype": "Biogenerator"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/packed.yml#uid=2431",
+      "prototype": "SeedExtractor"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/elkridge.yml#uid=14614",
+      "prototype": "DefaultStationBeaconTheater"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/plasma.yml#uid=22234",
+      "prototype": "DefaultStationBeaconTheater"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/bagel.yml#uid=16141",
+      "prototype": "DefaultStationBeaconBar"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/box.yml#uid=27409",
+      "prototype": "DefaultStationBeaconBar"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/packed.yml#uid=2921",
+      "prototype": "BoozeDispenser"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/packed.yml#uid=2922",
+      "prototype": "SodaDispenser"
+    },
+    {
+      "owner": "Service",
+      "reference": "Resources/Maps/bagel.yml#uid=23375",
+      "prototype": "DefaultStationBeaconLibrary"
+    },
+    {
+      "owner": "Service/Kitchen",
+      "reference": "Resources/Maps/bagel.yml#uid=23370",
+      "prototype": "DefaultStationBeaconKitchen"
+    },
+    {
+      "owner": "Service/Kitchen",
+      "reference": "Resources/Maps/box.yml#uid=27725",
+      "prototype": "DefaultStationBeaconKitchen"
+    },
+    {
+      "owner": "Service/Kitchen",
+      "reference": "Resources/Maps/packed.yml#uid=5461",
+      "prototype": "KitchenMicrowave"
+    },
+    {
+      "owner": "Service/Kitchen",
+      "reference": "Resources/Maps/packed.yml#uid=5502",
+      "prototype": "KitchenElectricGrill"
+    },
+    {
+      "owner": "Service/Botany",
+      "reference": "Resources/Maps/bagel.yml#uid=16140",
+      "prototype": "DefaultStationBeaconBotany"
+    },
+    {
+      "owner": "Service/Botany",
+      "reference": "Resources/Maps/box.yml#uid=27544",
+      "prototype": "DefaultStationBeaconBotany"
+    },
+    {
+      "owner": "Service/Botany",
+      "reference": "Resources/Maps/packed.yml#uid=2194",
+      "prototype": "hydroponicsTray"
+    },
+    {
+      "owner": "Service/Botany",
+      "reference": "Resources/Maps/packed.yml#uid=6265",
+      "prototype": "Biogenerator"
+    },
+    {
+      "owner": "Service/Botany",
+      "reference": "Resources/Maps/packed.yml#uid=2431",
+      "prototype": "SeedExtractor"
+    },
+    {
+      "owner": "Service/Theatre",
+      "reference": "Resources/Maps/elkridge.yml#uid=14614",
+      "prototype": "DefaultStationBeaconTheater"
+    },
+    {
+      "owner": "Service/Theatre",
+      "reference": "Resources/Maps/plasma.yml#uid=22234",
+      "prototype": "DefaultStationBeaconTheater"
+    },
+    {
+      "owner": "Service/Bar",
+      "reference": "Resources/Maps/bagel.yml#uid=16141",
+      "prototype": "DefaultStationBeaconBar"
+    },
+    {
+      "owner": "Service/Bar",
+      "reference": "Resources/Maps/box.yml#uid=27409",
+      "prototype": "DefaultStationBeaconBar"
+    },
+    {
+      "owner": "Service/Bar",
+      "reference": "Resources/Maps/packed.yml#uid=2921",
+      "prototype": "BoozeDispenser"
+    },
+    {
+      "owner": "Service/Bar",
+      "reference": "Resources/Maps/packed.yml#uid=2922",
+      "prototype": "SodaDispenser"
+    },
+    {
+      "owner": "Service/Library",
+      "reference": "Resources/Maps/bagel.yml#uid=23375",
+      "prototype": "DefaultStationBeaconLibrary"
+    },
+    {
+      "owner": "Service/Library",
+      "reference": "Resources/Maps/elkridge.yml#uid=14588",
+      "prototype": "DefaultStationBeaconLibrary"
+    },
+    {
+      "owner": "Service/Chapel",
+      "reference": "Resources/Maps/bagel.yml#uid=13601",
+      "prototype": "DefaultStationBeaconChapel"
+    },
+    {
+      "owner": "Service/Chapel",
+      "reference": "Resources/Maps/box.yml#uid=5736",
+      "prototype": "DefaultStationBeaconChapel"
+    },
+    {
+      "owner": "Service/Chapel/Confessional",
+      "reference": "Resources/Maps/bagel.yml#uid=13851",
+      "prototype": "WoodDoor"
+    },
+    {
+      "owner": "Service/Chapel/Confessional",
+      "reference": "Resources/Maps/bagel.yml#uid=14518",
+      "prototype": "WoodDoor"
+    },
+    {
+      "owner": "Service/Chapel/Confessional",
+      "reference": "Resources/Maps/bagel.yml#uid=14620",
+      "prototype": "ChairWood"
+    },
+    {
+      "owner": "Service/Chapel/Confessional",
+      "reference": "Resources/Maps/box.yml#uid=10537",
+      "prototype": "WoodDoor"
+    },
+    {
+      "owner": "Service/Chapel/Confessional",
+      "reference": "Resources/Maps/packed.yml#uid=15327",
+      "prototype": "WoodDoor"
+    },
+    {
+      "owner": "Service/Chapel/Crematorium",
+      "reference": "Resources/Maps/bagel.yml#uid=13601",
+      "prototype": "DefaultStationBeaconChapel"
+    },
+    {
+      "owner": "Service/Chapel/Crematorium",
+      "reference": "Resources/Maps/box.yml#uid=5736",
+      "prototype": "DefaultStationBeaconChapel"
+    },
+    {
+      "owner": "Service/Chapel/Crematorium",
+      "reference": "Resources/Maps/packed.yml#uid=9729",
+      "prototype": "Crematorium"
+    },
+    {
+      "owner": "Service/Chapel/Crematorium",
+      "reference": "Resources/Maps/bagel.yml#uid=11884",
+      "prototype": "Crematorium"
+    },
+    {
+      "owner": "Service/Chapel/Crematorium",
+      "reference": "Resources/Maps/box.yml#uid=10576",
+      "prototype": "Crematorium"
+    },
+    {
+      "owner": "Service/Chapel/Crematorium",
+      "reference": "Resources/Maps/saltern.yml#uid=7631",
+      "prototype": "Crematorium"
+    },
+    {
+      "owner": "Service/ColdStore",
+      "reference": "Resources/Maps/bagel.yml#uid=23370",
+      "prototype": "DefaultStationBeaconKitchen"
+    },
+    {
+      "owner": "Service/ColdStore",
+      "reference": "Resources/Maps/box.yml#uid=27725",
+      "prototype": "DefaultStationBeaconKitchen"
+    },
+    {
+      "owner": "Service/ColdStore",
+      "reference": "Resources/Maps/elkridge.yml#uid=168",
+      "prototype": "AirAlarmFreezer"
+    },
+    {
+      "owner": "Service/ServiceCirculation",
+      "reference": "Resources/Maps/elkridge.yml#uid=14606",
+      "prototype": "DefaultStationBeaconService"
+    },
+    {
+      "owner": "Service/ServiceCirculation",
+      "reference": "Resources/Maps/marathon.yml#uid=20698",
+      "prototype": "DefaultStationBeaconService"
+    },
+    {
+      "owner": "Service/ServiceCirculation",
+      "reference": "Resources/Maps/bagel.yml#uid=23370",
+      "prototype": "DefaultStationBeaconKitchen"
+    },
+    {
+      "owner": "Service/ServiceCirculation",
+      "reference": "Resources/Maps/box.yml#uid=27725",
+      "prototype": "DefaultStationBeaconKitchen"
+    },
+    {
+      "owner": "Service/Janitor",
+      "reference": "Resources/Maps/bagel.yml#uid=22485",
+      "prototype": "DefaultStationBeaconJanitorsCloset"
+    },
+    {
+      "owner": "Service/Janitor",
+      "reference": "Resources/Maps/box.yml#uid=27723",
+      "prototype": "DefaultStationBeaconJanitorsCloset"
+    },
+    {
+      "owner": "Service/ClownMime",
+      "reference": "Resources/Maps/elkridge.yml#uid=14614",
+      "prototype": "DefaultStationBeaconTheater"
+    },
+    {
+      "owner": "Service/ClownMime",
+      "reference": "Resources/Maps/plasma.yml#uid=22234",
+      "prototype": "DefaultStationBeaconTheater"
+    },
+    {
+      "owner": "Service/ClownMime",
+      "reference": "Resources/Maps/packed.yml#uid=15202",
+      "prototype": "HolopadServiceClownMime"
+    },
+    {
+      "owner": "Service/ServiceStorage",
+      "reference": "Resources/Maps/elkridge.yml#uid=14606",
+      "prototype": "DefaultStationBeaconService"
+    },
+    {
+      "owner": "Service/ServiceStorage",
+      "reference": "Resources/Maps/marathon.yml#uid=20698",
+      "prototype": "DefaultStationBeaconService"
+    },
+    {
+      "owner": "Service/ServiceStorage",
+      "reference": "Resources/Maps/bagel.yml#uid=23370",
+      "prototype": "DefaultStationBeaconKitchen"
+    },
+    {
+      "owner": "Service/ServiceStorage",
+      "reference": "Resources/Maps/box.yml#uid=27725",
+      "prototype": "DefaultStationBeaconKitchen"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/bagel.yml#uid=23378",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/box.yml#uid=27727",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/packed.yml#uid=3485",
+      "prototype": "MedicalBed"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/packed.yml#uid=31",
+      "prototype": "computerBodyScanner"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/bagel.yml#uid=20991",
+      "prototype": "DefaultStationBeaconSurgery"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/elkridge.yml#uid=14610",
+      "prototype": "DefaultStationBeaconSurgery"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/packed.yml#uid=24",
+      "prototype": "OperatingTable"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/packed.yml#uid=5074",
+      "prototype": "MachineCentrifuge"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/packed.yml#uid=5073",
+      "prototype": "MachineElectrolysisUnit"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/bagel.yml#uid=21748",
+      "prototype": "DefaultStationBeaconChemistry"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/box.yml#uid=27715",
+      "prototype": "DefaultStationBeaconChemistry"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/packed.yml#uid=5050",
+      "prototype": "ChemDispenser"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/bagel.yml#uid=23416",
+      "prototype": "DefaultStationBeaconMorgue"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/box.yml#uid=27728",
+      "prototype": "DefaultStationBeaconMorgue"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/packed.yml#uid=1012",
+      "prototype": "Morgue"
+    },
+    {
+      "owner": "Medical",
+      "reference": "Resources/Maps/bagel.yml#uid=4149",
+      "prototype": "DefaultStationBeaconCryonics"
+    },
+    {
+      "owner": "Medical/Triage",
+      "reference": "Resources/Maps/bagel.yml#uid=23378",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/Triage",
+      "reference": "Resources/Maps/box.yml#uid=27727",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/Treatment",
+      "reference": "Resources/Maps/bagel.yml#uid=23378",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/Treatment",
+      "reference": "Resources/Maps/box.yml#uid=27727",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/Treatment",
+      "reference": "Resources/Maps/packed.yml#uid=3485",
+      "prototype": "MedicalBed"
+    },
+    {
+      "owner": "Medical/Treatment",
+      "reference": "Resources/Maps/packed.yml#uid=31",
+      "prototype": "computerBodyScanner"
+    },
+    {
+      "owner": "Medical/Surgery",
+      "reference": "Resources/Maps/bagel.yml#uid=20991",
+      "prototype": "DefaultStationBeaconSurgery"
+    },
+    {
+      "owner": "Medical/Surgery",
+      "reference": "Resources/Maps/elkridge.yml#uid=14610",
+      "prototype": "DefaultStationBeaconSurgery"
+    },
+    {
+      "owner": "Medical/Surgery",
+      "reference": "Resources/Maps/packed.yml#uid=24",
+      "prototype": "OperatingTable"
+    },
+    {
+      "owner": "Medical/Surgery",
+      "reference": "Resources/Maps/packed.yml#uid=5074",
+      "prototype": "MachineCentrifuge"
+    },
+    {
+      "owner": "Medical/Surgery",
+      "reference": "Resources/Maps/packed.yml#uid=5073",
+      "prototype": "MachineElectrolysisUnit"
+    },
+    {
+      "owner": "Medical/Chemistry",
+      "reference": "Resources/Maps/bagel.yml#uid=21748",
+      "prototype": "DefaultStationBeaconChemistry"
+    },
+    {
+      "owner": "Medical/Chemistry",
+      "reference": "Resources/Maps/box.yml#uid=27715",
+      "prototype": "DefaultStationBeaconChemistry"
+    },
+    {
+      "owner": "Medical/Chemistry",
+      "reference": "Resources/Maps/packed.yml#uid=5050",
+      "prototype": "ChemDispenser"
+    },
+    {
+      "owner": "Medical/Morgue",
+      "reference": "Resources/Maps/bagel.yml#uid=23416",
+      "prototype": "DefaultStationBeaconMorgue"
+    },
+    {
+      "owner": "Medical/Morgue",
+      "reference": "Resources/Maps/box.yml#uid=27728",
+      "prototype": "DefaultStationBeaconMorgue"
+    },
+    {
+      "owner": "Medical/Morgue",
+      "reference": "Resources/Maps/packed.yml#uid=1012",
+      "prototype": "Morgue"
+    },
+    {
+      "owner": "Medical/Cryogenics",
+      "reference": "Resources/Maps/bagel.yml#uid=4149",
+      "prototype": "DefaultStationBeaconCryonics"
+    },
+    {
+      "owner": "Medical/Cryogenics",
+      "reference": "Resources/Maps/box.yml#uid=27717",
+      "prototype": "DefaultStationBeaconCryonics"
+    },
+    {
+      "owner": "Medical/Cryogenics",
+      "reference": "Resources/Maps/packed.yml#uid=11462",
+      "prototype": "CryoPod"
+    },
+    {
+      "owner": "Medical/Cryogenics",
+      "reference": "Resources/Maps/packed.yml#uid=631",
+      "prototype": "GasThermoMachineFreezer"
+    },
+    {
+      "owner": "Medical/Cryogenics",
+      "reference": "Resources/Maps/packed.yml#uid=1156",
+      "prototype": "GasThermoMachineFreezerEnabled"
+    },
+    {
+      "owner": "Medical/MedicalOffice",
+      "reference": "Resources/Maps/bagel.yml#uid=16063",
+      "prototype": "DefaultStationBeaconCMORoom"
+    },
+    {
+      "owner": "Medical/MedicalOffice",
+      "reference": "Resources/Maps/box.yml#uid=27712",
+      "prototype": "DefaultStationBeaconCMORoom"
+    },
+    {
+      "owner": "Medical/MedicalCirculation",
+      "reference": "Resources/Maps/bagel.yml#uid=23378",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/MedicalCirculation",
+      "reference": "Resources/Maps/box.yml#uid=27727",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/MedicalStorage",
+      "reference": "Resources/Maps/bagel.yml#uid=23378",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/MedicalStorage",
+      "reference": "Resources/Maps/box.yml#uid=27727",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/MedicalStorage",
+      "reference": "Resources/Maps/plasma.yml#uid=9146",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Medical/Paramedic",
+      "reference": "Resources/Maps/bagel.yml#uid=23378",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/Paramedic",
+      "reference": "Resources/Maps/box.yml#uid=27727",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/Paramedic",
+      "reference": "Resources/Maps/elkridge.yml#uid=13818",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Medical/Paramedic",
+      "reference": "Resources/Maps/plasma.yml#uid=25644",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Medical/Psychology",
+      "reference": "Resources/Maps/elkridge.yml#uid=16188",
+      "prototype": "DefaultStationBeaconPsychology"
+    },
+    {
+      "owner": "Medical/Psychology",
+      "reference": "Resources/Maps/exo.yml#uid=20131",
+      "prototype": "DefaultStationBeaconPsychology"
+    },
+    {
+      "owner": "Medical/Virology",
+      "reference": "Resources/Maps/plasma.yml#uid=8592",
+      "prototype": "DefaultStationBeaconMedical"
+    },
+    {
+      "owner": "Medical/Virology",
+      "reference": "Resources/Maps/elkridge.yml#uid=13822",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Medical/Virology",
+      "reference": "Resources/Maps/elkridge.yml#uid=13823",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Medical/Stasis",
+      "reference": "Resources/Maps/bagel.yml#uid=23378",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/Stasis",
+      "reference": "Resources/Maps/box.yml#uid=27727",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/Stasis",
+      "reference": "Resources/Maps/packed.yml#uid=1711",
+      "prototype": "StasisBed"
+    },
+    {
+      "owner": "Medical/MedicalBreakroom",
+      "reference": "Resources/Maps/bagel.yml#uid=23378",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/MedicalBreakroom",
+      "reference": "Resources/Maps/box.yml#uid=27727",
+      "prototype": "DefaultStationBeaconMedbay"
+    },
+    {
+      "owner": "Medical/MedicalBreakroom",
+      "reference": "Resources/Maps/packed.yml#uid=15198",
+      "prototype": "HolopadMedicalBreakroom"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/bagel.yml#uid=15400",
+      "prototype": "DefaultStationBeaconEngineering"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/box.yml#uid=27255",
+      "prototype": "DefaultStationBeaconEngineering"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/packed.yml#uid=942",
+      "prototype": "Autolathe"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/bagel.yml#uid=23423",
+      "prototype": "DefaultStationBeaconPowerBank"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/elkridge.yml#uid=14601",
+      "prototype": "DefaultStationBeaconPowerBank"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/packed.yml#uid=2121",
+      "prototype": "SMESBasic"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/packed.yml#uid=14526",
+      "prototype": "SMESAdvanced"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/packed.yml#uid=4042",
+      "prototype": "ComputerPowerMonitoring"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/bagel.yml#uid=16142",
+      "prototype": "DefaultStationBeaconAtmospherics"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/box.yml#uid=27242",
+      "prototype": "DefaultStationBeaconAtmospherics"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/packed.yml#uid=1570",
+      "prototype": "GasMixerFlipped"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/packed.yml#uid=2010",
+      "prototype": "GasFilterFlipped"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/packed.yml#uid=15222",
+      "prototype": "ComputerAtmosMonitoring"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/bagel.yml#uid=24422",
+      "prototype": "DefaultStationBeaconTEG"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/box.yml#uid=25245",
+      "prototype": "DefaultStationBeaconTEG"
+    },
+    {
+      "owner": "Engineering",
+      "reference": "Resources/Maps/packed.yml#uid=13127",
+      "prototype": "TegCenter"
+    },
+    {
+      "owner": "Engineering/Workshop",
+      "reference": "Resources/Maps/bagel.yml#uid=15400",
+      "prototype": "DefaultStationBeaconEngineering"
+    },
+    {
+      "owner": "Engineering/Workshop",
+      "reference": "Resources/Maps/box.yml#uid=27255",
+      "prototype": "DefaultStationBeaconEngineering"
+    },
+    {
+      "owner": "Engineering/Workshop",
+      "reference": "Resources/Maps/packed.yml#uid=942",
+      "prototype": "Autolathe"
+    },
+    {
+      "owner": "Engineering/Power",
+      "reference": "Resources/Maps/bagel.yml#uid=23423",
+      "prototype": "DefaultStationBeaconPowerBank"
+    },
+    {
+      "owner": "Engineering/Power",
+      "reference": "Resources/Maps/elkridge.yml#uid=14601",
+      "prototype": "DefaultStationBeaconPowerBank"
+    },
+    {
+      "owner": "Engineering/Power",
+      "reference": "Resources/Maps/packed.yml#uid=2121",
+      "prototype": "SMESBasic"
+    },
+    {
+      "owner": "Engineering/Power",
+      "reference": "Resources/Maps/packed.yml#uid=14526",
+      "prototype": "SMESAdvanced"
+    },
+    {
+      "owner": "Engineering/Power",
+      "reference": "Resources/Maps/packed.yml#uid=4042",
+      "prototype": "ComputerPowerMonitoring"
+    },
+    {
+      "owner": "Engineering/Atmos",
+      "reference": "Resources/Maps/bagel.yml#uid=16142",
+      "prototype": "DefaultStationBeaconAtmospherics"
+    },
+    {
+      "owner": "Engineering/Atmos",
+      "reference": "Resources/Maps/box.yml#uid=27242",
+      "prototype": "DefaultStationBeaconAtmospherics"
+    },
+    {
+      "owner": "Engineering/Atmos",
+      "reference": "Resources/Maps/packed.yml#uid=1570",
+      "prototype": "GasMixerFlipped"
+    },
+    {
+      "owner": "Engineering/Atmos",
+      "reference": "Resources/Maps/packed.yml#uid=2010",
+      "prototype": "GasFilterFlipped"
+    },
+    {
+      "owner": "Engineering/Atmos",
+      "reference": "Resources/Maps/packed.yml#uid=15222",
+      "prototype": "ComputerAtmosMonitoring"
+    },
+    {
+      "owner": "Engineering/TEG",
+      "reference": "Resources/Maps/bagel.yml#uid=24422",
+      "prototype": "DefaultStationBeaconTEG"
+    },
+    {
+      "owner": "Engineering/TEG",
+      "reference": "Resources/Maps/box.yml#uid=25245",
+      "prototype": "DefaultStationBeaconTEG"
+    },
+    {
+      "owner": "Engineering/TEG",
+      "reference": "Resources/Maps/packed.yml#uid=13127",
+      "prototype": "TegCenter"
+    },
+    {
+      "owner": "Engineering/TEG",
+      "reference": "Resources/Maps/packed.yml#uid=13128",
+      "prototype": "TegCirculator"
+    },
+    {
+      "owner": "Engineering/EngineeringOffice",
+      "reference": "Resources/Maps/bagel.yml#uid=16137",
+      "prototype": "DefaultStationBeaconCERoom"
+    },
+    {
+      "owner": "Engineering/EngineeringOffice",
+      "reference": "Resources/Maps/box.yml#uid=27243",
+      "prototype": "DefaultStationBeaconCERoom"
+    },
+    {
+      "owner": "Engineering/ToolStorage",
+      "reference": "Resources/Maps/bagel.yml#uid=15400",
+      "prototype": "DefaultStationBeaconEngineering"
+    },
+    {
+      "owner": "Engineering/ToolStorage",
+      "reference": "Resources/Maps/box.yml#uid=27255",
+      "prototype": "DefaultStationBeaconEngineering"
+    },
+    {
+      "owner": "Engineering/ToolStorage",
+      "reference": "Resources/Maps/bagel.yml#uid=24427",
+      "prototype": "DefaultStationBeaconToolRoom"
+    },
+    {
+      "owner": "Engineering/ToolStorage",
+      "reference": "Resources/Maps/box.yml#uid=27734",
+      "prototype": "DefaultStationBeaconToolRoom"
+    },
+    {
+      "owner": "Engineering/EngineeringCirculation",
+      "reference": "Resources/Maps/bagel.yml#uid=15400",
+      "prototype": "DefaultStationBeaconEngineering"
+    },
+    {
+      "owner": "Engineering/EngineeringCirculation",
+      "reference": "Resources/Maps/box.yml#uid=27255",
+      "prototype": "DefaultStationBeaconEngineering"
+    },
+    {
+      "owner": "Engineering/AME",
+      "reference": "Resources/Maps/box.yml#uid=27241",
+      "prototype": "DefaultStationBeaconAME"
+    },
+    {
+      "owner": "Engineering/AME",
+      "reference": "Resources/Maps/elkridge.yml#uid=14285",
+      "prototype": "DefaultStationBeaconAME"
+    },
+    {
+      "owner": "Engineering/AME",
+      "reference": "Resources/Maps/packed.yml#uid=5234",
+      "prototype": "AmeController"
+    },
+    {
+      "owner": "Engineering/ContainmentEngine",
+      "reference": "Resources/Maps/box.yml#uid=23069",
+      "prototype": "DefaultStationBeaconSingularity"
+    },
+    {
+      "owner": "Engineering/ContainmentEngine",
+      "reference": "Resources/Maps/elkridge.yml#uid=14592",
+      "prototype": "DefaultStationBeaconSingularity"
+    },
+    {
+      "owner": "Engineering/ContainmentEngine",
+      "reference": "Resources/Maps/packed.yml#uid=750",
+      "prototype": "SingularityGenerator"
+    },
+    {
+      "owner": "Engineering/ContainmentEngine",
+      "reference": "Resources/Maps/packed.yml#uid=832",
+      "prototype": "TeslaGenerator"
+    },
+    {
+      "owner": "Engineering/ParticleAcceleratorControl",
+      "reference": "Resources/Maps/box.yml#uid=23069",
+      "prototype": "DefaultStationBeaconSingularity"
+    },
+    {
+      "owner": "Engineering/ParticleAcceleratorControl",
+      "reference": "Resources/Maps/elkridge.yml#uid=14592",
+      "prototype": "DefaultStationBeaconSingularity"
+    },
+    {
+      "owner": "Engineering/ParticleAcceleratorControl",
+      "reference": "Resources/Maps/packed.yml#uid=251",
+      "prototype": "ParticleAcceleratorControlBox"
+    },
+    {
+      "owner": "Engineering/Gravity",
+      "reference": "Resources/Maps/bagel.yml#uid=24449",
+      "prototype": "DefaultStationBeaconGravGen"
+    },
+    {
+      "owner": "Engineering/Gravity",
+      "reference": "Resources/Maps/elkridge.yml#uid=14582",
+      "prototype": "DefaultStationBeaconGravGen"
+    },
+    {
+      "owner": "Engineering/Gravity",
+      "reference": "Resources/Maps/packed.yml#uid=8244",
+      "prototype": "GravityGenerator"
+    },
+    {
+      "owner": "Engineering/StationAnchor",
+      "reference": "Resources/Maps/elkridge.yml#uid=15648",
+      "prototype": "DefaultStationBeaconAnchor"
+    },
+    {
+      "owner": "Engineering/StationAnchor",
+      "reference": "Resources/Maps/packed.yml#uid=15922",
+      "prototype": "DefaultStationBeaconAnchor"
+    },
+    {
+      "owner": "Engineering/StationAnchor",
+      "reference": "Resources/Maps/packed.yml#uid=13717",
+      "prototype": "StationAnchor"
+    },
+    {
+      "owner": "Engineering/Telecoms",
+      "reference": "Resources/Maps/bagel.yml#uid=24420",
+      "prototype": "DefaultStationBeaconTelecoms"
+    },
+    {
+      "owner": "Engineering/Telecoms",
+      "reference": "Resources/Maps/box.yml#uid=27259",
+      "prototype": "DefaultStationBeaconTelecoms"
+    },
+    {
+      "owner": "Engineering/GasStorage",
+      "reference": "Resources/Maps/bagel.yml#uid=16142",
+      "prototype": "DefaultStationBeaconAtmospherics"
+    },
+    {
+      "owner": "Engineering/GasStorage",
+      "reference": "Resources/Maps/box.yml#uid=27242",
+      "prototype": "DefaultStationBeaconAtmospherics"
+    },
+    {
+      "owner": "Engineering/GasStorage",
+      "reference": "Resources/Maps/packed.yml#uid=15578",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Engineering/GasStorage",
+      "reference": "Resources/Maps/plasma.yml#uid=17849",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Engineering/TechVault",
+      "reference": "Resources/Maps/bagel.yml#uid=24421",
+      "prototype": "DefaultStationBeaconTechVault"
+    },
+    {
+      "owner": "Engineering/TechVault",
+      "reference": "Resources/Maps/box.yml#uid=27266",
+      "prototype": "DefaultStationBeaconTechVault"
+    },
+    {
+      "owner": "Engineering/TechVault",
+      "reference": "Resources/Maps/plasma.yml#uid=9528",
+      "prototype": "DefaultStationBeaconEngineering"
+    },
+    {
+      "owner": "Engineering/Disposals",
+      "reference": "Resources/Maps/bagel.yml#uid=16138",
+      "prototype": "DefaultStationBeaconDisposals"
+    },
+    {
+      "owner": "Engineering/Disposals",
+      "reference": "Resources/Maps/box.yml#uid=27721",
+      "prototype": "DefaultStationBeaconDisposals"
+    },
+    {
+      "owner": "Engineering/Substation",
+      "reference": "Resources/Maps/bagel.yml#uid=23423",
+      "prototype": "DefaultStationBeaconPowerBank"
+    },
+    {
+      "owner": "Engineering/Substation",
+      "reference": "Resources/Maps/elkridge.yml#uid=14601",
+      "prototype": "DefaultStationBeaconPowerBank"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/bagel.yml#uid=23710",
+      "prototype": "DefaultStationBeaconRND"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/box.yml#uid=27732",
+      "prototype": "DefaultStationBeaconRND"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/packed.yml#uid=5375",
+      "prototype": "ComputerResearchAndDevelopment"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/packed.yml#uid=5238",
+      "prototype": "Protolathe"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/packed.yml#uid=15566",
+      "prototype": "CircuitImprinter"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/bagel.yml#uid=24248",
+      "prototype": "DefaultStationBeaconRobotics"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/box.yml#uid=5213",
+      "prototype": "DefaultStationBeaconRobotics"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/packed.yml#uid=10384",
+      "prototype": "ExosuitFabricator"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/packed.yml#uid=8505",
+      "prototype": "BorgCharger"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/bagel.yml#uid=16159",
+      "prototype": "DefaultStationBeaconArtifactLab"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/box.yml#uid=27270",
+      "prototype": "DefaultStationBeaconArtifactLab"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/packed.yml#uid=5444",
+      "prototype": "MachineArtifactAnalyzer"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/packed.yml#uid=5410",
+      "prototype": "ComputerAnalysisConsole"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/bagel.yml#uid=18271",
+      "prototype": "DefaultStationBeaconAnomalyGenerator"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/box.yml#uid=27269",
+      "prototype": "DefaultStationBeaconAnomalyGenerator"
+    },
+    {
+      "owner": "Science",
+      "reference": "Resources/Maps/packed.yml#uid=5363",
+      "prototype": "MachineAnomalyGenerator"
+    },
+    {
+      "owner": "Science/Research",
+      "reference": "Resources/Maps/bagel.yml#uid=23710",
+      "prototype": "DefaultStationBeaconRND"
+    },
+    {
+      "owner": "Science/Research",
+      "reference": "Resources/Maps/box.yml#uid=27732",
+      "prototype": "DefaultStationBeaconRND"
+    },
+    {
+      "owner": "Science/Research",
+      "reference": "Resources/Maps/packed.yml#uid=5375",
+      "prototype": "ComputerResearchAndDevelopment"
+    },
+    {
+      "owner": "Science/Research",
+      "reference": "Resources/Maps/packed.yml#uid=5238",
+      "prototype": "Protolathe"
+    },
+    {
+      "owner": "Science/Research",
+      "reference": "Resources/Maps/packed.yml#uid=15566",
+      "prototype": "CircuitImprinter"
+    },
+    {
+      "owner": "Science/Robotics",
+      "reference": "Resources/Maps/bagel.yml#uid=24248",
+      "prototype": "DefaultStationBeaconRobotics"
+    },
+    {
+      "owner": "Science/Robotics",
+      "reference": "Resources/Maps/box.yml#uid=5213",
+      "prototype": "DefaultStationBeaconRobotics"
+    },
+    {
+      "owner": "Science/Robotics",
+      "reference": "Resources/Maps/packed.yml#uid=10384",
+      "prototype": "ExosuitFabricator"
+    },
+    {
+      "owner": "Science/Robotics",
+      "reference": "Resources/Maps/packed.yml#uid=8505",
+      "prototype": "BorgCharger"
+    },
+    {
+      "owner": "Science/ArtifactLab",
+      "reference": "Resources/Maps/bagel.yml#uid=16159",
+      "prototype": "DefaultStationBeaconArtifactLab"
+    },
+    {
+      "owner": "Science/ArtifactLab",
+      "reference": "Resources/Maps/box.yml#uid=27270",
+      "prototype": "DefaultStationBeaconArtifactLab"
+    },
+    {
+      "owner": "Science/ArtifactLab",
+      "reference": "Resources/Maps/packed.yml#uid=5444",
+      "prototype": "MachineArtifactAnalyzer"
+    },
+    {
+      "owner": "Science/ArtifactLab",
+      "reference": "Resources/Maps/packed.yml#uid=5410",
+      "prototype": "ComputerAnalysisConsole"
+    },
+    {
+      "owner": "Science/AnomalyLab",
+      "reference": "Resources/Maps/bagel.yml#uid=18271",
+      "prototype": "DefaultStationBeaconAnomalyGenerator"
+    },
+    {
+      "owner": "Science/AnomalyLab",
+      "reference": "Resources/Maps/box.yml#uid=27269",
+      "prototype": "DefaultStationBeaconAnomalyGenerator"
+    },
+    {
+      "owner": "Science/AnomalyLab",
+      "reference": "Resources/Maps/packed.yml#uid=5363",
+      "prototype": "MachineAnomalyGenerator"
+    },
+    {
+      "owner": "Science/AnomalyLab",
+      "reference": "Resources/Maps/packed.yml#uid=171",
+      "prototype": "MachineAnomalyVessel"
+    },
+    {
+      "owner": "Science/ServerRoom",
+      "reference": "Resources/Maps/bagel.yml#uid=24418",
+      "prototype": "DefaultStationBeaconServerRoom"
+    },
+    {
+      "owner": "Science/ServerRoom",
+      "reference": "Resources/Maps/box.yml#uid=27733",
+      "prototype": "DefaultStationBeaconServerRoom"
+    },
+    {
+      "owner": "Science/ServerRoom",
+      "reference": "Resources/Maps/packed.yml#uid=5321",
+      "prototype": "ResearchAndDevelopmentServer"
+    },
+    {
+      "owner": "Science/ScienceOffice",
+      "reference": "Resources/Maps/bagel.yml#uid=23638",
+      "prototype": "DefaultStationBeaconRDRoom"
+    },
+    {
+      "owner": "Science/ScienceOffice",
+      "reference": "Resources/Maps/box.yml#uid=27731",
+      "prototype": "DefaultStationBeaconRDRoom"
+    },
+    {
+      "owner": "Science/ScienceCirculation",
+      "reference": "Resources/Maps/elkridge.yml#uid=16587",
+      "prototype": "DefaultStationBeaconScience"
+    },
+    {
+      "owner": "Science/ScienceCirculation",
+      "reference": "Resources/Maps/exo.yml#uid=16215",
+      "prototype": "DefaultStationBeaconScience"
+    },
+    {
+      "owner": "Science/ScienceCirculation",
+      "reference": "Resources/Maps/bagel.yml#uid=23710",
+      "prototype": "DefaultStationBeaconRND"
+    },
+    {
+      "owner": "Science/ScienceCirculation",
+      "reference": "Resources/Maps/box.yml#uid=27732",
+      "prototype": "DefaultStationBeaconRND"
+    },
+    {
+      "owner": "Science/ScienceStorage",
+      "reference": "Resources/Maps/elkridge.yml#uid=16587",
+      "prototype": "DefaultStationBeaconScience"
+    },
+    {
+      "owner": "Science/ScienceStorage",
+      "reference": "Resources/Maps/exo.yml#uid=16215",
+      "prototype": "DefaultStationBeaconScience"
+    },
+    {
+      "owner": "Science/ScienceStorage",
+      "reference": "Resources/Maps/bagel.yml#uid=23710",
+      "prototype": "DefaultStationBeaconRND"
+    },
+    {
+      "owner": "Science/ScienceStorage",
+      "reference": "Resources/Maps/box.yml#uid=27732",
+      "prototype": "DefaultStationBeaconRND"
+    },
+    {
+      "owner": "Science/ScienceStorage",
+      "reference": "Resources/Maps/packed.yml#uid=5448",
+      "prototype": "LockerScienceFilled"
+    },
+    {
+      "owner": "Science/ExperimentChamber",
+      "reference": "Resources/Maps/bagel.yml#uid=18271",
+      "prototype": "DefaultStationBeaconAnomalyGenerator"
+    },
+    {
+      "owner": "Science/ExperimentChamber",
+      "reference": "Resources/Maps/box.yml#uid=27269",
+      "prototype": "DefaultStationBeaconAnomalyGenerator"
+    },
+    {
+      "owner": "Science/ExperimentChamber",
+      "reference": "Resources/Maps/bagel.yml#uid=16159",
+      "prototype": "DefaultStationBeaconArtifactLab"
+    },
+    {
+      "owner": "Science/ExperimentChamber",
+      "reference": "Resources/Maps/box.yml#uid=27270",
+      "prototype": "DefaultStationBeaconArtifactLab"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/bagel.yml#uid=12356",
+      "prototype": "DefaultStationBeaconSecurity"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/elkridge.yml#uid=11841",
+      "prototype": "DefaultStationBeaconSecurity"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/bagel.yml#uid=8270",
+      "prototype": "DefaultStationBeaconBrig"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/elkridge.yml#uid=2115",
+      "prototype": "DefaultStationBeaconBrig"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/bagel.yml#uid=2806",
+      "prototype": "DefaultStationBeaconArmory"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/box.yml#uid=28732",
+      "prototype": "DefaultStationBeaconArmory"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/packed.yml#uid=760",
+      "prototype": "WeaponCapacitorRecharger"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/bagel.yml#uid=12355",
+      "prototype": "DefaultStationBeaconPermaBrig"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/box.yml#uid=524",
+      "prototype": "DefaultStationBeaconPermaBrig"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/bagel.yml#uid=1569",
+      "prototype": "DefaultStationBeaconWardensOffice"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/box.yml#uid=9090",
+      "prototype": "DefaultStationBeaconWardensOffice"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/elkridge.yml#uid=15135",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/packed.yml#uid=15786",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/bagel.yml#uid=4150",
+      "prototype": "DefaultStationBeaconDetectiveRoom"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/box.yml#uid=9138",
+      "prototype": "DefaultStationBeaconDetectiveRoom"
+    },
+    {
+      "owner": "Security",
+      "reference": "Resources/Maps/packed.yml#uid=2680",
+      "prototype": "LockerEvidence"
+    },
+    {
+      "owner": "Security/SecurityLobby",
+      "reference": "Resources/Maps/bagel.yml#uid=12356",
+      "prototype": "DefaultStationBeaconSecurity"
+    },
+    {
+      "owner": "Security/SecurityLobby",
+      "reference": "Resources/Maps/elkridge.yml#uid=11841",
+      "prototype": "DefaultStationBeaconSecurity"
+    },
+    {
+      "owner": "Security/Brig",
+      "reference": "Resources/Maps/bagel.yml#uid=8270",
+      "prototype": "DefaultStationBeaconBrig"
+    },
+    {
+      "owner": "Security/Brig",
+      "reference": "Resources/Maps/elkridge.yml#uid=2115",
+      "prototype": "DefaultStationBeaconBrig"
+    },
+    {
+      "owner": "Security/Armory",
+      "reference": "Resources/Maps/bagel.yml#uid=2806",
+      "prototype": "DefaultStationBeaconArmory"
+    },
+    {
+      "owner": "Security/Armory",
+      "reference": "Resources/Maps/box.yml#uid=28732",
+      "prototype": "DefaultStationBeaconArmory"
+    },
+    {
+      "owner": "Security/Armory",
+      "reference": "Resources/Maps/packed.yml#uid=760",
+      "prototype": "WeaponCapacitorRecharger"
+    },
+    {
+      "owner": "Security/Perma",
+      "reference": "Resources/Maps/bagel.yml#uid=12355",
+      "prototype": "DefaultStationBeaconPermaBrig"
+    },
+    {
+      "owner": "Security/Perma",
+      "reference": "Resources/Maps/box.yml#uid=524",
+      "prototype": "DefaultStationBeaconPermaBrig"
+    },
+    {
+      "owner": "Security/Sentencing",
+      "reference": "Resources/Maps/bagel.yml#uid=8270",
+      "prototype": "DefaultStationBeaconBrig"
+    },
+    {
+      "owner": "Security/Sentencing",
+      "reference": "Resources/Maps/elkridge.yml#uid=2115",
+      "prototype": "DefaultStationBeaconBrig"
+    },
+    {
+      "owner": "Security/WardensOffice",
+      "reference": "Resources/Maps/bagel.yml#uid=1569",
+      "prototype": "DefaultStationBeaconWardensOffice"
+    },
+    {
+      "owner": "Security/WardensOffice",
+      "reference": "Resources/Maps/box.yml#uid=9090",
+      "prototype": "DefaultStationBeaconWardensOffice"
+    },
+    {
+      "owner": "Security/Interrogation",
+      "reference": "Resources/Maps/bagel.yml#uid=12356",
+      "prototype": "DefaultStationBeaconSecurity"
+    },
+    {
+      "owner": "Security/Interrogation",
+      "reference": "Resources/Maps/elkridge.yml#uid=11841",
+      "prototype": "DefaultStationBeaconSecurity"
+    },
+    {
+      "owner": "Security/Interrogation",
+      "reference": "Resources/Maps/elkridge.yml#uid=15135",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Security/Interrogation",
+      "reference": "Resources/Maps/packed.yml#uid=15786",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Security/Evidence",
+      "reference": "Resources/Maps/bagel.yml#uid=4150",
+      "prototype": "DefaultStationBeaconDetectiveRoom"
+    },
+    {
+      "owner": "Security/Evidence",
+      "reference": "Resources/Maps/box.yml#uid=9138",
+      "prototype": "DefaultStationBeaconDetectiveRoom"
+    },
+    {
+      "owner": "Security/Evidence",
+      "reference": "Resources/Maps/packed.yml#uid=2680",
+      "prototype": "LockerEvidence"
+    },
+    {
+      "owner": "Security/SecurityOffice",
+      "reference": "Resources/Maps/box.yml#uid=8437",
+      "prototype": "DefaultStationBeaconHOSRoom"
+    },
+    {
+      "owner": "Security/SecurityOffice",
+      "reference": "Resources/Maps/elkridge.yml#uid=11838",
+      "prototype": "DefaultStationBeaconHOSRoom"
+    },
+    {
+      "owner": "Security/SecureCirculation",
+      "reference": "Resources/Maps/bagel.yml#uid=12356",
+      "prototype": "DefaultStationBeaconSecurity"
+    },
+    {
+      "owner": "Security/SecureCirculation",
+      "reference": "Resources/Maps/elkridge.yml#uid=11841",
+      "prototype": "DefaultStationBeaconSecurity"
+    },
+    {
+      "owner": "Security/Cell",
+      "reference": "Resources/Maps/bagel.yml#uid=8270",
+      "prototype": "DefaultStationBeaconBrig"
+    },
+    {
+      "owner": "Security/Cell",
+      "reference": "Resources/Maps/elkridge.yml#uid=2115",
+      "prototype": "DefaultStationBeaconBrig"
+    },
+    {
+      "owner": "Security/Cell",
+      "reference": "Resources/Maps/packed.yml#uid=10454",
+      "prototype": "LockerPrisoner"
+    },
+    {
+      "owner": "Security/Cell",
+      "reference": "Resources/Maps/packed.yml#uid=10440",
+      "prototype": "LockerPrisoner2"
+    },
+    {
+      "owner": "Security/Detective",
+      "reference": "Resources/Maps/bagel.yml#uid=4150",
+      "prototype": "DefaultStationBeaconDetectiveRoom"
+    },
+    {
+      "owner": "Security/Detective",
+      "reference": "Resources/Maps/box.yml#uid=9138",
+      "prototype": "DefaultStationBeaconDetectiveRoom"
+    },
+    {
+      "owner": "Security/Courtroom",
+      "reference": "Resources/Maps/bagel.yml#uid=21777",
+      "prototype": "DefaultStationBeaconCourtroom"
+    },
+    {
+      "owner": "Security/Courtroom",
+      "reference": "Resources/Maps/box.yml#uid=9075",
+      "prototype": "DefaultStationBeaconCourtroom"
+    },
+    {
+      "owner": "Security/LawOffice",
+      "reference": "Resources/Maps/bagel.yml#uid=23374",
+      "prototype": "DefaultStationBeaconLawOffice"
+    },
+    {
+      "owner": "Security/LawOffice",
+      "reference": "Resources/Maps/box.yml#uid=8868",
+      "prototype": "DefaultStationBeaconLawOffice"
+    },
+    {
+      "owner": "Security/Checkpoint",
+      "reference": "Resources/Maps/box.yml#uid=14084",
+      "prototype": "DefaultStationBeaconSecurityCheckpoint"
+    },
+    {
+      "owner": "Security/Checkpoint",
+      "reference": "Resources/Maps/box.yml#uid=14645",
+      "prototype": "DefaultStationBeaconSecurityCheckpoint"
+    },
+    {
+      "owner": "Security/BrigMedical",
+      "reference": "Resources/Maps/bagel.yml#uid=1473",
+      "prototype": "DefaultStationBeaconBrigMed"
+    },
+    {
+      "owner": "Security/BrigMedical",
+      "reference": "Resources/Maps/exo.yml#uid=18105",
+      "prototype": "DefaultStationBeaconBrigMed"
+    },
+    {
+      "owner": "Security/OfficerPreparation",
+      "reference": "Resources/Maps/bagel.yml#uid=12356",
+      "prototype": "DefaultStationBeaconSecurity"
+    },
+    {
+      "owner": "Security/OfficerPreparation",
+      "reference": "Resources/Maps/elkridge.yml#uid=11841",
+      "prototype": "DefaultStationBeaconSecurity"
+    },
+    {
+      "owner": "Security/OfficerPreparation",
+      "reference": "Resources/Maps/packed.yml#uid=2467",
+      "prototype": "LockerSecurityFilled"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/bagel.yml#uid=13974",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/box.yml#uid=27713",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/bagel.yml#uid=13973",
+      "prototype": "DefaultStationBeaconCargoReception"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/box.yml#uid=27714",
+      "prototype": "DefaultStationBeaconCargoReception"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/packed.yml#uid=4319",
+      "prototype": "ComputerCargoOrders"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/packed.yml#uid=7263",
+      "prototype": "ComputerCargoBounty"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/bagel.yml#uid=24419",
+      "prototype": "DefaultStationBeaconSalvage"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/box.yml#uid=21277",
+      "prototype": "DefaultStationBeaconSalvage"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/packed.yml#uid=11666",
+      "prototype": "SalvageMagnet"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/packed.yml#uid=7885",
+      "prototype": "ComputerSalvageExpedition"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/packed.yml#uid=7471",
+      "prototype": "ComputerSalvageJobBoard"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/bagel.yml#uid=23573",
+      "prototype": "DefaultStationBeaconQMRoom"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/box.yml#uid=27730",
+      "prototype": "DefaultStationBeaconQMRoom"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/packed.yml#uid=3560",
+      "prototype": "ComputerShuttleCargo"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/packed.yml#uid=15478",
+      "prototype": "CargoMailTeleporter"
+    },
+    {
+      "owner": "Cargo",
+      "reference": "Resources/Maps/packed.yml#uid=15534",
+      "prototype": "MailCart"
+    },
+    {
+      "owner": "Cargo/Warehouse",
+      "reference": "Resources/Maps/bagel.yml#uid=13974",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo/Warehouse",
+      "reference": "Resources/Maps/box.yml#uid=27713",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo/Orders",
+      "reference": "Resources/Maps/bagel.yml#uid=13973",
+      "prototype": "DefaultStationBeaconCargoReception"
+    },
+    {
+      "owner": "Cargo/Orders",
+      "reference": "Resources/Maps/box.yml#uid=27714",
+      "prototype": "DefaultStationBeaconCargoReception"
+    },
+    {
+      "owner": "Cargo/Orders",
+      "reference": "Resources/Maps/packed.yml#uid=4319",
+      "prototype": "ComputerCargoOrders"
+    },
+    {
+      "owner": "Cargo/Orders",
+      "reference": "Resources/Maps/packed.yml#uid=7263",
+      "prototype": "ComputerCargoBounty"
+    },
+    {
+      "owner": "Cargo/Salvage",
+      "reference": "Resources/Maps/bagel.yml#uid=24419",
+      "prototype": "DefaultStationBeaconSalvage"
+    },
+    {
+      "owner": "Cargo/Salvage",
+      "reference": "Resources/Maps/box.yml#uid=21277",
+      "prototype": "DefaultStationBeaconSalvage"
+    },
+    {
+      "owner": "Cargo/Salvage",
+      "reference": "Resources/Maps/packed.yml#uid=11666",
+      "prototype": "SalvageMagnet"
+    },
+    {
+      "owner": "Cargo/Salvage",
+      "reference": "Resources/Maps/packed.yml#uid=7885",
+      "prototype": "ComputerSalvageExpedition"
+    },
+    {
+      "owner": "Cargo/Salvage",
+      "reference": "Resources/Maps/packed.yml#uid=7471",
+      "prototype": "ComputerSalvageJobBoard"
+    },
+    {
+      "owner": "Cargo/CargoOffice",
+      "reference": "Resources/Maps/bagel.yml#uid=23573",
+      "prototype": "DefaultStationBeaconQMRoom"
+    },
+    {
+      "owner": "Cargo/CargoOffice",
+      "reference": "Resources/Maps/box.yml#uid=27730",
+      "prototype": "DefaultStationBeaconQMRoom"
+    },
+    {
+      "owner": "Cargo/LoadingBay",
+      "reference": "Resources/Maps/bagel.yml#uid=13974",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo/LoadingBay",
+      "reference": "Resources/Maps/box.yml#uid=27713",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo/LoadingBay",
+      "reference": "Resources/Maps/packed.yml#uid=3560",
+      "prototype": "ComputerShuttleCargo"
+    },
+    {
+      "owner": "Cargo/LoadingBay",
+      "reference": "Resources/Maps/packed.yml#uid=451",
+      "prototype": "AirlockExternalGlassShuttleCargo"
+    },
+    {
+      "owner": "Cargo/LoadingBay/dock:CargoBerth",
+      "reference": "Resources/Maps/Shuttles/cargo.yml#uid=50",
+      "prototype": "AirlockGlassShuttle"
+    },
+    {
+      "owner": "Cargo/CargoCirculation",
+      "reference": "Resources/Maps/bagel.yml#uid=13974",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo/CargoCirculation",
+      "reference": "Resources/Maps/box.yml#uid=27713",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo/Mail",
+      "reference": "Resources/Maps/bagel.yml#uid=13974",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo/Mail",
+      "reference": "Resources/Maps/box.yml#uid=27713",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo/Mail",
+      "reference": "Resources/Maps/packed.yml#uid=15478",
+      "prototype": "CargoMailTeleporter"
+    },
+    {
+      "owner": "Cargo/Mail",
+      "reference": "Resources/Maps/packed.yml#uid=15534",
+      "prototype": "MailCart"
+    },
+    {
+      "owner": "Cargo/CargoEquipment",
+      "reference": "Resources/Maps/bagel.yml#uid=13974",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo/CargoEquipment",
+      "reference": "Resources/Maps/box.yml#uid=27713",
+      "prototype": "DefaultStationBeaconCargoBay"
+    },
+    {
+      "owner": "Cargo/CargoEquipment",
+      "reference": "Resources/Maps/bagel.yml#uid=24419",
+      "prototype": "DefaultStationBeaconSalvage"
+    },
+    {
+      "owner": "Cargo/CargoEquipment",
+      "reference": "Resources/Maps/box.yml#uid=21277",
+      "prototype": "DefaultStationBeaconSalvage"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/bagel.yml#uid=16139",
+      "prototype": "DefaultStationBeaconBridge"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/box.yml#uid=27707",
+      "prototype": "DefaultStationBeaconBridge"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/packed.yml#uid=405",
+      "prototype": "ComputerComms"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/packed.yml#uid=7925",
+      "prototype": "ComputerCrewMonitoring"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/bagel.yml#uid=15423",
+      "prototype": "DefaultStationBeaconCaptainsQuarters"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/box.yml#uid=27711",
+      "prototype": "DefaultStationBeaconCaptainsQuarters"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/bagel.yml#uid=21779",
+      "prototype": "DefaultStationBeaconHOPOffice"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/box.yml#uid=27722",
+      "prototype": "DefaultStationBeaconHOPOffice"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/packed.yml#uid=4988",
+      "prototype": "ComputerId"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/packed.yml#uid=8315",
+      "prototype": "ComputerStationRecords"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/bagel.yml#uid=24425",
+      "prototype": "DefaultStationBeaconVault"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/box.yml#uid=27735",
+      "prototype": "DefaultStationBeaconVault"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/plasma.yml#uid=22160",
+      "prototype": "DefaultStationBeaconCommand"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/plasma.yml#uid=22241",
+      "prototype": "DefaultStationBeaconCommand"
+    },
+    {
+      "owner": "Command",
+      "reference": "Resources/Maps/sushi.yml#uid=77",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Command/Bridge",
+      "reference": "Resources/Maps/bagel.yml#uid=16139",
+      "prototype": "DefaultStationBeaconBridge"
+    },
+    {
+      "owner": "Command/Bridge",
+      "reference": "Resources/Maps/box.yml#uid=27707",
+      "prototype": "DefaultStationBeaconBridge"
+    },
+    {
+      "owner": "Command/Bridge",
+      "reference": "Resources/Maps/packed.yml#uid=405",
+      "prototype": "ComputerComms"
+    },
+    {
+      "owner": "Command/Bridge",
+      "reference": "Resources/Maps/packed.yml#uid=7925",
+      "prototype": "ComputerCrewMonitoring"
+    },
+    {
+      "owner": "Command/CaptainsRoom",
+      "reference": "Resources/Maps/bagel.yml#uid=15423",
+      "prototype": "DefaultStationBeaconCaptainsQuarters"
+    },
+    {
+      "owner": "Command/CaptainsRoom",
+      "reference": "Resources/Maps/box.yml#uid=27711",
+      "prototype": "DefaultStationBeaconCaptainsQuarters"
+    },
+    {
+      "owner": "Command/HoPOffice",
+      "reference": "Resources/Maps/bagel.yml#uid=21779",
+      "prototype": "DefaultStationBeaconHOPOffice"
+    },
+    {
+      "owner": "Command/HoPOffice",
+      "reference": "Resources/Maps/box.yml#uid=27722",
+      "prototype": "DefaultStationBeaconHOPOffice"
+    },
+    {
+      "owner": "Command/HoPOffice",
+      "reference": "Resources/Maps/packed.yml#uid=4988",
+      "prototype": "ComputerId"
+    },
+    {
+      "owner": "Command/HoPOffice",
+      "reference": "Resources/Maps/packed.yml#uid=8315",
+      "prototype": "ComputerStationRecords"
+    },
+    {
+      "owner": "Command/MeetingRoom",
+      "reference": "Resources/Maps/bagel.yml#uid=16139",
+      "prototype": "DefaultStationBeaconBridge"
+    },
+    {
+      "owner": "Command/MeetingRoom",
+      "reference": "Resources/Maps/box.yml#uid=27707",
+      "prototype": "DefaultStationBeaconBridge"
+    },
+    {
+      "owner": "Command/CommandRecords",
+      "reference": "Resources/Maps/bagel.yml#uid=24425",
+      "prototype": "DefaultStationBeaconVault"
+    },
+    {
+      "owner": "Command/CommandRecords",
+      "reference": "Resources/Maps/box.yml#uid=27735",
+      "prototype": "DefaultStationBeaconVault"
+    },
+    {
+      "owner": "Command/CommandCirculation",
+      "reference": "Resources/Maps/plasma.yml#uid=22160",
+      "prototype": "DefaultStationBeaconCommand"
+    },
+    {
+      "owner": "Command/CommandCirculation",
+      "reference": "Resources/Maps/plasma.yml#uid=22241",
+      "prototype": "DefaultStationBeaconCommand"
+    },
+    {
+      "owner": "Command/CommandCirculation",
+      "reference": "Resources/Maps/bagel.yml#uid=16139",
+      "prototype": "DefaultStationBeaconBridge"
+    },
+    {
+      "owner": "Command/CommandCirculation",
+      "reference": "Resources/Maps/box.yml#uid=27707",
+      "prototype": "DefaultStationBeaconBridge"
+    },
+    {
+      "owner": "Command/Vault",
+      "reference": "Resources/Maps/bagel.yml#uid=24425",
+      "prototype": "DefaultStationBeaconVault"
+    },
+    {
+      "owner": "Command/Vault",
+      "reference": "Resources/Maps/box.yml#uid=27735",
+      "prototype": "DefaultStationBeaconVault"
+    },
+    {
+      "owner": "Command/CaptainBedroom",
+      "reference": "Resources/Maps/bagel.yml#uid=15423",
+      "prototype": "DefaultStationBeaconCaptainsQuarters"
+    },
+    {
+      "owner": "Command/CaptainBedroom",
+      "reference": "Resources/Maps/box.yml#uid=27711",
+      "prototype": "DefaultStationBeaconCaptainsQuarters"
+    },
+    {
+      "owner": "Command/CaptainBathroom",
+      "reference": "Resources/Maps/bagel.yml#uid=15423",
+      "prototype": "DefaultStationBeaconCaptainsQuarters"
+    },
+    {
+      "owner": "Command/CaptainBathroom",
+      "reference": "Resources/Maps/box.yml#uid=27711",
+      "prototype": "DefaultStationBeaconCaptainsQuarters"
+    },
+    {
+      "owner": "Command/CaptainBathroom",
+      "reference": "Resources/Maps/sushi.yml#uid=77",
+      "prototype": "AirAlarm"
+    },
+    {
+      "owner": "Command/Gateway",
+      "reference": "Resources/Maps/bagel.yml#uid=16139",
+      "prototype": "DefaultStationBeaconBridge"
+    },
+    {
+      "owner": "Command/Gateway",
+      "reference": "Resources/Maps/box.yml#uid=27707",
+      "prototype": "DefaultStationBeaconBridge"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/bagel.yml#uid=18703",
+      "prototype": "DefaultStationBeaconAICore"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/box.yml#uid=563",
+      "prototype": "DefaultStationBeaconAICore"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/packed.yml#uid=14506",
+      "prototype": "PlayerStationAi"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/box.yml#uid=984",
+      "prototype": "DefaultStationBeaconAIUpload"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/elkridge.yml#uid=17535",
+      "prototype": "DefaultStationBeaconAIUpload"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/packed.yml#uid=11004",
+      "prototype": "StationAiUploadComputer"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/elkridge.yml#uid=17536",
+      "prototype": "DefaultStationBeaconAIPower"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/plasma.yml#uid=25374",
+      "prototype": "DefaultStationBeaconAIPower"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/bagel.yml#uid=18704",
+      "prototype": "DefaultStationBeaconAISatellite"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/marathon.yml#uid=20687",
+      "prototype": "DefaultStationBeaconAISatellite"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/elkridge.yml#uid=17537",
+      "prototype": "DefaultStationBeaconAI"
+    },
+    {
+      "owner": "Silicon",
+      "reference": "Resources/Maps/marathon.yml#uid=20686",
+      "prototype": "DefaultStationBeaconAI"
+    },
+    {
+      "owner": "Silicon/AICore",
+      "reference": "Resources/Maps/bagel.yml#uid=18703",
+      "prototype": "DefaultStationBeaconAICore"
+    },
+    {
+      "owner": "Silicon/AICore",
+      "reference": "Resources/Maps/box.yml#uid=563",
+      "prototype": "DefaultStationBeaconAICore"
+    },
+    {
+      "owner": "Silicon/AICore",
+      "reference": "Resources/Maps/packed.yml#uid=14506",
+      "prototype": "PlayerStationAi"
+    },
+    {
+      "owner": "Silicon/AIUpload",
+      "reference": "Resources/Maps/box.yml#uid=984",
+      "prototype": "DefaultStationBeaconAIUpload"
+    },
+    {
+      "owner": "Silicon/AIUpload",
+      "reference": "Resources/Maps/elkridge.yml#uid=17535",
+      "prototype": "DefaultStationBeaconAIUpload"
+    },
+    {
+      "owner": "Silicon/AIUpload",
+      "reference": "Resources/Maps/packed.yml#uid=11004",
+      "prototype": "StationAiUploadComputer"
+    },
+    {
+      "owner": "Silicon/AIPower",
+      "reference": "Resources/Maps/elkridge.yml#uid=17536",
+      "prototype": "DefaultStationBeaconAIPower"
+    },
+    {
+      "owner": "Silicon/AIPower",
+      "reference": "Resources/Maps/plasma.yml#uid=25374",
+      "prototype": "DefaultStationBeaconAIPower"
+    },
+    {
+      "owner": "Silicon/AISatellite",
+      "reference": "Resources/Maps/bagel.yml#uid=18704",
+      "prototype": "DefaultStationBeaconAISatellite"
+    },
+    {
+      "owner": "Silicon/AISatellite",
+      "reference": "Resources/Maps/marathon.yml#uid=20687",
+      "prototype": "DefaultStationBeaconAISatellite"
+    },
+    {
+      "owner": "Silicon/AICirculation",
+      "reference": "Resources/Maps/elkridge.yml#uid=17537",
+      "prototype": "DefaultStationBeaconAI"
+    },
+    {
+      "owner": "Silicon/AICirculation",
+      "reference": "Resources/Maps/marathon.yml#uid=20686",
+      "prototype": "DefaultStationBeaconAI"
+    },
+    {
+      "owner": "_maintenance/MaintenanceWorkshop",
+      "reference": "Resources/Maps/packed.yml#uid=247",
+      "prototype": "MaintenanceToolSpawner"
+    },
+    {
+      "owner": "_maintenance/MaintenanceWorkshop",
+      "reference": "Resources/Maps/packed.yml#uid=1477",
+      "prototype": "ClosetMaintenanceFilledRandom"
+    },
+    {
+      "owner": "_maintenance/DeepStore",
+      "reference": "Resources/Maps/packed.yml#uid=1477",
+      "prototype": "ClosetMaintenanceFilledRandom"
+    },
+    {
+      "owner": "_maintenance/DeepStore",
+      "reference": "Resources/Maps/packed.yml#uid=7459",
+      "prototype": "MaintenanceFluffSpawner"
+    },
+    {
+      "owner": "_maintenance/MaintenanceBreakroom",
+      "reference": "Resources/Maps/packed.yml#uid=7459",
+      "prototype": "MaintenanceFluffSpawner"
+    },
+    {
+      "owner": "_maintenance/ExternalAccess",
+      "reference": "Resources/Maps/bagel.yml#uid=4148",
+      "prototype": "DefaultStationBeaconEVAStorage"
+    },
+    {
+      "owner": "_maintenance/ExternalAccess",
+      "reference": "Resources/Maps/box.yml#uid=27720",
+      "prototype": "DefaultStationBeaconEVAStorage"
+    },
+    {
+      "owner": "_maintenance/ExternalAccess",
+      "reference": "Resources/Maps/packed.yml#uid=9303",
+      "prototype": "AirlockExternalGlassShuttleLocked"
+    },
+    {
+      "owner": "_maintenance/ExternalAccess",
+      "reference": "Resources/Maps/packed.yml#uid=225",
+      "prototype": "AirlockExternalGlassEngineeringLocked"
+    },
+    {
+      "owner": "_maintenance/SolarControl",
+      "reference": "Resources/Maps/marathon.yml#uid=3501",
+      "prototype": "DefaultStationBeaconSolarsNE"
+    },
+    {
+      "owner": "_maintenance/SolarControl",
+      "reference": "Resources/Maps/packed.yml#uid=9624",
+      "prototype": "DefaultStationBeaconSolarsNE"
+    },
+    {
+      "owner": "_maintenance/SolarControl",
+      "reference": "Resources/Maps/box.yml#uid=27267",
+      "prototype": "DefaultStationBeaconSolarsSW"
+    },
+    {
+      "owner": "_maintenance/SolarControl",
+      "reference": "Resources/Maps/exo.yml#uid=10671",
+      "prototype": "DefaultStationBeaconSolarsSW"
+    },
+    {
+      "owner": "_maintenance/SolarControl",
+      "reference": "Resources/Maps/packed.yml#uid=2126",
+      "prototype": "ComputerSolarControl"
+    },
+    {
+      "owner": "_maintenance/SolarControl",
+      "reference": "Resources/Maps/packed.yml#uid=225",
+      "prototype": "AirlockExternalGlassEngineeringLocked"
+    },
+    {
+      "owner": "_maintenance/SolarArray",
+      "reference": "Resources/Maps/marathon.yml#uid=3501",
+      "prototype": "DefaultStationBeaconSolarsNE"
+    },
+    {
+      "owner": "_maintenance/SolarArray",
+      "reference": "Resources/Maps/packed.yml#uid=9624",
+      "prototype": "DefaultStationBeaconSolarsNE"
+    },
+    {
+      "owner": "_maintenance/SolarArray",
+      "reference": "Resources/Maps/box.yml#uid=27267",
+      "prototype": "DefaultStationBeaconSolarsSW"
+    },
+    {
+      "owner": "_maintenance/SolarArray",
+      "reference": "Resources/Maps/exo.yml#uid=10671",
+      "prototype": "DefaultStationBeaconSolarsSW"
+    },
+    {
+      "owner": "_maintenance/SolarArray",
+      "reference": "Resources/Maps/packed.yml#uid=1386",
+      "prototype": "SolarPanel"
+    },
+    {
+      "owner": "_maintenance/SolarArray",
+      "reference": "Resources/Maps/packed.yml#uid=1443",
+      "prototype": "SolarTracker"
+    }
+  ],
+  "contents": [
+    {
+      "room": "Arrivals/DockingControl",
+      "requirement": "DockConsole",
+      "prototype": "ComputerRadar",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 35
+    },
+    {
+      "room": "Arrivals/Waiting",
+      "requirement": "ArrivalDockAirlocks",
+      "prototype": "AirlockExternalGlassShuttleArrivals",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml",
+      "surveyedMainGridInstances": 40
+    },
+    {
+      "room": "Commons/Restrooms",
+      "requirement": "Toilets",
+      "prototype": "ToiletEmpty",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/toilet.yml",
+      "surveyedMainGridInstances": 25
+    },
+    {
+      "room": "Commons/Restrooms",
+      "requirement": "Toilets",
+      "prototype": "ToiletDirtyWater",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/toilet.yml",
+      "surveyedMainGridInstances": 46
+    },
+    {
+      "room": "Commons/Restrooms",
+      "requirement": "Sinks",
+      "prototype": "Sink",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/sink.yml",
+      "surveyedMainGridInstances": 103
+    },
+    {
+      "room": "Commons/Restrooms",
+      "requirement": "Sinks",
+      "prototype": "SinkWide",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/sink.yml",
+      "surveyedMainGridInstances": 101
+    },
+    {
+      "room": "Commons/Dormitory",
+      "requirement": "Beds",
+      "prototype": "Bed",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/beds.yml",
+      "surveyedMainGridInstances": 319
+    },
+    {
+      "room": "Commons/EVAStorage",
+      "requirement": "EVASuitStorage",
+      "prototype": "SuitStorageEVA",
+      "prototypeSource": "Resources/Prototypes/Catalog/Fills/Lockers/suit_storage.yml",
+      "surveyedMainGridInstances": 67
+    },
+    {
+      "room": "Commons/EVAStorage",
+      "requirement": "EVASuitStorage",
+      "prototype": "SuitStorageEVAAlternate",
+      "prototypeSource": "Resources/Prototypes/Catalog/Fills/Lockers/suit_storage.yml",
+      "surveyedMainGridInstances": 9
+    },
+    {
+      "room": "Commons/ToolRoom",
+      "requirement": "Autolathe",
+      "prototype": "Autolathe",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/lathe.yml",
+      "surveyedMainGridInstances": 43
+    },
+    {
+      "room": "Commons/Evacuation",
+      "requirement": "EvacDockAirlocks",
+      "prototype": "AirlockExternalGlassShuttleEmergencyLocked",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml",
+      "surveyedMainGridInstances": 58
+    },
+    {
+      "room": "Commons/EscapePodAccess",
+      "requirement": "PodDockAirlock",
+      "prototype": "AirlockExternalGlassShuttleEscape",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml",
+      "surveyedMainGridInstances": 47
+    },
+    {
+      "room": "Commons/Cryosleep",
+      "requirement": "CryosleepUnits",
+      "prototype": "CryogenicSleepUnit",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/cryogenic_sleep_unit.yml",
+      "surveyedMainGridInstances": 36
+    },
+    {
+      "room": "Service/Kitchen",
+      "requirement": "Microwaves",
+      "prototype": "KitchenMicrowave",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/microwave.yml",
+      "surveyedMainGridInstances": 89
+    },
+    {
+      "room": "Service/Kitchen",
+      "requirement": "Grill",
+      "prototype": "KitchenElectricGrill",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/grill.yml",
+      "surveyedMainGridInstances": 22
+    },
+    {
+      "room": "Service/Botany",
+      "requirement": "GrowingTrays",
+      "prototype": "HydroponicsTray",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/hydro_tray.yml",
+      "surveyedMainGridInstances": 250
+    },
+    {
+      "room": "Service/Botany",
+      "requirement": "Biogenerator",
+      "prototype": "Biogenerator",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/lathe.yml",
+      "surveyedMainGridInstances": 22
+    },
+    {
+      "room": "Service/Botany",
+      "requirement": "SeedExtractor",
+      "prototype": "SeedExtractor",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/seed_extractor.yml",
+      "surveyedMainGridInstances": 30
+    },
+    {
+      "room": "Service/Bar",
+      "requirement": "Booze",
+      "prototype": "BoozeDispenser",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Dispensers/booze.yml",
+      "surveyedMainGridInstances": 35
+    },
+    {
+      "room": "Service/Bar",
+      "requirement": "Soda",
+      "prototype": "SodaDispenser",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Dispensers/soda.yml",
+      "surveyedMainGridInstances": 32
+    },
+    {
+      "room": "Service/Chapel/Confessional",
+      "requirement": "ConfessionalSeat",
+      "prototype": "ChairWood",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/chairs.yml",
+      "surveyedMainGridInstances": 440
+    },
+    {
+      "room": "Service/Chapel/Crematorium",
+      "requirement": "Crematorium",
+      "prototype": "Crematorium",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Storage/morgue.yml",
+      "surveyedMainGridInstances": 13
+    },
+    {
+      "room": "Service/Janitor",
+      "requirement": "CleaningDispensers",
+      "prototype": "CleanerDispenser",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Wallmounts/Storage/wall_dispensers.yml",
+      "surveyedMainGridInstances": 13
+    },
+    {
+      "room": "Service/Janitor",
+      "requirement": "MopStorage",
+      "prototype": "MopBucket",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Specific/Janitor/janicart.yml",
+      "surveyedMainGridInstances": 16
+    },
+    {
+      "room": "Service/Janitor",
+      "requirement": "MopStorage",
+      "prototype": "MopBucketFull",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Specific/Janitor/janicart.yml",
+      "surveyedMainGridInstances": 12
+    },
+    {
+      "room": "Service/Janitor",
+      "requirement": "JanitorTrolley",
+      "prototype": "JanitorialTrolley",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Specific/Janitor/janicart.yml",
+      "surveyedMainGridInstances": 13
+    },
+    {
+      "room": "Medical/Treatment",
+      "requirement": "TreatmentBeds",
+      "prototype": "MedicalBed",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/beds.yml",
+      "surveyedMainGridInstances": 87
+    },
+    {
+      "room": "Medical/Treatment",
+      "requirement": "BodyScanner",
+      "prototype": "ComputerBodyScanner",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 29
+    },
+    {
+      "room": "Medical/Surgery",
+      "requirement": "OperatingTables",
+      "prototype": "OperatingTable",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/Tables/operating_table.yml",
+      "surveyedMainGridInstances": 44
+    },
+    {
+      "room": "Medical/Surgery",
+      "requirement": "Centrifuge",
+      "prototype": "MachineCentrifuge",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Medical/chemistry_machines.yml",
+      "surveyedMainGridInstances": 19
+    },
+    {
+      "room": "Medical/Surgery",
+      "requirement": "Electrolysis",
+      "prototype": "MachineElectrolysisUnit",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Medical/chemistry_machines.yml",
+      "surveyedMainGridInstances": 17
+    },
+    {
+      "room": "Medical/Chemistry",
+      "requirement": "ChemicalDispenser",
+      "prototype": "ChemDispenser",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Dispensers/chem.yml",
+      "surveyedMainGridInstances": 28
+    },
+    {
+      "room": "Medical/Morgue",
+      "requirement": "MorgueTrays",
+      "prototype": "Morgue",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Storage/morgue.yml",
+      "surveyedMainGridInstances": 172
+    },
+    {
+      "room": "Medical/Cryogenics",
+      "requirement": "CryoPods",
+      "prototype": "CryoPod",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Medical/cryo_pod.yml",
+      "surveyedMainGridInstances": 26
+    },
+    {
+      "room": "Medical/Cryogenics",
+      "requirement": "CryoCooling",
+      "prototype": "GasThermoMachineFreezer",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml",
+      "surveyedMainGridInstances": 67
+    },
+    {
+      "room": "Medical/Cryogenics",
+      "requirement": "CryoCooling",
+      "prototype": "GasThermoMachineFreezerEnabled",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml",
+      "surveyedMainGridInstances": 7
+    },
+    {
+      "room": "Medical/MedicalStorage",
+      "requirement": "MedicalLockers",
+      "prototype": "LockerMedicalFilled",
+      "prototypeSource": "Resources/Prototypes/Catalog/Fills/Lockers/medical.yml",
+      "surveyedMainGridInstances": 56
+    },
+    {
+      "room": "Medical/MedicalStorage",
+      "requirement": "MedicalLockers",
+      "prototype": "LockerMedicineFilled",
+      "prototypeSource": "Resources/Prototypes/Catalog/Fills/Lockers/medical.yml",
+      "surveyedMainGridInstances": 47
+    },
+    {
+      "room": "Medical/Paramedic",
+      "requirement": "ParamedicLocker",
+      "prototype": "LockerParamedicFilled",
+      "prototypeSource": "Resources/Prototypes/Catalog/Fills/Lockers/medical.yml",
+      "surveyedMainGridInstances": 14
+    },
+    {
+      "room": "Medical/Stasis",
+      "requirement": "StasisBeds",
+      "prototype": "StasisBed",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/stasisbed.yml",
+      "surveyedMainGridInstances": 24
+    },
+    {
+      "room": "Engineering/Workshop",
+      "requirement": "EngineeringLathe",
+      "prototype": "Autolathe",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/lathe.yml",
+      "surveyedMainGridInstances": 43
+    },
+    {
+      "room": "Engineering/Power",
+      "requirement": "SMESBanks",
+      "prototype": "SMESBasic",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/smes.yml",
+      "surveyedMainGridInstances": 96
+    },
+    {
+      "room": "Engineering/Power",
+      "requirement": "SMESBanks",
+      "prototype": "SMESAdvanced",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/smes.yml",
+      "surveyedMainGridInstances": 81
+    },
+    {
+      "room": "Engineering/Power",
+      "requirement": "PowerConsole",
+      "prototype": "ComputerPowerMonitoring",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 77
+    },
+    {
+      "room": "Engineering/Atmos",
+      "requirement": "GasMixers",
+      "prototype": "GasMixerFlipped",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/trinary.yml",
+      "surveyedMainGridInstances": 24
+    },
+    {
+      "room": "Engineering/Atmos",
+      "requirement": "GasFilters",
+      "prototype": "GasFilterFlipped",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Piping/Atmospherics/trinary.yml",
+      "surveyedMainGridInstances": 35
+    },
+    {
+      "room": "Engineering/Atmos",
+      "requirement": "AtmosMonitor",
+      "prototype": "ComputerAtmosMonitoring",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 30
+    },
+    {
+      "room": "Engineering/TEG",
+      "requirement": "TEGCenter",
+      "prototype": "TegCenter",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/Generation/teg.yml",
+      "surveyedMainGridInstances": 13
+    },
+    {
+      "room": "Engineering/TEG",
+      "requirement": "TEGCirculators",
+      "prototype": "TegCirculator",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/Generation/teg.yml",
+      "surveyedMainGridInstances": 26
+    },
+    {
+      "room": "Engineering/AME",
+      "requirement": "AMEController",
+      "prototype": "AmeController",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/Generation/ame.yml",
+      "surveyedMainGridInstances": 13
+    },
+    {
+      "room": "Engineering/ContainmentEngine",
+      "requirement": "EngineGenerator",
+      "prototype": "SingularityGenerator",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/generator.yml",
+      "surveyedMainGridInstances": 8
+    },
+    {
+      "room": "Engineering/ContainmentEngine",
+      "requirement": "EngineGenerator",
+      "prototype": "TeslaGenerator",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/Generation/Tesla/generator.yml",
+      "surveyedMainGridInstances": 10
+    },
+    {
+      "room": "Engineering/ContainmentEngine",
+      "requirement": "Containment",
+      "prototype": "ContainmentFieldGenerator",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/containment.yml",
+      "surveyedMainGridInstances": 58
+    },
+    {
+      "room": "Engineering/ParticleAcceleratorControl",
+      "requirement": "PAControl",
+      "prototype": "ParticleAcceleratorControlBox",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/Generation/PA/control_box.yml",
+      "surveyedMainGridInstances": 3
+    },
+    {
+      "room": "Engineering/Gravity",
+      "requirement": "GravityGenerator",
+      "prototype": "GravityGenerator",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/gravity_generator.yml",
+      "surveyedMainGridInstances": 13
+    },
+    {
+      "room": "Engineering/StationAnchor",
+      "requirement": "StationAnchor",
+      "prototype": "StationAnchor",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Shuttles/station_anchor.yml",
+      "surveyedMainGridInstances": 13
+    },
+    {
+      "room": "Engineering/Telecoms",
+      "requirement": "TelecomServers",
+      "prototype": "TelecomServerFilledCommon",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/telecomms.yml",
+      "surveyedMainGridInstances": 10
+    },
+    {
+      "room": "Engineering/Telecoms",
+      "requirement": "TelecomServers",
+      "prototype": "TelecomServerFilledEngineering",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/telecomms.yml",
+      "surveyedMainGridInstances": 10
+    },
+    {
+      "room": "Engineering/Telecoms",
+      "requirement": "TelecomServers",
+      "prototype": "TelecomServerFilledCommand",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/telecomms.yml",
+      "surveyedMainGridInstances": 10
+    },
+    {
+      "room": "Engineering/Telecoms",
+      "requirement": "TelecomServers",
+      "prototype": "TelecomServerFilledSecurity",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/telecomms.yml",
+      "surveyedMainGridInstances": 10
+    },
+    {
+      "room": "Engineering/Telecoms",
+      "requirement": "TelecomServers",
+      "prototype": "TelecomServerFilledMedical",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/telecomms.yml",
+      "surveyedMainGridInstances": 10
+    },
+    {
+      "room": "Engineering/Telecoms",
+      "requirement": "TelecomServers",
+      "prototype": "TelecomServerFilledScience",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/telecomms.yml",
+      "surveyedMainGridInstances": 10
+    },
+    {
+      "room": "Engineering/Telecoms",
+      "requirement": "TelecomServers",
+      "prototype": "TelecomServerFilledCargo",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/telecomms.yml",
+      "surveyedMainGridInstances": 10
+    },
+    {
+      "room": "Engineering/Telecoms",
+      "requirement": "TelecomServers",
+      "prototype": "TelecomServerFilledService",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/telecomms.yml",
+      "surveyedMainGridInstances": 10
+    },
+    {
+      "room": "Engineering/Disposals",
+      "requirement": "Recycler",
+      "prototype": "Recycler",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/recycler.yml",
+      "surveyedMainGridInstances": 25
+    },
+    {
+      "room": "Engineering/Disposals",
+      "requirement": "DisposalUnit",
+      "prototype": "DisposalUnit",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml",
+      "surveyedMainGridInstances": 598
+    },
+    {
+      "room": "Engineering/Substation",
+      "requirement": "SMES",
+      "prototype": "SMESBasic",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/smes.yml",
+      "surveyedMainGridInstances": 96
+    },
+    {
+      "room": "Engineering/Substation",
+      "requirement": "SMES",
+      "prototype": "SMESAdvanced",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/smes.yml",
+      "surveyedMainGridInstances": 81
+    },
+    {
+      "room": "Science/Research",
+      "requirement": "ResearchConsole",
+      "prototype": "ComputerResearchAndDevelopment",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 53
+    },
+    {
+      "room": "Science/Research",
+      "requirement": "Protolathe",
+      "prototype": "Protolathe",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/lathe.yml",
+      "surveyedMainGridInstances": 15
+    },
+    {
+      "room": "Science/Research",
+      "requirement": "CircuitImprinter",
+      "prototype": "CircuitImprinter",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/lathe.yml",
+      "surveyedMainGridInstances": 16
+    },
+    {
+      "room": "Science/Robotics",
+      "requirement": "RoboticsFabricator",
+      "prototype": "ExosuitFabricator",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/lathe.yml",
+      "surveyedMainGridInstances": 16
+    },
+    {
+      "room": "Science/Robotics",
+      "requirement": "BorgCharging",
+      "prototype": "BorgCharger",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/chargers.yml",
+      "surveyedMainGridInstances": 78
+    },
+    {
+      "room": "Science/ArtifactLab",
+      "requirement": "ArtifactAnalyzer",
+      "prototype": "MachineArtifactAnalyzer",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/artifact_analyzer.yml",
+      "surveyedMainGridInstances": 21
+    },
+    {
+      "room": "Science/ArtifactLab",
+      "requirement": "AnalysisConsole",
+      "prototype": "ComputerAnalysisConsole",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 21
+    },
+    {
+      "room": "Science/AnomalyLab",
+      "requirement": "AnomalyGenerator",
+      "prototype": "MachineAnomalyGenerator",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/anomaly_equipment.yml",
+      "surveyedMainGridInstances": 13
+    },
+    {
+      "room": "Science/AnomalyLab",
+      "requirement": "AnomalyVessels",
+      "prototype": "MachineAnomalyVessel",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/anomaly_equipment.yml",
+      "surveyedMainGridInstances": 27
+    },
+    {
+      "room": "Science/ServerRoom",
+      "requirement": "ResearchServer",
+      "prototype": "ResearchAndDevelopmentServer",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/research.yml",
+      "surveyedMainGridInstances": 14
+    },
+    {
+      "room": "Science/ScienceStorage",
+      "requirement": "ScienceLocker",
+      "prototype": "LockerScienceFilled",
+      "prototypeSource": "Resources/Prototypes/Catalog/Fills/Lockers/science.yml",
+      "surveyedMainGridInstances": 54
+    },
+    {
+      "room": "Security/Armory",
+      "requirement": "WeaponRecharger",
+      "prototype": "WeaponCapacitorRecharger",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/chargers.yml",
+      "surveyedMainGridInstances": 99
+    },
+    {
+      "room": "Security/Evidence",
+      "requirement": "EvidenceLockers",
+      "prototype": "LockerEvidence",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Storage/Closets/Lockers/lockers.yml",
+      "surveyedMainGridInstances": 20
+    },
+    {
+      "room": "Security/Cell",
+      "requirement": "CellBed",
+      "prototype": "Bed",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/beds.yml",
+      "surveyedMainGridInstances": 319
+    },
+    {
+      "room": "Security/Cell",
+      "requirement": "PrisonerLocker",
+      "prototype": "LockerPrisoner",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Storage/Closets/Lockers/lockers.yml",
+      "surveyedMainGridInstances": 11
+    },
+    {
+      "room": "Security/Cell",
+      "requirement": "PrisonerLocker",
+      "prototype": "LockerPrisoner2",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Storage/Closets/Lockers/lockers.yml",
+      "surveyedMainGridInstances": 11
+    },
+    {
+      "room": "Security/Cell",
+      "requirement": "PrisonerLocker",
+      "prototype": "LockerPrisoner3",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Storage/Closets/Lockers/lockers.yml",
+      "surveyedMainGridInstances": 10
+    },
+    {
+      "room": "Security/Cell",
+      "requirement": "PrisonerLocker",
+      "prototype": "LockerPrisoner4",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Storage/Closets/Lockers/lockers.yml",
+      "surveyedMainGridInstances": 10
+    },
+    {
+      "room": "Security/Detective",
+      "requirement": "DetectiveLocker",
+      "prototype": "LockerDetectiveFilled",
+      "prototypeSource": "Resources/Prototypes/Catalog/Fills/Lockers/security.yml",
+      "surveyedMainGridInstances": 14
+    },
+    {
+      "room": "Security/Detective",
+      "requirement": "CriminalRecords",
+      "prototype": "ComputerCriminalRecords",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 85
+    },
+    {
+      "room": "Security/BrigMedical",
+      "requirement": "MedicalBed",
+      "prototype": "MedicalBed",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/beds.yml",
+      "surveyedMainGridInstances": 87
+    },
+    {
+      "room": "Security/OfficerPreparation",
+      "requirement": "OfficerLockers",
+      "prototype": "LockerSecurityFilled",
+      "prototypeSource": "Resources/Prototypes/Catalog/Fills/Lockers/security.yml",
+      "surveyedMainGridInstances": 87
+    },
+    {
+      "room": "Cargo/Orders",
+      "requirement": "OrdersComputer",
+      "prototype": "ComputerCargoOrders",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 39
+    },
+    {
+      "room": "Cargo/Orders",
+      "requirement": "BountyComputer",
+      "prototype": "ComputerCargoBounty",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 17
+    },
+    {
+      "room": "Cargo/Salvage",
+      "requirement": "SalvageMagnet",
+      "prototype": "SalvageMagnet",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/salvage.yml",
+      "surveyedMainGridInstances": 13
+    },
+    {
+      "room": "Cargo/Salvage",
+      "requirement": "ExpeditionConsole",
+      "prototype": "ComputerSalvageExpedition",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 13
+    },
+    {
+      "room": "Cargo/Salvage",
+      "requirement": "SalvageBoard",
+      "prototype": "ComputerSalvageJobBoard",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 11
+    },
+    {
+      "room": "Cargo/LoadingBay",
+      "requirement": "CargoShuttleConsole",
+      "prototype": "ComputerShuttleCargo",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 26
+    },
+    {
+      "room": "Cargo/LoadingBay",
+      "requirement": "CargoDockAirlocks",
+      "prototype": "AirlockExternalGlassShuttleCargo",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml",
+      "surveyedMainGridInstances": 25
+    },
+    {
+      "room": "Cargo/Mail",
+      "requirement": "MailTeleporter",
+      "prototype": "CargoMailTeleporter",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/mail_teleporter.yml",
+      "surveyedMainGridInstances": 12
+    },
+    {
+      "room": "Cargo/Mail",
+      "requirement": "MailCart",
+      "prototype": "MailCart",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Specific/Cargo/mailcart.yml",
+      "surveyedMainGridInstances": 11
+    },
+    {
+      "room": "Cargo/CargoEquipment",
+      "requirement": "SalvageLockers",
+      "prototype": "LockerSalvageSpecialistFilledHardsuit",
+      "prototypeSource": "Resources/Prototypes/Catalog/Fills/Lockers/cargo.yml",
+      "surveyedMainGridInstances": 17
+    },
+    {
+      "room": "Command/Bridge",
+      "requirement": "Communications",
+      "prototype": "ComputerComms",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 29
+    },
+    {
+      "room": "Command/Bridge",
+      "requirement": "CrewMonitoring",
+      "prototype": "ComputerCrewMonitoring",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 77
+    },
+    {
+      "room": "Command/HoPOffice",
+      "requirement": "IDComputer",
+      "prototype": "ComputerId",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 37
+    },
+    {
+      "room": "Command/HoPOffice",
+      "requirement": "StationRecords",
+      "prototype": "ComputerStationRecords",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 45
+    },
+    {
+      "room": "Command/Vault",
+      "requirement": "NuclearDevice",
+      "prototype": "NuclearBomb",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/nuke.yml",
+      "surveyedMainGridInstances": 14
+    },
+    {
+      "room": "Command/CaptainBedroom",
+      "requirement": "CaptainBed",
+      "prototype": "Bed",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/beds.yml",
+      "surveyedMainGridInstances": 319
+    },
+    {
+      "room": "Command/CaptainBathroom",
+      "requirement": "PrivateToilet",
+      "prototype": "ToiletGoldenDirtyWater",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/toilet.yml",
+      "surveyedMainGridInstances": 11
+    },
+    {
+      "room": "Command/CaptainBathroom",
+      "requirement": "PrivateToilet",
+      "prototype": "ToiletEmpty",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Furniture/toilet.yml",
+      "surveyedMainGridInstances": 25
+    },
+    {
+      "room": "Silicon/AICore",
+      "requirement": "StationAI",
+      "prototype": "PlayerStationAi",
+      "prototypeSource": "Resources/Prototypes/Entities/Mobs/Player/silicon.yml",
+      "surveyedMainGridInstances": 12
+    },
+    {
+      "room": "Silicon/AIUpload",
+      "requirement": "AIUpload",
+      "prototype": "StationAiUploadComputer",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 18
+    },
+    {
+      "room": "Silicon/AIPower",
+      "requirement": "AIPowerBank",
+      "prototype": "SMESBasic",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/smes.yml",
+      "surveyedMainGridInstances": 96
+    },
+    {
+      "room": "Silicon/AIPower",
+      "requirement": "AIPowerBank",
+      "prototype": "SMESAdvanced",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/smes.yml",
+      "surveyedMainGridInstances": 81
+    },
+    {
+      "room": "_maintenance/ExternalAccess",
+      "requirement": "ExteriorAirlock",
+      "prototype": "AirlockExternalGlassEngineeringLocked",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml",
+      "surveyedMainGridInstances": 93
+    },
+    {
+      "room": "_maintenance/SolarControl",
+      "requirement": "SolarConsole",
+      "prototype": "ComputerSolarControl",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml",
+      "surveyedMainGridInstances": 56
+    },
+    {
+      "room": "_maintenance/SolarControl",
+      "requirement": "SolarAirlock",
+      "prototype": "AirlockExternalGlassEngineeringLocked",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml",
+      "surveyedMainGridInstances": 93
+    },
+    {
+      "room": "_maintenance/SolarArray",
+      "requirement": "SolarPanels",
+      "prototype": "SolarPanel",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/Generation/solar.yml",
+      "surveyedMainGridInstances": 2463
+    },
+    {
+      "room": "_maintenance/SolarArray",
+      "requirement": "SolarTracker",
+      "prototype": "SolarTracker",
+      "prototypeSource": "Resources/Prototypes/Entities/Structures/Power/Generation/solar.yml",
+      "surveyedMainGridInstances": 36
+    }
+  ]
+}
